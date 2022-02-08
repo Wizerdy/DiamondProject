@@ -2,23 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
-{
+public class Boss : MonoBehaviour {
     public GameObject missile;
     public GameObject magicBalls;
-    public GameObject rocks;
+
+    [Header("RockFall")]
+    public FallingObject fallingRock;
+    [SerializeField]
+    Transform groundZone1;
+    [SerializeField]
+    Transform groundZone2;
+    [SerializeField]
+    Transform groundZone3;
+    [SerializeField]
+    Transform groundZone4;
+    [SerializeField]
+    Vector2 rocksNumberBounds;
+
 
     enum State {
-        WAITING,
-        TELEPORTING,
+        WAIT,
+        TELEPORT,
         ROCKFALL,
-        FIRING,
+        FIRE,
     }
 
     State state;
 
-    void Update()
-    {
+    void Update() {
         
     }
+
+    void WeWillRockYou(int rockNumbers, Vector3 position, float radius) {
+        
+    }
+
+
+
 }
