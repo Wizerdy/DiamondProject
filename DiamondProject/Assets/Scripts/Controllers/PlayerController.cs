@@ -1,31 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : Entity
 {
+    PlayerControls controls;
+
     void Update()
     {
         Move();
-        Jump();
+    }
+
+    private void Awake()
+    {
+        controls = new PlayerControls();
+
+        controls.GamePlay.Move.performed += cc => direction = cc.ReadValue<Vector2>();
+        controls.GamePlay.Move.canceled += cc => direction = Vector2.zero;
     }
 
     public override void Move()
     {
-        direction = Input.GetAxis("Horizontal");
+        // Direction value updated ?
+        Debug.Log(direction);
         base.Move();
     }
 
-    public override void Jump()
+    private void OnEnable()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            base.Jump();
-        }
+        controls.GamePlay.Enable();
     }
 
-    protected override IEnumerator OnJump(float duration)
+    private void OnDisable()
     {
-        return base.OnJump(duration);
+        controls.GamePlay.Disable();
     }
 }
