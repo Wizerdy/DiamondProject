@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MagicBall : MonoBehaviour {
 
-    public Vector3 direction;
-    public float speed;
-    SpriteRenderer sr;
-    Rigidbody2D rb;
+    public Vector3 direction = Vector3.zero;
+    public float speed = 1;
+    SpriteRenderer sr = null;
+    Rigidbody2D rb = null;
     public enum State {
         RED,
         YELLOW

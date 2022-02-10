@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour {
-    [SerializeField]
-    GameObject missile;
 
     [Header("RockFall")]
     [SerializeField] FallingObject fallingObject = null;
@@ -16,12 +14,20 @@ public class Boss : MonoBehaviour {
     [SerializeField] Vector2Int rocksNumberBounds;
 
     [Header("Spin")]
-    [SerializeField] MagicBall magicBall;
-    [SerializeField] float magicBallSpeed;
-    [SerializeField] float rotationSpeed;
-    [SerializeField] float fireRate;
-    [SerializeField] float spinDuration;
-    [SerializeField] float distSpawn;
+    [SerializeField] MagicBall magicBall = null;
+    [SerializeField] float magicBallSpeed = 1f;
+    [SerializeField] float rotationSpeed = 1f;
+    [SerializeField] float magicBallRate = 1f;
+    [SerializeField] float spinDuration = 1f;
+    [SerializeField] float magicBallDistSpawn = 1f;
+
+    [Header("Missile")]
+    [SerializeField] Missile missile = null;
+    [SerializeField] float missileSpeed = 1f;
+    [SerializeField] float missileLifetime = 1f;
+    [SerializeField] float missileDistSpawn = 1f;
+    [SerializeField] float missileRate = 1f;
+    [SerializeField] Vector2 missileBounds = Vector2.zero;
 
     enum State {
         WAIT,
@@ -33,7 +39,7 @@ public class Boss : MonoBehaviour {
     State state;
 
     private void Start() {
-        StartCoroutine(DeathSpin(spinDuration));
+        StartCoroutine(MortalMissile());
     }
     void Update() {
         
@@ -59,16 +65,16 @@ public class Boss : MonoBehaviour {
     }
 
     IEnumerator DeathSpin(float duration) {
-        float fireRateTimer = fireRate;
+        float fireRateTimer = magicBallRate;
         float durationTimer = duration;
         while (durationTimer > 0) {
             durationTimer -= Time.deltaTime;
             transform.Rotate(new Vector3(0, 0, 360 * rotationSpeed * Time.deltaTime));
             fireRateTimer -= Time.deltaTime;
             if (fireRateTimer <= 0) {
-                fireRateTimer = fireRate;
-                FireMagicBall(transform.right, magicBallSpeed, transform.position + transform.right * distSpawn, MagicBall.State.RED);
-                FireMagicBall(transform.right * -1, magicBallSpeed, transform.position + transform.right * distSpawn * -1, MagicBall.State.YELLOW);
+                fireRateTimer = magicBallRate;
+                FireMagicBall(transform.right, magicBallSpeed, transform.position + transform.right * magicBallDistSpawn, MagicBall.State.RED);
+                FireMagicBall(transform.right * -1, magicBallSpeed, transform.position + transform.right * magicBallDistSpawn * -1, MagicBall.State.YELLOW);
             }
             yield return null;
         }
@@ -79,5 +85,26 @@ public class Boss : MonoBehaviour {
         newMagicBall.SetDirection(direction)
             .SetSpeed(speed)
             .SetState(state);
+    }
+
+    void FireMissile(float speed, Vector3 position) {
+        Missile newMissile = Instantiate(missile.gameObject, position, Quaternion.identity).GetComponent<Missile>();
+        newMissile.SetSpeed(speed)
+            .SetLifeTime(missileLifetime);
+    }
+
+    IEnumerator MortalMissile() {
+        float fireRateTimer = missileRate;
+        float randomMissiles = Random.Range(missileBounds.x, missileBounds.y);
+        float numberMissilesFired = 0;
+        while (randomMissiles > numberMissilesFired) {
+            fireRateTimer -= Time.deltaTime;
+            if (fireRateTimer <= 0) {
+                numberMissilesFired++;
+                fireRateTimer = missileRate;
+                FireMissile(missileSpeed, transform.position + transform.right * missileDistSpawn);
+            }
+            yield return null;
+        }
     }
 }
