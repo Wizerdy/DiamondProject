@@ -8,8 +8,10 @@ public class PlayerController : Entity
     PlayerControls controls;
 
     [Header("NPC Settings")]
-    [SerializeField] private bool isInteracting;
+    [SerializeField] private float interactingValue;
     public float npcInteractRadius;
+    public bool isInteracting;
+    public bool isInteracting2;
     public List<NPC> npcList;
 
     void Update()
@@ -17,6 +19,15 @@ public class PlayerController : Entity
         Move();
         NpcInRange(npcInteractRadius);
         GetNearestNpc();
+        if (interactingValue != 0 && isInteracting2 == true)
+        {
+            isInteracting = !isInteracting;
+            isInteracting2 = false;
+        }
+        if (interactingValue == 0)
+        {
+            isInteracting2 = true;
+        }
     }
 
     private void Awake()
@@ -26,8 +37,8 @@ public class PlayerController : Entity
         controls.GamePlay.Move.performed += cc => direction = cc.ReadValue<Vector2>();
         controls.GamePlay.Move.canceled += cc => direction = Vector2.zero;
 
-        controls.GamePlay.Interact.performed += cc => isInteracting = cc.ReadValue<bool>();
-        controls.GamePlay.Interact.canceled += cc => isInteracting = false;
+        controls.GamePlay.Interact.performed += cc => interactingValue = cc.ReadValue<float>();
+        controls.GamePlay.Interact.canceled += cc => interactingValue = 0;
     }
 
     public override void Move()
@@ -63,7 +74,7 @@ public class PlayerController : Entity
         {
             if (isInteracting)
             {
-                // TODO
+                //TODO
             }
         }
     }
