@@ -18,11 +18,9 @@ public class Boss : MonoBehaviour {
     [SerializeField]
     List<FallingObject> fallingRocks = new List<FallingObject>();
     [SerializeField]
-    Transform cornerLeftTop; 
+    Vector2 radiusBounds;
     [SerializeField]
-    Transform cornerRightTop; 
-    [SerializeField]
-    Transform cornerLeftBot; 
+    float apparitionHigh = 10;
     [SerializeField]
     Vector2Int rocksNumberBounds;
 
@@ -37,20 +35,23 @@ public class Boss : MonoBehaviour {
     State state;
 
     private void Start() {
-        WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y + 1), transform.position, 2);
-        WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y + 1), transform.position, 2);
-        WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y + 1), transform.position, 2);
+        WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y + 1), transform.position);
     }
     void Update() {
         
     }
 
-    void WeWillRockYou(int rockNumbers, Vector3 position, float radius) {
+    void WeWillRockYou(int rockNumbers, Vector3 position) {
         for (int i = 0; i < rockNumbers; i++) {
-            float randomX = Random.Range(cornerRightTop.position.x, cornerLeftTop.position.x);
-            float randomY = Random.Range(cornerRightTop.position.y, cornerLeftBot.position.y);
-            Vector3 destination = new Vector3(randomX, randomY, transform.position.z);
-            FallingObject newFallingObject = Instantiate(fallingObject.gameObject, position + Random.insideUnitSphere * radius - Vector3.one * radius / 2 + Vector3.up * 10, fallingObject.transform.rotation).GetComponent<FallingObject>();
+            float randomDegree = Random.Range(0, 360);
+            float randomDist = Random.Range(radiusBounds.x, radiusBounds.y);
+            Vector3 destination = new Vector3(Mathf.Cos(randomDegree * Mathf.Deg2Rad), Mathf.Sin(randomDegree * Mathf.Deg2Rad), 0);
+            destination = destination.normalized * randomDist;
+            Debug.Log(destination);
+            Debug.Log(randomDist);
+            destination.z = position.z;
+
+            FallingObject newFallingObject = Instantiate(fallingObject.gameObject, position + destination + new Vector3(0,apparitionHigh,0), fallingObject.transform.rotation).GetComponent<FallingObject>();
             newFallingObject.SetFallen(rock.gameObject)
                 .SetSprite(rock.sprite)
                 .SetDestination(destination)
