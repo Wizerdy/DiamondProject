@@ -3,38 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour {
+    enum State { WAIT, TELEPORT, ROCKFALL, FIRE, }
+
     [SerializeField]
     GameObject missile;
     [SerializeField]
     GameObject magicBalls;
 
+    private GameObject player;
+
     [Header("RockFall")]
-    [SerializeField]
-    FallingObject fallingObject = null;
-    [SerializeField]
+    [SerializeField] FallingObject fallingObject = null;
     public Rock rock;
-    [SerializeField]
     public float fallingTime = 3f;
-    [SerializeField]
-    List<FallingObject> fallingRocks = new List<FallingObject>();
-    [SerializeField]
-    Transform cornerLeftTop; 
-    [SerializeField]
-    Transform cornerRightTop; 
-    [SerializeField]
-    Transform cornerLeftBot; 
-    [SerializeField]
-    Vector2Int rocksNumberBounds;
+    [SerializeField] List<FallingObject> fallingRocks = new List<FallingObject>();
+    [SerializeField] Transform cornerLeftTop;
+    [SerializeField] Transform cornerRightTop;
+    [SerializeField] Transform cornerLeftBot;
+    [SerializeField] Vector2Int rocksNumberBounds;
 
+    [Header("Teleport")]
+    [SerializeField] private float fleeRadius = 2f;
+    [SerializeField] private float fleeDistance = 4f;
 
-    enum State {
-        WAIT,
-        TELEPORT,
-        ROCKFALL,
-        FIRE,
-    }
-
-    State state;
+    private State state;
 
     private void Start() {
         WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y + 1), transform.position, 2);
@@ -42,7 +34,7 @@ public class Boss : MonoBehaviour {
         WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y + 1), transform.position, 2);
     }
     void Update() {
-        
+        UpdateFlee();
     }
 
     void WeWillRockYou(int rockNumbers, Vector3 position, float radius) {
@@ -59,6 +51,21 @@ public class Boss : MonoBehaviour {
         }
     }
 
+    void UpdateFlee() {
+        Vector3 playerPosition = player.transform.position;
+        if ((playerPosition - transform.position).sqrMagnitude < fleeRadius) {
+            FleeFrom(player);
+        }
+    }
 
+    void FleeFrom(GameObject entity) {
+        Vector3 entityPosition = entity.transform.position;
+        Vector3 direction = (entityPosition - transform.position).normalized;
+        Vector3 destination = direction * fleeDistance;
+        Teleport(destination);
+    }
 
+    void Teleport(Vector3 position) {
+        transform.position = position;
+    }
 }
