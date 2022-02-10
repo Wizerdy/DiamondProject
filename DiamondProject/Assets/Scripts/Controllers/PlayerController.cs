@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : Entity
 {
+    [SerializeField]
+    int hp = 10;
     void Update()
     {
         Move();
@@ -27,5 +29,13 @@ public class PlayerController : Entity
     protected override IEnumerator OnJump(float duration)
     {
         return base.OnJump(duration);
+    }
+
+    public void TakeDamage(int hpToAdd) {
+        hp += hpToAdd;
+    }
+
+    public bool IsMoving() {
+        return true;
     }
 }
