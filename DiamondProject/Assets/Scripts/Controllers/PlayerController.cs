@@ -59,20 +59,23 @@ public class PlayerController : Entity
 
     public void Interact()
     {
-        if (isInteracting)
+        if (npcList.Count > 0)
         {
-           // Open dialog
+            if (isInteracting)
+            {
+                // TODO
+            }
         }
     }
 
-    public Entity GetNearestNpc()
+    public NPC GetNearestNpc()
     {
         if (npcList.Count <= 0)
         {
             return null;
         }
 
-        Entity tempEntity = null;
+        NPC tempEntity = null;
         float dist = Mathf.Infinity;
         for (int i = 0; i < npcList.Count; i++)
         {
