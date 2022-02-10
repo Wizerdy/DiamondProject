@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour {
+    private GameObject player;
+    enum State { WAIT, TELEPORT, ROCKFALL, FIRE, }
+    private State state;
 
     [Header("RockFall")]
     [SerializeField] FallingObject fallingObject = null;
@@ -29,20 +32,16 @@ public class Boss : MonoBehaviour {
     [SerializeField] float missileRate = 1f;
     [SerializeField] Vector2 missileBounds = Vector2.zero;
 
-    enum State {
-        WAIT,
-        TELEPORT,
-        ROCKFALL,
-        FIRE,
-    }
+    [Header("Teleport")]
+    [SerializeField] private float fleeRadius = 2f;
+    [SerializeField] private float fleeDistance = 4f;
 
-    State state;
 
     private void Start() {
         StartCoroutine(MortalMissile());
     }
     void Update() {
-        
+        UpdateFlee();
     }
 
     void WeWillRockYou(int rockNumbers, Vector3 position) {
@@ -63,7 +62,7 @@ public class Boss : MonoBehaviour {
             fallingRocks.Add(newFallingObject);
         }
     }
-
+    
     IEnumerator DeathSpin(float duration) {
         float fireRateTimer = magicBallRate;
         float durationTimer = duration;
@@ -106,5 +105,21 @@ public class Boss : MonoBehaviour {
             }
             yield return null;
         }
+    void UpdateFlee() {
+        Vector3 playerPosition = player.transform.position;
+        if ((playerPosition - transform.position).sqrMagnitude < fleeRadius) {
+            FleeFrom(player);
+        }
+    }
+
+    void FleeFrom(GameObject entity) {
+        Vector3 entityPosition = entity.transform.position;
+        Vector3 direction = (entityPosition - transform.position).normalized;
+        Vector3 destination = direction * fleeDistance;
+        Teleport(destination);
+    }
+
+    void Teleport(Vector3 position) {
+        transform.position = position;
     }
 }

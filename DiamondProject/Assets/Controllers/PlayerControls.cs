@@ -97,6 +97,61 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""3c1e0827-2b35-412a-814e-e5cb6a5f70d5"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e24ff25d-45d0-41e5-a8e6-7261e65ebb98"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""4c4b3422-fb44-4ad9-938c-9afa87e598ed"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""4d9d72b3-1331-4192-9569-c310413f8bce"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""7d36f7e8-4709-4606-96b4-dc1d44525f1b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""fc053346-5cfe-4689-a072-44d414cede13"",
                     ""path"": ""<Gamepad>/rightStick"",
@@ -152,6 +207,34 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Battle"",
+            ""id"": ""93ca75db-ddd6-4243-b339-6c26ab1374a1"",
+            ""actions"": [
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""9219294c-1f40-4142-8e7c-bd69fdc75f67"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""62f7dce2-44e2-4cbb-b280-51acdf02d54a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -163,6 +246,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
         m_GamePlay_Rotate = m_GamePlay.FindAction("Rotate", throwIfNotFound: true);
         m_GamePlay_RotateY = m_GamePlay.FindAction("RotateY", throwIfNotFound: true);
+        // Battle
+        m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
+        m_Battle_Attack = m_Battle.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -283,6 +369,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public GamePlayActions @GamePlay => new GamePlayActions(this);
+
+    // Battle
+    private readonly InputActionMap m_Battle;
+    private IBattleActions m_BattleActionsCallbackInterface;
+    private readonly InputAction m_Battle_Attack;
+    public struct BattleActions
+    {
+        private @PlayerControls m_Wrapper;
+        public BattleActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Attack => m_Wrapper.m_Battle_Attack;
+        public InputActionMap Get() { return m_Wrapper.m_Battle; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BattleActions set) { return set.Get(); }
+        public void SetCallbacks(IBattleActions instance)
+        {
+            if (m_Wrapper.m_BattleActionsCallbackInterface != null)
+            {
+                @Attack.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttack;
+            }
+            m_Wrapper.m_BattleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
+            }
+        }
+    }
+    public BattleActions @Battle => new BattleActions(this);
     public interface IGamePlayActions
     {
         void OnGrow(InputAction.CallbackContext context);
@@ -290,5 +409,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnRotateY(InputAction.CallbackContext context);
+    }
+    public interface IBattleActions
+    {
+        void OnAttack(InputAction.CallbackContext context);
     }
 }
