@@ -5,6 +5,8 @@ using UnityEngine;
 public class Boss : MonoBehaviour {
     enum State { WAIT, TELEPORT, ROCKFALL, FIRE, }
 
+    public int life = 10;
+
     [SerializeField]
     GameObject missile;
     [SerializeField]
@@ -67,5 +69,16 @@ public class Boss : MonoBehaviour {
 
     void Teleport(Vector3 position) {
         transform.position = position;
+    }
+
+    public void LoseLife(int life) {
+        this.life -= life;
+        if (life <= 0) {
+            Die();
+        }
+    }
+
+    public void Die() {
+        Destroy(gameObject);
     }
 }
