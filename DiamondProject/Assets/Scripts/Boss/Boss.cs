@@ -43,6 +43,9 @@ public class Boss : MonoBehaviour {
 
     [Header("Shield")]
     [SerializeField] bool isShield = false;
+    [SerializeField] float damage = 0.3f;
+    [SerializeField] bool damaged = false;
+
 
     private void Start() {
         sr = GetComponent<SpriteRenderer>();
@@ -60,6 +63,7 @@ public class Boss : MonoBehaviour {
     void UpdateShield() {
         if (rocks.Count == 0 && state != State.ROCKFALL) {
             isShield = false;
+            if(!damaged)
             sr.color = Color.green;
         }
     }
@@ -101,7 +105,7 @@ public class Boss : MonoBehaviour {
     }
     void NewState(State newState) {
         state = newState;
-        if(state == State.WAIT)
+        if (state == State.WAIT)
             stateTimer = stateTime;
     }
 
@@ -111,8 +115,6 @@ public class Boss : MonoBehaviour {
             float randomDist = Random.Range(radiusBounds.x, radiusBounds.y);
             Vector3 destination = new Vector3(Mathf.Cos(randomDegree * Mathf.Deg2Rad), Mathf.Sin(randomDegree * Mathf.Deg2Rad), 0);
             destination = destination.normalized * randomDist;
-            Debug.Log(destination);
-            Debug.Log(randomDist);
             destination.z = position.z;
 
             FallingObject newFallingObject = Instantiate(fallingObject.gameObject, position + destination + new Vector3(0, apparitionHigh, 0), fallingObject.transform.rotation).GetComponent<FallingObject>();
@@ -173,7 +175,12 @@ public class Boss : MonoBehaviour {
             if (fireRateTimer <= 0) {
                 numberMissilesFired++;
                 fireRateTimer = missileRate;
-                FireMissile(missileSpeed, transform.position + (player.transform.position - transform.position).normalized * missileDistSpawn);
+                float randomDegree = Random.Range(0, 360);
+                float randomDist = Random.Range(radiusBounds.x, radiusBounds.y);
+                Vector3 destination = new Vector3(Mathf.Cos(randomDegree * Mathf.Deg2Rad), Mathf.Sin(randomDegree * Mathf.Deg2Rad), 0);
+                destination = destination.normalized * randomDist;
+                destination.z = transform.position.z;
+                FireMissile(missileSpeed, transform.position + destination.normalized * missileDistSpawn);
             }
             yield return null;
         }
@@ -198,9 +205,20 @@ public class Boss : MonoBehaviour {
         transform.position = new Vector3(position.x, position.y, transform.position.z);
     }
 
+    IEnumerator Ouch() {
+        damaged = true;
+        sr.color = Color.red;
+        Debug.Log("red");
+        yield return new WaitForSeconds(damage);
+        sr.color = isShield ? Color.blue : Color.green;
+        damaged = false;
+    }
+
+
     public void LoseLife(int life) {
         if (isShield) { return; }
         this.life -= life;
+        StartCoroutine(Ouch());
         if (this.life <= 0) {
             Die();
         }

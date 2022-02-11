@@ -74,7 +74,6 @@ public class TempPlayerController : MonoBehaviour {
     }
 
     public void RangedAttack(Vector2 direction) {
-        Debug.Log("poiuomhn");
         if (!canRangeAttack) { return; }
 
         GameObject bull = Instantiate(bullet, transform.position, Quaternion.identity);

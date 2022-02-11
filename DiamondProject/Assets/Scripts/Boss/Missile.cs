@@ -34,8 +34,8 @@ public class Missile : MonoBehaviour
         lifetimeTimer = lifetime;
     }
 
-    private void Update() {
-        lifetimeTimer -= Time.deltaTime;
+    private void FixedUpdate() {
+        lifetimeTimer -= Time.fixedDeltaTime;
         if (lifetimeTimer <= 0) {
             Die();
         }
