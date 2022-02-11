@@ -9,7 +9,7 @@ public class Missile : MonoBehaviour
     float lifetime = 1f;
     float lifetimeTimer = 1f;
     Rigidbody2D rb = null;
-    PlayerController player = null;
+    TempPlayerController player = null;
 
     public Missile SetSpeed(float speed) {
         this.speed = speed;
@@ -21,17 +21,16 @@ public class Missile : MonoBehaviour
         return this;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            PlayerController touchais = collision.gameObject.GetComponent<PlayerController>();
-            touchais.TakeDamage(-1);
+            player.TakeDamage();
             Die();
         }
     }
 
     private void Start() {
-        rb = GetComponent<Rigidbody2D>(); 
-        player = Gino.instance.player.GetComponent<PlayerController>();
+        rb = GetComponent<Rigidbody2D>();
+        player = Gino.instance.player;
         lifetimeTimer = lifetime;
     }
 
@@ -45,7 +44,7 @@ public class Missile : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(Vector3.forward, direction) * Quaternion.Euler(0,0,90);
     }
 
-    void Die() {
+    public void Die() {
         Destroy(gameObject);
     }
 }

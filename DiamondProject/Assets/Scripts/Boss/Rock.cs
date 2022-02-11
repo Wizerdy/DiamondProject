@@ -13,6 +13,7 @@ public class Rock : MonoBehaviour {
         sprite = GetComponent<SpriteRenderer>().sprite;
         ShowZone(true);
         StartCoroutine(Tools.Delay(ShowZone, false, 0.5f));
+        Gino.instance.boss.rocks.Add(this);
     }
 
     void ShowZone(bool show) {
@@ -21,12 +22,13 @@ public class Rock : MonoBehaviour {
 
     public void LoseLife(int life) {
         this.life -= life;
-        if (life <= 0) {
+        if (this.life <= 0) {
             Die();
         }
     }
 
     public void Die() {
+        Gino.instance.boss.rocks.Remove(this);
         Destroy(gameObject);
     }
 }

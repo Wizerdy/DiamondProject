@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ImpactCollision : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            PlayerController touchais = collision.gameObject.GetComponent<PlayerController>();
-            touchais.TakeDamage(-1);
+            TempPlayerController touchais = collision.gameObject.GetComponent<TempPlayerController>();
+            touchais.TakeDamage();
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using ToolsBoxEngine;
 
 public class TempPlayerController : MonoBehaviour {
@@ -20,6 +21,9 @@ public class TempPlayerController : MonoBehaviour {
 
     public float rangedAttackCooldown = 1f;
     private bool canRangeAttack = true;
+
+    [SerializeField] float red = 0.5f;
+    [SerializeField] Image redScreen = null;
 
     public Vector2 Position {
         get { return rb.position; } set { rb.position = value; }
@@ -82,5 +86,15 @@ public class TempPlayerController : MonoBehaviour {
     public void NotAttacking() {
         isAttacking = false;
         controls.GamePlay.Enable();
+    }
+
+    public void TakeDamage() {
+        StartCoroutine(RedScreen());
+    }
+
+    IEnumerator RedScreen() {
+        redScreen.gameObject.SetActive(true);
+        yield return new WaitForSeconds(red);
+        redScreen.gameObject.SetActive(false);
     }
 }

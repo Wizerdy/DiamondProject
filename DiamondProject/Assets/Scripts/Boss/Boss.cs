@@ -6,14 +6,17 @@ public class Boss : MonoBehaviour {
     public int life = 10;
 
     private GameObject player;
-    enum State { WAIT, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL}
+    SpriteRenderer sr = null;
+    enum State { WAIT, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL }
     private State state = State.WAIT;
+    [SerializeField] float stateTime = 1f;
+    float stateTimer = 1f;
 
     [Header("RockFall")]
     [SerializeField] FallingObject fallingObject = null;
     [SerializeField] public Rock rock;
     [SerializeField] public float fallingTime = 3f;
-    [SerializeField] List<FallingObject> fallingRocks = new List<FallingObject>();
+    [SerializeField] public List<Rock> rocks = new List<Rock>();
     [SerializeField] Vector2 radiusBounds;
     [SerializeField] float apparitionHigh = 10;
     [SerializeField] Vector2Int rocksNumberBounds;
@@ -42,18 +45,22 @@ public class Boss : MonoBehaviour {
     [SerializeField] bool isShield = false;
 
     private void Start() {
+        sr = GetComponent<SpriteRenderer>();
         player = Gino.instance.player.gameObject;
     }
 
     void Update() {
         UpdateFlee();
-        UpdateState();
+        if (stateTimer <= 0)
+            UpdateState();
         UpdateShield();
+        stateTimer -= Time.deltaTime;
     }
 
     void UpdateShield() {
-        if (fallingRocks.Count == 0) {
+        if (rocks.Count == 0 && state != State.ROCKFALL) {
             isShield = false;
+            sr.color = Color.green;
         }
     }
     void UpdateState() {
@@ -61,7 +68,7 @@ public class Boss : MonoBehaviour {
             case State.WAIT:
                 int attack = 0;
                 if (isShield) {
-                    attack =  Random.Range(0, 2);
+                    attack = Random.Range(0, 2);
                 } else {
                     attack = Random.Range(0, 3);
                 }
@@ -94,6 +101,8 @@ public class Boss : MonoBehaviour {
     }
     void NewState(State newState) {
         state = newState;
+        if(state == State.WAIT)
+            stateTimer = stateTime;
     }
 
     IEnumerator WeWillRockYou(int rockNumbers, Vector3 position) {
@@ -109,11 +118,11 @@ public class Boss : MonoBehaviour {
             FallingObject newFallingObject = Instantiate(fallingObject.gameObject, position + destination + new Vector3(0, apparitionHigh, 0), fallingObject.transform.rotation).GetComponent<FallingObject>();
             newFallingObject.SetFallen(rock.gameObject)
                 .SetSprite(rock.sprite)
-                .SetDestination(destination)
+                .SetDestination(position + destination)
                 .SetFallTime(fallingTime);
-            fallingRocks.Add(newFallingObject);
         }
         isShield = true;
+        sr.color = Color.blue;
         yield return new WaitForSeconds(fallingTime);
         NewState(State.WAIT);
 
@@ -164,7 +173,7 @@ public class Boss : MonoBehaviour {
             if (fireRateTimer <= 0) {
                 numberMissilesFired++;
                 fireRateTimer = missileRate;
-                FireMissile(missileSpeed, transform.position + transform.right * missileDistSpawn);
+                FireMissile(missileSpeed, transform.position + (player.transform.position - transform.position).normalized * missileDistSpawn);
             }
             yield return null;
         }
@@ -186,17 +195,25 @@ public class Boss : MonoBehaviour {
     }
 
     void Teleport(Vector3 position) {
-        transform.position = new Vector3(position.x,position.y, transform.position.z);
+        transform.position = new Vector3(position.x, position.y, transform.position.z);
     }
 
     public void LoseLife(int life) {
+        if (isShield) { return; }
         this.life -= life;
-        if (life <= 0) {
+        if (this.life <= 0) {
             Die();
         }
     }
 
     public void Die() {
         Destroy(gameObject);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "Bullet") {
+            LoseLife(1);
+            Destroy(collision.gameObject);
+        }
     }
 }

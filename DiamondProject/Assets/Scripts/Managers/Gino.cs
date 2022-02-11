@@ -5,7 +5,8 @@ using UnityEngine;
 public class Gino : MonoBehaviour {
     public static Gino instance = null;
 
-    public PlayerController player;
+    public TempPlayerController player;
+    public Boss boss;
     void Start() {
         instance = this; 
     }
