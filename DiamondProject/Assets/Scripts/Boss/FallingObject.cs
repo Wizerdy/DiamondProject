@@ -9,12 +9,6 @@ public class FallingObject : MonoBehaviour {
     public float fallTime = 2f;
     float fallTimer = 0f;
     Vector3 initialPosition = Vector3.zero;
-    public FallingObject(GameObject theFallen, Sprite sprite, Vector3 destination, float fallTime) {
-        this.theFallen = theFallen;
-        this.sprite = sprite;
-        this.destination = destination;
-        this.fallTime = fallTime;
-    }
 
     #region Builder
 
