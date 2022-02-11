@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour //: Entity
+public class PlayerController : Entity
 {
     PlayerControls controls;
 
@@ -69,9 +69,9 @@ public class PlayerController : MonoBehaviour //: Entity
         }
     }
 
-    public void OnDrawGizmos()
+    public void OnDrawGizmosSelected()
     {
-        Gizmos.DrawSphere(transform.position, npcInteractRadius);
+        Gizmos.DrawWireSphere(transform.position, npcInteractRadius);
     }
 
     public void Interact()

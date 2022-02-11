@@ -2876,10 +2876,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5444e1a1493abd74f9a66c572f032d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 10
   speed: 0
   speedMultiplier: 0
   index: 0
-  flowchart: {fileID: 2053441906}
+  flowchart: {fileID: 0}
 --- !u!4 &684658294
 Transform:
   m_ObjectHideFlags: 0
@@ -3396,6 +3397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5444e1a1493abd74f9a66c572f032d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 10
   speed: 0
   speedMultiplier: 0
   index: 0
@@ -3436,7 +3438,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &1057704473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6274,6 +6276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0091fa55ffb43f447b079a914b1b07fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 10
   speed: 10
   speedMultiplier: 1
   interactingValue: 0
@@ -6301,7 +6304,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2059797879
 BoxCollider2D:
   m_ObjectHideFlags: 0

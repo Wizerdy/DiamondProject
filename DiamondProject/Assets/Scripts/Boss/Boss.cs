@@ -124,7 +124,7 @@ public class Boss : MonoBehaviour {
                 .SetFallTime(fallingTime);
         }
         isShield = true;
-        sr.color = Color.blue;
+        sr.color = new Color(0, 0, 180);
         yield return new WaitForSeconds(fallingTime);
         NewState(State.WAIT);
 
