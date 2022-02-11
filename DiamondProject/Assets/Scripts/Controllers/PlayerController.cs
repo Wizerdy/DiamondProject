@@ -14,11 +14,16 @@ public class PlayerController : Entity
     public bool isInteracting2;
     public List<NPC> npcList;
 
+    private bool canMove = true;
+
     void Update()
     {
-        Move();
+        if (canMove)
+            Move();
+
         NpcInRange(npcInteractRadius);
         GetNearestNpc();
+        Interact();
         if (interactingValue != 0 && isInteracting2 == true)
         {
             isInteracting = !isInteracting;
@@ -74,9 +79,10 @@ public class PlayerController : Entity
         {
             if (isInteracting)
             {
-                //TODO
+                GetNearestNpc().StartTalking(transform.gameObject);
             }
         }
+        isInteracting = false;
     }
 
     public NPC GetNearestNpc()
@@ -103,6 +109,14 @@ public class PlayerController : Entity
             }
         }
         return tempEntity;
+    }
+    
+    public void disableMovement() {
+        canMove = false;
+    }
+
+    public void enableMovement() {
+        canMove = true;
     }
 
     private void OnEnable()
