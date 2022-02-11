@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Gino : MonoBehaviour {
-    // Start is called before the first frame update
+    public static Gino instance = null;
+
+    public TempPlayerController player;
+    public Boss boss;
     void Start() {
-
+        instance = this; 
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
 }
