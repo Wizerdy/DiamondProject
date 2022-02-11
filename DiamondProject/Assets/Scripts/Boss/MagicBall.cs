@@ -53,6 +53,7 @@ public class MagicBall : MonoBehaviour {
                     touchais.TakeDamage(-1);
                 }
             }
+            Die();
         }
         if (collision.gameObject.tag == "Wall") {
             Die();

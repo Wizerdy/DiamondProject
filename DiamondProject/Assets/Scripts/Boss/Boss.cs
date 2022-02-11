@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour {
     private GameObject player;
-    enum State { WAIT, TELEPORT, ROCKFALL, FIRE, }
-    private State state;
+    enum State { WAIT, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL}
+    private State state = State.WAIT;
 
     [Header("RockFall")]
     [SerializeField] FallingObject fallingObject = null;
@@ -33,18 +33,67 @@ public class Boss : MonoBehaviour {
     [SerializeField] Vector2 missileBounds = Vector2.zero;
 
     [Header("Teleport")]
-    [SerializeField] private float fleeRadius = 2f;
-    [SerializeField] private float fleeDistance = 4f;
+    [SerializeField] float fleeRadius = 2f;
+    [SerializeField] float fleeDistance = 4f;
 
+    [Header("Shield")]
+    [SerializeField] bool isShield = false;
 
     private void Start() {
-        StartCoroutine(MortalMissile());
+        player = Gino.instance.player.gameObject;
     }
     void Update() {
         UpdateFlee();
+        UpdateState();
+        UpdateShield();
     }
 
-    void WeWillRockYou(int rockNumbers, Vector3 position) {
+    void UpdateShield() {
+        if (fallingRocks.Count == 0) {
+            isShield = false;
+        }
+    }
+    void UpdateState() {
+        switch (state) {
+            case State.WAIT:
+                int attack = 0;
+                if (isShield) {
+                    attack =  Random.Range(0, 2);
+                } else {
+                    attack = Random.Range(0, 3);
+                }
+                switch (attack) {
+                    case 0:
+                        NewState(State.FIREBALL);
+                        StartCoroutine(DeathSpin(spinDuration));
+                        break;
+                    case 1:
+                        NewState(State.FIREMISSILE);
+                        StartCoroutine(MortalMissile());
+                        break;
+                    case 2:
+                        NewState(State.ROCKFALL);
+                        StartCoroutine(WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y), transform.position));
+                        break;
+                }
+                break;
+            case State.TELEPORT:
+                NewState(State.WAIT);
+                break;
+            case State.FIREBALL:
+                break;
+            case State.FIREMISSILE:
+                break;
+            case State.ROCKFALL:
+                break;
+
+        }
+    }
+    void NewState(State newState) {
+        state = newState;
+    }
+
+    IEnumerator WeWillRockYou(int rockNumbers, Vector3 position) {
         for (int i = 0; i < rockNumbers; i++) {
             float randomDegree = Random.Range(0, 360);
             float randomDist = Random.Range(radiusBounds.x, radiusBounds.y);
@@ -61,12 +110,19 @@ public class Boss : MonoBehaviour {
                 .SetFallTime(fallingTime);
             fallingRocks.Add(newFallingObject);
         }
+        isShield = true;
+        yield return new WaitForSeconds(fallingTime);
+        NewState(State.WAIT);
+
     }
     
     IEnumerator DeathSpin(float duration) {
         float fireRateTimer = magicBallRate;
         float durationTimer = duration;
         while (durationTimer > 0) {
+            if (state == State.WAIT) {
+                yield break;
+            }
             durationTimer -= Time.deltaTime;
             transform.Rotate(new Vector3(0, 0, 360 * rotationSpeed * Time.deltaTime));
             fireRateTimer -= Time.deltaTime;
@@ -77,6 +133,7 @@ public class Boss : MonoBehaviour {
             }
             yield return null;
         }
+        NewState(State.WAIT);
     }
 
     void FireMagicBall(Vector3 direction, float speed, Vector3 position, MagicBall.State state) { 
@@ -97,6 +154,9 @@ public class Boss : MonoBehaviour {
         float randomMissiles = Random.Range(missileBounds.x, missileBounds.y);
         float numberMissilesFired = 0;
         while (randomMissiles > numberMissilesFired) {
+            if (state == State.WAIT) {
+                yield break;
+            }
             fireRateTimer -= Time.deltaTime;
             if (fireRateTimer <= 0) {
                 numberMissilesFired++;
@@ -105,10 +165,13 @@ public class Boss : MonoBehaviour {
             }
             yield return null;
         }
+        NewState(State.WAIT);
+    }
     void UpdateFlee() {
         Vector3 playerPosition = player.transform.position;
-        if ((playerPosition - transform.position).sqrMagnitude < fleeRadius) {
+        if ((playerPosition - transform.position).sqrMagnitude < fleeRadius && !isShield) {
             FleeFrom(player);
+            NewState(State.TELEPORT);
         }
     }
 
@@ -120,6 +183,6 @@ public class Boss : MonoBehaviour {
     }
 
     void Teleport(Vector3 position) {
-        transform.position = position;
+        transform.position = new Vector3(position.x,position.y, transform.position.z);
     }
 }
