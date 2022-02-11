@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour {
+    public int life = 10;
+
     private GameObject player;
     enum State { WAIT, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL}
     private State state = State.WAIT;
@@ -42,6 +44,7 @@ public class Boss : MonoBehaviour {
     private void Start() {
         player = Gino.instance.player.gameObject;
     }
+
     void Update() {
         UpdateFlee();
         UpdateState();
@@ -103,7 +106,7 @@ public class Boss : MonoBehaviour {
             Debug.Log(randomDist);
             destination.z = position.z;
 
-            FallingObject newFallingObject = Instantiate(fallingObject.gameObject, position + destination + new Vector3(0,apparitionHigh,0), fallingObject.transform.rotation).GetComponent<FallingObject>();
+            FallingObject newFallingObject = Instantiate(fallingObject.gameObject, position + destination + new Vector3(0, apparitionHigh, 0), fallingObject.transform.rotation).GetComponent<FallingObject>();
             newFallingObject.SetFallen(rock.gameObject)
                 .SetSprite(rock.sprite)
                 .SetDestination(destination)
@@ -115,7 +118,7 @@ public class Boss : MonoBehaviour {
         NewState(State.WAIT);
 
     }
-    
+
     IEnumerator DeathSpin(float duration) {
         float fireRateTimer = magicBallRate;
         float durationTimer = duration;
@@ -136,7 +139,7 @@ public class Boss : MonoBehaviour {
         NewState(State.WAIT);
     }
 
-    void FireMagicBall(Vector3 direction, float speed, Vector3 position, MagicBall.State state) { 
+    void FireMagicBall(Vector3 direction, float speed, Vector3 position, MagicBall.State state) {
         MagicBall newMagicBall = Instantiate(magicBall.gameObject, position, Quaternion.identity).GetComponent<MagicBall>();
         newMagicBall.SetDirection(direction)
             .SetSpeed(speed)
@@ -184,5 +187,16 @@ public class Boss : MonoBehaviour {
 
     void Teleport(Vector3 position) {
         transform.position = new Vector3(position.x,position.y, transform.position.z);
+    }
+
+    public void LoseLife(int life) {
+        this.life -= life;
+        if (life <= 0) {
+            Die();
+        }
+    }
+
+    public void Die() {
+        Destroy(gameObject);
     }
 }
