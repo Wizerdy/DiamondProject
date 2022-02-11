@@ -220,6 +220,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RangedAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e5f9525-fbcc-497b-b839-d118e8acb4fa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -231,6 +240,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5586af30-49c3-49ee-bf79-8b91df3b2726"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RangedAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -249,6 +269,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // Battle
         m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
         m_Battle_Attack = m_Battle.FindAction("Attack", throwIfNotFound: true);
+        m_Battle_RangedAttack = m_Battle.FindAction("RangedAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -374,11 +395,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Battle;
     private IBattleActions m_BattleActionsCallbackInterface;
     private readonly InputAction m_Battle_Attack;
+    private readonly InputAction m_Battle_RangedAttack;
     public struct BattleActions
     {
         private @PlayerControls m_Wrapper;
         public BattleActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Attack => m_Wrapper.m_Battle_Attack;
+        public InputAction @RangedAttack => m_Wrapper.m_Battle_RangedAttack;
         public InputActionMap Get() { return m_Wrapper.m_Battle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -391,6 +414,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Attack.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttack;
+                @RangedAttack.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnRangedAttack;
+                @RangedAttack.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnRangedAttack;
+                @RangedAttack.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnRangedAttack;
             }
             m_Wrapper.m_BattleActionsCallbackInterface = instance;
             if (instance != null)
@@ -398,6 +424,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @RangedAttack.started += instance.OnRangedAttack;
+                @RangedAttack.performed += instance.OnRangedAttack;
+                @RangedAttack.canceled += instance.OnRangedAttack;
             }
         }
     }
@@ -413,5 +442,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IBattleActions
     {
         void OnAttack(InputAction.CallbackContext context);
+        void OnRangedAttack(InputAction.CallbackContext context);
     }
 }
