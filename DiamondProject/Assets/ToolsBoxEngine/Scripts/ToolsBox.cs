@@ -407,14 +407,18 @@ namespace ToolsBoxEngine {
             return new Vector3(AcuteAngle(angle.x), AcuteAngle(angle.y), AcuteAngle(angle.z));
         }
 
-        public static int Ponder(params int[] weight) {
-            int totWeight = 0;
+        public static int Ponder(params float[] weight) {
+            float totWeight = 0;
 
             for (int i = 0; i < weight.Length; i++) {
                 totWeight += weight[i];
             }
 
-            int random = UnityEngine.Random.Range(0, totWeight);
+            if (totWeight < 1f) {
+                totWeight = 1f;
+            }
+
+            float random = UnityEngine.Random.Range(0, totWeight);
 
             for (int i = 0; i < weight.Length; i++) {
                 if (random < weight[i]) {
@@ -423,7 +427,7 @@ namespace ToolsBoxEngine {
                 random -= weight[i];
             }
 
-            return weight.Length - 1;
+            return -1;
         }
 
         /// <summary>
