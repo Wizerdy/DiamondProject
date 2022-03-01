@@ -7,6 +7,10 @@ public class NPC : Entity {
     public int index = 0;
     [SerializeField] private GameObject flowchart;
     private GameObject player;
+
+    public bool inDiscussion;
+    public GameObject interactPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,16 @@ public class NPC : Entity {
     void Update()
     {
         
+    }
+
+    public void SetActiveGameObject(GameObject obj, bool isActive)
+    {
+        obj.SetActive(isActive);
+    }
+
+    public void SetActiveInteractPanel(bool isActive)
+    {
+        SetActiveGameObject(interactPanel, isActive);
     }
 
     public void StartTalking(GameObject playerRef) {
