@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3867988783618890588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5837281410485709126}
+  - component: {fileID: 2797063147087811553}
+  m_Layer: 0
+  m_Name: RockFall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5837281410485709126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867988783618890588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2797063147087811553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867988783618890588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab3354d30f2ec549801eeca3f52ba08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
+  _duration: 5
+  _durationTimer: 4.4298873
+  transitionTime: 1
+  HealthRef: {fileID: 0}
+  fallingObject: {fileID: 2616920750109860588, guid: 4265421f2df4efe43acb31973280211c, type: 3}
+  rock: {fileID: 2237366760853028271, guid: adaa11c57b8ac5f48a8e94d9b73ea010, type: 3}
+  rockShield: {fileID: 8956266947741721987, guid: 85629fa09634dfb4cb76d13e73cd07cb, type: 3}
+  rocks: []
+  body: {fileID: 11400000, guid: 16d5954afc9222743877fdd43e2c69bb, type: 2}
+  radiusBounds: {x: 2, y: 4}
+  rocksNumberBounds: {x: 5, y: 8}
+  fallingTime: 3
+  apparitionHigh: 10

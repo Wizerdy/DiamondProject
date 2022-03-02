@@ -14,9 +14,9 @@ public class AttackHitbox : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        Boss boss = collision.gameObject.GetComponent<Boss>();
-        if (boss != null) {
-            boss.LoseLife(1);
+        BossBody bossBody = collision.gameObject.GetComponent<BossBody>();
+        if (bossBody != null) {
+            bossBody.Health.TakeDamage(1);
             return;
         }
 

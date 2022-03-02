@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7804290976651631242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7804290976651631241}
+  - component: {fileID: 7804290976651629941}
+  - component: {fileID: 7804290976651629942}
+  - component: {fileID: 7804290976651629943}
+  - component: {fileID: 7804290976651631240}
+  m_Layer: 0
+  m_Name: Actions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7804290976651631241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804290976651631242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7804290976651629941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804290976651631242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3a3085fa274a64f949f74b422ba800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss: {fileID: 0}
+  _duration: 1
+  _durationTimer: 1
+  transitionTime: 10
+--- !u!114 &7804290976651629942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804290976651631242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75fd1d69212c294d982fec6dc1681fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss: {fileID: 0}
+  _duration: 1
+  _durationTimer: 1
+  transitionTime: 10
+  magicBall: {fileID: 0}
+  _magicBallSpeed: 1
+  _rotationSpeed: 1
+  _magicBallRate: 1
+  _spinDuration: 1
+  _magicBallDistSpawn: 1
+--- !u!114 &7804290976651629943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804290976651631242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a69b24c9ee169b47bdba7736a73ae34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss: {fileID: 0}
+  _duration: 1
+  _durationTimer: 1
+  transitionTime: 10
+  missile: {fileID: 0}
+  missileSpeed: 1
+  missileLifetime: 1
+  missileDistSpawn: 1
+  missileRate: 1
+  missileBounds: {x: 0, y: 0}
+  radiusBounds: {x: 0, y: 0}
+--- !u!114 &7804290976651631240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804290976651631242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab3354d30f2ec549801eeca3f52ba08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss: {fileID: 0}
+  _duration: 1
+  _durationTimer: 1
+  transitionTime: 10
+  HealthRef: {fileID: 0}
+  fallingObject: {fileID: 0}
+  rock: {fileID: 0}
+  rockShield: {fileID: 0}
+  rocks: []
+  body: {fileID: 0}
+  radiusBounds: {x: 0, y: 0}
+  rocksNumberBounds: {x: 0, y: 0}
+  fallingTime: 3
+  apparitionHigh: 10
