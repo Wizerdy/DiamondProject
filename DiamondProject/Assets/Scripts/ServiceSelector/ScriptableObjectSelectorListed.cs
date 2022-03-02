@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ObjectSelectorListed<T> : ObjectSelector<T> {
+public abstract class ScriptableObjectSelectorListed<T> : ScriptableObjectSelector<T> {
     [SerializeField] List<T> _objects;
     int _index = 0;
 

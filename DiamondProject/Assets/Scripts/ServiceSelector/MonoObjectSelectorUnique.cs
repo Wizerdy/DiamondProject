@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ObjectSelectorUnique<T> : ObjectSelector<T> {
+public abstract class MonoObjectSelectorUnique<T> : MonoObjectSelector<T> {
     [SerializeField] T obj;
 
     public override T Get() {
