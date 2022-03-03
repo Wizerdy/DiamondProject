@@ -482,11 +482,11 @@ namespace ToolsBoxEngine {
         }
 
         public static void Print(DebugType type = DebugType.NORMAL, params object[] strings) {
-            Print(type, " . ", strings);
+            Print(type, '.', strings);
         }
 
         public static void Print(params object[] strings) {
-            Print(DebugType.NORMAL, " . ", strings);
+            Print(DebugType.NORMAL, '.', strings);
         }
 
         public static void Print(char separator, params object[] strings) {
