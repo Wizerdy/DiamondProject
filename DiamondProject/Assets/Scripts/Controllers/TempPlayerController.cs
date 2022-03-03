@@ -87,7 +87,7 @@ public class TempPlayerController : MonoBehaviour {
         controls.GamePlay.Enable();
     }
 
-    public void TakeDamage() {
+    public void TakeDamage(float damage = 0) {
         StartCoroutine(RedScreen());
     }
 

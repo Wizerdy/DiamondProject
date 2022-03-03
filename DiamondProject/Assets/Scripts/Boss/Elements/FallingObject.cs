@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FallingObject : MonoBehaviour {
     public GameObject theFallen = null;
+    public GameObject _shadow = null;
     public Sprite sprite = null;
     public Vector3 destination = Vector3.zero;
     public float fallTime = 2f;
@@ -37,6 +38,8 @@ public class FallingObject : MonoBehaviour {
     void Start() {
         fallTimer = fallTime;
         initialPosition = transform.position;
+        _shadow.transform.position = destination;
+        _shadow.transform.parent = null;
     }
 
     void Update() {
@@ -46,6 +49,9 @@ public class FallingObject : MonoBehaviour {
     void Falling() {
         fallTimer -= Time.deltaTime;
         transform.position = Vector3.Lerp(destination, initialPosition, fallTimer/ fallTime);
+        if (fallTimer/ fallTime <= 0.33f) {
+            _shadow.transform.localScale = Vector3.one * Mathf.Lerp(0,1,Mathf.InverseLerp(0.33f, 0, fallTimer / fallTime));
+        }
         if (fallTimer < 0f) {
             SpawnFallen(destination);
             Die();

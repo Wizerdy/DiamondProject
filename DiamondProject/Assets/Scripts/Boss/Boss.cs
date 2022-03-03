@@ -6,7 +6,7 @@ public class Boss : MonoBehaviour {
     public enum State { TRANSITION, FORMSWITCH, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL, FIREBOTH, EXPLOSIVROCKFALL, DISMANTLE, FISSURE }
     public enum Form { PASSIVE = 0, FIRST = 1, SECOND = 2, DEAD = 3 }
 
-    private State currentState = State.TRANSITION;
+    [SerializeField] private State currentState = State.TRANSITION;
     public Form form = Form.FIRST;
 
    // [SerializeField] MonoObjectSelectorRandom<BossAction> _attackSelectorFirstFormDummy;
@@ -15,6 +15,7 @@ public class Boss : MonoBehaviour {
     [SerializeField] BossAction _transition;
     [SerializeField] BossAction _formSwitch;
     [SerializeField] BossAction _teleport;
+    [SerializeField] string nextState;
     [SerializeField] List<BossAction> bossActionsCoroutines = new List<BossAction>();
     public State CurrentState { get { return currentState; } }
     //private void OnValidate() {
@@ -46,6 +47,27 @@ public class Boss : MonoBehaviour {
     }
 
     #region State
+    public void NewState() {
+        if(nextState == "Teleport") {
+            Teleport();
+        } else {
+            switch (form) {
+                case Form.FIRST:
+                    BossAction action = _attackSelectorFirstForm.Get();
+                    if (action != null) {
+                        action.StartAction();
+                            bossActionsCoroutines.Add(action);
+                    } else {
+                        _transition.StartAction();
+                    }
+                    break;
+                case Form.SECOND:
+                    //StartCoroutine(_attackSelectorSecondForm.StartAction());
+                    break;
+            }
+        }
+        nextState = "";
+    }
     public void Teleport() {
         if (currentState == State.TELEPORT || currentState == State.FORMSWITCH) { return; }
         for (int i = 0; i < bossActionsCoroutines.Count; i++) {
@@ -56,21 +78,8 @@ public class Boss : MonoBehaviour {
         _teleport.StartAction();
 
     }
-    public void NewState() {
-        switch (form) {
-            case Form.FIRST:
-                BossAction action = _attackSelectorFirstForm.Get();
-                if (action != null) {
-                    action.StartAction();
-                        bossActionsCoroutines.Add(action);
-                } else {
-                    _transition.StartAction();
-                }
-                break;
-            case Form.SECOND:
-                //StartCoroutine(_attackSelectorSecondForm.StartAction());
-                break;
-        }
+    public void NewNextState(string nextState) {
+        this.nextState = nextState;
     }
 
     public void ChangeState(State state) {

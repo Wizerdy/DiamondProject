@@ -24,8 +24,6 @@ public abstract class BossAction : MonoBehaviour, IAction {
             yield return null;
             _durationTimer -= Time.deltaTime;
         }
-        Debug.Log("next");
-        Debug.Log(_duration);
         _boss.Instance.RemoveCoroutines(this);
         _boss.Instance.EndState(_transition);
     }

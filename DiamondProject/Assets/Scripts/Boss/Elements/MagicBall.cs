@@ -10,7 +10,8 @@ public class MagicBall : MonoBehaviour {
     Rigidbody2D rb = null;
     public enum State {
         RED,
-        YELLOW
+        YELLOW,
+        WHITE
     }
     State state;
 
@@ -40,6 +41,8 @@ public class MagicBall : MonoBehaviour {
             sr.color = Color.red;
         } else if (state == State.YELLOW) {
             sr.color = Color.yellow;
+        } else if (state == State.WHITE) {
+            sr.color = Color.white;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -47,16 +50,19 @@ public class MagicBall : MonoBehaviour {
             TempPlayerController touchais = collision.gameObject.GetComponent<TempPlayerController>();
             if (state == State.RED) {
                 if (touchais.IsMoving) {
-                    touchais.TakeDamage();
+                    touchais.TakeDamage(2);
                     Die();
                 }
             } else if (state == State.YELLOW) {
                 if (!touchais.IsMoving) {
-                    touchais.TakeDamage();
+                    touchais.TakeDamage(2);
                     Die();
                 }
+            } else {
+                touchais.TakeDamage(5);
+                Die();
             }
-            
+
         }
         if (collision.gameObject.tag == "Wall") {
             Die();

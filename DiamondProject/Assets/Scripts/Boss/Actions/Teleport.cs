@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class Teleport : BossAction {
     [SerializeField] Reference<TempPlayerController> _player;
-    [SerializeField] float fleeDistance = 4f;
+    [SerializeField] float radiusSpawnPoint = 10f;
+    [SerializeField] List<Transform > _transformList = new List<Transform>();
+    [SerializeField] Transform centralTransform;
 
     private void Start() {
+        for (int i = 0; i < _transformList.Count; i++) {
+            if (i ==0 ) {
+                _transformList[i].position = centralTransform.position;
+            } else {
+                _transformList[i].position = centralTransform.position + (Quaternion.Euler(0,0,360 / (_transformList.Count - 1) * (i - 1)) * new Vector3(Mathf.Cos(360/_transformList.Count - 1) * Mathf.Deg2Rad, Mathf.Sin(360 / _transformList.Count - 1) * Mathf.Deg2Rad , 0)).normalized * radiusSpawnPoint;
+            }
+            _transformList[i].parent = null;
+        }
     }
     public override void StartAction() {
        // Debug.Log("Tp");
         _boss.Instance.ChangeState(GetState());
-        Vector3 playerPosition = _player.Instance.transform.position;
-        Vector3 direction = (playerPosition - _boss.Instance.transform.position).normalized;
-        Vector3 destination = direction * fleeDistance;
-        _boss.Instance.transform.position = new Vector3(destination.x, destination.y, transform.position.z);
+        int index = 0;
+        float maxDistance = 0;
+        for (int i = 0; i < _transformList.Count; i++) {
+            if(Vector3.Distance(_transformList[i].position, _player.Instance.transform.position) > maxDistance) {
+                maxDistance = Vector3.Distance(_transformList[i].position, _player.Instance.transform.position);
+                index = i;
+            }
+        }
+        _boss.Instance.transform.position = _transformList[index].transform.position;
         Wait();
     }
 

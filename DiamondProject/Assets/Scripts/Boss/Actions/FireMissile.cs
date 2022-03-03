@@ -10,7 +10,6 @@ public class FireMissile : BossAction {
     [SerializeField] float missileDistSpawn = 1f;
     [SerializeField] float missileRate = 1f;
     [SerializeField] Vector2 missileBounds = Vector2.zero;
-    [SerializeField] Vector2 radiusBounds = Vector2.zero;
     public override void StartAction() {
         _boss.Instance.ChangeState(GetState());
         //Debug.Log("Missile");
@@ -34,14 +33,14 @@ public class FireMissile : BossAction {
                 numberMissilesFired++;
                 fireRateTimer = missileRate;
                 float randomDegree = Random.Range(0, 360);
-                float randomDist = Random.Range(radiusBounds.x, radiusBounds.y);
                 Vector3 destination = new Vector3(Mathf.Cos(randomDegree * Mathf.Deg2Rad), Mathf.Sin(randomDegree * Mathf.Deg2Rad), 0);
-                destination = destination.normalized * randomDist;
+                destination = destination.normalized * missileDistSpawn;
                 destination.z = transform.position.z;
-                SpawnMissile(missileSpeed, transform.position + destination.normalized * missileDistSpawn);
+                SpawnMissile(missileSpeed, transform.position + destination);
             }
             yield return null;
         }
+        _boss.Instance.NewNextState("Teleport");
         Wait();
     }
 

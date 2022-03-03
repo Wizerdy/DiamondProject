@@ -30,7 +30,7 @@ public class Missile : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            _player.Instance.TakeDamage();
+            _player.Instance.TakeDamage(1);
             Die();
         }
     }
