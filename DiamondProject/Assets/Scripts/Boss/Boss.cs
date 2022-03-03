@@ -127,7 +127,6 @@ public class Boss : MonoBehaviour {
         sr.color = new Color(0, 0, 180);
         yield return new WaitForSeconds(fallingTime);
         NewState(State.WAIT);
-
     }
 
     IEnumerator DeathSpin(float duration) {

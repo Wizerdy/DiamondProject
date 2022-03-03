@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ToolsBoxEngine;
 
-public abstract class ObjectSelectorRandom<T> : ObjectSelector<T> {
+public abstract class ScriptableObjectSelectorRandom<T> : ScriptableObjectSelector<T> {
     [System.Serializable]
     public struct WeightT {
         public T value;

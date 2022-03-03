@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace ToolsBoxEngine {
     public enum Axis { X, Y, Z, W }
+    public enum DebugType { NORMAL, WARNING, ERROR }
 
     #region Nullable vector
     // Nullable Vector
@@ -64,10 +65,14 @@ namespace ToolsBoxEngine {
 
     [Serializable]
     public class AmplitudeCurve {
-        public AnimationCurve curve;
-        public float duration;
-        public float amplitude;
-        [HideInInspector] public float timer;
+        public AnimationCurve curve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+        public float duration = 1f;
+        public float amplitude = 1f;
+
+        float timer;
+
+        public float Timer => timer;
+        public float Percentage => Mathf.Clamp01(timer / duration);
 
         #region Constructeurs
 
@@ -82,16 +87,30 @@ namespace ToolsBoxEngine {
 
         public AmplitudeCurve() : this(AnimationCurve.Linear(0f, 0f, 1f, 1f)) { }
 
+        public AmplitudeCurve Clone() {
+            return new AmplitudeCurve(curve, duration, timer, amplitude);
+        }
+
         #endregion
 
-        public float GetRatio() {
-            float ratio = timer / duration;
+        public float Evaluate() {
+            float ratio = Percentage;
             ratio = curve.Evaluate(ratio);
             return ratio;
         }
 
-        public AmplitudeCurve Clone() {
-            return new AmplitudeCurve(curve, duration, timer, amplitude);
+        public void UpdateTimer(float deltaTime) {
+            timer += deltaTime;
+            timer = Mathf.Clamp(timer, 0f, duration);
+        }
+
+        public void Reset() {
+            timer = 0f;
+        }
+
+        public void SetPercentage(float percentage) {
+            percentage = Mathf.Clamp01(percentage);
+            timer = percentage * duration;
         }
     }
 
@@ -438,6 +457,48 @@ namespace ToolsBoxEngine {
         public static float RandomFloat(params float[] numbers) {
             int rand = UnityEngine.Random.Range(0, numbers.Length);
             return numbers[rand];
+        }
+
+        public static void Print(DebugType type, char separator, params object[] strings) {
+            Action<object> debug;
+            switch (type) {
+                case DebugType.WARNING:
+                    debug = Debug.LogWarning;
+                    break;
+                case DebugType.ERROR:
+                    debug = Debug.LogError;
+                    break;
+                default:
+                    debug = Debug.Log;
+                    break;
+            }
+            string output = "";
+            for (int i = 0; i < strings.Length - 1; i++) {
+                output += strings[i].ToString();
+                output += " " + separator + " ";
+            }
+            output += strings[^1].ToString();
+            debug(output);
+        }
+
+        public static void Print(DebugType type = DebugType.NORMAL, params object[] strings) {
+            Print(type, '.', strings);
+        }
+
+        public static void Print(params object[] strings) {
+            Print(DebugType.NORMAL, '.', strings);
+        }
+
+        public static void Print(char separator, params object[] strings) {
+            Print(DebugType.NORMAL, separator, strings);
+        }
+
+        public static void SerializeInterface<T1, T2>(ref T2 input, ref T1 dummy) where T1 : class where T2 : class {
+            if (dummy is T2) {
+                input = dummy as T2;
+            } else {
+                dummy = null;
+            }
         }
 
         #endregion

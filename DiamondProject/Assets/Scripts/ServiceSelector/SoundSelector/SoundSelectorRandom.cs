@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ServiceSelector/AudioClip/Random")]
-public class SoundSelectorRandom : ObjectSelectorRandom<AudioClip> {
+public class SoundSelectorRandom : ScriptableObjectSelectorRandom<AudioClip> {
     
 }

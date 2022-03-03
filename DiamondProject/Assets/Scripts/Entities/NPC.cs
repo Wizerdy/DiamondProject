@@ -38,13 +38,13 @@ public class NPC : Entity {
 
     public void StartTalking(GameObject playerRef) {
         player = playerRef;
-        player.GetComponent<PlayerController>().disableMovement();
+        player.GetComponent<OldPlayerController>().disableMovement();
         flowchart.SetActive(true);
         //flowchart.enabled = true;
     }
 
     public void StopTalking() {
         flowchart.SetActive(false);
-        player.GetComponent<PlayerController>().enableMovement();
+        player.GetComponent<OldPlayerController>().enableMovement();
     }
 }
