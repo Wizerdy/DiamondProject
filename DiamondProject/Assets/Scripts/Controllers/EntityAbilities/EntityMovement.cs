@@ -13,6 +13,7 @@ public class EntityMovement : MonoBehaviour {
     [SerializeField] float _turnFactor;
     [SerializeField, Range(0, 360f)] float _turnAroundAngle = 181f;
 
+    public Tools.BasicDelegate OnRun;
     public Tools.BasicDelegate<Vector2> OnAcceleration;
     public Tools.BasicDelegate<Vector2> OnDeceleration;
     public Tools.BasicDelegate<Vector2> OnTurnAround;
@@ -21,7 +22,7 @@ public class EntityMovement : MonoBehaviour {
     Vector2 _direction = Vector2.zero;
     Vector2 _orientation = Vector2.zero;
     Vector2 _lastDirection = Vector2.zero;
-    State _state = State.NONE;
+    State _state = State.DECELERATING;
 
     float _speed = 0f;
     float _turnAroundRadian = 0f;
@@ -29,6 +30,8 @@ public class EntityMovement : MonoBehaviour {
     float _turnTimer = 0f;
 
     public bool IsMoving => _speed >= 0.01f;
+    public Vector2 Orientation => _orientation;
+    public Vector2 Direction => _direction;
 
     #region UnityCallbacks
 
@@ -108,6 +111,7 @@ public class EntityMovement : MonoBehaviour {
 
     private void SetSpeed(float speed) {
         if (_rb == null) { return; }
+        if (speed >= _maxSpeed) { OnRun?.Invoke(); }
         _speed = speed;
         _rb.velocity = speed * _orientation;
     }

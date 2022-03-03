@@ -42,12 +42,13 @@ public class OldPlayerController : Entity {
         controls.GamePlay.Interact.performed += cc => interactingValue = cc.ReadValue<float>();
         controls.GamePlay.Interact.canceled += cc => interactingValue = 0;
 
-        controls.GamePlay.DialogueInteraction.started += cc => textInteraction.OnClickEvent();
+        //controls.GamePlay.DialogueInteraction.started += cc => textInteraction.OnClickEvent();
     }
 
     private void OnDestroy() {
-        controls.GamePlay.DialogueInteraction.started -= cc => textInteraction.OnClickEvent();
+        //controls.GamePlay.DialogueInteraction.started -= cc => textInteraction.OnClickEvent();
     }
+
     public override void Move() {
         // Direction value updated ?
         //Debug.Log(direction);

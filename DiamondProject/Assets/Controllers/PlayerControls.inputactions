@@ -6,24 +6,6 @@
             "id": "8ad498a7-d0fb-4476-8757-dc6a73670fee",
             "actions": [
                 {
-                    "name": "Grow",
-                    "type": "Button",
-                    "id": "e9a92039-cbd3-4c15-82a1-9fa291a294cb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Reduce",
-                    "type": "Button",
-                    "id": "3ffa4a1a-335b-478d-a8ac-3f6b7048d0af",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "61b6e1cb-427d-4b63-9440-cf5d4ca8fd26",
@@ -33,24 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Rotate",
-                    "type": "Value",
-                    "id": "ad742c08-f5c0-47ff-b5ba-d65692aa9666",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "RotateY",
-                    "type": "Button",
-                    "id": "38a9aa3b-31f0-47a3-9c0b-1f034fcdf386",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "07dd5915-e6c4-40d1-8592-fc99e761fa30",
@@ -58,29 +22,9 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "DialogueInteraction",
-                    "type": "Button",
-                    "id": "e505b2c6-b647-450f-b473-1645a75ef778",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "2fa8b885-1085-4692-a690-441e21e22b90",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grow",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "bbb5713d-c5e2-4416-aa13-4cc137a8f101",
@@ -149,78 +93,12 @@
                 },
                 {
                     "name": "",
-                    "id": "fc053346-5cfe-4689-a072-44d414cede13",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d94d7ed6-0c35-4033-b557-2e04e393b197",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reduce",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "fbba8b86-05af-4a75-88bf-768657a0a289",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateY",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "aaf6f351-8ce4-4315-925d-e0fa5ce78ae6",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateY",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "08d1d659-f8bc-4bf6-9ed9-033a740b194a",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateY",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
                     "id": "9ae17581-f819-45a3-a0f3-98eb4ea9b630",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2801897c-da2c-4241-b5a7-be9c84023869",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DialogueInteraction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -269,6 +147,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "RangedAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Dialogue",
+            "id": "fb50b1aa-595a-4c9a-a9ef-bd91b13f7c0a",
+            "actions": [
+                {
+                    "name": "DialogueInteraction",
+                    "type": "Button",
+                    "id": "142cde3b-c299-4d94-8b12-36dbcb280368",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "de04974b-bc87-4fbf-a63e-51708a9bdb24",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DialogueInteraction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
