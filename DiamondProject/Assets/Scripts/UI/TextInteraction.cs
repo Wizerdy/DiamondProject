@@ -17,16 +17,14 @@ public class TextInteraction : MonoBehaviour {
         RegexOptions.Compiled | RegexOptions.IgnoreCase);
     }
 
-    private void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            var wordIndex = TMP_TextUtilities.FindIntersectingWord(tmpText, Input.mousePosition, null);
+    public void OnClickEvent() {
+        var wordIndex = TMP_TextUtilities.FindIntersectingWord(tmpText, Input.mousePosition, null);
 
-            if (wordIndex != -1) {
-                clickedWord = tmpText.textInfo.wordInfo[wordIndex].GetWord();
+        if (wordIndex != -1) {
+            clickedWord = tmpText.textInfo.wordInfo[wordIndex].GetWord();
 
-                if (Array.Exists(wordsToMatch, element => element == clickedWord))
-                    Fungus.Flowchart.BroadcastFungusMessage("StartTextInteraction");
-            }
+            if (Array.Exists(wordsToMatch, element => element == clickedWord))
+                Fungus.Flowchart.BroadcastFungusMessage("StartTextInteraction");
         }
     }
 
