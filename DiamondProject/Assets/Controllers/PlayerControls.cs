@@ -28,24 +28,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""8ad498a7-d0fb-4476-8757-dc6a73670fee"",
             ""actions"": [
                 {
-                    ""name"": ""Grow"",
-                    ""type"": ""Button"",
-                    ""id"": ""e9a92039-cbd3-4c15-82a1-9fa291a294cb"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Reduce"",
-                    ""type"": ""Button"",
-                    ""id"": ""3ffa4a1a-335b-478d-a8ac-3f6b7048d0af"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""61b6e1cb-427d-4b63-9440-cf5d4ca8fd26"",
@@ -55,24 +37,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Rotate"",
-                    ""type"": ""Value"",
-                    ""id"": ""ad742c08-f5c0-47ff-b5ba-d65692aa9666"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""RotateY"",
-                    ""type"": ""Button"",
-                    ""id"": ""38a9aa3b-31f0-47a3-9c0b-1f034fcdf386"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""07dd5915-e6c4-40d1-8592-fc99e761fa30"",
@@ -80,29 +44,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""DialogueInteraction"",
-                    ""type"": ""Button"",
-                    ""id"": ""e505b2c6-b647-450f-b473-1645a75ef778"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""2fa8b885-1085-4692-a690-441e21e22b90"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Grow"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""bbb5713d-c5e2-4416-aa13-4cc137a8f101"",
@@ -171,78 +115,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fc053346-5cfe-4689-a072-44d414cede13"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d94d7ed6-0c35-4033-b557-2e04e393b197"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reduce"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""fbba8b86-05af-4a75-88bf-768657a0a289"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RotateY"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""aaf6f351-8ce4-4315-925d-e0fa5ce78ae6"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RotateY"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""08d1d659-f8bc-4bf6-9ed9-033a740b194a"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RotateY"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
                     ""id"": ""9ae17581-f819-45a3-a0f3-98eb4ea9b630"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2801897c-da2c-4241-b5a7-be9c84023869"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DialogueInteraction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -295,23 +173,49 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Dialogue"",
+            ""id"": ""fb50b1aa-595a-4c9a-a9ef-bd91b13f7c0a"",
+            ""actions"": [
+                {
+                    ""name"": ""DialogueInteraction"",
+                    ""type"": ""Button"",
+                    ""id"": ""142cde3b-c299-4d94-8b12-36dbcb280368"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""de04974b-bc87-4fbf-a63e-51708a9bdb24"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DialogueInteraction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
         // GamePlay
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
-        m_GamePlay_Grow = m_GamePlay.FindAction("Grow", throwIfNotFound: true);
-        m_GamePlay_Reduce = m_GamePlay.FindAction("Reduce", throwIfNotFound: true);
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
-        m_GamePlay_Rotate = m_GamePlay.FindAction("Rotate", throwIfNotFound: true);
-        m_GamePlay_RotateY = m_GamePlay.FindAction("RotateY", throwIfNotFound: true);
         m_GamePlay_Interact = m_GamePlay.FindAction("Interact", throwIfNotFound: true);
-        m_GamePlay_DialogueInteraction = m_GamePlay.FindAction("DialogueInteraction", throwIfNotFound: true);
         // Battle
         m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
         m_Battle_Attack = m_Battle.FindAction("Attack", throwIfNotFound: true);
         m_Battle_RangedAttack = m_Battle.FindAction("RangedAttack", throwIfNotFound: true);
+        // Dialogue
+        m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
+        m_Dialogue_DialogueInteraction = m_Dialogue.FindAction("DialogueInteraction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -371,24 +275,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // GamePlay
     private readonly InputActionMap m_GamePlay;
     private IGamePlayActions m_GamePlayActionsCallbackInterface;
-    private readonly InputAction m_GamePlay_Grow;
-    private readonly InputAction m_GamePlay_Reduce;
     private readonly InputAction m_GamePlay_Move;
-    private readonly InputAction m_GamePlay_Rotate;
-    private readonly InputAction m_GamePlay_RotateY;
     private readonly InputAction m_GamePlay_Interact;
-    private readonly InputAction m_GamePlay_DialogueInteraction;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
         public GamePlayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Grow => m_Wrapper.m_GamePlay_Grow;
-        public InputAction @Reduce => m_Wrapper.m_GamePlay_Reduce;
         public InputAction @Move => m_Wrapper.m_GamePlay_Move;
-        public InputAction @Rotate => m_Wrapper.m_GamePlay_Rotate;
-        public InputAction @RotateY => m_Wrapper.m_GamePlay_RotateY;
         public InputAction @Interact => m_Wrapper.m_GamePlay_Interact;
-        public InputAction @DialogueInteraction => m_Wrapper.m_GamePlay_DialogueInteraction;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -398,52 +292,22 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_GamePlayActionsCallbackInterface != null)
             {
-                @Grow.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnGrow;
-                @Grow.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnGrow;
-                @Grow.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnGrow;
-                @Reduce.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnReduce;
-                @Reduce.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnReduce;
-                @Reduce.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnReduce;
                 @Move.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMove;
-                @Rotate.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotate;
-                @Rotate.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotate;
-                @Rotate.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotate;
-                @RotateY.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotateY;
-                @RotateY.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotateY;
-                @RotateY.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotateY;
                 @Interact.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInteract;
-                @DialogueInteraction.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnDialogueInteraction;
-                @DialogueInteraction.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnDialogueInteraction;
-                @DialogueInteraction.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnDialogueInteraction;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Grow.started += instance.OnGrow;
-                @Grow.performed += instance.OnGrow;
-                @Grow.canceled += instance.OnGrow;
-                @Reduce.started += instance.OnReduce;
-                @Reduce.performed += instance.OnReduce;
-                @Reduce.canceled += instance.OnReduce;
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Rotate.started += instance.OnRotate;
-                @Rotate.performed += instance.OnRotate;
-                @Rotate.canceled += instance.OnRotate;
-                @RotateY.started += instance.OnRotateY;
-                @RotateY.performed += instance.OnRotateY;
-                @RotateY.canceled += instance.OnRotateY;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
-                @DialogueInteraction.started += instance.OnDialogueInteraction;
-                @DialogueInteraction.performed += instance.OnDialogueInteraction;
-                @DialogueInteraction.canceled += instance.OnDialogueInteraction;
             }
         }
     }
@@ -489,19 +353,51 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public BattleActions @Battle => new BattleActions(this);
+
+    // Dialogue
+    private readonly InputActionMap m_Dialogue;
+    private IDialogueActions m_DialogueActionsCallbackInterface;
+    private readonly InputAction m_Dialogue_DialogueInteraction;
+    public struct DialogueActions
+    {
+        private @PlayerControls m_Wrapper;
+        public DialogueActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @DialogueInteraction => m_Wrapper.m_Dialogue_DialogueInteraction;
+        public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DialogueActions set) { return set.Get(); }
+        public void SetCallbacks(IDialogueActions instance)
+        {
+            if (m_Wrapper.m_DialogueActionsCallbackInterface != null)
+            {
+                @DialogueInteraction.started -= m_Wrapper.m_DialogueActionsCallbackInterface.OnDialogueInteraction;
+                @DialogueInteraction.performed -= m_Wrapper.m_DialogueActionsCallbackInterface.OnDialogueInteraction;
+                @DialogueInteraction.canceled -= m_Wrapper.m_DialogueActionsCallbackInterface.OnDialogueInteraction;
+            }
+            m_Wrapper.m_DialogueActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @DialogueInteraction.started += instance.OnDialogueInteraction;
+                @DialogueInteraction.performed += instance.OnDialogueInteraction;
+                @DialogueInteraction.canceled += instance.OnDialogueInteraction;
+            }
+        }
+    }
+    public DialogueActions @Dialogue => new DialogueActions(this);
     public interface IGamePlayActions
     {
-        void OnGrow(InputAction.CallbackContext context);
-        void OnReduce(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
-        void OnRotate(InputAction.CallbackContext context);
-        void OnRotateY(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnDialogueInteraction(InputAction.CallbackContext context);
     }
     public interface IBattleActions
     {
         void OnAttack(InputAction.CallbackContext context);
         void OnRangedAttack(InputAction.CallbackContext context);
+    }
+    public interface IDialogueActions
+    {
+        void OnDialogueInteraction(InputAction.CallbackContext context);
     }
 }

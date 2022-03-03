@@ -5,6 +5,8 @@ using UnityEngine;
 public class AttackHitbox : MonoBehaviour {
     private Vector3 startPos;
 
+    public ToolsBoxEngine.Tools.BasicDelegate<Collider2D> OnHit;
+
     private void Start() {
         startPos = transform.localPosition;
     }
@@ -14,6 +16,8 @@ public class AttackHitbox : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
+        OnHit?.Invoke(collision);
+
         Boss boss = collision.gameObject.GetComponent<Boss>();
         if (boss != null) {
             boss.LoseLife(1);

@@ -14,19 +14,19 @@ public class Cube : MonoBehaviour {
     private void Awake() {
         controls = new PlayerControls();
 
-        controls.GamePlay.Grow.performed += cc => Grow();
+        //controls.GamePlay.Grow.performed += cc => Grow();
 
-        controls.GamePlay.Reduce.performed += cc => Reduce();
+        //controls.GamePlay.Reduce.performed += cc => Reduce();
 
 
         controls.GamePlay.Move.performed += cc => directionStrength = cc.ReadValue<Vector2>();
         controls.GamePlay.Move.canceled += cc => directionStrength = Vector2.zero;
 
-        controls.GamePlay.Rotate.performed += cc => rotationStrength = cc.ReadValue<Vector2>();
-        controls.GamePlay.Rotate.canceled += cc => rotationStrength = Vector2.zero;
+        //controls.GamePlay.Rotate.performed += cc => rotationStrength = cc.ReadValue<Vector2>();
+        //controls.GamePlay.Rotate.canceled += cc => rotationStrength = Vector2.zero;
 
-        controls.GamePlay.RotateY.performed += cc => rotationStrengthY = cc.ReadValue<float>();
-        controls.GamePlay.RotateY.canceled += cc => rotationStrengthY = 0;
+        //controls.GamePlay.RotateY.performed += cc => rotationStrengthY = cc.ReadValue<float>();
+        //controls.GamePlay.RotateY.canceled += cc => rotationStrengthY = 0;
     }
 
     private void Update() {

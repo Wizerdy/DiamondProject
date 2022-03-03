@@ -2,49 +2,30 @@ using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ToolsBoxEngine;
 
 public class NPC : Entity {
+    [SerializeField] GameObject flowchart;
     public int index = 0;
-    [SerializeField] private GameObject flowchart;
-    private GameObject player;
 
-    public bool inDiscussion;
-    public GameObject interactPanel;
+    public Tools.BasicDelegate<NPC> OnInteract;
+    public Tools.BasicDelegate<NPC> OnStopInteracting;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(index);
-        Debug.Log(GameManager.Instance);
-        index = GameManager.Instance.currentNpcIndex;
-        GameManager.Instance.currentNpcIndex += 1;
-    }
+    void Update() {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void SetActiveGameObject(GameObject obj, bool isActive)
-    {
-        obj.SetActive(isActive);
-    }
-
-    public void SetActiveInteractPanel(bool isActive)
-    {
-        SetActiveGameObject(interactPanel, isActive);
     }
 
     public void StartTalking(GameObject playerRef) {
-        player = playerRef;
-        player.GetComponent<OldPlayerController>().disableMovement();
+        //player = playerRef;
+        //player.GetComponent<OldPlayerController>().disableMovement();
         flowchart.SetActive(true);
         //flowchart.enabled = true;
+        OnInteract?.Invoke(this);
     }
 
     public void StopTalking() {
         flowchart.SetActive(false);
-        player.GetComponent<OldPlayerController>().enableMovement();
+        //player.GetComponent<OldPlayerController>().enableMovement();
+        OnStopInteracting?.Invoke(this);
     }
 }
