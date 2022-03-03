@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour {
 
-    [SerializeField] private Reference<TempPlayerController> _player;
+    [SerializeField] private PlayerControllerReference _player;
     [SerializeField] Vector3 directionTarget = Vector3.zero;
     [SerializeField] Vector3 direction = Vector3.zero;
     [SerializeField] float speed = 1f;
@@ -30,7 +30,7 @@ public class Missile : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            _player.Instance.TakeDamage(1);
+            _player.Instance.Health.TakeDamage(10);
             Die();
         }
     }

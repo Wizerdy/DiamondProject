@@ -47,19 +47,19 @@ public class MagicBall : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            TempPlayerController touchais = collision.gameObject.GetComponent<TempPlayerController>();
+            PlayerController touchais = collision.gameObject.GetComponent<PlayerController>();
             if (state == State.RED) {
-                if (touchais.IsMoving) {
-                    touchais.TakeDamage(2);
+                if (touchais.Movement.IsMoving) {
+                    touchais.Health.TakeDamage(20);
                     Die();
                 }
             } else if (state == State.YELLOW) {
-                if (!touchais.IsMoving) {
-                    touchais.TakeDamage(2);
+                if (!touchais.Movement.IsMoving) {
+                    touchais.Health.TakeDamage(20);
                     Die();
                 }
             } else {
-                touchais.TakeDamage(5);
+                touchais.Health.TakeDamage(50);
                 Die();
             }
 

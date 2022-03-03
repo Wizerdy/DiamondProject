@@ -10,7 +10,7 @@ public class Health : MonoBehaviour {
     [SerializeField] int hitVisualEffectWeight;
     [SerializeField] Color hitVisualEffectColor;
     [SerializeField] Color healVisualEffectColor;
-    [SerializeField] public int CurrentHealth { get { return currentHealth; }}
+    [SerializeField] public int CurrentHealth { get { return currentHealth; } }
 
     public void TakeDamage(int life) {
         if (!CanTakeDamage) { return; }

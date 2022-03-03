@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Teleport : BossAction {
-    [SerializeField] Reference<TempPlayerController> _player;
+    [SerializeField] PlayerControllerReference _player;
     [SerializeField] float radiusSpawnPoint = 10f;
     [SerializeField] List<Transform > _transformList = new List<Transform>();
     [SerializeField] Transform centralTransform;

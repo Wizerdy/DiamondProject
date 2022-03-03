@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TeleportAwarness : MonoBehaviour {
-    [SerializeField] Reference<TempPlayerController> _player;
+    [SerializeField] PlayerControllerReference _player;
     [SerializeField] Reference<Boss> _boss;
     [SerializeField] CircleCollider2D fleeDetection = null;
     [SerializeField] public float FleeDetectionRadius = 2f;

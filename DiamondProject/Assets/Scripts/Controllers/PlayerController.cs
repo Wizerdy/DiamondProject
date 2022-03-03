@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntityMovement _movement;
     [SerializeField] EntityMeleeAttack _meleeAttack;
     [SerializeField] EntityInteract _interact;
+    [SerializeField] TempHealth _health;
 
     [Header("Dialogue")]
     [SerializeField] TextInteraction textInteraction;
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 
     public Vector2 Orientation => _movement?.Orientation ?? Vector2.zero;
     public Vector2 Direction => _movement?.Direction ?? Vector2.zero;
+    public TempHealth Health => _health;
+    public EntityMovement Movement => _movement;
 
     #endregion
 
