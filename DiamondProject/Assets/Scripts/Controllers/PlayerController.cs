@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : Entity
 {
@@ -68,9 +69,9 @@ public class PlayerController : Entity
         }
     }
 
-    public void OnDrawGizmos()
+    public void OnDrawGizmosSelected()
     {
-        Gizmos.DrawSphere(transform.position, npcInteractRadius);
+        Gizmos.DrawWireSphere(transform.position, npcInteractRadius);
     }
 
     public void Interact()
