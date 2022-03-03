@@ -20,6 +20,10 @@ public class EntityMeleeAttack : MonoBehaviour {
         _attackHitbox.OnHit += OnHit;
     }
 
+    private void OnDestroy() {
+        _attackHitbox.OnHit -= OnHit;
+    }
+
     public void Attack(Vector2 direction) {
         isAttacking = true;
         _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());

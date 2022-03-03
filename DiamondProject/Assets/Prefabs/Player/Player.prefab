@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
+  _showDebug: 0
   radiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &3959631132869822232
 GameObject:
@@ -148,7 +149,7 @@ GameObject:
   - component: {fileID: 4346229573380257631}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,6 +187,7 @@ MonoBehaviour:
   _movement: {fileID: 3959631131995836340}
   _meleeAttack: {fileID: 5303888298297124882}
   _interact: {fileID: 3745787321201419433}
+  textInteraction: {fileID: 0}
 --- !u!50 &3959631132869822230
 Rigidbody2D:
   serializedVersion: 4

@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntityMeleeAttack _meleeAttack;
     [SerializeField] EntityInteract _interact;
 
+    [Header("Dialogue")]
+    [SerializeField] TextInteraction textInteraction;
+
     PlayerControls _controls = null;
 
     #region Properties
@@ -29,12 +32,24 @@ public class PlayerController : MonoBehaviour {
         _controls.Battle.Attack.performed += Attack;
         //_controls.Battle.RangedAttack.performed += cc => RangedAttack(facingDirection);
 
+        _controls.Dialogue.Enable();
+        _controls.Dialogue.DialogueInteraction.started += DialogueInteraction;
 
-        //_facingDirection = Vector2.up;
+        if (_interact != null) { _interact.OnStopInteract += StopInteracting; }
     }
 
     private void OnDestroy() {
-        
+        _controls.GamePlay.Move.performed -= Move;
+        _controls.GamePlay.Move.canceled -= Move;
+
+        _controls.GamePlay.Interact.started -= Interact;
+
+        _controls.Battle.Attack.performed -= Attack;
+        //_controls.Battle.RangedAttack.performed += cc => RangedAttack(facingDirection);
+
+        _controls.Dialogue.DialogueInteraction.started -= DialogueInteraction;
+
+        if (_interact != null) { _interact.OnStopInteract -= StopInteracting; }
     }
 
     private void Move(InputAction.CallbackContext cc) {
@@ -46,11 +61,18 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Interact(InputAction.CallbackContext cc) {
-        NPC npc = _interact.GetNearestNpc();
-        _interact?.Interact(npc);
+        NPC npc = _interact?.GetNearestNpc() ?? null;
+        if (npc == null) { return; }
+        _interact.Interact(npc);
         _controls.GamePlay.Disable();
-        //npc.OnStopInteracting += ;
+        _controls.Battle.Disable();
     }
 
-    //private void StopInteracting()
+    private void StopInteracting(NPC npc) {
+        _controls.GamePlay.Enable();
+    }
+
+    private void DialogueInteraction(InputAction.CallbackContext cc) {
+        textInteraction?.OnClickEvent();
+    }
 }
