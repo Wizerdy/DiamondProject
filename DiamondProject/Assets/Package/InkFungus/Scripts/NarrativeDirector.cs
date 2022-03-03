@@ -417,7 +417,7 @@ namespace InkFungus
                     sayDialogToUse.SetCharacterName("", defaultCharacterColor);
                 }
                 sayDialogToUse.SetCharacterImage(portrait);
-                Action nextStep;
+                System.Action nextStep;
                 if (pauseTime > 0)
                 {
                     nextStep = Idle;
@@ -428,7 +428,7 @@ namespace InkFungus
                 }
                 narrationHandle++;
                 int originalNarrationHandle = narrationHandle;
-                Action onSayComplete = delegate ()
+                System.Action onSayComplete = delegate ()
                 {
                     if (IsNarrationAt(originalNarrationHandle))
                     {
