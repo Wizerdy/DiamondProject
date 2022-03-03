@@ -8,6 +8,8 @@ public class EntityRangedAttack : MonoBehaviour {
     [SerializeField] float _bulletSpeed;
     [SerializeField] float _rangedAttackCooldown = 1f;
 
+    public Tools.BasicDelegate<Vector2> OnAttack;
+
     bool _canRangeAttack = true;
 
     public void Attack(Vector2 direction) {
