@@ -375,6 +375,17 @@ Transform:
   m_Father: {fileID: 1171295422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+--- !u!114 &147427935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7873682425189889759, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+  m_PrefabInstance: {fileID: 1688591255}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2053d8eb1227944a028c5a340ddfef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &331036600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,9 +1909,25 @@ PrefabInstance:
       propertyPath: MinPitch
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4244333875856624585, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: MaxVolume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244333875856624585, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: MinVolume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024076845069431514, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: m_Name
+      value: RangeAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159676193215690231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _eRangedAttack
+      value: 
+      objectReference: {fileID: 147427935}
     - target: {fileID: 8990786264109351080, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: Feedbacks.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8990786264109351080, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: Feedbacks.Array.data[1]
