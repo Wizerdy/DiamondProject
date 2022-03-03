@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntityMovement _movement;
     [SerializeField] EntityMeleeAttack _meleeAttack;
     [SerializeField] EntityInteract _interact;
+    [SerializeField] EntityRangedAttack _rangedAttack;
     [SerializeField] TempHealth _health;
 
     [Header("Dialogue")]
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 
         _controls.Battle.Enable();
         _controls.Battle.Attack.performed += Attack;
-        //_controls.Battle.RangedAttack.performed += cc => RangedAttack(facingDirection);
+        _controls.Battle.RangedAttack.performed += RangedAttack;
 
         _controls.Dialogue.Enable();
         _controls.Dialogue.DialogueInteraction.started += DialogueInteraction;
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour {
         _controls.GamePlay.Interact.started -= Interact;
 
         _controls.Battle.Attack.performed -= Attack;
-        //_controls.Battle.RangedAttack.performed += cc => RangedAttack(facingDirection);
+        _controls.Battle.RangedAttack.performed -= RangedAttack;
 
         _controls.Dialogue.DialogueInteraction.started -= DialogueInteraction;
 
@@ -60,7 +61,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Attack(InputAction.CallbackContext cc) {
-        _meleeAttack?.Attack(Direction != Vector2.zero ? Direction : Orientation);
+        Vector2 direction = Direction != Vector2.zero ? Direction : Orientation;
+        if (direction == Vector2.zero) { direction = Vector2.up; }
+        _meleeAttack?.Attack(direction);
     }
 
     private void Interact(InputAction.CallbackContext cc) {
@@ -77,5 +80,11 @@ public class PlayerController : MonoBehaviour {
 
     private void DialogueInteraction(InputAction.CallbackContext cc) {
         textInteraction?.OnClickEvent();
+    }
+
+    private void RangedAttack(InputAction.CallbackContext cc) {
+        Vector2 direction = Direction != Vector2.zero ? Direction : Orientation;
+        if (direction == Vector2.zero) { direction = Vector2.up; }
+        _rangedAttack?.Attack(direction);
     }
 }
