@@ -30,6 +30,7 @@ public class RockFall : BossAction {
 
     void WeWillRockYou(int rockNumbers, Vector3 position) {
         RockShield newRockShield = Instantiate(rockShield.gameObject, body.Instance.Transform).GetComponent<RockShield>();
+        newRockShield.BossActionOnDestroy(this);
         for (int i = 0; i < rockNumbers; i++) {
             float randomDegree = Random.Range(0, 360);
             float randomDist = Random.Range(radiusBounds.x, radiusBounds.y);
@@ -44,6 +45,7 @@ public class RockFall : BossAction {
                 .SetSprite(rock.sprite)
                 .SetDestination(position + destination)
                 .SetFallTime(fallingTime);
+            newRock.gameObject.SetActive(false);
         }
     }
 

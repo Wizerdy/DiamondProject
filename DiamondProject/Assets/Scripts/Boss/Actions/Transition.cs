@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Transition : BossAction {
+    [SerializeField] VisualEffectReference visualEffect;
     public override IEnumerator StartAction() {
         Debug.Log("Transition");
+        visualEffect.Instance.AddColor(Color.magenta, 2, _duration);
         _boss.Instance.ChangeState(GetState());
         _durationTimer = _duration;
         while (_durationTimer > 0) {

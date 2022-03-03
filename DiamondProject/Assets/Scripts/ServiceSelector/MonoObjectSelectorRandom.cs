@@ -24,8 +24,7 @@ public abstract class MonoObjectSelectorRandom<T> : MonoObjectSelector<T> {
     }
 
     public T Get(List<T> banned) {
-        int index = Tools.Ponder(objects.Where(x => !IsInside(banned, x.value)).Select(o => o.weight).ToArray());
-        Debug.Log(objects[index].value);
+        int index = Tools.Ponder(objects.Where(x => IsInside(banned, x.value) == false).Select(o => o.weight).ToArray());
         if (index == -1) { return default(T); }
         return objects[index].value;
     }

@@ -44,11 +44,6 @@ public class FallingObject : MonoBehaviour {
     }
 
     void Falling() {
-        if(fallTime == 0) {
-            SpawnFallen(destination);
-            Die();
-            return;
-        }
         fallTimer -= Time.deltaTime;
         transform.position = Vector3.Lerp(destination, initialPosition, fallTimer/ fallTime);
         if (fallTimer < 0f) {
@@ -58,7 +53,9 @@ public class FallingObject : MonoBehaviour {
     }
 
     void SpawnFallen(Vector3 position) {
-        Instantiate(theFallen, position, theFallen.transform.rotation);
+        theFallen.SetActive(true);
+        theFallen.transform.parent = null;
+        theFallen.transform.position = position;
     }
 
     void Die() {

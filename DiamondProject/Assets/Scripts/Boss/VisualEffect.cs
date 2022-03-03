@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VisualEffect : MonoBehaviour {
+    
+    [System.Serializable]
     struct SpriteColor {
         public Color color;
         public float weight;
@@ -14,12 +16,15 @@ public class VisualEffect : MonoBehaviour {
         }
     }
     SpriteRenderer sr;
-    float damageVisualEffectTime = 0.5f;
-    List<SpriteColor> colors = new List<SpriteColor>();
+    [SerializeField] float damageVisualEffectTime = 0.5f;
+    [SerializeField] List<SpriteColor> colors = new List<SpriteColor>();
 
-
+    private void Start() {
+        sr = GetComponent<SpriteRenderer>();
+        AddColor(Color.green, 0, 1);
+    }
     public void AddColor(Color color, float weight, int id) {
-        SpriteColor colorSprite = new SpriteColor(color, weight, 0);
+        SpriteColor colorSprite = new SpriteColor(color, weight, id);
         colors.Add(colorSprite);
         UpdateColor();
     }
@@ -54,7 +59,7 @@ public class VisualEffect : MonoBehaviour {
         if (a.weight > b.weight) {
             return -1;
         } else {
-            return 0;
+            return 1;
         }
     }
 

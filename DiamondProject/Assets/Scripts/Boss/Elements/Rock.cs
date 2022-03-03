@@ -7,9 +7,8 @@ using ToolsBoxEngine;
 public class Rock : MonoBehaviour {
     public int life = 0;
     [SerializeField] Reference<Boss> _boss;
-    [HideInInspector]
-    RockShield rockShield;
-    public Sprite sprite;
+    [SerializeField] RockShield rockShield;
+    [HideInInspector] public Sprite sprite;
 
     public void AddRockShield(RockShield rockShield) {
         this.rockShield = rockShield;

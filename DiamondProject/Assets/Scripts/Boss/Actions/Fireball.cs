@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireball : BossAction {
+public class Fireball : BossAction, IAction {
     [SerializeField] MagicBall magicBall = null;
     [SerializeField] float _magicBallSpeed = 1f;
     [SerializeField] float _rotationSpeed = 1f;
     [SerializeField] float _magicBallRate = 1f;
-    [SerializeField] float _spinDuration = 1f;
     [SerializeField] float _magicBallDistSpawn = 1f;
     public override IEnumerator StartAction() {
         Debug.Log("Fireball");
@@ -16,7 +15,7 @@ public class Fireball : BossAction {
         float durationTimer = _duration;
         while (durationTimer > 0) {
             durationTimer -= Time.deltaTime;
-            transform.Rotate(new Vector3(0, 0, 360 * _rotationSpeed * Time.deltaTime));
+            _boss.Instance.transform.Rotate(new Vector3(0, 0, 360 * _rotationSpeed * Time.deltaTime));
             fireRateTimer -= Time.deltaTime;
             if (fireRateTimer <= 0) {
                 fireRateTimer = _magicBallRate;

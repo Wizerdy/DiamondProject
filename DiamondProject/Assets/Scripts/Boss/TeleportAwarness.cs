@@ -9,7 +9,8 @@ public class TeleportAwarness : MonoBehaviour {
     [SerializeField] public float FleeDetectionRadius = 2f;
 
     private void Start() {
-        fleeDetection = new CircleCollider2D();
+        fleeDetection = gameObject.AddComponent<CircleCollider2D>();
+        fleeDetection.isTrigger = true;
         fleeDetection.radius = FleeDetectionRadius;
     }
     void UpdateFlee() {
