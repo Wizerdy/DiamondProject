@@ -20,6 +20,7 @@ public class PlayerControllerFeel : MonoBehaviour
     public MMFeedbacks JumpFeedback;
     /// a MMFeedbacks to play when the Hero lands after a jump
     public MMFeedbacks LandingFeedback;
+    public MMFeedbacks TeleportFeedback;
 
     private const float _lowVelocity = 0.01f;
     private Rigidbody2D _rigidbody;
@@ -46,6 +47,11 @@ public class PlayerControllerFeel : MonoBehaviour
             Jump();
         }
 
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            Teleport(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        }
+
         // if we're jumping, were going down last frame, and have now reached an almost null velocity
         if (_jumping && (_velocityLastFrame < 0) && (Mathf.Abs(_rigidbody.velocity.y) < _lowVelocity))
         {
@@ -66,5 +72,12 @@ public class PlayerControllerFeel : MonoBehaviour
         _rigidbody.AddForce(Vector3.up * JumpForce, ForceMode2D.Impulse);
         _jumping = true;
         JumpFeedback?.PlayFeedbacks();
+    }
+
+    private void Teleport(Vector2 pos)
+    {
+        transform.position = new Vector3(pos.x, pos.y, 0);
+        _rigidbody.velocity = Vector3.zero;
+        TeleportFeedback.PlayFeedbacks();
     }
 }
