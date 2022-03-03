@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3959631131995836340}
   - component: {fileID: 5303888298297124882}
   - component: {fileID: 3745787321201419433}
+  - component: {fileID: 7873682425189889759}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Untagged
@@ -134,6 +135,21 @@ MonoBehaviour:
   radius: 2
   _showDebug: 0
   radiusColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &7873682425189889759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959631131995836341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2053d8eb1227944a028c5a340ddfef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
+  _bulletSpeed: 30
+  _rangedAttackCooldown: 1
 --- !u!1 &3959631132869822232
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +205,7 @@ MonoBehaviour:
   _movement: {fileID: 3959631131995836340}
   _meleeAttack: {fileID: 5303888298297124882}
   _interact: {fileID: 3745787321201419433}
+  _rangedAttack: {fileID: 7873682425189889759}
   _health: {fileID: 4020828497950990857}
   textInteraction: {fileID: 0}
 --- !u!114 &4020828497950990857

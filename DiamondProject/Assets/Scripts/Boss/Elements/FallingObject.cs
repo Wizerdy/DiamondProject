@@ -65,6 +65,7 @@ public class FallingObject : MonoBehaviour {
     }
 
     void Die() {
+        Destroy(_shadow.gameObject);
         Destroy(gameObject);
     }
 }
