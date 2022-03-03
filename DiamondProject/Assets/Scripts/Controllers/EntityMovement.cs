@@ -13,6 +13,11 @@ public class EntityMovement : MonoBehaviour {
     [SerializeField] float _turnFactor;
     [SerializeField, Range(0, 360f)] float _turnAroundAngle = 181f;
 
+    public Tools.BasicDelegate<Vector2> OnAcceleration;
+    public Tools.BasicDelegate<Vector2> OnDeceleration;
+    public Tools.BasicDelegate<Vector2> OnTurnAround;
+    public Tools.BasicDelegate<Vector2> OnTurn;
+
     Vector2 _direction = Vector2.zero;
     Vector2 _orientation = Vector2.zero;
     Vector2 _lastDirection = Vector2.zero;
@@ -75,12 +80,14 @@ public class EntityMovement : MonoBehaviour {
         _acceleration.Reset();
         _acceleration.SetPercentage(_speed / _maxSpeed);
         _state = State.ACCELERATING;
+        OnAcceleration?.Invoke(_orientation);
     }
 
     private void StartDecelerating() {
         _deceleration.Reset();
         _deceleration.SetPercentage(1f - _speed / _maxSpeed);
         _state = State.DECELERATING;
+        OnDeceleration?.Invoke(_orientation);
     }
 
     private void StartTurn() {
@@ -88,6 +95,7 @@ public class EntityMovement : MonoBehaviour {
         _acceleration.Reset();
         StartDecelerating();
         _state = State.TURNING;
+        OnTurn?.Invoke(_orientation);
     }
 
     private void StartTurnAround() {
@@ -95,6 +103,7 @@ public class EntityMovement : MonoBehaviour {
         _acceleration.Reset();
         StartDecelerating();
         _state = State.TURNING_AROUND;
+        OnTurnAround?.Invoke(_orientation);
     }
 
     private void SetSpeed(float speed) {
@@ -128,9 +137,9 @@ public class EntityMovement : MonoBehaviour {
                 break;
             case State.TURNING:
                 _turnTimer += Time.deltaTime * _turnFactor;
-                if (_turnAroundTimer < _deceleration.duration) {
+                if (_turnTimer < _deceleration.duration) {
                     return ComputeSpeed(State.DECELERATING, out changeDirection);
-                } else if ((_turnAroundTimer - _deceleration.duration) < _acceleration.duration) {
+                } else if ((_turnTimer - _deceleration.duration) < _acceleration.duration) {
                     return ComputeSpeed(State.ACCELERATING, out changeDirection);
                 } else {
                     _state = State.ACCELERATING;
