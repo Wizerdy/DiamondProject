@@ -742,12 +742,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
-      propertyPath: missileRate
+      propertyPath: _duration
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _transition
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: missileRate
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: missileSpeed
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: _durationTimer
@@ -763,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: missileDistSpawn
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: missileRotationSpeed
@@ -774,9 +782,37 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2824386827493111788, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824386827493111788, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: visualEffect
       value: 
       objectReference: {fileID: 11400000, guid: 9f4a8a30afa5cdb4a8cc3da8d792d359, type: 2}
+    - target: {fileID: 2949278061184160787, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _duration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949278061184160787, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _transition
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949278061184160787, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _magicBallRate
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949278061184160787, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _rotationSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600589348171900713, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _duration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600589348171900713, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _transition
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3600589348171900713, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: fallingTime
       value: 0.5
@@ -784,6 +820,22 @@ PrefabInstance:
     - target: {fileID: 3600589348171900713, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: _durationTimer
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600589348171900713, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: apparitionHigh
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450233261513011295, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _body
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450233261513011295, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _transition
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450233261513011295, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: fleeDistance
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5522892817298040195, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: m_Name
@@ -931,6 +983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367990173}
   - component: {fileID: 1367990174}
+  - component: {fileID: 1367990175}
   m_Layer: 0
   m_Name: TeleportAwarness
   m_TagString: Untagged
@@ -969,6 +1022,27 @@ MonoBehaviour:
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
   fleeDetection: {fileID: 0}
   FleeDetectionRadius: 2
+--- !u!50 &1367990175
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367990172}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1420578489
 GameObject:
   m_ObjectHideFlags: 0

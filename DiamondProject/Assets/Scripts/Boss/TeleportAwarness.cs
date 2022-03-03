@@ -15,19 +15,33 @@ public class TeleportAwarness : MonoBehaviour {
     }
     void UpdateFlee() {
         Vector3 playerPosition = _player.Instance.gameObject.transform.position;
-        if ((playerPosition - transform.position).sqrMagnitude < FleeDetectionRadius) {
             Shield shield = _boss.Instance.gameObject.GetComponentInChildren<Shield>();
             if (shield == null) {
                 _boss.Instance.Teleport();
             }
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        UpdateFlee();
+        if (collision.gameObject.tag == "Player") {
+            UpdateFlee();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision) {
-        UpdateFlee();
+        if (collision.gameObject.tag == "Player") {
+            UpdateFlee();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "Player") {
+            UpdateFlee();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        if (collision.gameObject.tag == "Player") {
+            UpdateFlee();
+        }
     }
 }

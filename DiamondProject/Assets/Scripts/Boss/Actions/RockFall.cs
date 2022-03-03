@@ -12,11 +12,10 @@ public class RockFall : BossAction {
     [SerializeField] BossBodyReference body;
     [SerializeField] Vector2 radiusBounds;
     [SerializeField] Vector2Int rocksNumberBounds;
-    [SerializeField] float fallingTime = 3f;
     [SerializeField] float apparitionHigh = 10;
 
     public override void StartAction() {
-        Debug.Log("Rock");
+       // Debug.Log("Rock");
         _boss.Instance.ChangeState(GetState());
         _boss.Instance.NewWaightAction(this, 0);
         WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y), transform.position);
@@ -24,9 +23,9 @@ public class RockFall : BossAction {
     }
 
     void WeWillRockYou(int rockNumbers, Vector3 position) {
-        Duration = fallingTime;
         RockShield newRockShield = Instantiate(rockShield.gameObject, body.Instance.Transform).GetComponent<RockShield>();
         newRockShield.BossActionOnDestroy(this);
+        List<FallingObject> list = new List<FallingObject>();
         for (int i = 0; i < rockNumbers; i++) {
             float randomDegree = Random.Range(0, 360);
             float randomDist = Random.Range(radiusBounds.x, radiusBounds.y);
@@ -40,7 +39,7 @@ public class RockFall : BossAction {
             newFallingObject.SetFallen(newRock.gameObject)
                 .SetSprite(rock.sprite)
                 .SetDestination(position + destination)
-                .SetFallTime(fallingTime);
+                .SetFallTime(_duration);
             newRock.gameObject.SetActive(false);
         }
     }

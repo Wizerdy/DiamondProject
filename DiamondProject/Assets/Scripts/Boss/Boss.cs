@@ -15,6 +15,7 @@ public class Boss : MonoBehaviour {
     [SerializeField] BossAction _transition;
     [SerializeField] BossAction _formSwitch;
     [SerializeField] BossAction _teleport;
+    [SerializeField] List<BossAction> bossActionsCoroutines = new List<BossAction>();
     public State CurrentState { get { return currentState; } }
     //private void OnValidate() {
     //    //if(_attackSelectorFirstFormDummy is IAction) {
@@ -47,19 +48,24 @@ public class Boss : MonoBehaviour {
     #region State
     public void Teleport() {
         if (currentState == State.TELEPORT || currentState == State.FORMSWITCH) { return; }
+        for (int i = 0; i < bossActionsCoroutines.Count; i++) {
+            Debug.Log(bossActionsCoroutines[i]);
+            bossActionsCoroutines[i].StopAllCoroutines();
+        }
+        bossActionsCoroutines.Clear();
         _teleport.StartAction();
+
     }
     public void NewState() {
         switch (form) {
             case Form.FIRST:
                 BossAction action = _attackSelectorFirstForm.Get();
-                Debug.Log(action);
                 if (action != null) {
                     action.StartAction();
+                        bossActionsCoroutines.Add(action);
                 } else {
                     _transition.StartAction();
                 }
-                
                 break;
             case Form.SECOND:
                 //StartCoroutine(_attackSelectorSecondForm.StartAction());
@@ -82,6 +88,11 @@ public class Boss : MonoBehaviour {
 
     public void NewWaightAction(BossAction action, float weight ) {
         _attackSelectorFirstForm.NewWeight(action, weight);
+    }
+
+    public void RemoveCoroutines(BossAction bossaction) {
+        if (bossActionsCoroutines.Contains(bossaction))
+        bossActionsCoroutines.Remove(bossaction);
     }
 
     #endregion

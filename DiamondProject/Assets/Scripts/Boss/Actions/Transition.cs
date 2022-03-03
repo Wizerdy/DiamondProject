@@ -5,7 +5,6 @@ using UnityEngine;
 public class Transition : BossAction {
     [SerializeField] VisualEffectReference visualEffect;
     public override void StartAction() {
-        Debug.Log("Transition");
         visualEffect.Instance.AddColor(Color.magenta, 2, _duration);
         _boss.Instance.ChangeState(GetState());
         Wait();

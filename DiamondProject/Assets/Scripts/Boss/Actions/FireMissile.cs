@@ -13,7 +13,7 @@ public class FireMissile : BossAction {
     [SerializeField] Vector2 radiusBounds = Vector2.zero;
     public override void StartAction() {
         _boss.Instance.ChangeState(GetState());
-        Debug.Log("Missile");
+        //Debug.Log("Missile");
         StartCoroutine(MortalMissile());
     }
 
@@ -42,7 +42,7 @@ public class FireMissile : BossAction {
             }
             yield return null;
         }
-        _boss.Instance.EndState(transitionTime);
+        Wait();
     }
 
     public override Boss.State GetState() {
