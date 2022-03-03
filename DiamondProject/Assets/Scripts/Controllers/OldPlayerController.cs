@@ -13,6 +13,7 @@ public class OldPlayerController : Entity {
     public bool isInteracting;
     public bool isInteracting2;
     public List<NPC> npcList;
+    [SerializeField] private TextInteraction textInteraction;
 
     private bool canMove = true;
 
@@ -40,8 +41,13 @@ public class OldPlayerController : Entity {
 
         controls.GamePlay.Interact.performed += cc => interactingValue = cc.ReadValue<float>();
         controls.GamePlay.Interact.canceled += cc => interactingValue = 0;
+
+        controls.GamePlay.DialogueInteraction.started += cc => textInteraction.OnClickEvent();
     }
 
+    private void OnDestroy() {
+        controls.GamePlay.DialogueInteraction.started -= cc => textInteraction.OnClickEvent();
+    }
     public override void Move() {
         // Direction value updated ?
         //Debug.Log(direction);

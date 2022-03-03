@@ -80,6 +80,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DialogueInteraction"",
+                    ""type"": ""Button"",
+                    ""id"": ""e505b2c6-b647-450f-b473-1645a75ef778"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -225,6 +234,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2801897c-da2c-4241-b5a7-be9c84023869"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DialogueInteraction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -287,6 +307,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_GamePlay_Rotate = m_GamePlay.FindAction("Rotate", throwIfNotFound: true);
         m_GamePlay_RotateY = m_GamePlay.FindAction("RotateY", throwIfNotFound: true);
         m_GamePlay_Interact = m_GamePlay.FindAction("Interact", throwIfNotFound: true);
+        m_GamePlay_DialogueInteraction = m_GamePlay.FindAction("DialogueInteraction", throwIfNotFound: true);
         // Battle
         m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
         m_Battle_Attack = m_Battle.FindAction("Attack", throwIfNotFound: true);
@@ -356,6 +377,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Rotate;
     private readonly InputAction m_GamePlay_RotateY;
     private readonly InputAction m_GamePlay_Interact;
+    private readonly InputAction m_GamePlay_DialogueInteraction;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
@@ -366,6 +388,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Rotate => m_Wrapper.m_GamePlay_Rotate;
         public InputAction @RotateY => m_Wrapper.m_GamePlay_RotateY;
         public InputAction @Interact => m_Wrapper.m_GamePlay_Interact;
+        public InputAction @DialogueInteraction => m_Wrapper.m_GamePlay_DialogueInteraction;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -393,6 +416,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInteract;
+                @DialogueInteraction.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnDialogueInteraction;
+                @DialogueInteraction.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnDialogueInteraction;
+                @DialogueInteraction.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnDialogueInteraction;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -415,6 +441,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @DialogueInteraction.started += instance.OnDialogueInteraction;
+                @DialogueInteraction.performed += instance.OnDialogueInteraction;
+                @DialogueInteraction.canceled += instance.OnDialogueInteraction;
             }
         }
     }
@@ -468,6 +497,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnRotateY(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnDialogueInteraction(InputAction.CallbackContext context);
     }
     public interface IBattleActions
     {
