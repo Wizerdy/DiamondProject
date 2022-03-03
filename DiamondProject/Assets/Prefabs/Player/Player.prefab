@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 3959631132869822230}
-  _maxSpeed: 20
+  _maxSpeed: 30
   _acceleration:
     curve:
       serializedVersion: 2
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
+  _showDebug: 0
   radiusColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &3959631132869822232
 GameObject:
@@ -143,12 +144,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3959631132869822228}
   - component: {fileID: 3959631132869822229}
+  - component: {fileID: 4020828497950990857}
   - component: {fileID: 3959631132869822230}
   - component: {fileID: 3959631132869822231}
   - component: {fileID: 4346229573380257631}
+  - component: {fileID: 8519624037585074062}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,6 +189,24 @@ MonoBehaviour:
   _movement: {fileID: 3959631131995836340}
   _meleeAttack: {fileID: 5303888298297124882}
   _interact: {fileID: 3745787321201419433}
+  _health: {fileID: 4020828497950990857}
+  textInteraction: {fileID: 0}
+--- !u!114 &4020828497950990857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959631132869822232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f12c8092ea567b47ad47da26eb144a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageImage: {fileID: 0}
+  _healthBar: {fileID: 0}
+  maxHealth: 100
+  CanTakeDamage: 1
 --- !u!50 &3959631132869822230
 Rigidbody2D:
   serializedVersion: 4
@@ -253,6 +274,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8519624037585074062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959631132869822232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec91b8b6f2e37d4e94c1eeaee8ed583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 3959631132869822229}
+  target: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
 --- !u!1 &3959631133316557153
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +360,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0.9880781, a: 1}
   m_FlipX: 0

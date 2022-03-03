@@ -9,7 +9,7 @@ public class NPC : Entity {
     public int index = 0;
 
     public Tools.BasicDelegate<NPC> OnInteract;
-    public Tools.BasicDelegate<NPC> OnStopInteracting;
+    public Tools.BasicDelegate<NPC> OnStopInteract;
 
     void Update() {
 
@@ -26,6 +26,6 @@ public class NPC : Entity {
     public void StopTalking() {
         flowchart.SetActive(false);
         //player.GetComponent<OldPlayerController>().enableMovement();
-        OnStopInteracting?.Invoke(this);
+        OnStopInteract?.Invoke(this);
     }
 }

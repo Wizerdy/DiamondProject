@@ -478,6 +478,7 @@ namespace ToolsBoxEngine {
                 output += " " + separator + " ";
             }
             output += strings[^1].ToString();
+            if(output == "") { return; }
             debug(output);
         }
 
