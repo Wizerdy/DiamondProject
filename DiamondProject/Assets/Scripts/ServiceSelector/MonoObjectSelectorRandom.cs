@@ -23,9 +23,14 @@ public abstract class MonoObjectSelectorRandom<T> : MonoObjectSelector<T> {
         return objects[index].value;
     }
 
-    public T Get(List<T> banned) {
-        int index = Tools.Ponder(objects.Where(x => IsInside(banned, x.value) == false).Select(o => o.weight).ToArray());
-        if (index == -1) { return default(T); }
-        return objects[index].value;
+    public void NewWeight(T value, float weight) {
+        for (int i = 0; i < objects.Count; i++) {
+            if (EqualityComparer<T>.Default.Equals(objects[i].value, value)) {
+                WeightT weightT = objects[i];
+                weightT.weight = weight;
+                objects[i] = weightT;
+            }
+        }
     }
+
 }

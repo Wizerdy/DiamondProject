@@ -8,9 +8,12 @@ public class Fireball : BossAction, IAction {
     [SerializeField] float _rotationSpeed = 1f;
     [SerializeField] float _magicBallRate = 1f;
     [SerializeField] float _magicBallDistSpawn = 1f;
-    public override IEnumerator StartAction() {
+    public override void StartAction() {
         Debug.Log("Fireball");
         _boss.Instance.ChangeState(GetState());
+        StartCoroutine(FireMagicBall());
+    }
+    IEnumerator FireMagicBall() {
         float fireRateTimer = _magicBallRate;
         float durationTimer = _duration;
         while (durationTimer > 0) {
@@ -21,7 +24,7 @@ public class Fireball : BossAction, IAction {
                 fireRateTimer = _magicBallRate;
                 Debug.Log(transform.position);
                 Debug.Log(transform.right);
-                Debug.Log( _magicBallDistSpawn);
+                Debug.Log(_magicBallDistSpawn);
                 SpawnMagicBall(transform.right, _magicBallSpeed, transform.position + transform.right * _magicBallDistSpawn, MagicBall.State.RED);
                 SpawnMagicBall(transform.right * -1, _magicBallSpeed, transform.position + transform.right * _magicBallDistSpawn * -1, MagicBall.State.YELLOW);
             }
@@ -29,7 +32,6 @@ public class Fireball : BossAction, IAction {
         }
         _boss.Instance.EndState(transitionTime);
     }
-
     void SpawnMagicBall(Vector3 direction, float speed, Vector3 position, MagicBall.State state) {
         MagicBall newMagicBall = Instantiate(magicBall.gameObject, position, Quaternion.identity).GetComponent<MagicBall>();
         newMagicBall.SetDirection(direction)

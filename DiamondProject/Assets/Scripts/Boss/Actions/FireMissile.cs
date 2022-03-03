@@ -5,26 +5,23 @@ using UnityEngine;
 public class FireMissile : BossAction {
     [SerializeField] Missile missile = null;
     [SerializeField] float missileSpeed = 1f;
+    [SerializeField] float missileRotationSpeed = 1f;
     [SerializeField] float missileLifetime = 1f;
     [SerializeField] float missileDistSpawn = 1f;
     [SerializeField] float missileRate = 1f;
     [SerializeField] Vector2 missileBounds = Vector2.zero;
     [SerializeField] Vector2 radiusBounds = Vector2.zero;
-    public override IEnumerator StartAction() {
-        Debug.Log("Missile");
+    public override void StartAction() {
         _boss.Instance.ChangeState(GetState());
-        _durationTimer = _duration;
-        while (_durationTimer > 0) {
-            yield return null;
-            _durationTimer -= Time.deltaTime;
-        }
-        _boss.Instance.EndState(transitionTime);
+        Debug.Log("Missile");
+        StartCoroutine(MortalMissile());
     }
 
     void SpawnMissile(float speed, Vector3 position) {
         Missile newMissile = Instantiate(missile.gameObject, position, Quaternion.identity).GetComponent<Missile>();
         newMissile.SetSpeed(speed)
-            .SetLifeTime(missileLifetime);
+            .SetLifeTime(missileLifetime)
+            .SetRotationSpeed(missileRotationSpeed);
     }
 
     IEnumerator MortalMissile() {
@@ -45,6 +42,7 @@ public class FireMissile : BossAction {
             }
             yield return null;
         }
+        _boss.Instance.EndState(transitionTime);
     }
 
     public override Boss.State GetState() {

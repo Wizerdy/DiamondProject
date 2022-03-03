@@ -22,7 +22,7 @@ public class RockShield : Shield {
         rocks.Remove(rock);
         if (rocks.Count == 0) {
             StopProtect();
-            _boss.Instance.RemoveBannedAction(bossAction);
+            _boss.Instance.NewWaightAction(bossAction, 1);
             Destroy(gameObject);
         }
     }

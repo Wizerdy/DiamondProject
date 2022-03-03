@@ -52,12 +52,12 @@ public class Boss : MonoBehaviour {
     public void NewState() {
         switch (form) {
             case Form.FIRST:
-                BossAction action = _attackSelectorFirstForm.Get(_bannedAction);
+                BossAction action = _attackSelectorFirstForm.Get();
                 Debug.Log(action);
                 if (action != null) {
-                    StartCoroutine(action.StartAction());
+                    action.StartAction();
                 } else {
-                    StartCoroutine(_transition.StartAction());
+                    _transition.StartAction();
                 }
                 
                 break;
@@ -73,20 +73,17 @@ public class Boss : MonoBehaviour {
 
     public void Transition(float transitionTime) {
         _transition.Duration = transitionTime;
-        StartCoroutine(_transition.StartAction());
+        _transition.StartAction();
     }
 
     public void EndState(float timebeforeNewState) {
         Transition(timebeforeNewState);
     }
 
-    public void AddBannedAction(BossAction action) {
-        _bannedAction.Add(action);
+    public void NewWaightAction(BossAction action, float weight ) {
+        _attackSelectorFirstForm.NewWeight(action, weight);
     }
 
-    public void RemoveBannedAction(BossAction action) {
-        _bannedAction.Remove(action);
-    }
     #endregion
 
     #region Form

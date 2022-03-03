@@ -9,19 +9,14 @@ public class Teleport : BossAction {
 
     private void Start() {
     }
-    public override IEnumerator StartAction() {
+    public override void StartAction() {
         Debug.Log("Tp");
         _boss.Instance.ChangeState(GetState());
-        _durationTimer = _duration;
-        while (_durationTimer > 0) {
-            yield return null;
-            _durationTimer -= Time.deltaTime;
-        }
         Vector3 playerPosition = _player.Instance.transform.position;
         Vector3 direction = (playerPosition - transform.position).normalized;
         Vector3 destination = direction * fleeDistance;
         transform.position = new Vector3(_body.transform.position.x, _body.transform.position.y, transform.position.z);
-        _boss.Instance.EndState(_duration);
+        Wait();
     }
 
     public override Boss.State GetState() {

@@ -15,20 +15,16 @@ public class RockFall : BossAction {
     [SerializeField] float fallingTime = 3f;
     [SerializeField] float apparitionHigh = 10;
 
-    public override IEnumerator StartAction() {
+    public override void StartAction() {
         Debug.Log("Rock");
         _boss.Instance.ChangeState(GetState());
-        _boss.Instance.AddBannedAction(this);
+        _boss.Instance.NewWaightAction(this, 0);
         WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y), transform.position);
-        _durationTimer = _duration;
-        while (_durationTimer > 0) {
-            yield return null;
-            _durationTimer -= Time.deltaTime;
-        }
-        _boss.Instance.EndState(transitionTime);
+        Wait();
     }
 
     void WeWillRockYou(int rockNumbers, Vector3 position) {
+        Duration = fallingTime;
         RockShield newRockShield = Instantiate(rockShield.gameObject, body.Instance.Transform).GetComponent<RockShield>();
         newRockShield.BossActionOnDestroy(this);
         for (int i = 0; i < rockNumbers; i++) {
