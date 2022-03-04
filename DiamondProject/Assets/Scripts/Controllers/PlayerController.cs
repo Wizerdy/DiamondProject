@@ -2,137 +2,89 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
-public class PlayerController : Entity
-{
-    PlayerControls controls;
+public class PlayerController : MonoBehaviour {
+    [SerializeField] EntityMovement _movement;
+    [SerializeField] EntityMeleeAttack _meleeAttack;
+    [SerializeField] EntityInteract _interact;
+    [SerializeField] EntityRangedAttack _rangedAttack;
+    [SerializeField] TempHealth _health;
 
-    [Header("NPC Settings")]
-    [SerializeField] private float interactingValue;
-    public float npcInteractRadius;
-    public bool isInteracting;
-    public bool isInteracting2;
-    public List<NPC> npcList;
-    [SerializeField] private TextInteraction textInteraction;
+    [Header("Dialogue")]
+    [SerializeField] TextInteraction textInteraction;
 
-    private bool canMove = true;
+    PlayerControls _controls = null;
 
-    void Update()
-    {
-        if (canMove)
-            Move();
+    #region Properties
 
-        NpcInRange(npcInteractRadius);
-        GetNearestNpc();
-        Interact();
-        if (interactingValue != 0 && isInteracting2 == true)
-        {
-            isInteracting = !isInteracting;
-            isInteracting2 = false;
-        }
-        if (interactingValue == 0)
-        {
-            isInteracting2 = true;
-        }
-    }
+    public Vector2 Orientation => _movement?.Orientation ?? Vector2.zero;
+    public Vector2 Direction => _movement?.Direction ?? Vector2.zero;
+    public TempHealth Health => _health;
+    public EntityMovement Movement => _movement;
 
-    private void Awake()
-    {
-        controls = new PlayerControls();
+    #endregion
 
-        controls.GamePlay.Move.performed += cc => direction = cc.ReadValue<Vector2>();
-        controls.GamePlay.Move.canceled += cc => direction = Vector2.zero;
+    void Awake() {
+        _controls = new PlayerControls();
+        _controls.GamePlay.Enable();
+        _controls.GamePlay.Move.performed += Move;
+        _controls.GamePlay.Move.canceled += Move;
 
-        controls.GamePlay.Interact.performed += cc => interactingValue = cc.ReadValue<float>();
-        controls.GamePlay.Interact.canceled += cc => interactingValue = 0;
+        _controls.GamePlay.Interact.started += Interact;
 
-        controls.GamePlay.DialogueInteraction.started += cc => textInteraction.OnClickEvent();
+        _controls.Battle.Enable();
+        _controls.Battle.Attack.performed += Attack;
+        _controls.Battle.RangedAttack.performed += RangedAttack;
+
+        _controls.Dialogue.Enable();
+        _controls.Dialogue.DialogueInteraction.started += DialogueInteraction;
+
+        if (_interact != null) { _interact.OnStopInteract += StopInteracting; }
     }
 
     private void OnDestroy() {
-        controls.GamePlay.DialogueInteraction.started -= cc => textInteraction.OnClickEvent();
-    }
-    public override void Move()
-    {
-        // Direction value updated ?
-        //Debug.Log(direction);
-        base.Move();
+        _controls.GamePlay.Move.performed -= Move;
+        _controls.GamePlay.Move.canceled -= Move;
+
+        _controls.GamePlay.Interact.started -= Interact;
+
+        _controls.Battle.Attack.performed -= Attack;
+        _controls.Battle.RangedAttack.performed -= RangedAttack;
+
+        _controls.Dialogue.DialogueInteraction.started -= DialogueInteraction;
+
+        if (_interact != null) { _interact.OnStopInteract -= StopInteracting; }
     }
 
-    public void NpcInRange(float radius)
-    {
-        // Tableau des npc dans la range d'interaction du joueur
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, npcInteractRadius, 1 << LayerMask.NameToLayer("NPC"));
-        // Boucle sur tous les colliders dans la range
-        for (int i = 0; i < hitColliders.Length; i++)
-        {
-            // Vérification de la taille de la liste pour ne pas faire tourner dans le vide quand la liste est vide
-            if (!npcList.Contains(hitColliders[i].GetComponent<NPC>()))
-            {
-                npcList.Add(hitColliders[i].GetComponent<NPC>());
-            }
-        }
+    private void Move(InputAction.CallbackContext cc) {
+        _movement?.Move(cc.ReadValue<Vector2>());
     }
 
-    public void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(transform.position, npcInteractRadius);
+    private void Attack(InputAction.CallbackContext cc) {
+        Vector2 direction = Direction != Vector2.zero ? Direction : Orientation;
+        if (direction == Vector2.zero) { direction = Vector2.up; }
+        _meleeAttack?.Attack(direction);
     }
 
-    public void Interact()
-    {
-        if (npcList.Count > 0)
-        {
-            if (isInteracting)
-            {
-                GetNearestNpc().StartTalking(transform.gameObject);
-            }
-        }
-        isInteracting = false;
+    private void Interact(InputAction.CallbackContext cc) {
+        NPC npc = _interact?.GetNearestNpc() ?? null;
+        if (npc == null) { return; }
+        _interact.Interact(npc);
+        _controls.GamePlay.Disable();
+        _controls.Battle.Disable();
     }
 
-    public NPC GetNearestNpc()
-    {
-        if (npcList.Count <= 0)
-        {
-            return null;
-        }
-
-        NPC tempEntity = null;
-        float dist = Mathf.Infinity;
-        for (int i = 0; i < npcList.Count; i++)
-        {
-            if (Vector3.Distance(transform.position, npcList[i].transform.position) > npcInteractRadius)
-            {
-                npcList.Remove(npcList[i]);
-                continue;
-            }   
-            if (dist > Vector3.Distance(transform.position, npcList[i].transform.position))
-            {
-                // A CHANGER PROTO
-                dist = Vector3.Distance(transform.position, npcList[i].transform.position);
-                tempEntity = npcList[i];
-            }
-        }
-        return tempEntity;
-    }
-    
-    public void disableMovement() {
-        canMove = false;
+    private void StopInteracting(NPC npc) {
+        _controls.GamePlay.Enable();
     }
 
-    public void enableMovement() {
-        canMove = true;
+    private void DialogueInteraction(InputAction.CallbackContext cc) {
+        textInteraction?.OnClickEvent();
     }
 
-    private void OnEnable()
-    {
-        controls.GamePlay.Enable();
-    }
-
-    private void OnDisable()
-    {
-        controls.GamePlay.Disable();
+    private void RangedAttack(InputAction.CallbackContext cc) {
+        Vector2 direction = Direction != Vector2.zero ? Direction : Orientation;
+        if (direction == Vector2.zero) { direction = Vector2.up; }
+        _rangedAttack?.Attack(direction);
     }
 }
