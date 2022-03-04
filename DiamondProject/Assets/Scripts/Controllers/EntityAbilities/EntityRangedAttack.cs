@@ -15,6 +15,8 @@ public class EntityRangedAttack : MonoBehaviour {
     public void Attack(Vector2 direction) {
         if (!_canRangeAttack) { return; }
 
+        OnAttack?.Invoke(direction);
+
         GameObject bull = Instantiate(_bullet, transform.position, Quaternion.identity);
         bull.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed;
         _canRangeAttack = false;

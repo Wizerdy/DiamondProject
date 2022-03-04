@@ -343,6 +343,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31988315}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &86989663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6024076845069431514, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+  m_PrefabInstance: {fileID: 1688591255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &86989666
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86989663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ce51367856bd49b72678cc4263225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Sound
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    ExcludeFromHoldingPauses: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  Sfx: {fileID: 0}
+  RandomSfx:
+  - {fileID: 8300000, guid: db4f34b6f62c75e4ba4e4974d3963f0e, type: 3}
+  - {fileID: 8300000, guid: cd8664b09a0a74a4c9a73f7f381e6e83, type: 3}
+  TestButton: 0
+  TestStopButton: 0
+  PlayMethod: 3
+  PoolSize: 5
+  MinVolume: 0.5
+  MaxVolume: 0.75
+  MinPitch: 0.9
+  MaxPitch: 1.1
+  SfxAudioMixerGroup: {fileID: 0}
 --- !u!1 &133233090
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,17 +428,6 @@ Transform:
   m_Father: {fileID: 1171295422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
---- !u!114 &147427935 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7873682425189889759, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
-  m_PrefabInstance: {fileID: 1688591255}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc2053d8eb1227944a028c5a340ddfef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &331036600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +1891,14 @@ PrefabInstance:
       propertyPath: Chance
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3303485470002897867, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: Feedbacks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303485470002897867, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: Feedbacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 86989666}
     - target: {fileID: 3959631131995836340, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _maxSpeed
       value: 15
@@ -1921,10 +1971,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangeAttack
       objectReference: {fileID: 0}
-    - target: {fileID: 7159676193215690231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
-      propertyPath: _eRangedAttack
-      value: 
-      objectReference: {fileID: 147427935}
     - target: {fileID: 8990786264109351080, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: Feedbacks.Array.size
       value: 1
