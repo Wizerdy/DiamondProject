@@ -18,14 +18,17 @@ public class TextInteraction : MonoBehaviour {
     }
 
     public void OnClickEvent() {
-        var wordIndex = TMP_TextUtilities.FindIntersectingWord(tmpText, Input.mousePosition, null);
+        if (wordsToMatch.Length > 0) {
+            var wordIndex = TMP_TextUtilities.FindIntersectingWord(tmpText, Input.mousePosition, null);
 
-        if (wordIndex != -1) {
-            clickedWord = tmpText.textInfo.wordInfo[wordIndex].GetWord();
+            if (wordIndex != -1) {
+                clickedWord = tmpText.textInfo.wordInfo[wordIndex].GetWord();
 
-            if (Array.Exists(wordsToMatch, element => element == clickedWord))
-                Fungus.Flowchart.BroadcastFungusMessage("StartTextInteraction");
+                if (Array.Exists(wordsToMatch, element => element == clickedWord))
+                    Fungus.Flowchart.BroadcastFungusMessage("StartTextInteraction");
+            }
         }
+
     }
 
     public void GetWordToClick() {
