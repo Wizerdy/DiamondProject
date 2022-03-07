@@ -5,9 +5,9 @@ using ToolsBoxEngine;
 
 public class DamageHealth : MonoBehaviour {
     [SerializeField] int _damage = 5;
-    [SerializeField] MultipleTagSelector _damageables;
+    [SerializeField] MultipleTagSelector _damageables = new MultipleTagSelector(MultipleTagSelector.State.EVERYTHING);
     [SerializeField] bool _destroyOnHit;
-
+    Vector2 vector = new Vector2(0, 1);
     System.Action<GameObject> _onCollide;
 
     #region Properties
@@ -27,7 +27,7 @@ public class DamageHealth : MonoBehaviour {
 
     private void Collide(Collider2D collision, bool hardHit = false) {
         if (_damageables.Contains(collision.gameObject.tag)) {
-            collision.gameObject.GetComponent<FinalHealth>()?.TakeDamage(_damage);
+            collision.gameObject.GetComponent<Health>()?.TakeDamage(_damage);
             _onCollide?.Invoke(collision.gameObject);
             if (_destroyOnHit) {
                 Die();

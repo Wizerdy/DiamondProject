@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Body : MonoBehaviour {
     public Transform Transform { get; private set; }
-    public Health Health;
+    public HealthBar Health;
 
     private void Awake() {
         Transform = GetComponent<Transform>();

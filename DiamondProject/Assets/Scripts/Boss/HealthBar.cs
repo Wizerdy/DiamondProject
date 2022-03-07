@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour {
+public class HealthBar : MonoBehaviour {
     public bool CanTakeDamage;
     [SerializeField] Slider _healthBar;
     [SerializeField] VisualEffect visualEffect;
