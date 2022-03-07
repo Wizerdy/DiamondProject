@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class RockFall : BossAction {
 
+    [SerializeField] float apparitionHigh = 10;
+    [SerializeField] float radiusBounds;
+    [Header("For Prog: ")]
     [SerializeField] HealthReference HealthRef;
     [SerializeField] FallingObject fallingObject = null;
+    [SerializeField] Transform centralTransform;
     [SerializeField] Rock rock;
     [SerializeField] RockShield rockShield;
     [SerializeField] List<Rock> rocks = new List<Rock>();
     [SerializeField] BossBodyReference body;
-    [SerializeField] float radiusBounds;
-    [SerializeField] Vector2Int rocksNumberBounds;
-    [SerializeField] float apparitionHigh = 10;
-    [SerializeField] Transform centralTransform;
+    Vector2Int rocksNumberBounds;
 
     public override void StartAction() {
         // Debug.Log("Rock");
@@ -44,4 +45,5 @@ public class RockFall : BossAction {
     public override Boss.State GetState() {
         return Boss.State.ROCKFALL;
     }
+
 }

@@ -19,12 +19,13 @@ public class MonoBossActionSelectorRandom : MonoObjectSelectorRandom<BossAction>
             return newWeight;
         }
     }
-    [SerializeField] List<WeightObject> actionsDummy= new List<WeightObject>();
-    //private void OnValidate() {
-    //    objects.Clear();
-    //    for (int i = 0; i < actionsDummy.Count; i++) {
-    //        objects.Add((WeightT)actionsDummy[i]);
-    //       // Debug.Log(objects[i]);
-    //    }
-    //}
+    public BossAction Get(string actionName) {
+        for (int i = 0; i < objects.Count; i++) {
+            if (actionName == objects[i].value.Name) {
+                return objects[i].value;
+            }
+        }
+        Debug.LogError("BossAction Not Found");
+        return default(BossAction);
+    }
 }

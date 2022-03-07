@@ -1019,6 +1019,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2824386827493111788, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: visualEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: aa73d5a37513c7b4e8fa6157e8f1fdf6, type: 2}
+    - target: {fileID: 3600589348171900713, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: HealthRef
+      value: 
+      objectReference: {fileID: 11400000, guid: 7679922e55eef344888b50322cee4a82, type: 2}
     - target: {fileID: 5522892817298040195, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -1067,44 +1075,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6115023169685521244, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
-      propertyPath: _healthBar
-      value: 
-      objectReference: {fileID: 473648745}
-    - target: {fileID: 6115023169685521244, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
-      propertyPath: CanTakeDamage
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6115023169685521244, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
---- !u!1 &939973967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5522892817298040195, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
-  m_PrefabInstance: {fileID: 939973966}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &939973968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939973967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de6f3989b27671a4f8bd0b557e15c528, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 1000
-  _onHit:
-    m_PersistentCalls:
-      m_Calls: []
-  _onHeal:
-    m_PersistentCalls:
-      m_Calls: []
-  _onDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &995726707
 GameObject:
   m_ObjectHideFlags: 0

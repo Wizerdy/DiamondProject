@@ -20,6 +20,6 @@ public class Transition : BossAction {
             yield return null;
             _durationTimer -= Time.deltaTime;
         }
-        _boss.Instance.NewState();
+        _boss.Instance.NextState();
     }
 }

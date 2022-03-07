@@ -21,7 +21,7 @@ public class TeleportAwarness : MonoBehaviour {
             && _boss.Instance.CurrentState != Boss.State.FIREMISSILE 
             && _boss.Instance.CurrentState != Boss.State.FIREBOTH            
             || shield != null) {
-            _boss.Instance.Teleport();
+            _boss.Instance.StopActions();
         }
     }
 
