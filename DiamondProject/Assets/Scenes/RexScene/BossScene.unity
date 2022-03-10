@@ -966,6 +966,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: missileRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: missileSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451754579874958533, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: missileRotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949278061184160787, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _transition
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949278061184160787, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _rotationSpeed
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949278061184160787, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _magicBallSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949278061184160787, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _bigMagicBallSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600589348171900713, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: _duration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600589348171900713, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
+      propertyPath: apparitionHigh
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 5522892817298040195, guid: cc6545abb6330464fb4194e7e4e48489, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -1513,7 +1549,7 @@ Camera:
   far clip plane: 20
   field of view: 60
   orthographic: 1
-  orthographic size: 25
+  orthographic size: 15
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1918,6 +1954,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3959631131995836340, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _turnFactor
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631131995836340, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _turnAroundAngle
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631131995836340, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _deceleration.curve.m_Curve.Array.data[0].time
+      value: -9.313226e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631131995836340, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _deceleration.curve.m_Curve.Array.data[0].value
+      value: 0.5023569
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631131995836340, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _deceleration.curve.m_Curve.Array.data[1].inSlope
+      value: -0.5023569
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631131995836340, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _deceleration.curve.m_Curve.Array.data[0].outSlope
+      value: -0.5023569
+      objectReference: {fileID: 0}
     - target: {fileID: 3959631132869822228, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1965,6 +2025,10 @@ PrefabInstance:
     - target: {fileID: 3959631132869822232, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020828497950990857, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: maxHealth
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 4020828497950990857, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _healthBar
