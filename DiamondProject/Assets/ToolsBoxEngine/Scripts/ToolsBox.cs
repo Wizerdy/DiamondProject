@@ -117,6 +117,29 @@ namespace ToolsBoxEngine {
     #endregion
 
     public static class Tools {
+        #region Variables
+        static string[] _hurlable = {
+            "Hello world ?",
+            "Gino", "HERE !", "HURL", "Yellow submarine", "Did you see ?!",
+            "REEEEEEEX !", "Imotep", "Ninja !", "Urgh", "Oh la belle bleue", "Ooba ooba !",
+            "404", "You're teapot", "Pouet", "Bogo sorted", "Hey listen", "Pourquoi ?",
+            "Mr.Gé1enormSecs", "Roblox36", "Achtung", "SirLynixVanFrietjes", "1337", "35383773",
+            "Chaussette", "Avez-vous déjà vous ?", "2319", "Viva l'algérie", "C'est une menace ?",
+            "Km²/h", "Skribbl ?", "Tools.Print", "Debug.Log", "HURLABLE !", "Malibu coco ?",
+            "Papillon de lumière", "How dare u ?", "THIS IS C# !", "On s'en bat les couilles",
+            "Connard", "(tousse)", "J'ai mal", "Elle est bonne", "Tamer", "Wingardium", "Wait",
+            "C'est ma b*te", "Do a barell roll", "Titre", "Mundo go this way", "Ok", "Enormimus !",
+            "Kowabunga", "Ptdr t ki ?", "Pasteque !", "Hein ?", "...", "You really need me ?",
+            "T'en veux encore ?", "AÏE", "OUÏLLE", "(Adrien's noise)", "Moule", "Dublin, duh", "DUH",
+            "Tartes à la framboise ?", "Chibrons", "UwU", "<color=red>ERRO-</color> nah joking",
+            "Papush", "T'as fetch ?", "Derrière toi !", "Phillipe !", "Fifo le fifou", "Va sucer un ours",
+            "Mange tes morts", "Peepoodo", "Peekaboo", "Lapinue", "+1", "Apple suxx", "Hit Billy & drink milk",
+            "THIIIICK", "Hippity hoppity", "Scoobi-dooby-doo", "Sluuuurp", "Leave me alone", "F*CK YOU !",
+            "Leblanc", "2b || !2b", "Boob", "Bark", "Fus Roh Dah", "Push Roh Dah !", "Git Rekt", "Merge tes morts",
+            "Bring me egg", "Patatozilla",
+            "Goodbye world"
+        };
+        #endregion
 
         #region Delegates
 
@@ -359,18 +382,13 @@ namespace ToolsBoxEngine {
             return false;
         }
 
+        public static T Random<T>(this T[] array) {
+            return array[UnityEngine.Random.Range(0, array.Length)];
+        }
+
         #endregion
 
         #region Utilities
-
-        public static void DebugLog(string separator, params string[] strings) {
-            string toPrint = "";
-            for (int i = 0; i < strings.Length - 1; i++) {
-                toPrint += strings[i] + separator;
-            }
-            toPrint += strings[strings.Length - 1];
-            Debug.Log(toPrint);
-        }
 
         public static float Remap(this float value, float from1, float to1, float from2, float to2) {
             return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
@@ -459,6 +477,18 @@ namespace ToolsBoxEngine {
             return numbers[rand];
         }
 
+        public static void SerializeInterface<T1, T2>(ref T2 input, ref T1 dummy) where T1 : class where T2 : class {
+            if (dummy is T2) {
+                input = dummy as T2;
+            } else {
+                dummy = null;
+            }
+        }
+
+        #endregion
+
+        #region Print
+
         public static void Print(DebugType type, char separator, params object[] strings) {
             Action<object> debug;
             switch (type) {
@@ -478,7 +508,7 @@ namespace ToolsBoxEngine {
                 output += " " + separator + " ";
             }
             output += strings[^1].ToString();
-            if(output == "") { return; }
+            if (output == "") { return; }
             debug(output);
         }
 
@@ -494,12 +524,9 @@ namespace ToolsBoxEngine {
             Print(DebugType.NORMAL, separator, strings);
         }
 
-        public static void SerializeInterface<T1, T2>(ref T2 input, ref T1 dummy) where T1 : class where T2 : class {
-            if (dummy is T2) {
-                input = dummy as T2;
-            } else {
-                dummy = null;
-            }
+        public static void Hurl<T>(this T hurler, DebugType type = DebugType.NORMAL) where T : UnityEngine.Object {
+            string hurl = _hurlable.Random();
+            Print(type, "<b>" + hurler.name + "</b> hurled at you : <b>" + hurl + "</b>");
         }
 
         #endregion

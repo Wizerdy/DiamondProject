@@ -383,8 +383,8 @@ GameObject:
   - component: {fileID: 3959631131995836339}
   - component: {fileID: 3959631131995836340}
   - component: {fileID: 5303888298297124882}
-  - component: {fileID: 3745787321201419433}
   - component: {fileID: 7873682425189889759}
+  - component: {fileID: 3745787321201419433}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Untagged
@@ -499,7 +499,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _turnAroundAngle: 180
+  _turnAroundAngle: 360
 --- !u!114 &5303888298297124882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,10 +513,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackParent: {fileID: 652180734932207057}
-  _sword: {fileID: 5096686924407608596}
   _attackAnimator: {fileID: 4346229573380257631}
-  _attackHitbox: {fileID: 6997322194216608544}
+  _attackHitbox: {fileID: 9011479793630442737}
   _damage: 50
+  _damageables:
+    tags:
+    - Untagged
+    - Respawn
+    - Finish
+    - EditorOnly
+    - MainCamera
+    - Player
+    - GameController
+    - Wall
+    - Bullet
+    state: 2
+--- !u!114 &7873682425189889759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959631131995836341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2053d8eb1227944a028c5a340ddfef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
+  _damage: 10
+  _damageables:
+    tags:
+    - Untagged
+    - Respawn
+    - Finish
+    - EditorOnly
+    - MainCamera
+    - Player
+    - GameController
+    - Wall
+    - Bullet
+    state: 2
+  _bulletSpeed: 30
+  _rangedAttackCooldown: 0.2
 --- !u!114 &3745787321201419433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,22 +571,6 @@ MonoBehaviour:
   radius: 2
   _showDebug: 0
   radiusColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &7873682425189889759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3959631131995836341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc2053d8eb1227944a028c5a340ddfef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bullet: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
-  _damage: 10
-  _bulletSpeed: 30
-  _rangedAttackCooldown: 0.2
 --- !u!1 &3959631132869822232
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,10 +928,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9004331012301325307}
+  - component: {fileID: 9011479793630442737}
   - component: {fileID: 6515063429741609159}
   - component: {fileID: 1783022779200444402}
   - component: {fileID: 6913084473307816882}
-  - component: {fileID: 6997322194216608544}
+  - component: {fileID: 7929814409363403156}
   m_Layer: 7
   m_Name: Sword
   m_TagString: Untagged
@@ -931,6 +955,32 @@ Transform:
   m_Father: {fileID: 3047052000504567667}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9011479793630442737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5096686924407608596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8552ec09ca4ab5443a2dbe899f496438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
+  _damageables:
+    tags:
+    - Untagged
+    - Respawn
+    - Finish
+    - EditorOnly
+    - MainCamera
+    - Player
+    - GameController
+    - Wall
+    - Bullet
+    state: 2
+  _destroyOnHit: 0
 --- !u!212 &6515063429741609159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1030,7 +1080,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6997322194216608544
+--- !u!114 &7929814409363403156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1039,11 +1089,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5096686924407608596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b16fc5a4c931ce941886f8067b8e93bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 856f4c6f9fb679445a72ef7bcfbe46c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBullet: 0
-  damage: 100
 --- !u!1 &6024076845069431514
 GameObject:
   m_ObjectHideFlags: 0

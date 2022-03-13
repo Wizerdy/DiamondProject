@@ -62,25 +62,25 @@ public class MultipleTagSelectorDrawer : PropertyDrawer {
         SerializedProperty prop_actualtagList = property.FindPropertyRelative("tags");
         List<string> actualTagList = new List<string>();
 
-        for (int i = 0; i < prop_actualtagList.arraySize; i++) {
-            actualTagList.Add(prop_actualtagList.GetArrayElementAtIndex(i).stringValue);
-        }
+        //for (int i = 0; i < prop_actualtagList.arraySize; i++) {
+        //    actualTagList.Add(prop_actualtagList.GetArrayElementAtIndex(i).stringValue);
+        //}
 
         SerializedProperty prop_state = property.FindPropertyRelative("state");
         MultipleTagSelector.State state = (MultipleTagSelector.State)prop_state.enumValueIndex;
 
         EditorGUI.DropShadowLabel(position, state.ToString());
 
-        //switch (state) {
-        //    case MultipleTagSelector.State.MULTIPLE:
-        //        for (int i = 0; i < prop_actualtagList.arraySize; i++) {
-        //            actualTagList.Add(prop_actualtagList.GetArrayElementAtIndex(i).stringValue);
-        //        }
-        //        break;
-        //    case MultipleTagSelector.State.EVERYTHING:
-        //        actualTagList.AddRange(tagList);
-        //        break;
-        //}
+        switch (state) {
+            case MultipleTagSelector.State.MULTIPLE:
+                for (int i = 0; i < prop_actualtagList.arraySize; i++) {
+                    actualTagList.Add(prop_actualtagList.GetArrayElementAtIndex(i).stringValue);
+                }
+                break;
+            case MultipleTagSelector.State.EVERYTHING:
+                actualTagList.AddRange(tagList);
+                break;
+        }
 
         string dropdownName = "...Multiple";
         if (actualTagList.Count == 0) {
@@ -107,34 +107,32 @@ public class MultipleTagSelectorDrawer : PropertyDrawer {
             menu.DropDown(currentPosition);
         }
 
-        //prop_actualtagList.ClearArray();
-        //for (int i = 0; i < actualTagList.Count; i++) {
-        //    prop_actualtagList.InsertArrayElementAtIndex(i);
-        //    prop_actualtagList.GetArrayElementAtIndex(i).stringValue = actualTagList[i];
-        //}
-        //property.serializedObject.ApplyModifiedProperties();
+        prop_actualtagList.ClearArray();
+        for (int i = 0; i < actualTagList.Count; i++) {
+            prop_actualtagList.InsertArrayElementAtIndex(i);
+            prop_actualtagList.GetArrayElementAtIndex(i).stringValue = actualTagList[i];
+        }
+        property.serializedObject.ApplyModifiedProperties();
 
         void handleItemClicked(object parameter) {
-            Debug.Log(parameter);
             string tag = parameter as string;
             if (tag == null) { return; }
             if (actualTagList.Contains(tag)) {
                 prop_actualtagList.DeleteArrayElementAtIndex(actualTagList.IndexOf(tag));
-                //actualTagList.Remove(tag);
+                actualTagList.Remove(tag);
             } else {
                 int size = prop_actualtagList.arraySize;
                 prop_actualtagList.InsertArrayElementAtIndex(size);
                 prop_actualtagList.GetArrayElementAtIndex(size).stringValue = tag;
-                //actualTagList.Add(tag);
+                actualTagList.Add(tag);
             }
-            //UpdateState();
-            Debug.Log(property.serializedObject.ToString());
+            UpdateState();
             property.serializedObject.ApplyModifiedProperties();
         }
 
         void CheckNone() {
             prop_actualtagList.ClearArray();
-            //prop_state.intValue = (int)MultipleTagSelector.State.NONE;
+            prop_state.intValue = (int)MultipleTagSelector.State.NONE;
             property.serializedObject.ApplyModifiedProperties();
         }
 
@@ -144,7 +142,7 @@ public class MultipleTagSelectorDrawer : PropertyDrawer {
                 prop_actualtagList.InsertArrayElementAtIndex(i);
                 prop_actualtagList.GetArrayElementAtIndex(i).stringValue = tagList[i];
             }
-            //prop_state.intValue = (int)MultipleTagSelector.State.EVERYTHING;
+            prop_state.intValue = (int)MultipleTagSelector.State.EVERYTHING;
             property.serializedObject.ApplyModifiedProperties();
         }
 

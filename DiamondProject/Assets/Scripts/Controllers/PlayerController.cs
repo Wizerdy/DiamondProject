@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using ToolsBoxEngine;
 
 public class PlayerController : MonoBehaviour {
     [SerializeField] EntityMovement _movement;
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour {
         _controls.GamePlay.Interact.started += Interact;
 
         _controls.Battle.Enable();
-        _controls.Battle.Attack.performed += Attack;
+        _controls.Battle.Attack.performed += MeleeAttack;
         _controls.Battle.RangedAttack.performed += RangedAttack;
 
         _controls.Dialogue.Enable();
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour {
 
         _controls.GamePlay.Interact.started -= Interact;
 
-        _controls.Battle.Attack.performed -= Attack;
+        _controls.Battle.Attack.performed -= MeleeAttack;
         _controls.Battle.RangedAttack.performed -= RangedAttack;
 
         _controls.Dialogue.DialogueInteraction.started -= DialogueInteraction;
@@ -60,7 +61,7 @@ public class PlayerController : MonoBehaviour {
         _movement?.Move(cc.ReadValue<Vector2>());
     }
 
-    private void Attack(InputAction.CallbackContext cc) {
+    private void MeleeAttack(InputAction.CallbackContext cc) {
         Vector2 direction = Direction != Vector2.zero ? Direction : Orientation;
         if (direction == Vector2.zero) { direction = Vector2.up; }
         _meleeAttack?.Attack(direction);
@@ -83,8 +84,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void RangedAttack(InputAction.CallbackContext cc) {
-        Vector2 direction = Direction != Vector2.zero ? Direction : Orientation;
-        if (direction == Vector2.zero) { direction = Vector2.up; }
+        //Vector2 direction = Direction != Vector2.zero ? Direction : Orientation;
+        //if (direction == Vector2.zero) { direction = Vector2.up; }
+        Vector2 direction = Vector2.up;
         _rangedAttack?.Attack(direction);
     }
 }

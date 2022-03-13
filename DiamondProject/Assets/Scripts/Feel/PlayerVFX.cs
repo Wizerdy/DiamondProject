@@ -51,7 +51,7 @@ public class PlayerVFX : MonoBehaviour {
         _meleeAttack.PlayFeedbacks();
     }
 
-    private void PlayMeleeHitFeedback(Collider2D coll2D) {
+    private void PlayMeleeHitFeedback(GameObject go) {
         _meleeHit.PlayFeedbacks();
     }
 
