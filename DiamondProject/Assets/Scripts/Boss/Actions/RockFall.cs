@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RockFall : BossAction {
-
+    [Header("For GD: ")]
     [SerializeField] float apparitionHigh = 10;
     [SerializeField] float radiusBounds;
     [Header("For Prog: ")]
@@ -19,7 +19,7 @@ public class RockFall : BossAction {
     public override void StartAction() {
         // Debug.Log("Rock");
         _boss.Instance.ChangeState(GetState());
-        _boss.Instance.NewWaightAction(this, 0);
+        _boss.Instance.NewWeightAction(this, 0);
         WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y), transform.position);
         Wait();
     }

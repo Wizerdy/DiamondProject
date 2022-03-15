@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour {
-    public enum State { TRANSITION, FORMSWITCH, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL, FIREBOTH, EXPLOSIVROCKFALL, DISMANTLE, FISSURE }
+    public enum State { TRANSITION, FORMSWITCH, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL, FIREBOTH, EXPLOSIVROCKFALL, DISMANTLE, FISSURE, GUARDIANSEED}
     public enum Form { PASSIVE = 0, FIRST = 1, SECOND = 2, DEAD = 3 }
 
     [SerializeField] private State currentState = State.TRANSITION;
@@ -23,6 +23,9 @@ public class Boss : MonoBehaviour {
         switch (nextState) {
             case "Random":
                 action = _currentForm.Get();
+                if(action == null) {
+                    StartCoroutine(RetryNextState(1));
+                }
                 break;
             default:
                 action = _allActions.Get(nextState);
@@ -47,7 +50,7 @@ public class Boss : MonoBehaviour {
         currentState = state;
     }
 
-    public void NewWaightAction(BossAction action, float weight) {
+    public void NewWeightAction(BossAction action, float weight) {
         _currentForm.NewWeight(action, weight);
     }
 
@@ -56,5 +59,9 @@ public class Boss : MonoBehaviour {
             bossActionsCoroutines.Remove(bossaction);
     }
 
+    public IEnumerator RetryNextState(float delay) {
+        yield return new WaitForSeconds(delay);
+        NextState("Random");
+    }
     #endregion
 }

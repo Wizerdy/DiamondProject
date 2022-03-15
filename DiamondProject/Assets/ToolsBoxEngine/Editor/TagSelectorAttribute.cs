@@ -27,7 +27,6 @@ public class MultipleTagSelector {
     public MultipleTagSelector(State state = State.MULTIPLE) {
         this.state = state;
         tags = new List<string>();
-        Debug.Log(state);
     }
 
     public bool Contains(string tag) {

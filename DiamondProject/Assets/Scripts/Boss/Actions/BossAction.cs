@@ -8,7 +8,7 @@ public abstract class BossAction : MonoBehaviour, IAction {
     [SerializeField] protected string _name = "Action";
     [SerializeField] protected float _duration = 1;
     protected float _durationTimer = 1;
-    [SerializeField] protected float _transition = 1;
+    [SerializeField] protected float _transitionTime = 1;
     [SerializeField] protected string nextState = "Transition";
     public string Name { get { return _name; } }
     public float Duration { get { return _duration; } set { _duration = value; } }
@@ -22,6 +22,7 @@ public abstract class BossAction : MonoBehaviour, IAction {
         StartCoroutine(StartWaiting());
     }
     protected virtual IEnumerator StartWaiting() {
+        Debug.Log(GetState());
         _durationTimer = _duration;
         while (_durationTimer > 0) {
             yield return null;
@@ -33,7 +34,7 @@ public abstract class BossAction : MonoBehaviour, IAction {
 
     protected void NextState() {
         if (nextState == "Transition") {
-            _boss.Instance.NextState(nextState, _transition);
+            _boss.Instance.NextState(nextState, _transitionTime);
         } else {
             _boss.Instance.NextState(nextState);
         }

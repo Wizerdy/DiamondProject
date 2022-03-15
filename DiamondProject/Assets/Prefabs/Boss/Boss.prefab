@@ -336,6 +336,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &421431868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421431869}
+  - component: {fileID: 421431870}
+  m_Layer: 0
+  m_Name: GuardianSeeds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &421431869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421431868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4831680425813599938}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &421431870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421431868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6636260935bdc07479b5d1b6aadf7096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - value: {fileID: 1503460440}
+    weight: 1
 --- !u!1 &461763236
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +917,64 @@ MonoBehaviour:
     weight: 0
   - value: {fileID: 2824386827493111788}
     weight: 0
+--- !u!1 &1503460438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1503460439}
+  - component: {fileID: 1503460440}
+  m_Layer: 0
+  m_Name: GuardianSeeds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1503460439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503460438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6974119302060950934}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503460440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503460438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcc67ff8cb946947a44cd0e0d0b86c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
+  _name: GuardianSeed
+  _duration: 1
+  _transition: 1
+  nextState: Transition
+  _life: 2
+  _apparitionTime: 1
+  treesNumberBounds: {x: 5, y: 5}
+  _playerRef: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
+  HealthRef: {fileID: 11400000, guid: 7679922e55eef344888b50322cee4a82, type: 2}
+  bossTree: {fileID: 6839599945639994337, guid: 1360fdc8ecd76e9459bbd08d49439042, type: 3}
+  _body: {fileID: 11400000, guid: 16d5954afc9222743877fdd43e2c69bb, type: 2}
+  treeShield: {fileID: 381666797358502244, guid: c985164803da3c84b9d60d501ced1fc8, type: 3}
+  trees: []
 --- !u!1 &1560825413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1432,7 @@ Transform:
   - {fileID: 7637439478275023783}
   - {fileID: 4029511256951438006}
   - {fileID: 1370565862}
+  - {fileID: 421431869}
   m_Father: {fileID: 6932836826028606480}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1482,7 +1588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   form: 1
-  _currentForm: {fileID: 1789959060}
+  _currentForm: {fileID: 421431870}
   _allActions: {fileID: 1370565863}
   bossActionsCoroutines: []
 --- !u!114 &939973968
@@ -1540,6 +1646,7 @@ Transform:
   - {fileID: 4298294801028892602}
   - {fileID: 1805037214379154081}
   - {fileID: 4421592750576774660}
+  - {fileID: 1503460439}
   m_Father: {fileID: 6932836826028606480}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

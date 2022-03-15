@@ -9,13 +9,13 @@ public class Shield : MonoBehaviour {
 
     protected void Protect() {
         isShielding = true;
-        health.Instance.CanTakeDamage = false;
+       // health.Instance.CanTakeDamage = false;
         visualEffect.Instance.AddColor(Color.blue, 10, 20);
     }
 
     protected void StopProtect() {
         isShielding = false;
-        health.Instance.CanTakeDamage = true;
+     //   health.Instance.CanTakeDamage = true;
         visualEffect.Instance.RemoveColor(20);
     }
 }

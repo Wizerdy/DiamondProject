@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockShield : Shield {
+public class TreeShield : Shield {
     [SerializeField] BossReference _boss;
-    [SerializeField] List<Rock> rocks = new List<Rock>();
+    [SerializeField] List<BossTree> trees = new List<BossTree>();
     [SerializeField] BossAction bossAction = null;
 
-    public void AddRock(Rock rock) {
-        if (rocks.Count == 0) {
+    public void AddTree(BossTree tree) {
+        if (trees.Count == 0) {
             Protect();
         }
-        rocks.Add(rock);
+        trees.Add(tree);
     }
 
     public void BossActionOnDestroy(BossAction bossAction) {
         this.bossAction = bossAction;
     }
 
-    public void RemoveRock(Rock rock) {
-        rocks.Remove(rock);
-        if (rocks.Count == 0) {
+    public void RemoveTree(BossTree tree) {
+        trees.Remove(tree);
+        if (trees.Count == 0) {
             StopProtect();
             _boss.Instance.NewWeightAction(bossAction, 1);
             Destroy(gameObject);
