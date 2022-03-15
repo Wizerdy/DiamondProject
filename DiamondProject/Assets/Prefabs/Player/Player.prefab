@@ -475,7 +475,30 @@ MonoBehaviour:
       m_RotationOrder: 4
     duration: 0.2
     amplitude: 1
-  _turnFactor: 20
+  _turnFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _turnAroundAngle: 180
 --- !u!114 &5303888298297124882
 MonoBehaviour:
@@ -490,8 +513,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackParent: {fileID: 652180734932207057}
+  _sword: {fileID: 5096686924407608596}
   _attackAnimator: {fileID: 4346229573380257631}
   _attackHitbox: {fileID: 6997322194216608544}
+  _damage: 50
 --- !u!114 &3745787321201419433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
+  _damage: 10
   _bulletSpeed: 30
   _rangedAttackCooldown: 0.2
 --- !u!1 &3959631132869822232

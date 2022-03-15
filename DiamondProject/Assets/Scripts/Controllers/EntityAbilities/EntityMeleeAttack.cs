@@ -5,8 +5,10 @@ using ToolsBoxEngine;
 
 public class EntityMeleeAttack : MonoBehaviour {
     [SerializeField] Transform _attackParent = null;
+    [SerializeField] GameObject _sword = null;
     [SerializeField] Animator _attackAnimator = null;
     [SerializeField] AttackHitbox _attackHitbox = null;
+    [SerializeField] int _damage = 10;
 
     public Tools.BasicDelegate<Vector2> OnAttack;
     public Tools.BasicDelegate<Collider2D> OnHit;
@@ -18,6 +20,10 @@ public class EntityMeleeAttack : MonoBehaviour {
 
     private void Awake() {
         _attackHitbox.OnHit += OnHit;
+    }
+
+    private void Start() {
+        _sword.GetComponent<AttackHitbox>().damage = _damage;
     }
 
     private void OnDestroy() {

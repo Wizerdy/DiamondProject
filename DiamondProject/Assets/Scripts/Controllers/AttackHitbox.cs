@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackHitbox : MonoBehaviour {
     [SerializeField] bool isBullet = false;
-    [SerializeField] int damage = 10;
+    public int damage = 10;
     private Vector3 startPos;
 
     public ToolsBoxEngine.Tools.BasicDelegate<Collider2D> OnHit;

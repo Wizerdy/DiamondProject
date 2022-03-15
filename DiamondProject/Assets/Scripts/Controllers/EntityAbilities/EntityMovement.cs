@@ -10,7 +10,8 @@ public class EntityMovement : MonoBehaviour {
     [SerializeField] float _maxSpeed = 5f;
     [SerializeField] AmplitudeCurve _acceleration;
     [SerializeField] AmplitudeCurve _deceleration;
-    [SerializeField] float _turnFactor;
+    //[SerializeField] float _turnFactor;
+    [SerializeField] AnimationCurve _turnFactor;
     [SerializeField, Range(0, 360f)] float _turnAroundAngle = 181f;
 
     public Tools.BasicDelegate OnRun;
@@ -27,7 +28,7 @@ public class EntityMovement : MonoBehaviour {
     float _speed = 0f;
     float _turnAroundRadian = 0f;
     float _turnAroundTimer = 0f;
-    float _turnTimer = 0f;
+    float _turnPerc = 0f;
 
     public bool IsMoving => _speed >= 0.01f;
     public Vector2 Orientation => _orientation;
@@ -94,9 +95,10 @@ public class EntityMovement : MonoBehaviour {
     }
 
     private void StartTurn() {
-        _turnTimer = 0f;
-        _acceleration.Reset();
-        StartDecelerating();
+        //_turnTimer = 0f;
+        //_acceleration.Reset();
+        //StartDecelerating();
+        _turnPerc = Mathf.Clamp01(_speed / _maxSpeed);
         _state = State.TURNING;
         OnTurn?.Invoke(_orientation);
     }
@@ -140,15 +142,8 @@ public class EntityMovement : MonoBehaviour {
                 }
                 break;
             case State.TURNING:
-                _turnTimer += Time.deltaTime * _turnFactor;
-                if (_turnTimer < _deceleration.duration) {
-                    return ComputeSpeed(State.DECELERATING, out changeDirection);
-                } else if ((_turnTimer - _deceleration.duration) < _acceleration.duration) {
-                    return ComputeSpeed(State.ACCELERATING, out changeDirection);
-                } else {
-                    _state = State.ACCELERATING;
-                }
-                break;
+                changeDirection = true;
+                return _turnFactor.Evaluate(_turnPerc) * _maxSpeed;
         }
         return 0f;
     }
