@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class BossAction : MonoBehaviour, IAction {
+    [Header("For Prog: ")]
     [SerializeField] protected Reference<Boss> _boss;
-
+    [Header("For GD: ")]
     [SerializeField] protected string _name = "Action";
     [SerializeField] protected float _duration = 1;
     protected float _durationTimer = 1;
@@ -12,8 +13,6 @@ public abstract class BossAction : MonoBehaviour, IAction {
     [SerializeField] protected string nextState = "Transition";
     public string Name { get { return _name; } }
     public float Duration { get { return _duration; } set { _duration = value; } }
-
-    [SerializeField] delegate void ActionDelegate(IEnumerator action);
 
     public abstract Boss.State GetState();
     public abstract void StartAction();

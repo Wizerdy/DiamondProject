@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ToolsBoxEngine;
 
 public class BossTree : MonoBehaviour {
     [SerializeField] Reference<Boss> _boss;
@@ -10,6 +11,10 @@ public class BossTree : MonoBehaviour {
     public int life = 0;
     public Vector3 destination = Vector3.zero;
     public float apparitionTime = 2f;
+    public float zoneDamageTime = 2f;
+    [SerializeField] GameObject _zoneDamage;
+    [SerializeField] GameObject _apparition;
+
 
     #region Builder
 
@@ -20,6 +25,12 @@ public class BossTree : MonoBehaviour {
 
     public BossTree SetApparitionTime(float apparitionTime) {
         this.apparitionTime = apparitionTime;
+        return this;
+    }
+
+    public BossTree SetZoneDamageTime(float zoneDamageTime)
+    {
+        this.zoneDamageTime = zoneDamageTime;
         return this;
     }
 
@@ -36,22 +47,20 @@ public class BossTree : MonoBehaviour {
         _cc.enabled = false;
         treeShield.AddTree(this);
         transform.position = destination;
-    }
-    void Update() {
+        _apparition.SetActive(true);
         StartCoroutine(Spawning());
     }
-
     IEnumerator Spawning() {
         float timer = apparitionTime;
-        while( timer > 0) {
-            timer -= Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(timer);
         Spawn();
     }
     void Spawn() {
+        _apparition.SetActive(false);
+        _zoneDamage.SetActive(true);
         _sr.color = new Color(_sr.color.r, _sr.color.g, _sr.color.b, 255);
         _cc.enabled = true;
+        StartCoroutine(Tools.Delay(() => _zoneDamage.SetActive(false), zoneDamageTime));
     }
     void Die() {
         treeShield.RemoveTree(this);
