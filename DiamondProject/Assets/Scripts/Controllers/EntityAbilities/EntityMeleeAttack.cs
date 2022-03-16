@@ -10,6 +10,7 @@ public class EntityMeleeAttack : MonoBehaviour {
     [SerializeField] DamageHealth _attackHitbox = null;
     [Header("Values")]
     [SerializeField] int _damage = 10;
+    [SerializeField] float _cooldownTime = 1f;
     [SerializeField] MultipleTagSelector _damageables = new MultipleTagSelector(MultipleTagSelector.State.EVERYTHING);
 
     public Tools.BasicDelegate<Vector2> OnAttack;
@@ -34,13 +35,11 @@ public class EntityMeleeAttack : MonoBehaviour {
     }
 
     public void Attack(Vector2 direction) {
+        if (isAttacking) { return; }
         isAttacking = true;
         _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
         _attackAnimator.SetTrigger("Attack");
         OnAttack?.Invoke(direction);
-    }
-
-    public void NotAttacking() {
-        isAttacking = false;
+        StartCoroutine(Tools.Delay(() => isAttacking = false, _cooldownTime));
     }
 }

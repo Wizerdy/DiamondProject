@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntityInteract _interact;
     [SerializeField] EntityRangedAttack _rangedAttack;
     [SerializeField] Health _health;
+    [SerializeField] Reference<Camera> _camera;
 
     [Header("Dialogue")]
     [SerializeField] TextInteraction textInteraction;
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour {
     public Vector2 Direction => _movement?.Direction ?? Vector2.zero;
     public Health Health => _health;
     public EntityMovement Movement => _movement;
+
+    Vector2 MousePosition => _camera.Instance.ScreenToWorldPoint(mousePosition);
 
     #endregion
 
@@ -40,15 +43,22 @@ public class PlayerController : MonoBehaviour {
         _controls.GamePlay.Interact.started += Interact;
 
         _controls.Battle.Enable();
-        _controls.Battle.Attack.performed += MeleeAttack;
-        _controls.Battle.Attack.started += MeleeAttack;
-        _controls.Battle.RangedAttack.performed += RangedAttack;
-        _controls.Battle.AttackDirection.performed += MousePosition;
+        _controls.Battle.AttackDirection.performed += SetMousePosition;
 
         _controls.Dialogue.Enable();
         _controls.Dialogue.DialogueInteraction.started += DialogueInteraction;
 
         if (_interact != null) { _interact.OnStopInteract += StopInteracting; }
+    }
+
+    private void Update() {
+        if (_controls.Battle.Attack.ReadValue<float>() == 1) {
+            MeleeAttack();
+        }
+
+        if (_controls.Battle.RangedAttack.ReadValue<float>() == 1) {
+            RangedAttack();
+        }
     }
 
     private void OnDestroy() {
@@ -57,8 +67,7 @@ public class PlayerController : MonoBehaviour {
 
         _controls.GamePlay.Interact.started -= Interact;
 
-        _controls.Battle.Attack.performed -= MeleeAttack;
-        _controls.Battle.RangedAttack.performed -= RangedAttack;
+        _controls.Battle.AttackDirection.performed += SetMousePosition;
 
         _controls.Dialogue.DialogueInteraction.started -= DialogueInteraction;
 
@@ -69,12 +78,16 @@ public class PlayerController : MonoBehaviour {
         _movement?.Move(cc.ReadValue<Vector2>());
     }
 
-    private void MeleeAttack(InputAction.CallbackContext cc) {
-        //Vector2 direction = Direction != Vector2.zero ? Direction : Orientation;
-        Vector2 direction = (mousePosition - transform.Position2D()).normalized;
-        //this.Hurl(mousePosition.ToString());
+    private void MeleeAttack() {
+        Vector2 direction = (MousePosition - transform.Position2D()).normalized;
         if (direction == Vector2.zero) { direction = Vector2.up; }
         _meleeAttack?.Attack(direction);
+    }
+
+    private void RangedAttack() {
+        Vector2 direction = (MousePosition - transform.Position2D()).normalized;
+        if (direction == Vector2.zero) { direction = Vector2.up; }
+        _rangedAttack?.Attack(direction);
     }
 
     private void Interact(InputAction.CallbackContext cc) {
@@ -93,14 +106,7 @@ public class PlayerController : MonoBehaviour {
         textInteraction?.OnClickEvent();
     }
 
-    private void RangedAttack(InputAction.CallbackContext cc) {
-        //Vector2 direction = Direction != Vector2.zero ? Direction : Orientation;
-        //if (direction == Vector2.zero) { direction = Vector2.up; }
-        Vector2 direction = Vector2.up;
-        _rangedAttack?.Attack(direction);
-    }
-
-    private void MousePosition(InputAction.CallbackContext cc) {
-        mousePosition = Camera.main.ScreenToWorldPoint(cc.ReadValue<Vector2>());
+    private void SetMousePosition(InputAction.CallbackContext cc) {
+        mousePosition = cc.ReadValue<Vector2>();
     }
 }

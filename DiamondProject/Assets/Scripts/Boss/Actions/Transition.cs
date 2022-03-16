@@ -15,7 +15,6 @@ public class Transition : BossAction {
     }
 
     protected override IEnumerator StartWaiting() {
-        Debug.Log(GetState());
         _durationTimer = _duration;
         while (_durationTimer > 0) {
             yield return null;

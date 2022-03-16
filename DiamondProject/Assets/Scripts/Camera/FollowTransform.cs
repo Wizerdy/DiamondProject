@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using ToolsBoxEngine;
 
-public class FollowTransform : MonoBehaviour {
-    [SerializeField] Transform target;
-    [SerializeField] Transform self;
-    [SerializeField] Axis[] concernedAxis = { Axis.X, Axis.Y, Axis.Z };
+public class FollowTransform : CameraAction {
+    [SerializeField] Reference<Transform> target;
 
-    private void Reset() {
-        self = transform;
-    }
+    Vector3 _targetPosition = Vector3.zero;
 
     void Update() {
-        self.position = self.position.Override(target.position, concernedAxis);
+        if (_targetPosition != target.Instance.position) {
+            _targetPosition = target.Instance.position;
+            Move(_targetPosition);
+            //Move(target.Instance.position);
+        }
     }
+
+    //void Update() {
+    //    _movements.transform.position = _movements.transform.position.Override(target.Instance.position, _concernedAxis);
+    //}
 }

@@ -18,7 +18,6 @@ public class EntityRangedAttack : MonoBehaviour {
 
     public void Attack(Vector2 direction) {
         if (!_canRangeAttack) { return; }
-        this.Hurl();
         OnAttack?.Invoke(direction);
 
         GameObject bull = Instantiate(_bullet, transform.position, Quaternion.identity);

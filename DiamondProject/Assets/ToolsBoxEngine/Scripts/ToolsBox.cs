@@ -136,7 +136,7 @@ namespace ToolsBoxEngine {
             "Mange tes morts", "Peepoodo", "Peekaboo", "Lapinue", "+1", "Apple suxx", "Hit Billy & drink milk",
             "THIIIICK", "Hippity hoppity", "Scoobi-dooby-doo", "Sluuuurp", "Leave me alone", "F*CK YOU !",
             "Leblanc", "2b || !2b", "Boob", "Bark", "Fus Roh Dah", "Push Roh Dah !", "Git Rekt", "Merge tes morts",
-            "Bring me egg", "Patatozilla",
+            "Bring me egg", "Patatozilla", "La bougie.. M*rde !",
             "Goodbye world"
         };
         #endregion
@@ -430,6 +430,8 @@ namespace ToolsBoxEngine {
         }
 
         public static float InverseLerpUnclamped(float a, float b, float t) {
+            //if (b - a == 0) { throw new DivideByZeroException(); }
+            if (b - a == 0) { return 1f; }
             float value = (t - a) / (b - a);
             return value;
         }
