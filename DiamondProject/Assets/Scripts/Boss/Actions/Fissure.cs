@@ -24,6 +24,7 @@ public class Fissure : BossAction, IAction
             newShockWave.transform.localScale = Vector3.one * (newShockWave.transform.localScale.x + _fissureSpeed * Time.deltaTime);
             yield return null;
         }
+        Destroy(newShockWave.gameObject);
         NextState();
     }
 
