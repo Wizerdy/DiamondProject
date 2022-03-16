@@ -514,20 +514,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackParent: {fileID: 652180734932207057}
   _attackAnimator: {fileID: 4346229573380257631}
-  _attackHitbox: {fileID: 9011479793630442737}
+  _attackHitbox: {fileID: 7262411699775730752}
   _damage: 50
   _damageables:
     tags:
-    - Untagged
-    - Respawn
-    - Finish
-    - EditorOnly
-    - MainCamera
-    - Player
-    - GameController
-    - Wall
-    - Bullet
-    state: 2
+    - Boss
+    state: 1
 --- !u!114 &7873682425189889759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,16 +536,8 @@ MonoBehaviour:
   _damage: 10
   _damageables:
     tags:
-    - Untagged
-    - Respawn
-    - Finish
-    - EditorOnly
-    - MainCamera
-    - Player
-    - GameController
-    - Wall
-    - Bullet
-    state: 2
+    - Boss
+    state: 1
   _bulletSpeed: 30
   _rangedAttackCooldown: 0.2
 --- !u!114 &3745787321201419433
@@ -581,11 +565,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3959631132869822228}
   - component: {fileID: 3959631132869822229}
-  - component: {fileID: 4020828497950990857}
+  - component: {fileID: 2161993602319532677}
   - component: {fileID: 3959631132869822230}
   - component: {fileID: 3959631132869822231}
   - component: {fileID: 4346229573380257631}
   - component: {fileID: 8519624037585074062}
+  - component: {fileID: 9109140029771317965}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -628,9 +613,9 @@ MonoBehaviour:
   _meleeAttack: {fileID: 5303888298297124882}
   _interact: {fileID: 3745787321201419433}
   _rangedAttack: {fileID: 7873682425189889759}
-  _health: {fileID: 4020828497950990857}
+  _health: {fileID: 2161993602319532677}
   textInteraction: {fileID: 0}
---- !u!114 &4020828497950990857
+--- !u!114 &2161993602319532677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -639,13 +624,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3959631132869822232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f12c8092ea567b47ad47da26eb144a0, type: 3}
+  m_Script: {fileID: 11500000, guid: de6f3989b27671a4f8bd0b557e15c528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageImage: {fileID: 0}
-  _healthBar: {fileID: 0}
-  maxHealth: 100
-  CanTakeDamage: 1
+  _maxHealth: 100
+  _onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &3959631132869822230
 Rigidbody2D:
   serializedVersion: 4
@@ -727,6 +718,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 3959631132869822229}
   target: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
+--- !u!114 &9109140029771317965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959631132869822232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f560cc9af86bf294da37776d84fcefb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 2161993602319532677}
+  target: {fileID: 11400000, guid: f5c65a46c95138e438c3a07d070145b2, type: 2}
 --- !u!1 &3959631133316557153
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,12 +933,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9004331012301325307}
-  - component: {fileID: 9011479793630442737}
+  - component: {fileID: 7262411699775730752}
   - component: {fileID: 6515063429741609159}
   - component: {fileID: 1783022779200444402}
   - component: {fileID: 6913084473307816882}
   - component: {fileID: 7929814409363403156}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +960,7 @@ Transform:
   m_Father: {fileID: 3047052000504567667}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9011479793630442737
+--- !u!114 &7262411699775730752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -969,17 +974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 5
   _damageables:
-    tags:
-    - Untagged
-    - Respawn
-    - Finish
-    - EditorOnly
-    - MainCamera
-    - Player
-    - GameController
-    - Wall
-    - Bullet
-    state: 2
+    tags: []
+    state: 0
   _destroyOnHit: 0
 --- !u!212 &6515063429741609159
 SpriteRenderer:
@@ -1304,7 +1300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eMovement: {fileID: 3959631131995836340}
   _eMeleeAttack: {fileID: 5303888298297124882}
-  _eTempHealth: {fileID: 4020828497950990857}
+  _eTempHealth: {fileID: 2161993602319532677}
   _eRangedAttack: {fileID: 7873682425189889759}
   _run: {fileID: 7074820754420491190}
   _meleeAttack: {fileID: 8990786264109351080}

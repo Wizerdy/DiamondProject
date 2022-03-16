@@ -6,7 +6,7 @@ using MoreMountains.Feedbacks;
 public class PlayerVFX : MonoBehaviour {
     [SerializeField] EntityMovement _eMovement;
     [SerializeField] EntityMeleeAttack _eMeleeAttack;
-    [SerializeField] TempHealth _eTempHealth;
+    [SerializeField] Health _eTempHealth;
     [SerializeField] EntityRangedAttack _eRangedAttack;
     [SerializeField] MMFeedbacks _run;
     [SerializeField] MMFeedbacks _meleeAttack;

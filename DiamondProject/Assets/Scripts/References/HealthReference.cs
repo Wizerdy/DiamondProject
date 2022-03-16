@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Reference/Health")]
-public class HealthReference : Reference<HealthBar> {
+public class HealthReference : Reference<Health> {
 
 }

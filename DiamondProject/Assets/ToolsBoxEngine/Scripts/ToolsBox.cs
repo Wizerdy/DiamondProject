@@ -147,7 +147,7 @@ namespace ToolsBoxEngine {
 
         public delegate void BasicDelegate<T>(T arg);
 
-        public delegate void BasicDelegateTwoArgs<T>(ref T arg1, T arg2);
+        //public delegate void BasicDelegateTwoArgs<T>(ref T arg1, T arg2);
 
         public delegate void BasicDelegate<T1, T2>(T1 arg1, T2 arg2);
 
@@ -249,6 +249,24 @@ namespace ToolsBoxEngine {
             return vector;
         }
 
+        public static Vector3 Override(this Vector3 vector, Vector3 target, params Axis[] axis) {
+            if (axis.Length <= 0) { return vector; }
+            for (int i = 0; i < axis.Length; i++) {
+                switch (axis[i]) {
+                    case Axis.X:
+                        vector = vector.Override(target.x, Axis.X);
+                        break;
+                    case Axis.Y:
+                        vector = vector.Override(target.y, Axis.Y);
+                        break;
+                    case Axis.Z:
+                        vector = vector.Override(target.z, Axis.Z);
+                        break;
+                }
+            }
+            return vector;
+        }
+
         public static Vector2 Override(this Vector2 vector, float value, Axis axis = Axis.Y) {
             switch (axis) {
                 case Axis.X:
@@ -266,6 +284,21 @@ namespace ToolsBoxEngine {
                     break;
             }
 
+            return vector;
+        }
+
+        public static Vector2 Override(this Vector2 vector, Vector2 target, params Axis[] axis) {
+            if (axis.Length <= 0) { return vector; }
+            for (int i = 0; i < axis.Length; i++) {
+                switch (axis[i]) {
+                    case Axis.X:
+                        vector.Override(target.x, Axis.X);
+                        break;
+                    case Axis.Y:
+                        vector.Override(target.y, Axis.Y);
+                        break;
+                }
+            }
             return vector;
         }
 
@@ -320,13 +353,6 @@ namespace ToolsBoxEngine {
                 number = 0;
             }
             return number;
-        }
-
-        public static void Print<T>(this Nullable<T>[] array) where T : struct {
-            Debug.Log("----------------");
-            for(int i = 0; i < array.Length; i++) {
-                Debug.Log(i + ". " + array[i].Value);
-            }
         }
 
         public static T[] ToArray<T>(this Nullable<T>[] array) where T : struct {
@@ -386,12 +412,26 @@ namespace ToolsBoxEngine {
             return array[UnityEngine.Random.Range(0, array.Length)];
         }
 
+        public static bool Contains<T>(this T[] array, T value) {
+            for (int i = 0; i < array.Length; i++) {
+                if (array[i].Equals(value)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         #endregion
 
         #region Utilities
 
         public static float Remap(this float value, float from1, float to1, float from2, float to2) {
             return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+        }
+
+        public static float InverseLerpUnclamped(float a, float b, float t) {
+            float value = (t - a) / (b - a);
+            return value;
         }
 
         public static Rect GetPlayerRect(int playerId, int maxPlayer) {
@@ -526,10 +566,24 @@ namespace ToolsBoxEngine {
 
         public static void Hurl<T>(this T hurler, DebugType type = DebugType.NORMAL) where T : UnityEngine.Object {
             string hurl = _hurlable.Random();
-            Print(type, "<b>" + hurler.name + "</b> hurled at you : <b>" + hurl + "</b>");
+            hurler.Hurl(hurl, type);
+        }
+
+        public static void Hurl<T>(this T hurler, string message, DebugType type = DebugType.NORMAL) where T : UnityEngine.Object {
+            Print(type, "<b>" + hurler.name + "</b> hurled at you : <b>" + message + "</b>");
         }
 
         #endregion
+
+        public static IEnumerator Delay<T1, T2, T3>(BasicDelegate<T1, T2, T3> function, T1 arg1, T2 arg2, T3 arg3, float time) {
+            yield return new WaitForSeconds(time);
+            function(arg1, arg2, arg3);
+        }
+
+        public static IEnumerator Delay<T1, T2>(BasicDelegate<T1, T2> function, T1 arg1, T2 arg2, float time) {
+            yield return new WaitForSeconds(time);
+            function(arg1, arg2);
+        }
 
         public static IEnumerator Delay<T>(BasicDelegate<T> function, T arg, float time) {
             yield return new WaitForSeconds(time);

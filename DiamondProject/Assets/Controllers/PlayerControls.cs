@@ -147,6 +147,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AttackDirection"",
+                    ""type"": ""Value"",
+                    ""id"": ""9290cc7e-35fe-4764-b4fe-978625013957"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -169,6 +178,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""RangedAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8205b484-ef8d-4546-aedd-18e2b9fa82c7"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -213,6 +233,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
         m_Battle_Attack = m_Battle.FindAction("Attack", throwIfNotFound: true);
         m_Battle_RangedAttack = m_Battle.FindAction("RangedAttack", throwIfNotFound: true);
+        m_Battle_AttackDirection = m_Battle.FindAction("AttackDirection", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_DialogueInteraction = m_Dialogue.FindAction("DialogueInteraction", throwIfNotFound: true);
@@ -318,12 +339,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IBattleActions m_BattleActionsCallbackInterface;
     private readonly InputAction m_Battle_Attack;
     private readonly InputAction m_Battle_RangedAttack;
+    private readonly InputAction m_Battle_AttackDirection;
     public struct BattleActions
     {
         private @PlayerControls m_Wrapper;
         public BattleActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Attack => m_Wrapper.m_Battle_Attack;
         public InputAction @RangedAttack => m_Wrapper.m_Battle_RangedAttack;
+        public InputAction @AttackDirection => m_Wrapper.m_Battle_AttackDirection;
         public InputActionMap Get() { return m_Wrapper.m_Battle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -339,6 +362,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @RangedAttack.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnRangedAttack;
                 @RangedAttack.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnRangedAttack;
                 @RangedAttack.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnRangedAttack;
+                @AttackDirection.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttackDirection;
+                @AttackDirection.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttackDirection;
+                @AttackDirection.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttackDirection;
             }
             m_Wrapper.m_BattleActionsCallbackInterface = instance;
             if (instance != null)
@@ -349,6 +375,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @RangedAttack.started += instance.OnRangedAttack;
                 @RangedAttack.performed += instance.OnRangedAttack;
                 @RangedAttack.canceled += instance.OnRangedAttack;
+                @AttackDirection.started += instance.OnAttackDirection;
+                @AttackDirection.performed += instance.OnAttackDirection;
+                @AttackDirection.canceled += instance.OnAttackDirection;
             }
         }
     }
@@ -395,6 +424,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnAttack(InputAction.CallbackContext context);
         void OnRangedAttack(InputAction.CallbackContext context);
+        void OnAttackDirection(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
     {
