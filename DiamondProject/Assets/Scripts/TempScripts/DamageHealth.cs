@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using ToolsBoxEngine;
 
+[System.Serializable]
 public class DamageHealth : MonoBehaviour {
     [SerializeField] int _damage = 5;
-    [SerializeField] MultipleTagSelector _damageables = new MultipleTagSelector(MultipleTagSelector.State.EVERYTHING);
+    [SerializeField] MultipleTagSelector _damageables;
     [SerializeField] bool _destroyOnHit;
-    Vector2 vector = new Vector2(0, 1);
-    System.Action<GameObject> _onCollide;
+    Tools.BasicDelegate<GameObject> _onCollide;
 
     #region Properties
 
     public int Damage { get { return _damage; } set { _damage = value; } }
-    public event System.Action<GameObject> OnCollide { add { _onCollide += value; } remove { _onCollide -= value; } }
+    public MultipleTagSelector Damageables { get { return _damageables; } set { _damageables = value; } }
+    public event Tools.BasicDelegate<GameObject> OnCollide { add { _onCollide += value; } remove { _onCollide -= value; } }
 
     #endregion
 
@@ -27,7 +28,7 @@ public class DamageHealth : MonoBehaviour {
 
     private void Collide(Collider2D collision, bool hardHit = false) {
         if (_damageables.Contains(collision.gameObject.tag)) {
-            collision.gameObject.GetComponent<Health>()?.TakeDamage(_damage);
+            collision.gameObject.GetComponent<IHealth>()?.TakeDamage(_damage);
             _onCollide?.Invoke(collision.gameObject);
             if (_destroyOnHit) {
                 Die();

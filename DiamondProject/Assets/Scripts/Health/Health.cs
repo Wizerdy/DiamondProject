@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour {
+public class Health : MonoBehaviour, IHealth {
     [SerializeField] int _maxHealth = 50;
     [Space]
     [SerializeField] UnityEvent<int> _onHit;
@@ -15,15 +15,16 @@ public class Health : MonoBehaviour {
 
     #region Properties
 
+    public int MaxHealth => _maxHealth;
     public bool CanTakeDamage { 
         get { return _invicibilityToken <= 0; }
         set { _invicibilityToken += (value ? -1 : 1); _invicibilityToken = Mathf.Max(0, _invicibilityToken); }
     }
     public int CurrentHealth { get { return _currentHealth; } set { ChangeHealth(value - _currentHealth); } }
 
-    public event UnityAction<int> OnHit { add { _onHit.AddListener(value); } remove { _onHit.RemoveListener(value); } }
-    public event UnityAction<int> OnHeal { add { _onHeal.AddListener(value); } remove { _onHeal.RemoveListener(value); } }
-    public event UnityAction OnDeath { add { _onDeath.AddListener(value); } remove { _onDeath.RemoveListener(value); } }
+    public event UnityAction<int> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
+    public event UnityAction<int> OnHeal { add => _onHeal.AddListener(value); remove => _onHeal.RemoveListener(value); }
+    public event UnityAction OnDeath { add => _onDeath.AddListener(value); remove => _onDeath.RemoveListener(value); }
 
     #endregion
 

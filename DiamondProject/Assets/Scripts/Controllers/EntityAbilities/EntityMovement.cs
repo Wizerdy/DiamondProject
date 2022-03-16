@@ -42,6 +42,7 @@ public class EntityMovement : MonoBehaviour {
 
     private void Start() {
         _turnAroundRadian = Mathf.Cos(_turnAroundAngle / 2f);
+        if (_turnAroundAngle == 360f) { _turnAroundRadian = -10f; }
     }
 
     private void FixedUpdate() {

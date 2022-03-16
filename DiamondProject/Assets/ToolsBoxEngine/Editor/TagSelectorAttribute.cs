@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using ToolsBoxEngine;
 
 public class TagSelectorAttribute : PropertyAttribute {
     public bool useDefaultTagFieldDrawer = false;
@@ -18,11 +19,11 @@ public class MultipleTagSelector {
     public List<string> tags;
     public State state = State.MULTIPLE;
 
-    static private readonly MultipleTagSelector _none = new MultipleTagSelector(State.NONE);
-    static private readonly MultipleTagSelector _everything = new MultipleTagSelector(State.EVERYTHING);
+    //static private readonly MultipleTagSelector _none = new MultipleTagSelector(State.NONE);
+    //static private readonly MultipleTagSelector _everything = new MultipleTagSelector(State.EVERYTHING);
 
-    static public MultipleTagSelector Everything => _everything;
-    static public MultipleTagSelector None => _none;
+    //static public MultipleTagSelector Everything => _everything;
+    //static public MultipleTagSelector None => _none;
 
     public MultipleTagSelector(State state = State.MULTIPLE) {
         this.state = state;

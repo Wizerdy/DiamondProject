@@ -336,53 +336,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &421431868
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 421431869}
-  - component: {fileID: 421431870}
-  m_Layer: 0
-  m_Name: GuardianSeeds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &421431869
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421431868}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4831680425813599938}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &421431870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421431868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6636260935bdc07479b5d1b6aadf7096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objects:
-  - value: {fileID: 1503460440}
-    weight: 1
 --- !u!1 &461763236
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +599,7 @@ GameObject:
   - component: {fileID: 950469999}
   - component: {fileID: 7427294178217760261}
   - component: {fileID: 5709123011259908112}
+  - component: {fileID: 5637229001329794762}
   m_Layer: 0
   m_Name: BossBody
   m_TagString: Untagged
@@ -707,54 +661,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701335efc2f7b554abae14b00b1687ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: {fileID: 939973968}
---- !u!1 &973887025
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 973887026}
-  - component: {fileID: 973887027}
-  m_Layer: 0
-  m_Name: Fissure
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &973887026
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973887025}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4831680425813599938}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &973887027
+  Health: {fileID: 0}
+--- !u!114 &5637229001329794762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973887025}
+  m_GameObject: {fileID: 950469998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6636260935bdc07479b5d1b6aadf7096, type: 3}
+  m_Script: {fileID: 11500000, guid: 13e7974426e23aa4ca09302608b1cc63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - value: {fileID: 1792862940}
-    weight: 1
+  health: {fileID: 939973968}
 --- !u!1 &1061975295
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,66 +884,6 @@ MonoBehaviour:
     weight: 0
   - value: {fileID: 2824386827493111788}
     weight: 0
---- !u!1 &1503460438
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1503460439}
-  - component: {fileID: 1503460440}
-  m_Layer: 0
-  m_Name: GuardianSeeds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1503460439
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503460438}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6974119302060950934}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1503460440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503460438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fcc67ff8cb946947a44cd0e0d0b86c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
-  _name: GuardianSeed
-  _duration: 1
-  _transitionTime: 3
-  nextState: Transition
-  _life: 2
-  _apparitionTime: 1
-  _zoneDamageTime: 0.5
-  treesNumberBounds: {x: 5, y: 5}
-  _center: {fileID: 0}
-  _playerRef: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
-  HealthRef: {fileID: 11400000, guid: 7679922e55eef344888b50322cee4a82, type: 2}
-  bossTree: {fileID: 6839599945639994337, guid: 1360fdc8ecd76e9459bbd08d49439042, type: 3}
-  _body: {fileID: 11400000, guid: 16d5954afc9222743877fdd43e2c69bb, type: 2}
-  treeShield: {fileID: 381666797358502244, guid: c985164803da3c84b9d60d501ced1fc8, type: 3}
-  trees: []
 --- !u!1 &1560825413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,60 +1067,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageVisualEffectTime: 0.5
   colors: []
---- !u!1 &1792862939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1792862941}
-  - component: {fileID: 1792862940}
-  m_Layer: 0
-  m_Name: Fissure
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1792862941
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1792862939}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6974119302060950934}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1792862940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1792862939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926e2eacd7de360479fcea5e2765d124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
-  _name: Fissure
-  _duration: 1
-  _transitionTime: 1
-  nextState: Transition
-  _fissureSpeed: 20
-  _sizeToReach: 100
-  showkWave: {fileID: 1407355899379275801, guid: 26ce5b6ba2db48a43afa78c9cd6fbfd4, type: 3}
-  shelter: {fileID: -6761480272739319364, guid: 59379d4b70f645a46857efac12a28084, type: 3}
-  _body: {fileID: 11400000, guid: 16d5954afc9222743877fdd43e2c69bb, type: 2}
 --- !u!1 &35181333017878217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,11 +1114,10 @@ MonoBehaviour:
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
   _name: RockFall
   _duration: 0.5
-  _transitionTime: 1
+  _transition: 0.1
   nextState: Transition
   apparitionHigh: 20
   radiusBounds: 10
-  rocksNumberBounds: {x: 5, y: 5}
   HealthRef: {fileID: 11400000, guid: 7679922e55eef344888b50322cee4a82, type: 2}
   fallingObject: {fileID: 2616920750109860588, guid: 4265421f2df4efe43acb31973280211c, type: 3}
   centralTransform: {fileID: 29307544}
@@ -1447,7 +1252,7 @@ MonoBehaviour:
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
   _name: FireMissile
   _duration: 2
-  _transitionTime: 1
+  _transition: 0.1
   nextState: Teleport
   missileSpeed: 20
   missileRotationSpeed: 80
@@ -1536,8 +1341,6 @@ Transform:
   - {fileID: 7637439478275023783}
   - {fileID: 4029511256951438006}
   - {fileID: 1370565862}
-  - {fileID: 421431869}
-  - {fileID: 973887026}
   m_Father: {fileID: 6932836826028606480}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1587,13 +1390,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - value: {fileID: 2451754579874958533}
-    weight: 0
+    weight: 1
   - value: {fileID: 3600589348171900713}
     weight: 1
   - value: {fileID: 2949278061184160787}
-    weight: 0
-  - value: {fileID: 1503460440}
-    weight: 10
+    weight: 1
 --- !u!1 &5376697493361950549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1442,7 @@ MonoBehaviour:
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
   _name: Transition
   _duration: 0.1
-  _transitionTime: 1
+  _transition: 0
   nextState: Random
   visualEffect: {fileID: 11400000, guid: aa73d5a37513c7b4e8fa6157e8f1fdf6, type: 2}
 --- !u!1 &5522892817298040195
@@ -1655,6 +1456,7 @@ GameObject:
   - component: {fileID: 5522892817298040199}
   - component: {fileID: -1992995316119929026}
   - component: {fileID: 939973968}
+  - component: {fileID: 3264655054135930732}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -1695,7 +1497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   form: 1
-  _currentForm: {fileID: 973887027}
+  _currentForm: {fileID: 1789959060}
   _allActions: {fileID: 1370565863}
   bossActionsCoroutines: []
 --- !u!114 &939973968
@@ -1720,6 +1522,20 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3264655054135930732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5522892817298040195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f560cc9af86bf294da37776d84fcefb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 939973968}
+  target: {fileID: 11400000, guid: 116343d6813afc143820099c704afa3b, type: 2}
 --- !u!1 &7268906805989628436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,8 +1569,6 @@ Transform:
   - {fileID: 4298294801028892602}
   - {fileID: 1805037214379154081}
   - {fileID: 4421592750576774660}
-  - {fileID: 1503460439}
-  - {fileID: 1792862941}
   m_Father: {fileID: 6932836826028606480}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1805,7 +1619,7 @@ MonoBehaviour:
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
   _name: Fireball
   _duration: 2
-  _transitionTime: 1
+  _transition: 0.1
   nextState: Teleport
   _magicBallSpeed: 20
   _rotationSpeed: 1
@@ -1869,7 +1683,7 @@ MonoBehaviour:
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
   _name: Teleport
   _duration: 1
-  _transitionTime: 1
+  _transition: 0.1
   nextState: Transition
   radiusSpawnPoint: 20
   _player: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
@@ -1945,7 +1759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f560cc9af86bf294da37776d84fcefb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 939973968}
+  source: {fileID: 0}
   target: {fileID: 11400000, guid: 7679922e55eef344888b50322cee4a82, type: 2}
 --- !u!114 &6994154217993452710
 MonoBehaviour:

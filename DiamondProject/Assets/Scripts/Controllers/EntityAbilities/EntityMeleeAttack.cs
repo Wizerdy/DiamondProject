@@ -4,14 +4,16 @@ using UnityEngine;
 using ToolsBoxEngine;
 
 public class EntityMeleeAttack : MonoBehaviour {
+    [Header("Static")]
     [SerializeField] Transform _attackParent = null;
-    [SerializeField] GameObject _sword = null;
     [SerializeField] Animator _attackAnimator = null;
-    [SerializeField] AttackHitbox _attackHitbox = null;
+    [SerializeField] DamageHealth _attackHitbox = null;
+    [Header("Values")]
     [SerializeField] int _damage = 10;
+    [SerializeField] MultipleTagSelector _damageables = new MultipleTagSelector(MultipleTagSelector.State.EVERYTHING);
 
     public Tools.BasicDelegate<Vector2> OnAttack;
-    public Tools.BasicDelegate<Collider2D> OnHit;
+    public Tools.BasicDelegate<GameObject> OnHit;
 
     bool isAttacking = false;
 
@@ -19,15 +21,16 @@ public class EntityMeleeAttack : MonoBehaviour {
     public bool IsAttacking => isAttacking;
 
     private void Awake() {
-        _attackHitbox.OnHit += OnHit;
+        _attackHitbox.OnCollide += OnHit;
     }
 
     private void Start() {
-        _sword.GetComponent<AttackHitbox>().damage = _damage;
+        _attackHitbox.Damage = _damage;
+        _attackHitbox.Damageables = _damageables;
     }
 
     private void OnDestroy() {
-        _attackHitbox.OnHit -= OnHit;
+        _attackHitbox.OnCollide -= OnHit;
     }
 
     public void Attack(Vector2 direction) {
