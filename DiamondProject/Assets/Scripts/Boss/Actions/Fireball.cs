@@ -11,6 +11,7 @@ public class Fireball : BossAction, IAction {
     [SerializeField] MagicBall magicBall = null;
     [SerializeField] MagicBall BigmagicBall = null;
     public override void StartAction() {
+        OnCast?.Invoke();
         _boss.Instance.ChangeState(GetState());
         StartCoroutine(FireMagicBall());
     }
