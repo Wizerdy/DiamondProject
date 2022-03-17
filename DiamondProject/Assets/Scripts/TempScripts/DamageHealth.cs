@@ -8,6 +8,8 @@ public class DamageHealth : MonoBehaviour {
     [SerializeField] int _damage = 5;
     [SerializeField] MultipleTagSelector _damageables;
     [SerializeField] bool _destroyOnHit;
+    [SerializeField] List<string> damageTypes = new List<string>();
+    
     Tools.BasicDelegate<GameObject> _onCollide;
 
     #region Properties
