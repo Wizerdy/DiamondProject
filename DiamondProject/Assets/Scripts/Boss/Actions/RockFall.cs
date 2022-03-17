@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RockFall : BossAction {
-
+    [SerializeField] float apparitionHigh = 10;
+    [SerializeField] float radiusBounds;
+    [SerializeField] Vector2Int rocksNumberBounds;
+    [Header("For Prog: ")]
     [SerializeField] HealthReference HealthRef;
     [SerializeField] FallingObject fallingObject = null;
+    [SerializeField] Transform centralTransform;
     [SerializeField] Rock rock;
     [SerializeField] RockShield rockShield;
     [SerializeField] List<Rock> rocks = new List<Rock>();
     [SerializeField] BossBodyReference body;
-    [SerializeField] float radiusBounds;
-    [SerializeField] Vector2Int rocksNumberBounds;
-    [SerializeField] float apparitionHigh = 10;
-    [SerializeField] Transform centralTransform;
 
     public override void StartAction() {
-        // Debug.Log("Rock");
+        Debug.Log("Rock");
         _boss.Instance.ChangeState(GetState());
-        _boss.Instance.NewWaightAction(this, 0);
+        _boss.Instance.NewWeightAction(this, 0);
         WeWillRockYou(Random.Range(rocksNumberBounds.x, rocksNumberBounds.y), transform.position);
         Wait();
     }
@@ -44,4 +44,5 @@ public class RockFall : BossAction {
     public override Boss.State GetState() {
         return Boss.State.ROCKFALL;
     }
+
 }

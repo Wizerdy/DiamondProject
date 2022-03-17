@@ -3,118 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour {
-    public enum State { TRANSITION, FORMSWITCH, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL, FIREBOTH, EXPLOSIVROCKFALL, DISMANTLE, FISSURE }
+    public enum State { TRANSITION, FORMSWITCH, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL, FIREBOTH, EXPLOSIVROCKFALL, DISMANTLE, FISSURE, GUARDIANSEED}
     public enum Form { PASSIVE = 0, FIRST = 1, SECOND = 2, DEAD = 3 }
 
     [SerializeField] private State currentState = State.TRANSITION;
     public Form form = Form.FIRST;
 
-   // [SerializeField] MonoObjectSelectorRandom<BossAction> _attackSelectorFirstFormDummy;
-    [SerializeField] MonoBossActionSelectorRandom _attackSelectorFirstForm;
-    [SerializeField] List<BossAction> _bannedAction = new List<BossAction>();
-    [SerializeField] BossAction _transition;
-    [SerializeField] BossAction _formSwitch;
-    [SerializeField] BossAction _teleport;
-    [SerializeField] string nextState;
+    [SerializeField] MonoBossActionSelectorRandom _currentForm;
+    [SerializeField] MonoBossActionSelectorRandom _allActions;
     [SerializeField] List<BossAction> bossActionsCoroutines = new List<BossAction>();
     public State CurrentState { get { return currentState; } }
-    //private void OnValidate() {
-    //    //if(_attackSelectorFirstFormDummy is IAction) {
-    //    //    _attackSelectorFirstForm = (IAction) _attackSelectorFirstFormDummy;
-    //    //} else {
-    //    //    _attackSelectorFirstForm = null;
-    //    //}
-    //    //if (_attackSelectorSecondFormDummy is IAction) {
-    //    //    _attackSelectorSecondForm = (IAction)_attackSelectorSecondFormDummy;
-    //    //} else {
-    //    //    _attackSelectorSecondForm = null;
-    //    //}
-    //    if(_attackSelectorFirstFormDummy != null)
-    //    Debug.Log((IAction)_attackSelectorFirstFormDummy + " " + _attackSelectorFirstFormDummy.name);
-    //    SerializeInterface(ref _attackSelectorFirstForm, ref _attackSelectorFirstFormDummy);
-    //    SerializeInterface(ref _attackSelectorSecondForm, ref _attackSelectorSecondFormDummy);
-    //}
-
-    //private static void SerializeInterface<T1, T2>(ref T2 input, ref T1 dummy) where T1 : class where T2 : class {
-    //    if (dummy is T2) {
-    //        input = dummy as T2;
-    //    } else {
-    //        dummy = null;
-    //    }
-    //}
     private void Start() {
-        NewState();
+        NextState();
     }
 
     #region State
-    public void NewState() {
-        if(nextState == "Teleport") {
-            Teleport();
-        } else {
-            switch (form) {
-                case Form.FIRST:
-                    BossAction action = _attackSelectorFirstForm.Get();
-                    if (action != null) {
-                        action.StartAction();
-                            bossActionsCoroutines.Add(action);
-                    } else {
-                        _transition.StartAction();
-                    }
-                    break;
-                case Form.SECOND:
-                    //StartCoroutine(_attackSelectorSecondForm.StartAction());
-                    break;
-            }
+    public void NextState(string nextState = "Random", float duration = -1) {
+        BossAction action;
+        switch (nextState) {
+            case "Random":
+                action = _currentForm.Get();
+                if(action == null) {
+                    StartCoroutine(RetryNextState(1));
+                }
+                break;
+            default:
+                action = _allActions.Get(nextState);
+                break;
         }
-        nextState = "";
+        if (action != null) {
+            action.StartAction();
+            bossActionsCoroutines.Add(action);
+        }
     }
-    public void Teleport() {
+    public void StopActions() {
         if (currentState == State.TELEPORT || currentState == State.FORMSWITCH) { return; }
         for (int i = 0; i < bossActionsCoroutines.Count; i++) {
             Debug.Log(bossActionsCoroutines[i]);
             bossActionsCoroutines[i].StopAllCoroutines();
         }
         bossActionsCoroutines.Clear();
-        _teleport.StartAction();
 
-    }
-    public void NewNextState(string nextState) {
-        this.nextState = nextState;
     }
 
     public void ChangeState(State state) {
         currentState = state;
     }
 
-    public void Transition(float transitionTime) {
-        _transition.Duration = transitionTime;
-        _transition.StartAction();
-    }
-
-    public void EndState(float timebeforeNewState) {
-        Transition(timebeforeNewState);
-    }
-
-    public void NewWaightAction(BossAction action, float weight ) {
-        _attackSelectorFirstForm.NewWeight(action, weight);
+    public void NewWeightAction(BossAction action, float weight) {
+        _currentForm.NewWeight(action, weight);
     }
 
     public void RemoveCoroutines(BossAction bossaction) {
         if (bossActionsCoroutines.Contains(bossaction))
-        bossActionsCoroutines.Remove(bossaction);
+            bossActionsCoroutines.Remove(bossaction);
     }
 
-    #endregion
-
-    #region Form
-    public void NextForm() {
-        if (form == Form.DEAD) { return; }
-        form += 1;
-        NewForm();
-    }
-
-    void NewForm() {
-
+    public IEnumerator RetryNextState(float delay) {
+        yield return new WaitForSeconds(delay);
+        NextState("Random");
     }
     #endregion
 }
