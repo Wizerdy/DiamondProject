@@ -12,6 +12,7 @@ public class FireMissile : BossAction {
     [Header("For Prog: ")]
     [SerializeField] Missile missile = null;
     public override void StartAction() {
+        OnCast?.Invoke();
         _boss.Instance.ChangeState(GetState());
         //Debug.Log("Missile");
         StartCoroutine(MortalMissile());

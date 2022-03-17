@@ -10,7 +10,7 @@ public interface IHealth {
     event UnityAction<int> OnHeal;
     event UnityAction OnDeath;
 
-    void TakeDamage(int damage);
+    void TakeDamage(int damage, string damageType = "");
     void TakeHeal(int damage);
     void Die();
 }

@@ -15,9 +15,9 @@ public class GuardianSeeds : BossAction {
     [SerializeField] BossBodyReference _body;
     [SerializeField] TreeShield treeShield;
     [SerializeField] List<BossTree> trees = new List<BossTree>();
-    public System.Action OnCastTree;
 
     public override void StartAction() {
+        OnCast?.Invoke();
         _boss.Instance.ChangeState(GetState());
         _boss.Instance.NewWeightAction(this, 0);
         SpawnTree(Random.Range(treesNumberBounds.x, treesNumberBounds.y + 1), _body.Instance.transform.position);
@@ -37,7 +37,6 @@ public class GuardianSeeds : BossAction {
                 .SetLife(_life);
             newBossTree.AddTreeShield(newtreeShield);
         }
-        OnCastTree?.Invoke();
     }
 
     public override Boss.State GetState() {

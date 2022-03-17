@@ -9,6 +9,8 @@ public class Health : MonoBehaviour, IHealth {
     [SerializeField] UnityEvent<int> _onHit;
     [SerializeField] UnityEvent<int> _onHeal;
     [SerializeField] UnityEvent _onDeath;
+    [SerializeField] List<string> _resistances = new List<string>();
+
 
     int _invicibilityToken = 0;
     int _currentHealth;
@@ -16,7 +18,7 @@ public class Health : MonoBehaviour, IHealth {
     #region Properties
 
     public int MaxHealth => _maxHealth;
-    public bool CanTakeDamage { 
+    public bool CanTakeDamage {
         get { return _invicibilityToken <= 0; }
         set { _invicibilityToken += (value ? -1 : 1); _invicibilityToken = Mathf.Max(0, _invicibilityToken); }
     }
@@ -41,15 +43,16 @@ public class Health : MonoBehaviour, IHealth {
         }
     }
 
-    public void TakeDamage(int amount) {
+    public void TakeDamage(int amount, string damageTypes = "") {
         if (!CanTakeDamage) { return; }
+        if (damageTypes == "" || !_resistances.Contains(damageTypes)) {
+            _currentHealth -= amount;
+            _currentHealth = Mathf.Max(0, _currentHealth);
+            _onHit?.Invoke(amount);
 
-        _currentHealth -= amount;
-        _currentHealth = Mathf.Max(0, _currentHealth);
-        _onHit?.Invoke(amount);
-
-        if (_currentHealth <= 0) {
-            Die();
+            if (_currentHealth <= 0) {
+                Die();
+            }
         }
     }
 
@@ -61,5 +64,19 @@ public class Health : MonoBehaviour, IHealth {
 
     public void Die() {
         _onDeath?.Invoke();
+    }
+
+    public void AddResistance(string newResistances) {
+        if (!_resistances.Contains(newResistances)) {
+            _resistances.Add(newResistances);
+        }
+    }
+
+
+    public void RemoveResistance(string newResistances) {
+        if (_resistances.Contains(newResistances)) {
+            _resistances.Remove(newResistances);
+        }
+
     }
 }

@@ -17,6 +17,7 @@ public abstract class BossAction : MonoBehaviour, IAction {
     public abstract Boss.State GetState();
     public abstract void StartAction();
 
+    public System.Action OnCast;
     protected void Wait() {
         StartCoroutine(StartWaiting());
     }

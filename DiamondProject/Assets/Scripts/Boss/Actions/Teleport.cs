@@ -20,7 +20,8 @@ public class Teleport : BossAction {
         }
     }
     public override void StartAction() {
-       // Debug.Log("Tp");
+        OnCast.Invoke();
+        // Debug.Log("Tp");
         _boss.Instance.ChangeState(GetState());
         _boss.Instance.StopActions();
         int index = 0;
