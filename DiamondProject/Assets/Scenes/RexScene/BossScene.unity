@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 60840609}
   - component: {fileID: 60840611}
   - component: {fileID: 60840610}
+  - component: {fileID: 60840612}
   m_Layer: 0
   m_Name: Masque_Blanc
   m_TagString: Untagged
@@ -1038,6 +1039,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &60840612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60840608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7107d8aac4d2d74b94188312e5ef132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _imageToFade: {fileID: 1565567406}
+  _transform: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
+  _tag: Player
 --- !u!1 &200558962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,7 +1875,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1890,7 +1906,7 @@ MonoBehaviour:
   camera: {fileID: 864920582}
   parent: {fileID: 920044708}
   baseDepth: 0
-  baseCameraSize: 5
+  baseCameraSize: 10
 --- !u!4 &864920584
 Transform:
   m_ObjectHideFlags: 0
