@@ -11,6 +11,8 @@ public class TextInteraction : MonoBehaviour {
     private string clickedWord;
     private string[] wordsToMatch;
 
+    private string blockToCall;
+
     void Start()
     {
         rx = new Regex(@"<color=green>(.*?)</color>",
@@ -25,9 +27,9 @@ public class TextInteraction : MonoBehaviour {
                 clickedWord = tmpText.textInfo.wordInfo[wordIndex].GetWord();
                 
                 if (Array.Exists(wordsToMatch, element => element == clickedWord))
-                    Fungus.Flowchart.BroadcastFungusMessage("StartTextInteraction");
+                    Fungus.Flowchart.BroadcastFungusMessage(blockToCall);
             }
-        }
+        } 
 
     }
 
@@ -40,7 +42,9 @@ public class TextInteraction : MonoBehaviour {
         wordsToMatch[wordsToMatch.Length - 1] = wordsToMatch[wordsToMatch.Length - 1].Replace("</color>", "");
     }
 
-    public void GetText() {
+    public void GetText(string _blockToCall) {
+        blockToCall = _blockToCall;
+
         currentText = tmpText.text;
         wordsToMatch = null;
     }
