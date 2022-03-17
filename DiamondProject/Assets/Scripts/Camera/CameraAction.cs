@@ -17,9 +17,6 @@ public abstract class CameraAction : MonoBehaviour {
 
     public void Move(Vector3 localPosition) {
         float time = (localPosition - _movements.CameraLocalPosition).magnitude / _speed;
-        if (time > 0.11f || time < 0.1f) {
-            Tools.Print(time);
-        }
         _movements.Move(localPosition, time, _concernedAxis);
     }
 }

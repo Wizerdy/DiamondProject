@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &29307544
 Transform:
   m_ObjectHideFlags: 0
@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &203595207
 Transform:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &331138281
 Transform:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &334213673
 Transform:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &461763237
 Transform:
   m_ObjectHideFlags: 0
@@ -483,7 +483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &655889022
 Transform:
   m_ObjectHideFlags: 0
@@ -567,7 +567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &800094070
 Transform:
   m_ObjectHideFlags: 0
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 6051770799808203605}
   m_Layer: 0
   m_Name: BossBody
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,7 +694,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 2.1884618, y: 5.258309}
   m_EdgeRadius: 0
 --- !u!114 &5709123011259908112
 MonoBehaviour:
@@ -785,7 +785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1061975296
 Transform:
   m_ObjectHideFlags: 0
@@ -1054,7 +1054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1560825414
 Transform:
   m_ObjectHideFlags: 0
@@ -1139,7 +1139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1663935082
 Transform:
   m_ObjectHideFlags: 0
@@ -1270,9 +1270,9 @@ MonoBehaviour:
   _duration: 1
   _transitionTime: 1
   nextState: Transition
-  _fissureSpeed: 20
-  _sizeToReach: 100
-  shockwave: {fileID: 0}
+  _fissureSpeed: 2
+  _sizeToReach: 13
+  shockwave: {fileID: 1407355899379275801, guid: 26ce5b6ba2db48a43afa78c9cd6fbfd4, type: 3}
   shelter: {fileID: -6761480272739319364, guid: 59379d4b70f645a46857efac12a28084, type: 3}
   _body: {fileID: 11400000, guid: 16d5954afc9222743877fdd43e2c69bb, type: 2}
 --- !u!1 &35181333017878217
@@ -1498,7 +1498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772865383285071383}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

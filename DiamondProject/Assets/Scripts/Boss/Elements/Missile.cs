@@ -49,7 +49,7 @@ public class Missile : MonoBehaviour {
         float directionµSense =  180 <= Vector3.Angle(direction, directionTarget) ? -1 : 1;
         direction = Vector3.RotateTowards(direction, directionTarget, Mathf.Deg2Rad * Time.fixedDeltaTime * rotationSpeed, 1);
         rb.velocity = direction.normalized * speed;
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction) * Quaternion.Euler(0, 0, 90);
+        //transform.rotation = Quaternion.LookRotation(Vector3.forward, direction) * Quaternion.Euler(0, 0, 90);
     }
 
     public void Die() {
