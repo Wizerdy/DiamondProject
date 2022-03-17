@@ -1208,6 +1208,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &301795249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 301795251}
+  - component: {fileID: 301795250}
+  m_Layer: 0
+  m_Name: Posterity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &301795250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301795249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a3b71c451693947aeeb78edb07223d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _posterity: {fileID: 11400000, guid: 8e55e4948e8a78e41a3d81207a9bcb23, type: 2}
+--- !u!4 &301795251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301795249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337342456
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,6 +2535,8 @@ GameObject:
   - component: {fileID: 895755367}
   - component: {fileID: 895755366}
   - component: {fileID: 895755365}
+  - component: {fileID: 895755370}
+  - component: {fileID: 895755371}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2513,7 +2560,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 36.872337
     y: -64.06186
-    width: 75.88235
+    width: 77
     height: 40
   tint: {r: 0.0141509175, g: 0.8798334, b: 1, a: 1}
   useCustomTint: 1
@@ -2540,11 +2587,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -345.79626, y: 97.89377}
+  scrollPos: {x: -593.05255, y: 108.05179}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 280
-  zoom: 0.85000014
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2720,7 +2767,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 25.971863
     y: 149.97183
-    width: 101.764694
+    width: 100
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2876,7 +2923,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 175.97186
     y: 151.97183
-    width: 124.11764
+    width: 124
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2918,7 +2965,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 30.755356
     y: 232.34294
-    width: 88.823524
+    width: 89
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2957,7 +3004,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -110.02814
     y: 151.97183
-    width: 85.29411
+    width: 85
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5103,7 +5150,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 362.1038
     y: 149.31789
-    width: 141.7647
+    width: 140
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5838,9 +5885,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 3.4897995
+    x: 4.626163
     y: 19.706062
-    width: 147.64703
+    width: 147
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5849,6 +5896,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 895755370}
   - {fileID: 895755292}
   - {fileID: 895755291}
   - {fileID: 895755290}
@@ -5864,7 +5912,7 @@ MonoBehaviour:
   suppressAllAutoSelections: 0
 --- !u!114 &895755297
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5878,7 +5926,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &895755298
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5899,7 +5947,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &895755299
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6156,7 +6204,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1175.5377
     y: 27.175385
-    width: 144.11763
+    width: 142
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6246,7 +6294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 146
   indentLevel: 0
-  storyText: "<b>Au faites, t'as essay\xE9 de lui parl\xE9 \xE0 la ch\xEAne.</b>"
+  storyText: "<b>Au fait, t'as essay\xE9 de lui parl\xE9 \xE0 la ch\xEAne.</b>"
   description: 
   character: {fileID: 824589274}
   portrait: {fileID: 0}
@@ -6273,8 +6321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 145
   indentLevel: 0
-  storyText: "On dit que toutes roses \xE0 ces \xE9pines, m\xEAme si elles sont un
-    peu fan\xE9es."
+  storyText: "On dit que toute rose a ses \xE9pines, m\xEAme si elle est un peu fan\xE9e."
   description: 
   character: {fileID: 824589274}
   portrait: {fileID: 0}
@@ -6581,7 +6628,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 921.9474
     y: 94.94333
-    width: 142.94116
+    width: 141
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6961,9 +7008,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 633.69275
+    x: 634.8291
     y: 339.58246
-    width: 133.52939
+    width: 132
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7019,7 +7066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 129
   indentLevel: 0
-  storyText: Aller, comme je t'aime bien ,  je vais te faire une fleur.
+  storyText: Aller, comme je t'aime bien,  je vais te faire une fleur.
   description: 
   character: {fileID: 824589274}
   portrait: {fileID: 0}
@@ -7090,7 +7137,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 679.476
     y: 202.4089
-    width: 211.17644
+    width: 209
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7538,7 +7585,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 570.39966
     y: 250.91754
-    width: 78.23529
+    width: 78
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7677,7 +7724,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 561.8074
     y: 135.47263
-    width: 102.94116
+    width: 102
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7833,7 +7880,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -277.60144
     y: 82.140976
-    width: 148.82352
+    width: 148
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7936,7 +7983,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -262.33295
     y: 219.69716
-    width: 85.29411
+    width: 85
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8010,7 +8057,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 327.64346
     y: 255.94821
-    width: 209.99997
+    width: 208
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8316,7 +8363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 93
   indentLevel: 0
-  storyText: "Y a des rumeurs comme quoi elle aurait fait bouffer les pissenlits
+  storyText: "Y'a des rumeurs comme quoi elle aurait fait bouffer les pissenlits
     par la racine un morveux qui s'est amus\xE9 \xE0 lui <color=green>courir sur
     le haricot</color>"
   description: 
@@ -8345,7 +8392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 92
   indentLevel: 0
-  storyText: Corriace la vieille pas vrai ?
+  storyText: Coriace la vieille pas vrai ?
   description: 
   character: {fileID: 824589274}
   portrait: {fileID: 0}
@@ -8395,7 +8442,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &895755357
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8407,8 +8454,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 160
   indentLevel: 0
-  storyText: "<b>Ces serviteurs sont b\xEAtes comme des choux, ils ont du mal \xE0
-    faire autre chose que foncer tout droit.</b>"
+  storyText: "<b>Ses serviteurs sont b\xEAtes comme des choux, ils ont du mal \xE0
+    faire autre chose que de foncer tout droit.</b>"
   description: 
   character: {fileID: 824589274}
   portrait: {fileID: 0}
@@ -8423,7 +8470,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &895755358
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8435,8 +8482,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 159
   indentLevel: 0
-  storyText: "Attend, attend t'\xE9nerve pas. Je te donne un vrai conseil cette fois-ci,
-    promis je ne me paye pas ta pomme !"
+  storyText: "Attends, attends t'\xE9nerve pas. Je te donne un vrai conseil cette
+    fois-ci, promis je ne me paye pas ta pomme !"
   description: 
   character: {fileID: 824589274}
   portrait: {fileID: 0}
@@ -8451,7 +8498,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &895755359
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8478,7 +8525,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &895755360
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8490,8 +8537,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 157
   indentLevel: 0
-  storyText: "Hey, faut pas m'en vouloir avec ta t\xEAte de poireaux et ta s\xE9rie
-    de d\xE9faite, c'est de l'argent facile."
+  storyText: "Hey, faut pas m'en vouloir avec ta t\xEAte de poireau et ta s\xE9rie
+    de d\xE9faites, c'est de l'argent facile."
   description: 
   character: {fileID: 824589274}
   portrait: {fileID: 0}
@@ -8506,7 +8553,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &895755361
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8533,7 +8580,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &895755362
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8560,7 +8607,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &895755363
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8572,7 +8619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 154
   indentLevel: 0
-  storyText: "Tu pensais vraiment que \xE7a allait march\xE9 ?"
+  storyText: "Tu pensais vraiment que \xE7a allait marcher ?"
   description: 
   character: {fileID: 824589274}
   portrait: {fileID: 0}
@@ -8587,7 +8634,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &895755364
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8614,7 +8661,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &895755365
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8641,7 +8688,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &895755366
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8686,7 +8733,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &895755367
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8716,7 +8763,7 @@ MonoBehaviour:
     floatVal: 0
 --- !u!114 &895755368
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8761,7 +8808,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &895755369
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8789,6 +8836,47 @@ MonoBehaviour:
   targetAlpha:
     floatRef: {fileID: 0}
     floatVal: 0
+--- !u!114 &895755370
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895755201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 166
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1543116029}
+  targetComponentAssemblyName: D_ReturnPosterity, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: D_ReturnPosterity
+  targetMethod: ReturnDeathCount
+  targetMethodText: 'ReturnDeathCount (): Int32'
+  methodParameters: []
+  saveReturnValue: 1
+  returnValueVariableKey: NumberOfDeath
+  returnValueType: System.Int32
+  showInherited: 0
+  callMode: 0
+--- !u!114 &895755371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895755201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf2de4b3c8e4aa4b96425b0934129ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _posterity: {fileID: 11400000, guid: 8e55e4948e8a78e41a3d81207a9bcb23, type: 2}
 --- !u!1 &897285547
 GameObject:
   m_ObjectHideFlags: 0
@@ -10215,6 +10303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1543116031}
   - component: {fileID: 1543116030}
+  - component: {fileID: 1543116032}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -10249,6 +10338,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1543116032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543116029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf2de4b3c8e4aa4b96425b0934129ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _posterity: {fileID: 11400000, guid: 8e55e4948e8a78e41a3d81207a9bcb23, type: 2}
 --- !u!1 &1627737029
 GameObject:
   m_ObjectHideFlags: 0

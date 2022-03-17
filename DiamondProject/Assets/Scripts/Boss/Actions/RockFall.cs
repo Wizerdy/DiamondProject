@@ -16,6 +16,7 @@ public class RockFall : BossAction {
     [SerializeField] BossBodyReference body;
 
     public override void StartAction() {
+        OnCast?.Invoke();
         Debug.Log("Rock");
         _boss.Instance.ChangeState(GetState());
         _boss.Instance.NewWeightAction(this, 0);
