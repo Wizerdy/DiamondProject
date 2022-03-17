@@ -47,6 +47,7 @@ public class Boss : MonoBehaviour {
     }
 
     public void ChangeState(State state) {
+        Debug.Log("NewState: " + state);
         currentState = state;
     }
 
