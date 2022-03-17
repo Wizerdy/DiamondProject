@@ -23,7 +23,7 @@ public class TextInteraction : MonoBehaviour {
 
             if (wordIndex != -1) {
                 clickedWord = tmpText.textInfo.wordInfo[wordIndex].GetWord();
-                 
+                
                 if (Array.Exists(wordsToMatch, element => element == clickedWord))
                     Fungus.Flowchart.BroadcastFungusMessage("StartTextInteraction");
             }

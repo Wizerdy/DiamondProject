@@ -2387,6 +2387,8 @@ GameObject:
   - component: {fileID: 895755268}
   - component: {fileID: 895755271}
   - component: {fileID: 895755270}
+  - component: {fileID: 895755273}
+  - component: {fileID: 895755272}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2410,7 +2412,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 38.872337
     y: 51.93814
-    width: 77.83505
+    width: 77
     height: 40
   tint: {r: 0.0141509175, g: 0.8798334, b: 1, a: 1}
   useCustomTint: 1
@@ -2437,11 +2439,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 364.2101, y: 47.121567}
+  scrollPos: {x: 347.23077, y: 30.709991}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 280
-  zoom: 0.97
+  zoom: 0.99999994
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2450,7 +2452,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 895755219}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 895755272}
   variables:
   - {fileID: 895755250}
   description: 
@@ -2558,7 +2561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 0
-  storyText: "Euh.\r\n  (Qu'est-ce qu'elle me veut celle-l\xE0.)\r\n  (Ignorons-l\xE0)"
+  storyText: "Euh.\r\n(Qu'est-ce qu'elle me veut celle-l\xE0.)\r\n(Ignorons-l\xE0)"
   description: 
   character: {fileID: 56310010}
   portrait: {fileID: 0}
@@ -2614,7 +2617,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 26.971863
     y: 152.97183
-    width: 101.54639
+    width: 100
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2764,7 +2767,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 227.97186
     y: 149.97183
-    width: 71.64948
+    width: 71
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2784,6 +2787,7 @@ MonoBehaviour:
   - {fileID: 895755232}
   - {fileID: 895755231}
   - {fileID: 895755270}
+  - {fileID: 895755272}
   suppressAllAutoSelections: 0
 --- !u!114 &895755220
 MonoBehaviour:
@@ -2801,7 +2805,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 34.755356
     y: 250.34296
-    width: 90.206184
+    width: 89
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2818,6 +2822,7 @@ MonoBehaviour:
   - {fileID: 895755227}
   - {fileID: 895755226}
   - {fileID: 895755271}
+  - {fileID: 895755273}
   suppressAllAutoSelections: 0
 --- !u!114 &895755221
 MonoBehaviour:
@@ -2835,7 +2840,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -145.02814
     y: 153.97183
-    width: 86.08247
+    width: 85
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4505,6 +4510,96 @@ MonoBehaviour:
   targetAlpha:
     floatRef: {fileID: 0}
     floatVal: 0
+--- !u!114 &895755272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895755201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 68
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1543116029}
+  targetComponentAssemblyName: LevelLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelLoader
+  targetMethod: LoadLevel
+  targetMethodText: 'LoadLevel (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: BossScene
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &895755273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895755201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 67
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1543116029}
+  targetComponentAssemblyName: LevelLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: LevelLoader
+  targetMethod: LoadLevel
+  targetMethodText: 'LoadLevel (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: BossScene
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &897285547
 GameObject:
   m_ObjectHideFlags: 0
@@ -5981,6 +6076,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1543116029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543116031}
+  - component: {fileID: 1543116030}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1543116030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543116029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9dc1b2566e4c440aed9bb53e6b3ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1543116031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543116029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.789907, y: 4.9031014, z: 0.020553436}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627737029
 GameObject:
