@@ -2,25 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fissure : BossAction, IAction
-{
+public class Fissure : BossAction, IAction {
     [SerializeField] float _fissureSpeed = 1f;
     [SerializeField] float _sizeToReach = 1f;
-    
+
     [Header("For Prog: ")]
-    [SerializeField] Shockwave showkWave = null;
+    [SerializeField] Shockwave shockwave = null;
     [SerializeField] Shelter shelter = null;
     [SerializeField] BossBodyReference _body;
-    public override void StartAction()
-    {
+    public override void StartAction() {
+        OnCast?.Invoke();
         _boss.Instance.ChangeState(GetState());
         StartCoroutine(Abime());
     }
-    IEnumerator Abime()
-    {
-        Shockwave newShockWave = Instantiate(showkWave.gameObject, _body.Instance.transform.position, Quaternion.identity).GetComponent<Shockwave>();
-        while (newShockWave.transform.localScale.x < _sizeToReach)
-        {
+    IEnumerator Abime() {
+        Shockwave newShockWave = Instantiate(shockwave.gameObject, _body.Instance.transform.position, Quaternion.identity).GetComponent<Shockwave>();
+        while (newShockWave.transform.localScale.x < _sizeToReach) {
             newShockWave.transform.localScale = Vector3.one * (newShockWave.transform.localScale.x + _fissureSpeed * Time.deltaTime);
             yield return null;
         }
@@ -28,8 +25,7 @@ public class Fissure : BossAction, IAction
         NextState();
     }
 
-    public override Boss.State GetState()
-    {
+    public override Boss.State GetState() {
         return Boss.State.FISSURE;
     }
 }
