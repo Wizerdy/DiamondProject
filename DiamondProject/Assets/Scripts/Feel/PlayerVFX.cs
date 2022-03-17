@@ -6,7 +6,7 @@ using MoreMountains.Feedbacks;
 public class PlayerVFX : MonoBehaviour {
     [SerializeField] EntityMovement _eMovement;
     [SerializeField] EntityMeleeAttack _eMeleeAttack;
-    [SerializeField] TempHealth _eTempHealth;
+    [SerializeField] Health _eTempHealth;
     [SerializeField] EntityRangedAttack _eRangedAttack;
     [SerializeField] MMFeedbacks _run;
     [SerializeField] MMFeedbacks _meleeAttack;
@@ -51,7 +51,7 @@ public class PlayerVFX : MonoBehaviour {
         _meleeAttack.PlayFeedbacks();
     }
 
-    private void PlayMeleeHitFeedback(Collider2D coll2D) {
+    private void PlayMeleeHitFeedback(GameObject go) {
         _meleeHit.PlayFeedbacks();
     }
 

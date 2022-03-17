@@ -117,6 +117,29 @@ namespace ToolsBoxEngine {
     #endregion
 
     public static class Tools {
+        #region Variables
+        static string[] _hurlable = {
+            "Hello world ?",
+            "Gino", "HERE !", "HURL", "Yellow submarine", "Did you see ?!",
+            "REEEEEEEX !", "Imotep", "Ninja !", "Urgh", "Oh la belle bleue", "Ooba ooba !",
+            "404", "You're teapot", "Pouet", "Bogo sorted", "Hey listen", "Pourquoi ?",
+            "Mr.Gé1enormSecs", "Roblox36", "Achtung", "SirLynixVanFrietjes", "1337", "35383773",
+            "Chaussette", "Avez-vous déjà vous ?", "2319", "Viva l'algérie", "C'est une menace ?",
+            "Km²/h", "Skribbl ?", "Tools.Print", "Debug.Log", "HURLABLE !", "Malibu coco ?",
+            "Papillon de lumière", "How dare u ?", "THIS IS C# !", "On s'en bat les couilles",
+            "Connard", "(tousse)", "J'ai mal", "Elle est bonne", "Tamer", "Wingardium", "Wait",
+            "C'est ma b*te", "Do a barell roll", "Titre", "Mundo go this way", "Ok", "Enormimus !",
+            "Kowabunga", "Ptdr t ki ?", "Pasteque !", "Hein ?", "...", "You really need me ?",
+            "T'en veux encore ?", "AÏE", "OUÏLLE", "(Adrien's noise)", "Moule", "Dublin, duh", "DUH",
+            "Tartes à la framboise ?", "Chibrons", "UwU", "<color=red>ERRO-</color> nah joking",
+            "Papush", "T'as fetch ?", "Derrière toi !", "Phillipe !", "Fifo le fifou", "Va sucer un ours",
+            "Mange tes morts", "Peepoodo", "Peekaboo", "Lapinue", "+1", "Apple suxx", "Hit Billy & drink milk",
+            "THIIIICK", "Hippity hoppity", "Scoobi-dooby-doo", "Sluuuurp", "Leave me alone", "F*CK YOU !",
+            "Leblanc", "2b || !2b", "Boob", "Bark", "Fus Roh Dah", "Push Roh Dah !", "Git Rekt", "Merge tes morts",
+            "Bring me egg", "Patatozilla", "La bougie.. M*rde !",
+            "Goodbye world"
+        };
+        #endregion
 
         #region Delegates
 
@@ -124,7 +147,7 @@ namespace ToolsBoxEngine {
 
         public delegate void BasicDelegate<T>(T arg);
 
-        public delegate void BasicDelegateTwoArgs<T>(ref T arg1, T arg2);
+        //public delegate void BasicDelegateTwoArgs<T>(ref T arg1, T arg2);
 
         public delegate void BasicDelegate<T1, T2>(T1 arg1, T2 arg2);
 
@@ -226,6 +249,24 @@ namespace ToolsBoxEngine {
             return vector;
         }
 
+        public static Vector3 Override(this Vector3 vector, Vector3 target, params Axis[] axis) {
+            if (axis.Length <= 0) { return vector; }
+            for (int i = 0; i < axis.Length; i++) {
+                switch (axis[i]) {
+                    case Axis.X:
+                        vector = vector.Override(target.x, Axis.X);
+                        break;
+                    case Axis.Y:
+                        vector = vector.Override(target.y, Axis.Y);
+                        break;
+                    case Axis.Z:
+                        vector = vector.Override(target.z, Axis.Z);
+                        break;
+                }
+            }
+            return vector;
+        }
+
         public static Vector2 Override(this Vector2 vector, float value, Axis axis = Axis.Y) {
             switch (axis) {
                 case Axis.X:
@@ -243,6 +284,21 @@ namespace ToolsBoxEngine {
                     break;
             }
 
+            return vector;
+        }
+
+        public static Vector2 Override(this Vector2 vector, Vector2 target, params Axis[] axis) {
+            if (axis.Length <= 0) { return vector; }
+            for (int i = 0; i < axis.Length; i++) {
+                switch (axis[i]) {
+                    case Axis.X:
+                        vector.Override(target.x, Axis.X);
+                        break;
+                    case Axis.Y:
+                        vector.Override(target.y, Axis.Y);
+                        break;
+                }
+            }
             return vector;
         }
 
@@ -299,13 +355,6 @@ namespace ToolsBoxEngine {
             return number;
         }
 
-        public static void Print<T>(this Nullable<T>[] array) where T : struct {
-            Debug.Log("----------------");
-            for(int i = 0; i < array.Length; i++) {
-                Debug.Log(i + ". " + array[i].Value);
-            }
-        }
-
         public static T[] ToArray<T>(this Nullable<T>[] array) where T : struct {
             T[] returnBack = new T[array.Length];
             for (int i = 0; i < array.Length; i++) {
@@ -359,21 +408,32 @@ namespace ToolsBoxEngine {
             return false;
         }
 
+        public static T Random<T>(this T[] array) {
+            return array[UnityEngine.Random.Range(0, array.Length)];
+        }
+
+        public static bool Contains<T>(this T[] array, T value) {
+            for (int i = 0; i < array.Length; i++) {
+                if (array[i].Equals(value)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         #endregion
 
         #region Utilities
 
-        public static void DebugLog(string separator, params string[] strings) {
-            string toPrint = "";
-            for (int i = 0; i < strings.Length - 1; i++) {
-                toPrint += strings[i] + separator;
-            }
-            toPrint += strings[strings.Length - 1];
-            Debug.Log(toPrint);
-        }
-
         public static float Remap(this float value, float from1, float to1, float from2, float to2) {
             return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+        }
+
+        public static float InverseLerpUnclamped(float a, float b, float t) {
+            //if (b - a == 0) { throw new DivideByZeroException(); }
+            if (b - a == 0) { return 1f; }
+            float value = (t - a) / (b - a);
+            return value;
         }
 
         public static Rect GetPlayerRect(int playerId, int maxPlayer) {
@@ -459,6 +519,18 @@ namespace ToolsBoxEngine {
             return numbers[rand];
         }
 
+        public static void SerializeInterface<T1, T2>(ref T2 input, ref T1 dummy) where T1 : class where T2 : class {
+            if (dummy is T2) {
+                input = dummy as T2;
+            } else {
+                dummy = null;
+            }
+        }
+
+        #endregion
+
+        #region Print
+
         public static void Print(DebugType type, char separator, params object[] strings) {
             Action<object> debug;
             switch (type) {
@@ -478,7 +550,7 @@ namespace ToolsBoxEngine {
                 output += " " + separator + " ";
             }
             output += strings[^1].ToString();
-            if(output == "") { return; }
+            if (output == "") { return; }
             debug(output);
         }
 
@@ -494,15 +566,26 @@ namespace ToolsBoxEngine {
             Print(DebugType.NORMAL, separator, strings);
         }
 
-        public static void SerializeInterface<T1, T2>(ref T2 input, ref T1 dummy) where T1 : class where T2 : class {
-            if (dummy is T2) {
-                input = dummy as T2;
-            } else {
-                dummy = null;
-            }
+        public static void Hurl<T>(this T hurler, DebugType type = DebugType.NORMAL) where T : UnityEngine.Object {
+            string hurl = _hurlable.Random();
+            hurler.Hurl(hurl, type);
+        }
+
+        public static void Hurl<T>(this T hurler, string message, DebugType type = DebugType.NORMAL) where T : UnityEngine.Object {
+            Print(type, "<b>" + hurler.name + "</b> hurled at you : <b>" + message + "</b>");
         }
 
         #endregion
+
+        public static IEnumerator Delay<T1, T2, T3>(BasicDelegate<T1, T2, T3> function, T1 arg1, T2 arg2, T3 arg3, float time) {
+            yield return new WaitForSeconds(time);
+            function(arg1, arg2, arg3);
+        }
+
+        public static IEnumerator Delay<T1, T2>(BasicDelegate<T1, T2> function, T1 arg1, T2 arg2, float time) {
+            yield return new WaitForSeconds(time);
+            function(arg1, arg2);
+        }
 
         public static IEnumerator Delay<T>(BasicDelegate<T> function, T arg, float time) {
             yield return new WaitForSeconds(time);

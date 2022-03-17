@@ -21,7 +21,7 @@ public class TeleportAwarness : MonoBehaviour {
             && _boss.Instance.CurrentState != Boss.State.FIREMISSILE 
             && _boss.Instance.CurrentState != Boss.State.FIREBOTH            
             || shield != null) {
-            _boss.Instance.Teleport();
+            _boss.Instance.StopActions();
         }
     }
 
@@ -42,14 +42,12 @@ public class TeleportAwarness : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             UpdateFlee();
-            Debug.Log("Enter");
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             UpdateFlee();
-            Debug.Log("Stay");
         }
     }
 }

@@ -40,6 +40,15 @@ public class AttackHitbox : MonoBehaviour {
             return;
         }
 
+        BossTree tree = collision.gameObject.GetComponent<BossTree>();
+        if (tree != null) {
+            tree.LoseLife(damage);
+            if (isBullet) {
+                Destroy(gameObject);
+            }
+            return;
+        }
+
         Missile missile = collision.gameObject.GetComponent<Missile>();
         if (missile != null) {
             missile.Die();
