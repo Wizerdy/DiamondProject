@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fireball : BossAction, IAction {
     [SerializeField] float _magicBallSpeed = 1f;
+    [SerializeField] float _bigMagicBallSpeed = 1f;
     [SerializeField] float _rotationSpeed = 1f;
     [SerializeField] float _magicBallRate = 1f;
     [SerializeField] float _magicBallDistSpawn = 1f;
@@ -17,10 +18,10 @@ public class Fireball : BossAction, IAction {
     IEnumerator FireMagicBall() {
         float fireRateTimer = _magicBallRate;
         float durationTimer = _duration;
-        SpawnBigMagicBall(transform.up + transform.right, _magicBallSpeed, transform.position + (transform.up + transform.right) * _magicBallDistSpawn, MagicBall.State.WHITE);
-        SpawnBigMagicBall((transform.up + transform.right) * -1, _magicBallSpeed, transform.position + (transform.up + transform.right) * _magicBallDistSpawn * -1, MagicBall.State.WHITE);
-        SpawnBigMagicBall(transform.up + transform.right * -1, _magicBallSpeed, transform.position + (transform.up + transform.right * -1) * _magicBallDistSpawn, MagicBall.State.WHITE);
-        SpawnBigMagicBall((transform.up + transform.right * -1) * -1, _magicBallSpeed, transform.position + (transform.up + transform.right * -1) * _magicBallDistSpawn * -1, MagicBall.State.WHITE);
+        SpawnBigMagicBall(transform.up + transform.right, _bigMagicBallSpeed, transform.position + (transform.up + transform.right) * _magicBallDistSpawn, MagicBall.State.WHITE);
+        SpawnBigMagicBall((transform.up + transform.right) * -1, _bigMagicBallSpeed, transform.position + (transform.up + transform.right) * _magicBallDistSpawn * -1, MagicBall.State.WHITE);
+        SpawnBigMagicBall(transform.up + transform.right * -1, _bigMagicBallSpeed, transform.position + (transform.up + transform.right * -1) * _magicBallDistSpawn, MagicBall.State.WHITE);
+        SpawnBigMagicBall((transform.up + transform.right * -1) * -1, _bigMagicBallSpeed, transform.position + (transform.up + transform.right * -1) * _magicBallDistSpawn * -1, MagicBall.State.WHITE);
         while (durationTimer > 0) {
             durationTimer -= Time.deltaTime;
             _boss.Instance.transform.Rotate(new Vector3(0, 0, 360 * _rotationSpeed * Time.deltaTime));
