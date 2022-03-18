@@ -1139,7 +1139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1663935082
 Transform:
   m_ObjectHideFlags: 0
@@ -1162,7 +1162,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663935081}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1462,7 +1462,7 @@ MonoBehaviour:
   _name: FireMissile
   _duration: 2
   _transitionTime: 1
-  nextState: Teleport
+  nextState: Transition
   missileSpeed: 20
   missileRotationSpeed: 80
   missileLifetime: 10
@@ -1892,8 +1892,8 @@ MonoBehaviour:
   _fireball: {fileID: 2949278061184160787}
   _healthProxy: {fileID: 6051770799808203605}
   _growTree: {fileID: 2202481518048543891}
-  _minion: {fileID: 0}
-  _spike: {fileID: 0}
+  _minion: {fileID: 1052788720660439918}
+  _spike: {fileID: 5033954653106382838}
   _hit: {fileID: 7486673631997738898}
   _heal: {fileID: 0}
   _death: {fileID: 4070983322119237389}
@@ -2605,9 +2605,9 @@ MonoBehaviour:
   _name: Fireball
   _duration: 2
   _transitionTime: 1
-  nextState: Teleport
+  nextState: Transition
   _magicBallSpeed: 20
-  _bigMagicBallSpeed: 1
+  _bigMagicBallSpeed: 5
   _rotationSpeed: 1
   _magicBallRate: 0.05
   _magicBallDistSpawn: 2
