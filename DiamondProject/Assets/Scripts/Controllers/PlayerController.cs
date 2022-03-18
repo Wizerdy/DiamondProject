@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
     public Health Health => _health;
     public EntityMovement Movement => _movement;
 
-    Vector2 MousePosition => _camera.Instance.ScreenToWorldPoint(mousePosition);
+    Vector2? MousePosition => _camera?.Instance?.ScreenToWorldPoint(mousePosition) ?? null;
 
     #endregion
 
@@ -79,13 +79,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void MeleeAttack() {
-        Vector2 direction = (MousePosition - transform.Position2D()).normalized;
+        Vector2 direction = MousePosition != null ? (MousePosition.Value - transform.Position2D()).normalized : Vector2.up;
         if (direction == Vector2.zero) { direction = Vector2.up; }
         _meleeAttack?.Attack(direction);
     }
 
     private void RangedAttack() {
-        Vector2 direction = (MousePosition - transform.Position2D()).normalized;
+        Vector2 direction = MousePosition != null ? (MousePosition.Value - transform.Position2D()).normalized : Vector2.up;
         if (direction == Vector2.zero) { direction = Vector2.up; }
         _rangedAttack?.Attack(direction);
     }

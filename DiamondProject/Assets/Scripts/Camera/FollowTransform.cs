@@ -9,14 +9,16 @@ public class FollowTransform : CameraAction {
     Vector3 _targetPosition = Vector3.zero;
 
     void Update() {
-        if (_targetPosition != target.Instance.position) {
-            _targetPosition = target.Instance.position;
-            Move(_targetPosition);
-            //Move(target.Instance.position);
-        }
+        //if (_targetPosition != target.Instance.position) {
+        //    _targetPosition = target.Instance.position;
+        //    Move(_targetPosition);
+            Move(target.Instance.position);
+        //}
     }
 
     //void Update() {
     //    _movements.transform.position = _movements.transform.position.Override(target.Instance.position, _concernedAxis);
     //}
 }
+
+
