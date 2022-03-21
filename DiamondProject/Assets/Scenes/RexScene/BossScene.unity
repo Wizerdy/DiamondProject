@@ -1592,7 +1592,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rock and Chair
+  m_text: Mme. Rocher
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7963f02e8a48bb040a2f667d0c4d3247, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 7963f02e8a48bb040a2f667d0c4d3247, type: 2}
@@ -1950,8 +1950,8 @@ Camera:
   m_GameObject: {fileID: 864920579}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.42352945, g: 0.7254902, b: 0.35686275, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2303,6 +2303,7 @@ MonoBehaviour:
     - Wall
     - Bullet
     - Boss
+    - Minion
     state: 2
   _destroyOnHit: 0
   _damageType: 
@@ -2331,6 +2332,7 @@ MonoBehaviour:
     - Wall
     - Bullet
     - Boss
+    - Minion
     state: 2
   _destroyOnHit: 0
   _damageType: 
@@ -2535,9 +2537,25 @@ PrefabInstance:
       propertyPath: _center
       value: 
       objectReference: {fileID: 293392963}
+    - target: {fileID: 1789959060, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
+      propertyPath: objects.Array.data[2].weight
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789959060, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
+      propertyPath: objects.Array.data[3].weight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1350705360739017912, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451754579874958533, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
+      propertyPath: missileSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451754579874958533, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
+      propertyPath: missileRotationSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5522892817298040195, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
       propertyPath: m_Name
@@ -3517,6 +3535,10 @@ PrefabInstance:
       propertyPath: _onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1772048557}
+    - target: {fileID: 3959631131995836340, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3959631132869822228, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3564,6 +3586,14 @@ PrefabInstance:
     - target: {fileID: 3959631132869822232, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631132869822232, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303888298297124882, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _cooldownTime
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}

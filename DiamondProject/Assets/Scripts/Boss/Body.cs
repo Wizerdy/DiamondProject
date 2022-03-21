@@ -10,3 +10,4 @@ public class Body : MonoBehaviour {
         Transform = GetComponent<Transform>();
     }
 }
+
