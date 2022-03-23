@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FireMissile : BossAction {
-    [SerializeField] Missile missile = null;
     [SerializeField] float missileSpeed = 1f;
     [SerializeField] float missileRotationSpeed = 1f;
     [SerializeField] float missileLifetime = 1f;
     [SerializeField] float missileDistSpawn = 1f;
     [SerializeField] float missileRate = 1f;
     [SerializeField] Vector2 missileBounds = Vector2.zero;
+    [Header("For Prog: ")]
+    [SerializeField] Missile missile = null;
     public override void StartAction() {
+        OnCast?.Invoke();
         _boss.Instance.ChangeState(GetState());
         //Debug.Log("Missile");
         StartCoroutine(MortalMissile());
@@ -40,7 +42,6 @@ public class FireMissile : BossAction {
             }
             yield return null;
         }
-        _boss.Instance.NewNextState("Teleport");
         Wait();
     }
 

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Teleport : BossAction {
-    [SerializeField] PlayerControllerReference _player;
     [SerializeField] float radiusSpawnPoint = 10f;
+    [Header("For Prog: ")]
+    [SerializeField] PlayerControllerReference _player;
     [SerializeField] List<Transform > _transformList = new List<Transform>();
     [SerializeField] Transform centralTransform;
 
@@ -19,8 +20,10 @@ public class Teleport : BossAction {
         }
     }
     public override void StartAction() {
-       // Debug.Log("Tp");
+        OnCast.Invoke();
+        // Debug.Log("Tp");
         _boss.Instance.ChangeState(GetState());
+        _boss.Instance.StopActions();
         int index = 0;
         float maxDistance = 0;
         for (int i = 0; i < _transformList.Count; i++) {

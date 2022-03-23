@@ -5,6 +5,7 @@ using UnityEngine;
 public class Transition : BossAction {
     [SerializeField] VisualEffectReference visualEffect;
     public override void StartAction() {
+        OnCast?.Invoke();
         visualEffect.Instance.AddColor(Color.magenta, 2, _duration);
         _boss.Instance.ChangeState(GetState());
         Wait();
@@ -20,6 +21,7 @@ public class Transition : BossAction {
             yield return null;
             _durationTimer -= Time.deltaTime;
         }
-        _boss.Instance.NewState();
+        _boss.Instance.RemoveCoroutines(this);
+        _boss.Instance.NextState();
     }
 }

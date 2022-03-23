@@ -20,7 +20,6 @@ GameObject:
   - component: {fileID: 7473080167766828591}
   - component: {fileID: 7473080167766827482}
   - component: {fileID: 7473080167766827483}
-  - component: {fileID: 7473080167766827477}
   - component: {fileID: 7473080167766827476}
   m_Layer: 0
   m_Name: Flowchart
@@ -70,7 +69,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 7473080167766828602}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 0}
   variables: []
   description: 
   stepPause: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   description: Start the interaction
   eventHandler: {fileID: 7473080167766827483}
   commandList:
-  - {fileID: 7473080167766827477}
+  - {fileID: 0}
   - {fileID: 7473080167766827476}
   suppressAllAutoSelections: 0
 --- !u!114 &7473080167766827483
@@ -288,24 +288,6 @@ MonoBehaviour:
   parentBlock: {fileID: 7473080167766827482}
   suppressBlockAutoSelect: 0
   message: StartTextInteraction
---- !u!114 &7473080167766827477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473080167766828600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fab8abf0343545abbfebd9a7b7b34bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 33
-  indentLevel: 0
-  logType: 1
-  logMessage:
-    stringRef: {fileID: 0}
-    stringVal: CA MARCHE PUTAIN
 --- !u!114 &7473080167766827476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,8 +354,9 @@ MonoBehaviour:
   life: 10
   speed: 0
   speedMultiplier: 0
-  index: 0
   flowchart: {fileID: 7473080167766828600}
+  index: 0
+  flowchartMessage: 
 --- !u!212 &7473080168726710216
 SpriteRenderer:
   m_ObjectHideFlags: 0

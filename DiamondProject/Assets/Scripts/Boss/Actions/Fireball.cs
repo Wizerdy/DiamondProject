@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball : BossAction, IAction {
-    [SerializeField] MagicBall magicBall = null;
-    [SerializeField] MagicBall BigmagicBall = null;
     [SerializeField] float _magicBallSpeed = 1f;
     [SerializeField] float _bigMagicBallSpeed = 1f;
     [SerializeField] float _rotationSpeed = 1f;
     [SerializeField] float _magicBallRate = 1f;
     [SerializeField] float _magicBallDistSpawn = 1f;
+    [Header("For Prog: ")]
+    [SerializeField] MagicBall magicBall = null;
+    [SerializeField] MagicBall BigmagicBall = null;
     public override void StartAction() {
-        //Debug.Log("Fireball");
+        OnCast?.Invoke();
         _boss.Instance.ChangeState(GetState());
         StartCoroutine(FireMagicBall());
     }
@@ -35,7 +36,6 @@ public class Fireball : BossAction, IAction {
             }
             yield return null;
         }
-        _boss.Instance.NewNextState("Teleport");
         Wait();
     }
     void SpawnMagicBall(Vector3 direction, float speed, Vector3 position, MagicBall.State state) {
