@@ -8,7 +8,8 @@ public class PlayerVFX : MonoBehaviour {
     [SerializeField] EntityMeleeAttack _eMeleeAttack;
     [SerializeField] Health _eTempHealth;
     [SerializeField] EntityRangedAttack _eRangedAttack;
-    [SerializeField] MMFeedbacks _run;
+    [SerializeField] MMFeedbacks _acceleration;
+    [SerializeField] MMFeedbacks _deceleration;
     [SerializeField] MMFeedbacks _meleeAttack;
     [SerializeField] MMFeedbacks _meleeHit;
     [SerializeField] MMFeedbacks _rangeAttack;
@@ -20,7 +21,8 @@ public class PlayerVFX : MonoBehaviour {
     //[SerializeField] MMFeedbacks _heal;
 
     private void Start() {
-        _eMovement.OnAcceleration += PlayRunFeedback;
+        _eMovement.OnAcceleration += PlayAccelerationFeedback;
+        _eMovement.OnDeceleration += PlayDecelerationFeedback;
         _eMovement.OnTurnAround += PlayTurnAroundFeedback;
         _eMeleeAttack.OnAttack += PlayMeleeAttackFeedback;
         _eMeleeAttack.OnHit += PlayMeleeHitFeedback;
@@ -30,7 +32,8 @@ public class PlayerVFX : MonoBehaviour {
     }
 
     private void OnDestroy() {
-        _eMovement.OnAcceleration -= PlayRunFeedback;
+        _eMovement.OnAcceleration -= PlayAccelerationFeedback;
+        _eMovement.OnDeceleration -= PlayDecelerationFeedback;
         _eMovement.OnTurnAround -= PlayTurnAroundFeedback;
         _eMeleeAttack.OnAttack -= PlayMeleeAttackFeedback;
         _eMeleeAttack.OnHit -= PlayMeleeHitFeedback;
@@ -39,8 +42,12 @@ public class PlayerVFX : MonoBehaviour {
         //_eRangedAttack.OnHit -= PlayRangedHitFeedback;
     }
 
-    private void PlayRunFeedback(Vector2 direction) {
-        _run.PlayFeedbacks();
+    private void PlayAccelerationFeedback(Vector2 direction) {
+        _acceleration.PlayFeedbacks();
+    }
+
+    private void PlayDecelerationFeedback(Vector2 direction) {
+        _deceleration.PlayFeedbacks();
     }
 
     private void PlayTurnAroundFeedback(Vector2 direction) {
