@@ -64,6 +64,7 @@ public class Health : MonoBehaviour, IHealth {
 
     public void Die() {
         _onDeath?.Invoke();
+        Destroy(gameObject);
     }
 
     public void AddResistance(string newResistances) {

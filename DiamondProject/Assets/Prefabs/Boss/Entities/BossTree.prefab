@@ -231,7 +231,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5632625
 --- !u!95 &9133632363820086684
 Animator:
   serializedVersion: 4
@@ -240,7 +240,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667601531182144411}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: aa41466883eeca94dbc4c195030a463d, type: 2}
   m_CullingMode: 0
@@ -273,7 +273,19 @@ MonoBehaviour:
       m_Calls: []
   _onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1667601531182144411}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _resistances: []
 --- !u!1 &2336975796290675946
 GameObject:
@@ -287,9 +299,10 @@ GameObject:
   - component: {fileID: 8269597103675081437}
   - component: {fileID: 7209061120495421192}
   - component: {fileID: 6432279777441027486}
+  - component: {fileID: 6526311622418947320}
   m_Layer: 0
   m_Name: Impact
-  m_TagString: Untagged
+  m_TagString: Minion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -351,7 +364,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: -2413806693520163455, guid: 2c89b35eb7d6dc84298ca645b14114da, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.27450982}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -402,9 +415,23 @@ MonoBehaviour:
     - Wall
     - Bullet
     - Boss
+    - Minion
     state: 2
   _destroyOnHit: 0
   _damageType: 
+--- !u!114 &6526311622418947320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2336975796290675946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e7974426e23aa4ca09302608b1cc63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 5829059379310568633}
 --- !u!1 &5129210313152693980
 GameObject:
   m_ObjectHideFlags: 0

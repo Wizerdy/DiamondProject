@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8354140553841378876}
   - component: {fileID: 1653234062663795834}
   - component: {fileID: -3818824319388365566}
+  - component: {fileID: 1426407013473854675}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Minion
@@ -154,6 +155,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.652097, y: 1.0737205}
   m_EdgeRadius: 0
+--- !u!114 &1426407013473854675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854611740216456229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6f3989b27671a4f8bd0b557e15c528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 1
+  _onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  _resistances: []
 --- !u!1001 &3053940727834087458
 PrefabInstance:
   m_ObjectHideFlags: 0
