@@ -6,6 +6,8 @@ public class TriggerNoctali : MonoBehaviour {
     public GameObject Evoli;
     public GameObject Noctali;
     public GameObject bluesc;
+    public GameObject fond;
+    public Sprite newFond;
     public PosterityObject post;
     public Camera cam;
     public Vector2 blue;
@@ -70,28 +72,44 @@ public class TriggerNoctali : MonoBehaviour {
             float timer = time;
             Vector3 normal = cam.transform.position;
             bluesc.gameObject.SetActive(true);
-            if (!post.firstTimeTalking) {
-                while (timer > 0) {
+            while (timer > 0) {
+                if (!post.firstTimeTalking) {
                     cam.transform.position = normal + Random.insideUnitSphere;
-                    timer -= Time.deltaTime;
-                    yield return null;
                 }
+                timer -= Time.deltaTime;
+                yield return null;
             }
+
             cam.transform.position = normal;
             bluesc.gameObject.SetActive(false);
         }
     }
     public void Verif() {
         if (phaseto && phasedo && phaseuno) {
-            LaunchNoctali();
+            StartCoroutine(LaunchNoctali());
         }
     }
 
-    void LaunchNoctali() {
-        post.gotToAnotherBoss = true;
-        bluesc.gameObject.SetActive(false);
-        Evoli.GetComponent<Boss>().Die();
+    IEnumerator LaunchNoctali() {
+        float timer = 3f;
+        Vector3 normal = cam.transform.position;
+        Evoli.GetComponent<Boss>().enabled = false;
+        Evoli.transform.GetChild(0).gameObject.SetActive(false);
+        Evoli.transform.GetChild(1).gameObject.SetActive(false);
+        Evoli.transform.GetChild(2).gameObject.SetActive(false);
+        Evoli.transform.GetChild(3).gameObject.SetActive(false);
+        Evoli.transform.GetChild(5).gameObject.SetActive(false);
+        Evoli.transform.GetChild(4).gameObject.SetActive(false);
+        while (timer > 0) {
+            cam.transform.position = normal + Random.insideUnitSphere * 2;
+            bluesc.gameObject.SetActive(false);
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        fond.GetComponent<SpriteRenderer>().sprite = newFond;
         Noctali.SetActive(true);
+        post.gotToAnotherBoss = true;
+        Evoli.GetComponent<Boss>().Die();
     }
 
 
