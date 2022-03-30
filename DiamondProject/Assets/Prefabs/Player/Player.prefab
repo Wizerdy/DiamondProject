@@ -294,7 +294,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5330470843311427989}
   - component: {fileID: 1616499676440081683}
-  - component: {fileID: 2725827399667061637}
   - component: {fileID: 1517318563454296238}
   m_Layer: 0
   m_Name: Hit
@@ -331,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Feedbacks:
-  - {fileID: 2725827399667061637}
+  - {fileID: 0}
   - {fileID: 1517318563454296238}
   InitializationMode: 2
   SafeMode: 3
@@ -364,54 +363,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   DebugActive: 0
---- !u!114 &2725827399667061637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3380702550353202447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c2ce51367856bd49b72678cc4263225, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Active: 1
-  Label: Sound
-  Chance: 100
-  Timing:
-    TimescaleMode: 0
-    InitialDelay: 0
-    CooldownDuration: 0
-    ExcludeFromHoldingPauses: 0
-    InterruptsOnStop: 1
-    NumberOfRepeats: 0
-    RepeatForever: 0
-    DelayBetweenRepeats: 1
-    MMFeedbacksDirectionCondition: 0
-    PlayDirection: 0
-    ConstantIntensity: 0
-    UseIntensityInterval: 0
-    IntensityIntervalMin: 0
-    IntensityIntervalMax: 0
-    Sequence: {fileID: 0}
-    TrackID: 0
-    Quantized: 0
-    TargetBPM: 120
-  DebugActive: 0
-  Sfx: {fileID: 0}
-  RandomSfx:
-  - {fileID: 8300000, guid: 75c97f1ef36c75e4fa9bca142c357e98, type: 3}
-  - {fileID: 8300000, guid: bd9292ea25b46c946bf737bde6a3d391, type: 3}
-  TestButton: 0
-  TestStopButton: 0
-  PlayMethod: 3
-  PoolSize: 5
-  MinVolume: 1
-  MaxVolume: 1
-  MinPitch: 0.9
-  MaxPitch: 1.1
-  SfxAudioMixerGroup: {fileID: 0}
 --- !u!114 &1517318563454296238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1367,7 +1318,8 @@ MonoBehaviour:
   _eMeleeAttack: {fileID: 5303888298297124882}
   _eTempHealth: {fileID: 2161993602319532677}
   _eRangedAttack: {fileID: 7873682425189889759}
-  _run: {fileID: 7074820754420491190}
+  _acceleration: {fileID: 0}
+  _deceleration: {fileID: 0}
   _meleeAttack: {fileID: 8990786264109351080}
   _meleeHit: {fileID: 5607606183400771061}
   _rangeAttack: {fileID: 3303485470002897867}

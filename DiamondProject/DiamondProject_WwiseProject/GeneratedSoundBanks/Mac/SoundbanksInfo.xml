@@ -16,10 +16,28 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1077138683">
+		<SoundBank Id="3161908922" Language="SFX" Hash="611921317">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="180661997" Name="Attack" ObjectPath="\Events\Default Work Unit\Attack" DurationType="OneShot" DurationMin="0.210918" DurationMax="0.375813">
+					<IncludedMemoryFiles>
+						<File Id="155480716" Language="SFX">
+							<ShortName>MeleeAttack3.wav</ShortName>
+							<Path>SFX\MeleeAttack3_10C4C929.wem</Path>
+						</File>
+						<File Id="358982850" Language="SFX">
+							<ShortName>MeleeAttack2.wav</ShortName>
+							<Path>SFX\MeleeAttack2_10C4C929.wem</Path>
+						</File>
+						<File Id="1003902955" Language="SFX">
+							<ShortName>MeleeAttack1.wav</ShortName>
+							<Path>SFX\MeleeAttack1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
