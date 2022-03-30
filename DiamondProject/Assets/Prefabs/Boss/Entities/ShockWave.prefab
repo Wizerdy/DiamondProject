@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2084e091106a74469bb14cd214f8aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossRef: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
 --- !u!114 &-2928060870511847050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +125,10 @@ MonoBehaviour:
     - Wall
     - Bullet
     - Boss
+    - Minion
+    - Flower
+    - Sword
+    - ShockWave
     state: 2
   _destroyOnHit: 0
   _damageType: Shockwave
