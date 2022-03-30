@@ -46,6 +46,6 @@ public class TextInteraction : MonoBehaviour {
         blockToCall = _blockToCall;
 
         currentText = tmpText.text;
-        wordsToMatch = null;
+        wordsToMatch = null; 
     }
 }
