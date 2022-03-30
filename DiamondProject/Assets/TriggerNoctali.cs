@@ -6,6 +6,8 @@ public class TriggerNoctali : MonoBehaviour {
     public GameObject Evoli;
     public GameObject Noctali;
     public GameObject bluesc;
+    public PosterityObject post;
+    public Camera cam;
     public Vector2 blue;
     public Vector2 green;
     public Vector2 purple;
@@ -23,7 +25,7 @@ public class TriggerNoctali : MonoBehaviour {
     }
     public void AddFlower(string name) {
         switch (name) {
-            case "Flower Green" :
+            case "Flower Green":
                 green.x++;
                 break;
             case "Flower Orange":
@@ -48,7 +50,7 @@ public class TriggerNoctali : MonoBehaviour {
                 break;
             case "Flower Blue":
                 blue.x--;
-                
+
                 break;
             case "Flower Purple":
                 purple.x--;
@@ -56,6 +58,7 @@ public class TriggerNoctali : MonoBehaviour {
         }
         if (blue.x <= 0 && purple.x <= 0 && orange.x == orange.y && green.x == green.y) {
             phaseto = true;
+            post.numberOfTriggerActivate++;
             Active();
         }
         Verif();
@@ -64,8 +67,17 @@ public class TriggerNoctali : MonoBehaviour {
         StartCoroutine(RedScreen(0.5f));
 
         IEnumerator RedScreen(float time) {
+            float timer = time;
+            Vector3 normal = cam.transform.position;
             bluesc.gameObject.SetActive(true);
-            yield return new WaitForSeconds(time);
+            if (!post.firstTimeTalking) {
+                while (timer > 0) {
+                    cam.transform.position = normal + Random.insideUnitSphere;
+                    timer -= Time.deltaTime;
+                    yield return null;
+                }
+            }
+            cam.transform.position = normal;
             bluesc.gameObject.SetActive(false);
         }
     }
@@ -76,6 +88,7 @@ public class TriggerNoctali : MonoBehaviour {
     }
 
     void LaunchNoctali() {
+        post.gotToAnotherBoss = true;
         bluesc.gameObject.SetActive(false);
         Evoli.GetComponent<Boss>().Die();
         Noctali.SetActive(true);
