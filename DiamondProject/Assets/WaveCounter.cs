@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveCounter : MonoBehaviour {
+    private void Start() {
+        this.enabled = false;
+    }
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.gameObject.tag == "ShockWave") {
             collision.GetComponent<Shockwave>().Change();
