@@ -12,6 +12,9 @@ public class PosterityObject : ScriptableObject {
     public int numberOfTriggerActivate = 0;
 
     public bool firstTimeTalking = true;
+
+    public int numberOfTimeTalkingToFairy = 0;
+
     public void ResetValues() {
         deathCount = 0;
         bossDeathCount = 0;
@@ -20,5 +23,11 @@ public class PosterityObject : ScriptableObject {
         numberOfTriggerActivate = 0;
 
         firstTimeTalking = true;
+        numberOfTimeTalkingToFairy = 0;
+    }
+
+    public void ResetValuesBeforeBoss() {
+        gotToAnotherBoss = false;
+        numberOfTriggerActivate = 0;
     }
 }
