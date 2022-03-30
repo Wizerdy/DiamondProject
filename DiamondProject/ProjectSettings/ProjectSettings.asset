@@ -135,7 +135,8 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: 5113f4f6ef8ff4f499e7f2b85081351f, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -625,6 +626,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
+    Android: MOREMOUNTAINS_NICEVIBRATIONS_RUMBLE;MOREMOUNTAINS_FEEDBACKS;MOREMOUNTAINS_TEXTMESHPRO_INSTALLED;MOREMOUNTAINS_NICEVIBRATIONS;MOREMOUNTAINS_TOOLS
     Standalone: MOREMOUNTAINS_NICEVIBRATIONS_RUMBLE;MOREMOUNTAINS_FEEDBACKS;MOREMOUNTAINS_NICEVIBRATIONS;MOREMOUNTAINS_TOOLS;MOREMOUNTAINS_TEXTMESHPRO_INSTALLED
   additionalCompilerArguments: {}
   platformArchitecture: {}

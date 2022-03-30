@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -8354140553841378876}
   - component: {fileID: 1653234062663795834}
   - component: {fileID: -3818824319388365566}
+  - component: {fileID: 1426407013473854675}
   m_Layer: 0
   m_Name: Missile
-  m_TagString: Untagged
+  m_TagString: Minion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 854611740216456229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7721715158986719863}
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d19c0a128dabe5448367550c17e9473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossRef: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
   _player: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   directionTarget: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
@@ -154,6 +156,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.652097, y: 1.0737205}
   m_EdgeRadius: 0
+--- !u!114 &1426407013473854675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854611740216456229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6f3989b27671a4f8bd0b557e15c528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 1
+  _onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  _resistances: []
 --- !u!1001 &3053940727834087458
 PrefabInstance:
   m_ObjectHideFlags: 0

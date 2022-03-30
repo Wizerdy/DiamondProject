@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Boss : MonoBehaviour {
-    public enum State { TRANSITION, FORMSWITCH, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL, FIREBOTH, EXPLOSIVROCKFALL, DISMANTLE, FISSURE, GUARDIANSEED}
+    public enum State { TRANSITION, FORMSWITCH, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL, FIREBOTH, EXPLOSIVROCKFALL, DISMANTLE, FISSURE, GUARDIANSEED }
     public enum Form { PASSIVE = 0, FIRST = 1, SECOND = 2, DEAD = 3 }
 
     [SerializeField] private State currentState = State.TRANSITION;
@@ -12,8 +13,13 @@ public class Boss : MonoBehaviour {
     [SerializeField] MonoBossActionSelectorRandom _currentForm;
     [SerializeField] MonoBossActionSelectorRandom _allActions;
     [SerializeField] List<BossAction> bossActionsCoroutines = new List<BossAction>();
+    public List<GameObject> todestroyondeath = new List<GameObject>();
+    public UnityAction die;
+
     public State CurrentState { get { return currentState; } }
     private void Start() {
+        die = () => Die();
+        gameObject.GetComponent<Health>().OnDeath += die;
         NextState();
     }
 
@@ -23,7 +29,7 @@ public class Boss : MonoBehaviour {
         switch (nextState) {
             case "Random":
                 action = _currentForm.Get();
-                if(action == null) {
+                if (action == null) {
                     StartCoroutine(RetryNextState(1));
                 }
                 break;
@@ -47,6 +53,7 @@ public class Boss : MonoBehaviour {
     }
 
     public void ChangeState(State state) {
+        //Debug.Log("NewState: " + state);
         currentState = state;
     }
 
@@ -64,4 +71,11 @@ public class Boss : MonoBehaviour {
         NextState("Random");
     }
     #endregion
+
+    public void Die() {
+        for (int i = 0; i < todestroyondeath.Count; i++) {
+            Destroy(todestroyondeath[i]);
+        }
+        Destroy(gameObject);
+    }
 }

@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile : MonoBehaviour {
+public class Missile : BossEntities {
 
-    [SerializeField] private PlayerControllerReference _player;
-    [SerializeField] Vector3 directionTarget = Vector3.zero;
-    [SerializeField] Vector3 direction = Vector3.zero;
-    [SerializeField] float speed = 1f;
-    [SerializeField] float rotationSpeed = 100f;
-    [SerializeField] float lifetime = 1f;
-    [SerializeField] float lifetimeTimer = 1f;
-    Rigidbody2D rb = null;
+    [SerializeField] protected PlayerControllerReference _player;
+    [SerializeField] protected Vector3 directionTarget = Vector3.zero;
+    [SerializeField] protected Vector3 direction = Vector3.zero;
+    [SerializeField] protected float speed = 1f;
+    [SerializeField] protected float rotationSpeed = 100f;
+    [SerializeField] protected float lifetime = 1f;
+    [SerializeField] protected float lifetimeTimer = 1f;
+    protected Rigidbody2D rb = null;
+    public FireMissile firemissile;
 
     public Missile SetSpeed(float speed) {
         this.speed = speed;
@@ -28,19 +29,19 @@ public class Missile : MonoBehaviour {
         return this;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    public virtual void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             _player.Instance.Health.TakeDamage(10);
             Die();
         }
     }
 
-    private void Start() {
+    public virtual void Start() {
         rb = GetComponent<Rigidbody2D>();
         lifetimeTimer = lifetime;
     }
 
-    private void FixedUpdate() {
+    public virtual void FixedUpdate() {
         lifetimeTimer -= Time.fixedDeltaTime;
         if (lifetimeTimer <= 0) {
             Die();
@@ -56,14 +57,14 @@ public class Missile : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    float ModuloAngle(float angle) {
+    protected float ModuloAngle(float angle) {
         angle %= 360;
         angle += 360;
         angle %= 360;
         return angle;
     }
 
-    float ModuloAngle(Vector3 vector) {
+    protected float ModuloAngle(Vector3 vector) {
         return ModuloAngle(Vector3.Angle(Vector3.up, vector));
     }
 }

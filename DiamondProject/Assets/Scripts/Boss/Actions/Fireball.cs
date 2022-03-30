@@ -36,7 +36,9 @@ public class Fireball : BossAction, IAction {
             }
             yield return null;
         }
-        Wait();
+        _boss.Instance.RemoveCoroutines(this);
+        NextState();
+
     }
     void SpawnMagicBall(Vector3 direction, float speed, Vector3 position, MagicBall.State state) {
         MagicBall newMagicBall = Instantiate(magicBall.gameObject, position, Quaternion.identity).GetComponent<MagicBall>();

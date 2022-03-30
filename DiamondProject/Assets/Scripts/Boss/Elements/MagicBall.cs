@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicBall : MonoBehaviour {
+public class MagicBall : BossEntities {
 
     public Vector3 direction = Vector3.zero;
     public float speed = 1;
@@ -44,6 +44,7 @@ public class MagicBall : MonoBehaviour {
         } else if (state == State.WHITE) {
             sr.color = Color.white;
         }
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b,0.1f);
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {

@@ -32,7 +32,7 @@ public abstract class BossAction : MonoBehaviour, IAction {
         NextState();
     }
 
-    protected void NextState() {
+    public void NextState() {
         if (nextState == "Transition") {
             _boss.Instance.NextState(nextState, _transitionTime);
         } else {
