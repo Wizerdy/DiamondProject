@@ -15,27 +15,27 @@ public class CameraEngine2D : MonoBehaviour {
         }
     }
 
-    [SerializeField] new Camera camera;
-    [SerializeField] Transform parent = null;
-    [SerializeField] float baseDepth = 0f;
-    [SerializeField] float baseCameraSize;
+    [SerializeField] Camera _camera;
+    [SerializeField] Camera _parent = null;
+    [SerializeField] float _baseDepth = 0f;
+    [SerializeField] float _baseCameraSize;
 
     Vector3 startPosition;
 
     #region Properties
 
-    public Vector3 CameraLocalPosition => camera.transform.localPosition;
-    Vector3 LocPosition { get { return camera.transform.localPosition; } set { camera.transform.localPosition = value; } }
-    Vector3 Position { get { return camera.transform.position; } set { camera.transform.position = value; } }
+    public Vector3 CameraLocalPosition => _camera.transform.localPosition;
+    Vector3 LocPosition { get { return _camera.transform.localPosition; } set { _camera.transform.localPosition = value; } }
+    Vector3 Position { get { return _camera.transform.position; } set { _camera.transform.position = value; } }
 
     #endregion
 
     List<AxisRoutine> axisRoutines = new List<AxisRoutine>();
 
     private void Reset() {
-        camera = GetComponent<Camera>();
-        baseCameraSize = camera?.orthographicSize ?? 5f;
-        parent = camera.transform.parent;
+        _camera = GetComponent<Camera>();
+        _baseCameraSize = _camera?.orthographicSize ?? 5f;
+        _parent = _camera.transform.parent.GetComponent<Camera>();
     }
 
     private void Start() {
@@ -44,19 +44,25 @@ public class CameraEngine2D : MonoBehaviour {
         //StartCoroutine(Tools.Delay<float, float, Vector3?>(Zoom, 0.2f, 5f, null, 0.2f));
     }
 
+    private void Update() {
+        if (_parent != null) {
+            _camera.orthographicSize = _parent.orthographicSize;
+        }
+    }
+
     public void Zoom(float zoom, float time, Vector3? unzoomedPosition = null) {
         if (zoom == 0f) { Debug.LogError("NO."); return; }
-        if (unzoomedPosition == null) { unzoomedPosition = parent != null ? parent.position : startPosition; }
+        if (unzoomedPosition == null) { unzoomedPosition = _parent != null ? _parent.transform.position : startPosition; }
 
         float unzoomedZ = unzoomedPosition.Value.z;
-        float newZ = Mathf.LerpUnclamped(baseDepth, unzoomedZ, zoom);
+        float newZ = Mathf.LerpUnclamped(_baseDepth, unzoomedZ, zoom);
         Vector3 destination = Vector3.zero.Override(newZ, Axis.Z);
         destination -= unzoomedPosition.Value;
         Move(destination, time, Axis.Z);
     }
 
-    public void ChangeParent(Transform parent, float time) {
-        this.parent = parent;
+    public void ChangeParent(Camera parent, float time) {
+        this._parent = parent;
         ResetLocalPosition(time);
     }
 
@@ -83,8 +89,8 @@ public class CameraEngine2D : MonoBehaviour {
                 Vector3 pos = Vector3.Lerp(startPosition, position, timePassed / time);
                 LocPosition = LocPosition.Override(pos, concernedAxis);
                 if (concernedAxis.Contains(Axis.Z)) {
-                    float worldDepth = (parent != null ? parent.position.z : transform.position.z);
-                    ComputeDepth(baseDepth, worldDepth - this.startPosition.z);
+                    float worldDepth = (_parent != null ? _parent.transform.position.z : transform.position.z);
+                    ComputeDepth(_baseDepth, worldDepth - this.startPosition.z);
                 }
                 yield return new WaitForEndOfFrame();
                 if (routine == null) { routine = axisRoutines[routineIndex]; }
@@ -97,7 +103,7 @@ public class CameraEngine2D : MonoBehaviour {
     public void ComputeDepth(float minDepth, float maxDepth) {
         Tools.Print(minDepth, maxDepth, Position.z);
         float percentage = Tools.InverseLerpUnclamped(minDepth, maxDepth, Position.z);
-        camera.orthographicSize = Mathf.LerpUnclamped(0f, baseCameraSize, percentage);
+        _camera.orthographicSize = Mathf.LerpUnclamped(0f, _baseCameraSize, percentage);
     }
 
     private void GetAxisPriority(params Axis[] axis) {

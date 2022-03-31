@@ -10,9 +10,9 @@ public class FollowTransform : CameraAction {
 
     void Update() {
         //if (_targetPosition != target.Instance.position) {
-        //    _targetPosition = target.Instance.position;
+            _targetPosition = target.Instance.position;
         //    Move(_targetPosition);
-            Move(target.Instance.position);
+        //    Move(target.Instance.position);
         //}
     }
 

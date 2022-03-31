@@ -361,8 +361,8 @@ namespace ToolsBoxEngine {
 
         #endregion
 
-        public static Vector2 Position2D(this Transform transform) {
-            return transform.position.To2D();
+        public static Vector2 Position2D(this Transform transform, Axis axis = Axis.Z) {
+            return transform.position.To2D(axis);
         }
 
         public static int Find(this int[] array, int value) {
