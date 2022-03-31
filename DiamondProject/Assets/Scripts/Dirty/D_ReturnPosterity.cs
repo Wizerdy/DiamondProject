@@ -9,4 +9,9 @@ public class D_ReturnPosterity : MonoBehaviour {
         if (_posterity == null) { return 0; }
         return _posterity.deathCount;
     }
+
+    public void SetMaxLifeModifier(int amount) {
+        if (_posterity == null) { return; }
+        _posterity.maxLifeModifier = amount;
+    }
 }

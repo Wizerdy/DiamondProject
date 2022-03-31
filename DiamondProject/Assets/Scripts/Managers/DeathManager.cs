@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeathManager : MonoBehaviour {
     [SerializeField] int _extraLife = 0;
+    [SerializeField] string _nextLevel = "ProtoFairy 1";
     [SerializeField] LevelLoader _levelLoader = null;
     [SerializeField] Reference<PlayerController> _player = null;
 
@@ -22,7 +23,7 @@ public class DeathManager : MonoBehaviour {
             return;
         }
 
-        _levelLoader?.LoadLevel("ProtoFairy");
+        _levelLoader?.LoadLevel(_nextLevel);
     }
 
     public void Revive(PlayerController player) {
