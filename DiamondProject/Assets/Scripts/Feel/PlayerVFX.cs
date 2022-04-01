@@ -27,6 +27,7 @@ public class PlayerVFX : MonoBehaviour {
         _eMeleeAttack.OnAttack += PlayMeleeAttackFeedback;
         _eMeleeAttack.OnHit += PlayMeleeHitFeedback;
         _eTempHealth.OnHit += PlayHitFeedback;
+        _eTempHealth.OnDeath += PlayDeathFeedback;
         _eRangedAttack.OnAttack += PlayRangedAttackFeedback;
         //_eRangedAttack.OnHit += PlayRangedHitFeedback;
     }
@@ -37,6 +38,7 @@ public class PlayerVFX : MonoBehaviour {
         _eMovement.OnTurnAround -= PlayTurnAroundFeedback;
         _eMeleeAttack.OnAttack -= PlayMeleeAttackFeedback;
         _eMeleeAttack.OnHit -= PlayMeleeHitFeedback;
+        _eTempHealth.OnDeath -= PlayDeathFeedback;
         _eTempHealth.OnHit -= PlayHitFeedback;
         _eRangedAttack.OnAttack -= PlayRangedAttackFeedback;
         //_eRangedAttack.OnHit -= PlayRangedHitFeedback;
@@ -66,6 +68,10 @@ public class PlayerVFX : MonoBehaviour {
         _hit.PlayFeedbacks();
     }
 
+    private void PlayDeathFeedback() {
+        _death.PlayFeedbacks();
+    }
+
     private void PlayRangedAttackFeedback(Vector2 direction) {
         _rangeAttack.PlayFeedbacks();
     }
@@ -73,4 +79,5 @@ public class PlayerVFX : MonoBehaviour {
     private void PlayRangedHitFeedback(Vector2 direction) {
         _rangeHit.PlayFeedbacks();
     }
+
 }
