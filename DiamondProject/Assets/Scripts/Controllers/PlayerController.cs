@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntityRangedAttack _rangedAttack;
     [SerializeField] Health _health;
     [SerializeField] Reference<Camera> _camera;
+    [SerializeField] Animator _animator;
+    [SerializeField] Reference<Boss> _boss;
 
     [Header("Dialogue")]
     [SerializeField] TextInteraction textInteraction;
@@ -58,6 +60,10 @@ public class PlayerController : MonoBehaviour {
 
         if (_controls.Battle.RangedAttack.ReadValue<float>() == 1) {
             RangedAttack();
+        }
+
+        if (_controls.GamePlay.Jump.ReadValue<float>() == 1) {
+            Jump();
         }
     }
 
@@ -108,5 +114,9 @@ public class PlayerController : MonoBehaviour {
 
     private void SetMousePosition(InputAction.CallbackContext cc) {
         mousePosition = cc.ReadValue<Vector2>();
+    }
+
+    private void Jump() {
+        _animator.SetTrigger("Jump");
     }
 }

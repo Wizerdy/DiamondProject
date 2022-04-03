@@ -30,6 +30,6 @@ public class ApplyPosterity : MonoBehaviour {
         _nearsightMaterial?.SetVector("_Center", _playerTransform.Instance.position);
 
         _playerHealthBar?.SetActive(!_posterity.dontSeeHealthBar);
-        _bossHealthBar?.SetActive(!_posterity.dontSeeHealthBar && _posterity.seeBossHealthBar);
+        //_bossHealthBar?.SetActive(!_posterity.dontSeeHealthBar && _posterity.seeBossHealthBar);
     }
 }

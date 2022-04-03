@@ -1463,8 +1463,8 @@ MonoBehaviour:
   _duration: 2
   _transitionTime: 1
   nextState: Transition
-  missileSpeed: 20
-  missileRotationSpeed: 80
+  missileSpeed: 25
+  missileRotationSpeed: 100
   missileLifetime: 10
   missileDistSpawn: 2
   missileRate: 0.2
@@ -1948,9 +1948,9 @@ MonoBehaviour:
   - value: {fileID: 2949278061184160787}
     weight: 1
   - value: {fileID: 1503460440}
-    weight: 0.5
+    weight: 0.7
   - value: {fileID: 1792862940}
-    weight: 0.1
+    weight: 0.5
 --- !u!1 &4617046804174368061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,7 +2260,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5901557033308297243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,13 +2642,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
   _name: Fireball
-  _duration: 2
+  _duration: 5
   _transitionTime: 1
   nextState: Transition
-  _magicBallSpeed: 20
+  _magicBallSpeed: 50
   _bigMagicBallSpeed: 5
-  _rotationSpeed: 1
-  _magicBallRate: 0.05
+  _rotationSpeed: 0.1
+  _magicBallRate: 0.1
   _magicBallDistSpawn: 2
   magicBall: {fileID: 6710866795124079466, guid: 391be8f3aba4a7d4d99e8433c23387a0, type: 3}
   BigmagicBall: {fileID: 6710866795124079466, guid: 21624fcd54603894ea6f5ccec2149f16, type: 3}

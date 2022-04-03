@@ -44,6 +44,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""9d015634-f2f8-40ff-b166-f07f00592f39"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -121,6 +130,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8fa2d8cf-8b43-41e7-810b-eb1e807fb0ca"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -229,6 +249,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
         m_GamePlay_Interact = m_GamePlay.FindAction("Interact", throwIfNotFound: true);
+        m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
         // Battle
         m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
         m_Battle_Attack = m_Battle.FindAction("Attack", throwIfNotFound: true);
@@ -298,12 +319,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IGamePlayActions m_GamePlayActionsCallbackInterface;
     private readonly InputAction m_GamePlay_Move;
     private readonly InputAction m_GamePlay_Interact;
+    private readonly InputAction m_GamePlay_Jump;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
         public GamePlayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_GamePlay_Move;
         public InputAction @Interact => m_Wrapper.m_GamePlay_Interact;
+        public InputAction @Jump => m_Wrapper.m_GamePlay_Jump;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -319,6 +342,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInteract;
+                @Jump.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnJump;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -329,6 +355,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
         }
     }
@@ -419,6 +448,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
     public interface IBattleActions
     {

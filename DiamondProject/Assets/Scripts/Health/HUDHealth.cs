@@ -30,6 +30,7 @@ public class HUDHealth : MonoBehaviour {
 
     private void OnStart() {
         UpdateHUD(0);
+        this.Hurl();
     }
 
     private void OnDestroy() {

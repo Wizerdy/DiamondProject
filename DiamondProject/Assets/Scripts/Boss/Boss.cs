@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ToolsBoxEngine;
 
 public class Boss : MonoBehaviour {
     public enum State { TRANSITION, FORMSWITCH, TELEPORT, ROCKFALL, FIREMISSILE, FIREBALL, FIREBOTH, EXPLOSIVROCKFALL, DISMANTLE, FISSURE, GUARDIANSEED}
@@ -13,8 +14,14 @@ public class Boss : MonoBehaviour {
     [SerializeField] MonoBossActionSelectorRandom _allActions;
     [SerializeField] List<BossAction> bossActionsCoroutines = new List<BossAction>();
     public State CurrentState { get { return currentState; } }
+
+    public void StartIn(float time) {
+        StartCoroutine(Tools.Delay(NextState, "Random", -1f, time));
+    }
+
     private void Start() {
-        NextState();
+        StartIn(5f);
+        //NextState();
     }
 
     #region State
