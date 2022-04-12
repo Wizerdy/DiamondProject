@@ -6,6 +6,10 @@ public class TriggerNoctali : MonoBehaviour {
     public GameObject Evoli;
     public GameObject Noctali;
     public GameObject bluesc;
+    public GameObject fond;
+    public Sprite newFond;
+    public PosterityObject post;
+    public Camera cam;
     public Vector2 blue;
     public Vector2 green;
     public Vector2 purple;
@@ -23,7 +27,7 @@ public class TriggerNoctali : MonoBehaviour {
     }
     public void AddFlower(string name) {
         switch (name) {
-            case "Flower Green" :
+            case "Flower Green":
                 green.x++;
                 break;
             case "Flower Orange":
@@ -48,7 +52,7 @@ public class TriggerNoctali : MonoBehaviour {
                 break;
             case "Flower Blue":
                 blue.x--;
-                
+
                 break;
             case "Flower Purple":
                 purple.x--;
@@ -56,6 +60,7 @@ public class TriggerNoctali : MonoBehaviour {
         }
         if (blue.x <= 0 && purple.x <= 0 && orange.x == orange.y && green.x == green.y) {
             phaseto = true;
+            post.numberOfTriggerActivate++;
             Active();
         }
         Verif();
@@ -64,21 +69,47 @@ public class TriggerNoctali : MonoBehaviour {
         StartCoroutine(RedScreen(0.5f));
 
         IEnumerator RedScreen(float time) {
+            float timer = time;
+            Vector3 normal = cam.transform.position;
             bluesc.gameObject.SetActive(true);
-            yield return new WaitForSeconds(time);
+            while (timer > 0) {
+                if (!post.firstTimeTalking) {
+                    cam.transform.position = normal + Random.insideUnitSphere;
+                }
+                timer -= Time.deltaTime;
+                yield return null;
+            }
+
+            cam.transform.position = normal;
             bluesc.gameObject.SetActive(false);
         }
     }
     public void Verif() {
         if (phaseto && phasedo && phaseuno) {
-            LaunchNoctali();
+            StartCoroutine(LaunchNoctali());
         }
     }
 
-    void LaunchNoctali() {
-        bluesc.gameObject.SetActive(false);
-        Evoli.GetComponent<Boss>().Die();
+    IEnumerator LaunchNoctali() {
+        float timer = 3f;
+        Vector3 normal = cam.transform.position;
+        Evoli.GetComponent<Boss>().enabled = false;
+        Evoli.transform.GetChild(0).gameObject.SetActive(false);
+        Evoli.transform.GetChild(1).gameObject.SetActive(false);
+        Evoli.transform.GetChild(2).gameObject.SetActive(false);
+        Evoli.transform.GetChild(3).gameObject.SetActive(false);
+        Evoli.transform.GetChild(5).gameObject.SetActive(false);
+        Evoli.transform.GetChild(4).gameObject.SetActive(false);
+        while (timer > 0) {
+            cam.transform.position = normal + Random.insideUnitSphere * 2;
+            bluesc.gameObject.SetActive(false);
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        fond.GetComponent<SpriteRenderer>().sprite = newFond;
         Noctali.SetActive(true);
+        post.gotToAnotherBoss = true;
+        Evoli.GetComponent<Boss>().Die();
     }
 
 
