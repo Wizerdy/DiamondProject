@@ -1,6 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{CC07A01B-1C45-4AED-A740-AF6B50550199}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{CC07A01B-1C45-4AED-A740-AF6B50550199}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{CC07A01B-1C45-4AED-A740-AF6B50550199}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Piste audio-2-2" ID="{BF6777F3-E5F9-4CFC-B315-8949D34D6B12}" ShortID="668460824">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{1F63DEBC-4556-45D9-9D38-4FBF613BC508}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="500"/>
+											<Property Name="Min" Type="Real64" Value="-500"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Piste audio-2-2" ID="{E833C293-DE6F-4922-B135-E8E280CFF93B}">
+							<Language>SFX</Language>
+							<AudioFile>Piste audio-2-2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1032603065"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Piste audio-2-2" ID="{E833C293-DE6F-4922-B135-E8E280CFF93B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Piste audio-4" ID="{8DF97FE4-2F19-48C0-9347-6EE1E87A9246}" ShortID="878997896">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Piste audio-4" ID="{9ABB7D51-CA1C-4A6D-B094-2E16BE00654C}">
+							<Language>SFX</Language>
+							<AudioFile>Piste audio-4.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="480102624"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Piste audio-4" ID="{9ABB7D51-CA1C-4A6D-B094-2E16BE00654C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="RandomMelee" ID="{DB14A397-E696-4B45-83D6-262B38149DB5}" ShortID="594298348">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{6F50B1CE-48E5-4512-B706-B8F95AAD8CEA}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="500"/>
+											<Property Name="Min" Type="Real64" Value="-500"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="MeleeAttack1" ID="{C7B6E88D-CDFC-4AC5-B5AE-C9FA41D42490}" ShortID="583807295">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MeleeAttack1" ID="{AA36274F-F78B-46AB-9800-5F09EAB57713}">
+									<Language>SFX</Language>
+									<AudioFile>MeleeAttack1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1003902955"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="MeleeAttack1" ID="{AA36274F-F78B-46AB-9800-5F09EAB57713}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="MeleeAttack3" ID="{CF2EAF23-D4C5-45F7-AE99-20428DDFDEAE}" ShortID="494866423">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MeleeAttack3" ID="{AA38D5B1-45F6-42F8-8F04-BC2714121E87}">
+									<Language>SFX</Language>
+									<AudioFile>MeleeAttack3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="155480716"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="MeleeAttack3" ID="{AA38D5B1-45F6-42F8-8F04-BC2714121E87}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="MeleeAttack2" ID="{017180AA-15C7-4450-9C78-4498E1700B5E}" ShortID="648471244">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MeleeAttack2" ID="{47670008-FB7D-4AE1-B484-65F019166ED1}">
+									<Language>SFX</Language>
+									<AudioFile>MeleeAttack2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="358982850"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="MeleeAttack2" ID="{47670008-FB7D-4AE1-B484-65F019166ED1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

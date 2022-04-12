@@ -10,6 +10,11 @@ public class D_ReturnPosterity : MonoBehaviour {
         return _posterity.deathCount;
     }
 
+    public void SetMaxLifeModifier(int amount) {
+        if (_posterity == null) { return; }
+        _posterity.maxLifeModifier = amount;
+    }
+
     public bool DidAnotherBossTrigger() {
         if (_posterity == null) { return false; }
         return _posterity.gotToAnotherBoss;

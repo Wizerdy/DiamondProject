@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ToolsBoxEngine;
 using UnityEngine.Events;
 
 public class Boss : MonoBehaviour {
@@ -17,10 +18,17 @@ public class Boss : MonoBehaviour {
     public UnityAction die;
 
     public State CurrentState { get { return currentState; } }
+
+    public void StartIn(float time) {
+        StartCoroutine(Tools.Delay(NextState, "Random", -1f, time));
+    }
+
     private void Start() {
+        StartIn(5f);
+        //NextState();
         die = () => Die();
         gameObject.GetComponent<Health>().OnDeath += die;
-        NextState();
+        //NextState();
     }
 
     #region State

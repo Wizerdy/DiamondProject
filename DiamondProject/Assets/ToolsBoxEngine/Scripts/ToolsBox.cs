@@ -114,6 +114,32 @@ namespace ToolsBoxEngine {
         }
     }
 
+    public class Counted<T> {
+        T value;
+        int count;
+
+        public T Value { get => value; set => this.value = value; }
+        public int Count { get => count; set => count = value; }
+
+        public Counted(T value) {
+            this.value = value;
+        }
+
+        public void Reset() {
+            count = 0;
+        }
+
+        public static Counted<T> operator ++(Counted<T> a) {
+            ++a.count;
+            return a;
+        }
+
+        public static Counted<T> operator --(Counted<T> a) {
+            --a.count;
+            return a;
+        }
+    }
+
     #endregion
 
     public static class Tools {
@@ -335,8 +361,8 @@ namespace ToolsBoxEngine {
 
         #endregion
 
-        public static Vector2 Position2D(this Transform transform) {
-            return transform.position.To2D();
+        public static Vector2 Position2D(this Transform transform, Axis axis = Axis.Z) {
+            return transform.position.To2D(axis);
         }
 
         public static int Find(this int[] array, int value) {
