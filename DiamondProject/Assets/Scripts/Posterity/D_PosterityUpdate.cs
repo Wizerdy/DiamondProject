@@ -26,4 +26,6 @@ public class D_PosterityUpdate : MonoBehaviour {
         if (_posterity == null) { return; }
         ++_posterity.bossDeathCount;
     }
+
+
 }

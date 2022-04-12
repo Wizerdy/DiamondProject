@@ -26,8 +26,10 @@ public class TextInteraction : MonoBehaviour {
             if (wordIndex != -1) {
                 clickedWord = tmpText.textInfo.wordInfo[wordIndex].GetWord();
                 
-                if (Array.Exists(wordsToMatch, element => element == clickedWord))
+                if (Array.Exists(wordsToMatch, element => element == clickedWord)) {
                     Fungus.Flowchart.BroadcastFungusMessage(blockToCall);
+                    ResetWord();
+                }
             }
         } 
 
@@ -46,6 +48,10 @@ public class TextInteraction : MonoBehaviour {
         blockToCall = _blockToCall;
 
         currentText = tmpText.text;
+        wordsToMatch = null; 
+    }
+
+    public void ResetWord() {
         wordsToMatch = null;
     }
 }

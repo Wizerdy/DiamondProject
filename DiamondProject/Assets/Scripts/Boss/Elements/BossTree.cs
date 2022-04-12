@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ToolsBoxEngine;
 
-public class BossTree : MonoBehaviour {
+public class BossTree : BossEntities {
     [SerializeField] Reference<Boss> _boss;
     [SerializeField] TreeShield treeShield;
     SpriteRenderer _sr;

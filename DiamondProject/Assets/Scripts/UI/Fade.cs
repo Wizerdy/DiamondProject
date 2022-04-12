@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Fade : MonoBehaviour
 {
-
+    public PosterityObject obj;
     private void FadeIn(GameObject go, float duration) {
         var images = go.GetComponentsInChildren<Image>();
         for (int i = 0; i < images.Length; i++) {
@@ -16,8 +16,6 @@ public class Fade : MonoBehaviour
                 tempColor.a = 1;
                 image.color = tempColor;
                 break;
-
-
             } else {
 
                 LeanTween.alpha(image.rectTransform, 1, duration).setEase(LeanTweenType.linear).setEase(LeanTweenType.linear);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicBall : MonoBehaviour {
+public class MagicBall : BossEntities {
 
     public Vector3 direction = Vector3.zero;
     public float speed = 1;

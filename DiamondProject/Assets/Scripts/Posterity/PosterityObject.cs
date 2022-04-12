@@ -14,6 +14,12 @@ public class PosterityObject : ScriptableObject {
     public bool nearSight = false;
     public bool seeBossHealthBar = false;
     public bool dontSeeHealthBar = false;
+    public bool gotToAnotherBoss = false;
+    public int numberOfTriggerActivate = 0;
+
+    public bool firstTimeTalking = true;
+
+    public int numberOfTimeTalkingToFairy = 0;
 
     public void ResetValues() {
         deathCount = 0;
@@ -27,5 +33,16 @@ public class PosterityObject : ScriptableObject {
         nearSight = false;
         seeBossHealthBar = false;
         dontSeeHealthBar = false;
+
+        gotToAnotherBoss = false;
+        numberOfTriggerActivate = 0;
+
+        firstTimeTalking = true;
+        numberOfTimeTalkingToFairy = 0;
+    }
+
+    public void ResetValuesBeforeBoss() {
+        gotToAnotherBoss = false;
+        numberOfTriggerActivate = 0;
     }
 }
