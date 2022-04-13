@@ -21,8 +21,6 @@ public class BrambleBallEntity : MonoBehaviour
         speed = _speed;
         damage = _damage;
         aimPosition = _aimPosition;
-
-        OnSpawn();
     }
     // Start is called before the first frame update
     void Start()
@@ -31,6 +29,9 @@ public class BrambleBallEntity : MonoBehaviour
         onSpawnEvent += OnSpawn;
 
         rb = GetComponent<Rigidbody2D>();
+
+
+        onPlayerHitEvent?.Invoke();
     }
 
     private void FixedUpdate() {
