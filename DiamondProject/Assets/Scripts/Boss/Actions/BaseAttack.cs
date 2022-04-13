@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class BaseAttack : MonoBehaviour {
+    [SerializeField] UnityEvent<BaseAttack> OnExecute;
+    [SerializeField] UnityEvent<BaseAttack> OnEnd;
     [SerializeField] AttackSystem attackSystem;
     [SerializeField] public string id = "";
     [SerializeField] protected float duration = 1;
@@ -21,6 +24,7 @@ public abstract class BaseAttack : MonoBehaviour {
     public void Execute() {
         isPlaying = true;
         StartCoroutine(ILaunch());
+        OnExecute?.Invoke(this);
     }
 
     protected IEnumerator ILaunch() {
@@ -32,6 +36,7 @@ public abstract class BaseAttack : MonoBehaviour {
 
     protected virtual void End() {
         isPlaying = false;
+        OnEnd?.Invoke(this);
         gameObject.SetActive(false);
     }
 }
