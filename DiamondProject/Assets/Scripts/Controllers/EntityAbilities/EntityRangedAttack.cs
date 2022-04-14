@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using ToolsBoxEngine;
 
 public class EntityRangedAttack : MonoBehaviour {
@@ -11,14 +12,15 @@ public class EntityRangedAttack : MonoBehaviour {
     [SerializeField] MultipleTagSelector _damageables = new MultipleTagSelector(MultipleTagSelector.State.EVERYTHING);
     [SerializeField] float _bulletSpeed;
     [SerializeField] float _rangedAttackCooldown = 1f;
+    [SerializeField] UnityEvent<Vector2> _onAttack;
 
-    public Tools.BasicDelegate<Vector2> OnAttack;
+    public event UnityAction<Vector2> OnAttack { add => _onAttack.AddListener(value); remove => _onAttack.RemoveListener(value); }
 
     bool _canRangeAttack = true;
 
     public void Attack(Vector2 direction) {
         if (!_canRangeAttack) { return; }
-        OnAttack?.Invoke(direction);
+        _onAttack?.Invoke(direction);
 
         GameObject bull = Instantiate(_bullet, transform.position, Quaternion.identity);
         DamageHealth damageHealth = bull.GetComponent<DamageHealth>();

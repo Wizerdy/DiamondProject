@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using ToolsBoxEngine;
 
 public class EntityMeleeAttack : MonoBehaviour {
@@ -12,9 +13,11 @@ public class EntityMeleeAttack : MonoBehaviour {
     [SerializeField] int _damage = 10;
     [SerializeField] float _cooldownTime = 1f;
     [SerializeField] MultipleTagSelector _damageables = new MultipleTagSelector(MultipleTagSelector.State.EVERYTHING);
+    [SerializeField] UnityEvent<Vector2> _onAttack;
+    [SerializeField] UnityEvent<GameObject> _onHit;
 
-    public Tools.BasicDelegate<Vector2> OnAttack;
-    public Tools.BasicDelegate<GameObject> OnHit;
+    public event UnityAction<Vector2> OnAttack { add => _onAttack.AddListener(value); remove => _onAttack.RemoveListener(value); }
+    public event UnityAction<GameObject> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
 
     bool isAttacking = false;
 
@@ -22,7 +25,7 @@ public class EntityMeleeAttack : MonoBehaviour {
     public bool IsAttacking => isAttacking;
 
     private void Awake() {
-        _attackHitbox.OnCollide += OnHit;
+        _attackHitbox.OnCollide += _InvokeOnHit;
     }
 
     private void Start() {
@@ -31,7 +34,7 @@ public class EntityMeleeAttack : MonoBehaviour {
     }
 
     private void OnDestroy() {
-        _attackHitbox.OnCollide -= OnHit;
+        _attackHitbox.OnCollide -= _InvokeOnHit;
     }
 
     public void Attack(Vector2 direction) {
@@ -39,7 +42,11 @@ public class EntityMeleeAttack : MonoBehaviour {
         isAttacking = true;
         _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
         _attackAnimator.SetTrigger("Attack");
-        OnAttack?.Invoke(direction);
+        _onAttack?.Invoke(direction);
         StartCoroutine(Tools.Delay(() => isAttacking = false, _cooldownTime));
+    }
+
+    void _InvokeOnHit(GameObject obj) {
+        _onHit?.Invoke(obj);
     }
 }
