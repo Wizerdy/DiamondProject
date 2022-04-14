@@ -7,7 +7,7 @@ public class ShapeLibrary : MonoBehaviour {
 
     public BossShape GetBossShape(Shape bossShape) {
         for (int i = 0; i < _bossShapes.Count; i++) {
-            if (bossShape == _bossShapes[i]._shape) {
+            if (bossShape == _bossShapes[i].Type) {
                 return _bossShapes[i];
             }
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using ToolsBoxEngine;
 
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] Reference<Camera> _camera;
     [SerializeField] Animator _animator;
     [SerializeField] Reference<Boss> _boss;
+    [SerializeField] UnityEvent<AttackType> _onAttack;
+
+    public event UnityAction<AttackType> OnAttack { add => _onAttack.AddListener(value); remove => _onAttack.RemoveListener(value); }
 
     [Header("Dialogue")]
     [SerializeField] TextInteraction textInteraction;
@@ -31,6 +35,8 @@ public class PlayerController : MonoBehaviour {
     Vector2? MousePosition => _camera?.Instance?.ScreenToWorldPoint(mousePosition) ?? null;
 
     #endregion
+
+    #region Unity Callbacks
 
     private void Reset() {
         _health = GetComponent<Health>();
@@ -80,6 +86,8 @@ public class PlayerController : MonoBehaviour {
         if (_interact != null) { _interact.OnStopInteract -= StopInteracting; }
     }
 
+    #endregion
+
     private void Move(InputAction.CallbackContext cc) {
         _movement?.Move(cc.ReadValue<Vector2>());
     }
@@ -88,12 +96,14 @@ public class PlayerController : MonoBehaviour {
         Vector2 direction = MousePosition != null ? (MousePosition.Value - transform.Position2D()).normalized : Vector2.up;
         if (direction == Vector2.zero) { direction = Vector2.up; }
         _meleeAttack?.Attack(direction);
+        _onAttack?.Invoke(AttackType.MELEE);
     }
 
     private void RangedAttack() {
         Vector2 direction = MousePosition != null ? (MousePosition.Value - transform.Position2D()).normalized : Vector2.up;
         if (direction == Vector2.zero) { direction = Vector2.up; }
         _rangedAttack?.Attack(direction);
+        _onAttack?.Invoke(AttackType.RANGE);
     }
 
     private void Interact(InputAction.CallbackContext cc) {

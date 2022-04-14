@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Lia : MonoBehaviour {
-    BossShapeSystem _bossShapeSystem;
-    ShapeLibrary _shapeLibrary;
-    public Trigger spring;
-    public Trigger summer;
-    public Trigger fall;
-    public Trigger winter;
+    [SerializeField] IMeetARealBoss _boss;
+    [SerializeField] BossShapeSystem _bossShapeSystem;
+    [SerializeField] ShapeLibrary _shapeLibrary;
+
+    [Header("Triggers")]
+    [SerializeField] Trigger spring;
+    [SerializeField] Trigger summer;
+    [SerializeField] Trigger fall;
+    [SerializeField] Trigger winter;
 
     private void Update() {
         if (spring.IsTrigger()) {
@@ -25,8 +28,15 @@ public class Lia : MonoBehaviour {
         }
     }
 
-
     public void NewForm(Shape shape) {
         _bossShapeSystem.ChangeShape(_shapeLibrary.GetBossShape(shape));
+    }
+
+    public void ComputeDeath() {
+        if (_bossShapeSystem.Shape.Type != Shape.NEUTRAL) {
+            NewForm(Shape.NEUTRAL);
+        } else {
+            _boss.Death();
+        }
     }
 }

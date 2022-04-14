@@ -5,17 +5,19 @@ using UnityEngine;
 public class PlayerColliderTrigger : Trigger {
     [SerializeField] bool _isInside;
     [SerializeField] bool _shouldEnter;
-    [SerializeField] float radius;
+    [SerializeField] float _radius = 10f;
     [SerializeField] float _timeBeforeTrigger;
     [SerializeField] float _timeSince;
-    [SerializeField] Coroutine _coroutine;
+    [SerializeField] Coroutine _coroutine = null;
 
     private void Start() {
         if (GetComponent<Collider2D>() == null) {
             CircleCollider2D cc = gameObject.AddComponent<CircleCollider2D>();
-            cc.radius = radius;
+            cc.radius = _radius;
+            cc.isTrigger = true;
         }
     }
+
     public override bool IsSelfTrigger() {
         if (_isInside == _shouldEnter && _timeSince >= _timeBeforeTrigger) {
             return true;
@@ -28,7 +30,9 @@ public class PlayerColliderTrigger : Trigger {
         if (collision.gameObject.CompareTag("Player")) {
             _isInside = true;
             if (_shouldEnter) {
-                StopCoroutine(_coroutine);
+                if (_coroutine != null) {
+                    StopCoroutine(_coroutine);
+                }
                 _coroutine = StartCoroutine(Timer());
             }
         }
@@ -39,7 +43,9 @@ public class PlayerColliderTrigger : Trigger {
             {
                 _isInside = false;
                 if (!_shouldEnter) {
-                    StopCoroutine(_coroutine);
+                    if (_coroutine != null) {
+                        StopCoroutine(_coroutine);
+                    }
                     _coroutine = StartCoroutine(Timer());
                 }
             }
@@ -54,9 +60,8 @@ public class PlayerColliderTrigger : Trigger {
         }
     }
 
-
-
-
-
-
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _radius);
+    }
 }

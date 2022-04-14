@@ -26,4 +26,8 @@ public class IMeetARealBoss : MonoBehaviour {
     public void ChangeAnimatorController(RuntimeAnimatorController animatorController) {
         _animator.runtimeAnimatorController = animatorController;
     }
+
+    public void Death() {
+        gameObject.SetActive(false);
+    }
 }

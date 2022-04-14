@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ToolsBoxEngine;
 
 public abstract class ReferenceSetter<T> : MonoBehaviour {
     [SerializeField] T source;
@@ -12,5 +13,6 @@ public abstract class ReferenceSetter<T> : MonoBehaviour {
 
     private void Awake() {
         (target as IReferenceSetter<T>).SetInstance(source);
+        this.Hurl();
     }
 }

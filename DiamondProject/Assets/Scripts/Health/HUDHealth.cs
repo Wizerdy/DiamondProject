@@ -18,12 +18,13 @@ public class HUDHealth : MonoBehaviour {
         _damageScreen = GetComponent<Image>();
     }
 
-    private void Awake() {
+    private void OnEnable() {
         if (_health != null) {
             _health.Instance.OnHit += TakeDamageHUD;
             _health.Instance.OnHit += UpdateHUD;
             _health.Instance.OnHeal += UpdateHUD;
             _health.Instance.OnMaxHealthChange += ModifyMaxHealth;
+            Debug.Log(_health.Instance.name);
             _health.Instance.OnLateStart += OnStart;
         }
     }

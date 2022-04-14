@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using ToolsBoxEngine;
 
 public class Health : MonoBehaviour, IHealth {
     [SerializeField] int _maxHealth = 50;
@@ -38,6 +39,7 @@ public class Health : MonoBehaviour, IHealth {
 
     private void Start() {
         _currentHealth = _maxHealth;
+        this.Hurl();
         _onLateStart?.Invoke();
     }
 

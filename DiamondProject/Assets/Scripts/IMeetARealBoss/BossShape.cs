@@ -6,7 +6,7 @@ public enum Shape { NEUTRAL, SPRING, SUMMER, FALL, WINTER }
 
 [CreateAssetMenu(menuName = "Boss/Shape")]
 public class BossShape : ScriptableObject {
-    [SerializeField] public Shape _shape = Shape.NEUTRAL;
+    [SerializeField] Shape _shape = Shape.NEUTRAL;
     [SerializeField] Sprite _sprite;
     [SerializeField] RuntimeAnimatorController _animator;
 
@@ -14,6 +14,7 @@ public class BossShape : ScriptableObject {
 
     public Sprite Sprite => _sprite;
     public RuntimeAnimatorController Animator => _animator;
+    public Shape Type => _shape;
 
     #endregion
 }
