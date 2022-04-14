@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043366983554929251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9889245, y: -2.9306972, z: -0.16195238}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,12 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04690150f3f1a174ebe48a19e83fd75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
+  id: Leaf Beam
   duration: 5
   coolDown: 1
   isPlaying: 0
-  player: {fileID: 0}
-  boss: {fileID: 0}
+  _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
   raySpeed: 18
   rayDamage: 5
   damageFrequency: 1
+  raySpeedIfFar: 75
+  distance: 5
   leafBeam: {fileID: 1059472417401592482, guid: 887f720744278974bb86bef2592970ee, type: 3}

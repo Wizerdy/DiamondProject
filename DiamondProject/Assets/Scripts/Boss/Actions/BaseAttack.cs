@@ -1,20 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public abstract class BaseAttack : MonoBehaviour
-{
-    [SerializeField] protected float duration = 5;
+public abstract class BaseAttack : MonoBehaviour {
+    [SerializeField] UnityEvent<BaseAttack> OnExecute;
+    [SerializeField] UnityEvent<BaseAttack> OnEnd;
+    [SerializeField] Reference<AttackSystem> attackSystem;
+    [SerializeField] public string id = "";
+    [SerializeField] protected float duration = 1;
     [SerializeField] protected float coolDown = 1;
     [SerializeField] protected bool isPlaying = false;
 
-    [SerializeField] protected Player player;
-    [SerializeField] protected Boss boss;
+    private void OnEnable() {
+        Execute();
+        attackSystem?.Instance?.Register(this);
+    }
 
-    protected abstract IEnumerator Launch();
-    //protected abstract IEnumerator Launch(Player player, Boss boss, Vector3 aimPosition, float duration);
+    private void OnDisable() {
+        attackSystem?.Instance?.Unregister(this);
+    }
 
-    protected virtual void UpdateIA() {
-        //IAcooldDown = coolDown;
+    public void Execute() {
+        isPlaying = true;
+        StartCoroutine(ILaunch());
+        OnExecute?.Invoke(this);
+    }
+
+    protected IEnumerator ILaunch() {
+        yield return StartCoroutine(IExecute());
+        End();
+    }
+
+    protected abstract IEnumerator IExecute();
+
+    protected virtual void End() {
+        isPlaying = false;
+        OnEnd?.Invoke(this);
+        gameObject.SetActive(false);
     }
 }

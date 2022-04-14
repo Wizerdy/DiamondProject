@@ -4,29 +4,37 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class IMeetARealBoss : MonoBehaviour {
-    [SerializeField] IMeetARealForm _currentForm;
-    [SerializeField] Coroutine _rt_CurrentAttack;
-
+    [SerializeField] Health _health;
     [SerializeField] SpriteRenderer _spriteRenderer;
     [SerializeField] Animator _animator;
 
-    [SerializeField] UnityEvent<int> OnInvincibility;
+    [SerializeField] UnityEvent<int> _onInvincibility;
 
-    public void ChangeForm(IMeetARealForm newForm) {
-        _currentForm = newForm;
-        ChangeSprite(_currentForm.Sprite);
-        ChangeAnimatorController(_currentForm.AnimatorController);
-    }
+    #region Properties
 
-    public void Attack(BaseAttack attack, Player player, Boss boss, Vector3 aimPosition, int duration) {
-        StartCoroutine(attack.Launch(player, boss, aimPosition, duration));
-    }
+    public Sprite Sprite { get => _spriteRenderer?.sprite; set => ChangeSprite(value); }
+    public RuntimeAnimatorController Animator { get => _animator.runtimeAnimatorController; set => ChangeAnimatorController(value); }
+
+    public event UnityAction<int> OnInvincibility { add => _onInvincibility.AddListener(value); remove => _onInvincibility.RemoveListener(value); }
+
+    #endregion
 
     public void ChangeSprite(Sprite sprite) {
         _spriteRenderer.sprite = sprite;
     }
 
+    public void ColorSwap(Color red, Color green, Color blue) {
+        Material mat = _spriteRenderer.material;
+        mat.SetColor("_Red", red);
+        mat.SetColor("_Green", green);
+        mat.SetColor("_Blue", blue);
+    }
+
     public void ChangeAnimatorController(RuntimeAnimatorController animatorController) {
         _animator.runtimeAnimatorController = animatorController;
+    }
+
+    public void Death() {
+        gameObject.SetActive(false);
     }
 }

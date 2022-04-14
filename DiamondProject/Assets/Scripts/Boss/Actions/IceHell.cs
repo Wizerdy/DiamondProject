@@ -22,6 +22,7 @@ public struct Range {
 }
 
 public class IceHell : BaseAttack {
+    [SerializeField] private Reference<Transform> _target;
     [SerializeField] private Pattern[] firstPatterns;
     [SerializeField] private Pattern[] secondPatterns;
 
@@ -35,13 +36,14 @@ public class IceHell : BaseAttack {
 
     private void SpawnIceShard(PatternType _patternType, float _speed) {
         GameObject shard = Instantiate(iceShard, transform.position, Quaternion.identity);
+        Vector3 playerPosition = _target.Instance?.position ?? Vector3.zero;
         if (_patternType == PatternType.Focus) {
-            Vector3 dir = player.transform.position;
-            shard.GetComponent<IceShard>().Init(player, _speed, iceShardDamage, dir);
+            Vector3 dir = _target?.Instance.position ?? Vector3.up;
+            shard.GetComponent<IceShard>().Init(_target?.Instance, _speed, iceShardDamage, dir);
         }
 
         if (_patternType == PatternType.Scatter) {
-            var angleLimit = Mathf.Atan2(transform.position.x - player.transform.position.x, transform.position.y - player.transform.position.y) * 180 / Mathf.PI;
+            var angleLimit = Mathf.Atan2(transform.position.x - playerPosition.x, transform.position.y - playerPosition.y) * 180 / Mathf.PI;
             float minLimit = angleLimit - angleOffSet;
             float maxLimit = angleLimit + angleOffSet;
             int val = RandomValueFromRanges(new Range(0, (int)minLimit), new Range((int)maxLimit, 360));
@@ -50,7 +52,7 @@ public class IceHell : BaseAttack {
             float newY = Mathf.Sin(val);
             Vector3 dir = new Vector3(newX, newY, 0);
 
-            shard.GetComponent<IceShard>().Init(player, _speed, iceShardDamage, dir);
+            shard.GetComponent<IceShard>().Init(_target?.Instance, _speed, iceShardDamage, dir);
         }
     }
 
@@ -70,7 +72,7 @@ public class IceHell : BaseAttack {
         return 0;
     }
 
-    protected override IEnumerator Launch() {
+    protected override IEnumerator IExecute() {
         isPlaying = true;
         float spawnRate = 0;
         float shardsSpawnRate = 0;
@@ -134,7 +136,7 @@ public class IceHell : BaseAttack {
         }
 
 
-        UpdateIA();
+        //UpdateIA();
         isPlaying = false;
         yield return null;
 

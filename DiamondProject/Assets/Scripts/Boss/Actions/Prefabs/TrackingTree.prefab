@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8628223319048608624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.617529, y: 4.325285, z: 0.086194366}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,11 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88b8b28066de114591925fe13477e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
+  id: Trees
   duration: 1
   coolDown: 1
   isPlaying: 0
-  player: {fileID: 0}
-  boss: {fileID: 0}
+  _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
   numberOfTreesToSpawn: 5
   treeHp: 10
   spawnSpeed: 1

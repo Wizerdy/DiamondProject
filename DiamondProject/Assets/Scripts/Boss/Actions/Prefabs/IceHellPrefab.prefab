@@ -44,11 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18156d19e0dcc84085208b64be2121a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
+  id: Ice Hell
   duration: 5
   coolDown: 1
   isPlaying: 0
-  player: {fileID: 0}
-  boss: {fileID: 0}
+  _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
   firstPatterns:
   - chargeTime: 2
     speed: 30

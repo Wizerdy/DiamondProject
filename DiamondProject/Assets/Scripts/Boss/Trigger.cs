@@ -10,22 +10,18 @@ public class Trigger : MonoBehaviour {
     [SerializeField] protected List<Trigger> _childs;
     [SerializeField] protected LogicGate _childGate;
 
-    public struct GameDatas {
-
-    }
-
-    public virtual bool IsSelfTrigger(GameDatas datas) {
+    public virtual bool IsSelfTrigger() {
         return true;
     }
 
-    public bool IsTrigger(GameDatas datas) {
-        if (_childs == null || _childs.Count == 0) { return true; } // ?
+    public bool IsTrigger() {
+        if (_childs == null || _childs.Count == 0) { return IsSelfTrigger(); }
         int boolCount = 0;
         for (int i = 0; i < _childs.Count; i++) {
-            if (_childs[i].IsTrigger(datas)) { ++boolCount; }
+            if (_childs[i].IsTrigger()) { ++boolCount; }
         }
         if (TrueCountWithGate(_childGate, _childs.Count).Contains(boolCount)) {
-            return true && IsSelfTrigger(datas);
+            return true && IsSelfTrigger();
         }
         return false;
     }
