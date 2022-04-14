@@ -33,12 +33,7 @@ public class IceHell : BaseAttack {
 
     [SerializeField] private GameObject iceShard;
 
-    //protected override IEnumerator Launch(Player player, Boss boss, Vector3 aimPosition, float duration) {
-
-    //SpawnTree(Player player, aimPosition) {
     private void SpawnIceShard(PatternType _patternType, float _speed) {
-        //GameObject tree = Instantiate(fireTree, transform.position, Quaternion.identity);
-        //tree.GetComponent<FireTree>().Init(player, treeHp, treeDamage, fireDamage, fireDamageFrequency, fireRadius);
         GameObject shard = Instantiate(iceShard, transform.position, Quaternion.identity);
         if (_patternType == PatternType.Focus) {
             Vector3 dir = player.transform.position;

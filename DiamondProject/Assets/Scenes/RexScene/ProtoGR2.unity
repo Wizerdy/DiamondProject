@@ -1374,81 +1374,17 @@ MonoBehaviour:
   _imageToFade: {fileID: 1565567406}
   _transform: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
   _tag: Player
---- !u!1 &100958620
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 100958622}
-  - component: {fileID: 100958621}
-  m_Layer: 0
-  m_Name: IceHellPrefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &100958621
+--- !u!114 &100958621 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+  m_PrefabInstance: {fileID: 3440608958952576592}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100958620}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d18156d19e0dcc84085208b64be2121a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
-  coolDown: 1
-  isPlaying: 0
-  player: {fileID: 1591238744}
-  boss: {fileID: 1342196896}
-  firstPatterns:
-  - chargeTime: 2
-    speed: 30
-    numberOfWaves: 3
-    numberOfIceShardsPerWave: 5
-    patternType: 1
-  - chargeTime: 0
-    speed: 17
-    numberOfWaves: 5
-    numberOfIceShardsPerWave: 10
-    patternType: 0
-  secondPatterns:
-  - chargeTime: 4
-    speed: 30
-    numberOfWaves: 5
-    numberOfIceShardsPerWave: 10
-    patternType: 0
-  - chargeTime: 0
-    speed: 17
-    numberOfWaves: 3
-    numberOfIceShardsPerWave: 5
-    patternType: 1
-  iceShardDamage: 10
-  spawnSpeed: 3
-  angleOffSet: 10
-  iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
---- !u!4 &100958622
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100958620}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &141011443 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2963318992260331447, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
@@ -5735,6 +5671,153 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5522892817298040195, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
   m_PrefabInstance: {fileID: 1342196883}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1280137885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280137888}
+  - component: {fileID: 1280137887}
+  - component: {fileID: 1280137886}
+  m_Layer: 0
+  m_Name: IceWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1280137886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280137885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadadd6e42c9fcd4fb73aaefe7f6600a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segments: 50
+  radius: 20
+  player: {fileID: 1591238744}
+--- !u!120 &1280137887
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280137885}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100002, guid: 0fdf97416997f0a4dbf3deb6a8ef7d05, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 10, y: 10, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0, g: 0.83199, b: 1, a: 1}
+      key1: {r: 0, g: 0.83199, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+--- !u!4 &1280137888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280137885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1294644733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10226,6 +10309,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1591238744}
     - target: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: distance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
       propertyPath: duration
       value: 10
       objectReference: {fileID: 0}
@@ -10233,9 +10320,118 @@ PrefabInstance:
       propertyPath: raySpeed
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: raySpeedIfFar
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2043366983554929251, guid: 254875d4fe88c25429951af1fe558306, type: 3}
       propertyPath: m_Name
       value: LeafBeamPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+--- !u!1001 &3440608958952576592
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3440608959053010892, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_Name
+      value: IceHellPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1342196896}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1591238744}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: delayBetweenWaves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: delayBetweenShards
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: firstPatterns.Array.data[0].speed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: firstPatterns.Array.data[1].speed
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: secondPatterns.Array.data[0].speed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: secondPatterns.Array.data[1].speed
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: firstPatterns.Array.data[0].numberOfIceShardsPerWave
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: firstPatterns.Array.data[1].numberOfIceShardsPerWave
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: secondPatterns.Array.data[0].numberOfIceShardsPerWave
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010893, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: secondPatterns.Array.data[1].numberOfIceShardsPerWave
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440608959053010894, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abbe7cbee12592740842f5ea08df28c0, type: 3}
