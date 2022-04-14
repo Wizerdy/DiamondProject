@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BrambleBall : BaseAttack {
+    [SerializeField] Reference<Transform> _target;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float damage = 20f;
     [SerializeField] private float delayBetweenLaunch = 1f;
@@ -20,7 +21,7 @@ public class BrambleBall : BaseAttack {
     }
     
     //protected override IEnumerator Launch(Player player, Boss boss, Vector3 aimPosition, float duration) {
-    protected override IEnumerator Launch() {
+    protected override IEnumerator IExecute() {
         isPlaying = true;
 
         float launchRate = delayBetweenLaunch;
@@ -31,7 +32,7 @@ public class BrambleBall : BaseAttack {
             launchRate -= Time.deltaTime;
             if(launchRate <= 0) {
                 //LaunchBall(player, aimPosition);
-                LaunchBall(player.transform.position);
+                LaunchBall(_target?.Instance.position ?? Vector3.up);
 
                 launchRate = delayBetweenLaunch;
                 ++numberOfBallsLaunched;
@@ -39,7 +40,7 @@ public class BrambleBall : BaseAttack {
             yield return null;
         }
 
-        UpdateIA();
+        //UpdateIA();
         isPlaying = false;
     }
 }

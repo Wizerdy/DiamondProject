@@ -14,10 +14,11 @@ public class IceShard : MonoBehaviour
     [SerializeField] delegate void OnShardSpawnEvent();
     OnShardSpawnEvent onShardSpawnEvent;
 
-    private Player player;
+    private Transform target;
     private Rigidbody2D rb;
-    public void Init(Player _player, float _ShardSpeed, float _ShardDamage, Vector3 _aimDir) {
-        player = _player;
+
+    public void Init(Transform _target, float _ShardSpeed, float _ShardDamage, Vector3 _aimDir) {
+        target = _target;
         shardSpeed = _ShardSpeed;
         shardDamage = _ShardDamage;
         aimDir = _aimDir;

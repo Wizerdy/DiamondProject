@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackLauncher : MonoBehaviour {
-    AttackInstantiator attackInstantiator;
-    AttackLibrary attackLibrary;
+    [SerializeField] AttackInstantiator attackInstantiator;
+    [SerializeField] AttackLibrary attackLibrary;
 
     public void LaunchAttack(string attackName) {
         attackInstantiator.InstantiateAttack(attackLibrary.GetAttack(attackName));

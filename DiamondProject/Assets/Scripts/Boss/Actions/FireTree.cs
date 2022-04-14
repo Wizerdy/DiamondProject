@@ -5,8 +5,8 @@ using UnityEngine;
 public class FireTree : MonoBehaviour
 {
     [SerializeField] private float treeHp = 10f;
-    [SerializeField] private float treeDamage = 10f;
-    [SerializeField] private float fireDamage = 10f;
+    [SerializeField] private int treeDamage = 10;
+    [SerializeField] private int fireDamage = 10;
     [SerializeField] private float fireDamageFrequency = 1f;
     [SerializeField] private float fireRange = 5f;
 
@@ -19,12 +19,12 @@ public class FireTree : MonoBehaviour
     [SerializeField] delegate void OnTreeTakeDamage();
     OnTreeTakeDamage onTreeTakeDamage;
 
-    private Player player;
+    private Transform target;
     private float timer = 0f;
     private LineRenderer lineRenderer;
 
-    public void Init(Player _player, int _hp, float _damage, float _fireDamage, float _frequency, float _fireRadius) {
-        player = _player;
+    public void Init(Transform _target, int _hp, int _damage, int _fireDamage, float _frequency, float _fireRadius) {
+        target = _target;
         treeHp = _hp;
         treeDamage = _damage;
         fireDamage = _fireDamage;
@@ -33,7 +33,7 @@ public class FireTree : MonoBehaviour
     }
 
     private void Start() {
-        transform.position = player.transform.position;
+        transform.position = target.transform.position;
 
         timer = fireDamageFrequency;
         lineRenderer = GetComponent<LineRenderer>();
@@ -52,10 +52,11 @@ public class FireTree : MonoBehaviour
     {
         timer -= Time.deltaTime;
         if (timer <= 0) {
-            float distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - player.transform.position.x, 2) + Mathf.Pow(transform.position.y - player.transform.position.y, 2));
+            float distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - target.transform.position.x, 2) + Mathf.Pow(transform.position.y - target.transform.position.y, 2));
             if (distance <= fireRange) {
                 onFireHitEvent?.Invoke();
                 Debug.Log("took "+ fireDamage + " fire damage");
+                target.gameObject.GetComponent<IHealth>()?.TakeDamage(fireDamage);
             }
                 //player.TakeDamage(damage);
 
@@ -88,7 +89,8 @@ public class FireTree : MonoBehaviour
         if (collision.gameObject.tag == "Player") {
             //player.TakeDamage(damage);
             onTreePlayerHitEvent?.Invoke();
-            Debug.Log("Player took " + treeDamage + " damage");
+            //Debug.Log("Player took " + treeDamage + " damage");
+            collision.gameObject.GetComponent<IHealth>()?.TakeDamage(treeDamage);
         }
     }
 

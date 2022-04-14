@@ -60,8 +60,8 @@ public class PlayerColliderTrigger : Trigger {
         }
     }
 
-    private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _radius);
+    void OnDrawGizmosSelected() {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, _radius * 2f);
     }
 }

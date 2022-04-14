@@ -15,6 +15,7 @@ public class EntityRangedAttack : MonoBehaviour {
     [SerializeField] UnityEvent<Vector2> _onAttack;
 
     public event UnityAction<Vector2> OnAttack { add => _onAttack.AddListener(value); remove => _onAttack.RemoveListener(value); }
+    public bool CanAttack => _canRangeAttack;
 
     bool _canRangeAttack = true;
 

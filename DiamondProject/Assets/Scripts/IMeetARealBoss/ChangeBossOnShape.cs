@@ -21,7 +21,11 @@ public class ChangeBossOnShape : MonoBehaviour {
 
     void _OnEnterShape(BossShape shape) {
         if (_boss == null) { return; }
-        _boss.Sprite = shape.Sprite;
-        _boss.Animator = shape.Animator;
+        if (shape.ColorSwap) {
+            _boss.ColorSwap(shape.Red, shape.Green, shape.Blue);
+        } else {
+            _boss.Sprite = shape.Sprite;
+            _boss.Animator = shape.Animator;
+        }
     }
 }

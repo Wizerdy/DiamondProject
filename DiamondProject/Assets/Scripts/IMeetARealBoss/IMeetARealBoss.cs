@@ -23,6 +23,13 @@ public class IMeetARealBoss : MonoBehaviour {
         _spriteRenderer.sprite = sprite;
     }
 
+    public void ColorSwap(Color red, Color green, Color blue) {
+        Material mat = _spriteRenderer.material;
+        mat.SetColor("_Red", red);
+        mat.SetColor("_Green", green);
+        mat.SetColor("_Blue", blue);
+    }
+
     public void ChangeAnimatorController(RuntimeAnimatorController animatorController) {
         _animator.runtimeAnimatorController = animatorController;
     }

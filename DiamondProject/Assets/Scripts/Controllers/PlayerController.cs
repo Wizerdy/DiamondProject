@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void MeleeAttack() {
+        if (!_meleeAttack?.CanAttack ?? true) { return; }
         Vector2 direction = MousePosition != null ? (MousePosition.Value - transform.Position2D()).normalized : Vector2.up;
         if (direction == Vector2.zero) { direction = Vector2.up; }
         _meleeAttack?.Attack(direction);
@@ -100,6 +101,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void RangedAttack() {
+        if (!_rangedAttack?.CanAttack ?? true) { return; }
         Vector2 direction = MousePosition != null ? (MousePosition.Value - transform.Position2D()).normalized : Vector2.up;
         if (direction == Vector2.zero) { direction = Vector2.up; }
         _rangedAttack?.Attack(direction);

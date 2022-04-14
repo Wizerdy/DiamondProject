@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public abstract class BaseAttack : MonoBehaviour {
     [SerializeField] UnityEvent<BaseAttack> OnExecute;
     [SerializeField] UnityEvent<BaseAttack> OnEnd;
-    [SerializeField] AttackSystem attackSystem;
+    [SerializeField] Reference<AttackSystem> attackSystem;
     [SerializeField] public string id = "";
     [SerializeField] protected float duration = 1;
     [SerializeField] protected float coolDown = 1;
@@ -14,11 +14,11 @@ public abstract class BaseAttack : MonoBehaviour {
 
     private void OnEnable() {
         Execute();
-        attackSystem?.Register(this);
+        attackSystem?.Instance?.Register(this);
     }
 
     private void OnDisable() {
-        attackSystem?.Unregister(this);
+        attackSystem?.Instance?.Unregister(this);
     }
 
     public void Execute() {

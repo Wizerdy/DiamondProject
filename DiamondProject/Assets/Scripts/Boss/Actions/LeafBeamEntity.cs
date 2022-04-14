@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeafBeamEntity : MonoBehaviour
 {
     [SerializeField] private float raySpeed = 10f;
-    [SerializeField] private float rayDamage = 5f;
+    [SerializeField] private int rayDamage = 5;
     [SerializeField] private float damageFrequency = 1f;
     [SerializeField] private float duration = 5f;
     [SerializeField] private float raySpeedIfFar = 75f;
@@ -20,14 +20,14 @@ public class LeafBeamEntity : MonoBehaviour
     [SerializeField] delegate void OnBeamHitEvent();
     OnBeamSpawnEvent onBeamHitEvent;
 
-    private Player player;
+    private Transform target;
     private float damageFrequencyTimer = 0f;
     private float durationTimer = 0f;
     private LineRenderer lineRenderer;
     private float currentSpeed;
 
-    public void Init(Player _player, float _raySpeed, float _rayDamage, float _damageFrequency, float _duration, float _speedDistance, float _distance) {
-        player = _player;
+    public void Init(Transform _target, float _raySpeed, int _rayDamage, float _damageFrequency, float _duration, float _speedDistance, float _distance) {
+        target = _target;
         raySpeed = _raySpeed;
         rayDamage = _rayDamage;
         damageFrequency = _damageFrequency;
@@ -52,11 +52,11 @@ public class LeafBeamEntity : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        hitPos = Vector3.MoveTowards(hitPos, player.transform.position, currentSpeed * Time.deltaTime);
+        hitPos = Vector3.MoveTowards(hitPos, target.transform.position, currentSpeed * Time.deltaTime);
 
         lineRenderer.SetPosition(1, hitPos);
 
-        if (distance < GetDistance(player.transform.position, hitPos)) {
+        if (distance < GetDistance(target.transform.position, hitPos)) {
             currentSpeed = raySpeedIfFar;
         } else {
             currentSpeed = raySpeed;
@@ -69,6 +69,7 @@ public class LeafBeamEntity : MonoBehaviour
             if (damageFrequencyTimer <= 0) {
                 onBeamPlayerHitEvent?.Invoke();
                 Debug.Log("took " + rayDamage + " beam damage");
+                hit.transform.gameObject.GetComponent<IHealth>()?.TakeDamage(rayDamage);
 
                 //player.TakeDamage(damage);
 

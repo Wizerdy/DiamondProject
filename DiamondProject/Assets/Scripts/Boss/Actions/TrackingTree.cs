@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TrackingTree : BaseAttack
 {
+    [SerializeField] Reference<Transform> _target;
     [SerializeField] private int numberOfTreesToSpawn = 5;
     [SerializeField] private int treeHp = 10;
     [SerializeField] private float spawnSpeed = 1f;
-    [SerializeField] private float treeDamage = 10f;
-    [SerializeField] private float fireDamage = 10f;
+    [SerializeField] private int treeDamage = 10;
+    [SerializeField] private int fireDamage = 10;
     [SerializeField] private float fireDamageFrequency = 1f;
     [SerializeField] private float fireRadius = 5f;
     [SerializeField] private GameObject fireTree;
@@ -18,10 +19,10 @@ public class TrackingTree : BaseAttack
     //SpawnTree(Player player, aimPosition) {
     private void SpawnTree() {
         GameObject tree = Instantiate(fireTree, transform.position, Quaternion.identity);
-        tree.GetComponent<FireTree>().Init(player, treeHp, treeDamage, fireDamage, fireDamageFrequency, fireRadius);
+        tree.GetComponent<FireTree>().Init(_target?.Instance, treeHp, treeDamage, fireDamage, fireDamageFrequency, fireRadius);
     }
 
-    protected override IEnumerator Launch() {
+    protected override IEnumerator IExecute() {
         isPlaying = true;
         float spawnRate = spawnSpeed;
         int numberOfTreesSpawned = 0;
@@ -38,7 +39,7 @@ public class TrackingTree : BaseAttack
             yield return null;
         }
 
-        UpdateIA();
+        //UpdateIA();
         isPlaying = false;
     }
 }

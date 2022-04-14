@@ -13,6 +13,5 @@ public abstract class ReferenceSetter<T> : MonoBehaviour {
 
     private void Awake() {
         (target as IReferenceSetter<T>).SetInstance(source);
-        this.Hurl();
     }
 }
