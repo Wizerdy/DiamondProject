@@ -55,7 +55,6 @@ public class FireTree : MonoBehaviour
             float distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - target.transform.position.x, 2) + Mathf.Pow(transform.position.y - target.transform.position.y, 2));
             if (distance <= fireRange) {
                 onFireHitEvent?.Invoke();
-                Debug.Log("took "+ fireDamage + " fire damage");
                 target.gameObject.GetComponent<IHealth>()?.TakeDamage(fireDamage);
             }
                 //player.TakeDamage(damage);
@@ -87,9 +86,7 @@ public class FireTree : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            //player.TakeDamage(damage);
             onTreePlayerHitEvent?.Invoke();
-            //Debug.Log("Player took " + treeDamage + " damage");
             collision.gameObject.GetComponent<IHealth>()?.TakeDamage(treeDamage);
         }
     }

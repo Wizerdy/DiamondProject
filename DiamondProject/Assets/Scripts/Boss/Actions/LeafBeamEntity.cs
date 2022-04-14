@@ -68,10 +68,7 @@ public class LeafBeamEntity : MonoBehaviour
             damageFrequencyTimer -= Time.deltaTime;
             if (damageFrequencyTimer <= 0) {
                 onBeamPlayerHitEvent?.Invoke();
-                Debug.Log("took " + rayDamage + " beam damage");
                 hit.transform.gameObject.GetComponent<IHealth>()?.TakeDamage(rayDamage);
-
-                //player.TakeDamage(damage);
 
                 damageFrequencyTimer = damageFrequency;
             }

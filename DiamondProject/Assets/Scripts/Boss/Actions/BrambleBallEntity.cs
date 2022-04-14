@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class BrambleBallEntity : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float damage = 20f;
+    [SerializeField] private int damage = 20;
 
     [SerializeField] delegate void OnBallPlayerHitEvent();
     OnBallPlayerHitEvent onBallPlayerHitEvent;
@@ -17,7 +17,7 @@ public class BrambleBallEntity : MonoBehaviour
     private Vector3 aimPosition;
     private Rigidbody2D rb;
 
-    public void Init(float _speed, float _damage, Vector3 _aimPosition) {
+    public void Init(float _speed, int _damage, Vector3 _aimPosition) {
         speed = _speed;
         damage = _damage;
         aimPosition = _aimPosition;
@@ -40,8 +40,7 @@ public class BrambleBallEntity : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            //player.TakeDamage(damage);
-            Debug.Log("Player took " + damage + " damage");
+            collision.gameObject.GetComponent<IHealth>()?.TakeDamage(damage);
             onBallPlayerHitEvent?.Invoke();
             Destroy(gameObject);
         }

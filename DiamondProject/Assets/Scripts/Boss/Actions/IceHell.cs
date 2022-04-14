@@ -26,7 +26,7 @@ public class IceHell : BaseAttack {
     [SerializeField] private Pattern[] firstPatterns;
     [SerializeField] private Pattern[] secondPatterns;
 
-    [SerializeField] private float iceShardDamage = 10f;
+    [SerializeField] private int iceShardDamage = 10;
     [SerializeField] private float delayBetweenWaves = 1.5f;
     [SerializeField] private float delayBetweenShards = 0.5f;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BrambleBall : BaseAttack {
     [SerializeField] Reference<Transform> _target;
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float damage = 20f;
+    [SerializeField] private int damage = 20;
     [SerializeField] private float delayBetweenLaunch = 1f;
 
     //[SerializeField] private int maxNumberOfBalls = 3;
