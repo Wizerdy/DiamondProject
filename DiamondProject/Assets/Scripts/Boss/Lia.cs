@@ -9,10 +9,6 @@ public class Lia : MonoBehaviour {
     public Trigger summer;
     public Trigger fall;
     public Trigger winter;
-    public Trigger unspring;
-    public Trigger unsummer;
-    public Trigger unfall;
-    public Trigger unwinter;
 
     private void Update() {
         if (spring.IsTrigger()) {
@@ -26,9 +22,6 @@ public class Lia : MonoBehaviour {
         }
         if (winter.IsTrigger()) {
             NewForm(Shape.WINTER);
-        }
-        if (unspring.IsTrigger() || unsummer.IsTrigger() || unfall.IsTrigger() || unwinter.IsTrigger()) {
-            NewForm(Shape.NEUTRAL);
         }
     }
 

@@ -299,14 +299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd30b50c0c0c9a84f976ae2211111ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spring: {fileID: 0}
-  summer: {fileID: 0}
-  fall: {fileID: 0}
-  winter: {fileID: 0}
-  unspring: {fileID: 0}
-  unsummer: {fileID: 0}
-  unfall: {fileID: 0}
-  unwinter: {fileID: 0}
+  spring: {fileID: 1654166653}
+  summer: {fileID: 1422707768}
+  fall: {fileID: 1365715983}
+  winter: {fileID: 1792530285}
 --- !u!4 &509935848
 Transform:
   m_ObjectHideFlags: 0
@@ -426,6 +422,7 @@ GameObject:
   - component: {fileID: 1365715981}
   - component: {fileID: 1365715983}
   - component: {fileID: 1365715982}
+  - component: {fileID: 1365715984}
   m_Layer: 0
   m_Name: Fall
   m_TagString: Untagged
@@ -479,7 +476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecd77a6c6e8d0c41ae9c223ab6338f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _childs: []
+  _childs:
+  - {fileID: 1365715982}
+  - {fileID: 1365715984}
   _childGate: 0
   _shouldAttack: 1
   _attackType: 2
@@ -487,6 +486,22 @@ MonoBehaviour:
   _attackNumberToReach: 20
   _attackNumber: 0
   _isActivable: 0
+--- !u!114 &1365715984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365715980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09ad0bdb5f3d5249a5c01333fefc277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childs: []
+  _childGate: 0
+  _bossShapeSystem: {fileID: 0}
+  _isShape: 0
 --- !u!1 &1422707765
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +511,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1422707766}
+  - component: {fileID: 1422707768}
+  - component: {fileID: 1422707767}
   m_Layer: 0
   m_Name: Summer
   m_TagString: Untagged
@@ -518,6 +535,39 @@ Transform:
   m_Father: {fileID: 908098510}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1422707767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422707765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09ad0bdb5f3d5249a5c01333fefc277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childs: []
+  _childGate: 0
+  _bossShapeSystem: {fileID: 0}
+  _isShape: 0
+--- !u!114 &1422707768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422707765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237a69d01889be648943f989f3c3d404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childs:
+  - {fileID: 1422707767}
+  _childGate: 0
+  _health: {fileID: 0}
+  _percentage: 1
 --- !u!1 &1654166650
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +579,7 @@ GameObject:
   - component: {fileID: 1654166651}
   - component: {fileID: 1654166653}
   - component: {fileID: 1654166652}
+  - component: {fileID: 1654166654}
   m_Layer: 0
   m_Name: Spring
   m_TagString: Untagged
@@ -584,6 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childs:
   - {fileID: 1654166652}
+  - {fileID: 1654166654}
   _childGate: 0
   _shouldAttack: 1
   _attackType: 1
@@ -591,6 +643,22 @@ MonoBehaviour:
   _attackNumberToReach: 10
   _attackNumber: 0
   _isActivable: 0
+--- !u!114 &1654166654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654166650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09ad0bdb5f3d5249a5c01333fefc277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childs: []
+  _childGate: 0
+  _bossShapeSystem: {fileID: 0}
+  _isShape: 0
 --- !u!1 &1792530283
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1792530284}
   - component: {fileID: 1792530285}
+  - component: {fileID: 1792530286}
   m_Layer: 0
   m_Name: Winter
   m_TagString: Untagged
@@ -635,7 +704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecd77a6c6e8d0c41ae9c223ab6338f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _childs: []
+  _childs:
+  - {fileID: 1792530286}
   _childGate: 0
   _shouldAttack: 0
   _attackType: 0
@@ -643,3 +713,19 @@ MonoBehaviour:
   _attackNumberToReach: 0
   _attackNumber: 0
   _isActivable: 0
+--- !u!114 &1792530286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792530283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09ad0bdb5f3d5249a5c01333fefc277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childs: []
+  _childGate: 0
+  _bossShapeSystem: {fileID: 0}
+  _isShape: 0
