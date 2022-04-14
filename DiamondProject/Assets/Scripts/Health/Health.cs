@@ -21,11 +21,12 @@ public class Health : MonoBehaviour, IHealth {
     #region Properties
 
     public int MaxHealth { get => _maxHealth; set => SetMaxHealth(value); }
+    public int CurrentHealth { get { return _currentHealth; } set { ChangeHealth(value - _currentHealth); } }
+    public float Percentage { get { return MaxHealth == 0 ? _currentHealth / MaxHealth : 1f; } }
     public bool CanTakeDamage {
         get { return _invicibilityToken <= 0; }
         set { _invicibilityToken += (value ? -1 : 1); _invicibilityToken = Mathf.Max(0, _invicibilityToken); }
     }
-    public int CurrentHealth { get { return _currentHealth; } set { ChangeHealth(value - _currentHealth); } }
 
     public event UnityAction<int> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
     public event UnityAction<int> OnHeal { add => _onHeal.AddListener(value); remove => _onHeal.RemoveListener(value); }
