@@ -371,7 +371,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &27073693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +531,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &27463791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,6 +1374,92 @@ MonoBehaviour:
   _imageToFade: {fileID: 1565567406}
   _transform: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
   _tag: Player
+--- !u!1 &100958620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 100958622}
+  - component: {fileID: 100958621}
+  m_Layer: 0
+  m_Name: IceHellPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &100958621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100958620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18156d19e0dcc84085208b64be2121a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5
+  coolDown: 1
+  isPlaying: 0
+  player: {fileID: 1591238744}
+  boss: {fileID: 1342196896}
+  firstPatterns:
+  - chargeTime: 2
+    speed: 30
+    numberOfWaves: 3
+    numberOfIceShardsPerWave: 5
+    patternType: 1
+  - chargeTime: 0
+    speed: 17
+    numberOfWaves: 5
+    numberOfIceShardsPerWave: 10
+    patternType: 0
+  secondPatterns:
+  - chargeTime: 4
+    speed: 30
+    numberOfWaves: 5
+    numberOfIceShardsPerWave: 10
+    patternType: 0
+  - chargeTime: 0
+    speed: 17
+    numberOfWaves: 3
+    numberOfIceShardsPerWave: 5
+    patternType: 1
+  iceShardDamage: 10
+  spawnSpeed: 3
+  angleOffSet: 10
+  iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
+--- !u!4 &100958622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100958620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &141011443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2963318992260331447, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+  m_PrefabInstance: {fileID: 1054265297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7920b6f39768004c9bf032806982fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &193780960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1498,7 +1598,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &193780964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,7 +1790,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &207085213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2161,7 +2275,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &268020722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2350,7 +2471,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &311505146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,7 +2817,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &348040288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2815,6 +2950,7 @@ MonoBehaviour:
   _healthBar: {fileID: 473648745}
   _damageScreen: {fileID: 0}
   _health: {fileID: 11400000, guid: 116343d6813afc143820099c704afa3b, type: 2}
+  _lifeText: {fileID: 0}
 --- !u!1001 &488585465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3118,7 +3254,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &528340044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3566,7 +3709,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &690203902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3821,7 +3971,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &807411196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3974,7 +4131,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &823209363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4127,7 +4291,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &864856361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4169,7 +4340,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &925749264 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4070983322119237389, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
@@ -4319,7 +4497,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &927329774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4509,6 +4694,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f102d7d707f750d4aaecd42b38c75f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1054265297
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963318992260331447, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1342196896}
+    - target: {fileID: 2963318992260331447, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: speed
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963318992260331447, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1591238744}
+    - target: {fileID: 2963318992260331447, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: numberOfBallsToLaunch
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375815014722316135, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
+      propertyPath: m_Name
+      value: BrambleBallPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
 --- !u!1001 &1057406507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4647,7 +4905,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1057406511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4762,7 +5027,25 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1086212883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2019609797025511747, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+  m_PrefabInstance: {fileID: 114764142444605823}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88b8b28066de114591925fe13477e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1087955170
 GameObject:
   m_ObjectHideFlags: 0
@@ -4972,7 +5255,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1092912013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5125,7 +5415,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1131706369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5411,7 +5708,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1271619474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5569,7 +5873,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1294644737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5726,7 +6037,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1297466736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5879,7 +6197,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1310693634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6222,6 +6547,33 @@ MonoBehaviour:
   phaseuno: 0
   phasedo: 0
   phaseto: 0
+--- !u!114 &1342196894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275143601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc46a830ad2bcd49967b6bf8001886f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brambleBall: {fileID: 141011443}
+  trackingTree: {fileID: 1086212883}
+  leafBeam: {fileID: 1412661629}
+  iceHell: {fileID: 100958621}
+--- !u!114 &1342196896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1992995316119929026, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
+  m_PrefabInstance: {fileID: 1342196883}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275143601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958f1df704c719741a4efab733073b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1352467256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6360,7 +6712,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1352467260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6425,6 +6784,17 @@ MonoBehaviour:
   _playerHealth: {fileID: 11400000, guid: f5c65a46c95138e438c3a07d070145b2, type: 2}
   _bossHealth: {fileID: 11400000, guid: 116343d6813afc143820099c704afa3b, type: 2}
   _posterity: {fileID: 11400000, guid: 8e55e4948e8a78e41a3d81207a9bcb23, type: 2}
+--- !u!114 &1412661629 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+  m_PrefabInstance: {fileID: 2043366984967394079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04690150f3f1a174ebe48a19e83fd75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1419263111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6766,7 +7136,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1464023046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6919,7 +7296,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1490808917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7072,7 +7456,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1496924178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7225,7 +7616,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1551091271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7324,6 +7722,23 @@ Transform:
   m_Father: {fileID: 263785713}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1591238735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3959631132869822232, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+  m_PrefabInstance: {fileID: 1739688776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1591238744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591238735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7cbb6f91a59a0743815683d5966e611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1613147392
 GameObject:
   m_ObjectHideFlags: 0
@@ -7556,7 +7971,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1659691660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7872,7 +8294,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1762274389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8216,7 +8645,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1781616005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8369,7 +8805,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1890797911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8615,7 +9058,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1937071832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8768,7 +9218,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1938718257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9204,7 +9661,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2015824926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9451,7 +9915,14 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  _destroyOnDeath: 1
   _resistances: []
+  _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2038972460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9629,3 +10100,142 @@ MonoBehaviour:
   _healthBar: {fileID: 2136535051}
   _damageScreen: {fileID: 331036602}
   _health: {fileID: 11400000, guid: f5c65a46c95138e438c3a07d070145b2, type: 2}
+  _lifeText: {fileID: 0}
+--- !u!1001 &114764142444605823
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2019609797025511747, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1342196896}
+    - target: {fileID: 2019609797025511747, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1591238744}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8628223319048608624, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+      propertyPath: m_Name
+      value: TrackingTree
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
+--- !u!1001 &2043366984967394079
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1342196896}
+    - target: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1591238744}
+    - target: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: duration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: raySpeed
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929251, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: m_Name
+      value: LeafBeamPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 254875d4fe88c25429951af1fe558306, type: 3}
