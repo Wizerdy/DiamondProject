@@ -35,7 +35,7 @@ public class FireTree : MonoBehaviour
     private void Start() {
         transform.position = target.transform.position;
 
-        timer = fireDamageFrequency;
+        timer = 0;
         lineRenderer = GetComponent<LineRenderer>();
         DrawAoe(50, fireRange);
 

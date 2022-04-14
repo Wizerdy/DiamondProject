@@ -66,9 +66,6 @@ public class IceWall : MonoBehaviour {
         }
     }
 
-    private void LateUpdate() {
-
-    }
 
     private void CreateWall() {
         float x;
