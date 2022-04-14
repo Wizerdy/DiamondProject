@@ -11,14 +11,14 @@ public class TrackingTree : BaseAttack
     [SerializeField] private float fireDamage = 10f;
     [SerializeField] private float fireDamageFrequency = 1f;
     [SerializeField] private float fireRadius = 5f;
-    [SerializeField] private FireTree fireTree;
+    [SerializeField] private GameObject fireTree;
 
     //protected override IEnumerator Launch(Player player, Boss boss, Vector3 aimPosition, float duration) {
 
     //SpawnTree(Player player, aimPosition) {
     private void SpawnTree() {
-        FireTree tree = Instantiate(fireTree, transform.position, Quaternion.identity);
-        tree.Init(player, treeHp, treeDamage, fireDamage, fireDamageFrequency, fireRadius);
+        GameObject tree = Instantiate(fireTree, transform.position, Quaternion.identity);
+        tree.GetComponent<FireTree>().Init(player, treeHp, treeDamage, fireDamage, fireDamageFrequency, fireRadius);
     }
 
     protected override IEnumerator Launch() {
@@ -26,7 +26,7 @@ public class TrackingTree : BaseAttack
         float spawnRate = spawnSpeed;
         int numberOfTreesSpawned = 0;
 
-        while (numberOfTreesSpawned > numberOfTreesToSpawn) {
+        while (numberOfTreesSpawned < numberOfTreesToSpawn) {
             spawnRate -= Time.deltaTime;
             if (spawnRate <= 0) {
                 //SpawnTree(player, aimPosition);

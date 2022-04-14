@@ -10,9 +10,18 @@ public class FireTree : MonoBehaviour
     [SerializeField] private float fireDamageFrequency = 1f;
     [SerializeField] private float fireRange = 5f;
 
+    [SerializeField] delegate void OnTreePlayerHitEvent();
+    OnTreePlayerHitEvent onTreePlayerHitEvent;
+    [SerializeField] delegate void OnFireHitEvent();
+    OnFireHitEvent onFireHitEvent;
+    [SerializeField] delegate void OnTreeSpawnEvent();
+    OnTreeSpawnEvent onTreeSpawnEvent;
+    [SerializeField] delegate void OnTreeTakeDamage();
+    OnTreeTakeDamage onTreeTakeDamage;
+
     private Player player;
-    private Rigidbody2D rb;
     private float timer = 0f;
+    private LineRenderer lineRenderer;
 
     public void Init(Player _player, int _hp, float _damage, float _fireDamage, float _frequency, float _fireRadius) {
         player = _player;
@@ -23,11 +32,19 @@ public class FireTree : MonoBehaviour
         fireRange = _fireRadius;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
+    private void Start() {
+        transform.position = player.transform.position;
+
         timer = fireDamageFrequency;
+        lineRenderer = GetComponent<LineRenderer>();
+        DrawAoe(50, fireRange);
+
+        onTreeSpawnEvent += OnSpawn;
+        onTreePlayerHitEvent += OnTreeHit;
+        onFireHitEvent += OnFireHit;
+        onTreeTakeDamage += OnDamage;
+
+        onTreeSpawnEvent?.Invoke();
     }
 
     // Update is called once per frame
@@ -36,25 +53,73 @@ public class FireTree : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0) {
             float distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - player.transform.position.x, 2) + Mathf.Pow(transform.position.y - player.transform.position.y, 2));
-            if (distance <= fireRange)
+            if (distance <= fireRange) {
+                onFireHitEvent?.Invoke();
                 Debug.Log("took "+ fireDamage + " fire damage");
+            }
                 //player.TakeDamage(damage);
 
             timer = fireDamageFrequency;
         }
     }
 
+    private void DrawAoe(int steps, float radius) {
+        lineRenderer.positionCount = steps;
+
+        for(int currentStep = 0; currentStep < steps; ++ currentStep) {
+            float circumference = (float)currentStep / steps;
+
+            float currentRadian = circumference * 2 * Mathf.PI;
+
+            float xScaled = Mathf.Cos(currentRadian);
+            float yScaled = Mathf.Sin(currentRadian);
+
+            float x = xScaled * radius;
+            float y = yScaled * radius;
+
+            Vector3 currentPosition = new Vector3(x + transform.position.x, y + transform.position.y, 0);
+
+            lineRenderer.SetPosition(currentStep, currentPosition);
+
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             //player.TakeDamage(damage);
+            onTreePlayerHitEvent?.Invoke();
             Debug.Log("Player took " + treeDamage + " damage");
         }
     }
 
     private void TakeDamage(float damage) {
+        onTreeTakeDamage?.Invoke();
         treeHp = treeHp - damage;
         if (treeHp <= 0) {
             Destroy(this);
         }
+    }
+
+    private void OnSpawn() {
+
+    }
+
+    private void OnTreeHit() {
+
+    }
+
+    private void OnFireHit() {
+
+    }
+
+    private void OnDamage() {
+
+    }
+
+    private void OnDestroy() {
+        onTreeSpawnEvent -= OnSpawn;
+        onTreePlayerHitEvent -= OnTreeHit;
+        onFireHitEvent -= OnFireHit;
+        onTreeTakeDamage -= OnDamage;
     }
 }

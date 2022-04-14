@@ -8,10 +8,10 @@ public class BrambleBallEntity : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float damage = 20f;
 
-    [SerializeField] delegate void OnPlayerHitEvent();
-    OnPlayerHitEvent onPlayerHitEvent;
-    [SerializeField] delegate void OnSpawnEvent();
-    OnSpawnEvent onSpawnEvent;
+    [SerializeField] delegate void OnBallPlayerHitEvent();
+    OnBallPlayerHitEvent onBallPlayerHitEvent;
+    [SerializeField] delegate void OnBallSpawnEvent();
+    OnBallSpawnEvent onBallSpawnEvent;
 
     //private Player player;
     private Vector3 aimPosition;
@@ -25,13 +25,13 @@ public class BrambleBallEntity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        onPlayerHitEvent += OnPlayerHit;
-        onSpawnEvent += OnSpawn;
+        onBallPlayerHitEvent += OnPlayerHit;
+        onBallSpawnEvent += OnSpawn;
 
         rb = GetComponent<Rigidbody2D>();
 
 
-        onPlayerHitEvent?.Invoke();
+        onBallSpawnEvent?.Invoke();
     }
 
     private void FixedUpdate() {
@@ -42,7 +42,7 @@ public class BrambleBallEntity : MonoBehaviour
         if (collision.gameObject.tag == "Player") {
             //player.TakeDamage(damage);
             Debug.Log("Player took " + damage + " damage");
-            onPlayerHitEvent?.Invoke();
+            onBallPlayerHitEvent?.Invoke();
             Destroy(gameObject);
         }
     }
@@ -56,7 +56,7 @@ public class BrambleBallEntity : MonoBehaviour
     }
 
     private void OnDestroy() {
-        onPlayerHitEvent -= OnPlayerHit;
-        onSpawnEvent -= OnSpawn;
+        onBallPlayerHitEvent -= OnPlayerHit;
+        onBallSpawnEvent -= OnSpawn;
     }
 }

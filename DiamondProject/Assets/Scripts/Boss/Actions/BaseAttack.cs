@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseAttack : MonoBehaviour
 {
-    [SerializeField] protected float duration = 1;
+    [SerializeField] protected float duration = 5;
     [SerializeField] protected float coolDown = 1;
     [SerializeField] protected bool isPlaying = false;
 

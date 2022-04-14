@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class TestCall : MonoBehaviour
 {
-    public BaseAttack baseAttack;
+    public BaseAttack brambleBall;
+    public BaseAttack trackingTree;
+    public BaseAttack leafBeam;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,15 @@ public class TestCall : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A)) {
-            baseAttack.StartCoroutine("Launch");
+            brambleBall.StartCoroutine("Launch");
+        }
+
+        if (Input.GetKeyDown(KeyCode.E)) {
+            trackingTree.StartCoroutine("Launch");
+        }
+
+        if (Input.GetKeyDown(KeyCode.R)) {
+            leafBeam.StartCoroutine("Launch");
         }
     }
 }
