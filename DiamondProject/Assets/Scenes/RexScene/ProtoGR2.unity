@@ -1406,22 +1406,34 @@ MonoBehaviour:
   duration: 5
   coolDown: 1
   isPlaying: 0
-  player: {fileID: 0}
-  boss: {fileID: 0}
-  patterns:
+  player: {fileID: 1591238744}
+  boss: {fileID: 1342196896}
+  firstPatterns:
+  - chargeTime: 2
+    speed: 30
+    numberOfWaves: 3
+    numberOfIceShardsPerWave: 5
+    patternType: 1
   - chargeTime: 0
-    speed: 0
-    numberOfWaves: 0
-    numberOfIceShardsPerWave: 0
+    speed: 17
+    numberOfWaves: 5
+    numberOfIceShardsPerWave: 10
+    patternType: 0
+  secondPatterns:
+  - chargeTime: 4
+    speed: 30
+    numberOfWaves: 5
+    numberOfIceShardsPerWave: 10
     patternType: 0
   - chargeTime: 0
-    speed: 0
-    numberOfWaves: 0
-    numberOfIceShardsPerWave: 0
-    patternType: 0
-  iceShardSpeed: 25
+    speed: 17
+    numberOfWaves: 3
+    numberOfIceShardsPerWave: 5
+    patternType: 1
   iceShardDamage: 10
-  iceShard: {fileID: 0}
+  spawnSpeed: 3
+  angleOffSet: 10
+  iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
 --- !u!4 &100958622
 Transform:
   m_ObjectHideFlags: 0
@@ -1430,7 +1442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100958620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.034033, y: 12.933295, z: -0.1787417}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4695,15 +4707,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9118574
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0793052
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6298255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1400560910120095425, guid: 7db4210a38b8ba24f987bff48488adbb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6550,6 +6562,7 @@ MonoBehaviour:
   brambleBall: {fileID: 141011443}
   trackingTree: {fileID: 1086212883}
   leafBeam: {fileID: 1412661629}
+  iceHell: {fileID: 100958621}
 --- !u!114 &1342196896 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -1992995316119929026, guid: ba9df56caba544a44b8167da05f73b90, type: 3}
@@ -10109,15 +10122,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.617529
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.325285
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.086194366
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2071150001827530072, guid: 264bda65f017881438e7e6a6ba82af60, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10166,15 +10179,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9889245
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9306972
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.16195238
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2043366983554929249, guid: 254875d4fe88c25429951af1fe558306, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10212,6 +10225,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1591238744}
+    - target: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: duration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043366983554929250, guid: 254875d4fe88c25429951af1fe558306, type: 3}
+      propertyPath: raySpeed
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 2043366983554929251, guid: 254875d4fe88c25429951af1fe558306, type: 3}
       propertyPath: m_Name
       value: LeafBeamPrefab

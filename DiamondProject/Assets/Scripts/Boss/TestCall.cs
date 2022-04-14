@@ -7,6 +7,7 @@ public class TestCall : MonoBehaviour
     public BaseAttack brambleBall;
     public BaseAttack trackingTree;
     public BaseAttack leafBeam;
+    public BaseAttack iceHell;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,10 @@ public class TestCall : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R)) {
             leafBeam.StartCoroutine("Launch");
+        }
+
+        if (Input.GetKeyDown(KeyCode.T)) {
+            iceHell.StartCoroutine("Launch");
         }
     }
 }
