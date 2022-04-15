@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Lia : MonoBehaviour {
+    [SerializeField] Health _health;
     [SerializeField] IMeetARealBoss _boss;
     [SerializeField] BossShapeSystem _bossShapeSystem;
     [SerializeField] ShapeLibrary _shapeLibrary;
@@ -30,6 +31,7 @@ public class Lia : MonoBehaviour {
 
     public void NewForm(Shape shape) {
         _bossShapeSystem.ChangeShape(_shapeLibrary.GetBossShape(shape));
+        _health.CurrentHealth = _health.MaxHealth;
     }
 
     public void ComputeDeath() {
