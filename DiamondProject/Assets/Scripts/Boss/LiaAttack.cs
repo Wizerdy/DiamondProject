@@ -21,7 +21,7 @@ public class LiaAttack : MonoBehaviour {
         } else {
             switch (_currentShape.Type) {
                 case Shape.NEUTRAL:
-                    Attack("Bramble Ball", "Trees");
+                    Attack("Ice Hell", "Bramble Ball");
                     break;
                 case Shape.SPRING:
                     Attack("Bramble Ball");
