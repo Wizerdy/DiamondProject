@@ -42,7 +42,7 @@ public class LeafBeamEntity : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
 
         currentSpeed = raySpeed;
-
+        hitPos = transform.position;
         onBeamSpawnEvent += OnSpawn;
         onBeamPlayerHitEvent += OnRayHitPlayer;
         onBeamHitEvent += OnRayHit;
@@ -62,17 +62,21 @@ public class LeafBeamEntity : MonoBehaviour
             currentSpeed = raySpeed;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, hitPos);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, hitPos);
+        for (int i = 0; i < hits.Length; i++) {
+            RaycastHit2D hit = hits[i];
+            Debug.Log(hit.transform.gameObject.name);
+            if (hit.transform.gameObject.tag == "Player") {
+                damageFrequencyTimer -= Time.deltaTime;
+                if (damageFrequencyTimer <= 0) {
+                    onBeamPlayerHitEvent?.Invoke();
+                    hit.transform.gameObject.GetComponent<IHealth>()?.TakeDamage(rayDamage);
 
-        if (hit.transform.gameObject.tag == "Player") {
-            damageFrequencyTimer -= Time.deltaTime;
-            if (damageFrequencyTimer <= 0) {
-                onBeamPlayerHitEvent?.Invoke();
-                hit.transform.gameObject.GetComponent<IHealth>()?.TakeDamage(rayDamage);
-
-                damageFrequencyTimer = damageFrequency;
+                    damageFrequencyTimer = damageFrequency;
+                }
             }
         }
+
 
         durationTimer -= Time.deltaTime;
         if (durationTimer <= 0) 
