@@ -11,6 +11,7 @@ public abstract class BaseAttack : MonoBehaviour {
     [SerializeField] protected float duration = 1;
     [SerializeField] protected float coolDown = 1;
     [SerializeField] protected bool isPlaying = false;
+    [SerializeField] protected bool locked = false;
 
     private void OnEnable() {
         Execute();

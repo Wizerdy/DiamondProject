@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ToolsBoxEngine;
+using UnityEngine.Events;
 
 public class Missile : BossEntities {
-
+    [SerializeField] UnityEvent OnDeath;
+    [SerializeField] UnityEvent OnDestroy;
     [SerializeField] protected PlayerControllerReference _player;
     [SerializeField] protected Vector3 directionTarget = Vector3.zero;
     [SerializeField] protected Vector3 direction = Vector3.zero;
@@ -11,8 +14,12 @@ public class Missile : BossEntities {
     [SerializeField] protected float rotationSpeed = 100f;
     [SerializeField] protected float lifetime = 1f;
     [SerializeField] protected float lifetimeTimer = 1f;
+    [SerializeField] protected float explosionRadius = 1f;
+    [SerializeField] protected int explosionDamage = 1;
+    [SerializeField] ExploBush explobush;
     protected Rigidbody2D rb = null;
     public FireMissile firemissile;
+    bool isDead = false;
 
     public Missile SetSpeed(float speed) {
         this.speed = speed;
@@ -31,7 +38,6 @@ public class Missile : BossEntities {
 
     public virtual void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            _player.Instance.Health.TakeDamage(10);
             Die();
         }
     }
@@ -39,21 +45,39 @@ public class Missile : BossEntities {
     public virtual void Start() {
         rb = GetComponent<Rigidbody2D>();
         lifetimeTimer = lifetime;
+        explobush.AddExploBush();
     }
 
     public virtual void FixedUpdate() {
-        lifetimeTimer -= Time.fixedDeltaTime;
-        if (lifetimeTimer <= 0) {
-            Die();
+        if (!isDead) {
+            lifetimeTimer -= Time.fixedDeltaTime;
+            if (lifetimeTimer <= 0) {
+                Die();
+            }
+            directionTarget = _player.Instance.gameObject.transform.position - transform.position;
+            direction = Vector3.RotateTowards(direction, directionTarget, Mathf.Deg2Rad * Time.fixedDeltaTime * rotationSpeed, 1);
+            rb.velocity = direction.normalized * speed;
         }
-        directionTarget = _player.Instance.gameObject.transform.position - transform.position;
-        float directionµSense =  180 <= Vector3.Angle(direction, directionTarget) ? -1 : 1;
-        direction = Vector3.RotateTowards(direction, directionTarget, Mathf.Deg2Rad * Time.fixedDeltaTime * rotationSpeed, 1);
-        rb.velocity = direction.normalized * speed;
-        //transform.rotation = Quaternion.LookRotation(Vector3.forward, direction) * Quaternion.Euler(0, 0, 90);
     }
 
     public void Die() {
+        explobush.RemoveExploBush();
+        isDead = true;
+        rb.velocity = Vector2.zero;
+        OnDeath?.Invoke();
+        StartCoroutine(Tools.Delay(() => Explode(), 1f));
+    }
+
+    void Explode() {
+        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        Debug.DrawLine(transform.position - new Vector3(explosionRadius / 2, 0), transform.position + new Vector3(explosionRadius / 2, 0));
+        Debug.DrawLine(transform.position - new Vector3(0, explosionRadius / 2), transform.position + new Vector3(0, explosionRadius / 2));
+        for (int i = 0; i < collider.Length; i++) {
+            if(collider[i].tag == "Player") {
+                _player.Instance.Health.TakeDamage(explosionDamage);
+            }
+        }
+        OnDestroy?.Invoke();
         Destroy(gameObject);
     }
 
