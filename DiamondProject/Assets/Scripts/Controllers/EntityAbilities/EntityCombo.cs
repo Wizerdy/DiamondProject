@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using ToolsBoxEngine;
 
-public class EntityMeleeAttack : MonoBehaviour {
+public class EntityCombo : MonoBehaviour {
     [Header("Static")]
     [SerializeField] Transform _attackParent = null;
     [SerializeField] Animator _attackAnimator = null;
     [SerializeField] DamageHealth _attackHitbox = null;
     [Header("Values")]
-    [SerializeField] int _damage = 10;
+    [SerializeField] int[] _damage = new int[3];
     [SerializeField] float _cooldownTime = 1f;
     [SerializeField] MultipleTagSelector _damageables = new MultipleTagSelector(MultipleTagSelector.State.EVERYTHING);
     [SerializeField] UnityEvent<Vector2> _onAttack;
@@ -20,6 +20,7 @@ public class EntityMeleeAttack : MonoBehaviour {
     public event UnityAction<GameObject> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
 
     bool _isAttacking = false;
+    int _currentCombo = 0;
 
     public bool CanAttack => !_isAttacking;
     public bool IsAttacking => _isAttacking;
@@ -29,7 +30,7 @@ public class EntityMeleeAttack : MonoBehaviour {
     }
 
     private void Start() {
-        _attackHitbox.Damage = _damage;
+        _attackHitbox.Damage = _damage[_currentCombo];
         _attackHitbox.Damageables = _damageables;
     }
 
@@ -40,23 +41,16 @@ public class EntityMeleeAttack : MonoBehaviour {
     public void Attack(Vector2 direction) {
         if (_isAttacking) { return; }
         _isAttacking = true;
-        _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
-        _attackAnimator.SetTrigger("Attack");
+        _attackAnimator.SetBool("Combo", true);
         _onAttack?.Invoke(direction);
-        StartCoroutine(Tools.Delay(() => _isAttacking = false, _cooldownTime));
-    }
-
-    public void Jab(Vector2 direction) {
-        if (_isAttacking) { return; }
-        _isAttacking = true;
-        _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
-        _attackAnimator.SetTrigger("Attack");
-        _onAttack?.Invoke(direction);
-        StartCoroutine(Tools.Delay(() => _isAttacking = false, _cooldownTime));
     }
 
     public void InstanceDamage() {
 
+    }
+
+    public void UpdateDirection(Vector2 direction) {
+        _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
     }
 
     void _InvokeOnHit(GameObject obj) {

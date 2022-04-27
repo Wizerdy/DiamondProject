@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 479097232}
   - component: {fileID: 479097231}
   m_Layer: 0
-  m_Name: Particle System (1)
+  m_Name: HitParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5756,7 +5756,19 @@ MonoBehaviour:
     state: 1
   _onAttack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -5782,7 +5794,19 @@ MonoBehaviour:
   _rangedAttackCooldown: 0.2
   _onAttack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3745787321201419433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5859,12 +5883,49 @@ MonoBehaviour:
   _interact: {fileID: 3745787321201419433}
   _rangedAttack: {fileID: 7873682425189889759}
   _health: {fileID: 2161993602319532677}
+  _sprite: {fileID: 1952372696}
   _camera: {fileID: 11400000, guid: a890bec94e85429448ffbb98be01752d, type: 2}
-  _animator: {fileID: 0}
-  _boss: {fileID: 0}
+  _animator: {fileID: 4346229573380257631}
+  _boss: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
   _onAttack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerAttackTrigger, Assembly-CSharp
+        m_MethodName: PlayerHasAttacked
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerAttackTrigger, Assembly-CSharp
+        m_MethodName: PlayerHasAttacked
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerAttackTrigger, Assembly-CSharp
+        m_MethodName: PlayerHasAttacked
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   textInteraction: {fileID: 0}
 --- !u!114 &2161993602319532677
 MonoBehaviour:
@@ -5887,7 +5948,19 @@ MonoBehaviour:
       m_Calls: []
   _onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DeathManager, Assembly-CSharp
+        m_MethodName: PlayerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _destroyOnDeath: 0
   _resistances: []
   _onMaxHealthChange:
@@ -6015,6 +6088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3959631133316557152}
   - component: {fileID: 3959631133316557151}
+  - component: {fileID: 1952372696}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -6031,7 +6105,7 @@ Transform:
   m_GameObject: {fileID: 3959631133316557153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3959631132869822228}
@@ -6078,7 +6152,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -840609984, guid: 9432213595731a246bb310747eb5e145, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0725f86031e56d47b164c72d4f53a4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6089,6 +6163,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1952372696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959631133316557153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ab21b81b39b2f47aedb79f5beab24b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 3959631133316557151}
+  _sprites:
+  - sprite: {fileID: 21300000, guid: 4a1a82d97c9f4d74a948a76ed2ace816, type: 3}
+    angleBound: {x: 0, y: 90}
+    flipped: 1
+  - sprite: {fileID: 21300000, guid: 4a1a82d97c9f4d74a948a76ed2ace816, type: 3}
+    angleBound: {x: 90, y: 180}
+    flipped: 0
+  - sprite: {fileID: 21300000, guid: fbe4aea40143e3d43949021ab97e1644, type: 3}
+    angleBound: {x: 180, y: 270}
+    flipped: 0
+  - sprite: {fileID: 21300000, guid: fbe4aea40143e3d43949021ab97e1644, type: 3}
+    angleBound: {x: 270, y: 360}
+    flipped: 1
 --- !u!1 &4296269591475272782
 GameObject:
   m_ObjectHideFlags: 0
@@ -6104,7 +6204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3047052000504567667
 Transform:
   m_ObjectHideFlags: 0
@@ -6495,8 +6595,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 5
   _damageables:
-    tags: []
-    state: 0
+    tags:
+    - Boss
+    state: 1
   _destroyOnHit: 0
   _damageType: 
 --- !u!50 &1783022779200444402
@@ -7146,7 +7247,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Time: 0.1
   m_Parameters:
     serializedVersion: 3

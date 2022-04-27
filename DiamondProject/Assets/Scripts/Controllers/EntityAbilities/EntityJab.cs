@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using ToolsBoxEngine;
 
-public class EntityMeleeAttack : MonoBehaviour {
+public class EntityJab : MonoBehaviour {
     [Header("Static")]
     [SerializeField] Transform _attackParent = null;
     [SerializeField] Animator _attackAnimator = null;
@@ -37,26 +37,27 @@ public class EntityMeleeAttack : MonoBehaviour {
         _attackHitbox.OnCollide -= _InvokeOnHit;
     }
 
-    public void Attack(Vector2 direction) {
+    public void StartJab(Vector2 direction) {
         if (_isAttacking) { return; }
         _isAttacking = true;
-        _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
-        _attackAnimator.SetTrigger("Attack");
+        UpdateDirection(direction);
+        _attackAnimator.SetBool("Jab", true);
         _onAttack?.Invoke(direction);
-        StartCoroutine(Tools.Delay(() => _isAttacking = false, _cooldownTime));
     }
 
-    public void Jab(Vector2 direction) {
-        if (_isAttacking) { return; }
-        _isAttacking = true;
-        _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
-        _attackAnimator.SetTrigger("Attack");
+    public void StopJab(Vector2 direction) {
+        if (!_isAttacking) { return; }
+        _isAttacking = false;
+        _attackAnimator.SetBool("Jab", false);
         _onAttack?.Invoke(direction);
-        StartCoroutine(Tools.Delay(() => _isAttacking = false, _cooldownTime));
     }
 
     public void InstanceDamage() {
 
+    }
+
+    public void UpdateDirection(Vector2 direction) {
+        _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
     }
 
     void _InvokeOnHit(GameObject obj) {
