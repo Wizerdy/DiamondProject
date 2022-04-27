@@ -5,18 +5,18 @@ using UnityEngine;
 public class IceShard : MonoBehaviour
 {
     [SerializeField] private float lifeSpan = 15f;
-    [SerializeField] private float shardSpeed = 10f;
     [SerializeField] private float maxSize = 3f;
-    [SerializeField] private int shardDamage = 5;
     [SerializeField] private float growthSpeed = 1f;
 
-    [SerializeField] private Vector3 aimDir = new Vector3(0, 0, 0);
+    private Vector3 aimDir = new Vector3(0, 0, 0);
 
     [SerializeField] delegate void OnShardPlayerHitEvent();
     OnShardPlayerHitEvent onShardPlayerHitEvent;
     [SerializeField] delegate void OnShardSpawnEvent();
     OnShardSpawnEvent onShardSpawnEvent;
 
+    private float shardSpeed = 10f;
+    private int shardDamage = 5;
     private Transform target;
     private Rigidbody2D rb;
     private float _lifeTimer;
