@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ToolsBoxEngine;
 
-public class LeafBeamEntity : MonoBehaviour
-{
+public class LeafBeamEntity : MonoBehaviour {
     [SerializeField] private float raySpeed = 10f;
     [SerializeField] private int rayDamage = 5;
     [SerializeField] private float damageFrequency = 1f;
     [SerializeField] private float duration = 5f;
     [SerializeField] private float raySpeedIfFar = 75f;
     [SerializeField] private float distance = 5f;
+    [SerializeField] private ParticleSystem particles;
 
     [SerializeField] private Vector3 hitPos = new Vector3(0, 0, 0);
 
@@ -20,7 +21,7 @@ public class LeafBeamEntity : MonoBehaviour
     [SerializeField] delegate void OnBeamHitEvent();
     OnBeamSpawnEvent onBeamHitEvent;
 
-    private Transform target;
+    public Transform target;
     private float damageFrequencyTimer = 0f;
     private float durationTimer = 0f;
     private LineRenderer lineRenderer;
@@ -50,11 +51,9 @@ public class LeafBeamEntity : MonoBehaviour
         onBeamSpawnEvent?.Invoke();
     }
 
-    // Update is called once per frame
     void Update() {
         hitPos = Vector3.MoveTowards(hitPos, target.transform.position, currentSpeed * Time.deltaTime);
-
-        lineRenderer.SetPosition(1, hitPos);
+        UpdateRenderer(hitPos);
 
         if (distance < GetDistance(target.transform.position, hitPos)) {
             currentSpeed = raySpeedIfFar;
@@ -77,12 +76,22 @@ public class LeafBeamEntity : MonoBehaviour
             }
         }
 
-
         durationTimer -= Time.deltaTime;
-        if (durationTimer <= 0) 
-            Destroy(this.gameObject);
-        
+        if (durationTimer <= 0)
+            Destroy(gameObject);
+
         onBeamHitEvent?.Invoke();
+    }
+
+    private void UpdateRenderer(Vector2 target) {
+        lineRenderer.SetPosition(1, hitPos);
+
+        //Vector2 vector = target.To3D() - transform.position;
+        //float dist = vector.magnitude;
+        //float lifetime = dist.Remap(0f, 27.5f, 0f, 2f);
+        //// lt 2 => pos 27.5 // If speed = 20
+        //ParticleSystem.MainModule main = particles.main;
+        //main.startLifetime = lifetime;
     }
 
     private float GetDistance(Vector3 A, Vector3 B) {
@@ -101,12 +110,9 @@ public class LeafBeamEntity : MonoBehaviour
 
     }
 
-
-
     private void OnDestroy() {
         onBeamSpawnEvent -= OnSpawn;
         onBeamPlayerHitEvent -= OnRayHitPlayer;
         onBeamHitEvent -= OnRayHit;
-
     }
 }

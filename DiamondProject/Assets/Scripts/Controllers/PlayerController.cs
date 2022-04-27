@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntityInteract _interact;
     [SerializeField] EntityRangedAttack _rangedAttack;
     [SerializeField] Health _health;
+    [SerializeField] EntitySprite _sprite;
     [SerializeField] Reference<Camera> _camera;
     [SerializeField] Animator _animator;
     [SerializeField] Reference<Boss> _boss;
@@ -84,6 +85,11 @@ public class PlayerController : MonoBehaviour {
         _controls.Dialogue.DialogueInteraction.started -= DialogueInteraction;
 
         if (_interact != null) { _interact.OnStopInteract -= StopInteracting; }
+    }
+
+    private void LateUpdate() {
+        if (MousePosition == null) { return; }
+        _sprite?.LookAt(MousePosition.Value - transform.Position2D());
     }
 
     #endregion
