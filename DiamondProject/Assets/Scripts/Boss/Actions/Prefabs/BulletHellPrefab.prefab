@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3440608959053010892
+--- !u!1 &1005890436504860819
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3440608959053010894}
-  - component: {fileID: 3440608959053010893}
+  - component: {fileID: 1005890436504860821}
+  - component: {fileID: 1005890436504860818}
   m_Layer: 0
-  m_Name: IceHellPrefab
+  m_Name: BulletHellPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3440608959053010894
+  m_IsActive: 1
+--- !u!4 &1005890436504860821
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3440608959053010892}
+  m_GameObject: {fileID: 1005890436504860819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,16 +32,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3440608959053010893
+--- !u!114 &1005890436504860818
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3440608959053010892}
+  m_GameObject: {fileID: 1005890436504860819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d18156d19e0dcc84085208b64be2121a, type: 3}
+  m_Script: {fileID: 11500000, guid: ff85167d01a36354e9926ebe3e290902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnExecute:
@@ -50,37 +50,18 @@ MonoBehaviour:
   OnEnd:
     m_PersistentCalls:
       m_Calls: []
-  attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
-  id: Ice Hell
-  duration: 5
+  attackSystem: {fileID: 0}
+  id: 
+  duration: 1
   coolDown: 1
   isPlaying: 0
   _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
-  firstPatterns:
-  - chargeTime: 2
-    speed: 75
-    numberOfWaves: 3
-    numberOfIceShardsPerWave: 30
-    patternType: 1
-  - chargeTime: 0
-    speed: 52
-    numberOfWaves: 5
-    numberOfIceShardsPerWave: 80
-    patternType: 0
-  secondPatterns:
-  - chargeTime: 4
-    speed: 75
-    numberOfWaves: 5
-    numberOfIceShardsPerWave: 80
-    patternType: 0
-  - chargeTime: 0
-    speed: 52
-    numberOfWaves: 3
-    numberOfIceShardsPerWave: 30
-    patternType: 1
-  iceShardDamage: 10
-  delayBetweenWaves: 1
+  iceShardDamage: 5
+  numberOfWave: 12
+  numberOfProjectilsPerWaves: 50
+  delayBetweenWaves: 0.05
   delayBetweenShards: 0.01
-  angleOffSet: 25
+  rotationSpeed: 50
+  shardSpeed: 50
   spawnDistance: 0.1
   iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
