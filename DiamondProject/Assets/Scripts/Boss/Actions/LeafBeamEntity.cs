@@ -64,7 +64,6 @@ public class LeafBeamEntity : MonoBehaviour {
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, hitPos);
         for (int i = 0; i < hits.Length; i++) {
             RaycastHit2D hit = hits[i];
-            Debug.Log(hit.transform.gameObject.name);
             if (hit.transform.gameObject.tag == "Player") {
                 damageFrequencyTimer -= Time.deltaTime;
                 if (damageFrequencyTimer <= 0) {
@@ -84,6 +83,8 @@ public class LeafBeamEntity : MonoBehaviour {
     }
 
     private void UpdateRenderer(Vector2 target) {
+        Vector2 direction = target.To3D() - transform.position;
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
         lineRenderer.SetPosition(1, hitPos);
 
         //Vector2 vector = target.To3D() - transform.position;

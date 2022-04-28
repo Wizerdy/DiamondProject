@@ -4,6 +4,7 @@ using UnityEngine;
 using ToolsBoxEngine;
 
 public class LiaAttack : MonoBehaviour {
+    [SerializeField] Health _bossHealth;
     [SerializeField] BossShape _currentShape;
     [SerializeField] AttackLauncher _launcher;
     [SerializeField] float _waitTimeBeforeAction = 5f;
@@ -12,7 +13,9 @@ public class LiaAttack : MonoBehaviour {
     float _timer = 0f;
 
     void Start() {
+        _bossHealth.CanTakeDamage = false;
         _timer = _timeBetweenAttacks - _waitTimeBeforeAction;
+        StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
     }
 
     void Update() {
@@ -21,7 +24,7 @@ public class LiaAttack : MonoBehaviour {
         } else {
             switch (_currentShape.Type) {
                 case Shape.NEUTRAL:
-                    Attack("Ice Hell", "Bramble Ball", "ExploBush");
+                    Attack("Bullet Hell", "Leaf Beam", "ExploBush", "Trees");
                     break;
                 case Shape.SPRING:
                     Attack("Bramble Ball");
@@ -33,7 +36,7 @@ public class LiaAttack : MonoBehaviour {
                     Attack("Leaf Beam");
                     break;
                 case Shape.WINTER:
-                    Attack("Ice Hell");
+                    Attack("Ice Hell", "Bullet Hell", "Snow Absorption");
                     break;
                 default:
                     break;

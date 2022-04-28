@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7375203376215314029}
   - component: {fileID: 4998535898296923648}
+  - component: {fileID: -487959850739066811}
   m_Layer: 0
   m_Name: ExploBush
   m_TagString: Untagged
@@ -55,7 +56,7 @@ MonoBehaviour:
   duration: 1
   coolDown: 1
   isPlaying: 0
-  locked: 0
+  locked: 1
   missileSpeed: 5
   missileRotationSpeed: 80
   missileLifetime: 10
@@ -66,4 +67,16 @@ MonoBehaviour:
   rightCollision: 53
   leftCollision: -53
   radiusDetection: 2
-  exploBushAlive: 0
+  exploBushAlive: 17
+--- !u!114 &-487959850739066811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020773971746225525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

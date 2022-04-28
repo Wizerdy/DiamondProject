@@ -60,6 +60,9 @@ MonoBehaviour:
   _onInvincibility:
     m_PersistentCalls:
       m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5680249788332393454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1614,6 +1617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de3d34aca8cdbf48bc1f18997410696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bossHealth: {fileID: 0}
   _currentShape: {fileID: 0}
   _launcher: {fileID: 5680249788377665366}
   _waitTimeBeforeAction: 5

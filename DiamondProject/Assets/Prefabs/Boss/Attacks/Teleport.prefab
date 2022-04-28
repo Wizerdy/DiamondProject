@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3804531477428940516}
   - component: {fileID: 7690483064785437344}
+  - component: {fileID: -1963795746538376557}
   m_Layer: 0
   m_Name: Teleport
   m_TagString: Untagged
@@ -45,10 +46,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
+  _name: Action
   _duration: 1
-  _durationTimer: 1
-  transitionTime: 1
-  Body: {fileID: 0}
+  _transitionTime: 1
+  nextState: Transition
+  radiusSpawnPoint: 10
   _player: {fileID: 11400000, guid: f516980be0e38d643984c329283f62d5, type: 2}
-  fleeDetectionRadius: 2
-  fleeDistance: 4
+  _transformList: []
+  centralTransform: {fileID: 0}
+--- !u!114 &-1963795746538376557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933085880124793086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
