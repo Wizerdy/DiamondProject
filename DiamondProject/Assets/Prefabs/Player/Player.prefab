@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 479097230}
   - component: {fileID: 479097232}
   - component: {fileID: 479097231}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HitParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4881,7 +4881,7 @@ GameObject:
   - component: {fileID: 1870966369}
   - component: {fileID: 1870966371}
   - component: {fileID: 1870966370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Decelaration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5004,7 +5004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4343268477641086738}
   - component: {fileID: 3096041797417050037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5089,7 +5089,7 @@ GameObject:
   - component: {fileID: 3748334365016889284}
   - component: {fileID: 7074820754420491190}
   - component: {fileID: 7983856449536685961}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Acceleration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5212,7 +5212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1445009080198053289}
   - component: {fileID: 2707856173683341463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Interact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5293,7 +5293,7 @@ GameObject:
   - component: {fileID: 863079315}
   - component: {fileID: 7281604382989080350}
   - component: {fileID: 8416428834986239602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5331,6 +5331,8 @@ MonoBehaviour:
   - {fileID: 1517318563454296238}
   - {fileID: 7281604382989080350}
   - {fileID: 8416428834986239602}
+  - {fileID: 863079314}
+  - {fileID: 863079315}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
@@ -5617,7 +5619,7 @@ GameObject:
   - component: {fileID: 5303888298297124882}
   - component: {fileID: 7873682425189889759}
   - component: {fileID: 3745787321201419433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Abilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5839,7 +5841,7 @@ GameObject:
   - component: {fileID: 8519624037585074062}
   - component: {fileID: 9109140029771317965}
   - component: {fileID: 2554482497410507838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6090,7 +6092,7 @@ GameObject:
   - component: {fileID: 3959631133316557152}
   - component: {fileID: 3959631133316557151}
   - component: {fileID: 1952372696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6200,7 +6202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3047052000504567667}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6233,7 +6235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3081032811602921835}
   - component: {fileID: 3082417626813821041}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6319,7 +6321,8 @@ GameObject:
   - component: {fileID: 5754289631057639520}
   - component: {fileID: 1840652205}
   - component: {fileID: 7247063742837149880}
-  m_Layer: 0
+  - component: {fileID: 3621982820216291902}
+  m_Layer: 8
   m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6355,6 +6358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Feedbacks:
   - {fileID: 7247063742837149880}
+  - {fileID: 1840652205}
+  - {fileID: 3621982820216291902}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
@@ -6506,6 +6511,108 @@ MonoBehaviour:
   FloatValueMin: 0
   FloatValueMax: 5
   FloatIncrement: 1
+--- !u!114 &3621982820216291902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4949822717412203553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00fce7cea59bce742af6c0ddc82bad60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Load Scene
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    ExcludeFromHoldingPauses: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  LoadingSceneName: MMAdditiveLoadingScreen
+  DestinationSceneName: VNScene
+  LoadingMode: 0
+  Priority: 4
+  InterpolateProgress: 0
+  SecureLoad: 1
+  BeforeEntryFadeDelay: 0
+  EntryFadeDuration: 0.2
+  AfterEntryFadeDelay: 0
+  BeforeExitFadeDelay: 0
+  ExitFadeDuration: 0.2
+  ProgressInterpolationSpeed: 5
+  FadeMode: 0
+  EntryFadeTween:
+    MMTweenDefinitionType: 1
+    MMTweenCurve: 4
+    Curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  ExitFadeTween:
+    MMTweenDefinitionType: 1
+    MMTweenCurve: 4
+    Curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &5039550533790186616
 GameObject:
   m_ObjectHideFlags: 0
@@ -6517,7 +6624,7 @@ GameObject:
   - component: {fileID: 8332477398654785751}
   - component: {fileID: 3520503091357478647}
   - component: {fileID: 6593458611809754283}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Decelaration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6643,7 +6750,7 @@ GameObject:
   - component: {fileID: 1783022779200444402}
   - component: {fileID: 6913084473307816882}
   - component: {fileID: 7929814409363403156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6755,7 +6862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4395563488972246845}
   - component: {fileID: 8994368328233107023}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6813,7 +6920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 515077950250635106}
   - component: {fileID: 3303485470002897867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RangeAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6888,7 +6995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 652180734932207057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6922,7 +7029,7 @@ GameObject:
   - component: {fileID: 2809450343851217390}
   - component: {fileID: 7159676193215690231}
   - component: {fileID: 3880078729118127894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7006,7 +7113,7 @@ GameObject:
   - component: {fileID: 5397904611889812368}
   - component: {fileID: 4503853653887659954}
   - component: {fileID: 3140964973947603953}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turn around
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7177,7 +7284,7 @@ GameObject:
   - component: {fileID: 2715631747423146704}
   - component: {fileID: 5607606183400771061}
   - component: {fileID: 5977088980730446558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeleeHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7328,7 +7435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335759156643297954}
   - component: {fileID: 478416656224887388}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7469,7 +7576,7 @@ GameObject:
   - component: {fileID: 4896918249644399355}
   - component: {fileID: 8990786264109351080}
   - component: {fileID: 4244333875856624585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeleeAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
