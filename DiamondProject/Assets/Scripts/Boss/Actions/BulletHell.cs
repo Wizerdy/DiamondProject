@@ -3,28 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletHell : BaseAttack {
+    [Header("Spawner Parameter")]
+    [SerializeField] private int numberOfWave = 9;
+    [SerializeField] private int numberOfProjectilsPerWaves = 50;
+    [SerializeField] private float delayBetweenWaves = 0.35f;
+    [SerializeField] private float delayBetweenShards = 0.01f;
+    [SerializeField] private float bulletPerRotation = 25f;
+    [SerializeField] private float spawnDistance = 0.1f;
+    [Range(0.0f, 0.99f)]
+    [SerializeField] private float offSet = 0.15f;
+
+    [Header("Shard Parameter")]
+    [SerializeField] private int iceShardDamage = 5;
+    [SerializeField] private float shardSpeed = 30f;
+
+    [Header("Pas Touche")]
+    [SerializeField] private GameObject iceShard;
     [SerializeField] private Reference<Transform> _target;
 
-    [SerializeField] private int iceShardDamage = 5;
-    [SerializeField] private int numberOfWave = 12;
-    [SerializeField] private int numberOfProjectilsPerWaves = 20;
-    [SerializeField] private float delayBetweenWaves = 1.5f;
-    [SerializeField] private float delayBetweenShards = 0.5f;
-    [SerializeField] private float rotationSpeed = 15f;
-    //[SerializeField] private float spinDuration = 5f;
-    [SerializeField] private float shardSpeed = 10f;
-    [SerializeField] private float spawnDistance = 3f;
     private float acceleration = 10f;
     private float angle = 0f;
-
-    [SerializeField] private GameObject iceShard;
+    private float offSetBase;
 
     private void SpawnIceShard(int numberOfShard) {
-        float stepAngle = 360.0f - (360.0f / -rotationSpeed);
-        acceleration = -rotationSpeed / 50.0f;
+        float stepAngle = 360.0f - (360.0f / -bulletPerRotation);
+        acceleration = -bulletPerRotation / 50.0f * offSetBase ;
         angle = Mathf.Sin(acceleration) * 360f;
-        //angle = Mathf.Sin(acceleration) * 360f * spinDuration;
-        //angle += acceleration * 360f * spinDuration;
 
         float shotDirX = transform.position.x + Mathf.Sin(((angle + stepAngle * numberOfShard) * Mathf.PI) / 180f);
         float shotDirY = transform.position.y + Mathf.Cos(((angle + stepAngle * numberOfShard) * Mathf.PI) / 180f);
@@ -52,6 +56,12 @@ public class BulletHell : BaseAttack {
             int numberOfShardsSpawned = 0;
             wavesSpawnRate -= Time.deltaTime;
             if (wavesSpawnRate <= 0) {
+
+                if (offSetBase < 1) 
+                    offSetBase = offSetBase + offSet;
+                else
+                    offSetBase = offSetBase - offSet;
+
                 while (numberOfShardsSpawned < numberOfProjectilsPerWaves) {
                     shardsSpawnRate -= Time.deltaTime;
                     if (shardsSpawnRate <= 0) {
