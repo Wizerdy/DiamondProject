@@ -30,7 +30,7 @@ public class LiaAttack : MonoBehaviour {
                     Attack("Trees");
                     break;
                 case Shape.FALL:
-                    Attack("Leaf Beam");
+                    Attack("Leaf Beam", "Protector Trees");
                     break;
                 case Shape.WINTER:
                     Attack("Ice Hell");
