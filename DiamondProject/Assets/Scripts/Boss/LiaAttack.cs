@@ -49,6 +49,10 @@ public class LiaAttack : MonoBehaviour {
         _currentShape = shape;
     }
 
+    public void WaitTime(float time) {
+        _timer -= time;
+    }
+
     public void Attack(params string[] attacksId) {
         if (attacksId.Length == 0) { return; }
         string winner = Tools.Random(attacksId);

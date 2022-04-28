@@ -11,6 +11,7 @@ public class BossVFX : MonoBehaviour {
     [SerializeField] Fireball _fireball;
     [SerializeField] HealthProxy _healthProxy;
     [SerializeField] IMeetARealBoss _boss;
+    [SerializeField] BossShapeSystem _shapeSystem;
     [Header("VFX")]
     [SerializeField] MMFeedbacks _growTree;
     [SerializeField] MMFeedbacks _minion;
@@ -18,6 +19,7 @@ public class BossVFX : MonoBehaviour {
     [SerializeField] MMFeedbacks _hit;
     [SerializeField] MMFeedbacks _heal;
     [SerializeField] MMFeedbacks _death;
+    [SerializeField] MMFeedbacks _changeShape;
 
     private void Start() {
         //_trackingTree.OnCast += BossGrowTreeFeedback;
@@ -28,15 +30,19 @@ public class BossVFX : MonoBehaviour {
             _healthProxy.OnHeal += BossHealFeedback;
         }
         if (_boss != null) { _boss.OnDeath += BossDeathFeedback; }
+        if (_shapeSystem != null) { _shapeSystem.OnEnterShape += BossChangeShapeFeedback; }
     }
 
     private void OnDestroy() {
         //_trackingTree.OnCast -= BossGrowTreeFeedback;
-        _fireMissile.OnCast -= BossMinionFeedback;
-        _fireball.OnCast -= BossSpikeFeedback;
-        _healthProxy.OnHit -= BossHitFeedback;
-        _healthProxy.OnHeal -= BossHealFeedback;
-        _healthProxy.OnDeath -= BossDeathFeedback;
+        if (_fireMissile != null) { _fireMissile.OnCast -= BossMinionFeedback; }
+        if (_fireball != null) { _fireball.OnCast -= BossSpikeFeedback; }
+        if (_healthProxy != null) {
+            _healthProxy.OnHit -= BossHitFeedback;
+            _healthProxy.OnHeal -= BossHealFeedback;
+        }
+        if (_boss != null) { _boss.OnDeath -= BossDeathFeedback; }
+        if (_shapeSystem != null) { _shapeSystem.OnEnterShape -= BossChangeShapeFeedback; }
     }
 
     private void BossGrowTreeFeedback() {
@@ -62,5 +68,9 @@ public class BossVFX : MonoBehaviour {
 
     private void BossSpikeFeedback() {
         _spike?.PlayFeedbacks();
+    }
+
+    private void BossChangeShapeFeedback(BossShape shape) {
+        _changeShape?.PlayFeedbacks();
     }
 }
