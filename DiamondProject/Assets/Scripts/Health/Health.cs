@@ -39,7 +39,6 @@ public class Health : MonoBehaviour, IHealth {
 
     private void Start() {
         _currentHealth = _maxHealth;
-        this.Hurl();
         _onLateStart?.Invoke();
     }
 

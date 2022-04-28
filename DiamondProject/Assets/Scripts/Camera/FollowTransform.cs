@@ -19,6 +19,7 @@ public class FollowTransform : CameraAction {
     //void Update() {
     //    _movements.transform.position = _movements.transform.position.Override(target.Instance.position, _concernedAxis);
     //}
+ 
 }
 
 

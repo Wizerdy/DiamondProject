@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Lia : MonoBehaviour {
+    [SerializeField] Health _health;
     [SerializeField] IMeetARealBoss _boss;
     [SerializeField] BossShapeSystem _bossShapeSystem;
     [SerializeField] ShapeLibrary _shapeLibrary;
@@ -13,23 +14,27 @@ public class Lia : MonoBehaviour {
     [SerializeField] Trigger fall;
     [SerializeField] Trigger winter;
 
+    List<Shape> _shape = new List<Shape>();
+
     private void Update() {
-        if (spring.IsTrigger()) {
+        if (!_shape.Contains(Shape.SPRING) && spring.IsTrigger()) {
             NewForm(Shape.SPRING);
         }
-        if (summer.IsTrigger()) {
+        if (!_shape.Contains(Shape.SUMMER) && summer.IsTrigger()) {
             NewForm(Shape.SUMMER);
         }
-        if (fall.IsTrigger()) {
+        if (!_shape.Contains(Shape.FALL) && fall.IsTrigger()) {
             NewForm(Shape.FALL);
         }
-        if (winter.IsTrigger()) {
+        if (!_shape.Contains(Shape.WINTER) && winter.IsTrigger()) {
             NewForm(Shape.WINTER);
         }
     }
 
     public void NewForm(Shape shape) {
+        _shape.Add(shape);
         _bossShapeSystem.ChangeShape(_shapeLibrary.GetBossShape(shape));
+        _health.CurrentHealth = _health.MaxHealth;
     }
 
     public void ComputeDeath() {

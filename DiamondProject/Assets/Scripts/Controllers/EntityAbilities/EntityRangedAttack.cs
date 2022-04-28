@@ -23,7 +23,8 @@ public class EntityRangedAttack : MonoBehaviour {
         if (!_canRangeAttack) { return; }
         _onAttack?.Invoke(direction);
 
-        GameObject bull = Instantiate(_bullet, transform.position, Quaternion.identity);
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction.To3D()) * Quaternion.Euler(0f, 0f, 90f);
+        GameObject bull = Instantiate(_bullet, transform.position, rotation);
         DamageHealth damageHealth = bull.GetComponent<DamageHealth>();
         if (damageHealth != null) {
             damageHealth.Damage = _damage;

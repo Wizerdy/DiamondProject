@@ -19,10 +19,10 @@ public class EntityMeleeAttack : MonoBehaviour {
     public event UnityAction<Vector2> OnAttack { add => _onAttack.AddListener(value); remove => _onAttack.RemoveListener(value); }
     public event UnityAction<GameObject> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
 
-    bool isAttacking = false;
+    bool _isAttacking = false;
 
-    public bool CanAttack => !isAttacking;
-    public bool IsAttacking => isAttacking;
+    public bool CanAttack => !_isAttacking;
+    public bool IsAttacking => _isAttacking;
 
     private void Awake() {
         _attackHitbox.OnCollide += _InvokeOnHit;
@@ -38,12 +38,25 @@ public class EntityMeleeAttack : MonoBehaviour {
     }
 
     public void Attack(Vector2 direction) {
-        if (isAttacking) { return; }
-        isAttacking = true;
+        if (_isAttacking) { return; }
+        _isAttacking = true;
         _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
         _attackAnimator.SetTrigger("Attack");
         _onAttack?.Invoke(direction);
-        StartCoroutine(Tools.Delay(() => isAttacking = false, _cooldownTime));
+        StartCoroutine(Tools.Delay(() => _isAttacking = false, _cooldownTime));
+    }
+
+    public void Jab(Vector2 direction) {
+        if (_isAttacking) { return; }
+        _isAttacking = true;
+        _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
+        _attackAnimator.SetTrigger("Attack");
+        _onAttack?.Invoke(direction);
+        StartCoroutine(Tools.Delay(() => _isAttacking = false, _cooldownTime));
+    }
+
+    public void InstanceDamage() {
+
     }
 
     void _InvokeOnHit(GameObject obj) {

@@ -13,7 +13,14 @@ public class CameraFollowMultiple : MonoBehaviour {
     [SerializeField] Camera _camera;
     [SerializeField] float _minOrthographicSize = 5f;
     [SerializeField] List<TransformDelta> _targets = new List<TransformDelta>();
+    [SerializeField] protected bool _respectBoundaries;
+    [SerializeField] protected Transform _topBoundaries;
+    [SerializeField] protected Transform _botBoundaries;
+    [SerializeField] protected Transform _rightBoundaries;
+    [SerializeField] protected Transform _leftBoundaries;
 
+    public float CameraSize => _camera.orthographicSize;
+    public float CameraRatio => Height / Width;
     private float Height => _camera.orthographicSize;
     private float Width => _camera.orthographicSize * _camera.aspect;
 
@@ -23,6 +30,7 @@ public class CameraFollowMultiple : MonoBehaviour {
 
     void Update() {
         Vector2 barycenter = Barycenter(_targets);
+        Vector3 savePos = transform.position;
         transform.position = transform.position.Override(barycenter, Axis.X, Axis.Y);
         Vector2 maxDistance = new Vector2(0f, 0f);
         for (int i = 0; i < _targets.Count; i++) {
@@ -39,6 +47,13 @@ public class CameraFollowMultiple : MonoBehaviour {
         float targetHeight = maxDistance.y;
         float targetOrthoSize = Mathf.Max(targetWidth, targetHeight);
         _camera.orthographicSize = Mathf.Max(targetOrthoSize, _minOrthographicSize);
+        if (_respectBoundaries && IsOutBoundaries(transform.position)) {
+            float topSize = Mathf.Abs(transform.position.y - _topBoundaries.position.y);
+            float botSize = Mathf.Abs(transform.position.y - _botBoundaries.position.y);
+            float rightSize = Mathf.Abs(transform.position.x - _rightBoundaries.position.x) * CameraRatio;
+            float leftSize = Mathf.Abs(transform.position.x - _leftBoundaries.position.x) * CameraRatio;
+            _camera.orthographicSize = Mathf.Min(topSize, botSize, rightSize, leftSize);
+        }
     }
 
     Vector2 Barycenter(List<TransformDelta> targets) {
@@ -48,5 +63,23 @@ public class CameraFollowMultiple : MonoBehaviour {
         }
         barycenter /= targets.Count;
         return barycenter;
+    }
+
+    bool IsOutBoundaries(Vector3 position) {
+        bool outBoundaries = false;
+        Debug.Log("t " + (position.y + CameraSize));
+        Debug.Log("b " + (position.y - CameraSize));
+        Debug.Log("r " + (position.x + CameraSize / CameraRatio));
+        Debug.Log("l " + (position.x - CameraSize / CameraRatio));
+        Debug.Log("l " + (position.x - CameraSize / CameraRatio));
+        if (_topBoundaries.transform.position.y <= position.y + CameraSize)
+            outBoundaries = true;
+        if (_botBoundaries.transform.position.y >= position.y - CameraSize)
+            outBoundaries = true;
+        if (_rightBoundaries.transform.position.x <= position.x + CameraSize / CameraRatio)
+            outBoundaries = true;
+        if (_leftBoundaries.transform.position.x >= position.x - CameraSize / CameraRatio)
+            outBoundaries = true;
+        return outBoundaries;
     }
 }
