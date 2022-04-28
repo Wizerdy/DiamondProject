@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2071150001827530072}
   - component: {fileID: 2019609797025511747}
+  - component: {fileID: 6086444797667096564}
   m_Layer: 0
   m_Name: TrackingTree
   m_TagString: Untagged
@@ -55,6 +56,7 @@ MonoBehaviour:
   duration: 1
   coolDown: 1
   isPlaying: 0
+  locked: 0
   _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
   numberOfTreesToSpawn: 5
   treeHp: 10
@@ -64,3 +66,15 @@ MonoBehaviour:
   fireDamageFrequency: 1
   fireRadius: 5
   fireTree: {fileID: 5283955038019920375, guid: 3f95da4057806c14a96e6442bde4b776, type: 3}
+--- !u!114 &6086444797667096564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628223319048608624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

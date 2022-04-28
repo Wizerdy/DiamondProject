@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6457567941872538586}
   - component: {fileID: 7056691463056584971}
+  - component: {fileID: 905497698408767609}
   m_Layer: 0
   m_Name: FireMissile
   m_TagString: Untagged
@@ -45,13 +46,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
+  _name: Action
   _duration: 5
-  _durationTimer: 1.7059929
-  transitionTime: 1
-  missile: {fileID: -8354140553841378876, guid: 7d29b3c2055f5e8438dc6128d359c52a, type: 3}
+  _transitionTime: 1
+  nextState: Transition
   missileSpeed: 1
+  missileRotationSpeed: 1
   missileLifetime: 5
   missileDistSpawn: 1
   missileRate: 1
   missileBounds: {x: 3, y: 6}
-  radiusBounds: {x: 2, y: 4}
+  missile: {fileID: -8354140553841378876, guid: 7d29b3c2055f5e8438dc6128d359c52a, type: 3}
+  counter: 0
+--- !u!114 &905497698408767609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6722918794221842481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

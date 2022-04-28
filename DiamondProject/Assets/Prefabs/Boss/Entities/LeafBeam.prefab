@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2842759496821591751}
   - component: {fileID: 5676907778118688739}
   - component: {fileID: 5473442097045774208}
+  - component: {fileID: 101263905000557582}
   m_Layer: 0
   m_Name: LeafBeam
   m_TagString: Untagged
@@ -62,7 +63,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059472417401592482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -154,6 +155,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &101263905000557582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059472417401592482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2775342786701048671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,6 +174,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2842759496821591751}
     m_Modifications:
+    - target: {fileID: 2213823574054195820, guid: e4dbbcf51e68b094c9c5a98008f4100a, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2213823574054195821, guid: e4dbbcf51e68b094c9c5a98008f4100a, type: 3}
       propertyPath: m_RootOrder
       value: 0

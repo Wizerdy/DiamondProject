@@ -8,9 +8,11 @@ public class DamageHealth : MonoBehaviour {
     [SerializeField] int _damage = 5;
     [SerializeField] MultipleTagSelector _damageables;
     [SerializeField] bool _destroyOnHit;
+    [SerializeField] bool _onlyDamageOnceEach = false;
     [SerializeField] string _damageType;
     
     Tools.BasicDelegate<GameObject> _onCollide;
+    List<GameObject> _hitted = new List<GameObject>();
 
     #region Properties
 
@@ -29,9 +31,11 @@ public class DamageHealth : MonoBehaviour {
     }
 
     private void Collide(Collider2D collision, bool hardHit = false) {
-        this.Hurl(collision.name);
         if (_damageables.Contains(collision.gameObject.tag)) {
+            GameObject elderly = collision.transform.FindElderlyByTag().gameObject;
+            if (_onlyDamageOnceEach && _hitted.Contains(elderly)) { return; }
             collision.gameObject.GetComponent<IHealth>()?.TakeDamage(_damage, _damageType);
+            _hitted.Add(elderly);
             _onCollide?.Invoke(collision.gameObject);
             if (_destroyOnHit) {
                 Die();
@@ -43,6 +47,10 @@ public class DamageHealth : MonoBehaviour {
             _onCollide?.Invoke(collision.gameObject);
             Die();
         }
+    }
+
+    public void ResetHitted() {
+        _hitted.Clear();
     }
 
     public void Die() {

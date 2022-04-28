@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2098140349797664198}
   - component: {fileID: 2055438115697172212}
   - component: {fileID: -770647749590323912}
+  - component: {fileID: 4276334815238507717}
   m_Layer: 0
   m_Name: BrambleBall
   m_TagString: Untagged
@@ -115,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2db4dafd1b17446adfc9b3d301e5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeSpan: 20
   speed: 5
   damage: 20
 --- !u!50 &-770647749590323912
@@ -138,3 +140,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4276334815238507717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6675014743253245296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
