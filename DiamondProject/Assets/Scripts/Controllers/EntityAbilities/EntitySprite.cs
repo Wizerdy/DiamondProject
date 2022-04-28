@@ -18,10 +18,6 @@ public class EntitySprite : MonoBehaviour {
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update() {
-        Debug.Log(_spriteRenderer.sprite.name);
-    }
-
     public void LookAt(Vector2 direction) {
         float angle = Vector2.SignedAngle(Vector2.right, direction);
         angle = Tools.PositiveAngle(angle);

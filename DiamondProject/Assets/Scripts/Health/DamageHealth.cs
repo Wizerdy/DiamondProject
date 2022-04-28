@@ -29,6 +29,7 @@ public class DamageHealth : MonoBehaviour {
     }
 
     private void Collide(Collider2D collision, bool hardHit = false) {
+        this.Hurl(collision.name);
         if (_damageables.Contains(collision.gameObject.tag)) {
             collision.gameObject.GetComponent<IHealth>()?.TakeDamage(_damage, _damageType);
             _onCollide?.Invoke(collision.gameObject);

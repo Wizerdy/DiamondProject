@@ -66,20 +66,14 @@ public class CameraFollowMultiple : MonoBehaviour {
     }
 
     bool IsOutBoundaries(Vector3 position) {
-        bool outBoundaries = false;
-        Debug.Log("t " + (position.y + CameraSize));
-        Debug.Log("b " + (position.y - CameraSize));
-        Debug.Log("r " + (position.x + CameraSize / CameraRatio));
-        Debug.Log("l " + (position.x - CameraSize / CameraRatio));
-        Debug.Log("l " + (position.x - CameraSize / CameraRatio));
         if (_topBoundaries.transform.position.y <= position.y + CameraSize)
-            outBoundaries = true;
+            return true;
         if (_botBoundaries.transform.position.y >= position.y - CameraSize)
-            outBoundaries = true;
+            return true;
         if (_rightBoundaries.transform.position.x <= position.x + CameraSize / CameraRatio)
-            outBoundaries = true;
+            return true;
         if (_leftBoundaries.transform.position.x >= position.x - CameraSize / CameraRatio)
-            outBoundaries = true;
-        return outBoundaries;
+            return true;
+        return false;
     }
 }
