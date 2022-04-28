@@ -44,7 +44,7 @@ public class BossVFX : MonoBehaviour {
     }
 
     private void BossHitFeedback(int amount) {
-        _hit?.PlayFeedbacks();
+        //_hit?.PlayFeedbacks();
     }
 
     private void BossHealFeedback(int amount) {
