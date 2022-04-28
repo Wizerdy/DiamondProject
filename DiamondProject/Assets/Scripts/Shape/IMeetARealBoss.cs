@@ -9,6 +9,7 @@ public class IMeetARealBoss : MonoBehaviour {
     [SerializeField] Animator _animator;
 
     [SerializeField] UnityEvent<int> _onInvincibility;
+    [SerializeField] UnityEvent _onDeath;
 
     #region Properties
 
@@ -16,6 +17,7 @@ public class IMeetARealBoss : MonoBehaviour {
     public RuntimeAnimatorController Animator { get => _animator.runtimeAnimatorController; set => ChangeAnimatorController(value); }
 
     public event UnityAction<int> OnInvincibility { add => _onInvincibility.AddListener(value); remove => _onInvincibility.RemoveListener(value); }
+    public event UnityAction OnDeath { add => _onDeath.AddListener(value); remove => _onDeath.RemoveListener(value); }
 
     #endregion
 
@@ -35,6 +37,6 @@ public class IMeetARealBoss : MonoBehaviour {
     }
 
     public void Death() {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

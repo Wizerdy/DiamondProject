@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5837281410485709126}
   - component: {fileID: 2797063147087811553}
+  - component: {fileID: 5510401435698964393}
   m_Layer: 0
   m_Name: RockFall
   m_TagString: Untagged
@@ -45,16 +46,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boss: {fileID: 11400000, guid: 629384d0b0be7c7479e187a76278660b, type: 2}
+  _name: Action
   _duration: 5
-  _durationTimer: 4
-  transitionTime: 1
+  _transitionTime: 1
+  nextState: Transition
+  apparitionHigh: 10
+  radiusBounds: 0
+  rocksNumberBounds: {x: 5, y: 8}
   HealthRef: {fileID: 0}
   fallingObject: {fileID: 2616920750109860588, guid: 4265421f2df4efe43acb31973280211c, type: 3}
+  centralTransform: {fileID: 0}
   rock: {fileID: 2237366760853028271, guid: adaa11c57b8ac5f48a8e94d9b73ea010, type: 3}
   rockShield: {fileID: 8956266947741721987, guid: 85629fa09634dfb4cb76d13e73cd07cb, type: 3}
   rocks: []
-  body: {fileID: 11400000, guid: 16d5954afc9222743877fdd43e2c69bb, type: 2}
-  radiusBounds: {x: 2, y: 4}
-  rocksNumberBounds: {x: 5, y: 8}
-  fallingTime: 0.5
-  apparitionHigh: 10
+--- !u!114 &5510401435698964393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867988783618890588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
