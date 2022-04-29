@@ -522,6 +522,15 @@ namespace ToolsBoxEngine {
             }
         }
 
+        public static Transform FindElderlyByTag(this Transform target) {
+            string tag = target.tag;
+            if (tag == "Untagged") { return target; }
+            while (target.parent != null && target.parent.CompareTag(tag)) {
+                target = target.parent;
+            }
+            return target;
+        }
+
         #endregion
 
         #region Print
