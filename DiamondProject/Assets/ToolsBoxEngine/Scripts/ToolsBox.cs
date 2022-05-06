@@ -462,44 +462,6 @@ namespace ToolsBoxEngine {
             return value;
         }
 
-        public static Rect GetPlayerRect(int playerId, int maxPlayer) {
-            switch (maxPlayer) {
-                case 1:
-                    return new Rect(0, 0, 1, 1);
-                case 2:
-                    switch (playerId) {
-                        case 1:
-                            return new Rect(0, 0.5f, 1, 0.5f);
-                        case 2:
-                            return new Rect(0, 0, 1, 0.5f);
-                    }
-                    break;
-                case 3:
-                    switch (playerId) {
-                        case 1:
-                            return new Rect(0, 0.5f, 0.5f, 0.5f);
-                        case 2:
-                            return new Rect(0.5f, 0.5f, 0.5f, 0.5f);
-                        case 3:
-                            return new Rect(0, 0, 0.5f, 0.5f);
-                    }
-                    break;
-                case 4:
-                    switch (playerId) {
-                        case 1:
-                            return new Rect(0, 0.5f, 0.5f, 0.5f);
-                        case 2:
-                            return new Rect(0.5f, 0.5f, 0.5f, 0.5f);
-                        case 3:
-                            return new Rect(0, 0, 0.5f, 0.5f);
-                        case 4:
-                            return new Rect(0.5f, 0, 0.5f, 0.5f);
-                    }
-                    break;
-            }
-            return new Rect(0, 0, 1, 1);
-        }
-
         public static float AcuteAngle(float angle) {
             if (angle > 180f) {
                 angle = angle - 360f;
@@ -510,6 +472,13 @@ namespace ToolsBoxEngine {
 
         public static Vector3 AcuteAngle(Vector3 angle) {
             return new Vector3(AcuteAngle(angle.x), AcuteAngle(angle.y), AcuteAngle(angle.z));
+        }
+
+        public static float PositiveAngle(float angle) {
+            while (angle < 0) {
+                angle = 360f + angle;
+            }
+            return angle;
         }
 
         public static int Ponder(params float[] weight) {
@@ -551,6 +520,15 @@ namespace ToolsBoxEngine {
             } else {
                 dummy = null;
             }
+        }
+
+        public static Transform FindElderlyByTag(this Transform target) {
+            string tag = target.tag;
+            if (tag == "Untagged") { return target; }
+            while (target.parent != null && target.parent.CompareTag(tag)) {
+                target = target.parent;
+            }
+            return target;
         }
 
         #endregion

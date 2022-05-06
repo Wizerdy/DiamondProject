@@ -7,7 +7,7 @@ public class IceWall : MonoBehaviour {
     [SerializeField] private float radius = 50f;
     [SerializeField] private float offSet = 40f;
     [SerializeField] private float speed = 5f;
-    [SerializeField] private Player player;
+    [SerializeField] private Reference<Transform> player;
 
     [SerializeField] private PolygonCollider2D polygonCollider;
 
@@ -23,7 +23,7 @@ public class IceWall : MonoBehaviour {
         line.useWorldSpace = false;
         circleAngle = radius;
 
-        float angle = Mathf.Atan2(player.transform.position.x, player.transform.position.y) * 180 / Mathf.PI;
+        float angle = Mathf.Atan2(player.Instance.position.x, player.Instance.position.y) * 180 / Mathf.PI;
         transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, -angle);
         CreateWall();
     }

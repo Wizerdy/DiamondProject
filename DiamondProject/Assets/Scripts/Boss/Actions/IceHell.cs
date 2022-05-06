@@ -31,6 +31,7 @@ public class IceHell : BaseAttack {
     [SerializeField] private float delayBetweenShards = 0.5f;
 
     [SerializeField] private float angleOffSet = 10f;
+    [SerializeField] private float spawnDistance = 0.5f;
 
     [SerializeField] private GameObject iceShard;
 
@@ -39,7 +40,12 @@ public class IceHell : BaseAttack {
         Vector3 playerPosition = _target.Instance?.position ?? Vector3.zero;
         if (_patternType == PatternType.Focus) {
             Vector3 dir = _target?.Instance.position ?? Vector3.up;
-            shard.GetComponent<IceShard>().Init(_target?.Instance, _speed, iceShardDamage, dir);
+
+            Vector3 shotDir = (dir - transform.position).normalized * _speed;
+            Vector3 spawnPos = transform.position + shotDir * spawnDistance;
+            shard.transform.position = spawnPos;
+
+            shard.GetComponent<IceShard>().Init(_target?.Instance, _speed, iceShardDamage, dir, true);
         }
 
         if (_patternType == PatternType.Scatter) {
@@ -51,6 +57,13 @@ public class IceHell : BaseAttack {
             float newX = Mathf.Cos(val);
             float newY = Mathf.Sin(val);
             Vector3 dir = new Vector3(newX, newY, 0);
+
+            Vector3 shotDir = (dir - transform.position).normalized * _speed;
+            Vector3 spawnPos = transform.position + shotDir * spawnDistance;
+            shard.transform.position = spawnPos;
+
+            float angle = (Mathf.Atan2(transform.position.x - dir.x, transform.position.y - dir.y) * 180 / Mathf.PI + 630) % 360;
+            shard.transform.rotation = Quaternion.Euler(0.0f, 0.0f, -angle);
 
             shard.GetComponent<IceShard>().Init(_target?.Instance, _speed, iceShardDamage, dir);
         }
@@ -132,6 +145,9 @@ public class IceHell : BaseAttack {
                         yield return null;
                     }
                 }
+                break;
+            default:
+                Debug.Log("ICE HELL PATTERN ERROR");
                 break;
         }
 
