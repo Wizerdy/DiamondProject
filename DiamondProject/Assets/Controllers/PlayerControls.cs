@@ -151,7 +151,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""58d0a40c-33c8-44b9-8852-9e0dc1bbf0c6"",
             ""actions"": [
                 {
-                    ""name"": ""Attack"",
+                    ""name"": ""MeleeAttack"",
                     ""type"": ""Button"",
                     ""id"": ""d250b4e9-6165-4791-8dfa-53000d9f776b"",
                     ""expectedControlType"": ""Button"",
@@ -186,7 +186,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""MeleeAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -252,7 +252,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
         // Battle
         m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
-        m_Battle_Attack = m_Battle.FindAction("Attack", throwIfNotFound: true);
+        m_Battle_MeleeAttack = m_Battle.FindAction("MeleeAttack", throwIfNotFound: true);
         m_Battle_RangedAttack = m_Battle.FindAction("RangedAttack", throwIfNotFound: true);
         m_Battle_AttackDirection = m_Battle.FindAction("AttackDirection", throwIfNotFound: true);
         // Dialogue
@@ -366,14 +366,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // Battle
     private readonly InputActionMap m_Battle;
     private IBattleActions m_BattleActionsCallbackInterface;
-    private readonly InputAction m_Battle_Attack;
+    private readonly InputAction m_Battle_MeleeAttack;
     private readonly InputAction m_Battle_RangedAttack;
     private readonly InputAction m_Battle_AttackDirection;
     public struct BattleActions
     {
         private @PlayerControls m_Wrapper;
         public BattleActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Attack => m_Wrapper.m_Battle_Attack;
+        public InputAction @MeleeAttack => m_Wrapper.m_Battle_MeleeAttack;
         public InputAction @RangedAttack => m_Wrapper.m_Battle_RangedAttack;
         public InputAction @AttackDirection => m_Wrapper.m_Battle_AttackDirection;
         public InputActionMap Get() { return m_Wrapper.m_Battle; }
@@ -385,9 +385,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_BattleActionsCallbackInterface != null)
             {
-                @Attack.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttack;
-                @Attack.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttack;
-                @Attack.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnAttack;
+                @MeleeAttack.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnMeleeAttack;
+                @MeleeAttack.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnMeleeAttack;
+                @MeleeAttack.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnMeleeAttack;
                 @RangedAttack.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnRangedAttack;
                 @RangedAttack.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnRangedAttack;
                 @RangedAttack.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnRangedAttack;
@@ -398,9 +398,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             m_Wrapper.m_BattleActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Attack.started += instance.OnAttack;
-                @Attack.performed += instance.OnAttack;
-                @Attack.canceled += instance.OnAttack;
+                @MeleeAttack.started += instance.OnMeleeAttack;
+                @MeleeAttack.performed += instance.OnMeleeAttack;
+                @MeleeAttack.canceled += instance.OnMeleeAttack;
                 @RangedAttack.started += instance.OnRangedAttack;
                 @RangedAttack.performed += instance.OnRangedAttack;
                 @RangedAttack.canceled += instance.OnRangedAttack;
@@ -452,7 +452,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public interface IBattleActions
     {
-        void OnAttack(InputAction.CallbackContext context);
+        void OnMeleeAttack(InputAction.CallbackContext context);
         void OnRangedAttack(InputAction.CallbackContext context);
         void OnAttackDirection(InputAction.CallbackContext context);
     }
