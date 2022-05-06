@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct Hint {
+    public int id;
+    public string description;
+    public bool isTrigger;
+    public bool didNornaGaveHint;
+    public bool alreadySawHint;
+    public string defaultText;
+    public string unlockedText;
+}
+
 [CreateAssetMenu(menuName = "PosterityObject")]
 public class PosterityObject : ScriptableObject {
     public bool resetOnStart = true;
@@ -25,6 +36,9 @@ public class PosterityObject : ScriptableObject {
 
     public bool winterFormTriggerActivated = false;
 
+    public List<Hint> triggerHintList = new List<Hint>();
+    public List<Hint> bossHintList = new List<Hint>();
+    public List<Hint> characterHintList = new List<Hint>();
     public void ResetValues() {
         nbCorpse = 0;
         nbTimeTalkedToNorna = 0;

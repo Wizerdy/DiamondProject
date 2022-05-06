@@ -88,6 +88,10 @@ public class DiaryManager : MonoBehaviour
     }
 
     public void GoToHub() {
-        flowchart.SendMessage("GoToHub");
+        flowchart.SendFungusMessage("GoToHub");
+    }
+
+    public void CloseBook() {
+        flowchart.SendFungusMessage("CloseBook");
     }
 }

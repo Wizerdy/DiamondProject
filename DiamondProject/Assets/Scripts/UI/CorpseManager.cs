@@ -5,36 +5,21 @@ using UnityEngine.UI;
 
 public class CorpseManager : MonoBehaviour
 {
-
-    [Range(0,1)]
-    [SerializeField] private float opacity = 0.6f;
+    [SerializeField] private Color inPossessionColor;
+    [SerializeField] private Color notInPossessionColor;
 
     [Header("Pas touche")]
-    [SerializeField] private GameObject firstCorpse;
-    [SerializeField] private GameObject secondCorpse;
-    [SerializeField] private GameObject thirdCorpse;
+    [SerializeField] private List<Image> corpseList = new List<Image>();
     [SerializeField] private PosterityObject posterity;
-
     private int numberOfCorpse;
-    private Image firstCorpseImage;
-    private Image secondCorpseImage;
-    private Image thirdCorpseImage;
-    // Start is called before the first frame update
-    void Start()
-    {
-        firstCorpseImage = firstCorpse.GetComponent<Image>();
-        secondCorpseImage = secondCorpse.GetComponent<Image>();
-        thirdCorpseImage = thirdCorpse.GetComponent<Image>();
-    }
+    private Color deactivateCorpse = new Color(0, 0, 0, 0);
 
     public void SpawnFirstCorps() {
-        firstCorpse.SetActive(true);
-        firstCorpseImage.color = new Color(1,1,1,1);
+        corpseList[0].color = inPossessionColor;
     }
 
     public void ConsummeFirstCorps() {
-        firstCorpse.SetActive(true);
-        firstCorpseImage.color = new Color(1, 1, 1, opacity);
+        corpseList[0].color = notInPossessionColor;
     }
 
     public void ConsummeCorpse() {
@@ -43,102 +28,92 @@ public class CorpseManager : MonoBehaviour
                 Debug.Log("0 CORPSE");
                 break;
             case 1:
-                firstCorpseImage.color = new Color(1, 1, 1, opacity);
+                corpseList[0].color = notInPossessionColor;
                 --numberOfCorpse;
                 break;
             case 2:
-                secondCorpseImage.color = new Color(1, 1, 1, opacity);
+                corpseList[1].color = notInPossessionColor;
                 --numberOfCorpse;
                 break;
             case 3:
-                thirdCorpseImage.color = new Color(1, 1, 1, opacity);
+                corpseList[2].color = notInPossessionColor;
                 --numberOfCorpse;
-                break;
-            default:
-                Debug.Log("NOT ENOUGH CORPSE");
                 break;
         }
     }
     public void AddCorpse() {
         switch (numberOfCorpse) {
             case 0:
-                firstCorpse.SetActive(true);
-                firstCorpseImage.color = new Color(1, 1, 1, 1);
+                corpseList[0].color = notInPossessionColor;
                 ++numberOfCorpse;
                 break;
             case 1:
-                secondCorpse.SetActive(true);
-                secondCorpseImage.color = new Color(1, 1, 1, 1);
+                corpseList[1].color = notInPossessionColor;
                 ++numberOfCorpse;
                 break;
             case 2:
-                thirdCorpse.SetActive(true);
-                thirdCorpseImage.color = new Color(1, 1, 1, 1);
+                corpseList[2].color = notInPossessionColor;
                 ++numberOfCorpse;
                 break;
             default:
-                Debug.Log("CORPSE FULL");
+                Debug.LogWarning("CORPSE NUMBER MAXED OUT");
                 break;
         }
     }
 
     public void ResetCorpse() {
         numberOfCorpse = 0;
-
-        firstCorpse.SetActive(true);
-        firstCorpseImage.color = new Color(1, 1, 1, opacity);
-        secondCorpse.SetActive(true);
-        secondCorpseImage.color = new Color(1, 1, 1, opacity);
-        thirdCorpse.SetActive(true);
-        thirdCorpseImage.color = new Color(1, 1, 1, opacity);
+        foreach(var corpse in corpseList) {
+            corpse.color = notInPossessionColor;
+        }
     }
 
-    public void UpdateNumberOfCorpse(int nb) {
-        numberOfCorpse = nb;
-
+    public void UpdateNumberOfCorpse() {
         switch (numberOfCorpse) {
             case 1:
-                firstCorpse.SetActive(true);
-                firstCorpseImage.color = new Color(1, 1, 1, 1);
-                secondCorpse.SetActive(true);
-                secondCorpseImage.color = new Color(1, 1, 1, opacity);
-                thirdCorpse.SetActive(true);
-                thirdCorpseImage.color = new Color(1, 1, 1, opacity);
+                corpseList[0].color = inPossessionColor;
+                corpseList[1].color = notInPossessionColor;
+                corpseList[2].color = notInPossessionColor;
                 break;
             case 2:
-                firstCorpse.SetActive(true);
-                firstCorpseImage.color = new Color(1, 1, 1, 1);
-                secondCorpse.SetActive(true);
-                secondCorpseImage.color = new Color(1, 1, 1, 1);
-                thirdCorpse.SetActive(true);
-                thirdCorpseImage.color = new Color(1, 1, 1, opacity);
+                corpseList[0].color = inPossessionColor;
+                corpseList[1].color = inPossessionColor;
+                corpseList[2].color = notInPossessionColor;
                 break;
             case 3:
-                firstCorpse.SetActive(true);
-                firstCorpseImage.color = new Color(1, 1, 1, 1);
-                secondCorpse.SetActive(true);
-                secondCorpseImage.color = new Color(1, 1, 1, 1);
-                thirdCorpse.SetActive(true);
-                thirdCorpseImage.color = new Color(1, 1, 1, 1);
+                corpseList[0].color = inPossessionColor;
+                corpseList[1].color = inPossessionColor;
+                corpseList[2].color = inPossessionColor;
                 break;
             default:
-                Debug.Log("CORPSE FULL");
+                Debug.Log("UPDATE ERROR");
                 break;
         }
-        //for (int i = 0; i < numberOfCorpse; i++) {
-        //    Debug.Log("call addcopresr");
-        //    AddCorpse();
-        //}
     }
 
     public int GetNumberOfCorpse() {
         return numberOfCorpse;
     }
 
-    public void PosterityCorpseUpdate(int corpseNumber) {
-        if (corpseNumber < 3)
-            posterity.nbCorpse = corpseNumber;
+    public void GetPosterityCorpse() {
+        numberOfCorpse = posterity.nbCorpse;
+    }
+
+    public void UpdatePosterityCorpse() {
+        if (numberOfCorpse < 3)
+            posterity.nbCorpse = numberOfCorpse;
         else
             posterity.nbCorpse = 3;
+    }
+
+    public void DecreaseCorpseNumber() {
+        --numberOfCorpse;
+    }
+
+    public void IncreaseCorpseNumber() {
+        if (numberOfCorpse < 3)
+            ++numberOfCorpse;
+        else
+            return;
     }
 }

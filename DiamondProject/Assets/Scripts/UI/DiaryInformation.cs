@@ -1,44 +1,60 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public enum Season {
-    winter,
-    fall,
-    summer,
-    spring
-
-}
-[System.Serializable]
-public struct DiaryEntry {
-    public int entryNumber;
-    public TextMesh informationTxtComponent;
-    public TextMesh buttonTxtComponent;
-
-    [Header("Text")]
-    public string informationText;
-    public string buttonMatricule;
-
-    public GameObject buttonGameObj;
-    public GameObject informationGameObj;
+enum hintType {
+    Trigger, Boss, Character
 }
 public class DiaryInformation : MonoBehaviour
 {
+    [SerializeField] private int entryId;
+    [SerializeField] private TextMeshProUGUI informationTxtComponent;
     [SerializeField] private PosterityObject posterity;
-    public List<DiaryEntry> diaryEntries = new List<DiaryEntry>();
-    private int currentEntryDisplayed = 0;
+    [SerializeField] private hintType hintType;
+    private string informationText;
 
-    public void OnButtonClick(int entryNum) {
-        if (currentEntryDisplayed == 0) {
-            for (int i = 0; i < diaryEntries.Count; i++) {
-                if (diaryEntries[i].entryNumber == entryNum) {
-                   // diaryEntries[i].butt
+    private void Start() {
+        switch (hintType) {
+            case hintType.Trigger:
+                for (int i = 0; i < posterity.triggerHintList.Count; i++) {
+                    if (posterity.triggerHintList[i].id == entryId) {
+                        if (posterity.triggerHintList[i].isTrigger) 
+                            informationText = posterity.triggerHintList[i].unlockedText;
+                        else
+                            informationText = posterity.triggerHintList[i].defaultText;
+
+                        informationTxtComponent.text = informationText;
+                        return;
+                    }
                 }
-            }
-        }
-    }
+                break;
+            case hintType.Boss:
+                for (int i = 0; i < posterity.bossHintList.Count; i++) {
+                    if (posterity.bossHintList[i].id == entryId) {
+                        if (posterity.bossHintList[i].isTrigger)
+                            informationText = posterity.bossHintList[i].unlockedText;
+                        else
+                            informationText = posterity.bossHintList[i].defaultText;
 
-    public void DisplayEntry() {
-        
+                        informationTxtComponent.text = informationText;
+                        return;
+                    }
+                }
+                break;
+            case hintType.Character:
+                for (int i = 0; i < posterity.characterHintList.Count; i++) {
+                    if (posterity.characterHintList[i].id == entryId) {
+                        if (posterity.characterHintList[i].isTrigger)
+                            informationText = posterity.characterHintList[i].unlockedText;
+                        else
+                            informationText = posterity.characterHintList[i].defaultText;
+
+                        informationTxtComponent.text = informationText;
+                        return;
+                    }
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

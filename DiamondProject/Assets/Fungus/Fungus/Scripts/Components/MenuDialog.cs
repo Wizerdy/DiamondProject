@@ -128,15 +128,15 @@ namespace Fungus
         {
             float elapsedTime = 0;
 
-            //Slider timeoutSlider = CachedSlider;
+            Slider timeoutSlider = CachedSlider;
 
             while (elapsedTime < timeoutDuration)
             {
-                //if (timeoutSlider != null)
-                //{
+                if (timeoutSlider != null)
+                {
                     float t = 1f - elapsedTime / timeoutDuration;
-                    //timeoutSlider.value = t;
-                //}
+                    timeoutSlider.value = t;
+                }
 
                 elapsedTime += Time.deltaTime;
 
@@ -337,7 +337,7 @@ namespace Fungus
         {
             if (cachedSlider != null)
             {
-                //cachedSlider.gameObject.SetActive(true);
+                cachedSlider.gameObject.SetActive(true);
                 gameObject.SetActive(true);
                 StopAllCoroutines();
                 StartCoroutine(WaitForTimeout(duration, targetBlock));
