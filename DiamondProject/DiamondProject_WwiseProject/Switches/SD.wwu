@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2B871358-8D00-4F3B-B556-30796ACFDADF}" SchemaVersion="103">
+	<Switches>
+		<WorkUnit Name="SD" ID="{2B871358-8D00-4F3B-B556-30796ACFDADF}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="3"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<SwitchGroup Name="SW_WeaponType" ID="{5266B77C-C892-459D-8C33-DEED65C8FBF6}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Sword" ID="{C048370F-6C06-44F9-A59D-F9974C9B9D1D}"/>
+						<Switch Name="Crossbow" ID="{42E621F9-0F64-4704-80F0-11ADD76663A0}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="SW_BossForm" ID="{559ECB7B-E93E-4A33-87AB-2F5FB2D45205}">
+					<ChildrenList>
+						<Switch Name="Neutral" ID="{7C092A90-46FD-4CEC-9026-CAB624431E18}"/>
+						<Switch Name="Winter" ID="{DAB86AC5-41EC-41E6-B8A6-65E8BB56192F}"/>
+						<Switch Name="Fall" ID="{9462570B-C14A-425D-A809-38A78DCFFD30}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>
