@@ -1,6 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{F55CF417-5CB9-4B74-B37D-811B0B9E6A82}" SchemaVersion="103" RootDocumentID="{6D1F77A3-DCC8-4815-926D-36B821AE11B9}" ParentDocumentID="{064CE3AC-E1DF-4D94-8518-7664F2BEA971}">
 	<AudioObjects>
-		<WorkUnit Name="PumpKid_Fol" ID="{F55CF417-5CB9-4B74-B37D-811B0B9E6A82}" OwnerID="{064CE3AC-E1DF-4D94-8518-7664F2BEA971}" PersistMode="Nested"/>
+		<WorkUnit Name="PumpKid_Fol" ID="{F55CF417-5CB9-4B74-B37D-811B0B9E6A82}" OwnerID="{064CE3AC-E1DF-4D94-8518-7664F2BEA971}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="Pumpkid_Fol" ID="{9B6CB146-5869-4F26-8A45-E1043FAC1A4F}" ShortID="455077368">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SwitchContainer Name="Pumkid_Footsteps" ID="{3D8AE3E9-2BFD-47CC-A0D3-C3342DA712A4}" ShortID="731384632">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="SW_Ground" ID="{57D5A368-1DF3-4632-B56F-8FDD3E756369}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SwitchContainer Name="Pumpkid_Footsteps_Dirt" ID="{20E27B61-7E4D-4D5F-97AD-A3849AB2DA42}" ShortID="682805897">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+									<GroupingInfo/>
+								</SwitchContainer>
+								<SwitchContainer Name="Pumpkid_Footsteps_Leaf" ID="{533AE4CD-EAE4-4DFC-B5F2-D4E7A902F932}" ShortID="1065047056">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+									<GroupingInfo/>
+								</SwitchContainer>
+								<SwitchContainer Name="Pumpkid_Footsteps_Ice" ID="{01767718-CE91-4330-BAA6-6BBB6F8F4D0F}" ShortID="340157274">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+									<GroupingInfo/>
+								</SwitchContainer>
+							</ChildrenList>
+							<ObjectLists/>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Pumpkid_Footsteps_Ice" ID="{01767718-CE91-4330-BAA6-6BBB6F8F4D0F}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Pumpkid_Footsteps_Dirt" ID="{20E27B61-7E4D-4D5F-97AD-A3849AB2DA42}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Pumpkid_Footsteps_Leaf" ID="{533AE4CD-EAE4-4DFC-B5F2-D4E7A902F932}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Ice" ID="{2353E11A-8B5D-41E3-B5D9-00E68429C458}"/>
+										<ItemList>
+											<ItemRef Name="Pumpkid_Footsteps_Ice" ID="{01767718-CE91-4330-BAA6-6BBB6F8F4D0F}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Leaf" ID="{F998925D-C425-488B-BA53-94E91391FCC7}"/>
+										<ItemList>
+											<ItemRef Name="Pumpkid_Footsteps_Leaf" ID="{533AE4CD-EAE4-4DFC-B5F2-D4E7A902F932}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Dirt" ID="{1C878391-3A0B-4ACA-B003-88784F2F9432}"/>
+										<ItemList>
+											<ItemRef Name="Pumpkid_Footsteps_Dirt" ID="{20E27B61-7E4D-4D5F-97AD-A3849AB2DA42}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

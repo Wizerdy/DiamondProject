@@ -6,6 +6,15 @@
 				<Property Name="Color" Type="int16" Value="3"/>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
+			<ChildrenList>
+				<StateGroup Name="ST_GameMode" ID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}">
+					<ChildrenList>
+						<State Name="None" ID="{7760B096-6CF4-4C28-81AB-7C165E71B6F1}"/>
+						<State Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+						<State Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
 		</WorkUnit>
 	</States>
 </WwiseDocument>

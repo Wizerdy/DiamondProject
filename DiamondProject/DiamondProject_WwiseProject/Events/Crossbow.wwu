@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3B31DA07-4C9F-4417-B422-960396712C4F}" SchemaVersion="103" RootDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" ParentDocumentID="{ACD8354D-748D-44C9-9637-56BC40B116AF}">
 	<Events>
-		<WorkUnit Name="Crossbow" ID="{3B31DA07-4C9F-4417-B422-960396712C4F}" OwnerID="{ACD8354D-748D-44C9-9637-56BC40B116AF}" PersistMode="Nested"/>
+		<WorkUnit Name="Crossbow" ID="{3B31DA07-4C9F-4417-B422-960396712C4F}" OwnerID="{ACD8354D-748D-44C9-9637-56BC40B116AF}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Pumpkid_Crossbow_Shot" ID="{4FC6C169-F707-4E7D-ABBA-14DBA7939FE6}">
+					<ChildrenList>
+						<Action Name="" ID="{724A1FC3-4F54-45AA-99A9-9C2FC13AF2C8}" ShortID="473107917">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_WeaponType" ID="{AD571BFF-B53F-4690-8FD3-0BF31CF3A8E8}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{149A6BF4-C558-42C2-94C2-B5C562F06FE7}" ShortID="672033637">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Crossbow_Shot" ID="{062CAD8C-174B-4A14-BC1C-54803C107D65}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
