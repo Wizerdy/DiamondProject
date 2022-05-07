@@ -41,6 +41,7 @@ public class ChangeMap : MonoBehaviour {
 
         IEnumerator I_ChangeSprite(Shape shape, float time) {
             float timer = 0f;
+            _transitionRenderer.gameObject.SetActive(true);
             _transitionRenderer.sprite = GetSprite(shape) ?? _spriteRenderer.sprite;
             _transitionRenderer.material.SetFloat("_Radius", 0f);
             while (timer < time) {
@@ -49,6 +50,7 @@ public class ChangeMap : MonoBehaviour {
                 float radius = timer.Remap(0f, time, 0f, _transitionBound);
                 _transitionRenderer.material.SetFloat("_Radius", radius);
             }
+            _transitionRenderer.gameObject.SetActive(false);
             ChangeSprite(shape);
         }
     }
