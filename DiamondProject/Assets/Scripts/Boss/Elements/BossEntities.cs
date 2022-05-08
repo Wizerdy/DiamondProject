@@ -6,6 +6,6 @@ using ToolsBoxEngine;
 public class BossEntities : MonoBehaviour {
     [SerializeField] protected BossReference bossRef;
     protected void Awake() {
-        bossRef.Instance.todestroyondeath.Add(this.gameObject);
+       // bossRef.Instance.todestroyondeath.Add(this.gameObject);
     }
 }

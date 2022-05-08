@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2043366983554929251
+--- !u!1 &1140256541865477262
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2043366983554929249}
-  - component: {fileID: 2043366983554929250}
-  - component: {fileID: 986219382987071674}
+  - component: {fileID: 6821045671374717883}
+  - component: {fileID: -7494688216887631774}
   m_Layer: 0
-  m_Name: LeafBeamPrefab
+  m_Name: FallDash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2043366983554929249
+--- !u!4 &6821045671374717883
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043366983554929251}
+  m_GameObject: {fileID: 1140256541865477262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.6883316, y: -0.29557502, z: 6.9428654}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2043366983554929250
+--- !u!114 &-7494688216887631774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043366983554929251}
+  m_GameObject: {fileID: 1140256541865477262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04690150f3f1a174ebe48a19e83fd75b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c91873bad8a9d74a98a42d1c297509c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnExecute:
@@ -52,30 +51,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
-  id: Leaf Beam
+  id: FallDash
   _bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
   _playerRef: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
-  duration: 5
+  duration: 1
   coolDown: 1
   isPlaying: 0
   locked: 0
   NoEnd: 0
-  leafBeamPrefab: {fileID: 1059472417401592482, guid: 887f720744278974bb86bef2592970ee, type: 3}
-  raySpeed: 18
-  rayDamage: 2
-  damageFrequency: 1
-  distance: 5
-  _beamPosOnBoss: {x: 0, y: 5, z: 0}
-  target: {x: 0, y: 0, z: 0}
---- !u!114 &986219382987071674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043366983554929251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  leafPrefab: {fileID: 8625124664747513456, guid: 69d9d5dd0fbd1d6458f8a911ce3207a6, type: 3}
+  dashSpeed: 30
+  dashDamage: 30
+  dashLoadingTime: 3
+  dashMaxRange: 50
+  minDistOfWall: 7
+  spawnLeafEveryOneDivideByX: 5
+  leafDamage: 10
+  leafSpeed: 15

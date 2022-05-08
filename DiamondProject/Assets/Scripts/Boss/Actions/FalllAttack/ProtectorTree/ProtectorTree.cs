@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using ToolsBoxEngine;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ProtectorTree : MonoBehaviour {
-    [SerializeField] TreeShield treeShield;
-    [SerializeField] float health;
+    [SerializeField] int health;
     [SerializeField] Vector3 destination;
     [SerializeField] float apparitionTime;
     [SerializeField] GameObject treeBase;
+    [SerializeField] public UnityEvent<ProtectorTree> onDeath;
 
     public ProtectorTree SetDestination(Vector3 destination) {
         this.destination = destination;
@@ -20,15 +21,16 @@ public class ProtectorTree : MonoBehaviour {
         return this;
     }
 
-    public ProtectorTree SetHealth(float health) {
+    public ProtectorTree SetHealth(int health) {
         this.health = health;
         return this;
     }
 
     private void Start() {
-        treeShield.AddTree(this);
         transform.position = destination;
         StartCoroutine(Spawning());
+        GetComponent<Health>().TakeHeal(health);
+        GetComponent<Health>().SetMaxHealth(health);
     }
     IEnumerator Spawning() {
         float timer = apparitionTime;
@@ -36,14 +38,10 @@ public class ProtectorTree : MonoBehaviour {
         Spawn();
     }
     void Spawn() {
-        treeBase.SetActive(false);
+        treeBase.SetActive(true);
     }
-    void Die() {
-        treeShield.RemoveTree(this);
+    public void Die() {
+        onDeath?.Invoke(this);
         Destroy(gameObject);
-    }
-
-    public void AddTreeShield(TreeShield treeShield) {
-        this.treeShield = treeShield;
     }
 }

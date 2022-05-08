@@ -8,10 +8,15 @@ public abstract class BaseAttack : MonoBehaviour {
     [SerializeField] UnityEvent<BaseAttack> OnEnd;
     [SerializeField] Reference<AttackSystem> attackSystem;
     [SerializeField] public string id = "";
+    [SerializeField] protected BossReference _bossRef;
+    [SerializeField] protected Reference<PlayerController> _playerRef;
     [SerializeField] protected float duration = 1;
     [SerializeField] protected float coolDown = 1;
     [SerializeField] protected bool isPlaying = false;
     [SerializeField] protected bool locked = false;
+    [SerializeField] protected bool NoEnd = false;
+    [SerializeField] protected Vector3 BossPos { get { return _bossRef.Instance.transform.position; } set { _bossRef.Instance.transform.position = value; } }
+    [SerializeField] protected Vector3 PlayerPos { get { return _playerRef.Instance.transform.position; } set { _playerRef.Instance.transform.position = value; } }
 
     private void OnEnable() {
         Execute();
@@ -29,8 +34,13 @@ public abstract class BaseAttack : MonoBehaviour {
     }
 
     protected IEnumerator ILaunch() {
-        yield return StartCoroutine(IExecute());
-        End();
+        if (NoEnd) {
+            StartCoroutine(IExecute());
+            yield break;
+        } else {
+            yield return StartCoroutine(IExecute());
+            End();
+        }
     }
 
     protected abstract IEnumerator IExecute();

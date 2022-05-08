@@ -5,7 +5,7 @@ using ToolsBoxEngine;
 
 public class BossTree : BossEntities { //obsolete
     [SerializeField] Reference<Boss> _boss;
-    [SerializeField] TreeShield treeShield;
+    //[SerializeField] TreeShield treeShield;
     SpriteRenderer _sr;
     CircleCollider2D _cc;
     public int life = 0;
@@ -74,7 +74,7 @@ public class BossTree : BossEntities { //obsolete
         }
     }
 
-    public void AddTreeShield(TreeShield treeShield) {
-        this.treeShield = treeShield;
-    }
+    //public void AddTreeShield(TreeShield treeShield) {
+    //    this.treeShield = treeShield;
+    //}
 }

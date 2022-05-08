@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour {
     [SerializeField] Health _health = null;
-    [SerializeField] bool isShielding;
 
-    protected void Protect() {
-        isShielding = true;
+    public void Activate() {
         _health.CanTakeDamage = false;
     }
 
-    protected void StopProtect() {
-        isShielding = false;
+    public void Desactivate() {
         _health.CanTakeDamage = true;
     }
 
