@@ -6,10 +6,15 @@ using UnityEngine.InputSystem;
 using ToolsBoxEngine;
 
 public class PlayerController : MonoBehaviour {
+    private enum ClickType {
+        NONE, MELEE, RANGE
+    }
+
     [SerializeField] EntityMovement _movement;
     [SerializeField] EntityMeleeAttack _meleeAttack;
     [SerializeField] EntityChargeAttack _chargeMeleeAttack;
     [SerializeField] EntityRangedAttack _rangedAttack;
+    [SerializeField] EntityChargeRanged _chargeRangedAttack;
     [SerializeField] EntityInteract _interact;
     [SerializeField] Health _health;
     [SerializeField] EntityOverHeat _overheat;
@@ -32,7 +37,9 @@ public class PlayerController : MonoBehaviour {
 
     // Clicks
     float _clickTimer = 0f;
-    bool _meleeAttackClick = false;
+    ClickType _clickType = ClickType.NONE;
+
+    float _deltaHeat = 0f;
 
     #region Properties
 
@@ -83,6 +90,9 @@ public class PlayerController : MonoBehaviour {
         _controls.Battle.MeleeAttack.performed += _MeleeAttackPerformed;
         _controls.Battle.MeleeAttack.canceled += _MeleeAttackCanceled;
 
+        _controls.Battle.RangedAttack.performed += _RangeAttackPerformed;
+        _controls.Battle.RangedAttack.canceled += _RangeAttackCanceled;
+
         _controls.Battle.AttackDirection.performed += _SetMousePosition;
 
         _controls.Dialogue.Enable();
@@ -98,6 +108,21 @@ public class PlayerController : MonoBehaviour {
             _chargeMeleeAttack.OnCharging += _DontMove;
             _chargeMeleeAttack.OnAttackEnd += _YouCanMove;
             _chargeMeleeAttack.OnOverCharge += _OverChargedMeleeAttack;
+        }
+
+        #endregion
+
+        #region Range Attack
+
+        if (_chargeRangedAttack != null) {
+            _chargeRangedAttack.OnCharging += _DontMove;
+            _chargeRangedAttack.OnAttackEnd += _YouCanMove;
+            _chargeRangedAttack.OnOverCharge += _OverChargedRangeAttack;
+        }
+
+        if (_overheat != null) {
+            _overheat.OnOverheat += UnleashChargeRangeAttack;
+            _overheat.OnOverheat += _OverChargedRangeAttack;
         }
 
         #endregion
@@ -125,16 +150,28 @@ public class PlayerController : MonoBehaviour {
             Move(_controls.GamePlay.Move.ReadValue<Vector2>());
         //}
 
-        if (_meleeAttackClick) {
+        if (_clickType == ClickType.MELEE) {
             _clickTimer += Time.deltaTime;
             if (_clickTimer > _clickTime) {
-                ChargeMeleeAttack();
+                if (!_chargeMeleeAttack?.IsAttacking ?? false) { ChargeMeleeAttack(); }
                 _chargeMeleeAttack?.UpdateDirection(LookDirection);
             }
         }
 
-        if (_controls.Battle.RangedAttack.ReadValue<float>() == 1) {
-            _RangedAttack();
+        if (_clickType == ClickType.RANGE) {
+            _clickTimer += Time.deltaTime;
+            if (_clickTimer > _clickTime) {
+                if (!_chargeRangedAttack?.IsAttacking ?? false) { ChargeRangeAttack(); }
+
+                _chargeRangedAttack?.UpdateDirection(LookDirection);
+                float delta = (_overheat.MaxHeat / _chargeRangedAttack.MaxChargeTime) * Time.deltaTime - 0.001f;
+                if (_deltaHeat >= 1f) {
+                    _overheat.Heat += Mathf.FloorToInt(delta + _deltaHeat);
+                    _deltaHeat = (delta + _deltaHeat) % 1;
+                } else {
+                    _deltaHeat += delta;
+                }
+            }
         }
     }
 
@@ -177,20 +214,25 @@ public class PlayerController : MonoBehaviour {
     #region Melee Attack
 
     private void _MeleeAttackPerformed(InputAction.CallbackContext cc) {
-        if (_meleeAttackClick) { return; }
-        _meleeAttackClick = true;
+        if (_clickType == ClickType.MELEE) { return; }
+        _clickType = ClickType.MELEE;
         _clickTimer = 0f;
     }
 
     private void _MeleeAttackCanceled(InputAction.CallbackContext cc) {
-        if (!_meleeAttackClick) { return; }
-        _meleeAttackClick = false;
-        
+        if (_clickType != ClickType.MELEE) { return; }
+        _clickType = ClickType.NONE;
+
         if (_clickTimer <= _clickTime) {
             NormalAttack();
         } else {
             UnleashChargeMeleeAttack();
         }
+    }
+
+    private void _OverChargedMeleeAttack(Vector2 direction) {
+        if (_clickType != ClickType.MELEE) { return; }
+        _clickType = ClickType.NONE;
     }
 
     private void NormalAttack() {
@@ -209,21 +251,59 @@ public class PlayerController : MonoBehaviour {
         _chargeMeleeAttack?.StopCharging(LookDirection);
     }
 
-    private void _OverChargedMeleeAttack(Vector2 direction) {
-        _meleeAttackClick = false;
-    }
-
     #endregion
 
-    private void _RangedAttack() {
+    #region Range Attack
+
+    private void _RangeAttackPerformed(InputAction.CallbackContext cc) {
+        if (_overheat?.Overheating ?? false) { return; }
+        if (_clickType == ClickType.RANGE) { return; }
+        _clickType = ClickType.RANGE;
+        _clickTimer = 0f;
+    }
+
+    private void _RangeAttackCanceled(InputAction.CallbackContext cc) {
+        if (_clickType != ClickType.RANGE) { return; }
+        _clickType = ClickType.NONE;
+
+        if (_clickTimer <= _clickTime) {
+            RangeAttack();
+        } else {
+            UnleashChargeRangeAttack();
+        }
+    }
+
+    private void _OverChargedRangeAttack(Vector2 direction) {
+        if (_clickType != ClickType.RANGE) { return; }
+        _clickType = ClickType.NONE;
+        _overheat.SetHeat(1f);
+    }
+
+    private void _OverChargedRangeAttack() {
+        _OverChargedRangeAttack(Vector2.zero);
+    }
+
+    private void ChargeRangeAttack() {
+        if (!_chargeRangedAttack?.CanAttack ?? true) { return; }
+        _chargeRangedAttack?.StartCharging(LookDirection);
+    }
+
+    private void UnleashChargeRangeAttack() {
+        if (_chargeRangedAttack?.CanAttack ?? true) { return; }
+        _chargeRangedAttack?.StopCharging(LookDirection);
+    }
+
+    private void RangeAttack() {
         if (PerfomingMeleeAttack) { return; }
         if (!_rangedAttack?.CanAttack ?? true) { return; }
-        if (!_overheat?.Overheating ?? true) { return; }
+        if (_overheat?.Overheating ?? true) { return; }
 
         _rangedAttack?.Attack(LookDirection);
         _onAttack?.Invoke(AttackType.RANGE);
         if (_overheat != null) { _overheat.Heat += _rangeAttackHeat; }
     }
+
+    #endregion
 
     private void _Interact(InputAction.CallbackContext cc) {
         NPC npc = _interact?.GetNearestNpc() ?? null;
