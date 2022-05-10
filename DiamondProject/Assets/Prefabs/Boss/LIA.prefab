@@ -72,7 +72,7 @@ MonoBehaviour:
   _childGate: 0
   _isInside: 0
   _shouldEnter: 0
-  radius: 11
+  _radius: 10
   _timeBeforeTrigger: 0
   _timeSince: 0
 --- !u!114 &8101424015359653998
@@ -229,7 +229,7 @@ MonoBehaviour:
   _childGate: 0
   _isInside: 0
   _shouldEnter: 1
-  radius: 10
+  _radius: 10
   _timeBeforeTrigger: 0
   _timeSince: 0
 --- !u!114 &8101424016153837568
@@ -247,7 +247,7 @@ MonoBehaviour:
   _childs: []
   _childGate: 0
   _bossShapeSystem: {fileID: 0}
-  _isShape: 0
+  _isShape: 1
 --- !u!1 &8101424016291808021
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd30b50c0c0c9a84f976ae2211111ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: {fileID: 0}
   _boss: {fileID: 0}
   _bossShapeSystem: {fileID: 0}
   _shapeLibrary: {fileID: 0}

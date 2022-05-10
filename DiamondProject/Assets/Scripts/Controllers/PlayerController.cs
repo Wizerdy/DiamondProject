@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     public bool PerfomingMeleeAttack => (_chargeMeleeAttack?.IsAttacking ?? false) || (_meleeAttack?.IsAttacking ?? false);
+    public bool PerfomingRangeAttack => (_chargeRangedAttack?.IsAttacking ?? false);
 
     public event UnityAction<AttackType> OnAttack { add => _onAttack.AddListener(value); remove => _onAttack.RemoveListener(value); }
 
@@ -214,6 +215,7 @@ public class PlayerController : MonoBehaviour {
     #region Melee Attack
 
     private void _MeleeAttackPerformed(InputAction.CallbackContext cc) {
+        if (PerfomingRangeAttack) { return; }
         if (_clickType == ClickType.MELEE) { return; }
         _clickType = ClickType.MELEE;
         _clickTimer = 0f;
@@ -257,6 +259,7 @@ public class PlayerController : MonoBehaviour {
 
     private void _RangeAttackPerformed(InputAction.CallbackContext cc) {
         if (_overheat?.Overheating ?? false) { return; }
+        if (PerfomingMeleeAttack) { return; }
         if (_clickType == ClickType.RANGE) { return; }
         _clickType = ClickType.RANGE;
         _clickTimer = 0f;

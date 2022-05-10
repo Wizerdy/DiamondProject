@@ -33,6 +33,7 @@ public class LeafBeam : BaseAttack {
         float attackTimer = duration;
         Vector3 dir;
         Vector3 currentAim = PlayerPos - currentleafBeam.transform.position;
+        currentAim = Quaternion.Euler(0f, 0f, 10f) * currentAim;
         while (attackTimer > 0) {
             currentleafBeam.transform.position = BossPos + _beamPosOnBoss;
             dir = PlayerPos - currentleafBeam.transform.position;

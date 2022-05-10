@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IceShard : MonoBehaviour
 {
+    [SerializeField] private string targetTag = "Player";
     [SerializeField] private float lifeSpan = 15f;
     [SerializeField] private float maxSize = 3f;
     [SerializeField] private float growthSpeed = 1f;
@@ -95,7 +96,7 @@ public class IceShard : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Player") {
+        if (collision.gameObject.tag == targetTag) {
             collision.gameObject.GetComponent<IHealth>()?.TakeDamage(shardDamage);
             onShardPlayerHitEvent?.Invoke();
             KillShard();

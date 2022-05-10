@@ -23,7 +23,6 @@ public class FallDash : BaseAttack {
         //Debug.DrawRay(BossPos, dashDir * (dashMaxRange + minDistOfWall), Color.red, 100f);
         float dashDist = dashMaxRange;
         for (int i = 0; i < raycastHit2D.Length; i++) {
-            Debug.Log(raycastHit2D[i].collider.gameObject.name);
             if (raycastHit2D[i].collider.gameObject.tag == "Structure") {
                 if (Vector3.Distance(BossPos, raycastHit2D[i].point) - minDistOfWall < dashDist) {
                     dashDist = Vector3.Distance(BossPos, raycastHit2D[i].point) - minDistOfWall;
