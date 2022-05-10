@@ -24,8 +24,8 @@ MonoBehaviour:
   numberOfTriggerActivate: 0
   firstTimeTalking: 1
   numberOfTimeTalkingToFairy: 0
-  nbTimeTalkedToNorna: 0
-  nbCorpse: 0
+  nbTimeTalkedToNorna: 4
+  nbCorpse: 1
   winterFormTriggerActivated: 0
   triggerHintList:
   - id: 0
@@ -48,66 +48,73 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: Fall form hint
+    unlockedText: "Elle mise tout sur les d\xE9placements et les attaques rapides, 
+      mais fuir en permanence, la d\xE9rangera et minimisera les chances de te toucher.
+      Contrairement aux autres formes, attaquer au corps-\xE0-corps n'est pas une
+      bonne solution. Mais, c'est la forme la plus faible alors tu lui feras beaucoup
+      plus de d\xE9g\xE2ts avec ton arbal\xE8te. "
   - id: 3
     description: Winter form hint
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: Winter form hint
+    unlockedText: "La patience est de mise, se h\xE2ter ou chercher \xE0 se  d\xE9placer
+      rapidement est inutile. Le boss restera immobile du d\xE9but \xE0 la fin alors 
+      prend le temps de comprendre le fonctionnement de  chaque attaque."
   bossHintList:
-  - id: 1
+  - id: 0
     description: Boss first hint
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
     unlockedText: Boss first hint
-  - id: 2
+  - id: 1
     description: Boss second hint
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
     unlockedText: Boss second hint
-  - id: 3
+  - id: 2
     description: Boss third hint
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
     unlockedText: Boss third hint
-  - id: 4
-    description: Boss fourth hint
+  - id: 3
+    description: Winter form hint
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
     unlockedText: Boss fourth hint
   characterHintList:
-  - id: 1
+  - id: 0
     description: Character first hint
-    isTrigger: 0
-    didNornaGaveHint: 0
-    alreadySawHint: 0
+    isTrigger: 1
+    didNornaGaveHint: 1
+    alreadySawHint: 1
     defaultText: ???
-    unlockedText: Character first hint
-  - id: 2
+    unlockedText: "Alors, comprends quand une attaque commence puis se termine pour
+      ensuite la mettre \xE0 bout.  Cela sera plus utile que de l'attaquer sans r\xE9fl\xE9chir."
+  - id: 1
     description: Character second hint
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
     unlockedText: Character second hint
-  - id: 3
+  - id: 2
     description: Character third hint
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
     unlockedText: Character third hint
-  - id: 4
+  - id: 3
     description: Character fourth hint
     isTrigger: 0
     didNornaGaveHint: 0
