@@ -6,8 +6,9 @@ using ToolsBoxEngine;
 
 public class EntityOverHeat : MonoBehaviour {
     [SerializeField] int _maxHeat = 100;
-    [SerializeField] float _overHeatTime = 5f;
-    [SerializeField] AnimationCurve _heatCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+    [SerializeField] float _loseHeatSpeed = 0.2f;
+    [SerializeField] float _overHeatSpeed = 10f;
+    //[SerializeField] AnimationCurve _heatCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
     [SerializeField] float _heatDropTime = 1f;
 
     [HideInInspector, SerializeField] UnityEvent<int> _onHeating;
@@ -38,7 +39,7 @@ public class EntityOverHeat : MonoBehaviour {
     }
 
     public void SetHeat(float percentage) {
-        SetHeat(_maxHeat * percentage);
+        SetHeat(Mathf.RoundToInt(_maxHeat * percentage));
     }
 
     public void SetHeat(int amount, bool restartTimer = true) {
@@ -50,8 +51,12 @@ public class EntityOverHeat : MonoBehaviour {
 
         if (_currentHeat >= _maxHeat) {
             OverHeat();
+            if (_routine_WaitLoseHeat != null) { StopCoroutine(_routine_WaitLoseHeat); }
+            if (_routine_LoseHeat != null) { StopCoroutine(_routine_LoseHeat); }
+            _routine_WaitLoseHeat = StartCoroutine(Tools.Delay(LoseHeat, _heatDropTime));
         } else if (restartTimer) {
             if (_routine_WaitLoseHeat != null) { StopCoroutine(_routine_WaitLoseHeat); }
+            if (_routine_LoseHeat != null) { StopCoroutine(_routine_LoseHeat); }
             _routine_WaitLoseHeat = StartCoroutine(Tools.Delay(LoseHeat, _heatDropTime));
         }
     }
@@ -71,15 +76,50 @@ public class EntityOverHeat : MonoBehaviour {
         if (_routine_LoseHeat != null) { StopCoroutine(_routine_LoseHeat); }
         _routine_LoseHeat = StartCoroutine(ILoseHeat());
 
+        #region Old
+
+        //IEnumerator ILoseHeat() {
+        //    if (_currentHeat <= 0) { yield break; }
+        //    float deltaTime = 0f;
+        //    while (_currentHeat > 0) {
+        //        yield return new WaitForEndOfFrame();
+        //        float percentage = Percentage;
+        //        float time = _overheat ? _overHeatTime : _loseHeatTime;
+        //        float delta = Time.deltaTime / time;
+        //        percentage -= delta;
+        //        delta += deltaTime;
+        //        int heat = Mathf.RoundToInt(_heatCurve.Evaluate(percentage) * _maxHeat);
+        //        if (heat == _currentHeat) { deltaTime += delta; }
+        //        else {
+        //            SetHeat(heat, false);
+        //            deltaTime = 0f;
+        //        }
+        //    }
+
+        //    if (_overheat) { Unoverheat(); }
+        //}
+
+        #endregion
+
         IEnumerator ILoseHeat() {
             if (_currentHeat <= 0) { yield break; }
+            float leftover = 0f;
             while (_currentHeat > 0) {
-                yield return new WaitForEndOfFrame();
-                float percentage = _currentHeat / _maxHeat;
-                float delta = Time.deltaTime / _overHeatTime;
-                percentage -= delta;
-                int heat = Mathf.RoundToInt(_heatCurve.Evaluate(percentage) * _maxHeat);
-                SetHeat(heat, false);
+                yield return new WaitForSeconds(0.1f);
+                float speed = 0f;
+                float function = 0f;
+                if (!_overheat) {
+                    function = -Percentage * Percentage + 1.1f;
+                    speed = _loseHeatSpeed;
+                } else {
+                    function = 1f;
+                    speed = _overHeatSpeed;
+                }
+                leftover += speed * function;
+                if (leftover >= 1f) {
+                    SetHeat(Heat - Mathf.FloorToInt(leftover), false);
+                    leftover %= 1;
+                }
             }
 
             if (_overheat) { Unoverheat(); }

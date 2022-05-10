@@ -6,13 +6,15 @@ using ToolsBoxEngine;
 
 public class EntityChargeRanged : MonoBehaviour {
     [Header("Static")]
+    [SerializeField] GameObject _bullet;
     [SerializeField] Transform _entity = null;
     [SerializeField] Transform _attackParent = null;
     [SerializeField] Animator _attackAnimator = null;
-    [SerializeField] DamageHealth _attackHitbox = null;
     [Header("Values")]
+    [SerializeField] float _bulletSpeed;
     [SerializeField] float _dashDistance = 3f;
     [SerializeField] int _damage = 10;
+    [SerializeField] int _fullChargedDamageBonus = 10;
     [SerializeField] float _cooldownTime = 1f;
     [SerializeField] float _chargingTime = 3f;
     [SerializeField] float _attackTime = 1f;
@@ -32,6 +34,7 @@ public class EntityChargeRanged : MonoBehaviour {
     Vector2 _direction = Vector2.zero;
     float _chargingTimer = 0f;
 
+    bool _canRangeAttack = true;
     bool _isCharging = false;
     bool _isAttacking = false;
 
@@ -41,6 +44,8 @@ public class EntityChargeRanged : MonoBehaviour {
 
     public bool CanAttack => !IsAttacking;
     public bool IsAttacking => _isAttacking || _isCharging;
+
+    public float MaxChargeTime => _chargingTime;
 
     #region Events
 
@@ -55,7 +60,7 @@ public class EntityChargeRanged : MonoBehaviour {
     #endregion
 
     private void Awake() {
-        _attackHitbox.OnCollide += _InvokeOnHit;
+        //_attackHitbox.OnCollide += _InvokeOnHit;
     }
 
     private void Update() {
@@ -69,7 +74,7 @@ public class EntityChargeRanged : MonoBehaviour {
     }
 
     private void OnDestroy() {
-        _attackHitbox.OnCollide -= _InvokeOnHit;
+        //_attackHitbox.OnCollide -= _InvokeOnHit;
     }
 
     public void StartCharging(Vector2 direction) {
@@ -96,7 +101,7 @@ public class EntityChargeRanged : MonoBehaviour {
 
         float percentage = timer / _chargingTime;
         int damage = Mathf.CeilToInt(_damagesOverTime.Evaluate(percentage) * _damage);
-        _attackHitbox.SetValues(_damageables, damage);
+        if (percentage >= 1f) { damage += _fullChargedDamageBonus; }
 
         //float attackTime = _attackTimeOverTime.Evaluate(percentage) * _attackTime;
         float attackTime = _distanceOverTime.Evaluate(percentage) * _attackTime;
@@ -104,11 +109,27 @@ public class EntityChargeRanged : MonoBehaviour {
         if (_routine_DashAttack != null) { StopCoroutine(_routine_DashAttack); }
         if (attackTime > 0f) {
             _isAttacking = true;
-            _attackAnimator.SetBool("Dash Attack", true);
-            _routine_DashAttack = StartCoroutine(IDashAttack(direction, distance, attackTime));
+            //_attackAnimator.SetBool("Dash Attack", true);
+            Attack(direction, damage);
+            _routine_DashAttack = StartCoroutine(IDashAttack(-direction, distance, attackTime));
         } else {
             _onAttackEnd?.Invoke();
         }
+    }
+
+    public void Attack(Vector2 direction, int damage) {
+        if (!_canRangeAttack) { return; }
+        _onAttack?.Invoke(direction);
+
+        UpdateDirection(direction);
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction.To3D()) * Quaternion.Euler(0f, 0f, 90f);
+        GameObject bull = Instantiate(_bullet, transform.position, rotation);
+        DamageHealth damageHealth = bull.GetComponent<DamageHealth>();
+        damageHealth?.SetValues(_damageables, damage);
+        bull.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed;
+        _attackAnimator.SetTrigger("Range Attack");
+        _canRangeAttack = false;
+        StartCoroutine(Tools.Delay(() => _canRangeAttack = true, _cooldownTime));
     }
 
     IEnumerator IDashAttack(Vector2 direction, float distance, float time) {
@@ -124,7 +145,7 @@ public class EntityChargeRanged : MonoBehaviour {
         }
 
         _isAttacking = false;
-        _attackAnimator.SetBool("Dash Attack", false);
+        //_attackAnimator.SetBool("Dash Attack", false);
         _onAttackEnd?.Invoke();
     }
 
@@ -137,7 +158,7 @@ public class EntityChargeRanged : MonoBehaviour {
         _onHit?.Invoke(obj);
     }
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmosSelected() {
         if (!IsAttacking) { return; }
         Gizmos.color = Color.red;
         float percentage = _chargingTimer / _chargingTime;
