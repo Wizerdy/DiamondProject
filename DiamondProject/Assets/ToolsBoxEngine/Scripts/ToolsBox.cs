@@ -522,6 +522,15 @@ namespace ToolsBoxEngine {
             }
         }
 
+        public static Transform FindElderlyByTag(this Transform target) {
+            string tag = target.tag;
+            if (tag == "Untagged") { return target; }
+            while (target.parent != null && target.parent.CompareTag(tag)) {
+                target = target.parent;
+            }
+            return target;
+        }
+
         #endregion
 
         #region Print
@@ -572,6 +581,8 @@ namespace ToolsBoxEngine {
 
         #endregion
 
+        #region Coroutines
+
         public static IEnumerator Delay<T1, T2, T3>(BasicDelegate<T1, T2, T3> function, T1 arg1, T2 arg2, T3 arg3, float time) {
             yield return new WaitForSeconds(time);
             function(arg1, arg2, arg3);
@@ -591,6 +602,8 @@ namespace ToolsBoxEngine {
             yield return new WaitForSeconds(time);
             function();
         }
+
+        #endregion
     }
 
     public class ReadOnlyAttribute : PropertyAttribute {

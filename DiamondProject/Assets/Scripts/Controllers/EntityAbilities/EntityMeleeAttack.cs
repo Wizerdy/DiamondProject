@@ -28,11 +28,6 @@ public class EntityMeleeAttack : MonoBehaviour {
         _attackHitbox.OnCollide += _InvokeOnHit;
     }
 
-    private void Start() {
-        _attackHitbox.Damage = _damage;
-        _attackHitbox.Damageables = _damageables;
-    }
-
     private void OnDestroy() {
         _attackHitbox.OnCollide -= _InvokeOnHit;
     }
@@ -40,23 +35,11 @@ public class EntityMeleeAttack : MonoBehaviour {
     public void Attack(Vector2 direction) {
         if (_isAttacking) { return; }
         _isAttacking = true;
+        _attackHitbox.SetValues(_damageables, _damage);
         _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
-        _attackAnimator.SetTrigger("Attack");
+        _attackAnimator.SetTrigger("Slash Attack");
         _onAttack?.Invoke(direction);
         StartCoroutine(Tools.Delay(() => _isAttacking = false, _cooldownTime));
-    }
-
-    public void Jab(Vector2 direction) {
-        if (_isAttacking) { return; }
-        _isAttacking = true;
-        _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
-        _attackAnimator.SetTrigger("Attack");
-        _onAttack?.Invoke(direction);
-        StartCoroutine(Tools.Delay(() => _isAttacking = false, _cooldownTime));
-    }
-
-    public void InstanceDamage() {
-
     }
 
     void _InvokeOnHit(GameObject obj) {

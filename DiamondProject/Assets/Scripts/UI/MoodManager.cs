@@ -13,6 +13,7 @@ public class MoodManager : MonoBehaviour
 {
     [SerializeField] private List<Mood> listMood = new List<Mood>();
     [SerializeField] private Mood currentMood;
+    [SerializeField] private GameObject moodGO;
 
     private Image currentMoodSprite;
 
@@ -35,5 +36,9 @@ public class MoodManager : MonoBehaviour
 
     public Mood GetCurrentMood() {
         return currentMood;
+    }
+
+    public void MoodAppear() {
+        moodGO.SetActive(true);
     }
 }
