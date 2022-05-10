@@ -89,7 +89,7 @@ public class Health : MonoBehaviour, IHealth {
         }
     }
 
-    void SetMaxHealth(int amount) {
+    public void SetMaxHealth(int amount) {
         if (amount == _maxHealth) { return; }
         int delta = amount - _maxHealth;
         if (_currentHealth == _maxHealth || _currentHealth > amount) { _currentHealth = amount; }

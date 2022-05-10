@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntitySprite _sprite;
     [SerializeField] Reference<Camera> _camera;
     [SerializeField] Animator _animator;
-    [SerializeField] Reference<Boss> _boss;
+    [SerializeField] Reference<IMeetARealBoss> _boss;
     [SerializeField] UnityEvent<AttackType> _onAttack;
 
     [Header("Value")]
