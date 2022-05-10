@@ -9,7 +9,7 @@ public class RockShield : Shield {
 
     public void AddRock(Rock rock) {
         if (rocks.Count == 0) {
-            Protect();
+            Activate();
         }
         rocks.Add(rock);
     }
@@ -21,8 +21,8 @@ public class RockShield : Shield {
     public void RemoveRock(Rock rock) {
         rocks.Remove(rock);
         if (rocks.Count == 0) {
-            StopProtect();
-            _boss.Instance.NewWeightAction(bossAction, 1);
+            Desactivate();
+      //      _boss.Instance.NewWeightAction(bossAction, 1);
             Destroy(gameObject);
         }
     }

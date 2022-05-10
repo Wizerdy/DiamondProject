@@ -8,13 +8,17 @@ using TMPro;
 
 public class HUDHealth : MonoBehaviour {
     [SerializeField] Slider _healthBar;
+    [SerializeField] Image _fill;
     [SerializeField] Image _damageScreen;
     [SerializeField] Reference<Health> _health;
     [SerializeField] TextMeshProUGUI _lifeText;
+    [SerializeField] Color _invicibleColor;
     [HideInInspector, SerializeField] UnityEvent<float> _onHealthChange;
 
     Coroutine _routine_UpdateHealthBar;
     Coroutine _routine_RedScreen;
+
+    Color _startColor;
 
     #region Properties
 
@@ -29,12 +33,15 @@ public class HUDHealth : MonoBehaviour {
     }
 
     private void Start() {
+        _startColor = _fill.color;
         if (_health != null) {
             _health.Instance.OnHit += TakeDamageHUD;
             _health.Instance.OnHit += UpdateHUD;
             _health.Instance.OnHeal += UpdateHUD;
             _health.Instance.OnMaxHealthChange += ModifyMaxHealth;
             _health.Instance.OnLateStart += OnStart;
+            _health.Instance.OnInvicible += _Invincible;
+            _health.Instance.OnVulnerable += _Vulnerable;
         }
     }
 
@@ -49,6 +56,8 @@ public class HUDHealth : MonoBehaviour {
             _health.Instance.OnHeal -= UpdateHUD;
             _health.Instance.OnMaxHealthChange -= ModifyMaxHealth;
             _health.Instance.OnLateStart -= OnStart;
+            _health.Instance.OnInvicible -= _Invincible;
+            _health.Instance.OnVulnerable -= _Vulnerable;
         }
     }
 
@@ -60,6 +69,16 @@ public class HUDHealth : MonoBehaviour {
         _routine_UpdateHealthBar = StartCoroutine(ChangeHealthOverTime(_healthBar, percentage, 0.1f));
         if (_lifeText != null) { _lifeText.text = _health.Instance.CurrentHealth + " / " + _health.Instance.MaxHealth; }
         _onHealthChange?.Invoke(percentage);
+    }
+
+    private void _Invincible() {
+        if (_fill == null) { return; }
+        _fill.color = _invicibleColor;
+    }
+
+    private void _Vulnerable() {
+        if (_fill == null) { return; }
+        _fill.color = _startColor;
     }
 
     private void ModifyMaxHealth(int delta) {

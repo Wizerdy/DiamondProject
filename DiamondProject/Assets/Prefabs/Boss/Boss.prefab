@@ -104,6 +104,12 @@ MonoBehaviour:
   _onMaxHealthChange:
     m_PersistentCalls:
       m_Calls: []
+  _onInvicible:
+    m_PersistentCalls:
+      m_Calls: []
+  _onVulnerable:
+    m_PersistentCalls:
+      m_Calls: []
   _onLateStart:
     m_PersistentCalls:
       m_Calls: []
@@ -119,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad9112e32dbe294a8923241bf44dd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
+  source: {fileID: 3063354052670382493}
   target: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
 --- !u!114 &3063354052670382466
 MonoBehaviour:
@@ -159,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843685974685697844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 4.24, y: 5.4300003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -308,7 +314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2885026988575034076
 Transform:
   m_ObjectHideFlags: 0
@@ -815,7 +821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5680249786933603650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.96, z: 0}
+  m_LocalPosition: {x: 0, y: -0.049999952, z: 0}
   m_LocalScale: {x: 2.1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1176,7 +1182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5680249787707941526}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1207,14 +1213,14 @@ MonoBehaviour:
   _fireball: {fileID: 0}
   _healthProxy: {fileID: 2101061635675969003}
   _boss: {fileID: 3063354052670382493}
-  _shapeSystem: {fileID: 0}
+  _shapeSystem: {fileID: 5680249788645268036}
   _growTree: {fileID: 5680249789032344788}
   _minion: {fileID: 5680249787340275912}
   _spike: {fileID: 5680249787613832504}
   _hit: {fileID: 5680249788330399390}
   _heal: {fileID: 0}
   _death: {fileID: 5680249788581011592}
-  _changeShape: {fileID: 0}
+  _changeShape: {fileID: 7422814727801588215}
 --- !u!114 &614278002098990884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1292,6 +1298,10 @@ MonoBehaviour:
   - {fileID: 1005890436504860818, guid: 67de6fd2040d32e46a392b90054c6e94, type: 3}
   - {fileID: 4137902258114676332, guid: 9d7e11f90fad9d14ea0c90887b22f63e, type: 3}
   - {fileID: 4998535898296923648, guid: 2cc29e18a80562646b368fd120254ff3, type: 3}
+  - {fileID: 6001388004636868391, guid: af13236e9b2f67946887b864ff32d5b9, type: 3}
+  - {fileID: 391067967941441068, guid: 628b264f957cec24b9904cd8875bb8e1, type: 3}
+  - {fileID: -7494688216887631774, guid: e57f4fd57b232234bbfd11d10d307308, type: 3}
+  - {fileID: -8494409865561735005, guid: 14168dc1cdf69c544b1e2e370ecef08d, type: 3}
 --- !u!1 &5680249788330399389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5680249788342967248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1557,7 +1567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5680249788377665365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1582,7 +1592,19 @@ MonoBehaviour:
       m_Calls: []
   _onAttackEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5680249788666035302}
+        m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
+        m_MethodName: MovementEnd
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5680249788377665361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1932,7 +1954,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5680249788595143018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2018,7 +2040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5680249788645268037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2069,6 +2091,18 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DestroyWhenFormSetter, Assembly-CSharp
         m_MethodName: Set
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5680249788666035302}
+        m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
+        m_MethodName: ChangeBehaviour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2291,7 +2325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6218968308478607529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4100001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2477,7 +2511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8101424016618067094, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.91
       objectReference: {fileID: 0}
     - target: {fileID: 8101424016618067094, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2570,6 +2604,22 @@ MonoBehaviour:
   _launcher: {fileID: 5680249788377665366}
   _waitTimeBeforeAction: 7
   _timeBetweenAttacks: 5
+  state: 1
+  availableAttacks: []
+  _timeBetweenAttacksFALL: 5
+  _neutralAttacks: []
+  _fallAttacks:
+  - Protector Trees
+  - Movement
+  - Leaf Beam
+  - Boomerang
+  - FallDash
+  _winterAttacks:
+  - Ice Hell
+  - Bullet Hell
+  - Snow Absorption
+  lastAttack: 
+  lastAttackEnd: 
 --- !u!4 &4520003439891824443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8101424016618067094, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}

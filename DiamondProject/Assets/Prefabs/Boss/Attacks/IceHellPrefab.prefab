@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3440608959053010894
 Transform:
   m_ObjectHideFlags: 0
@@ -53,10 +53,13 @@ MonoBehaviour:
       m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
   id: Ice Hell
+  _bossRef: {fileID: 0}
+  _playerRef: {fileID: 0}
   duration: 5
   coolDown: 1
   isPlaying: 0
   locked: 0
+  NoEnd: 0
   _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
   firstPatterns:
   - chargeTime: 2

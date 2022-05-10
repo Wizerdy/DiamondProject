@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6001388004636868390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6001388004636868388}
+  - component: {fileID: 6001388004636868391}
+  m_Layer: 0
+  m_Name: ProtectorTreeSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6001388004636868388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001388004636868390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.19959968, y: -0.020495579, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6001388004636868391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001388004636868390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b2ce42cecd25d4aae9e90b8ce7d435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
+  id: Protector Trees
+  _bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
+  _playerRef: {fileID: 0}
+  duration: 1
+  coolDown: 1
+  isPlaying: 0
+  locked: 0
+  NoEnd: 1
+  shieldPrefab: {fileID: -4442974129799814969, guid: f976676e39e38d44e8a9c8c90ef3350f, type: 3}
+  protectorTreePrefab: {fileID: 7966743475885978344, guid: 1fa365621827ddf42aa074e38903229a, type: 3}
+  trees: []
+  currentShield: {fileID: 0}
+  _radius: 15
+  _treeNumbers: 5
+  _apparitionTime: 1
+  _timeBeforeGrownAgain: 8

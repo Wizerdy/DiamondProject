@@ -13,6 +13,7 @@ public class EntityChargeAttack : MonoBehaviour {
     [Header("Values")]
     [SerializeField] float _dashDistance = 3f;
     [SerializeField] int _damage = 10;
+    [SerializeField] int _fullChargedDamageBonus = 10;
     [SerializeField] float _cooldownTime = 1f;
     [SerializeField] float _chargingTime = 3f;
     [SerializeField] float _attackTime = 1f;
@@ -96,6 +97,7 @@ public class EntityChargeAttack : MonoBehaviour {
 
         float percentage = timer / _chargingTime;
         int damage = Mathf.CeilToInt(_damagesOverTime.Evaluate(percentage) * _damage);
+        if (percentage >= 1f) { damage += _fullChargedDamageBonus; }
         _attackHitbox.SetValues(_damageables, damage);
 
         //float attackTime = _attackTimeOverTime.Evaluate(percentage) * _attackTime;
@@ -137,7 +139,7 @@ public class EntityChargeAttack : MonoBehaviour {
         _onHit?.Invoke(obj);
     }
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmosSelected() {
         if (!IsAttacking) { return; }
         Gizmos.color = Color.red;
         float percentage = _chargingTimer / _chargingTime;
