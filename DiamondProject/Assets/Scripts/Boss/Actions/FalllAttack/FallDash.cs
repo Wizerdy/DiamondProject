@@ -20,15 +20,15 @@ public class FallDash : BaseAttack {
         Vector3 dashDir = (PlayerPos - BossPos).normalized;
         dashDir = new Vector3(dashDir.x, dashDir.y, 0);
         raycastHit2D = Physics2D.RaycastAll(BossPos, dashDir, dashMaxRange + minDistOfWall);
-        Debug.DrawRay(BossPos, dashDir * (dashMaxRange + minDistOfWall), Color.red, 100f);
+        //Debug.DrawRay(BossPos, dashDir * (dashMaxRange + minDistOfWall), Color.red, 100f);
         float dashDist = dashMaxRange;
         for (int i = 0; i < raycastHit2D.Length; i++) {
             Debug.Log(raycastHit2D[i].collider.gameObject.name);
             if (raycastHit2D[i].collider.gameObject.tag == "Structure") {
                 if (Vector3.Distance(BossPos, raycastHit2D[i].point) - minDistOfWall < dashDist) {
                     dashDist = Vector3.Distance(BossPos, raycastHit2D[i].point) - minDistOfWall;
-                    Debug.Log(dashDist);
-                    Debug.Log(raycastHit2D[i].collider.gameObject.name);
+                    //Debug.Log(dashDist);
+                    //Debug.Log(raycastHit2D[i].collider.gameObject.name);
                 }
             }
         }

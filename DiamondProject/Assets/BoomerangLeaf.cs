@@ -12,6 +12,9 @@ public class BoomerangLeaf : BaseAttack {
     [SerializeField] int leafsDamages;
     [SerializeField] float spaceBetweenLeafs;
     [SerializeField] int ghostLeaf;
+    [SerializeField] List<Boomerang> leafs;
+
+
 
     protected override IEnumerator IExecute() {
         if (ghostLeaf >= leafsNumber) {
@@ -42,7 +45,15 @@ public class BoomerangLeaf : BaseAttack {
                 SetFirstSpeed(_firstSpeed).
                 SetSecondSpeed(_secondspeed).
                 SetDamage(leafsDamages);
+            leafs.Add(newBoomerangLeaf);
+            newBoomerangLeaf.OnDeath += RemoveLeafs;
         }
-        yield return null;
+        while (leafs.Count != 0) {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        void RemoveLeafs(Boomerang boom){
+            leafs.Remove(boom);
+        }
     }
 }

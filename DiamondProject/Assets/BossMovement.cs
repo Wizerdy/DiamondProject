@@ -14,14 +14,14 @@ public class BossMovement : BaseAttack {
         Vector3 depart = BossPos;
         float maxDist = 50f;
         raycastHit2D = Physics2D.RaycastAll(BossPos, randomDir, maxDist);
-        Debug.DrawRay(BossPos, randomDir * maxDist, Color.red, 100f);
+        //Debug.DrawRay(BossPos, randomDir * maxDist, Color.red, 100f);
         for (int i = 0; i < raycastHit2D.Length; i++) {
-            Debug.Log(raycastHit2D[i].collider.gameObject.name);
+            //Debug.Log(raycastHit2D[i].collider.gameObject.name);
             if (raycastHit2D[i].collider.gameObject.tag == "Structure") {
                 if (Vector3.Distance(BossPos, raycastHit2D[i].point) - minDistOfWall < maxDist) {
                     maxDist = Vector3.Distance(BossPos, raycastHit2D[i].point) - minDistOfWall;
-                    Debug.Log(maxDist);
-                    Debug.Log(raycastHit2D[i].collider.gameObject.name);
+                   // Debug.Log(maxDist);
+                    //Debug.Log(raycastHit2D[i].collider.gameObject.name);
                 }
             }
         }

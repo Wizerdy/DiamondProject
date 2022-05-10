@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Boomerang : MonoBehaviour {
     [SerializeField] float _firstSpeed;
@@ -12,6 +13,8 @@ public class Boomerang : MonoBehaviour {
     [SerializeField] Rigidbody2D rb;
     [SerializeField] DamageHealth dh;
     [SerializeField] bool comeback;
+    [SerializeField] UnityEvent<Boomerang> _onDeath;
+    public event UnityAction<Boomerang> OnDeath { add => _onDeath.AddListener(value); remove => _onDeath.RemoveListener(value); }
 
     public Boomerang SetDirection(Vector3 direction) {
         this._direction = direction;
@@ -77,6 +80,7 @@ public class Boomerang : MonoBehaviour {
     }
 
     private void Die() {
+        _onDeath?.Invoke(this);
         Destroy(gameObject);
     }
 }

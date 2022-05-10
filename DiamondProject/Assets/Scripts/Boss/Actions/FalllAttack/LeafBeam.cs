@@ -5,13 +5,12 @@ using ToolsBoxEngine;
 
 public class LeafBeam : BaseAttack {
     [SerializeField] private GameObject leafBeamPrefab;
-    [SerializeField] private float raySpeed = 10f;
+    [SerializeField] private float rayAngularSpeed = 10f;
     float currentSpeed = 10f;
     [SerializeField] private int rayDamage = 5;
     [SerializeField] private float damageFrequency = 1f;
-    [SerializeField] private float distance = 5f;
     [SerializeField] private Vector3 _beamPosOnBoss;
-    [SerializeField] private Vector3 target;
+    [SerializeField] float maxDistLaser = 50;
 
     private GameObject currentleafBeam;
     private float damageFrequencyTimer = 0f;
@@ -24,22 +23,22 @@ public class LeafBeam : BaseAttack {
     OnBeamHitEvent onBeamHitEvent;
 
     protected override IEnumerator IExecute() {
-        target = BossPos;
         currentleafBeam = Instantiate(leafBeamPrefab, _beamPosOnBoss + BossPos, Quaternion.identity).gameObject;
         lineRenderer = currentleafBeam.GetComponent<LineRenderer>();
         onBeamSpawnEvent += OnSpawn;
         onBeamPlayerHitEvent += OnRayHitPlayer;
         onBeamHitEvent += OnRayHit;
         onBeamSpawnEvent?.Invoke();
-        currentSpeed = raySpeed;
+        currentSpeed = rayAngularSpeed;
         float attackTimer = duration;
+        Vector3 dir;
+        Vector3 currentAim = PlayerPos - currentleafBeam.transform.position;
         while (attackTimer > 0) {
-            attackTimer -= Time.deltaTime;
-            currentleafBeam.transform.position = _beamPosOnBoss + BossPos;
-            target = Vector3.MoveTowards(target, PlayerPos, currentSpeed * Time.deltaTime);
-            UpdateRenderer(target);
-            damageFrequencyTimer -= Time.deltaTime;
-            RaycastHit2D[] hits = Physics2D.RaycastAll(currentleafBeam.transform.position, target - currentleafBeam.transform.position);
+            currentleafBeam.transform.position = BossPos + _beamPosOnBoss;
+            dir = PlayerPos - currentleafBeam.transform.position;
+            currentAim = Vector3.RotateTowards(currentAim, dir, rayAngularSpeed * Time.deltaTime, 0);
+            UpdateRenderer(currentleafBeam.transform.position + currentAim.normalized * maxDistLaser);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(currentleafBeam.transform.position, currentAim.normalized * maxDistLaser);
             for (int i = 0; i < hits.Length; i++) {
                 RaycastHit2D hit = hits[i];
                 onBeamHitEvent?.Invoke();
@@ -49,6 +48,8 @@ public class LeafBeam : BaseAttack {
                     damageFrequencyTimer = damageFrequency;
                 }
             }
+            attackTimer -= Time.deltaTime;
+            damageFrequencyTimer -= Time.deltaTime;
             yield return null;
         }
         Destroy(currentleafBeam);
