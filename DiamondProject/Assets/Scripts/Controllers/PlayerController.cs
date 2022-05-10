@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntityRangedAttack _rangedAttack;
     [SerializeField] EntityInteract _interact;
     [SerializeField] Health _health;
+    [SerializeField] EntityOverHeat _overheat;
     [SerializeField] EntitySprite _sprite;
     [SerializeField] Reference<Camera> _camera;
     [SerializeField] Animator _animator;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour {
 
     [Header("Value")]
     [SerializeField] float _clickTime = 0.1f;
+    [SerializeField] int _rangeAttackHeat = 5;
 
     //[Header("Dialogue")]
     //[SerializeField] TextInteraction textInteraction;
@@ -216,10 +218,11 @@ public class PlayerController : MonoBehaviour {
     private void _RangedAttack() {
         if (PerfomingMeleeAttack) { return; }
         if (!_rangedAttack?.CanAttack ?? true) { return; }
-        //Vector2 direction = MousePosition != null ? (MousePosition.Value - transform.Position2D()).normalized : Vector2.up;
-        //if (direction == Vector2.zero) { direction = Vector2.up; }
+        if (!_overheat?.Overheating ?? true) { return; }
+
         _rangedAttack?.Attack(LookDirection);
         _onAttack?.Invoke(AttackType.RANGE);
+        if (_overheat != null) { _overheat.Heat += _rangeAttackHeat; }
     }
 
     private void _Interact(InputAction.CallbackContext cc) {

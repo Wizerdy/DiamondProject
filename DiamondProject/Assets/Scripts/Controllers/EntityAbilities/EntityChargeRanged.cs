@@ -102,7 +102,7 @@ public class EntityChargeRanged : MonoBehaviour {
         float attackTime = _distanceOverTime.Evaluate(percentage) * _attackTime;
         float distance = _distanceOverTime.Evaluate(percentage) * _dashDistance;
         if (_routine_DashAttack != null) { StopCoroutine(_routine_DashAttack); }
-        if (attackTime >= 0f) {
+        if (attackTime > 0f) {
             _isAttacking = true;
             _attackAnimator.SetBool("Dash Attack", true);
             _routine_DashAttack = StartCoroutine(IDashAttack(direction, distance, attackTime));
