@@ -5833,7 +5833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackParent: {fileID: 652180734932207057}
-  _attackAnimator: {fileID: 4346229573380257631}
+  _attackAnimator: {fileID: 1360015787222645749}
   _attackHitbox: {fileID: 7262411699775730752}
   _damage: 50
   _cooldownTime: 0.5
@@ -5841,22 +5841,11 @@ MonoBehaviour:
     tags:
     - Boss
     - Minion
+    - BossEntities
     state: 1
   _onAttack:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -5886,6 +5875,7 @@ MonoBehaviour:
     tags:
     - Boss
     - Minion
+    - BossEntities
     state: 1
   _damagesOverTime:
     serializedVersion: 2
@@ -5923,6 +5913,15 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.75745714
+      inSlope: 0.98497295
+      outSlope: 0.98497295
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
@@ -5964,8 +5963,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
   _animator: {fileID: 1360015787222645749}
-  _attackParent: {fileID: 3047052000504567667}
-  _spriteRenderer: {fileID: 0}
+  _attackParent: {fileID: 652180734932207057}
+  _spriteRenderer: {fileID: 4976117880192038869}
   _damage: 10
   _damageables:
     tags:
@@ -5975,19 +5974,7 @@ MonoBehaviour:
   _rangedAttackCooldown: 0.2
   _onAttack:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1366682634033476724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6104,6 +6091,7 @@ GameObject:
   - component: {fileID: 3959631132869822228}
   - component: {fileID: 3959631132869822229}
   - component: {fileID: 2161993602319532677}
+  - component: {fileID: 5514845525750395532}
   - component: {fileID: 5071417450549748302}
   - component: {fileID: 3959631132869822230}
   - component: {fileID: 3959631132869822231}
@@ -6166,45 +6154,9 @@ MonoBehaviour:
   _boss: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
   _onAttack:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerAttackTrigger, Assembly-CSharp
-        m_MethodName: PlayerHasAttacked
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerAttackTrigger, Assembly-CSharp
-        m_MethodName: PlayerHasAttacked
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerAttackTrigger, Assembly-CSharp
-        m_MethodName: PlayerHasAttacked
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _clickTime: 0.15
-  _rangeAttackHeat: 5
+  _rangeAttackHeat: 10
 --- !u!114 &2161993602319532677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6244,9 +6196,29 @@ MonoBehaviour:
   _onMaxHealthChange:
     m_PersistentCalls:
       m_Calls: []
+  _onInvicible:
+    m_PersistentCalls:
+      m_Calls: []
+  _onVulnerable:
+    m_PersistentCalls:
+      m_Calls: []
   _onLateStart:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5514845525750395532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959631132869822232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e0e21c0e60b6f46a7a10859a782dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 2161993602319532677}
+  _time: 1
 --- !u!114 &5071417450549748302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7005,7 +6977,7 @@ MonoBehaviour:
   DestinationSceneName: VNScene
   LoadingMode: 0
   Priority: 4
-  InterpolateProgress: 0
+  InterpolateProgress: 1
   SecureLoad: 1
   BeforeEntryFadeDelay: 0
   EntryFadeDuration: 0.2
@@ -7124,7 +7096,7 @@ MonoBehaviour:
     - Boss
     state: 1
   _destroyOnHit: 0
-  _onlyDamageOnceEach: 0
+  _onlyDamageOnceEach: 1
   _damageType: 
 --- !u!50 &1783022779200444402
 Rigidbody2D:
@@ -7196,13 +7168,13 @@ GameObject:
   - component: {fileID: 4395563488972246845}
   - component: {fileID: 8994368328233107023}
   - component: {fileID: 1406535348982061468}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Collider
-  m_TagString: Player
+  m_TagString: PlayerLegs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4395563488972246845
 Transform:
   m_ObjectHideFlags: 0
@@ -7943,6 +7915,7 @@ GameObject:
   - component: {fileID: 4896918249644399355}
   - component: {fileID: 8990786264109351080}
   - component: {fileID: 4244333875856624585}
+  - component: {fileID: 1091018938}
   m_Layer: 8
   m_Name: MeleeAttack
   m_TagString: Untagged
@@ -7979,6 +7952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Feedbacks:
   - {fileID: 4244333875856624585}
+  - {fileID: 1091018938}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
@@ -8059,6 +8033,46 @@ MonoBehaviour:
   MinPitch: 1.25
   MaxPitch: 1.5
   SfxAudioMixerGroup: {fileID: 0}
+--- !u!114 &1091018938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7502186468663363262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c9124fd3c24b44b9321e2c2e92d16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Wwise Event
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    ExcludeFromHoldingPauses: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  wwiseEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  myGameobject: {fileID: 0}
 --- !u!1 &7782579265942983602
 GameObject:
   m_ObjectHideFlags: 0
@@ -8157,6 +8171,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
+      propertyPath: lengthInSec
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: moveWithTransform
       value: 1
       objectReference: {fileID: 0}
@@ -8228,7 +8246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535252, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.86
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535252, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8264,7 +8282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535273, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: m_Name
-      value: HoldSwordAttackParticle
+      value: HoldRangeAttackParticle
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535273, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: m_IsActive
@@ -8273,6 +8291,10 @@ PrefabInstance:
     - target: {fileID: 6178637882635535274, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: m_SortingOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
+      propertyPath: lengthInSec
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: moveWithTransform

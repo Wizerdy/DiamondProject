@@ -1526,7 +1526,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05010158, y: -2.0458224}
+  m_Offset: {x: 0.06407672, y: -2.5162363}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1537,7 +1537,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4696512, y: 1.6847258}
+  m_Size: {x: 0.94423044, y: 0.7438972}
   m_EdgeRadius: 0
 --- !u!1 &5680249788377665365
 GameObject:
@@ -2466,12 +2466,12 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8101424015454722118, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _health
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8101424015454722118, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: _percentage
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101424015454722121, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _isShape
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8101424015454722121, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: _bossShapeSystem
@@ -2497,10 +2497,6 @@ PrefabInstance:
       propertyPath: _bossShapeSystem
       value: 
       objectReference: {fileID: 5680249788645268036}
-    - target: {fileID: 8101424016291808019, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _timeBeforeReset
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 8101424016618067094, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2607,7 +2603,10 @@ MonoBehaviour:
   state: 1
   availableAttacks: []
   _timeBetweenAttacksFALL: 5
-  _neutralAttacks: []
+  _neutralAttacks:
+  - Bullet Hell
+  - Trees
+  - Leaf Beam
   _fallAttacks:
   - Protector Trees
   - Movement

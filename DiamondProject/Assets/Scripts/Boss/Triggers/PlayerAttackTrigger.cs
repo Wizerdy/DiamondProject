@@ -8,19 +8,30 @@ public enum AttackType {
     MELEE,
     RANGE
 }
+
 public class PlayerAttackTrigger : Trigger {
+    [Space]
+    [SerializeField] Reference<PlayerController> _player;
+    [Header("System")]
     [SerializeField] bool _shouldAttack;
     [SerializeField] AttackType _attackType;
     [SerializeField] float _timeBeforeReset;
     [SerializeField] int _attackNumberToReach;
-    [SerializeField] int _attackNumber;
-    [SerializeField] bool _isActivable;
-    [SerializeField] Coroutine _coroutine;
+
+    int _attackNumber;
+    bool _isActivable;
+
+    Coroutine _routine_ResetTrigger;
 
     private void Start() {
         if (!_shouldAttack) {
-            _coroutine = StartCoroutine(ResetTrigger());
+            _routine_ResetTrigger = StartCoroutine(ResetTrigger());
         }
+        if (_player != null) { _player.Instance.OnAttack += PlayerHasAttacked; }
+    }
+
+    private void OnDestroy() {
+        if (_player != null) { _player.Instance.OnAttack -= PlayerHasAttacked; }
     }
 
     public override bool IsSelfTrigger() {
@@ -35,11 +46,11 @@ public class PlayerAttackTrigger : Trigger {
             if (_isActivable && (_attackType == AttackType.ATTACK || attackType == _attackType)) {
                 _attackNumber++;
             } else if (_isActivable) {
-                _coroutine = StartCoroutine(ResetTrigger());
+                _routine_ResetTrigger = StartCoroutine(ResetTrigger());
             }
         } else {
-            StopCoroutine(_coroutine);
-            _coroutine = StartCoroutine(ResetTrigger());
+            StopCoroutine(_routine_ResetTrigger);
+            _routine_ResetTrigger = StartCoroutine(ResetTrigger());
         }
     }
 

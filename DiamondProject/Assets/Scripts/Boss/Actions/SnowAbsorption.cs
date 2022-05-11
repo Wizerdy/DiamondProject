@@ -10,13 +10,17 @@ public class SnowAbsorption : BaseAttack {
     [SerializeField] private float circleSpawnRatePerSecond = 1f;
     [SerializeField] private float circleRadius = 15f;
     [SerializeField] private float circleSpawnRangeRadius = 150f;
+
+    [Header("Shard")]
+    [SerializeField] private GameObject _iceShard;
     [SerializeField] private float shardSpeed = 50f;
     [SerializeField] private int shardDamage = 10;
-
-    [SerializeField] private GameObject iceShard;
+    [SerializeField] private float shardLifetime = 5f;
 
     private float halfwidthEllipse = 50f;
     private float halfheightEllipse = 30f;
+
+    private int _shardCount = 0;
 
     private void SpawnCircle() {
         int randomAngle = Random.Range(0, 360);
@@ -51,14 +55,18 @@ public class SnowAbsorption : BaseAttack {
             //float angle = Mathf.Atan2(transform.position.x - spawnPos.x, transform.position.y - spawnPos.y) * Mathf.Rad2Deg;
             float angle = (Mathf.Atan2(spawnPos.x - transform.position.x, spawnPos.y - transform.position.y) * 180 / Mathf.PI + 630) % 360;
             GameObject shard = Instantiate(
-                iceShard, 
+                _iceShard, 
                 spawnPos, 
                 Quaternion.Euler(0.0f, 0.0f, -angle )
                 );
 
             listShard.Add(shard);
 
-            shard.GetComponent<IceShard>().Init(transform, shardSpeed, shardDamage,  transform.position - spawnPos);
+            IceShard iceShard = shard.GetComponent<IceShard>();
+            if (iceShard == null) { continue; }
+            _shardCount++;
+            iceShard.Init(transform, shardSpeed, shardDamage,  transform.position - spawnPos, shardLifetime);
+            iceShard.OnShardDestroy += () => _shardCount--;
         }
 
         for (int i = 0; i < numberOfShardToRemoveInCircle; ++i) {
@@ -86,9 +94,8 @@ public class SnowAbsorption : BaseAttack {
             yield return null;
         }
 
-        //UpdateIA();
-        isPlaying = false;
-        yield return null;
-
+        while (_shardCount > 0) {
+            yield return null;
+        }
     }
 }

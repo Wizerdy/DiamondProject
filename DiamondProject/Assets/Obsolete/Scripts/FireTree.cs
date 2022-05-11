@@ -1,21 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 enum TreeState {
     seed,
     growing,
     fullGrown
 }
-public class FireTree : MonoBehaviour
-{
-
-
+public class FireTree : MonoBehaviour {
     [SerializeField] private float treeHp = 10f;
     [SerializeField] private int treeDamage = 10;
     [SerializeField] private int fireDamage = 10;
     [SerializeField] private float fireDamageFrequency = 1f;
     [SerializeField] private float fireRange = 5f;
+    [SerializeField] Animator _treeAnimator;
 
     [SerializeField] delegate void OnTreePlayerHitEvent();
     OnTreePlayerHitEvent onTreePlayerHitEvent;
@@ -36,7 +35,6 @@ public class FireTree : MonoBehaviour
     private float delayBeforeGrowthTimer = 3f;
 
     private LineRenderer lineRenderer;
-    private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
     private TreeState currentState;
 
@@ -61,9 +59,8 @@ public class FireTree : MonoBehaviour
         currentState = TreeState.seed;
 
         lineRenderer = GetComponent<LineRenderer>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
-        
+
         onTreeSpawnEvent += OnSpawn;
         onTreePlayerHitEvent += OnTreeHit;
         onFireHitEvent += OnFireHit;
@@ -71,11 +68,12 @@ public class FireTree : MonoBehaviour
 
         onTreeSpawnEvent?.Invoke();
         boxCollider.enabled = false;
+
+        lineRenderer.enabled = false;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
 
         if (currentState == TreeState.fullGrown) {
             timer -= Time.deltaTime;
@@ -93,6 +91,7 @@ public class FireTree : MonoBehaviour
         if (currentState == TreeState.growing) {
             growthTimer -= Time.deltaTime;
             if (growthTimer <= 0) {
+                lineRenderer.enabled = true;
                 DrawAoe(50, fireRange);
                 currentState = TreeState.fullGrown;
             }
@@ -101,17 +100,22 @@ public class FireTree : MonoBehaviour
         if (currentState == TreeState.seed) {
             delayBeforeGrowthTimer -= Time.deltaTime;
             if (delayBeforeGrowthTimer <= 0) {
-                spriteRenderer.color = new Color(255, 0, 0);
-                boxCollider.enabled = true;
-                currentState = TreeState.growing;
+                Grow();
             }
         }
+    }
+
+    private void Grow() {
+        boxCollider.enabled = true;
+        currentState = TreeState.growing;
+
+        _treeAnimator?.SetTrigger("Emerge");
     }
 
     private void DrawAoe(int steps, float radius) {
         lineRenderer.positionCount = steps;
 
-        for(int currentStep = 0; currentStep < steps; ++ currentStep) {
+        for (int currentStep = 0; currentStep < steps; ++currentStep) {
             float circumference = (float)currentStep / steps;
 
             float currentRadian = circumference * 2 * Mathf.PI;

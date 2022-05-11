@@ -251,6 +251,7 @@ public class PlayerController : MonoBehaviour {
     private void UnleashChargeMeleeAttack() {
         if (_chargeMeleeAttack?.CanAttack ?? true) { return; }
         _chargeMeleeAttack?.StopCharging(LookDirection);
+        _onAttack?.Invoke(AttackType.MELEE);
     }
 
     #endregion
@@ -294,6 +295,7 @@ public class PlayerController : MonoBehaviour {
     private void UnleashChargeRangeAttack() {
         if (_chargeRangedAttack?.CanAttack ?? true) { return; }
         _chargeRangedAttack?.StopCharging(LookDirection);
+        _onAttack?.Invoke(AttackType.RANGE);
     }
 
     private void RangeAttack() {
