@@ -9,6 +9,15 @@ public class D_ReturnPosterity : MonoBehaviour {
         if (_posterity == null) { return 0; }
         return _posterity.deathCount;
     }
+    public int ReturnNumberOfTimeTalkedToNorna() {
+        if (_posterity == null) { return 0; }
+        return _posterity.nbTimeTalkedToNorna;
+    }
+
+    public int ReturnNumberOfCorpse() {
+        if (_posterity == null) { return 0; }
+        return _posterity.nbCorpse;
+    }
 
     public void SetMaxLifeModifier(int amount) {
         if (_posterity == null) { return; }

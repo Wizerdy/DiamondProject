@@ -148,9 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1a23faf139aa04aa7bf9e4c52c0b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSpan: 15
+  targetTag: PlayerLegs
+  lifeSpan: 7
   maxSize: 3
-  growthSpeed: 1.5
+  growthSpeed: 1.75
 --- !u!114 &2683784733369323143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,10 +219,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikesParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 5578396173970193157, guid: bfddde8a932dc37408f12c2b08408f0d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003585543553521857, guid: bfddde8a932dc37408f12c2b08408f0d, type: 3}
+      propertyPath: UVModule.sprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003585543553521857, guid: bfddde8a932dc37408f12c2b08408f0d, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7003585543553521857, guid: bfddde8a932dc37408f12c2b08408f0d, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7003585543553521857, guid: bfddde8a932dc37408f12c2b08408f0d, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: -1132923727, guid: 3a7869d898eea80448022147c2193dee, type: 3}
+    - target: {fileID: 7003585543553521857, guid: bfddde8a932dc37408f12c2b08408f0d, type: 3}
+      propertyPath: UVModule.sprites.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 827371335, guid: 3a7869d898eea80448022147c2193dee, type: 3}
+    - target: {fileID: 7003585543553521857, guid: bfddde8a932dc37408f12c2b08408f0d, type: 3}
+      propertyPath: UVModule.sprites.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 596845154, guid: 3a7869d898eea80448022147c2193dee, type: 3}
+    - target: {fileID: 7003585543553521857, guid: bfddde8a932dc37408f12c2b08408f0d, type: 3}
+      propertyPath: UVModule.sprites.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: -201274333, guid: 3a7869d898eea80448022147c2193dee, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfddde8a932dc37408f12c2b08408f0d, type: 3}
 --- !u!4 &3629292190839763073 stripped

@@ -57,5 +57,11 @@ public class DamageHealth : MonoBehaviour {
         gameObject.SetActive(false);
         Destroy(gameObject);
     }
+
+    public void SetValues(MultipleTagSelector damageables, int damage) {
+        _damageables = damageables;
+        _damage = damage;
+        ResetHitted();
+    }
 }
 

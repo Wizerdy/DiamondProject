@@ -2,8 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+enum TreeState {
+    seed,
+    growing,
+    fullGrown
+}
 public class FireTree : MonoBehaviour
 {
+
+
     [SerializeField] private float treeHp = 10f;
     [SerializeField] private int treeDamage = 10;
     [SerializeField] private int fireDamage = 10;
@@ -21,45 +28,83 @@ public class FireTree : MonoBehaviour
 
     private Transform target;
     private float timer = 0f;
-    private LineRenderer lineRenderer;
 
-    public void Init(Transform _target, int _hp, int _damage, int _fireDamage, float _frequency, float _fireRadius) {
+    private float growthSpeed = 1f;
+    private float growthTimer = 0f;
+
+    private float delayBeforeGrowth = 3f;
+    private float delayBeforeGrowthTimer = 3f;
+
+    private LineRenderer lineRenderer;
+    private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider;
+    private TreeState currentState;
+
+    public void Init(Transform _target, int _hp, int _damage, int _fireDamage, float _frequency, float _fireRadius, float _growthSpeed, float _delayBeforeGrowth) {
         target = _target;
         treeHp = _hp;
         treeDamage = _damage;
         fireDamage = _fireDamage;
         fireDamageFrequency = _frequency;
         fireRange = _fireRadius;
+        growthSpeed = _growthSpeed;
+        delayBeforeGrowth = _delayBeforeGrowth;
     }
 
     private void Start() {
         transform.position = target.transform.position;
 
         timer = 0;
-        lineRenderer = GetComponent<LineRenderer>();
-        DrawAoe(50, fireRange);
+        growthTimer = growthSpeed;
+        delayBeforeGrowthTimer = delayBeforeGrowth;
 
+        currentState = TreeState.seed;
+
+        lineRenderer = GetComponent<LineRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        
         onTreeSpawnEvent += OnSpawn;
         onTreePlayerHitEvent += OnTreeHit;
         onFireHitEvent += OnFireHit;
         onTreeTakeDamage += OnDamage;
 
         onTreeSpawnEvent?.Invoke();
+        boxCollider.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0) {
-            float distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - target.transform.position.x, 2) + Mathf.Pow(transform.position.y - target.transform.position.y, 2));
-            if (distance <= fireRange) {
-                onFireHitEvent?.Invoke();
-                target.gameObject.GetComponent<IHealth>()?.TakeDamage(fireDamage);
-            }
-                //player.TakeDamage(damage);
 
-            timer = fireDamageFrequency;
+        if (currentState == TreeState.fullGrown) {
+            timer -= Time.deltaTime;
+            if (timer <= 0) {
+                float distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - target.transform.position.x, 2) + Mathf.Pow(transform.position.y - target.transform.position.y, 2));
+                if (distance <= fireRange) {
+                    onFireHitEvent?.Invoke();
+                    target.gameObject.GetComponent<IHealth>()?.TakeDamage(fireDamage);
+                }
+
+                timer = fireDamageFrequency;
+            }
+        }
+
+        if (currentState == TreeState.growing) {
+            growthTimer -= Time.deltaTime;
+            if (growthTimer <= 0) {
+                DrawAoe(50, fireRange);
+                currentState = TreeState.fullGrown;
+            }
+        }
+
+        if (currentState == TreeState.seed) {
+            delayBeforeGrowthTimer -= Time.deltaTime;
+            if (delayBeforeGrowthTimer <= 0) {
+                spriteRenderer.color = new Color(255, 0, 0);
+                boxCollider.enabled = true;
+                currentState = TreeState.growing;
+            }
         }
     }
 
@@ -83,8 +128,7 @@ public class FireTree : MonoBehaviour
 
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Player") {
             onTreePlayerHitEvent?.Invoke();
             collision.gameObject.GetComponent<IHealth>()?.TakeDamage(treeDamage);

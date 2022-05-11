@@ -4,44 +4,59 @@ using UnityEngine;
 using ToolsBoxEngine;
 
 public class LiaAttack : MonoBehaviour {
+    enum LIAState {
+        MOVEMENT,
+        ACTION,
+        KO
+    }
+
     [SerializeField] Health _bossHealth;
     [SerializeField] BossShape _currentShape;
     [SerializeField] AttackLauncher _launcher;
     [SerializeField] float _waitTimeBeforeAction = 5f;
     [SerializeField] float _timeBetweenAttacks = 5f;
+    [SerializeField] Coroutine _currentBehaviour;
+    [Header("Behaviour")]
+    [SerializeField] LIAState state = LIAState.ACTION; 
+    [SerializeField] List<string> availableAttacks;
+    [Space]
+    [Header("FALL")]
+    [SerializeField] float _timeBetweenAttacksFALL = 3f;
+    [Header("\"Protector Trees\" est indispensable")]
+    [SerializeField] List<string> _neutralAttacks = new List<string>();
+    [SerializeField] List<string> _fallAttacks = new List<string>();
+    [SerializeField] List<string> _winterAttacks = new List<string>();
 
-    float _timer = 0f;
+    float _timer = 2f;
+    [SerializeField] string lastAttack;
+    [SerializeField] string lastAttackEnd;
 
     void Start() {
         _bossHealth.CanTakeDamage = false;
-        _timer = _timeBetweenAttacks - _waitTimeBeforeAction;
+        _timer = _timeBetweenAttacks;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
     }
 
-    void Update() {
-        if (_timer < _timeBetweenAttacks) {
-            _timer += Time.deltaTime;
-        } else {
-            switch (_currentShape.Type) {
-                case Shape.NEUTRAL:
-                    Attack("Bullet Hell", "Leaf Beam", "ExploBush", "Trees");
-                    break;
-                case Shape.SPRING:
-                    Attack("Bramble Ball");
-                    break;
-                case Shape.SUMMER:
-                    Attack("Trees");
-                    break;
-                case Shape.FALL:
-                    Attack("Leaf Beam");
-                    break;
-                case Shape.WINTER:
-                    Attack("Ice Hell", "Bullet Hell", "Snow Absorption");
-                    break;
-                default:
-                    break;
-            }
-            _timer = 0f;
+    public void ChangeBehaviour() {
+        if (_currentBehaviour != null) {
+            StopCoroutine(_currentBehaviour);
+        }
+        _currentBehaviour = ChooseBehaviour();
+    }
+
+    Coroutine ChooseBehaviour() {
+        switch (_currentShape.Type) {
+            case Shape.NEUTRAL:
+            default:
+                return StartCoroutine(NeutralBehaviour());
+            case Shape.SPRING:
+                return StartCoroutine(SpringBehaviour());
+            case Shape.SUMMER:
+                return StartCoroutine(SummerBehaviour());
+            case Shape.FALL:
+                return StartCoroutine(FallBehaviour());
+            case Shape.WINTER:
+                return StartCoroutine(WinterBehaviour());
         }
     }
 
@@ -53,9 +68,83 @@ public class LiaAttack : MonoBehaviour {
         _timer -= time;
     }
 
-    public void Attack(params string[] attacksId) {
-        if (attacksId.Length == 0) { return; }
+    public string Attack(params string[] attacksId) {
+        if (attacksId.Length == 0) { return "null"; }
         string winner = Tools.Random(attacksId);
+        Debug.Log(winner);
         _launcher.LaunchAttack(winner);
+        return winner;
+    }
+
+    #region Behaviour
+    public IEnumerator NeutralBehaviour() {
+        availableAttacks = _neutralAttacks;
+        _bossHealth.CanTakeDamage = false;
+        StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
+        yield return new WaitForSeconds(_waitTimeBeforeAction);
+        while (true) {
+            lastAttack = Tools.Random(availableAttacks.ToArray());
+            availableAttacks.Remove(Attack(lastAttack));
+            while (!availableAttacks.Contains(lastAttack)) {
+                yield return null;
+            }
+        }
+    }
+
+    public IEnumerator SpringBehaviour() {
+        while (true) {
+            yield return new WaitForSeconds(_timer);
+            Attack("Bramble Ball");
+        }
+    }
+
+    public IEnumerator SummerBehaviour() {
+        while (true) {
+            yield return new WaitForSeconds(_timer);
+            Attack("Trees");
+        }
+    }
+    public IEnumerator FallBehaviour() {
+        availableAttacks = _fallAttacks;
+        _bossHealth.CanTakeDamage = false;
+        StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
+        yield return new WaitForSeconds(_waitTimeBeforeAction);
+        availableAttacks.Remove(Attack("Protector Trees"));
+        while (true) {
+            state = LIAState.MOVEMENT;
+            lastAttack = "Movement";
+            availableAttacks.Remove(Attack(lastAttack));
+            while (!availableAttacks.Contains(lastAttack)) {
+                yield return null;
+            }
+            state = LIAState.ACTION;
+            availableAttacks.Remove("Movement");
+            lastAttack = Tools.Random(availableAttacks.ToArray());
+            availableAttacks.Remove(Attack(lastAttack));
+            availableAttacks.Add("Movement");
+            yield return new WaitForSeconds(_timeBetweenAttacksFALL);
+        }
+    }
+
+    public IEnumerator WinterBehaviour() {
+        availableAttacks = _winterAttacks;
+        _bossHealth.CanTakeDamage = false;
+        StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
+        yield return new WaitForSeconds(_waitTimeBeforeAction);
+        while (true) {
+            lastAttack = Tools.Random(availableAttacks.ToArray());
+            availableAttacks.Remove(Attack(lastAttack));
+            while (!availableAttacks.Contains(lastAttack)) {
+                yield return null;
+            }
+        }
+    }
+    #endregion
+
+    public void MovementEnd(BaseAttack attack) {
+        if (attack == null) {
+            return;
+        }
+        availableAttacks.Add(attack.id);
     }
 }

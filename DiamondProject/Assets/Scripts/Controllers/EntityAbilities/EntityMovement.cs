@@ -30,9 +30,22 @@ public class EntityMovement : MonoBehaviour {
     float _turnAroundTimer = 0f;
     float _turnPerc = 0f;
 
+    int _cantMoveToken = 0;
+
+    #region Properties
+
+    public bool CanMove {
+        get => _cantMoveToken <= 0;
+        set {
+            if (!value) { _cantMoveToken++; }
+            else { _cantMoveToken = Mathf.Max(--_cantMoveToken, 0); }
+        }
+    }
     public bool IsMoving => _speed >= 0.01f;
     public Vector2 Orientation => _orientation;
     public Vector2 Direction => _direction;
+
+    #endregion
 
     #region UnityCallbacks
 
@@ -52,6 +65,8 @@ public class EntityMovement : MonoBehaviour {
     #endregion
 
     private void UpdateMove() {
+        if (!CanMove) { return; }
+
         if (_direction != Vector2.zero) {
             if ((!IsMoving && _state == State.DECELERATING) || (_direction == _orientation && _state == State.DECELERATING)) {
                 StartAcceleration();
