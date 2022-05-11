@@ -1,0 +1,103 @@
+Event	ID	Name			Wwise Object Path	Notes
+	211307037	Boss_Fall_FallDash_Leaf			\SD\Boss\Fall\Boss_Fall_FallDash_Leaf	
+	342937835	UI_Menu_Button_Confirm			\SD\UI\UI_Menu_Button_Confirm	
+	399517452	AMB_VisualNovel			\SD\AMB\AMB_VisualNovel	
+	504658162	Pumpkid_Footstep			\SD\Pumpkid\Pumpkid_Foley\Pumpkid_Footstep	
+	605617410	UI_Dialog_Pass			\SD\UI\UI_Dialog_Pass	
+	655685355	Boss_Neutral_LeafRain			\SD\Boss\Neutral\Boss_Neutral_LeafRain	
+	738273803	Boss_Neutral_ExploBush_Summon			\SD\Boss\Neutral\Boss_Neutral_ExploBush_Summon	
+	906040055	Pumpkid_Hit			\SD\Pumpkid\Hit\Pumpkid_Hit	
+	909995601	Boss_Fall_LeafBoomerang_Move			\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Move	
+	971183997	Pumpkid_Sword_Slash			\SD\Pumpkid\Sword\Pumpkid_Sword_Slash	
+	1142827732	Boss_Hit			\SD\Boss\Common\Boss_Hit	
+	1785879112	Boss_Fall_Tree_Attack			\SD\Boss\Fall\Boss_Fall_Tree_Attack	
+	1792841279	Boss_Neutral_ExploBush_Explosion			\SD\Boss\Neutral\Boss_Neutral_ExploBush_Explosion	
+	1890679200	Boss_Neutral_BulletHell			\SD\Boss\Neutral\Boss_Neutral_BulletHell	
+	2139406500	Pumpkid_Sword_Estoc			\SD\Pumpkid\Sword\Pumpkid_Sword_Estoc	
+	2202228643	Pumpkid_Crossbow_Shot			\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Shot	
+	2356299211	Boss_Winter_SnowAbsorption			\SD\Boss\Winter\Boss_Winter_SnowAbsorption	
+	2422880163	Boss_Fall_LeafRain			\SD\Boss\Fall\Boss_Fall_LeafRain	
+	2587768045	UI_Dialog_Letter			\SD\UI\UI_Dialog_Letter	
+	2685031445	Boss_Fall_FallDash_Dash			\SD\Boss\Fall\Boss_Fall_FallDash_Dash	
+	2891304092	Boss_Winter_BulletHell			\SD\Boss\Winter\Boss_Winter_BulletHell	
+	2921680214	Pumpkid_Death			\SD\Pumpkid\Hit\Pumpkid_Death	
+	2933364317	Boss_Neutral_Tree_Summon			\SD\Boss\Neutral\Boss_Neutral_Tree_Summon	
+	3226991506	UI_Menu_Close			\SD\UI\UI_Menu_Close	
+	3321318127	Boss_Winter_IceHell			\SD\Boss\Winter\Boss_Winter_IceHell	
+	3651181119	Boss_FormChange_Neutral			\SD\Boss\Common\Boss_FormChange_Neutral	
+	3749318259	Boss_Fall_LeafBoomerang_Grow			\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Grow	
+	3854123299	AMB_Arena			\SD\AMB\AMB_Arena	
+	3962528453	Boss_Fall_Tree_Summon			\SD\Boss\Fall\Boss_Fall_Tree_Summon	
+	4024294733	Boss_FormChange_Winter			\SD\Boss\Common\Boss_FormChange_Winter	
+	4058101365	GameStart			\SD\AMB\GameStart	
+	4083126854	UI_Menu_Open			\SD\UI\UI_Menu_Open	
+	4139264525	Boss_FormChange_Fall			\SD\Boss\Common\Boss_FormChange_Fall	
+	4197357760	UI_Menu_Button_Back			\SD\UI\UI_Menu_Button_Back	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	87535695	SW_Ground			\SD\SW_Ground	
+	440062387	SW_BossForm			\SD\SW_BossForm	
+	1978060648	SW_Pumpkid_DamageType			\SD\SW_Pumpkid_DamageType	
+	3085206758	SW_WeaponType			\SD\SW_WeaponType	
+
+Switch	ID	Name	Switch Group			Notes
+	54442137	Leaf	SW_Ground			
+	344481046	Ice	SW_Ground			
+	2195636714	Dirt	SW_Ground			
+	670611050	Neutral	SW_BossForm			
+	2512384458	Fall	SW_BossForm			
+	2965343494	Winter	SW_BossForm			
+	54442137	Leaf	SW_Pumpkid_DamageType			
+	344481046	Ice	SW_Pumpkid_DamageType			
+	1098478123	ExploBush	SW_Pumpkid_DamageType			
+	2144363834	Rock	SW_Pumpkid_DamageType			
+	3322072369	Tree	SW_Pumpkid_DamageType			
+	2454616260	Sword	SW_WeaponType			
+	2523406417	Crossbow	SW_WeaponType			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	90049299	RTPC_WeaponType			\SD\RTPC_WeaponType	
+	3290513731	RTPC_Boss_AttackType			\SD\RTPC_Boss_AttackType	
+	3679360398	RTPC_BossForm			\SD\RTPC_BossForm	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	247557814	Foley			\SD\Master\Pumpkid\Foley	
+	670611050	Neutral			\SD\Master\Boss\Neutral	
+	1116398592	Hit			\SD\Master\Pumpkid\Hit	
+	1117531639	AMB			\SD\Master\AMB	
+	1551306167	UI			\SD\Master\UI	
+	1560169506	Boss			\SD\Master\Boss	
+	2454616260	Sword			\SD\Master\Pumpkid\Sword	
+	2512384458	Fall			\SD\Master\Boss\Fall	
+	2523406417	Crossbow			\SD\Master\Pumpkid\Crossbow	
+	2863832581	Pumpkid			\SD\Master\Pumpkid	
+	2965343494	Winter			\SD\Master\Boss\Winter	
+	3991942870	Music			\SD\Master\Music	
+	4056684167	Master			\SD\Master	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	41477260	Boss_Neutral_Hit_Sword_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Sword_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword_02		5810
+	61817970	Pumpkid_Crossbow_Shot_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Crossbow_Shot_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Crossbow\Crossbow\Pumpkid_Crossbow_Shot\Pumpkid_Crossbow_Shot_05		6404
+	87485873	Boss_Neutral_Hit_Sword_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Sword_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword_06		5059
+	95993309	Boss_Neutral_Hit_Crossbow_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Crossbow_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow_04		6299
+	98400941	Boss_Neutral_Hit_Sword_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Sword_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword_05		5942
+	121436246	Pumpkid_Sword_Slash_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Sword_Slash_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Slash\Pumpkid_Sword_Slash_05		7699
+	136462715	Pumpkid_Sword_Slash_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Sword_Slash_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Slash\Pumpkid_Sword_Slash_01		6000
+	187653369	Pumpkid_Crossbow_Shot_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Crossbow_Shot_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Crossbow\Crossbow\Pumpkid_Crossbow_Shot\Pumpkid_Crossbow_Shot_03		6215
+	218820461	Boss_Neutral_Hit_Crossbow_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Crossbow_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow_02		5172
+	247103131	Pumpkid_Crossbow_Shot_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Crossbow_Shot_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Crossbow\Crossbow\Pumpkid_Crossbow_Shot\Pumpkid_Crossbow_Shot_04		6290
+	286466556	Boss_Neutral_Hit_Crossbow_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Crossbow_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow_05		5105
+	291630395	Boss_Neutral_Hit_Sword_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Sword_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword_01		4835
+	358044945	Pumpkid_Sword_Slash_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Sword_Slash_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Slash\Pumpkid_Sword_Slash_02		5563
+	395691134	Pumpkid_Crossbow_Shot_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Crossbow_Shot_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Crossbow\Crossbow\Pumpkid_Crossbow_Shot\Pumpkid_Crossbow_Shot_02		6079
+	498463009	Pumpkid_Sword_Slash_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Sword_Slash_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Slash\Pumpkid_Sword_Slash_06		7883
+	555168088	Boss_Neutral_Hit_Sword_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Sword_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword_04		6369
+	610496320	Pumpkid_Crossbow_Shot_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Crossbow_Shot_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Crossbow\Crossbow\Pumpkid_Crossbow_Shot\Pumpkid_Crossbow_Shot_06		5693
+	668476340	Boss_Neutral_Hit_Sword_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Sword_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword_03		5312
+	770007008	Pumpkid_Crossbow_Shot_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Crossbow_Shot_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Crossbow\Crossbow\Pumpkid_Crossbow_Shot\Pumpkid_Crossbow_Shot_01		6671
+	800218328	Pumpkid_Sword_Slash_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Sword_Slash_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Slash\Pumpkid_Sword_Slash_04		5983
+	897695796	Boss_Neutral_Hit_Crossbow_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Crossbow_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow_03		5015
+	921005621	Boss_Neutral_Hit_Crossbow_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Crossbow_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow_01		5776
+	938586669	Boss_Neutral_Hit_Crossbow_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Boss_Neutral_Hit_Crossbow_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow_06		5545
+	1032883723	Pumpkid_Sword_Slash_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Mac\SFX\Pumpkid_Sword_Slash_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Slash\Pumpkid_Sword_Slash_03		5686
+

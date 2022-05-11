@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}" SchemaVersion="103" RootDocumentID="{6D1F77A3-DCC8-4815-926D-36B821AE11B9}" ParentDocumentID="{064CE3AC-E1DF-4D94-8518-7664F2BEA971}">
+	<AudioObjects>
+		<WorkUnit Name="Crossbow" ID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}" OwnerID="{064CE3AC-E1DF-4D94-8518-7664F2BEA971}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="Crossbow" ID="{7B6D82CE-211C-45EB-92BB-E2074770B7C6}" ShortID="521069039">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Crossbow" ID="{FAFDC426-E06A-43B4-8770-15D965716218}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Pumpkid_Crossbow_Shot" ID="{062CAD8C-174B-4A14-BC1C-54803C107D65}" ShortID="1047629253">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{370282E8-EECA-4063-AE7F-0D6678E7F079}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Pumpkid_Crossbow_Shot_01" ID="{22CE1BEF-DED3-4F14-8F5D-F6EF74EA7C19}" ShortID="148675747">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Crossbow_Shot_01" ID="{378BA7EA-6180-4BA3-85A7-50B20A6572B5}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Crossbow_Shot_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="770007008"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Crossbow_Shot_01" ID="{378BA7EA-6180-4BA3-85A7-50B20A6572B5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Crossbow_Shot_02" ID="{66C6D3B4-B8EF-48DC-8355-E10C68E85CE6}" ShortID="367832374">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Crossbow_Shot_02" ID="{4858CD74-DE6A-4C3E-9646-2E7681285EED}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Crossbow_Shot_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="395691134"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Crossbow_Shot_02" ID="{4858CD74-DE6A-4C3E-9646-2E7681285EED}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Crossbow_Shot_03" ID="{B023B8DB-45B8-49CE-B32C-2654E534FE0C}" ShortID="505520798">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Crossbow_Shot_03" ID="{FEC5CEA2-2F10-45B7-99BD-3C878F9C751A}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Crossbow_Shot_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="187653369"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Crossbow_Shot_03" ID="{FEC5CEA2-2F10-45B7-99BD-3C878F9C751A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Crossbow_Shot_04" ID="{4C43CBC3-E8F2-478E-9126-798C9D6C72B6}" ShortID="824819051">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Crossbow_Shot_04" ID="{FC51FEB7-0BBB-45C5-AE8D-78EF6F3DA090}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Crossbow_Shot_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="247103131"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Crossbow_Shot_04" ID="{FC51FEB7-0BBB-45C5-AE8D-78EF6F3DA090}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Crossbow_Shot_05" ID="{0E89C0BE-555D-4490-86BE-61ABCFF69135}" ShortID="686903375">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Crossbow_Shot_05" ID="{14C009AF-C9C8-4B98-8C11-7EECAB658641}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Crossbow_Shot_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="61817970"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Crossbow_Shot_05" ID="{14C009AF-C9C8-4B98-8C11-7EECAB658641}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Crossbow_Shot_06" ID="{1A77BDA1-3CC1-4763-B5C8-FCCB0F174385}" ShortID="224977990">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Crossbow_Shot_06" ID="{074460FC-1D67-4B1B-8D58-9A812879B54F}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Crossbow_Shot_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="610496320"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Crossbow_Shot_06" ID="{074460FC-1D67-4B1B-8D58-9A812879B54F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

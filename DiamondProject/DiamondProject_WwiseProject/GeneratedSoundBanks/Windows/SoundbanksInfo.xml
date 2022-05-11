@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\GitHub\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\GitHub\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\GitHub\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\GitHub\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2422704051">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="611921317">
+		<SoundBank Id="3161908922" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -25,19 +25,358 @@
 					<IncludedMemoryFiles>
 						<File Id="155480716" Language="SFX">
 							<ShortName>MeleeAttack3.wav</ShortName>
-							<Path>SFX\MeleeAttack3_10C4C929.wem</Path>
+							<Path>SFX\MeleeAttack3_32513D82.wem</Path>
 						</File>
 						<File Id="358982850" Language="SFX">
 							<ShortName>MeleeAttack2.wav</ShortName>
-							<Path>SFX\MeleeAttack2_10C4C929.wem</Path>
+							<Path>SFX\MeleeAttack2_32513D82.wem</Path>
 						</File>
 						<File Id="1003902955" Language="SFX">
 							<ShortName>MeleeAttack1.wav</ShortName>
-							<Path>SFX\MeleeAttack1_10C4C929.wem</Path>
+							<Path>SFX\MeleeAttack1_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="4056684167" Language="SFX" Hash="367249657">
+			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
+			<ShortName>Master</ShortName>
+			<Path>Master.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3854123299" Name="AMB_Arena" ObjectPath="\Events\SD\AMB\AMB_Arena" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="399517452" Name="AMB_VisualNovel" ObjectPath="\Events\SD\AMB\AMB_VisualNovel" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2685031445" Name="Boss_Fall_FallDash_Dash" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Dash" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="211307037" Name="Boss_Fall_FallDash_Leaf" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Leaf" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3749318259" Name="Boss_Fall_LeafBoomerang_Grow" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Grow" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="909995601" Name="Boss_Fall_LeafBoomerang_Move" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Move" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2422880163" Name="Boss_Fall_LeafRain" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafRain" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1785879112" Name="Boss_Fall_Tree_Attack" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Attack" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3962528453" Name="Boss_Fall_Tree_Summon" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4139264525" Name="Boss_FormChange_Fall" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Fall" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3651181119" Name="Boss_FormChange_Neutral" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Neutral" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4024294733" Name="Boss_FormChange_Winter" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Winter" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<SwitchContainers/>
+				</Event>
+				<Event Id="1142827732" Name="Boss_Hit" ObjectPath="\Events\SD\Boss\Common\Boss_Hit" DurationType="OneShot" DurationMin="0." DurationMax="0.35712">
+					<IncludedMemoryFiles>
+						<File Id="41477260" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Sword_02.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Sword_02_32513D82.wem</Path>
+						</File>
+						<File Id="87485873" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Sword_06.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Sword_06_32513D82.wem</Path>
+						</File>
+						<File Id="95993309" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Crossbow_04.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Crossbow_04_32513D82.wem</Path>
+						</File>
+						<File Id="98400941" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Sword_05.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Sword_05_32513D82.wem</Path>
+						</File>
+						<File Id="218820461" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Crossbow_02.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Crossbow_02_32513D82.wem</Path>
+						</File>
+						<File Id="286466556" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Crossbow_05.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Crossbow_05_32513D82.wem</Path>
+						</File>
+						<File Id="291630395" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Sword_01.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Sword_01_32513D82.wem</Path>
+						</File>
+						<File Id="555168088" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Sword_04.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Sword_04_32513D82.wem</Path>
+						</File>
+						<File Id="668476340" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Sword_03.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Sword_03_32513D82.wem</Path>
+						</File>
+						<File Id="897695796" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Crossbow_03.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Crossbow_03_32513D82.wem</Path>
+						</File>
+						<File Id="921005621" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Crossbow_01.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Crossbow_01_32513D82.wem</Path>
+						</File>
+						<File Id="938586669" Language="SFX">
+							<ShortName>Boss_Neutral_Hit_Crossbow_06.wav</ShortName>
+							<Path>SFX\Boss_Neutral_Hit_Crossbow_06_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{7C092A90-46FD-4CEC-9026-CAB624431E18}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{9462570B-C14A-425D-A809-38A78DCFFD30}">
+							<Children/>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{7C092A90-46FD-4CEC-9026-CAB624431E18}">
+							<Children>
+								<SwitchContainer SwitchValue="{C048370F-6C06-44F9-A59D-F9974C9B9D1D}">
+									<Media>
+										<File Id="41477260"/>
+										<File Id="87485873"/>
+										<File Id="98400941"/>
+										<File Id="291630395"/>
+										<File Id="555168088"/>
+										<File Id="668476340"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{42E621F9-0F64-4704-80F0-11ADD76663A0}">
+									<Media>
+										<File Id="95993309"/>
+										<File Id="218820461"/>
+										<File Id="286466556"/>
+										<File Id="897695796"/>
+										<File Id="921005621"/>
+										<File Id="938586669"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{DAB86AC5-41EC-41E6-B8A6-65E8BB56192F}">
+							<Children/>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1890679200" Name="Boss_Neutral_BulletHell" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1792841279" Name="Boss_Neutral_ExploBush_Explosion" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_ExploBush_Explosion" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="738273803" Name="Boss_Neutral_ExploBush_Summon" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_ExploBush_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="655685355" Name="Boss_Neutral_LeafRain" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_LeafRain" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2933364317" Name="Boss_Neutral_Tree_Summon" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2891304092" Name="Boss_Winter_BulletHell" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_BulletHell" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3321318127" Name="Boss_Winter_IceHell" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_IceHell" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2356299211" Name="Boss_Winter_SnowAbsorption" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_SnowAbsorption" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4058101365" Name="GameStart" ObjectPath="\Events\SD\AMB\GameStart" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2202228643" Name="Pumpkid_Crossbow_Shot" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Shot" DurationType="OneShot" DurationMin="0.294184" DurationMax="0.363037">
+					<IncludedMemoryFiles>
+						<File Id="61817970" Language="SFX">
+							<ShortName>Pumpkid_Crossbow_Shot_05.wav</ShortName>
+							<Path>SFX\Pumpkid_Crossbow_Shot_05_32513D82.wem</Path>
+						</File>
+						<File Id="187653369" Language="SFX">
+							<ShortName>Pumpkid_Crossbow_Shot_03.wav</ShortName>
+							<Path>SFX\Pumpkid_Crossbow_Shot_03_32513D82.wem</Path>
+						</File>
+						<File Id="247103131" Language="SFX">
+							<ShortName>Pumpkid_Crossbow_Shot_04.wav</ShortName>
+							<Path>SFX\Pumpkid_Crossbow_Shot_04_32513D82.wem</Path>
+						</File>
+						<File Id="395691134" Language="SFX">
+							<ShortName>Pumpkid_Crossbow_Shot_02.wav</ShortName>
+							<Path>SFX\Pumpkid_Crossbow_Shot_02_32513D82.wem</Path>
+						</File>
+						<File Id="610496320" Language="SFX">
+							<ShortName>Pumpkid_Crossbow_Shot_06.wav</ShortName>
+							<Path>SFX\Pumpkid_Crossbow_Shot_06_32513D82.wem</Path>
+						</File>
+						<File Id="770007008" Language="SFX">
+							<ShortName>Pumpkid_Crossbow_Shot_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Crossbow_Shot_01_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2921680214" Name="Pumpkid_Death" ObjectPath="\Events\SD\Pumpkid\Hit\Pumpkid_Death" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="504658162" Name="Pumpkid_Footstep" ObjectPath="\Events\SD\Pumpkid\Pumpkid_Foley\Pumpkid_Footstep" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<SwitchContainers/>
+				</Event>
+				<Event Id="906040055" Name="Pumpkid_Hit" ObjectPath="\Events\SD\Pumpkid\Hit\Pumpkid_Hit" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<SwitchContainers/>
+				</Event>
+				<Event Id="2139406500" Name="Pumpkid_Sword_Estoc" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Estoc" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="971183997" Name="Pumpkid_Sword_Slash" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Slash" DurationType="OneShot" DurationMin="0.277486" DurationMax="0.524225">
+					<IncludedMemoryFiles>
+						<File Id="121436246" Language="SFX">
+							<ShortName>Pumpkid_Sword_Slash_05.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Slash_05_32513D82.wem</Path>
+						</File>
+						<File Id="136462715" Language="SFX">
+							<ShortName>Pumpkid_Sword_Slash_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Slash_01_32513D82.wem</Path>
+						</File>
+						<File Id="358044945" Language="SFX">
+							<ShortName>Pumpkid_Sword_Slash_02.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Slash_02_32513D82.wem</Path>
+						</File>
+						<File Id="498463009" Language="SFX">
+							<ShortName>Pumpkid_Sword_Slash_06.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Slash_06_32513D82.wem</Path>
+						</File>
+						<File Id="800218328" Language="SFX">
+							<ShortName>Pumpkid_Sword_Slash_04.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Slash_04_32513D82.wem</Path>
+						</File>
+						<File Id="1032883723" Language="SFX">
+							<ShortName>Pumpkid_Sword_Slash_03.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Slash_03_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2587768045" Name="UI_Dialog_Letter" ObjectPath="\Events\SD\UI\UI_Dialog_Letter" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="605617410" Name="UI_Dialog_Pass" ObjectPath="\Events\SD\UI\UI_Dialog_Pass" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4197357760" Name="UI_Menu_Button_Back" ObjectPath="\Events\SD\UI\UI_Menu_Button_Back" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="342937835" Name="UI_Menu_Button_Confirm" ObjectPath="\Events\SD\UI\UI_Menu_Button_Confirm" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3226991506" Name="UI_Menu_Close" ObjectPath="\Events\SD\UI\UI_Menu_Close" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="4083126854" Name="UI_Menu_Open" ObjectPath="\Events\SD\UI\UI_Menu_Open" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\SD\ST_GameMode\Menu"/>
+					</ActionSetState>
+				</Event>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="41477260" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Sword_02.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Sword_02_32513D82.wem</Path>
+				</File>
+				<File Id="61817970" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_Shot_05.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_Shot_05_32513D82.wem</Path>
+				</File>
+				<File Id="87485873" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Sword_06.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Sword_06_32513D82.wem</Path>
+				</File>
+				<File Id="95993309" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Crossbow_04.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Crossbow_04_32513D82.wem</Path>
+				</File>
+				<File Id="98400941" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Sword_05.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Sword_05_32513D82.wem</Path>
+				</File>
+				<File Id="121436246" Language="SFX">
+					<ShortName>Pumpkid_Sword_Slash_05.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Slash_05_32513D82.wem</Path>
+				</File>
+				<File Id="136462715" Language="SFX">
+					<ShortName>Pumpkid_Sword_Slash_01.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Slash_01_32513D82.wem</Path>
+				</File>
+				<File Id="187653369" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_Shot_03.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_Shot_03_32513D82.wem</Path>
+				</File>
+				<File Id="218820461" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Crossbow_02.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Crossbow_02_32513D82.wem</Path>
+				</File>
+				<File Id="247103131" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_Shot_04.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_Shot_04_32513D82.wem</Path>
+				</File>
+				<File Id="286466556" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Crossbow_05.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Crossbow_05_32513D82.wem</Path>
+				</File>
+				<File Id="291630395" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Sword_01.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Sword_01_32513D82.wem</Path>
+				</File>
+				<File Id="358044945" Language="SFX">
+					<ShortName>Pumpkid_Sword_Slash_02.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Slash_02_32513D82.wem</Path>
+				</File>
+				<File Id="395691134" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_Shot_02.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_Shot_02_32513D82.wem</Path>
+				</File>
+				<File Id="498463009" Language="SFX">
+					<ShortName>Pumpkid_Sword_Slash_06.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Slash_06_32513D82.wem</Path>
+				</File>
+				<File Id="555168088" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Sword_04.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Sword_04_32513D82.wem</Path>
+				</File>
+				<File Id="610496320" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_Shot_06.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_Shot_06_32513D82.wem</Path>
+				</File>
+				<File Id="668476340" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Sword_03.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Sword_03_32513D82.wem</Path>
+				</File>
+				<File Id="770007008" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_Shot_01.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_Shot_01_32513D82.wem</Path>
+				</File>
+				<File Id="800218328" Language="SFX">
+					<ShortName>Pumpkid_Sword_Slash_04.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Slash_04_32513D82.wem</Path>
+				</File>
+				<File Id="897695796" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Crossbow_03.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Crossbow_03_32513D82.wem</Path>
+				</File>
+				<File Id="921005621" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Crossbow_01.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Crossbow_01_32513D82.wem</Path>
+				</File>
+				<File Id="938586669" Language="SFX">
+					<ShortName>Boss_Neutral_Hit_Crossbow_06.wav</ShortName>
+					<Path>SFX\Boss_Neutral_Hit_Crossbow_06_32513D82.wem</Path>
+				</File>
+				<File Id="1032883723" Language="SFX">
+					<ShortName>Pumpkid_Sword_Slash_03.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Slash_03_32513D82.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+			<GameParameters>
+				<GameParameter Id="90049299" Name="RTPC_WeaponType" ObjectPath="\Game Parameters\SD\RTPC_WeaponType"/>
+				<GameParameter Id="3290513731" Name="RTPC_Boss_AttackType" ObjectPath="\Game Parameters\SD\RTPC_Boss_AttackType"/>
+				<GameParameter Id="3679360398" Name="RTPC_BossForm" ObjectPath="\Game Parameters\SD\RTPC_BossForm"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame" GUID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2607556080" Name="Menu" ObjectPath="\States\SD\ST_GameMode\Menu" GUID="{17E591A0-2A02-4487-833D-2908B70064BE}">
+					<States/>
+				</StateGroup>
+			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="87535695" Name="SW_Ground" ObjectPath="\Switches\SD\SW_Ground" GUID="{57D5A368-1DF3-4632-B56F-8FDD3E756369}">
+					<Switches>
+						<Switch Id="344481046" Name="Ice" ObjectPath="\Switches\SD\SW_Ground\Ice" GUID="{2353E11A-8B5D-41E3-B5D9-00E68429C458}"/>
+						<Switch Id="2195636714" Name="Dirt" ObjectPath="\Switches\SD\SW_Ground\Dirt" GUID="{1C878391-3A0B-4ACA-B003-88784F2F9432}"/>
+						<Switch Id="54442137" Name="Leaf" ObjectPath="\Switches\SD\SW_Ground\Leaf" GUID="{F998925D-C425-488B-BA53-94E91391FCC7}"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="440062387" Name="SW_BossForm" ObjectPath="\Switches\SD\SW_BossForm" GUID="{559ECB7B-E93E-4A33-87AB-2F5FB2D45205}">
+					<Switches>
+						<Switch Id="670611050" Name="Neutral" ObjectPath="\Switches\SD\SW_BossForm\Neutral" GUID="{7C092A90-46FD-4CEC-9026-CAB624431E18}"/>
+						<Switch Id="2965343494" Name="Winter" ObjectPath="\Switches\SD\SW_BossForm\Winter" GUID="{DAB86AC5-41EC-41E6-B8A6-65E8BB56192F}"/>
+						<Switch Id="2512384458" Name="Fall" ObjectPath="\Switches\SD\SW_BossForm\Fall" GUID="{9462570B-C14A-425D-A809-38A78DCFFD30}"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="1978060648" Name="SW_Pumpkid_DamageType" ObjectPath="\Switches\SD\SW_Pumpkid_DamageType" GUID="{5D076CA1-1CC0-4A3F-BF52-CD3E126D9AA9}">
+					<Switches>
+						<Switch Id="344481046" Name="Ice" ObjectPath="\Switches\SD\SW_Pumpkid_DamageType\Ice" GUID="{15CDBC5E-4537-47F9-9057-48240844FB1F}"/>
+						<Switch Id="54442137" Name="Leaf" ObjectPath="\Switches\SD\SW_Pumpkid_DamageType\Leaf" GUID="{B8164F47-9266-492E-9042-F72B32697039}"/>
+						<Switch Id="3322072369" Name="Tree" ObjectPath="\Switches\SD\SW_Pumpkid_DamageType\Tree" GUID="{F0C41576-CE0E-4120-BA56-9DC36CD5983C}"/>
+						<Switch Id="2144363834" Name="Rock" ObjectPath="\Switches\SD\SW_Pumpkid_DamageType\Rock" GUID="{05516B7C-9E4B-4A98-84DA-71D98811992B}"/>
+						<Switch Id="1098478123" Name="ExploBush" ObjectPath="\Switches\SD\SW_Pumpkid_DamageType\ExploBush" GUID="{69D77020-DB2B-4EF7-86ED-538E23287A58}"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="3085206758" Name="SW_WeaponType" ObjectPath="\Switches\SD\SW_WeaponType" GUID="{5266B77C-C892-459D-8C33-DEED65C8FBF6}">
+					<Switches>
+						<Switch Id="2454616260" Name="Sword" ObjectPath="\Switches\SD\SW_WeaponType\Sword" GUID="{C048370F-6C06-44F9-A59D-F9974C9B9D1D}"/>
+						<Switch Id="2523406417" Name="Crossbow" ObjectPath="\Switches\SD\SW_WeaponType\Crossbow" GUID="{42E621F9-0F64-4704-80F0-11ADD76663A0}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

@@ -1,5 +1,47 @@
+Switch Group	ID	Name			Wwise Object Path	Notes
+	87535695	SW_Ground			\SD\SW_Ground	
+	440062387	SW_BossForm			\SD\SW_BossForm	
+	1978060648	SW_Pumpkid_DamageType			\SD\SW_Pumpkid_DamageType	
+	3085206758	SW_WeaponType			\SD\SW_WeaponType	
+
+Switch	ID	Name	Switch Group			Notes
+	54442137	Leaf	SW_Ground			
+	344481046	Ice	SW_Ground			
+	2195636714	Dirt	SW_Ground			
+	670611050	Neutral	SW_BossForm			
+	2512384458	Fall	SW_BossForm			
+	2965343494	Winter	SW_BossForm			
+	54442137	Leaf	SW_Pumpkid_DamageType			
+	344481046	Ice	SW_Pumpkid_DamageType			
+	1098478123	ExploBush	SW_Pumpkid_DamageType			
+	2144363834	Rock	SW_Pumpkid_DamageType			
+	3322072369	Tree	SW_Pumpkid_DamageType			
+	2454616260	Sword	SW_WeaponType			
+	2523406417	Crossbow	SW_WeaponType			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1923804120	ST_GameMode			\SD\ST_GameMode	
+
+State	ID	Name	State Group			Notes
+	748895195	None	ST_GameMode			
+	984691642	Ingame	ST_GameMode			
+	2607556080	Menu	ST_GameMode			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	247557814	Foley			\SD\Master\Pumpkid\Foley	
+	670611050	Neutral			\SD\Master\Boss\Neutral	
+	1116398592	Hit			\SD\Master\Pumpkid\Hit	
+	1117531639	AMB			\SD\Master\AMB	
+	1551306167	UI			\SD\Master\UI	
+	1560169506	Boss			\SD\Master\Boss	
+	2454616260	Sword			\SD\Master\Pumpkid\Sword	
+	2512384458	Fall			\SD\Master\Boss\Fall	
+	2523406417	Crossbow			\SD\Master\Pumpkid\Crossbow	
+	2863832581	Pumpkid			\SD\Master\Pumpkid	
+	2965343494	Winter			\SD\Master\Boss\Winter	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\SD\Master\Music	
+	4056684167	Master			\SD\Master	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
