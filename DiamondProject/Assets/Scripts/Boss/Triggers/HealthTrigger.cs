@@ -8,10 +8,11 @@ public class HealthTrigger : Trigger {
         NOT_HITTED, HITTED
     }
 
+    [Space]
     [SerializeField] Reference<Health> _health;
 
     [Header("Sytsem")]
-    [SerializeField] float _time;
+    [SerializeField] float _hitTime = 15f;
     [SerializeField] TriggerType _triggerType = TriggerType.NOT_HITTED;
 
     int _hitCount = 0;
@@ -23,14 +24,10 @@ public class HealthTrigger : Trigger {
     public override bool IsSelfTrigger() {
         switch (_triggerType) {
             case TriggerType.NOT_HITTED:
-                if (_hitCount <= 0) {
-                    return true;
-                }
+                if (_hitCount <= 0) { return true; }
                 break;
             case TriggerType.HITTED:
-                if (_hitCount > 0) {
-                    return true;
-                }
+                if (_hitCount > 0) { return true; }
                 break;
             default:
                 break;
@@ -39,16 +36,17 @@ public class HealthTrigger : Trigger {
     }
 
     public void GetHit(int amount) {
-        StartCoroutine(IHit());
+        GetHit();
     }
 
     public void GetHit() {
+        if (_hitTime <= 0) { _hitCount++; return; }
         StartCoroutine(IHit());
     }
 
     IEnumerator IHit() {
         _hitCount++;
-        yield return new WaitForSeconds(_time);
+        yield return new WaitForSeconds(_hitTime);
         _hitCount--;
     }
 }

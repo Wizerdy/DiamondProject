@@ -4,8 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace ToolsBoxEngine {
+    #region Enums
+
     public enum Axis { X, Y, Z, W }
     public enum DebugType { NORMAL, WARNING, ERROR }
+
+    public enum Comparison { EQUAL, DIFFERENT, LESS, LESS_EQUAL, GREATER, GREATER_EQUAL }
+    public enum BasicComparison { LESS, GREATER }
+
+    public enum LogicGate { AND, OR, NOR, XOR, NOT }
+
+    #endregion
 
     #region Nullable vector
     // Nullable Vector
@@ -443,6 +452,46 @@ namespace ToolsBoxEngine {
                 if (array[i].Equals(value)) {
                     return true;
                 }
+            }
+            return false;
+        }
+
+        public static bool Compare(this BasicComparison comparison, float number1, float number2) {
+            switch (comparison) {
+                case BasicComparison.LESS:
+                    if (number1 < number2) { return true; }
+                    break;
+                case BasicComparison.GREATER:
+                    if (number1 > number2) { return true; }
+                    break;
+                default:
+                    break;
+            }
+            return false;
+        }
+
+        public static bool Compare(this Comparison comparison, float number1, float number2) {
+            switch (comparison) {
+                case Comparison.EQUAL:
+                    if (number1 == number2) { return true; }
+                    break;
+                case Comparison.DIFFERENT:
+                    if (number1 != number2) { return true; }
+                    break;
+                case Comparison.LESS:
+                    if (number1 < number2) { return true; }
+                    break;
+                case Comparison.LESS_EQUAL:
+                    if (number1 <= number2) { return true; }
+                    break;
+                case Comparison.GREATER:
+                    if (number1 > number2) { return true; }
+                    break;
+                case Comparison.GREATER_EQUAL:
+                    if (number1 >= number2) { return true; }
+                    break;
+                default:
+                    break;
             }
             return false;
         }

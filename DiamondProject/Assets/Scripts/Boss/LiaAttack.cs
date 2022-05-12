@@ -71,7 +71,6 @@ public class LiaAttack : MonoBehaviour {
     public string Attack(params string[] attacksId) {
         if (attacksId.Length == 0) { return "null"; }
         string winner = Tools.Random(attacksId);
-        Debug.Log(winner);
         _launcher.LaunchAttack(winner);
         return winner;
     }
