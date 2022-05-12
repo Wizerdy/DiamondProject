@@ -104,6 +104,7 @@ public class LiaAttack : MonoBehaviour {
         }
     }
     public IEnumerator FallBehaviour() {
+
         availableAttacks = _fallAttacks;
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));

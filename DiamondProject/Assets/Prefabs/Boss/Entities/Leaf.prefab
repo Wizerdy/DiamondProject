@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3416274113736218407}
   - component: {fileID: -6121485011585211661}
   - component: {fileID: 4443137829050836403}
+  - component: {fileID: -1249195822923372383}
   m_Layer: 7
   m_Name: Leaf
   m_TagString: Untagged
@@ -101,8 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  speed: 0
+  _speed: 0
+  _damage: 0
   rb: {fileID: 0}
+  dh: {fileID: 0}
 --- !u!50 &-3416274113736218407
 Rigidbody2D:
   serializedVersion: 4
@@ -160,3 +163,18 @@ MonoBehaviour:
   _destroyOnHit: 1
   _onlyDamageOnceEach: 1
   _damageType: 
+  _ignoreTag:
+    tags: []
+    state: 0
+--- !u!114 &-1249195822923372383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2216755312018546551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

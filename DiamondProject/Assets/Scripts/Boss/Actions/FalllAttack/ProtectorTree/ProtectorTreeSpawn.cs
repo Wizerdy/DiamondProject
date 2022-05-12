@@ -80,4 +80,14 @@ public class ProtectorTreeSpawn : BaseAttack {
         result = Quaternion.Euler(axis * 360 / numberPoints * point) * origin * radius;
         return center + result;
     }
+
+
+    void OnDestroy() {
+        for (int i = 0; i < trees.Count; i++) {
+            trees[i].Die();
+        }
+        if(currentShield != null) {
+            Destroy(currentShield.gameObject);
+        }
+    }
 }

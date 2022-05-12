@@ -12,9 +12,9 @@ public abstract class BaseAttack : MonoBehaviour {
     [SerializeField] protected Reference<PlayerController> _playerRef; // Enculé
     [SerializeField] protected float duration = 1;
     [SerializeField] protected float coolDown = 1;
-    [SerializeField] protected bool isPlaying = false;
-    [SerializeField] protected bool locked = false;
-    [SerializeField] protected bool NoEnd = false;
+    protected bool isPlaying = false;
+    protected bool locked = false;
+    protected bool NoEnd = false;
     [SerializeField] protected Vector3 BossPos { get => _bossRef?.Instance.transform.position ?? Vector3.zero; set => _bossRef.Instance.transform.position = value; }
     [SerializeField] protected Vector3 PlayerPos { get => _playerRef?.Instance.transform.position ?? Vector3.zero; set => _playerRef.Instance.transform.position = value; }
 
