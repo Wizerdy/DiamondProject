@@ -22,8 +22,8 @@ public class LiaAttack : MonoBehaviour {
     [Space]
     [Header("FALL")]
     [SerializeField] float _timeBetweenAttacksFALL = 3f;
-    [Header("\"Protector Trees\" est indispensable")]
     [SerializeField] List<string> _neutralAttacks = new List<string>();
+    [Header("\"Protector Trees\" est indispensable")]
     [SerializeField] List<string> _fallAttacks = new List<string>();
     [SerializeField] List<string> _winterAttacks = new List<string>();
 
@@ -81,10 +81,23 @@ public class LiaAttack : MonoBehaviour {
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
         yield return new WaitForSeconds(_waitTimeBeforeAction);
+        float timer = 10f;
         while (true) {
+            if(timer > 10f) {
+                timer = 0f;
+                lastAttack = "Movement";
+                availableAttacks.Remove(Attack(lastAttack));
+                while (!availableAttacks.Contains(lastAttack)) {
+                    timer += Time.deltaTime;
+                    yield return null;
+                }
+            }    
+            availableAttacks.Remove("Movement");
             lastAttack = Tools.Random(availableAttacks.ToArray());
             availableAttacks.Remove(Attack(lastAttack));
+            availableAttacks.Add("Movement");
             while (!availableAttacks.Contains(lastAttack)) {
+                timer += Time.deltaTime;
                 yield return null;
             }
         }
