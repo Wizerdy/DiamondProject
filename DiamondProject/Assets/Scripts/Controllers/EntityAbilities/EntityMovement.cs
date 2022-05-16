@@ -6,6 +6,25 @@ using ToolsBoxEngine;
 public class EntityMovement : MonoBehaviour {
     private enum State { NONE, ACCELERATING, DECELERATING, TURNING, TURNING_AROUND }
 
+    public class SpeedModifier {
+        float _percentage;
+        float _time;
+        Coroutine _routine;
+
+        public float Percentage => _percentage;
+
+        public SpeedModifier(float percentage, float time, Coroutine routine = null) {
+            _percentage = percentage;
+            _time = time;
+            _routine = routine;
+        }
+
+        public void SetCoroutine(Coroutine routine) {
+            _routine = routine;
+        }
+    }
+
+
     [SerializeField] Rigidbody2D _rb = null;
     [SerializeField] float _maxSpeed = 5f;
     [SerializeField] AmplitudeCurve _acceleration;
@@ -20,6 +39,7 @@ public class EntityMovement : MonoBehaviour {
     public Tools.BasicDelegate<Vector2> OnTurnAround;
     public Tools.BasicDelegate<Vector2> OnTurn;
 
+    float _currentMaxSpeed = 5f;
     Vector2 _direction = Vector2.zero;
     Vector2 _orientation = Vector2.zero;
     Vector2 _lastDirection = Vector2.zero;
@@ -32,13 +52,15 @@ public class EntityMovement : MonoBehaviour {
 
     int _cantMoveToken = 0;
 
+    List<SpeedModifier> _slows;
+    SpeedModifier _currentSlow;
+
     #region Properties
 
     public bool CanMove {
         get => _cantMoveToken <= 0;
         set {
-            if (!value) { _cantMoveToken++; }
-            else { _cantMoveToken = Mathf.Max(--_cantMoveToken, 0); }
+            if (!value) { _cantMoveToken++; } else { _cantMoveToken = Mathf.Max(--_cantMoveToken, 0); }
         }
     }
     public bool IsMoving => _speed >= 0.01f;
@@ -56,13 +78,12 @@ public class EntityMovement : MonoBehaviour {
     private void Start() {
         _turnAroundRadian = Mathf.Cos(_turnAroundAngle / 2f);
         if (_turnAroundAngle == 360f) { _turnAroundRadian = -10f; }
+        _currentMaxSpeed = _maxSpeed;
     }
 
     private void FixedUpdate() {
         UpdateMove();
     }
-
-    #endregion
 
     private void UpdateMove() {
         if (!CanMove) { return; }
@@ -92,20 +113,24 @@ public class EntityMovement : MonoBehaviour {
         _lastDirection = _direction;
     }
 
+    #endregion
+
+    #region Movements
+
     public void Move(Vector2 direction) {
         _direction = direction;
     }
 
     private void StartAcceleration() {
         _acceleration.Reset();
-        _acceleration.SetPercentage(_speed / _maxSpeed);
+        _acceleration.SetPercentage(_speed / _currentMaxSpeed);
         _state = State.ACCELERATING;
         OnAcceleration?.Invoke(_orientation);
     }
 
     private void StartDecelerating() {
         _deceleration.Reset();
-        _deceleration.SetPercentage(1f - _speed / _maxSpeed);
+        _deceleration.SetPercentage(1f - _speed / _currentMaxSpeed);
         _state = State.DECELERATING;
         OnDeceleration?.Invoke(_orientation);
     }
@@ -114,7 +139,7 @@ public class EntityMovement : MonoBehaviour {
         //_turnTimer = 0f;
         //_acceleration.Reset();
         //StartDecelerating();
-        _turnPerc = Mathf.Clamp01(_speed / _maxSpeed);
+        _turnPerc = Mathf.Clamp01(_speed / _currentMaxSpeed);
         _state = State.TURNING;
         OnTurn?.Invoke(_orientation);
     }
@@ -129,7 +154,7 @@ public class EntityMovement : MonoBehaviour {
 
     private void SetSpeed(float speed) {
         if (_rb == null) { return; }
-        if (speed >= _maxSpeed) { OnRun?.Invoke(); }
+        if (speed >= _currentMaxSpeed) { OnRun?.Invoke(); }
         _speed = speed;
         _rb.velocity = speed * _orientation;
     }
@@ -142,11 +167,11 @@ public class EntityMovement : MonoBehaviour {
             case State.ACCELERATING:
                 _acceleration.UpdateTimer(Time.deltaTime);
                 changeDirection = true;
-                return _acceleration.Evaluate() * _maxSpeed;
+                return _acceleration.Evaluate() * _currentMaxSpeed;
             case State.DECELERATING:
                 _deceleration.UpdateTimer(Time.deltaTime);
                 changeDirection = false;
-                return _deceleration.Evaluate() * _maxSpeed;
+                return _deceleration.Evaluate() * _currentMaxSpeed;
             case State.TURNING_AROUND:
                 _turnAroundTimer += Time.deltaTime;
                 if (_turnAroundTimer < _deceleration.duration) {
@@ -159,8 +184,45 @@ public class EntityMovement : MonoBehaviour {
                 break;
             case State.TURNING:
                 changeDirection = true;
-                return _turnFactor.Evaluate(_turnPerc) * _maxSpeed;
+                return _turnFactor.Evaluate(_turnPerc) * _currentMaxSpeed;
         }
         return 0f;
     }
+
+    #endregion
+
+    #region Slow
+
+    public void Slow(float percentage, float time) {
+        SpeedModifier speedModifier = new SpeedModifier(percentage, time);
+        speedModifier.SetCoroutine(StartCoroutine(Tools.Delay(() => RemoveSlow(speedModifier), time)));
+        _slows.Add(speedModifier);
+        if (_currentSlow == null || percentage < _currentSlow.Percentage) {
+            _currentMaxSpeed = _maxSpeed * percentage;
+            _currentSlow = speedModifier;
+        }
+    }
+
+    public void RemoveSlow(SpeedModifier modifier) {
+        _slows.Remove(modifier);
+
+        if (_currentSlow == modifier) {
+            _currentSlow = null;
+            if (_slows.Count > 0) {
+                if (_slows.Count == 1) {
+                    _currentSlow = _slows[0];
+                } else {
+                    for (int i = 0; i < _slows.Count; i++) {
+                        if (_slows[i].Percentage < (_currentSlow?.Percentage ?? 1f)) {
+                            _currentSlow = _slows[i];
+                        }
+                    }
+                }
+            }
+
+            _currentMaxSpeed = _maxSpeed * (_currentSlow?.Percentage ?? 1f);
+        }
+    }
+
+    #endregion
 }
