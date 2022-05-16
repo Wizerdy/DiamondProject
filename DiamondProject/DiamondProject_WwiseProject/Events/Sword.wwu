@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EAF24BD5-BC8E-43C1-8F45-CE5B692A755B}" SchemaVersion="103" RootDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" ParentDocumentID="{ACD8354D-748D-44C9-9637-56BC40B116AF}">
+	<Events>
+		<WorkUnit Name="Sword" ID="{EAF24BD5-BC8E-43C1-8F45-CE5B692A755B}" OwnerID="{ACD8354D-748D-44C9-9637-56BC40B116AF}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Pumpkid_Sword_Slash" ID="{9909D52D-EDE8-4C20-B425-46894FA46F6A}">
+					<ChildrenList>
+						<Action Name="" ID="{AF12070A-9D54-4CC2-9F8D-D946EFEE47E2}" ShortID="296747668">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_WeaponType" ID="{AD571BFF-B53F-4690-8FD3-0BF31CF3A8E8}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6F1867AC-2BB5-4957-A9CA-FD9C558B7487}" ShortID="373894956">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Sword_Slash" ID="{99FB33F6-E47A-43E1-95C3-5F7D86D9F90E}" WorkUnitID="{A47D9B32-28D3-4C70-93D8-31F1D4C08DF9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pumpkid_Sword_Estoc" ID="{AFE312EA-3123-4977-8DCC-423F0E568F44}">
+					<ChildrenList>
+						<Action Name="" ID="{CC8E1210-952A-4372-AC04-9F7C6706D49B}" ShortID="10017074">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_WeaponType" ID="{AD571BFF-B53F-4690-8FD3-0BF31CF3A8E8}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

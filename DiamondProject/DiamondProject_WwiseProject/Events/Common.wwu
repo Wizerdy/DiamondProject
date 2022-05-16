@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{BFFE96BB-C3C3-4347-B599-64623B626CC2}" SchemaVersion="103" RootDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" ParentDocumentID="{68904370-6AB9-470F-90AA-694CADF04C01}">
+	<Events>
+		<WorkUnit Name="Common" ID="{BFFE96BB-C3C3-4347-B599-64623B626CC2}" OwnerID="{68904370-6AB9-470F-90AA-694CADF04C01}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Boss_FormChange_Winter" ID="{51985CA1-8F2C-4B50-A787-50EE401200BC}">
+					<ChildrenList>
+						<Action Name="" ID="{5170702D-EA27-447F-894F-7C85C472B4D3}" ShortID="528217679">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{AFD94B2D-05B7-4453-BA9F-92C5D7686F4B}" ShortID="908970718">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_BossForm_Slow" ID="{0C47CED9-C68B-412E-9A6C-9EEEFF57A999}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EDDB0CBA-BB93-45BA-84C4-734A536039FC}" ShortID="749291010">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_FormChange" ID="{2A5765ED-4D5F-4306-8CF9-509559D34DB3}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_FormChange_Neutral" ID="{D1C8892C-51FB-4110-B801-5A5F48C2556D}">
+					<ChildrenList>
+						<Action Name="" ID="{EC2EF6E7-1D1B-4E03-9F78-3C9D97CC1772}" ShortID="570091214">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5D2DDAF3-E8D3-4237-AD40-C07B9FF1F9A1}" ShortID="314766491">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_BossForm_Slow" ID="{0C47CED9-C68B-412E-9A6C-9EEEFF57A999}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{58CB01FD-22FD-4B29-8C70-6CB49B2086F0}" ShortID="755164961">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_FormChange" ID="{2A5765ED-4D5F-4306-8CF9-509559D34DB3}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_FormChange_Fall" ID="{E62C570F-C51F-48F8-8AE9-43C14401868C}">
+					<ChildrenList>
+						<Action Name="" ID="{014036EF-DF61-4810-B145-54EAC4945461}" ShortID="152236132">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{158A4D7E-5B19-4F2C-8217-C863ACD12072}" ShortID="435930221">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_BossForm_Slow" ID="{0C47CED9-C68B-412E-9A6C-9EEEFF57A999}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B3DEABEB-40C1-49A2-A663-6624ED6BAD66}" ShortID="689283680">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_FormChange" ID="{2A5765ED-4D5F-4306-8CF9-509559D34DB3}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Hit" ID="{46837D47-97FC-4842-9C5F-56D0F6F599EC}">
+					<ChildrenList>
+						<Action Name="" ID="{124D31C3-32F3-4271-866A-A3F1DFD82957}" ShortID="315853716">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Hit" ID="{112C23FF-F9E0-4DAD-AB61-F37E881BBF77}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

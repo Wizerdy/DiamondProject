@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E9A5E751-F127-480F-A685-489C17A537CD}" SchemaVersion="103" RootDocumentID="{6D1F77A3-DCC8-4815-926D-36B821AE11B9}" ParentDocumentID="{064CE3AC-E1DF-4D94-8518-7664F2BEA971}">
+	<AudioObjects>
+		<WorkUnit Name="Hit" ID="{E9A5E751-F127-480F-A685-489C17A537CD}" OwnerID="{064CE3AC-E1DF-4D94-8518-7664F2BEA971}" PersistMode="Nested">
+			<ChildrenList>
+				<RandomSequenceContainer Name="Pumpkid_Death" ID="{F8075086-A1F9-4BFD-8282-FB4795DD5038}" ShortID="52303124">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+						</Reference>
+					</ReferenceList>
+					<ObjectLists/>
+				</RandomSequenceContainer>
+				<SwitchContainer Name="Pumpkid_Hit" ID="{AEAF7459-8761-48AE-8720-7250625BA840}" ShortID="967872844">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="SW_Pumpkid_DamageType" ID="{5D076CA1-1CC0-4A3F-BF52-CD3E126D9AA9}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Pumpkid_Hit_Ice" ID="{168A3755-8051-4C9B-86BB-E40291364860}" ShortID="648957924">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Pumpkid_Hit_Tree" ID="{417EB3E5-B33C-4EC9-9502-2CF14A4FE0FC}" ShortID="117119778">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Pumpkid_Hit_Leaf" ID="{FDEEBCDD-C9A6-478B-AFB4-D24318480EC1}" ShortID="288757643">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Pumpkid_Hit_ExploBush" ID="{A06E0719-755F-4DB6-9E6F-9D36BC9E2115}" ShortID="653779509">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Pumpkid_Hit_Rock" ID="{6556A7BE-941C-4298-82C0-3FE471826B5E}" ShortID="90744272">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Pumpkid_Hit_ExploBush" ID="{A06E0719-755F-4DB6-9E6F-9D36BC9E2115}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Pumpkid_Hit_Ice" ID="{168A3755-8051-4C9B-86BB-E40291364860}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Pumpkid_Hit_Rock" ID="{6556A7BE-941C-4298-82C0-3FE471826B5E}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Pumpkid_Hit_Leaf" ID="{FDEEBCDD-C9A6-478B-AFB4-D24318480EC1}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Pumpkid_Hit_Tree" ID="{417EB3E5-B33C-4EC9-9502-2CF14A4FE0FC}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="ExploBush" ID="{69D77020-DB2B-4EF7-86ED-538E23287A58}"/>
+								<ItemList>
+									<ItemRef Name="Pumpkid_Hit_ExploBush" ID="{A06E0719-755F-4DB6-9E6F-9D36BC9E2115}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Leaf" ID="{B8164F47-9266-492E-9042-F72B32697039}"/>
+								<ItemList>
+									<ItemRef Name="Pumpkid_Hit_Leaf" ID="{FDEEBCDD-C9A6-478B-AFB4-D24318480EC1}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Ice" ID="{15CDBC5E-4537-47F9-9057-48240844FB1F}"/>
+								<ItemList>
+									<ItemRef Name="Pumpkid_Hit_Ice" ID="{168A3755-8051-4C9B-86BB-E40291364860}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Tree" ID="{F0C41576-CE0E-4120-BA56-9DC36CD5983C}"/>
+								<ItemList>
+									<ItemRef Name="Pumpkid_Hit_Tree" ID="{417EB3E5-B33C-4EC9-9502-2CF14A4FE0FC}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Rock" ID="{05516B7C-9E4B-4A98-84DA-71D98811992B}"/>
+								<ItemList>
+									<ItemRef Name="Pumpkid_Hit_Rock" ID="{6556A7BE-941C-4298-82C0-3FE471826B5E}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

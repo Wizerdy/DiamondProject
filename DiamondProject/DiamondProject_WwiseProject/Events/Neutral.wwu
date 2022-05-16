@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5460DFED-5C58-49B9-A997-E6F8B65EC317}" SchemaVersion="103" RootDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" ParentDocumentID="{68904370-6AB9-470F-90AA-694CADF04C01}">
+	<Events>
+		<WorkUnit Name="Neutral" ID="{5460DFED-5C58-49B9-A997-E6F8B65EC317}" OwnerID="{68904370-6AB9-470F-90AA-694CADF04C01}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="5"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Boss_Neutral_ExploBush_Summon" ID="{74784CC1-99EA-455E-9323-B93CCCEC0379}">
+					<ChildrenList>
+						<Action Name="" ID="{0E11AE04-1304-456A-9AF1-00CF7EFA80FA}" ShortID="257178568">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8BC99E38-26EA-4793-A410-5DEB73248FE2}" ShortID="798728626">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_ExploBush_Summon" ID="{8D10D582-628F-4218-B174-586A8E80F6C5}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_ExploBush_Explosion" ID="{8AC9D42D-6020-43EB-976A-1AD020804E6F}">
+					<ChildrenList>
+						<Action Name="" ID="{E5310792-89B7-4422-954B-62C2A86AD415}" ShortID="475784551">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D2B62AAD-9D58-4818-89E9-D6C279EBBE77}" ShortID="620670171">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_ExploBush_Explosion" ID="{58A21BF4-822E-41E0-9991-AD87FEFB5F40}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_Tree_Summon" ID="{B7231F05-214F-433B-A060-8090D2B1B14C}">
+					<ChildrenList>
+						<Action Name="" ID="{2F9DB7F6-36C6-4595-B44E-80F383601A04}" ShortID="317772382">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C4C278C4-6F09-4CEA-B308-EFAF3DD91302}" ShortID="84139012">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_Tree_Summon" ID="{D71526E1-3B0C-4299-8CAC-30A37B539BF7}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_LeafRain" ID="{81B2C826-8D24-4B64-B053-924721E09C67}">
+					<ChildrenList>
+						<Action Name="" ID="{37351C06-9F77-48F0-BC01-1DCB4D0C9D08}" ShortID="78910420">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{02552364-17A0-411D-8BA6-0FC3D03E81A0}" ShortID="391810804">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_LeafRain" ID="{3410FD31-6B89-4F2C-AEEF-28F264E55F45}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_BulletHell" ID="{CD53F424-75B6-4E3F-8096-E85869B4378F}">
+					<ChildrenList>
+						<Action Name="" ID="{B88630C7-9A71-48A6-9F41-6122E537096A}" ShortID="587364009">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="3"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{83AEC6A3-4F77-4DC1-9194-C03450CA96EE}" ShortID="322651482">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_BulletHell" ID="{8D1A6318-33D1-4A31-9479-DBE380D818E8}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

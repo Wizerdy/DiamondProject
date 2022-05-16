@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{448E012B-2339-4E2C-B5E9-12639F7AAEFD}" SchemaVersion="103" RootDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" ParentDocumentID="{68904370-6AB9-470F-90AA-694CADF04C01}">
+	<Events>
+		<WorkUnit Name="Winter" ID="{448E012B-2339-4E2C-B5E9-12639F7AAEFD}" OwnerID="{68904370-6AB9-470F-90AA-694CADF04C01}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="1"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Boss_Winter_BulletHell" ID="{067E70EE-8A02-4886-9635-21045A1BE5F0}">
+					<ChildrenList>
+						<Action Name="" ID="{33C7A69E-9667-4968-B051-C97A8EFE81BB}" ShortID="580938833">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Winter_IceHell" ID="{FD1A64A2-3EC9-4EDD-A386-80B4934E8294}">
+					<ChildrenList>
+						<Action Name="" ID="{21FDD7B1-38B8-4087-9158-C463DF7D6DED}" ShortID="252122229">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Winter_SnowAbsorption" ID="{851930B4-BFA7-45B0-A65B-66701F94D619}">
+					<ChildrenList>
+						<Action Name="" ID="{F4C3AA5C-C7AA-4642-A6F3-AB685BC13C82}" ShortID="427565022">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
