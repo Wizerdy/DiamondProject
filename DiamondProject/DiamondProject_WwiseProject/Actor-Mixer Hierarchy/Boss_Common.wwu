@@ -44,7 +44,9 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="Boss_Neutral_Hit_Sword" ID="{A41B9E79-B6BA-4877-8FA0-11AA3425428D}" ShortID="455864557">
 											<PropertyList>
+												<Property Name="Color" Type="int16" Value="3"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverrideColor" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -217,7 +219,9 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Boss_Neutral_Hit_Crossbow" ID="{0A085DDE-248A-4FA7-9CED-DB0B0C4F017D}" ShortID="440241262">
 											<PropertyList>
+												<Property Name="Color" Type="int16" Value="3"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverrideColor" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -430,7 +434,9 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="Boss_Fall_Hit_Sword" ID="{95E2666F-90B7-487F-A699-326E8B5D3CEE}" ShortID="544678674">
 											<PropertyList>
+												<Property Name="Color" Type="int16" Value="27"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverrideColor" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -458,7 +464,9 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Boss_Fall_Hit_Crossbow" ID="{3C78DF5F-F9E9-4CBE-936D-CDAD6B65628B}" ShortID="995551958">
 											<PropertyList>
+												<Property Name="Color" Type="int16" Value="27"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverrideColor" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -526,7 +534,9 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="Boss_Winter_Hit_Sword" ID="{50B29376-161B-42F5-9848-3941983A17A9}" ShortID="356380841">
 											<PropertyList>
+												<Property Name="Color" Type="int16" Value="27"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverrideColor" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -554,7 +564,9 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Boss_Winter_Hit_Crossbow" ID="{F403D9B2-8456-44CE-A5A1-62EC4D17CD44}" ShortID="648100606">
 											<PropertyList>
+												<Property Name="Color" Type="int16" Value="27"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverrideColor" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -665,6 +677,31 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Boss_FormChange_Fall" ID="{15B64BF4-3669-4C9C-8A23-1EFEC794B1AA}" ShortID="850718427">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Boss_FormChange_Fall" ID="{DA3401D0-F8F2-4F3D-A16A-3029A0F10996}">
+													<Language>SFX</Language>
+													<AudioFile>Boss_FormChange_Fall.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="267909182"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Boss_FormChange_Fall" ID="{DA3401D0-F8F2-4F3D-A16A-3029A0F10996}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Boss_FormChange_Winter" ID="{A4680918-A92A-4D27-B862-C58FA7C38122}" ShortID="84489217">
@@ -676,6 +713,31 @@
 											<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Boss_FormChange_Winter" ID="{F77C7FFD-EC9D-427E-9531-D126C805E13F}" ShortID="556752319">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Boss_FormChange_Winter" ID="{5BD9E35D-00AA-455A-A969-DC5AAF7AE607}">
+													<Language>SFX</Language>
+													<AudioFile>Boss_FormChange_Winter.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="399149927"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Boss_FormChange_Winter" ID="{5BD9E35D-00AA-455A-A969-DC5AAF7AE607}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Boss_FormChange_Neutral" ID="{F6830964-FCD2-496E-8490-27D4CDD89D62}" ShortID="596616660">
@@ -687,6 +749,31 @@
 											<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Boss_FormChange_Neutral" ID="{1B621B2A-5C97-4887-867F-35A1B2485506}" ShortID="215192588">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Boss_FormChange_Neutral" ID="{EB4EA0F4-B0DB-41A0-A048-7E1895ECA2D5}">
+													<Language>SFX</Language>
+													<AudioFile>Boss_FormChange_Neutral.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="559235580"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Boss_FormChange_Neutral" ID="{EB4EA0F4-B0DB-41A0-A048-7E1895ECA2D5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
 							</ChildrenList>

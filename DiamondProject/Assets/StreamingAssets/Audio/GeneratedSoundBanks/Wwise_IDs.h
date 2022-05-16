@@ -36,18 +36,41 @@ namespace AK
         static const AkUniqueID BOSS_WINTER_ICEHELL = 3321318127U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION = 2356299211U;
         static const AkUniqueID GAMESTART = 4058101365U;
+        static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_FULL = 335910461U;
+        static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_START = 219435418U;
+        static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_STOP = 2182664242U;
+        static const AkUniqueID PUMPKID_CROSSBOW_CHARGEDSHOT = 1785614769U;
+        static const AkUniqueID PUMPKID_CROSSBOW_OVERCHARGE_END = 3990897451U;
+        static const AkUniqueID PUMPKID_CROSSBOW_OVERCHARGE_START = 3561453072U;
         static const AkUniqueID PUMPKID_CROSSBOW_SHOT = 2202228643U;
         static const AkUniqueID PUMPKID_DEATH = 2921680214U;
         static const AkUniqueID PUMPKID_FOOTSTEP = 504658162U;
         static const AkUniqueID PUMPKID_HIT = 906040055U;
-        static const AkUniqueID PUMPKID_SWORD_ESTOC = 2139406500U;
+        static const AkUniqueID PUMPKID_SWORD_CHARGE_FULL = 953869206U;
+        static const AkUniqueID PUMPKID_SWORD_CHARGE_START = 455128255U;
+        static const AkUniqueID PUMPKID_SWORD_CHARGE_STOP = 1300717317U;
+        static const AkUniqueID PUMPKID_SWORD_CHARGEDSLASH = 1533338973U;
         static const AkUniqueID PUMPKID_SWORD_SLASH = 971183997U;
-        static const AkUniqueID UI_DIALOG_LETTER = 2587768045U;
-        static const AkUniqueID UI_DIALOG_PASS = 605617410U;
         static const AkUniqueID UI_MENU_BUTTON_BACK = 4197357760U;
         static const AkUniqueID UI_MENU_BUTTON_CONFIRM = 342937835U;
+        static const AkUniqueID UI_MENU_BUTTON_HOVER = 707128413U;
         static const AkUniqueID UI_MENU_CLOSE = 3226991506U;
         static const AkUniqueID UI_MENU_OPEN = 4083126854U;
+        static const AkUniqueID UI_TRANSITION_TOARENA = 3732347166U;
+        static const AkUniqueID UI_TRANSITION_TOVISUALNOVEL = 2060042005U;
+        static const AkUniqueID UI_VISUALNOVEL_BOOK_CLOSE = 2436199045U;
+        static const AkUniqueID UI_VISUALNOVEL_BOOK_OPEN = 3281857039U;
+        static const AkUniqueID UI_VISUALNOVEL_BOOK_TURNPAGE = 2683899783U;
+        static const AkUniqueID UI_VISUALNOVEL_BUTTON_HOVER = 1703837424U;
+        static const AkUniqueID UI_VISUALNOVEL_GOODANSWER = 4291202018U;
+        static const AkUniqueID UI_VISUALNOVEL_NORNA_EATS = 3744773695U;
+        static const AkUniqueID UI_VISUALNOVEL_PASS = 1724120604U;
+        static const AkUniqueID UI_VISUALNOVEL_PROGRESSION = 2647056812U;
+        static const AkUniqueID UI_VISUALNOVEL_QUESTION = 4105431731U;
+        static const AkUniqueID UI_VISUALNOVEL_SKIP = 3451811866U;
+        static const AkUniqueID UI_VISUALNOVEL_TEXT_START = 570456047U;
+        static const AkUniqueID UI_VISUALNOVEL_TEXT_STOP = 2910950389U;
+        static const AkUniqueID UI_VISUALNOVEL_WRONGANSWER = 2365488276U;
     } // namespace EVENTS
 
     namespace STATES

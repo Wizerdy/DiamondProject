@@ -25,21 +25,10 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Pumpkid_Sword_Estoc" ID="{AFE312EA-3123-4977-8DCC-423F0E568F44}">
-					<ChildrenList>
-						<Action Name="" ID="{CC8E1210-952A-4372-AC04-9F7C6706D49B}" ShortID="10017074">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="38"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="RTPC_WeaponType" ID="{AD571BFF-B53F-4690-8FD3-0BF31CF3A8E8}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				<Event Name="Pumpkid_Sword_Charge_Start" ID="{1A6EA451-FB3D-42BD-A998-ACA512026B6E}"/>
+				<Event Name="Pumpkid_Sword_Charge_Stop" ID="{E9D369B6-3032-4F8D-B9A7-484E97F75C73}"/>
+				<Event Name="Pumpkid_Sword_ChargedSlash" ID="{7948820F-85B6-44C6-B68A-90B1AA4E3FA3}"/>
+				<Event Name="Pumpkid_Sword_Charge_Full" ID="{49328531-6897-42CD-89CD-3CC1F3C8E2A0}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
