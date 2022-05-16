@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6001388004636868388}
   - component: {fileID: 6001388004636868391}
+  - component: {fileID: 1373905576712463137}
   m_Layer: 0
   m_Name: ProtectorTreeSpawn
   m_TagString: Untagged
@@ -59,11 +60,23 @@ MonoBehaviour:
   isPlaying: 0
   locked: 0
   NoEnd: 1
+  _bossHealth: {fileID: 11400000, guid: 116343d6813afc143820099c704afa3b, type: 2}
+  _shieldParent: {fileID: 11400000, guid: 039a591fc6d789845a4541feec52cb0b, type: 2}
   shieldPrefab: {fileID: -4442974129799814969, guid: f976676e39e38d44e8a9c8c90ef3350f, type: 3}
   protectorTreePrefab: {fileID: 7966743475885978344, guid: 1fa365621827ddf42aa074e38903229a, type: 3}
-  trees: []
-  currentShield: {fileID: 0}
   _radius: 15
   _treeNumbers: 5
   _apparitionTime: 1
   _timeBeforeGrownAgain: 8
+--- !u!114 &1373905576712463137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001388004636868390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

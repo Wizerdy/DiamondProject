@@ -22,8 +22,10 @@ public class LiaAttack : MonoBehaviour {
     [Space]
     [Header("FALL")]
     [SerializeField] float _timeBetweenAttacksFALL = 3f;
+    [SerializeField] List<string> _neutralAttacks = new List<string>();
     [Header("\"Protector Trees\" est indispensable")]
     [SerializeField] List<string> _fallAttacks = new List<string>();
+    [SerializeField] List<string> _winterAttacks = new List<string>();
 
     float _timer = 2f;
     [SerializeField] string lastAttack;
@@ -75,11 +77,30 @@ public class LiaAttack : MonoBehaviour {
 
     #region Behaviour
     public IEnumerator NeutralBehaviour() {
-        //while (true) {
-        //    yield return new WaitForSeconds(_timer);
-        //    Attack("Bullet Hell", "Leaf Beam", "ExploBush", "Trees");
-        //}
-        yield return new WaitForSeconds(_timer);
+        availableAttacks = _neutralAttacks;
+        _bossHealth.CanTakeDamage = false;
+        StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
+        yield return new WaitForSeconds(_waitTimeBeforeAction);
+        float timer = 10f;
+        while (true) {
+            if(timer > 10f) {
+                timer = 0f;
+                lastAttack = "Movement";
+                availableAttacks.Remove(Attack(lastAttack));
+                while (!availableAttacks.Contains(lastAttack)) {
+                    timer += Time.deltaTime;
+                    yield return null;
+                }
+            }    
+            availableAttacks.Remove("Movement");
+            lastAttack = Tools.Random(availableAttacks.ToArray());
+            availableAttacks.Remove(Attack(lastAttack));
+            availableAttacks.Add("Movement");
+            while (!availableAttacks.Contains(lastAttack)) {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+        }
     }
 
     public IEnumerator SpringBehaviour() {
@@ -96,7 +117,11 @@ public class LiaAttack : MonoBehaviour {
         }
     }
     public IEnumerator FallBehaviour() {
+
         availableAttacks = _fallAttacks;
+        _bossHealth.CanTakeDamage = false;
+        StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
+        yield return new WaitForSeconds(_waitTimeBeforeAction);
         availableAttacks.Remove(Attack("Protector Trees"));
         while (true) {
             state = LIAState.MOVEMENT;
@@ -115,9 +140,16 @@ public class LiaAttack : MonoBehaviour {
     }
 
     public IEnumerator WinterBehaviour() {
+        availableAttacks = _winterAttacks;
+        _bossHealth.CanTakeDamage = false;
+        StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
+        yield return new WaitForSeconds(_waitTimeBeforeAction);
         while (true) {
-            yield return new WaitForSeconds(_timer);
-            Attack("Ice Hell", "Bullet Hell", "Snow Absorption");
+            lastAttack = Tools.Random(availableAttacks.ToArray());
+            availableAttacks.Remove(Attack(lastAttack));
+            while (!availableAttacks.Contains(lastAttack)) {
+                yield return null;
+            }
         }
     }
     #endregion

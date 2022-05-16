@@ -50,12 +50,12 @@ MonoBehaviour:
   - {fileID: 8101424015359654000}
   - {fileID: 8101424015359653998}
   _childGate: 0
-  _shouldAttack: 1
-  _attackType: 2
-  _timeBeforeReset: 3
+  _player: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   _attackNumberToReach: 20
-  _attackNumber: 0
-  _isActivable: 0
+  _attackType: 2
+  _condition: 5
+  _resetOnError: 1
+  _timeBeforeReset: 0
 --- !u!114 &8101424015359654000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   _childs:
   - {fileID: 8101424015454722121}
   _childGate: 0
-  _health: {fileID: 0}
+  _health: {fileID: 11400000, guid: f5c65a46c95138e438c3a07d070145b2, type: 2}
   _percentage: 1
 --- !u!114 &8101424015454722121
 MonoBehaviour:
@@ -207,12 +207,12 @@ MonoBehaviour:
   - {fileID: 8101424016153837570}
   - {fileID: 8101424016153837568}
   _childGate: 0
-  _shouldAttack: 1
-  _attackType: 1
-  _timeBeforeReset: 3
+  _player: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   _attackNumberToReach: 10
-  _attackNumber: 0
-  _isActivable: 0
+  _attackType: 1
+  _condition: 5
+  _resetOnError: 1
+  _timeBeforeReset: 3
 --- !u!114 &8101424016153837570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +258,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8101424016291808018}
   - component: {fileID: 8101424016291808019}
+  - component: {fileID: 7232478467426181594}
+  - component: {fileID: 7493287481518169177}
   - component: {fileID: 8101424016291808016}
   m_Layer: 0
   m_Name: Winter
@@ -295,13 +297,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childs:
   - {fileID: 8101424016291808016}
+  - {fileID: 7232478467426181594}
   _childGate: 0
-  _shouldAttack: 0
-  _attackType: 0
-  _timeBeforeReset: 15
+  _player: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   _attackNumberToReach: 0
-  _attackNumber: 0
-  _isActivable: 0
+  _attackType: 0
+  _condition: 0
+  _resetOnError: 0
+  _timeBeforeReset: 15
+--- !u!114 &7232478467426181594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016291808021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b659d87a9a6c1cc449a5d43330a720eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childs: []
+  _childGate: 0
+  _health: {fileID: 11400000, guid: f5c65a46c95138e438c3a07d070145b2, type: 2}
+  _hitTime: 15
+  _triggerType: 0
+--- !u!114 &7493287481518169177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016291808021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94ef0c5d64136145b95cdd4de0cc481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childs: []
+  _childGate: 0
+  _shapeSystem: {fileID: 0}
+  _time: 15
+  _condition: 1
+  _resetOnNewShape: 1
 --- !u!114 &8101424016291808016
 MonoBehaviour:
   m_ObjectHideFlags: 0
