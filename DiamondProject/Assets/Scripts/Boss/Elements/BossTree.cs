@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using ToolsBoxEngine;
 
-public class BossTree : BossEntities {
+public class BossTree : BossEntities { //obsolete
     [SerializeField] Reference<Boss> _boss;
-    [SerializeField] TreeShield treeShield;
+    //[SerializeField] TreeShield treeShield;
     SpriteRenderer _sr;
     CircleCollider2D _cc;
     public int life = 0;
@@ -45,7 +45,7 @@ public class BossTree : BossEntities {
         _sr.color = new Color(_sr.color.r, _sr.color.g, _sr.color.b, 0);
         _cc = GetComponent<CircleCollider2D>(); 
         _cc.enabled = false;
-        treeShield.AddTree(this);
+       // treeShield.AddTree(this);
         transform.position = destination;
         _apparition.SetActive(true);
         StartCoroutine(Spawning());
@@ -63,7 +63,7 @@ public class BossTree : BossEntities {
         StartCoroutine(Tools.Delay(() => _zoneDamage.SetActive(false), zoneDamageTime));
     }
     void Die() {
-        treeShield.RemoveTree(this);
+     //   treeShield.RemoveTree(this);
         Destroy(gameObject);
     }
 
@@ -74,7 +74,7 @@ public class BossTree : BossEntities {
         }
     }
 
-    public void AddTreeShield(TreeShield treeShield) {
-        this.treeShield = treeShield;
-    }
+    //public void AddTreeShield(TreeShield treeShield) {
+    //    this.treeShield = treeShield;
+    //}
 }

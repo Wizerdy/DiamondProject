@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4137902258114676335
 Transform:
   m_ObjectHideFlags: 0
@@ -53,19 +53,23 @@ MonoBehaviour:
       m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
   id: Snow Absorption
+  _bossRef: {fileID: 0}
+  _playerRef: {fileID: 0}
   duration: 1
   coolDown: 1
   isPlaying: 0
   locked: 0
+  NoEnd: 0
   numberOfShardPerCircle: 20
   numberOfShardToRemoveInCircle: 5
   numberOfCircleToSpawn: 10
   circleSpawnRatePerSecond: 1
   circleRadius: 15
   circleSpawnRangeRadius: 150
+  _iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
   shardSpeed: 50
   shardDamage: 10
-  iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
+  shardLifetime: 5
 --- !u!114 &4180431547708051658
 MonoBehaviour:
   m_ObjectHideFlags: 0

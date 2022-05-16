@@ -4,8 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace ToolsBoxEngine {
+    #region Enums
+
     public enum Axis { X, Y, Z, W }
     public enum DebugType { NORMAL, WARNING, ERROR }
+
+    public enum Comparison { EQUAL, DIFFERENT, LESS, LESS_EQUAL, GREATER, GREATER_EQUAL }
+    public enum BasicComparison { LESS, GREATER }
+
+    public enum LogicGate { AND, OR, NOR, XOR, NOT }
+
+    #endregion
 
     #region Nullable vector
     // Nullable Vector
@@ -447,6 +456,46 @@ namespace ToolsBoxEngine {
             return false;
         }
 
+        public static bool Compare(this BasicComparison comparison, float number1, float number2) {
+            switch (comparison) {
+                case BasicComparison.LESS:
+                    if (number1 < number2) { return true; }
+                    break;
+                case BasicComparison.GREATER:
+                    if (number1 > number2) { return true; }
+                    break;
+                default:
+                    break;
+            }
+            return false;
+        }
+
+        public static bool Compare(this Comparison comparison, float number1, float number2) {
+            switch (comparison) {
+                case Comparison.EQUAL:
+                    if (number1 == number2) { return true; }
+                    break;
+                case Comparison.DIFFERENT:
+                    if (number1 != number2) { return true; }
+                    break;
+                case Comparison.LESS:
+                    if (number1 < number2) { return true; }
+                    break;
+                case Comparison.LESS_EQUAL:
+                    if (number1 <= number2) { return true; }
+                    break;
+                case Comparison.GREATER:
+                    if (number1 > number2) { return true; }
+                    break;
+                case Comparison.GREATER_EQUAL:
+                    if (number1 >= number2) { return true; }
+                    break;
+                default:
+                    break;
+            }
+            return false;
+        }
+
         #endregion
 
         #region Utilities
@@ -581,6 +630,8 @@ namespace ToolsBoxEngine {
 
         #endregion
 
+        #region Coroutines
+
         public static IEnumerator Delay<T1, T2, T3>(BasicDelegate<T1, T2, T3> function, T1 arg1, T2 arg2, T3 arg3, float time) {
             yield return new WaitForSeconds(time);
             function(arg1, arg2, arg3);
@@ -600,6 +651,8 @@ namespace ToolsBoxEngine {
             yield return new WaitForSeconds(time);
             function();
         }
+
+        #endregion
     }
 
     public class ReadOnlyAttribute : PropertyAttribute {

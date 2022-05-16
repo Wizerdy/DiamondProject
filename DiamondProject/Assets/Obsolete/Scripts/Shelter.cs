@@ -12,6 +12,6 @@ public class Shelter : MonoBehaviour {
         collision.GetComponent<Health>()?.RemoveResistance(resistance);
     }
     void Start() {
-        bossRef.Instance.todestroyondeath.Add(this.gameObject);
+       // bossRef.Instance.todestroyondeath.Add(this.gameObject);
     }
 }

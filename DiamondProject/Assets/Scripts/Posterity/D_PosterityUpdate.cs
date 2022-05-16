@@ -27,5 +27,7 @@ public class D_PosterityUpdate : MonoBehaviour {
         ++_posterity.bossDeathCount;
     }
 
-
+    public void PosterityNbTimeTalkingUpdate(int nb) {
+        _posterity.nbTimeTalkedToNorna = nb;
+    }
 }

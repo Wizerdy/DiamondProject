@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public enum LogicGate {
-    AND, OR, NOR, XOR, NOT
-}
+using ToolsBoxEngine;
 
 public class Trigger : MonoBehaviour {
     [SerializeField] protected List<Trigger> _childs;

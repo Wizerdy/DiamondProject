@@ -14,6 +14,8 @@ public class Health : MonoBehaviour, IHealth {
     [SerializeField] List<string> _resistances = new List<string>();
 
     [SerializeField, HideInInspector] UnityEvent<int> _onMaxHealthChange;
+    [SerializeField, HideInInspector] UnityEvent _onInvicible;
+    [SerializeField, HideInInspector] UnityEvent _onVulnerable;
     [SerializeField, HideInInspector] UnityEvent _onLateStart;
 
     int _invicibilityToken = 0;
@@ -26,9 +28,11 @@ public class Health : MonoBehaviour, IHealth {
     public float Percentage { get { return MaxHealth == 0 ? _currentHealth / MaxHealth : 1f; } }
     public bool CanTakeDamage {
         get { return _invicibilityToken <= 0; }
-        set { _invicibilityToken += (value ? -1 : 1); _invicibilityToken = Mathf.Max(0, _invicibilityToken); }
+        set { AddInvicibilityToken(value ? -1 : 1); }
     }
 
+    public event UnityAction OnInvicible { add => _onInvicible.AddListener(value); remove => _onInvicible.RemoveListener(value); }
+    public event UnityAction OnVulnerable { add => _onVulnerable.AddListener(value); remove => _onVulnerable.RemoveListener(value); }
     public event UnityAction<int> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
     public event UnityAction<int> OnHeal { add => _onHeal.AddListener(value); remove => _onHeal.RemoveListener(value); }
     public event UnityAction OnDeath { add => _onDeath.AddListener(value); remove => _onDeath.RemoveListener(value); }
@@ -89,11 +93,21 @@ public class Health : MonoBehaviour, IHealth {
         }
     }
 
-    void SetMaxHealth(int amount) {
+    public void SetMaxHealth(int amount) {
         if (amount == _maxHealth) { return; }
         int delta = amount - _maxHealth;
         if (_currentHealth == _maxHealth || _currentHealth > amount) { _currentHealth = amount; }
         _maxHealth = amount;
         _onMaxHealthChange?.Invoke(delta);
+    }
+
+    private void AddInvicibilityToken(int amount) {
+        if (_invicibilityToken == 0 && amount > 0) {
+            _onInvicible?.Invoke();
+        } else if (_invicibilityToken > 0 && amount < 0) {
+            _onVulnerable?.Invoke();
+        }
+        _invicibilityToken += amount;
+        _invicibilityToken = Mathf.Max(0, _invicibilityToken);
     }
 }

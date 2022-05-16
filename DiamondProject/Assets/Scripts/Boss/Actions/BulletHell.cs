@@ -3,28 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletHell : BaseAttack {
+    [Header("Spawner Parameter")]
+    [SerializeField] private int numberOfWave = 9;
+    [SerializeField] private int numberOfProjectilsPerWaves = 50;
+    [SerializeField] private float delayBetweenWaves = 0.35f;
+    [SerializeField] private float delayBetweenShards = 0.01f;
+    [SerializeField] private float bulletPerRotation = 25f;
+    [SerializeField] private float spawnDistance = 0.1f;
+    [Range(0.0f, 0.99f)]
+    [SerializeField] private float offSet = 0.15f;
+
+    [Header("Shard Parameter")]
+    [SerializeField] private int iceShardDamage = 5;
+    [SerializeField] private float shardSpeed = 30f;
+    [SerializeField] private float shardLifetime = 5f;
+
+    [Header("Pas Touche")]
+    [SerializeField] private GameObject _iceShard;
     [SerializeField] private Reference<Transform> _target;
 
-    [SerializeField] private int iceShardDamage = 5;
-    [SerializeField] private int numberOfWave = 12;
-    [SerializeField] private int numberOfProjectilsPerWaves = 20;
-    [SerializeField] private float delayBetweenWaves = 1.5f;
-    [SerializeField] private float delayBetweenShards = 0.5f;
-    [SerializeField] private float rotationSpeed = 15f;
-    //[SerializeField] private float spinDuration = 5f;
-    [SerializeField] private float shardSpeed = 10f;
-    [SerializeField] private float spawnDistance = 3f;
     private float acceleration = 10f;
     private float angle = 0f;
+    private float offSetBase;
 
-    [SerializeField] private GameObject iceShard;
+    int _shardCount = 0;
 
     private void SpawnIceShard(int numberOfShard) {
-        float stepAngle = 360.0f - (360.0f / -rotationSpeed);
-        acceleration = -rotationSpeed / 50.0f;
+        float stepAngle = 360.0f - (360.0f / -bulletPerRotation);
+        acceleration = -bulletPerRotation / 50.0f * offSetBase ;
         angle = Mathf.Sin(acceleration) * 360f;
-        //angle = Mathf.Sin(acceleration) * 360f * spinDuration;
-        //angle += acceleration * 360f * spinDuration;
 
         float shotDirX = transform.position.x + Mathf.Sin(((angle + stepAngle * numberOfShard) * Mathf.PI) / 180f);
         float shotDirY = transform.position.y + Mathf.Cos(((angle + stepAngle * numberOfShard) * Mathf.PI) / 180f);
@@ -34,16 +41,18 @@ public class BulletHell : BaseAttack {
 
         Vector3 spawnPos = transform.position + shotDir * spawnDistance;
         GameObject shard = Instantiate(
-            iceShard,
+            _iceShard,
             -spawnPos, 
             Quaternion.Euler(0.0f, 0.0f, -(angle + stepAngle * numberOfShard) + 90)
             );
-
-        shard.GetComponent<IceShard>().Init(_target?.Instance, shardSpeed, iceShardDamage, -shotDir);
+        IceShard iceShard = shard.GetComponent<IceShard>();
+        if (iceShard == null) { return; }
+        _shardCount++;
+        iceShard.Init(_target?.Instance, shardSpeed, iceShardDamage, -shotDir, shardLifetime);
+        iceShard.OnShardDestroy += () => _shardCount--;
     }
 
     protected override IEnumerator IExecute() {
-        isPlaying = true;
         float wavesSpawnRate = 0;
         float shardsSpawnRate = 0;
         int wavesSpawned = 0;
@@ -52,6 +61,12 @@ public class BulletHell : BaseAttack {
             int numberOfShardsSpawned = 0;
             wavesSpawnRate -= Time.deltaTime;
             if (wavesSpawnRate <= 0) {
+
+                if (offSetBase < 1) 
+                    offSetBase = offSetBase + offSet;
+                else
+                    offSetBase = offSetBase - offSet;
+
                 while (numberOfShardsSpawned < numberOfProjectilsPerWaves) {
                     shardsSpawnRate -= Time.deltaTime;
                     if (shardsSpawnRate <= 0) {
@@ -68,9 +83,8 @@ public class BulletHell : BaseAttack {
             yield return null;
         }
 
-        //UpdateIA();
-        isPlaying = false;
-        yield return null;
-
+        while(_shardCount > 0) {
+            yield return null;
+        }
     }
 }
