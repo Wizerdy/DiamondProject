@@ -42,6 +42,7 @@ public class EntityChargeAttack : MonoBehaviour {
 
     public bool CanAttack => !IsAttacking;
     public bool IsAttacking => _isAttacking || _isCharging;
+    public float MaxChargeTime => _chargingTime;
 
     #region Events
 
