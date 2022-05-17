@@ -30,29 +30,6 @@
 				<Event Name="Pumpkid_Crossbow_Charge_Stop" ID="{F026D6D7-7220-4EC7-A241-F85BFA2F2DB6}"/>
 				<Event Name="Pumpkid_Crossbow_Overcharge_Start" ID="{2D87DA5B-33AC-4663-804F-1CDA63FE4BC4}"/>
 				<Event Name="Pumpkid_Crossbow_Overcharge_End" ID="{E9777202-5391-4747-8A0D-B63582BF0C73}"/>
-				<Event Name="Pumpkid_Crossbow_ChargedShot" ID="{8F454E5D-4DD4-4295-A319-28CC33980194}">
-					<ChildrenList>
-						<Action Name="" ID="{90190079-B2FB-4940-9AA4-6D915396D523}" ShortID="654083228">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="38"/>
-								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="RTPC_WeaponType" ID="{AD571BFF-B53F-4690-8FD3-0BF31CF3A8E8}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{D7061C9E-8210-4CCB-B9F5-6B1D92E5FA8B}" ShortID="867998483">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Pumpkid_Crossbow_Shot" ID="{062CAD8C-174B-4A14-BC1C-54803C107D65}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Pumpkid_Crossbow_Charge_Full" ID="{610FD580-160E-45D7-A3B0-1218D56204C9}"/>
 			</ChildrenList>
 		</WorkUnit>

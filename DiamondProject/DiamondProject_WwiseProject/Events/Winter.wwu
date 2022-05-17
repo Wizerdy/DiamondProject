@@ -7,7 +7,7 @@
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
 			<ChildrenList>
-				<Event Name="Boss_Winter_BulletHell" ID="{067E70EE-8A02-4886-9635-21045A1BE5F0}">
+				<Event Name="Boss_Winter_BulletHell_Cast" ID="{067E70EE-8A02-4886-9635-21045A1BE5F0}">
 					<ChildrenList>
 						<Action Name="" ID="{33C7A69E-9667-4968-B051-C97A8EFE81BB}" ShortID="580938833">
 							<PropertyList>
@@ -55,6 +55,9 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Boss_Winter_BulletHell_Circle_Stop" ID="{5DAD9723-2DEA-48CC-92F1-8505762CF3E4}"/>
+				<Event Name="Boss_Winter_BulletHell_Circle_Start" ID="{AD19A5E8-EA40-40F4-8F3F-48D34124BA47}"/>
+				<Event Name="Boss_Winter_SnowAbsorption_Cast" ID="{040CFA28-6576-4E76-B0BF-5A369E249CCE}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -582,7 +582,7 @@ MonoBehaviour:
     ParentPath: Events\SD\Pumpkid\Crossbow
     guid: 07da313b9f4c1744b422960396712c4f
     GuidInternal: 
-    m_lastTime: -8585488694301835069
+    m_lastTime: -8585488076507890780
     List:
     - name: Pumpkid_Crossbow_Charge_Full
       guid: 80d50f610e16d745a3b01218d56204c9
@@ -653,29 +653,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Pumpkid_Crossbow_ChargedShot
-      guid: 5d4e458fd44d9542a31928cc33980194
-      id: 1785614769
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: SD
-        ObjectType: 12
-        guid: d82b2dadda14174a9806bc86c375daca
-      - ElementName: Pumpkid
-        ObjectType: 12
-        guid: 4d35d8ac8d74c944963756bc40b116af
-      - ElementName: Crossbow
-        ObjectType: 12
-        guid: 07da313b9f4c1744b422960396712c4f
-      - ElementName: Pumpkid_Crossbow_ChargedShot
-        ObjectType: 3
-        guid: 5d4e458fd44d9542a31928cc33980194
-      Path: Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_ChargedShot
-      maxAttenuation: 0
-      maxDuration: 0.363037
-      minDuration: 0.294184
     - name: Pumpkid_Crossbow_Overcharge_End
       guid: 027277e9915347478a0db63582bf0c73
       id: 3990897451
@@ -792,8 +769,31 @@ MonoBehaviour:
     ParentPath: Events\SD\Boss\Fall
     guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
     GuidInternal: 
-    m_lastTime: -8585493259324044958
+    m_lastTime: -8585487959143534360
     List:
+    - name: Boss_Fall_FallDash_Cast
+      guid: 6725ad1f4e15ff47aee60fba0aa525e3
+      id: 2378231684
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Fall
+        ObjectType: 12
+        guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
+      - ElementName: Boss_Fall_FallDash_Cast
+        ObjectType: 3
+        guid: 6725ad1f4e15ff47aee60fba0aa525e3
+      Path: Events\SD\Boss\Fall\Boss_Fall_FallDash_Cast
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Boss_Fall_FallDash_Dash
       guid: b2946a1ca96bd54487ccd91b6af4cea0
       id: 2685031445
@@ -840,55 +840,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Boss_Fall_LeafBoomerang_Grow
-      guid: 174ccb632a29eb41b883399d7fb45de6
-      id: 3749318259
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: SD
-        ObjectType: 12
-        guid: d82b2dadda14174a9806bc86c375daca
-      - ElementName: Boss
-        ObjectType: 12
-        guid: 70439068b96a0f4790aa694cadf04c01
-      - ElementName: Fall
-        ObjectType: 12
-        guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
-      - ElementName: Boss_Fall_LeafBoomerang_Grow
-        ObjectType: 3
-        guid: 174ccb632a29eb41b883399d7fb45de6
-      Path: Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Grow
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Boss_Fall_LeafBoomerang_Move
-      guid: 42c760c8efd7914ba5c65229c8f851e0
-      id: 909995601
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: SD
-        ObjectType: 12
-        guid: d82b2dadda14174a9806bc86c375daca
-      - ElementName: Boss
-        ObjectType: 12
-        guid: 70439068b96a0f4790aa694cadf04c01
-      - ElementName: Fall
-        ObjectType: 12
-        guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
-      - ElementName: Boss_Fall_LeafBoomerang_Move
-        ObjectType: 3
-        guid: 42c760c8efd7914ba5c65229c8f851e0
-      Path: Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Move
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Boss_Fall_LeafRain
+    - name: Boss_Fall_LeafBeam
       guid: b3e558d41f26ef43aa31814e9e703ab2
-      id: 2422880163
+      id: 1302493604
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -902,16 +856,16 @@ MonoBehaviour:
       - ElementName: Fall
         ObjectType: 12
         guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
-      - ElementName: Boss_Fall_LeafRain
+      - ElementName: Boss_Fall_LeafBeam
         ObjectType: 3
         guid: b3e558d41f26ef43aa31814e9e703ab2
-      Path: Events\SD\Boss\Fall\Boss_Fall_LeafRain
+      Path: Events\SD\Boss\Fall\Boss_Fall_LeafBeam
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Boss_Fall_Tree_Attack
-      guid: 6743020ecb92f7449282e5fda06992ba
-      id: 1785879112
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Fall_LeafBoomerang_Back
+      guid: 42c760c8efd7914ba5c65229c8f851e0
+      id: 560939783
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -925,13 +879,105 @@ MonoBehaviour:
       - ElementName: Fall
         ObjectType: 12
         guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
-      - ElementName: Boss_Fall_Tree_Attack
+      - ElementName: Boss_Fall_LeafBoomerang_Back
         ObjectType: 3
-        guid: 6743020ecb92f7449282e5fda06992ba
-      Path: Events\SD\Boss\Fall\Boss_Fall_Tree_Attack
+        guid: 42c760c8efd7914ba5c65229c8f851e0
+      Path: Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Back
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Fall_LeafBoomerang_Cast
+      guid: 2e8effba33a5e045834c2bc6367298c6
+      id: 2779939727
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Fall
+        ObjectType: 12
+        guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
+      - ElementName: Boss_Fall_LeafBoomerang_Cast
+        ObjectType: 3
+        guid: 2e8effba33a5e045834c2bc6367298c6
+      Path: Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Cast
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Fall_LeafBoomerang_Go
+      guid: 174ccb632a29eb41b883399d7fb45de6
+      id: 1047433676
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Fall
+        ObjectType: 12
+        guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
+      - ElementName: Boss_Fall_LeafBoomerang_Go
+        ObjectType: 3
+        guid: 174ccb632a29eb41b883399d7fb45de6
+      Path: Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Go
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Fall_Tree_Cast
+      guid: 39ca4f54ee00fb4da37ee30555f2471e
+      id: 284830977
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Fall
+        ObjectType: 12
+        guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
+      - ElementName: Boss_Fall_Tree_Cast
+        ObjectType: 3
+        guid: 39ca4f54ee00fb4da37ee30555f2471e
+      Path: Events\SD\Boss\Fall\Boss_Fall_Tree_Cast
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Fall_Tree_Destroy
+      guid: 68f55188f92f054581ecc9900b47efdd
+      id: 1992578794
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Fall
+        ObjectType: 12
+        guid: 92bcfe4fb7e8dd47a5fd205dc4a02202
+      - ElementName: Boss_Fall_Tree_Destroy
+        ObjectType: 3
+        guid: 68f55188f92f054581ecc9900b47efdd
+      Path: Events\SD\Boss\Fall\Boss_Fall_Tree_Destroy
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Boss_Fall_Tree_Summon
       guid: d0cebfa0d8616f40994cba557ba2ef66
       id: 3962528453
@@ -1053,11 +1099,11 @@ MonoBehaviour:
     ParentPath: Events\SD\Boss\Neutral
     guid: eddf6054585cb949a997e6f8b65ec317
     GuidInternal: 
-    m_lastTime: -8585493259324034985
+    m_lastTime: -8585487959143574249
     List:
-    - name: Boss_Neutral_BulletHell
+    - name: Boss_Neutral_BulletHell_Cast
       guid: 24f453cdb6753f4e8096e85869b4378f
-      id: 1890679200
+      id: 1678198802
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -1071,13 +1117,82 @@ MonoBehaviour:
       - ElementName: Neutral
         ObjectType: 12
         guid: eddf6054585cb949a997e6f8b65ec317
-      - ElementName: Boss_Neutral_BulletHell
+      - ElementName: Boss_Neutral_BulletHell_Cast
         ObjectType: 3
         guid: 24f453cdb6753f4e8096e85869b4378f
-      Path: Events\SD\Boss\Neutral\Boss_Neutral_BulletHell
+      Path: Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Cast
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Neutral_BulletHell_Circle_Start
+      guid: 89a51dfa02e61d4f90fae427d74babee
+      id: 2188436774
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Neutral
+        ObjectType: 12
+        guid: eddf6054585cb949a997e6f8b65ec317
+      - ElementName: Boss_Neutral_BulletHell_Circle_Start
+        ObjectType: 3
+        guid: 89a51dfa02e61d4f90fae427d74babee
+      Path: Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Circle_Start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Neutral_BulletHell_Circle_Stop
+      guid: 3456d35aeabe9e4da273c666392a1e7e
+      id: 2772210022
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Neutral
+        ObjectType: 12
+        guid: eddf6054585cb949a997e6f8b65ec317
+      - ElementName: Boss_Neutral_BulletHell_Circle_Stop
+        ObjectType: 3
+        guid: 3456d35aeabe9e4da273c666392a1e7e
+      Path: Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Circle_Stop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Neutral_ExploBush_Cast
+      guid: 8564304bae152549a6441c021974c353
+      id: 1164125491
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Neutral
+        ObjectType: 12
+        guid: eddf6054585cb949a997e6f8b65ec317
+      - ElementName: Boss_Neutral_ExploBush_Cast
+        ObjectType: 3
+        guid: 8564304bae152549a6441c021974c353
+      Path: Events\SD\Boss\Neutral\Boss_Neutral_ExploBush_Cast
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Boss_Neutral_ExploBush_Explosion
       guid: 2dd4c98a2060eb43976a1ad020804e6f
       id: 1792841279
@@ -1124,9 +1239,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Boss_Neutral_LeafRain
+    - name: Boss_Neutral_LeafBeam
       guid: 26c8b281248d644bb053924721e09c67
-      id: 655685355
+      id: 1498567228
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -1140,13 +1255,59 @@ MonoBehaviour:
       - ElementName: Neutral
         ObjectType: 12
         guid: eddf6054585cb949a997e6f8b65ec317
-      - ElementName: Boss_Neutral_LeafRain
+      - ElementName: Boss_Neutral_LeafBeam
         ObjectType: 3
         guid: 26c8b281248d644bb053924721e09c67
-      Path: Events\SD\Boss\Neutral\Boss_Neutral_LeafRain
+      Path: Events\SD\Boss\Neutral\Boss_Neutral_LeafBeam
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Neutral_Tree_Attack
+      guid: 6b24f5ffcca79a44989e0cd797bf222b
+      id: 1234898960
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Neutral
+        ObjectType: 12
+        guid: eddf6054585cb949a997e6f8b65ec317
+      - ElementName: Boss_Neutral_Tree_Attack
+        ObjectType: 3
+        guid: 6b24f5ffcca79a44989e0cd797bf222b
+      Path: Events\SD\Boss\Neutral\Boss_Neutral_Tree_Attack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Neutral_Tree_Destroy
+      guid: 3f59088ac7fde34e841b0c6dd9123c49
+      id: 2188453778
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Neutral
+        ObjectType: 12
+        guid: eddf6054585cb949a997e6f8b65ec317
+      - ElementName: Boss_Neutral_Tree_Destroy
+        ObjectType: 3
+        guid: 3f59088ac7fde34e841b0c6dd9123c49
+      Path: Events\SD\Boss\Neutral\Boss_Neutral_Tree_Destroy
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Boss_Neutral_Tree_Summon
       guid: 051f23b74f213b43a0608090d2b1b14c
       id: 2933364317
@@ -1258,7 +1419,7 @@ MonoBehaviour:
     ParentPath: Events\SD\Pumpkid\Sword
     guid: d54bf2ea8ebcc1438f45ce5b692a755b
     GuidInternal: 
-    m_lastTime: -8585488694301785208
+    m_lastTime: -8585488076507850601
     List:
     - name: Pumpkid_Sword_Charge_Full
       guid: 318532499768cd4289cd3cc1f3c8e2a0
@@ -1329,29 +1490,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Pumpkid_Sword_ChargedSlash
-      guid: 0f824879b685c644b68a90b1aa4e3fa3
-      id: 1533338973
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: SD
-        ObjectType: 12
-        guid: d82b2dadda14174a9806bc86c375daca
-      - ElementName: Pumpkid
-        ObjectType: 12
-        guid: 4d35d8ac8d74c944963756bc40b116af
-      - ElementName: Sword
-        ObjectType: 12
-        guid: d54bf2ea8ebcc1438f45ce5b692a755b
-      - ElementName: Pumpkid_Sword_ChargedSlash
-        ObjectType: 3
-        guid: 0f824879b685c644b68a90b1aa4e3fa3
-      Path: Events\SD\Pumpkid\Sword\Pumpkid_Sword_ChargedSlash
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
     - name: Pumpkid_Sword_Slash
       guid: 2dd50999e8ed204cb42546894fa46f6a
       id: 971183997
@@ -1389,7 +1527,26 @@ MonoBehaviour:
     ParentPath: Events\SD\UI
     guid: d7104e65562b9c4a807dcd40f6bf4db7
     GuidInternal: 
-    m_lastTime: -8585488690734398548
+    m_lastTime: -8585488095347206240
+    List: []
+  - PhysicalPath: Events\UI_General.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: SD
+      ObjectType: 12
+      guid: d82b2dadda14174a9806bc86c375daca
+    - ElementName: UI
+      ObjectType: 12
+      guid: d7104e65562b9c4a807dcd40f6bf4db7
+    - ElementName: UI_General
+      ObjectType: 12
+      guid: 15e316fa81df774bbf1c1d5cac494de2
+    ParentPath: Events\SD\UI\UI_General
+    guid: 15e316fa81df774bbf1c1d5cac494de2
+    GuidInternal: 
+    m_lastTime: -8585488095347286293
     List:
     - name: UI_Menu_Button_Back
       guid: c9a877833f247d4e88c1b67264c5fbbd
@@ -1404,10 +1561,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_General
+        ObjectType: 12
+        guid: 15e316fa81df774bbf1c1d5cac494de2
       - ElementName: UI_Menu_Button_Back
         ObjectType: 3
         guid: c9a877833f247d4e88c1b67264c5fbbd
-      Path: Events\SD\UI\UI_Menu_Button_Back
+      Path: Events\SD\UI\UI_General\UI_Menu_Button_Back
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1424,10 +1584,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_General
+        ObjectType: 12
+        guid: 15e316fa81df774bbf1c1d5cac494de2
       - ElementName: UI_Menu_Button_Confirm
         ObjectType: 3
         guid: e674bd560ae6b94390ee28d05903302d
-      Path: Events\SD\UI\UI_Menu_Button_Confirm
+      Path: Events\SD\UI\UI_General\UI_Menu_Button_Confirm
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1444,10 +1607,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_General
+        ObjectType: 12
+        guid: 15e316fa81df774bbf1c1d5cac494de2
       - ElementName: UI_Menu_Button_Hover
         ObjectType: 3
         guid: 05b66e6ee8666f438b3eb142df763b21
-      Path: Events\SD\UI\UI_Menu_Button_Hover
+      Path: Events\SD\UI\UI_General\UI_Menu_Button_Hover
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1464,10 +1630,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_General
+        ObjectType: 12
+        guid: 15e316fa81df774bbf1c1d5cac494de2
       - ElementName: UI_Menu_Close
         ObjectType: 3
         guid: 75848a2241552e41a922b466a00cd655
-      Path: Events\SD\UI\UI_Menu_Close
+      Path: Events\SD\UI\UI_General\UI_Menu_Close
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1484,10 +1653,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_General
+        ObjectType: 12
+        guid: 15e316fa81df774bbf1c1d5cac494de2
       - ElementName: UI_Menu_Open
         ObjectType: 3
         guid: 1e6af938d1a99f44a8838e66f78a5e5e
-      Path: Events\SD\UI\UI_Menu_Open
+      Path: Events\SD\UI\UI_General\UI_Menu_Open
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1504,10 +1676,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_General
+        ObjectType: 12
+        guid: 15e316fa81df774bbf1c1d5cac494de2
       - ElementName: UI_Transition_ToArena
         ObjectType: 3
         guid: 0ea217f343e1b34182c41c69a7224139
-      Path: Events\SD\UI\UI_Transition_ToArena
+      Path: Events\SD\UI\UI_General\UI_Transition_ToArena
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1524,13 +1699,35 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_General
+        ObjectType: 12
+        guid: 15e316fa81df774bbf1c1d5cac494de2
       - ElementName: UI_Transition_ToVisualNovel
         ObjectType: 3
         guid: 478f9f45dc19354eb82d3566dcf241cb
-      Path: Events\SD\UI\UI_Transition_ToVisualNovel
+      Path: Events\SD\UI\UI_General\UI_Transition_ToVisualNovel
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+  - PhysicalPath: Events\UI_VisualNovel.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: SD
+      ObjectType: 12
+      guid: d82b2dadda14174a9806bc86c375daca
+    - ElementName: UI
+      ObjectType: 12
+      guid: d7104e65562b9c4a807dcd40f6bf4db7
+    - ElementName: UI_VisualNovel
+      ObjectType: 12
+      guid: e034e15bc02c3848914dedd53b33da15
+    ParentPath: Events\SD\UI\UI_VisualNovel
+    guid: e034e15bc02c3848914dedd53b33da15
+    GuidInternal: 
+    m_lastTime: -8585488066797147439
+    List:
     - name: UI_VisualNovel_Book_Close
       guid: 2be4d54e4c08f141af525b5fcbcae5fc
       id: 2436199045
@@ -1544,10 +1741,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Book_Close
         ObjectType: 3
         guid: 2be4d54e4c08f141af525b5fcbcae5fc
-      Path: Events\SD\UI\UI_VisualNovel_Book_Close
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_Close
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1564,10 +1764,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Book_Open
         ObjectType: 3
         guid: 29657bf575bb324dad77f3893593fdbe
-      Path: Events\SD\UI\UI_VisualNovel_Book_Open
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_Open
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1584,10 +1787,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Book_TurnPage
         ObjectType: 3
         guid: 3e722cdb0905e8499676308d3d0b9747
-      Path: Events\SD\UI\UI_VisualNovel_Book_TurnPage
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_TurnPage
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1604,10 +1810,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Button_Hover
         ObjectType: 3
         guid: 6e834173697ff94d8fb3f0f435b36d3f
-      Path: Events\SD\UI\UI_VisualNovel_Button_Hover
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Button_Hover
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1624,10 +1833,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_GoodAnswer
         ObjectType: 3
         guid: 280b34f615f85145b908b24e7410ad35
-      Path: Events\SD\UI\UI_VisualNovel_GoodAnswer
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_GoodAnswer
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1644,10 +1856,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Norna_Eats
         ObjectType: 3
         guid: 58d3392a16ccf04794f334ef3d5f3552
-      Path: Events\SD\UI\UI_VisualNovel_Norna_Eats
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Norna_Eats
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1664,10 +1879,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Pass
         ObjectType: 3
         guid: 8d70bee4663c15499d44c56b1ab04eba
-      Path: Events\SD\UI\UI_VisualNovel_Pass
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Pass
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1684,10 +1902,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Progression
         ObjectType: 3
         guid: 79b1b0c4e1dcfe47aafbddcbe326f46b
-      Path: Events\SD\UI\UI_VisualNovel_Progression
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Progression
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1704,16 +1925,19 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Question
         ObjectType: 3
         guid: ac1104e40944ef4d96bb5bf351a5f3fa
-      Path: Events\SD\UI\UI_VisualNovel_Question
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Question
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: UI_VisualNovel_Skip
+    - name: UI_VisualNovel_Skip_Start
       guid: 7224ca2459b1b14cacaeacf21e6dacd6
-      id: 3451811866
+      id: 1225793227
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -1724,13 +1948,39 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
-      - ElementName: UI_VisualNovel_Skip
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
+      - ElementName: UI_VisualNovel_Skip_Start
         ObjectType: 3
         guid: 7224ca2459b1b14cacaeacf21e6dacd6
-      Path: Events\SD\UI\UI_VisualNovel_Skip
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Skip_Start
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_VisualNovel_Skip_Stop
+      guid: 109260ca89e672489706e4312b8fb2cb
+      id: 3260107369
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: UI
+        ObjectType: 12
+        guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
+      - ElementName: UI_VisualNovel_Skip_Stop
+        ObjectType: 3
+        guid: 109260ca89e672489706e4312b8fb2cb
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Skip_Stop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: UI_VisualNovel_Text_Start
       guid: 2c1c0768e3da5044bba78e62c50b0f79
       id: 570456047
@@ -1744,10 +1994,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Text_Start
         ObjectType: 3
         guid: 2c1c0768e3da5044bba78e62c50b0f79
-      Path: Events\SD\UI\UI_VisualNovel_Text_Start
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Text_Start
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1764,10 +2017,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_Text_Stop
         ObjectType: 3
         guid: c1a7bb869817ad478dc4ebdb3e157203
-      Path: Events\SD\UI\UI_VisualNovel_Text_Stop
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Text_Stop
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1784,10 +2040,13 @@ MonoBehaviour:
       - ElementName: UI
         ObjectType: 12
         guid: d7104e65562b9c4a807dcd40f6bf4db7
+      - ElementName: UI_VisualNovel
+        ObjectType: 12
+        guid: e034e15bc02c3848914dedd53b33da15
       - ElementName: UI_VisualNovel_WrongAnswer
         ObjectType: 3
         guid: 0f12905466921b41ba0229f3e851ce64
-      Path: Events\SD\UI\UI_VisualNovel_WrongAnswer
+      Path: Events\SD\UI\UI_VisualNovel\UI_VisualNovel_WrongAnswer
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -1808,11 +2067,11 @@ MonoBehaviour:
     ParentPath: Events\SD\Boss\Winter
     guid: 2b018e4439232c4eb5e912639f7aaefd
     GuidInternal: 
-    m_lastTime: -8585493259324025013
+    m_lastTime: -8585487965155282206
     List:
-    - name: Boss_Winter_BulletHell
+    - name: Boss_Winter_BulletHell_Cast
       guid: ee707e06028a8648963521045a1be5f0
-      id: 2891304092
+      id: 937314502
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -1826,13 +2085,59 @@ MonoBehaviour:
       - ElementName: Winter
         ObjectType: 12
         guid: 2b018e4439232c4eb5e912639f7aaefd
-      - ElementName: Boss_Winter_BulletHell
+      - ElementName: Boss_Winter_BulletHell_Cast
         ObjectType: 3
         guid: ee707e06028a8648963521045a1be5f0
-      Path: Events\SD\Boss\Winter\Boss_Winter_BulletHell
+      Path: Events\SD\Boss\Winter\Boss_Winter_BulletHell_Cast
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Winter_BulletHell_Circle_Start
+      guid: e8a519ad40eaf4408f3f48d34124ba47
+      id: 2077972986
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Winter
+        ObjectType: 12
+        guid: 2b018e4439232c4eb5e912639f7aaefd
+      - ElementName: Boss_Winter_BulletHell_Circle_Start
+        ObjectType: 3
+        guid: e8a519ad40eaf4408f3f48d34124ba47
+      Path: Events\SD\Boss\Winter\Boss_Winter_BulletHell_Circle_Start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Boss_Winter_BulletHell_Circle_Stop
+      guid: 2397ad5dea2dcc4892f18505762cf3e4
+      id: 941681938
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Winter
+        ObjectType: 12
+        guid: 2b018e4439232c4eb5e912639f7aaefd
+      - ElementName: Boss_Winter_BulletHell_Circle_Stop
+        ObjectType: 3
+        guid: 2397ad5dea2dcc4892f18505762cf3e4
+      Path: Events\SD\Boss\Winter\Boss_Winter_BulletHell_Circle_Stop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Boss_Winter_IceHell
       guid: a2641afdc93edd4ea38680b4934e8294
       id: 3321318127
@@ -1879,6 +2184,29 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Boss_Winter_SnowAbsorption_Cast
+      guid: 28fa0c047665764eb0bf5a369e249cce
+      id: 2660008099
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SD
+        ObjectType: 12
+        guid: d82b2dadda14174a9806bc86c375daca
+      - ElementName: Boss
+        ObjectType: 12
+        guid: 70439068b96a0f4790aa694cadf04c01
+      - ElementName: Winter
+        ObjectType: 12
+        guid: 2b018e4439232c4eb5e912639f7aaefd
+      - ElementName: Boss_Winter_SnowAbsorption_Cast
+        ObjectType: 3
+        guid: 28fa0c047665764eb0bf5a369e249cce
+      Path: Events\SD\Boss\Winter\Boss_Winter_SnowAbsorption_Cast
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:

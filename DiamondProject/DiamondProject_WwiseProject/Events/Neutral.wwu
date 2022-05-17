@@ -74,7 +74,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Boss_Neutral_LeafRain" ID="{81B2C826-8D24-4B64-B053-924721E09C67}">
+				<Event Name="Boss_Neutral_LeafBeam" ID="{81B2C826-8D24-4B64-B053-924721E09C67}">
 					<ChildrenList>
 						<Action Name="" ID="{37351C06-9F77-48F0-BC01-1DCB4D0C9D08}" ShortID="78910420">
 							<PropertyList>
@@ -97,7 +97,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Boss_Neutral_BulletHell" ID="{CD53F424-75B6-4E3F-8096-E85869B4378F}">
+				<Event Name="Boss_Neutral_BulletHell_Cast" ID="{CD53F424-75B6-4E3F-8096-E85869B4378F}">
 					<ChildrenList>
 						<Action Name="" ID="{B88630C7-9A71-48A6-9F41-6122E537096A}" ShortID="587364009">
 							<PropertyList>
@@ -120,6 +120,33 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Boss_Neutral_Tree_Attack" ID="{FFF5246B-A7CC-449A-989E-0CD797BF222B}">
+					<ChildrenList>
+						<Action Name="" ID="{C57358AF-5C55-44B2-9FEB-BC4A5C7E5BD6}" ShortID="401835418">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{ADAF80C4-FBD2-4C7A-A3BD-E2B98C94C810}" ShortID="391837709">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_Tree_Attack" ID="{335B3CF1-637D-4755-82E2-110AFA2B5F74}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_BulletHell_Circle_Start" ID="{FA1DA589-E602-4F1D-90FA-E427D74BABEE}"/>
+				<Event Name="Boss_Neutral_BulletHell_Circle_Stop" ID="{5AD35634-BEEA-4D9E-A273-C666392A1E7E}"/>
+				<Event Name="Boss_Neutral_ExploBush_Cast" ID="{4B306485-15AE-4925-A644-1C021974C353}"/>
+				<Event Name="Boss_Neutral_Tree_Destroy" ID="{8A08593F-FDC7-4EE3-841B-0C6DD9123C49}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
