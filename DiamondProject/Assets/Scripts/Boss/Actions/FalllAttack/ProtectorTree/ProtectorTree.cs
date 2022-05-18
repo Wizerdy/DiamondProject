@@ -8,7 +8,7 @@ public class ProtectorTree : MonoBehaviour {
     [SerializeField] int health;
     [SerializeField] Vector3 destination;
     [SerializeField] float apparitionTime;
-    [SerializeField] GameObject treeBase;
+    //[SerializeField] GameObject treeBase;
     [SerializeField] public UnityEvent<ProtectorTree> onDeath;
 
     public ProtectorTree SetDestination(Vector3 destination) {
@@ -38,7 +38,7 @@ public class ProtectorTree : MonoBehaviour {
         Spawn();
     }
     void Spawn() {
-        treeBase.SetActive(true);
+        //treeBase.SetActive(true);
     }
     public void Die() {
         onDeath?.Invoke(this);

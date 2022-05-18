@@ -25,7 +25,7 @@ public class BoomerangLeaf : BaseAttack {
             ghosts.Add(i);
         }
         for (int i = 0; i < leafsNumber - ghostLeaf; i++) {
-            int r = Random.Range(0,ghosts.Count);
+            int r = Random.Range(0, ghosts.Count);
             ghosts.RemoveAt(r);
         }
         for (int i = 0; i < leafsNumber; i++) {
@@ -52,8 +52,9 @@ public class BoomerangLeaf : BaseAttack {
             yield return new WaitForSeconds(0.1f);
         }
 
-        void RemoveLeafs(Boomerang boom){
-            leafs.Remove(boom);
-        }
+        End();
+    }
+    void RemoveLeafs(Boomerang boom) {
+        leafs.Remove(boom);
     }
 }

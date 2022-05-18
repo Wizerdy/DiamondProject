@@ -14,6 +14,7 @@ public class FireTree : MonoBehaviour {
     [SerializeField] private int fireDamage = 10;
     [SerializeField] private float fireDamageFrequency = 1f;
     [SerializeField] private float fireRange = 5f;
+    [SerializeField] private float treeDuration = 3f;
     [SerializeField] Animator _treeAnimator;
 
     [SerializeField] delegate void OnTreePlayerHitEvent();
@@ -34,7 +35,7 @@ public class FireTree : MonoBehaviour {
     private float delayBeforeGrowth = 3f;
     private float delayBeforeGrowthTimer = 3f;
 
-    private LineRenderer lineRenderer;
+    //private LineRenderer lineRenderer;
     private BoxCollider2D boxCollider;
     private TreeState currentState;
 
@@ -58,7 +59,7 @@ public class FireTree : MonoBehaviour {
 
         currentState = TreeState.seed;
 
-        lineRenderer = GetComponent<LineRenderer>();
+        // lineRenderer = GetComponent<LineRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
 
         onTreeSpawnEvent += OnSpawn;
@@ -69,30 +70,31 @@ public class FireTree : MonoBehaviour {
         onTreeSpawnEvent?.Invoke();
         boxCollider.enabled = false;
 
-        lineRenderer.enabled = false;
+        //  lineRenderer.enabled = false;
     }
 
     // Update is called once per frame
     void Update() {
 
         if (currentState == TreeState.fullGrown) {
-            timer -= Time.deltaTime;
-            if (timer <= 0) {
-                float distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - target.transform.position.x, 2) + Mathf.Pow(transform.position.y - target.transform.position.y, 2));
-                if (distance <= fireRange) {
-                    onFireHitEvent?.Invoke();
-                    target.gameObject.GetComponent<IHealth>()?.TakeDamage(fireDamage);
-                }
+            timer += Time.deltaTime;
+            if (timer >= treeDuration) {
+                Destroy(gameObject);
+                //float distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - target.transform.position.x, 2) + Mathf.Pow(transform.position.y - target.transform.position.y, 2));
+                //if (distance <= fireRange) {
+                //    onFireHitEvent?.Invoke();
+                //    target.gameObject.GetComponent<IHealth>()?.TakeDamage(fireDamage);
+                //}
 
-                timer = fireDamageFrequency;
+                //timer = fireDamageFrequency;
             }
         }
 
         if (currentState == TreeState.growing) {
             growthTimer -= Time.deltaTime;
             if (growthTimer <= 0) {
-                lineRenderer.enabled = true;
-                DrawAoe(50, fireRange);
+                // lineRenderer.enabled = true;
+                //DrawAoe(50, fireRange);
                 currentState = TreeState.fullGrown;
             }
         }
@@ -113,7 +115,7 @@ public class FireTree : MonoBehaviour {
     }
 
     private void DrawAoe(int steps, float radius) {
-        lineRenderer.positionCount = steps;
+        //lineRenderer.positionCount = steps;
 
         for (int currentStep = 0; currentStep < steps; ++currentStep) {
             float circumference = (float)currentStep / steps;
@@ -128,12 +130,12 @@ public class FireTree : MonoBehaviour {
 
             Vector3 currentPosition = new Vector3(x + transform.position.x, y + transform.position.y, 0);
 
-            lineRenderer.SetPosition(currentStep, currentPosition);
+            //lineRenderer.SetPosition(currentStep, currentPosition);
 
         }
     }
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Player") {
+        if (collision.gameObject.tag == "Player" && currentState != TreeState.fullGrown) {
             onTreePlayerHitEvent?.Invoke();
             collision.gameObject.GetComponent<IHealth>()?.TakeDamage(treeDamage);
         }

@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 173472873}
   - component: {fileID: 173472872}
   - component: {fileID: 173472871}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Masque_Blanc
   m_TagString: Structure
   m_Icon: {fileID: 0}
@@ -2739,7 +2739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7162392062418958014, guid: f27d266ab9392784cac3a593b16e0f1f, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7162392062418958014, guid: f27d266ab9392784cac3a593b16e0f1f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4766,7 +4766,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1305185080
 GameObject:
@@ -9687,10 +9687,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4520003440238749886, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520003440881538012, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249787799359076, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: attacks.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249787799359076, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: attacks.Array.data[11]
+      value: 
+      objectReference: {fileID: 6519549811556957593, guid: b9ccdb8b673d8234c8466b8727a14d0a, type: 3}
+    - target: {fileID: 5680249787799359076, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: attacks.Array.data[12]
+      value: 
+      objectReference: {fileID: 1005890436504860818, guid: c722b66056ddfea46a7c99160b56655d, type: 3}
+    - target: {fileID: 5680249787799359076, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: attacks.Array.data[13]
+      value: 
+      objectReference: {fileID: 2043366983554929250, guid: 196072e45dbfe9e45accd08dde824ba1, type: 3}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _initialForm
       value: 
-      objectReference: {fileID: 11400000, guid: 9cc302217a6051f48919c67e74013175, type: 2}
+      objectReference: {fileID: 11400000, guid: 5f76c4a29c1ff8e43b872cd33be7a0de, type: 2}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -9701,19 +9725,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _fallAttacks.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _fallAttacks.Array.data[5]
-      value: FallDash
-      objectReference: {fileID: 0}
-    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _neutralAttacks.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _neutralAttacks.Array.data[3]
+      propertyPath: _fallAttacks.Array.data[0]
+      value: FollowPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _fallAttacks.Array.data[1]
+      value: Leaf Beam
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _fallAttacks.Array.data[2]
+      value: FallDash
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _fallAttacks.Array.data[3]
+      value: Boomerang
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _fallAttacks.Array.data[4]
       value: Movement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _fallAttacks.Array.data[5]
+      value: Leaf Beam
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _fallAttacks.Array.data[6]
+      value: Bullet Hell
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _neutralAttacks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _neutralAttacks.Array.data[0]
+      value: Trees
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _neutralAttacks.Array.data[1]
+      value: Bullet Hell Neutral
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _neutralAttacks.Array.data[2]
+      value: Leaf Beam Neutral
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _neutralAttacks.Array.data[3]
+      value: Trees
       objectReference: {fileID: 0}
     - target: {fileID: 6659388199860451846, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: m_Mesh
