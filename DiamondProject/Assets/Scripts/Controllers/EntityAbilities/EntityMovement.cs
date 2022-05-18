@@ -52,8 +52,8 @@ public class EntityMovement : MonoBehaviour {
 
     int _cantMoveToken = 0;
 
-    List<SpeedModifier> _slows;
-    SpeedModifier _currentSlow;
+    List<SpeedModifier> _slows = new List<SpeedModifier>();
+    SpeedModifier _currentSlow = null;
 
     #region Properties
 
@@ -87,6 +87,7 @@ public class EntityMovement : MonoBehaviour {
 
     private void UpdateMove() {
         if (!CanMove) { return; }
+        if (_currentMaxSpeed <= 0f) { SetSpeed(0f); return; }
 
         if (_direction != Vector2.zero) {
             if ((!IsMoving && _state == State.DECELERATING) || (_direction == _orientation && _state == State.DECELERATING)) {
@@ -154,7 +155,7 @@ public class EntityMovement : MonoBehaviour {
 
     private void SetSpeed(float speed) {
         if (_rb == null) { return; }
-        if (speed >= _currentMaxSpeed) { OnRun?.Invoke(); }
+        if (_currentMaxSpeed > 0f && speed >= _currentMaxSpeed) { OnRun?.Invoke(); }
         _speed = speed;
         _rb.velocity = speed * _orientation;
     }
@@ -193,14 +194,16 @@ public class EntityMovement : MonoBehaviour {
 
     #region Slow
 
-    public void Slow(float percentage, float time) {
+    public SpeedModifier Slow(float percentage, float time) {
         SpeedModifier speedModifier = new SpeedModifier(percentage, time);
-        speedModifier.SetCoroutine(StartCoroutine(Tools.Delay(() => RemoveSlow(speedModifier), time)));
+        Coroutine routine = StartCoroutine(Tools.Delay(() => RemoveSlow(speedModifier), time));
+        speedModifier.SetCoroutine(routine);
         _slows.Add(speedModifier);
         if (_currentSlow == null || percentage < _currentSlow.Percentage) {
             _currentMaxSpeed = _maxSpeed * percentage;
             _currentSlow = speedModifier;
         }
+        return speedModifier;
     }
 
     public void RemoveSlow(SpeedModifier modifier) {
