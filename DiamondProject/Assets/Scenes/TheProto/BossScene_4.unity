@@ -2463,7 +2463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mme. Rocher
+  m_text: Gwenia
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5563,6 +5563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1621201347}
+  - component: {fileID: 1621201348}
   - component: {fileID: 1621201343}
   - component: {fileID: 1621201346}
   - component: {fileID: 1621201345}
@@ -5581,7 +5582,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621201342}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bb4e4c2b0c5a8b40bfce12fd07dfba3, type: 3}
   m_Name: 
@@ -5666,7 +5667,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -5698,6 +5699,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1621201348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621201342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3a4e189cdd414449b752d087b69694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
+  _camera: {fileID: 1621201346}
+  _useBounds: 1
+  _top: 25
+  _right: 43.5
+  _bot: -25
+  _left: -43.5
 --- !u!1 &1627650769
 GameObject:
   m_ObjectHideFlags: 0
@@ -6764,6 +6784,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3959631132869822229, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _chargeSlow
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631132869822231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.194849
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631132869822231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5583048
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631132869822231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.023888588
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959631132869822231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.8536029
+      objectReference: {fileID: 0}
     - target: {fileID: 3959631132869822232, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6995,6 +7035,10 @@ PrefabInstance:
     - target: {fileID: 4325161512381794135, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _distanceOverTime.m_Curve.Array.data[1].weightedMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598147205434455670, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6577466892598571434, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: looping
@@ -9690,7 +9734,7 @@ PrefabInstance:
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _initialForm
       value: 
-      objectReference: {fileID: 11400000, guid: 9cc302217a6051f48919c67e74013175, type: 2}
+      objectReference: {fileID: 11400000, guid: 5f76c4a29c1ff8e43b872cd33be7a0de, type: 2}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
