@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
     [Header("Value")]
     [SerializeField] float _clickTime = 0.1f;
     [SerializeField] int _rangeAttackHeat = 5;
+    [SerializeField, Range(0f, 1f)] float _chargeSlow = 0.35f;
 
     //[Header("Dialogue")]
     //[SerializeField] TextInteraction textInteraction;
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour {
     PlayerControls _controls = null;
     Vector2 mousePosition = Vector2.up;
     int _cantMoveToken = 0;
+
+    EntityMovement.SpeedModifier _currentChargeSlow = null;
 
     // Clicks
     float _clickTimer = 0f;
@@ -106,8 +109,8 @@ public class PlayerController : MonoBehaviour {
         #region Melee Attack
 
         if (_chargeMeleeAttack != null) {
-            _chargeMeleeAttack.OnCharging += _DontMove;
-            _chargeMeleeAttack.OnAttackEnd += _YouCanMove;
+            //_chargeMeleeAttack.OnCharging += _DontMove;
+            //_chargeMeleeAttack.OnAttackEnd += _YouCanMove;
             _chargeMeleeAttack.OnOverCharge += _OverChargedMeleeAttack;
         }
 
@@ -116,8 +119,8 @@ public class PlayerController : MonoBehaviour {
         #region Range Attack
 
         if (_chargeRangedAttack != null) {
-            _chargeRangedAttack.OnCharging += _DontMove;
-            _chargeRangedAttack.OnAttackEnd += _YouCanMove;
+            //_chargeRangedAttack.OnCharging += _DontMove;
+            //_chargeRangedAttack.OnAttackEnd += _YouCanMove;
             _chargeRangedAttack.OnOverCharge += _OverChargedRangeAttack;
         }
 
@@ -239,17 +242,26 @@ public class PlayerController : MonoBehaviour {
 
     private void NormalAttack() {
         if (!_meleeAttack?.CanAttack ?? true) { return; }
+        CanMove = false;
+        StartCoroutine(Tools.Delay(() => CanMove = true, 0.2f));
         _meleeAttack?.Attack(LookDirection);
         _onAttack?.Invoke(AttackType.MELEE);
     }
 
     private void ChargeMeleeAttack() {
         if (!_chargeMeleeAttack?.CanAttack ?? true) { return; }
+        if (_currentChargeSlow != null) { _movement.RemoveSlow(_currentChargeSlow); }
+        _currentChargeSlow = _movement.Slow(1f - _chargeSlow, _chargeMeleeAttack.MaxChargeTime);
         _chargeMeleeAttack?.StartCharging(LookDirection);
     }
 
     private void UnleashChargeMeleeAttack() {
         if (_chargeMeleeAttack?.CanAttack ?? true) { return; }
+
+        if (_currentChargeSlow != null) {
+            _movement.RemoveSlow(_currentChargeSlow);
+            _currentChargeSlow = null;
+        }
         _chargeMeleeAttack?.StopCharging(LookDirection);
         _onAttack?.Invoke(AttackType.MELEE);
     }
@@ -289,11 +301,18 @@ public class PlayerController : MonoBehaviour {
 
     private void ChargeRangeAttack() {
         if (!_chargeRangedAttack?.CanAttack ?? true) { return; }
+        if (_currentChargeSlow != null) { _movement.RemoveSlow(_currentChargeSlow); }
+        _currentChargeSlow = _movement.Slow(1f - _chargeSlow, _chargeRangedAttack.MaxChargeTime);
         _chargeRangedAttack?.StartCharging(LookDirection);
     }
 
     private void UnleashChargeRangeAttack() {
         if (_chargeRangedAttack?.CanAttack ?? true) { return; }
+
+        if (_currentChargeSlow != null) {
+            _movement.RemoveSlow(_currentChargeSlow);
+            _currentChargeSlow = null;
+        }
         _chargeRangedAttack?.StopCharging(LookDirection);
         _onAttack?.Invoke(AttackType.RANGE);
     }
