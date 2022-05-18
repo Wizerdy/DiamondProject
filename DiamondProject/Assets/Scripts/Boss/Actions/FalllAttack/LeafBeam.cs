@@ -39,8 +39,8 @@ public class LeafBeam : BaseAttack {
             currentleafBeam.transform.position = BossPos + _beamPosOnBoss;
             dir = (PlayerPos - currentAim).normalized;
             nextPosition = currentAim + dir * Time.deltaTime * _rayLinearSpeed;
-            Debug.DrawRay(BossPos, nextPosition - BossPos, Color.black);
-            Debug.Log(Vector3.RotateTowards(currentAim - BossPos, PlayerPos - BossPos, _rayAngularSpeed * Time.deltaTime, 0.0f));
+            //Debug.DrawRay(BossPos, nextPosition - BossPos, Color.black);
+            //Debug.Log(Vector3.RotateTowards(currentAim - BossPos, PlayerPos - BossPos, _rayAngularSpeed * Time.deltaTime, 0.0f));
             if (Vector3.Distance(nextPosition, currentleafBeam.transform.position) < _minDistLaser) {
                 currentAim += Vector3.RotateTowards(currentAim - currentleafBeam.transform.position + (currentAim - currentleafBeam.transform.position).normalized, PlayerPos - currentleafBeam.transform.position, _rayAngularSpeed * Time.deltaTime, 0.0f) - (currentAim - currentleafBeam.transform.position);
             } else {

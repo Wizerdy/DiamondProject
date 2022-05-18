@@ -19,6 +19,7 @@ public class CameraEngine2D : MonoBehaviour {
     [SerializeField] Camera _parent = null;
     [SerializeField] float _baseDepth = 0f;
     [SerializeField] float _baseCameraSize;
+    [SerializeField] AnimationCurve _defaultCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
     Vector3 startPosition;
 
@@ -40,7 +41,7 @@ public class CameraEngine2D : MonoBehaviour {
 
     private void Start() {
         ResetStartPosition();
-        //Zoom(2f, 0.2f);
+        Zoom(2f, 0.2f);
         //StartCoroutine(Tools.Delay<float, float, Vector3?>(Zoom, 0.2f, 5f, null, 0.2f));
     }
 
@@ -50,7 +51,7 @@ public class CameraEngine2D : MonoBehaviour {
         }
     }
 
-    public void Zoom(float zoom, float time, Vector3? unzoomedPosition = null) {
+    public void Zoom(float zoom, float time, Vector3? unzoomedPosition = null, AnimationCurve curve = null) {
         if (zoom == 0f) { Debug.LogError("NO."); return; }
         if (unzoomedPosition == null) { unzoomedPosition = _parent != null ? _parent.transform.position : startPosition; }
 
@@ -58,16 +59,16 @@ public class CameraEngine2D : MonoBehaviour {
         float newZ = Mathf.LerpUnclamped(_baseDepth, unzoomedZ, zoom);
         Vector3 destination = Vector3.zero.Override(newZ, Axis.Z);
         destination -= unzoomedPosition.Value;
-        Move(destination, time, Axis.Z);
+        Move(destination, time, curve, Axis.Z);
     }
 
-    public void ChangeParent(Camera parent, float time) {
+    public void ChangeParent(Camera parent, float time, AnimationCurve curve = null) {
         this._parent = parent;
-        ResetLocalPosition(time);
+        ResetLocalPosition(time, curve);
     }
 
-    public void ResetLocalPosition(float time) {
-        Move(Vector3.zero, time, Axis.X, Axis.Y);
+    public void ResetLocalPosition(float time, AnimationCurve curve = null) {
+        Move(Vector3.zero, time, curve, Axis.X, Axis.Y);
     }
 
     public void ResetStartPosition() {
@@ -75,6 +76,12 @@ public class CameraEngine2D : MonoBehaviour {
     }
 
     public void Move(Vector3 locPos, float time, params Axis[] concernedAxis) {
+        Move(locPos, time, null, concernedAxis);
+    }
+
+    public void Move(Vector3 locPos, float time, AnimationCurve curve = null, params Axis[] concernedAxis) {
+        if (curve == null) { curve = _defaultCurve; }
+
         GetAxisPriority(concernedAxis);
         if (time <= 0f) { LocPosition = LocPosition.Override(locPos, concernedAxis); return; }
 
@@ -86,7 +93,9 @@ public class CameraEngine2D : MonoBehaviour {
             float timePassed = 0f;
             AxisRoutine routine = null;
             while (timePassed < time) {
-                Vector3 pos = Vector3.Lerp(startPosition, position, timePassed / time);
+                float percentage = timePassed / time;
+                percentage = curve.Evaluate(percentage);
+                Vector3 pos = Vector3.Lerp(startPosition, position, percentage);
                 LocPosition = LocPosition.Override(pos, concernedAxis);
                 if (concernedAxis.Contains(Axis.Z)) {
                     float worldDepth = (_parent != null ? _parent.transform.position.z : transform.position.z);
@@ -101,7 +110,7 @@ public class CameraEngine2D : MonoBehaviour {
     }
 
     public void ComputeDepth(float minDepth, float maxDepth) {
-        Tools.Print(minDepth, maxDepth, Position.z);
+        //Tools.Print(minDepth, maxDepth, Position.z);
         float percentage = Tools.InverseLerpUnclamped(minDepth, maxDepth, Position.z);
         _camera.orthographicSize = Mathf.LerpUnclamped(0f, _baseCameraSize, percentage);
     }

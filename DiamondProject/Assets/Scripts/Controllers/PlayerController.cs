@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntityChargeAttack _chargeMeleeAttack;
     [SerializeField] EntityRangedAttack _rangedAttack;
     [SerializeField] EntityChargeRanged _chargeRangedAttack;
+    [SerializeField] EntityOverHeat _overheat;
     [SerializeField] EntityInteract _interact;
     [SerializeField] Health _health;
-    [SerializeField] EntityOverHeat _overheat;
     [SerializeField] EntitySprite _sprite;
     [SerializeField] Reference<Camera> _camera;
     [SerializeField] Animator _animator;
@@ -25,8 +25,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] UnityEvent<AttackType> _onAttack;
 
     [Header("Value")]
+    [SerializeField] GameObject _bullet;
     [SerializeField] float _clickTime = 0.1f;
-    [SerializeField] int _rangeAttackHeat = 5;
+    //[SerializeField] int _rangeAttackHeat = 5;
     [SerializeField, Range(0f, 1f)] float _chargeSlow = 0.35f;
 
     //[Header("Dialogue")]
@@ -318,13 +319,15 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void RangeAttack() {
+        if (_bullet == null) { return; }
         if (PerfomingMeleeAttack) { return; }
         if (!_rangedAttack?.CanAttack ?? true) { return; }
         if (_overheat?.Overheating ?? true) { return; }
 
+        _rangedAttack?.SetBullet(_bullet);
         _rangedAttack?.Attack(LookDirection);
         _onAttack?.Invoke(AttackType.RANGE);
-        if (_overheat != null) { _overheat.Heat += _rangeAttackHeat; }
+        if (_overheat != null) { _overheat.Heat += _bullet.GetComponent<Bullet>()?.Overheat ?? 5; }
     }
 
     #endregion

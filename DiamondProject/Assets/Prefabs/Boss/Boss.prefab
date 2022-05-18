@@ -1369,6 +1369,9 @@ MonoBehaviour:
   - {fileID: 391067967941441068, guid: 628b264f957cec24b9904cd8875bb8e1, type: 3}
   - {fileID: -7494688216887631774, guid: e57f4fd57b232234bbfd11d10d307308, type: 3}
   - {fileID: -8494409865561735005, guid: 14168dc1cdf69c544b1e2e370ecef08d, type: 3}
+  - {fileID: 6519549811556957593, guid: b9ccdb8b673d8234c8466b8727a14d0a, type: 3}
+  - {fileID: 1005890436504860818, guid: c722b66056ddfea46a7c99160b56655d, type: 3}
+  - {fileID: 2043366983554929250, guid: 196072e45dbfe9e45accd08dde824ba1, type: 3}
 --- !u!1 &5680249788330399389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2096,7 @@ GameObject:
   - component: {fileID: 5680249788645268036}
   - component: {fileID: 5680249788645268039}
   - component: {fileID: 5680249788645268033}
+  - component: {fileID: 1630664842379352371}
   m_Layer: 0
   m_Name: ShapeSystem
   m_TagString: Boss
@@ -2221,7 +2225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shapeSystem: {fileID: 5680249788645268036}
   _boss: {fileID: 3063354052670382493}
-  _timeBeforeChange: 1
+  _timeBeforeChange: 0.5
 --- !u!114 &5680249788645268033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2240,6 +2244,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9f2d018ae8760d249ad843935e4b79f8, type: 2}
   - {fileID: 11400000, guid: f47203dd14543bd4a9bb2eeacc123b61, type: 2}
   - {fileID: 11400000, guid: 9cc302217a6051f48919c67e74013175, type: 2}
+--- !u!114 &1630664842379352371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5680249788645268037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e68792db1661564b82f197edcdab6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 5680249788645268036}
+  target: {fileID: 11400000, guid: c9af7d84e00165c499c4c125a1f49581, type: 2}
 --- !u!1 &5680249789032344795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,15 +2726,14 @@ MonoBehaviour:
   availableAttacks: []
   _timeBetweenAttacksFALL: 5
   _neutralAttacks:
-  - Bullet Hell
   - Trees
-  - Leaf Beam
+  - Bullet Hell Neutral
+  - Leaf Beam Neutral
   _fallAttacks:
-  - Protector Trees
-  - Movement
+  - FollowPlayer
   - Leaf Beam
-  - Boomerang
   - FallDash
+  - Boomerang
   _winterAttacks:
   - Ice Hell
   - Bullet Hell
