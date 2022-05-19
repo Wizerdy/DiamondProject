@@ -110,13 +110,16 @@ public class HUDHealth : MonoBehaviour {
     }
 
     IEnumerator ChangeHealthOverTime(Slider slider, float target, float time) {
-        if (time <= 0f) { slider.value = target; }
+        if (time <= 0f) { slider.value = target; yield break; }
+        if (slider.value == target) { yield break; }
         float timePassed = 0f;
         float startPercentage = slider.value;
         while (timePassed < time) {
-            yield return new WaitForEndOfFrame();
+            Debug.Log(timePassed + " " + time);
+            yield return null;
             timePassed += Time.deltaTime;
             slider.value = Mathf.Lerp(startPercentage, target, timePassed / time);
         }
+        Debug.Log("Tamer");
     }
 }
