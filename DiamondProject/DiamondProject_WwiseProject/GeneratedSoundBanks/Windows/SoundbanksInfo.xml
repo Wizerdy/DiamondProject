@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2422704051">
+		<SoundBank Id="1355168291" Language="SFX" Hash="201457172">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -39,19 +39,22 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="278190372">
+		<SoundBank Id="4056684167" Language="SFX" Hash="4163619304">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3854123299" Name="AMB_Arena" ObjectPath="\Events\SD\AMB\AMB_Arena" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="399517452" Name="AMB_VisualNovel" ObjectPath="\Events\SD\AMB\AMB_VisualNovel" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2378231684" Name="Boss_Fall_FallDash_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2685031445" Name="Boss_Fall_FallDash_Dash" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Dash" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="211307037" Name="Boss_Fall_FallDash_Leaf" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Leaf" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3749318259" Name="Boss_Fall_LeafBoomerang_Grow" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Grow" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="909995601" Name="Boss_Fall_LeafBoomerang_Move" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Move" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2422880163" Name="Boss_Fall_LeafRain" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafRain" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1785879112" Name="Boss_Fall_Tree_Attack" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Attack" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1302493604" Name="Boss_Fall_LeafBeam" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBeam" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="560939783" Name="Boss_Fall_LeafBoomerang_Back" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Back" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2779939727" Name="Boss_Fall_LeafBoomerang_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1047433676" Name="Boss_Fall_LeafBoomerang_Go" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Go" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="284830977" Name="Boss_Fall_Tree_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1992578794" Name="Boss_Fall_Tree_Destroy" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Destroy" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3962528453" Name="Boss_Fall_Tree_Summon" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="4139264525" Name="Boss_FormChange_Fall" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Fall" DurationType="OneShot" DurationMin="2.2" DurationMax="2.4">
 					<IncludedMemoryFiles>
@@ -203,14 +206,22 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1890679200" Name="Boss_Neutral_BulletHell" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1678198802" Name="Boss_Neutral_BulletHell_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Cast" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2188436774" Name="Boss_Neutral_BulletHell_Circle_Start" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Circle_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2772210022" Name="Boss_Neutral_BulletHell_Circle_Stop" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Circle_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1164125491" Name="Boss_Neutral_ExploBush_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_ExploBush_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1792841279" Name="Boss_Neutral_ExploBush_Explosion" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_ExploBush_Explosion" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="738273803" Name="Boss_Neutral_ExploBush_Summon" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_ExploBush_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="655685355" Name="Boss_Neutral_LeafRain" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_LeafRain" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1498567228" Name="Boss_Neutral_LeafBeam" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_LeafBeam" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1234898960" Name="Boss_Neutral_Tree_Attack" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Attack" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2188453778" Name="Boss_Neutral_Tree_Destroy" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Destroy" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2933364317" Name="Boss_Neutral_Tree_Summon" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2891304092" Name="Boss_Winter_BulletHell" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_BulletHell" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="937314502" Name="Boss_Winter_BulletHell_Cast" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_BulletHell_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2077972986" Name="Boss_Winter_BulletHell_Circle_Start" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_BulletHell_Circle_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="941681938" Name="Boss_Winter_BulletHell_Circle_Stop" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_BulletHell_Circle_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3321318127" Name="Boss_Winter_IceHell" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_IceHell" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2356299211" Name="Boss_Winter_SnowAbsorption" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_SnowAbsorption" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2660008099" Name="Boss_Winter_SnowAbsorption_Cast" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_SnowAbsorption_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="4058101365" Name="GameStart" ObjectPath="\Events\SD\AMB\GameStart" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
 					<ActionSetState>
 						<ActionSetStateEntry Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame"/>
@@ -219,34 +230,6 @@
 				<Event Id="335910461" Name="Pumpkid_Crossbow_Charge_Full" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Charge_Full" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="219435418" Name="Pumpkid_Crossbow_Charge_Start" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Charge_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2182664242" Name="Pumpkid_Crossbow_Charge_Stop" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Charge_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1785614769" Name="Pumpkid_Crossbow_ChargedShot" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_ChargedShot" DurationType="OneShot" DurationMin="0.294184" DurationMax="0.363037">
-					<IncludedMemoryFiles>
-						<File Id="61817970" Language="SFX">
-							<ShortName>Pumpkid_Crossbow_Shot_05.wav</ShortName>
-							<Path>SFX\Pumpkid_Crossbow_Shot_05_32513D82.wem</Path>
-						</File>
-						<File Id="187653369" Language="SFX">
-							<ShortName>Pumpkid_Crossbow_Shot_03.wav</ShortName>
-							<Path>SFX\Pumpkid_Crossbow_Shot_03_32513D82.wem</Path>
-						</File>
-						<File Id="247103131" Language="SFX">
-							<ShortName>Pumpkid_Crossbow_Shot_04.wav</ShortName>
-							<Path>SFX\Pumpkid_Crossbow_Shot_04_32513D82.wem</Path>
-						</File>
-						<File Id="395691134" Language="SFX">
-							<ShortName>Pumpkid_Crossbow_Shot_02.wav</ShortName>
-							<Path>SFX\Pumpkid_Crossbow_Shot_02_32513D82.wem</Path>
-						</File>
-						<File Id="610496320" Language="SFX">
-							<ShortName>Pumpkid_Crossbow_Shot_06.wav</ShortName>
-							<Path>SFX\Pumpkid_Crossbow_Shot_06_32513D82.wem</Path>
-						</File>
-						<File Id="770007008" Language="SFX">
-							<ShortName>Pumpkid_Crossbow_Shot_01.wav</ShortName>
-							<Path>SFX\Pumpkid_Crossbow_Shot_01_32513D82.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
 				<Event Id="3990897451" Name="Pumpkid_Crossbow_Overcharge_End" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Overcharge_End" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3561453072" Name="Pumpkid_Crossbow_Overcharge_Start" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Overcharge_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2202228643" Name="Pumpkid_Crossbow_Shot" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Shot" DurationType="OneShot" DurationMin="0.294184" DurationMax="0.363037">
@@ -287,7 +270,6 @@
 				<Event Id="953869206" Name="Pumpkid_Sword_Charge_Full" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_Full" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="455128255" Name="Pumpkid_Sword_Charge_Start" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1300717317" Name="Pumpkid_Sword_Charge_Stop" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1533338973" Name="Pumpkid_Sword_ChargedSlash" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_ChargedSlash" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="971183997" Name="Pumpkid_Sword_Slash" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Slash" DurationType="OneShot" DurationMin="0.277486" DurationMax="0.524225">
 					<IncludedMemoryFiles>
 						<File Id="121436246" Language="SFX">
@@ -316,34 +298,35 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4197357760" Name="UI_Menu_Button_Back" ObjectPath="\Events\SD\UI\UI_Menu_Button_Back" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="342937835" Name="UI_Menu_Button_Confirm" ObjectPath="\Events\SD\UI\UI_Menu_Button_Confirm" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="707128413" Name="UI_Menu_Button_Hover" ObjectPath="\Events\SD\UI\UI_Menu_Button_Hover" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3226991506" Name="UI_Menu_Close" ObjectPath="\Events\SD\UI\UI_Menu_Close" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+				<Event Id="4197357760" Name="UI_Menu_Button_Back" ObjectPath="\Events\SD\UI\UI_General\UI_Menu_Button_Back" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="342937835" Name="UI_Menu_Button_Confirm" ObjectPath="\Events\SD\UI\UI_General\UI_Menu_Button_Confirm" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="707128413" Name="UI_Menu_Button_Hover" ObjectPath="\Events\SD\UI\UI_General\UI_Menu_Button_Hover" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3226991506" Name="UI_Menu_Close" ObjectPath="\Events\SD\UI\UI_General\UI_Menu_Close" DurationType="OneShot" DurationMin="0." DurationMax="0.">
 					<ActionSetState>
 						<ActionSetStateEntry Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame"/>
 					</ActionSetState>
 				</Event>
-				<Event Id="4083126854" Name="UI_Menu_Open" ObjectPath="\Events\SD\UI\UI_Menu_Open" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+				<Event Id="4083126854" Name="UI_Menu_Open" ObjectPath="\Events\SD\UI\UI_General\UI_Menu_Open" DurationType="OneShot" DurationMin="0." DurationMax="0.">
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\SD\ST_GameMode\Menu"/>
 					</ActionSetState>
 				</Event>
-				<Event Id="3732347166" Name="UI_Transition_ToArena" ObjectPath="\Events\SD\UI\UI_Transition_ToArena" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2060042005" Name="UI_Transition_ToVisualNovel" ObjectPath="\Events\SD\UI\UI_Transition_ToVisualNovel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2436199045" Name="UI_VisualNovel_Book_Close" ObjectPath="\Events\SD\UI\UI_VisualNovel_Book_Close" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3281857039" Name="UI_VisualNovel_Book_Open" ObjectPath="\Events\SD\UI\UI_VisualNovel_Book_Open" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2683899783" Name="UI_VisualNovel_Book_TurnPage" ObjectPath="\Events\SD\UI\UI_VisualNovel_Book_TurnPage" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1703837424" Name="UI_VisualNovel_Button_Hover" ObjectPath="\Events\SD\UI\UI_VisualNovel_Button_Hover" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="4291202018" Name="UI_VisualNovel_GoodAnswer" ObjectPath="\Events\SD\UI\UI_VisualNovel_GoodAnswer" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3744773695" Name="UI_VisualNovel_Norna_Eats" ObjectPath="\Events\SD\UI\UI_VisualNovel_Norna_Eats" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1724120604" Name="UI_VisualNovel_Pass" ObjectPath="\Events\SD\UI\UI_VisualNovel_Pass" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2647056812" Name="UI_VisualNovel_Progression" ObjectPath="\Events\SD\UI\UI_VisualNovel_Progression" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="4105431731" Name="UI_VisualNovel_Question" ObjectPath="\Events\SD\UI\UI_VisualNovel_Question" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3451811866" Name="UI_VisualNovel_Skip" ObjectPath="\Events\SD\UI\UI_VisualNovel_Skip" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="570456047" Name="UI_VisualNovel_Text_Start" ObjectPath="\Events\SD\UI\UI_VisualNovel_Text_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2910950389" Name="UI_VisualNovel_Text_Stop" ObjectPath="\Events\SD\UI\UI_VisualNovel_Text_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2365488276" Name="UI_VisualNovel_WrongAnswer" ObjectPath="\Events\SD\UI\UI_VisualNovel_WrongAnswer" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3732347166" Name="UI_Transition_ToArena" ObjectPath="\Events\SD\UI\UI_General\UI_Transition_ToArena" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2060042005" Name="UI_Transition_ToVisualNovel" ObjectPath="\Events\SD\UI\UI_General\UI_Transition_ToVisualNovel" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2436199045" Name="UI_VisualNovel_Book_Close" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_Close" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3281857039" Name="UI_VisualNovel_Book_Open" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_Open" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2683899783" Name="UI_VisualNovel_Book_TurnPage" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_TurnPage" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1703837424" Name="UI_VisualNovel_Button_Hover" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Button_Hover" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4291202018" Name="UI_VisualNovel_GoodAnswer" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_GoodAnswer" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3744773695" Name="UI_VisualNovel_Norna_Eats" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Norna_Eats" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1724120604" Name="UI_VisualNovel_Pass" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Pass" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2647056812" Name="UI_VisualNovel_Progression" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Progression" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4105431731" Name="UI_VisualNovel_Question" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Question" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1225793227" Name="UI_VisualNovel_Skip_Start" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Skip_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3260107369" Name="UI_VisualNovel_Skip_Stop" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Skip_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="570456047" Name="UI_VisualNovel_Text_Start" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Text_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2910950389" Name="UI_VisualNovel_Text_Stop" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Text_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2365488276" Name="UI_VisualNovel_WrongAnswer" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_WrongAnswer" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="41477260" Language="SFX">
@@ -410,6 +393,18 @@
 					<ShortName>Boss_FormChange_Winter.wav</ShortName>
 					<Path>SFX\Boss_FormChange_Winter_32513D82.wem</Path>
 				</File>
+				<File Id="411541484" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_ChargedShot_02.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_ChargedShot_02_32513D82.wem</Path>
+				</File>
+				<File Id="450574716" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_ChargedShot_06.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_ChargedShot_06_32513D82.wem</Path>
+				</File>
+				<File Id="493228789" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_ChargedShot_04.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_ChargedShot_04_32513D82.wem</Path>
+				</File>
 				<File Id="498463009" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_06.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Slash_06_32513D82.wem</Path>
@@ -425,6 +420,14 @@
 				<File Id="610496320" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Shot_06.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Shot_06_32513D82.wem</Path>
+				</File>
+				<File Id="633652544" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_ChargedShot_05.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_ChargedShot_05_32513D82.wem</Path>
+				</File>
+				<File Id="655716591" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_ChargedShot_01.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_ChargedShot_01_32513D82.wem</Path>
 				</File>
 				<File Id="668476340" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Sword_03.wav</ShortName>
@@ -450,6 +453,10 @@
 					<ShortName>Boss_Neutral_Hit_Crossbow_06.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Crossbow_06_32513D82.wem</Path>
 				</File>
+				<File Id="952496903" Language="SFX">
+					<ShortName>Pumpkid_Crossbow_ChargedShot_03.wav</ShortName>
+					<Path>SFX\Pumpkid_Crossbow_ChargedShot_03_32513D82.wem</Path>
+				</File>
 				<File Id="1032883723" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Slash_03_32513D82.wem</Path>
@@ -457,6 +464,7 @@
 			</IncludedMemoryFiles>
 			<GameParameters>
 				<GameParameter Id="90049299" Name="RTPC_WeaponType" ObjectPath="\Game Parameters\SD\RTPC_WeaponType"/>
+				<GameParameter Id="1533370991" Name="RTPC_CrossbowCharge" ObjectPath="\Game Parameters\SD\RTPC_CrossbowCharge"/>
 				<GameParameter Id="3290513731" Name="RTPC_Boss_AttackType" ObjectPath="\Game Parameters\SD\RTPC_Boss_AttackType"/>
 				<GameParameter Id="3679360398" Name="RTPC_BossForm" ObjectPath="\Game Parameters\SD\RTPC_BossForm"/>
 			</GameParameters>
@@ -496,6 +504,13 @@
 					<Switches>
 						<Switch Id="2454616260" Name="Sword" ObjectPath="\Switches\SD\SW_WeaponType\Sword" GUID="{C048370F-6C06-44F9-A59D-F9974C9B9D1D}"/>
 						<Switch Id="2523406417" Name="Crossbow" ObjectPath="\Switches\SD\SW_WeaponType\Crossbow" GUID="{42E621F9-0F64-4704-80F0-11ADD76663A0}"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="3552810666" Name="SW_CrossbowCharge" ObjectPath="\Switches\SD\SW_CrossbowCharge" GUID="{3561898B-0D27-4458-9104-AE69CF88327F}">
+					<Switches>
+						<Switch Id="2510516222" Name="Full" ObjectPath="\Switches\SD\SW_CrossbowCharge\Full" GUID="{8D6FDE4B-E107-40B2-AC9A-6F70718021D4}"/>
+						<Switch Id="3828622232" Name="Charging" ObjectPath="\Switches\SD\SW_CrossbowCharge\Charging" GUID="{9FCB8A33-95F1-4D77-96CB-07585D9D1FFF}"/>
+						<Switch Id="784127654" Name="Null" ObjectPath="\Switches\SD\SW_CrossbowCharge\Null" GUID="{DF4EABE9-557B-413D-820F-BA4DF385B0D3}"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
