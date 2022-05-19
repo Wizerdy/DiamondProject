@@ -5971,7 +5971,7 @@ MonoBehaviour:
     - Boss
     state: 1
   _bulletSpeed: 30
-  _rangedAttackCooldown: 0.2
+  _cooldown: 0.1
   _onAttack:
     m_PersistentCalls:
       m_Calls: []
@@ -6145,9 +6145,9 @@ MonoBehaviour:
   _chargeMeleeAttack: {fileID: 4325161512381794135}
   _rangedAttack: {fileID: 7873682425189889759}
   _chargeRangedAttack: {fileID: 1366682634033476724}
+  _overheat: {fileID: 5071417450549748302}
   _interact: {fileID: 3745787321201419433}
   _health: {fileID: 2161993602319532677}
-  _overheat: {fileID: 5071417450549748302}
   _sprite: {fileID: 1952372696}
   _camera: {fileID: 11400000, guid: a890bec94e85429448ffbb98be01752d, type: 2}
   _animator: {fileID: 4346229573380257631}
@@ -6155,8 +6155,9 @@ MonoBehaviour:
   _onAttack:
     m_PersistentCalls:
       m_Calls: []
+  _bullet: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
   _clickTime: 0.15
-  _rangeAttackHeat: 10
+  _chargeSlow: 0.35
 --- !u!114 &2161993602319532677
 MonoBehaviour:
   m_ObjectHideFlags: 0

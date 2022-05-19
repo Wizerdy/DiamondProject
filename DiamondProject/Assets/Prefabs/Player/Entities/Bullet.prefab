@@ -373,6 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3857499495338575479}
+  - component: {fileID: 4570787354739265237}
   - component: {fileID: 3284727387380998033}
   - component: {fileID: 1726073712233740706}
   - component: {fileID: 1735998592836663502}
@@ -401,6 +402,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4570787354739265237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847567384368089890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16760c905ae38ce4f8ebbb39980d3d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1735998592836663502}
+  _damageHealth: {fileID: 3284727387380998033}
+  _damage: 10
+  _damageables:
+    tags:
+    - Boss
+    state: 1
+  _deflection: 0
+  _range: 0
+  _cooldown: 0.2
+  _speed: 5
+  _overheat: 5
 --- !u!114 &3284727387380998033
 MonoBehaviour:
   m_ObjectHideFlags: 0

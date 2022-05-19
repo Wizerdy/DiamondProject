@@ -77,6 +77,7 @@ public class Boomerang : MonoBehaviour {
         comeback = true;
         _direction *= -1;
         rb.velocity = _direction * _secondSpeed;
+        transform.localScale *= -1;
     }
 
     private void Die() {

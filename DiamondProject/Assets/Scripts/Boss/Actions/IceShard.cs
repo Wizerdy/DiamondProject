@@ -98,6 +98,10 @@ public class IceShard : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnDisable() {
+        Destroy(gameObject);
+    }
+
     //private void OnTriggerEnter2D(Collider2D collision) {
     //    if (collision.gameObject.tag == targetTag) {
     //        collision.gameObject.GetComponent<IHealth>()?.TakeDamage(shardDamage);

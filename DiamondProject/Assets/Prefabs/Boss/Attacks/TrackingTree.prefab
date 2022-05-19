@@ -53,18 +53,16 @@ MonoBehaviour:
       m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
   id: Trees
-  _bossRef: {fileID: 0}
-  _playerRef: {fileID: 0}
+  _bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
+  _playerRef: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   duration: 1
   coolDown: 1
-  isPlaying: 0
-  locked: 0
-  NoEnd: 0
-  numberOfTreesToSpawn: 5
+  _dontNeedEnd: 0
+  numberOfTreesToSpawn: 4
   spawnDelayBetweenTree: 1
   treeHp: 10
   treeGrowthSpeed: 1
-  delayBeforeGrowth: 3
+  delayBeforeGrowth: 1
   treeDamage: 50
   fireDamage: 2
   fireDamageFrequency: 0.1

@@ -23,7 +23,6 @@ public class LiaAttack : MonoBehaviour {
     [Header("FALL")]
     [SerializeField] float _timeBetweenAttacksFALL = 3f;
     [SerializeField] List<string> _neutralAttacks = new List<string>();
-    [Header("\"Protector Trees\" est indispensable")]
     [SerializeField] List<string> _fallAttacks = new List<string>();
     [SerializeField] List<string> _winterAttacks = new List<string>();
 
@@ -117,25 +116,34 @@ public class LiaAttack : MonoBehaviour {
         }
     }
     public IEnumerator FallBehaviour() {
-
         availableAttacks = _fallAttacks;
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
-        yield return new WaitForSeconds(_waitTimeBeforeAction);
-        availableAttacks.Remove(Attack("Protector Trees"));
+        //yield return new WaitForSeconds(_waitTimeBeforeAction);
+        Attack("Protector Trees");
         while (true) {
             state = LIAState.MOVEMENT;
-            lastAttack = "Movement";
+            lastAttack = "FollowPlayer";
             availableAttacks.Remove(Attack(lastAttack));
             while (!availableAttacks.Contains(lastAttack)) {
                 yield return null;
             }
             state = LIAState.ACTION;
-            availableAttacks.Remove("Movement");
+            availableAttacks.Remove("FollowPlayer");
             lastAttack = Tools.Random(availableAttacks.ToArray());
             availableAttacks.Remove(Attack(lastAttack));
-            availableAttacks.Add("Movement");
-            yield return new WaitForSeconds(_timeBetweenAttacksFALL);
+            availableAttacks.Add("FollowPlayer");
+            while (!availableAttacks.Contains(lastAttack) && lastAttack != "Boomerang") {
+                yield return null;
+            }
+            float random = Random.Range(0, 99);
+            if(random < 40) {
+                lastAttack = "FallDash";
+                availableAttacks.Remove(Attack(lastAttack));
+                while (!availableAttacks.Contains(lastAttack)) {
+                    yield return null;
+                }
+            }
         }
     }
 
