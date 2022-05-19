@@ -32,7 +32,7 @@ public class HUDHealth : MonoBehaviour {
         _damageScreen = GetComponent<Image>();
     }
 
-    private void Start() {
+    private void Awake() {
         _startColor = _fill.color;
         if (_health != null) {
             _health.Instance.OnHit += TakeDamageHUD;

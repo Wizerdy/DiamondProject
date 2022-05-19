@@ -9747,6 +9747,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _eventType: 0
 --- !u!114 &5522892815955880215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9819,6 +9820,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _eventType: 0
 --- !u!114 &5522892815955880220 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5680249788332393454, guid: c7552ad348094c546957ec3ba587feed, type: 3}
@@ -9830,6 +9832,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6f3989b27671a4f8bd0b557e15c528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5522892815955880222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022705587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024471420a6615a46bde0d5c1457428e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shapeSystem: {fileID: 11400000, guid: c9af7d84e00165c499c4c125a1f49581, type: 2}
+  _toInstantiate: []
+  _shapes: 0400000003000000
+  _onShapeChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5522892815955880220}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _eventType: 1
 --- !u!1001 &5680249787929907757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9913,6 +9946,10 @@ PrefabInstance:
       propertyPath: attacks.Array.data[13]
       value: 
       objectReference: {fileID: 2043366983554929250, guid: 196072e45dbfe9e45accd08dde824ba1, type: 3}
+    - target: {fileID: 5680249788332393454, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _maxHealth
+      value: 1001
+      objectReference: {fileID: 0}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _initialForm
       value: 
