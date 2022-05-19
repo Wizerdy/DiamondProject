@@ -76,6 +76,7 @@ public class LiaAttack : MonoBehaviour {
 
     #region Behaviour
     public IEnumerator NeutralBehaviour() {
+
         availableAttacks = _neutralAttacks;
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));

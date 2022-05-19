@@ -11,7 +11,7 @@ public class Health : MonoBehaviour, IHealth {
     [SerializeField] UnityEvent<int> _onHeal;
     [SerializeField] UnityEvent _onDeath;
     [SerializeField] bool _destroyOnDeath = true;
-    [SerializeField] List<string> _resistances = new List<string>();
+    [SerializeField] List<DamageModifier> _damageModifiers = new List<DamageModifier>();
 
     [SerializeField, HideInInspector] UnityEvent<int> _onMaxHealthChange;
     [SerializeField, HideInInspector] UnityEvent _onInvicible;
@@ -57,7 +57,10 @@ public class Health : MonoBehaviour, IHealth {
 
     public void TakeDamage(int amount, string damageTypes = "") {
         if (!CanTakeDamage) { return; }
-        if (damageTypes == "" || !_resistances.Contains(damageTypes)) {
+        Debug.Log(damageTypes);
+            if (_damageModifiers.Contains(damageTypes)) {
+                amount = _damageModifiers.Get(damageTypes).Modify(amount);
+            }
             _currentHealth -= amount;
             _currentHealth = Mathf.Max(0, _currentHealth);
             _onHit?.Invoke(amount);
@@ -65,7 +68,6 @@ public class Health : MonoBehaviour, IHealth {
             if (_currentHealth <= 0) {
                 Die();
             }
-        }
     }
 
     public void TakeHeal(int amount) {
@@ -81,15 +83,13 @@ public class Health : MonoBehaviour, IHealth {
         }
     }
 
-    public void AddResistance(string newResistances) {
-        if (!_resistances.Contains(newResistances)) {
-            _resistances.Add(newResistances);
-        }
+    public void AddDamageModifier(DamageModifier dm) {
+        _damageModifiers.Add(dm);
     }
 
-    public void RemoveResistance(string newResistances) {
-        if (_resistances.Contains(newResistances)) {
-            _resistances.Remove(newResistances);
+    public void RemoveDamageModifier(DamageModifier dm) {
+        if (_damageModifiers.Contains(dm)) {
+            _damageModifiers.Remove(dm);
         }
     }
 

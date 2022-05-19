@@ -39,6 +39,7 @@ public class DamageHealth : MonoBehaviour {
         if (_damageables.Contains(collision.gameObject.tag)) {
             GameObject elderly = collision.transform.FindElderlyByTag().gameObject;
             if (_onlyDamageOnceEach && _hitted.Contains(elderly)) { return; }
+            Debug.Log(_damageType);
             collision.gameObject.GetComponent<IHealth>()?.TakeDamage(_damage, _damageType);
             _hitted.Add(elderly);
             _onCollide?.Invoke(collision.gameObject);
