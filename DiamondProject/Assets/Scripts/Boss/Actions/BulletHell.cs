@@ -21,7 +21,7 @@ public class BulletHell : BaseAttack {
     [Header("Pas Touche")]
     [SerializeField] private GameObject _iceShard;
     [SerializeField] private Reference<Transform> _target;
-
+    [SerializeField] private BossReference bossRef;
     private float acceleration = 10f;
     private float angle = 0f;
     private float offSetBase;
@@ -29,6 +29,7 @@ public class BulletHell : BaseAttack {
     int _shardCount = 0;
 
     private void SpawnIceShard(int numberOfShard) {
+
         float stepAngle = 360.0f - (360.0f / -bulletPerRotation);
         acceleration = -bulletPerRotation / 50.0f * offSetBase ;
         angle = Mathf.Sin(acceleration) * 360f;
@@ -39,10 +40,10 @@ public class BulletHell : BaseAttack {
         Vector3 shotMoveVector = new Vector3(shotDirX, shotDirY, 0f);
         Vector3 shotDir = (shotMoveVector - transform.position).normalized * shardSpeed;
 
-        Vector3 spawnPos = transform.position + shotDir * spawnDistance;
+        Vector3 spawnPos = bossRef.Instance.transform.position + shotDir * spawnDistance;
         GameObject shard = Instantiate(
             _iceShard,
-            -spawnPos, 
+            spawnPos, 
             Quaternion.Euler(0.0f, 0.0f, -(angle + stepAngle * numberOfShard) + 90)
             );
         IceShard iceShard = shard.GetComponent<IceShard>();
