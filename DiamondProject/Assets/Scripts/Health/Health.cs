@@ -18,17 +18,17 @@ public class Health : MonoBehaviour, IHealth {
     [SerializeField, HideInInspector] UnityEvent _onVulnerable;
     [SerializeField, HideInInspector] UnityEvent _onLateStart;
 
-    int _invicibilityToken = 0;
+    Token _invicibilityToken = new Token();
     int _currentHealth;
 
     #region Properties
 
     public int MaxHealth { get => _maxHealth; set => SetMaxHealth(value); }
     public int CurrentHealth { get { return _currentHealth; } set { ChangeHealth(value - _currentHealth); } }
-    public float Percentage { get { return MaxHealth == 0 ? _currentHealth / MaxHealth : 1f; } }
+    public float Percentage { get { return MaxHealth == 0 ? _currentHealth / MaxHealth : 1f; } set { CurrentHealth = Mathf.RoundToInt(_maxHealth * value); } }
     public bool CanTakeDamage {
-        get { return _invicibilityToken <= 0; }
-        set { AddInvicibilityToken(value ? -1 : 1); }
+        get { return !_invicibilityToken.HasToken; }
+        set { _invicibilityToken.AddToken(!value); }
     }
 
     public event UnityAction OnInvicible { add => _onInvicible.AddListener(value); remove => _onInvicible.RemoveListener(value); }
@@ -41,10 +41,19 @@ public class Health : MonoBehaviour, IHealth {
 
     #endregion
 
+    #region Unity Callbacks
+
+    private void Awake() {
+        _invicibilityToken.OnFill += () => _onInvicible?.Invoke();
+        _invicibilityToken.OnEmpty += () => _onVulnerable?.Invoke();
+    }
+
     private void Start() {
         _currentHealth = _maxHealth;
         _onLateStart?.Invoke();
     }
+
+    #endregion
 
     private void ChangeHealth(int amount) {
         if (amount == 0) { return; }
@@ -55,9 +64,18 @@ public class Health : MonoBehaviour, IHealth {
         }
     }
 
+    public HealthData Save() {
+        return new HealthData().Set(_maxHealth, _currentHealth);
+    }
+
+    public void Load(HealthData data) {
+        if (data == null) { return; }
+        _currentHealth = data.currentHealth;
+        _maxHealth = data.maxHealth;
+    } 
+
     public void TakeDamage(int amount, string damageTypes = "") {
         if (!CanTakeDamage) { return; }
-        Debug.Log(damageTypes);
             if (_damageModifiers.Contains(damageTypes)) {
                 amount = _damageModifiers.Get(damageTypes).Modify(amount);
             }
@@ -69,6 +87,7 @@ public class Health : MonoBehaviour, IHealth {
                 Die();
             }
     }
+
     public void TakeDamage(int amount) {
         _currentHealth -= amount;
         _currentHealth = Mathf.Max(0, _currentHealth);
@@ -110,13 +129,25 @@ public class Health : MonoBehaviour, IHealth {
         _onMaxHealthChange?.Invoke(delta);
     }
 
-    private void AddInvicibilityToken(int amount) {
-        if (_invicibilityToken == 0 && amount > 0) {
-            _onInvicible?.Invoke();
-        } else if (_invicibilityToken > 0 && amount < 0) {
-            _onVulnerable?.Invoke();
-        }
-        _invicibilityToken += amount;
-        _invicibilityToken = Mathf.Max(0, _invicibilityToken);
+    //private void AddInvicibilityToken(int amount) {
+    //    if (_invicibilityToken == 0 && amount > 0) {
+    //        _onInvicible?.Invoke();
+    //    } else if (_invicibilityToken > 0 && _invicibilityToken - amount <= 0) {
+    //        _onVulnerable?.Invoke();
+    //    }
+    //    this.Hurl(_invicibilityToken.ToString());
+    //    _invicibilityToken += amount;
+    //    _invicibilityToken = Mathf.Max(0, _invicibilityToken);
+    //}
+}
+
+public class HealthData {
+    public int maxHealth;
+    public int currentHealth;
+
+    public HealthData Set(int maxHealth, int currentHealth) {
+        this.maxHealth = maxHealth;
+        this.currentHealth = currentHealth;
+        return this;
     }
 }

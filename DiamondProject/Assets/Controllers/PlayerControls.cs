@@ -241,6 +241,34 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CheatCode"",
+            ""id"": ""8004fd96-6426-448c-bafe-dfa96e4d1414"",
+            ""actions"": [
+                {
+                    ""name"": ""Kill boss"",
+                    ""type"": ""Button"",
+                    ""id"": ""e03a5fb3-7799-42f8-871a-9bd179d53aa4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""43bc1c90-919b-4a68-bb70-b127fcbdf497"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Kill boss"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -258,6 +286,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_DialogueInteraction = m_Dialogue.FindAction("DialogueInteraction", throwIfNotFound: true);
+        // CheatCode
+        m_CheatCode = asset.FindActionMap("CheatCode", throwIfNotFound: true);
+        m_CheatCode_Killboss = m_CheatCode.FindAction("Kill boss", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -444,6 +475,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public DialogueActions @Dialogue => new DialogueActions(this);
+
+    // CheatCode
+    private readonly InputActionMap m_CheatCode;
+    private ICheatCodeActions m_CheatCodeActionsCallbackInterface;
+    private readonly InputAction m_CheatCode_Killboss;
+    public struct CheatCodeActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CheatCodeActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Killboss => m_Wrapper.m_CheatCode_Killboss;
+        public InputActionMap Get() { return m_Wrapper.m_CheatCode; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CheatCodeActions set) { return set.Get(); }
+        public void SetCallbacks(ICheatCodeActions instance)
+        {
+            if (m_Wrapper.m_CheatCodeActionsCallbackInterface != null)
+            {
+                @Killboss.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
+                @Killboss.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
+                @Killboss.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
+            }
+            m_Wrapper.m_CheatCodeActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Killboss.started += instance.OnKillboss;
+                @Killboss.performed += instance.OnKillboss;
+                @Killboss.canceled += instance.OnKillboss;
+            }
+        }
+    }
+    public CheatCodeActions @CheatCode => new CheatCodeActions(this);
     public interface IGamePlayActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -459,5 +523,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IDialogueActions
     {
         void OnDialogueInteraction(InputAction.CallbackContext context);
+    }
+    public interface ICheatCodeActions
+    {
+        void OnKillboss(InputAction.CallbackContext context);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ToolsBoxEngine {
     #region Enums
@@ -146,6 +147,51 @@ namespace ToolsBoxEngine {
         public static Counted<T> operator --(Counted<T> a) {
             --a.count;
             return a;
+        }
+    }
+
+    public class Token {
+        int _token = 0;
+        UnityEvent _onEmpty = new UnityEvent();
+        UnityEvent _onFill = new UnityEvent();
+        UnityEvent<int> _onEarn = new UnityEvent<int>();
+        UnityEvent<int> _onLose = new UnityEvent<int>();
+
+        #region Events
+
+        public event UnityAction OnEmpty { add => _onEmpty.AddListener(value); remove => _onEmpty.RemoveListener(value); }
+        public event UnityAction OnFill { add => _onFill.AddListener(value); remove => _onFill.RemoveListener(value); }
+        public event UnityAction<int> OnEarn { add => _onEarn.AddListener(value); remove => _onEarn.RemoveListener(value); }
+        public event UnityAction<int> OnLose { add => _onLose.AddListener(value); remove => _onLose.RemoveListener(value); }
+
+        #endregion
+
+        public bool HasToken => _token > 0;
+
+        /// <summary>
+        /// Add Token (True++ / False--)
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <returns></returns>
+        public void AddToken(bool value) {
+            AddToken(value ? 1 : -1);
+        }
+
+        public void AddToken(int amount) {
+            if (amount == 0) { return; }
+            if (amount < 0 && _token == 0) { return; }
+
+            if (amount > 0) { _onEarn?.Invoke(amount); }
+            if (amount < 0) { _onLose?.Invoke(amount); }
+
+            if (_token == 0) { _onFill?.Invoke(); }
+            _token += amount;
+            Mathf.Max(0, _token);
+            if (_token == 0) { _onEmpty?.Invoke(); }
+        }
+
+        public void Reset() {
+            _token = 0;
         }
     }
 
@@ -582,6 +628,10 @@ namespace ToolsBoxEngine {
                 target = target.parent;
             }
             return target;
+        }
+
+        public static bool IsValid(this IValid obj) {
+            return obj?.IsValid ?? false;
         }
 
         #endregion
