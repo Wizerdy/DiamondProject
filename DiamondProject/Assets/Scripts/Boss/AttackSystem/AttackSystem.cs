@@ -11,6 +11,7 @@ public class AttackSystem : MonoBehaviour {
     public event UnityAction<BaseAttack> OnAttackEnd { add => _onAttackEnd.AddListener(value); remove => _onAttackEnd.RemoveListener(value); }
 
     List<BaseAttack> _attacks = new List<BaseAttack>();
+
     public void Register(BaseAttack attack) {
         if(attack == null) return;
         _attacks.Add(attack);
@@ -23,4 +24,10 @@ public class AttackSystem : MonoBehaviour {
         _onAttackEnd?.Invoke(attack);
     }
 
+    public void ClearAttacks() {
+        for (int i = 0; i < _attacks.Count; i++) {
+            _attacks[i].End();
+        }
+        _attacks.Clear();
+    }
 }

@@ -232,6 +232,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "WinterShape",
+                    "type": "Button",
+                    "id": "f063b53e-4dce-48d1-a76b-ca4456b06a28",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FallShape",
+                    "type": "Button",
+                    "id": "b28e67e2-21fd-46aa-995c-a595fbca1bf3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -243,6 +261,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Kill boss",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d24840da-618c-4afe-868b-7a7116eccbed",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WinterShape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77707173-2ba9-4b72-b014-12fbfc0c6f1b",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FallShape",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -25,6 +25,7 @@ public abstract class BaseAttack : MonoBehaviour {
 
     private void OnDisable() {
         attackSystem?.Instance?.Unregister(this);
+        Destroy(gameObject);
     }
 
     public void Execute() {
@@ -45,7 +46,8 @@ public abstract class BaseAttack : MonoBehaviour {
 
     protected abstract IEnumerator IExecute();
 
-    protected virtual void End() {
+    public virtual void End() {
+        StopAllCoroutines();
         isPlaying = false;
         OnEnd?.Invoke(this);
         gameObject.SetActive(false);
