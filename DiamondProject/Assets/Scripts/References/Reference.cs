@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Reference<T> : ScriptableObject, IReferenceSetter<T> {
+public abstract class Reference<T> : ScriptableObject, IReferenceSetter<T>, IValid {
     [SerializeField] T _instance;
 
     public T Instance => _instance;
