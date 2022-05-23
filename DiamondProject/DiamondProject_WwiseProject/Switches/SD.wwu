@@ -197,8 +197,53 @@
 									<Flags>0</Flags>
 								</Point>
 								<Point>
+									<XPos>0.99</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
 									<XPos>1</XPos>
 									<YPos>1</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="SW_SwordCharge" ID="{39431601-81F7-4013-A228-D6B99C2B4D2E}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Null" ID="{E4BA7FC8-305F-49BB-9090-3623F72A27BE}"/>
+						<Switch Name="Charging" ID="{BF75F53E-4C6E-48D6-AF0C-04E6FDB8734A}"/>
+						<Switch Name="Full" ID="{F5B3942B-F16A-47C5-8313-F97EDB924856}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_SwordCharge" ID="{1610341F-5917-4EFA-8260-02D5E6F7404C}"/>
+						<Curve Name="" ID="{131BC300-9057-4DD3-B7A3-0809098D6EEC}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.01</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.99</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>3</YPos>
 									<Flags>37</Flags>
 								</Point>
 							</PointList>

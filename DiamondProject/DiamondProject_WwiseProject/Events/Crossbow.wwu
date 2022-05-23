@@ -20,16 +20,76 @@
 						<Action Name="" ID="{149A6BF4-C558-42C2-94C2-B5C562F06FE7}" ShortID="672033637">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Pumpkid_Crossbow_NormalShot" ID="{062CAD8C-174B-4A14-BC1C-54803C107D65}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
+									<ObjectRef Name="Pumpkid_Crossbow_Shot" ID="{529EF198-1944-47E7-803F-0A2DB92BE0A7}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E7E7777B-559A-48B6-9208-3C9B57339299}" ShortID="312018734">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Crossbow_Charging_LP" ID="{59EC839F-E4D3-4701-8147-9DD69DD85A7B}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Pumpkid_Crossbow_Charge_Start" ID="{8BFE5473-0D2E-47EA-9D9E-75C39BE4E73A}"/>
-				<Event Name="Pumpkid_Crossbow_Charge_Stop" ID="{F026D6D7-7220-4EC7-A241-F85BFA2F2DB6}"/>
-				<Event Name="Pumpkid_Crossbow_Overcharge_Start" ID="{2D87DA5B-33AC-4663-804F-1CDA63FE4BC4}"/>
-				<Event Name="Pumpkid_Crossbow_Overcharge_End" ID="{E9777202-5391-4747-8A0D-B63582BF0C73}"/>
+				<Event Name="Pumpkid_Crossbow_Charge_Start" ID="{8BFE5473-0D2E-47EA-9D9E-75C39BE4E73A}">
+					<ChildrenList>
+						<Action Name="" ID="{67352652-E550-4909-BA5C-A57480CF092F}" ShortID="21794712">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Crossbow_Charging_Start" ID="{3F2C2130-B2FE-473B-8BFD-E717A3615889}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{7AD1083B-26BE-4A36-94F9-B5C3A0404B1F}" ShortID="74161333">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Crossbow_Charging_LP" ID="{59EC839F-E4D3-4701-8147-9DD69DD85A7B}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pumpkid_Crossbow_Charge_Stop" ID="{F026D6D7-7220-4EC7-A241-F85BFA2F2DB6}">
+					<ChildrenList>
+						<Action Name="" ID="{B2245C1E-8CC1-4ED0-A746-DEDB055A8750}" ShortID="621126536">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Crossbow_Charging_LP" ID="{59EC839F-E4D3-4701-8147-9DD69DD85A7B}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pumpkid_Crossbow_Overcharge_Start" ID="{2D87DA5B-33AC-4663-804F-1CDA63FE4BC4}">
+					<ChildrenList>
+						<Action Name="" ID="{46590B06-7ED5-4D84-ADB3-0F20802EDC28}" ShortID="878766205">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Crossbow_Overcharge_Start" ID="{4E4B2021-886C-4F4F-B244-D6E27F0A047E}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pumpkid_Crossbow_Overcharge_End" ID="{E9777202-5391-4747-8A0D-B63582BF0C73}">
+					<ChildrenList>
+						<Action Name="" ID="{C15162EC-4E17-46B3-A2B5-99A647A50AC7}" ShortID="570064661">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Crossbow_Overcharge_End" ID="{A10F0808-71C4-4CB5-B958-001622D6240D}" WorkUnitID="{446FB93F-C051-4C2E-B014-F1AAEAA64E32}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="Pumpkid_Crossbow_Charge_Full" ID="{610FD580-160E-45D7-A3B0-1218D56204C9}"/>
 			</ChildrenList>
 		</WorkUnit>

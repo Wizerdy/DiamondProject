@@ -151,6 +151,18 @@ namespace AK
             } // namespace SWITCH
         } // namespace SW_PUMPKID_DAMAGETYPE
 
+        namespace SW_SWORDCHARGE
+        {
+            static const AkUniqueID GROUP = 2012290917U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CHARGING = 3828622232U;
+                static const AkUniqueID FULL = 2510516222U;
+                static const AkUniqueID NULL = 784127654U;
+            } // namespace SWITCH
+        } // namespace SW_SWORDCHARGE
+
         namespace SW_WEAPONTYPE
         {
             static const AkUniqueID GROUP = 3085206758U;
@@ -171,6 +183,7 @@ namespace AK
         static const AkUniqueID RTPC_BOSSFORM_SLOW = 1139492498U;
         static const AkUniqueID RTPC_CROSSBOWCHARGE = 1533370991U;
         static const AkUniqueID RTPC_PUMPKID_SPEED = 3854188899U;
+        static const AkUniqueID RTPC_SWORDCHARGE = 2323919714U;
         static const AkUniqueID RTPC_WEAPONTYPE = 90049299U;
     } // namespace GAME_PARAMETERS
 

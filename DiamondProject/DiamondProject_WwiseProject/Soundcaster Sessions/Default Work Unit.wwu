@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{AFC00D7E-DA5F-4D44-93E9-6A01B013B3F9}" SchemaVersion="103">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{AFC00D7E-DA5F-4D44-93E9-6A01B013B3F9}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{AFC00D7E-DA5F-4D44-93E9-6A01B013B3F9}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Clothilde" ID="{9DC73DB8-6598-48AE-A478-A716FACEFA5C}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Pumpkid_Crossbow_Charge_Start" ID="{8BFE5473-0D2E-47EA-9D9E-75C39BE4E73A}" WorkUnitID="{3B31DA07-4C9F-4417-B422-960396712C4F}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Pumpkid_Crossbow_Shot" ID="{4FC6C169-F707-4E7D-ABBA-14DBA7939FE6}" WorkUnitID="{3B31DA07-4C9F-4417-B422-960396712C4F}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_BossForm_Slow" ID="{0C47CED9-C68B-412E-9A6C-9EEEFF57A999}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_CrossbowCharge" ID="{E2B49877-70F4-430C-9C06-62154265E570}"/>
+							<Value>0.936708860759494</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Pumpkid_Speed" ID="{BCB8007F-2341-4562-AB3E-736EA57E7B50}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_WeaponType" ID="{AD571BFF-B53F-4690-8FD3-0BF31CF3A8E8}"/>
+							<Value>0.952180028129395</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}"/>
+							<Value>2.50632911392405</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}"/>
+							<Value>3.54430379746835</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_SwordCharge" ID="{1610341F-5917-4EFA-8260-02D5E6F7404C}"/>
+							<Value>0.925457102672293</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="None" ID="{7760B096-6CF4-4C28-81AB-7C165E71B6F1}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Charging" ID="{9FCB8A33-95F1-4D77-96CB-07585D9D1FFF}"/>
+						<CurrentSwitchRef Name="Crossbow" ID="{42E621F9-0F64-4704-80F0-11ADD76663A0}"/>
+						<CurrentSwitchRef Name="Dirt" ID="{1C878391-3A0B-4ACA-B003-88784F2F9432}"/>
+						<CurrentSwitchRef Name="Fall" ID="{9462570B-C14A-425D-A809-38A78DCFFD30}"/>
+						<CurrentSwitchRef Name="ExploBush" ID="{69D77020-DB2B-4EF7-86ED-538E23287A58}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

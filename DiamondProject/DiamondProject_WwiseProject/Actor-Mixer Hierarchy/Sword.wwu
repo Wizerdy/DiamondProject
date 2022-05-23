@@ -13,29 +13,10 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<RandomSequenceContainer Name="Pumpkid_Sword_Slash" ID="{99FB33F6-E47A-43E1-95C3-5F7D86D9F90E}" ShortID="318496360">
+						<RandomSequenceContainer Name="Pumpkid_Sword_Charging_Start" ID="{0336BF85-4DA7-4758-9F3F-85BAE7883CCE}" ShortID="39982859">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="17"/>
-								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{5633C2AA-3E82-436F-B7BB-CD6371459FF1}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="75"/>
-													<Property Name="Min" Type="Real64" Value="-75"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-								</Property>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -45,148 +26,251 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 								</Reference>
 							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="Pumpkid_Sword_Slash_01" ID="{5B79363E-C589-41D7-88E6-07610CA3DC94}" ShortID="499331284">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Pumpkid_Sword_Slash_01" ID="{7499EFBB-DA14-4800-8205-840A72CBBC50}">
-											<Language>SFX</Language>
-											<AudioFile>Pumpkid_Sword_Slash_01.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="136462715"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Pumpkid_Sword_Slash_01" ID="{7499EFBB-DA14-4800-8205-840A72CBBC50}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Pumpkid_Sword_Slash_02" ID="{0553BA69-B5A3-464B-B684-D92673FC886C}" ShortID="919128543">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Pumpkid_Sword_Slash_02" ID="{BDF702CA-761B-4E43-BC7E-376B31A43549}">
-											<Language>SFX</Language>
-											<AudioFile>Pumpkid_Sword_Slash_02.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="358044945"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Pumpkid_Sword_Slash_02" ID="{BDF702CA-761B-4E43-BC7E-376B31A43549}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Pumpkid_Sword_Slash_03" ID="{D3F1AABA-5FEC-4277-9B36-AC5366F6C5DC}" ShortID="920006765">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Pumpkid_Sword_Slash_03" ID="{1FC92FCE-9F83-441C-AC88-6C98E1ACC132}">
-											<Language>SFX</Language>
-											<AudioFile>Pumpkid_Sword_Slash_03.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1032883723"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Pumpkid_Sword_Slash_03" ID="{1FC92FCE-9F83-441C-AC88-6C98E1ACC132}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Pumpkid_Sword_Slash_04" ID="{7AC110B1-FB09-4DFB-BF5F-311F239B8B99}" ShortID="372832470">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Pumpkid_Sword_Slash_04" ID="{81867CD3-A44B-4CA9-85B5-C8FCCBBA13FF}">
-											<Language>SFX</Language>
-											<AudioFile>Pumpkid_Sword_Slash_04.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="800218328"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Pumpkid_Sword_Slash_04" ID="{81867CD3-A44B-4CA9-85B5-C8FCCBBA13FF}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Pumpkid_Sword_Slash_05" ID="{9E9A4043-229E-4AB1-9825-F8C0A1375496}" ShortID="866078116">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Pumpkid_Sword_Slash_05" ID="{AFE10E89-05B7-4F97-BC1F-7370C5E80B67}">
-											<Language>SFX</Language>
-											<AudioFile>Pumpkid_Sword_Slash_05.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="121436246"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Pumpkid_Sword_Slash_05" ID="{AFE10E89-05B7-4F97-BC1F-7370C5E80B67}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Pumpkid_Sword_Slash_06" ID="{09BA10B5-F35F-4354-A72B-9DC35B04B89A}" ShortID="688112158">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Pumpkid_Sword_Slash_06" ID="{8C6F8BDB-B827-49E1-9B92-AD5BE656894B}">
-											<Language>SFX</Language>
-											<AudioFile>Pumpkid_Sword_Slash_06.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="498463009"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Pumpkid_Sword_Slash_06" ID="{8C6F8BDB-B827-49E1-9B92-AD5BE656894B}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
+						<SwitchContainer Name="Pumpkid_Sword_Slash" ID="{C2D3641E-EF75-4863-B4C2-BA45BABC830B}" ShortID="922911581">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Null" ID="{E4BA7FC8-305F-49BB-9090-3623F72A27BE}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="SW_SwordCharge" ID="{39431601-81F7-4013-A228-D6B99C2B4D2E}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Pumpkid_Sword_NormalSlash" ID="{99FB33F6-E47A-43E1-95C3-5F7D86D9F90E}" ShortID="318496360">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{5633C2AA-3E82-436F-B7BB-CD6371459FF1}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="75"/>
+															<Property Name="Min" Type="Real64" Value="-75"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Sword" ID="{407E854D-0655-45CB-B622-D6F19F4EB22C}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Pumpkid_Sword_Slash_01" ID="{5B79363E-C589-41D7-88E6-07610CA3DC94}" ShortID="499331284">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Pumpkid_Sword_Slash_01" ID="{7499EFBB-DA14-4800-8205-840A72CBBC50}">
+													<Language>SFX</Language>
+													<AudioFile>Pumpkid_Sword_Slash_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="136462715"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Pumpkid_Sword_Slash_01" ID="{7499EFBB-DA14-4800-8205-840A72CBBC50}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Pumpkid_Sword_Slash_02" ID="{0553BA69-B5A3-464B-B684-D92673FC886C}" ShortID="919128543">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Pumpkid_Sword_Slash_02" ID="{BDF702CA-761B-4E43-BC7E-376B31A43549}">
+													<Language>SFX</Language>
+													<AudioFile>Pumpkid_Sword_Slash_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="358044945"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Pumpkid_Sword_Slash_02" ID="{BDF702CA-761B-4E43-BC7E-376B31A43549}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Pumpkid_Sword_Slash_03" ID="{D3F1AABA-5FEC-4277-9B36-AC5366F6C5DC}" ShortID="920006765">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Pumpkid_Sword_Slash_03" ID="{1FC92FCE-9F83-441C-AC88-6C98E1ACC132}">
+													<Language>SFX</Language>
+													<AudioFile>Pumpkid_Sword_Slash_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1032883723"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Pumpkid_Sword_Slash_03" ID="{1FC92FCE-9F83-441C-AC88-6C98E1ACC132}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Pumpkid_Sword_Slash_04" ID="{7AC110B1-FB09-4DFB-BF5F-311F239B8B99}" ShortID="372832470">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Pumpkid_Sword_Slash_04" ID="{81867CD3-A44B-4CA9-85B5-C8FCCBBA13FF}">
+													<Language>SFX</Language>
+													<AudioFile>Pumpkid_Sword_Slash_04.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="800218328"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Pumpkid_Sword_Slash_04" ID="{81867CD3-A44B-4CA9-85B5-C8FCCBBA13FF}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Pumpkid_Sword_Slash_05" ID="{9E9A4043-229E-4AB1-9825-F8C0A1375496}" ShortID="866078116">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Pumpkid_Sword_Slash_05" ID="{AFE10E89-05B7-4F97-BC1F-7370C5E80B67}">
+													<Language>SFX</Language>
+													<AudioFile>Pumpkid_Sword_Slash_05.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="121436246"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Pumpkid_Sword_Slash_05" ID="{AFE10E89-05B7-4F97-BC1F-7370C5E80B67}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Pumpkid_Sword_Slash_06" ID="{09BA10B5-F35F-4354-A72B-9DC35B04B89A}" ShortID="688112158">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Pumpkid_Sword_Slash_06" ID="{8C6F8BDB-B827-49E1-9B92-AD5BE656894B}">
+													<Language>SFX</Language>
+													<AudioFile>Pumpkid_Sword_Slash_06.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="498463009"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Pumpkid_Sword_Slash_06" ID="{8C6F8BDB-B827-49E1-9B92-AD5BE656894B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Pumpkid_Sword_ChargedSlash" ID="{93AAE384-8CAA-45A2-8442-2259409009CC}" ShortID="671166635">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="27"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists/>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Pumpkid_Sword_ChargedSlash" ID="{93AAE384-8CAA-45A2-8442-2259409009CC}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Pumpkid_Sword_NormalSlash" ID="{99FB33F6-E47A-43E1-95C3-5F7D86D9F90E}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Full" ID="{F5B3942B-F16A-47C5-8313-F97EDB924856}"/>
+										<ItemList>
+											<ItemRef Name="Pumpkid_Sword_ChargedSlash" ID="{93AAE384-8CAA-45A2-8442-2259409009CC}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Charging" ID="{BF75F53E-4C6E-48D6-AF0C-04E6FDB8734A}"/>
+										<ItemList>
+											<ItemRef Name="Pumpkid_Sword_NormalSlash" ID="{99FB33F6-E47A-43E1-95C3-5F7D86D9F90E}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Null" ID="{E4BA7FC8-305F-49BB-9090-3623F72A27BE}"/>
+										<ItemList>
+											<ItemRef Name="Pumpkid_Sword_NormalSlash" ID="{99FB33F6-E47A-43E1-95C3-5F7D86D9F90E}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
