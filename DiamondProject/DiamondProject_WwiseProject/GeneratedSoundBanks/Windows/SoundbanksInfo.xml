@@ -39,7 +39,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="1711312420">
+		<SoundBank Id="4056684167" Language="SFX" Hash="1922074180">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -398,10 +398,45 @@
 					<SwitchContainers/>
 				</Event>
 				<Event Id="953869206" Name="Pumpkid_Sword_Charge_Full" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_Full" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="455128255" Name="Pumpkid_Sword_Charge_Start" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1300717317" Name="Pumpkid_Sword_Charge_Stop" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="971183997" Name="Pumpkid_Sword_Slash" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Slash" DurationType="OneShot" DurationMin="0.277486" DurationMax="0.524225">
+				<Event Id="455128255" Name="Pumpkid_Sword_Charge_Start" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_Start" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="84113697" Language="SFX">
+							<ShortName>Pumpkid_Sword_Charging_Start_04.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Charging_Start_04_32513D82.wem</Path>
+						</File>
+						<File Id="326666348" Language="SFX">
+							<ShortName>Pumpkid_Sword_Charging_Start_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Charging_Start_01_32513D82.wem</Path>
+						</File>
+						<File Id="583103741" Language="SFX">
+							<ShortName>Pumpkid_Sword_Charging_Start_02.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Charging_Start_02_32513D82.wem</Path>
+						</File>
+						<File Id="891292192" Language="SFX">
+							<ShortName>Pumpkid_Sword_Charging_Start_03.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Charging_Start_03_32513D82.wem</Path>
+						</File>
+						<File Id="939725492" Language="SFX">
+							<ShortName>Pumpkid_Sword_Charging_Start_06.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Charging_Start_06_32513D82.wem</Path>
+						</File>
+						<File Id="1000354372" Language="SFX">
+							<ShortName>Pumpkid_Sword_Charging_Start_05.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Charging_Start_05_32513D82.wem</Path>
+						</File>
+						<File Id="1067091891" Language="SFX">
+							<ShortName>Pumpkid_Sword_Charging_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Charging_LP_F2BF74AC.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1300717317" Name="Pumpkid_Sword_Charge_Stop" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="971183997" Name="Pumpkid_Sword_Slash" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Slash" DurationType="OneShot" DurationMin="0.277486" DurationMax="1.057523">
+					<IncludedMemoryFiles>
+						<File Id="71917482" Language="SFX">
+							<ShortName>Pumpkid_Sword_ChargedSlash_05.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_ChargedSlash_05_32513D82.wem</Path>
+						</File>
 						<File Id="121436246" Language="SFX">
 							<ShortName>Pumpkid_Sword_Slash_05.wav</ShortName>
 							<Path>SFX\Pumpkid_Sword_Slash_05_32513D82.wem</Path>
@@ -410,23 +445,100 @@
 							<ShortName>Pumpkid_Sword_Slash_01.wav</ShortName>
 							<Path>SFX\Pumpkid_Sword_Slash_01_32513D82.wem</Path>
 						</File>
+						<File Id="188693011" Language="SFX">
+							<ShortName>Pumpkid_Sword_ChargedSlash_06.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_ChargedSlash_06_32513D82.wem</Path>
+						</File>
+						<File Id="266597404" Language="SFX">
+							<ShortName>Pumpkid_Sword_NotFullyChargedSlash_04.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_04_32513D82.wem</Path>
+						</File>
 						<File Id="358044945" Language="SFX">
 							<ShortName>Pumpkid_Sword_Slash_02.wav</ShortName>
 							<Path>SFX\Pumpkid_Sword_Slash_02_32513D82.wem</Path>
+						</File>
+						<File Id="421756444" Language="SFX">
+							<ShortName>Pumpkid_Sword_NotFullyChargedSlash_06.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_06_32513D82.wem</Path>
 						</File>
 						<File Id="498463009" Language="SFX">
 							<ShortName>Pumpkid_Sword_Slash_06.wav</ShortName>
 							<Path>SFX\Pumpkid_Sword_Slash_06_32513D82.wem</Path>
 						</File>
+						<File Id="531303175" Language="SFX">
+							<ShortName>Pumpkid_Sword_NotFullyChargedSlash_02.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_02_32513D82.wem</Path>
+						</File>
+						<File Id="748179291" Language="SFX">
+							<ShortName>Pumpkid_Sword_ChargedSlash_02.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_ChargedSlash_02_32513D82.wem</Path>
+						</File>
+						<File Id="775990223" Language="SFX">
+							<ShortName>Pumpkid_Sword_NotFullyChargedSlash_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_01_32513D82.wem</Path>
+						</File>
 						<File Id="800218328" Language="SFX">
 							<ShortName>Pumpkid_Sword_Slash_04.wav</ShortName>
 							<Path>SFX\Pumpkid_Sword_Slash_04_32513D82.wem</Path>
+						</File>
+						<File Id="913627695" Language="SFX">
+							<ShortName>Pumpkid_Sword_NotFullyChargedSlash_03.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_03_32513D82.wem</Path>
+						</File>
+						<File Id="950553497" Language="SFX">
+							<ShortName>Pumpkid_Sword_NotFullyChargedSlash_05.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_05_32513D82.wem</Path>
+						</File>
+						<File Id="1009635318" Language="SFX">
+							<ShortName>Pumpkid_Sword_ChargedSlash_04.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_ChargedSlash_04_32513D82.wem</Path>
+						</File>
+						<File Id="1026996129" Language="SFX">
+							<ShortName>Pumpkid_Sword_ChargedSlash_03.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_ChargedSlash_03_32513D82.wem</Path>
 						</File>
 						<File Id="1032883723" Language="SFX">
 							<ShortName>Pumpkid_Sword_Slash_03.wav</ShortName>
 							<Path>SFX\Pumpkid_Sword_Slash_03_32513D82.wem</Path>
 						</File>
+						<File Id="1060718644" Language="SFX">
+							<ShortName>Pumpkid_Sword_ChargedSlash_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_ChargedSlash_01_32513D82.wem</Path>
+						</File>
 					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{E4BA7FC8-305F-49BB-9090-3623F72A27BE}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{F5B3942B-F16A-47C5-8313-F97EDB924856}">
+							<Media>
+								<File Id="71917482"/>
+								<File Id="188693011"/>
+								<File Id="748179291"/>
+								<File Id="1009635318"/>
+								<File Id="1026996129"/>
+								<File Id="1060718644"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{BF75F53E-4C6E-48D6-AF0C-04E6FDB8734A}">
+							<Media>
+								<File Id="266597404"/>
+								<File Id="421756444"/>
+								<File Id="531303175"/>
+								<File Id="775990223"/>
+								<File Id="913627695"/>
+								<File Id="950553497"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{E4BA7FC8-305F-49BB-9090-3623F72A27BE}">
+							<Media>
+								<File Id="121436246"/>
+								<File Id="136462715"/>
+								<File Id="358044945"/>
+								<File Id="498463009"/>
+								<File Id="800218328"/>
+								<File Id="1032883723"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="4197357760" Name="UI_Menu_Button_Back" ObjectPath="\Events\SD\UI\UI_General\UI_Menu_Button_Back" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="342937835" Name="UI_Menu_Button_Confirm" ObjectPath="\Events\SD\UI\UI_General\UI_Menu_Button_Confirm" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
@@ -475,6 +587,14 @@
 					<ShortName>Pumpkid_Crossbow_Charging_LP.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Charging_LP_F2BF74AC.wem</Path>
 				</File>
+				<File Id="71917482" Language="SFX">
+					<ShortName>Pumpkid_Sword_ChargedSlash_05.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_ChargedSlash_05_32513D82.wem</Path>
+				</File>
+				<File Id="84113697" Language="SFX">
+					<ShortName>Pumpkid_Sword_Charging_Start_04.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Charging_Start_04_32513D82.wem</Path>
+				</File>
 				<File Id="87485873" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Sword_06.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Sword_06_32513D82.wem</Path>
@@ -511,6 +631,10 @@
 					<ShortName>Pumpkid_Crossbow_Shot_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Shot_03_32513D82.wem</Path>
 				</File>
+				<File Id="188693011" Language="SFX">
+					<ShortName>Pumpkid_Sword_ChargedSlash_06.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_ChargedSlash_06_32513D82.wem</Path>
+				</File>
 				<File Id="218820461" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Crossbow_02.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Crossbow_02_32513D82.wem</Path>
@@ -518,6 +642,10 @@
 				<File Id="247103131" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Shot_04.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Shot_04_32513D82.wem</Path>
+				</File>
+				<File Id="266597404" Language="SFX">
+					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_04.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_04_32513D82.wem</Path>
 				</File>
 				<File Id="267909182" Language="SFX">
 					<ShortName>Boss_FormChange_Fall.wav</ShortName>
@@ -534,6 +662,10 @@
 				<File Id="291630395" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Sword_01.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Sword_01_32513D82.wem</Path>
+				</File>
+				<File Id="326666348" Language="SFX">
+					<ShortName>Pumpkid_Sword_Charging_Start_01.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Charging_Start_01_32513D82.wem</Path>
 				</File>
 				<File Id="358044945" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_02.wav</ShortName>
@@ -555,6 +687,10 @@
 					<ShortName>Pumpkid_Crossbow_ChargedShot_02.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_ChargedShot_02_32513D82.wem</Path>
 				</File>
+				<File Id="421756444" Language="SFX">
+					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_06.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_06_32513D82.wem</Path>
+				</File>
 				<File Id="450574716" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_ChargedShot_06.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_ChargedShot_06_32513D82.wem</Path>
@@ -575,6 +711,10 @@
 					<ShortName>Pumpkid_Crossbow_Overcharge_Start_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Overcharge_Start_03_32513D82.wem</Path>
 				</File>
+				<File Id="531303175" Language="SFX">
+					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_02.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_02_32513D82.wem</Path>
+				</File>
 				<File Id="555168088" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Sword_04.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Sword_04_32513D82.wem</Path>
@@ -582,6 +722,10 @@
 				<File Id="559235580" Language="SFX">
 					<ShortName>Boss_FormChange_Neutral.wav</ShortName>
 					<Path>SFX\Boss_FormChange_Neutral_32513D82.wem</Path>
+				</File>
+				<File Id="583103741" Language="SFX">
+					<ShortName>Pumpkid_Sword_Charging_Start_02.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Charging_Start_02_32513D82.wem</Path>
 				</File>
 				<File Id="592355499" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Overcharge_End_03.wav</ShortName>
@@ -607,6 +751,10 @@
 					<ShortName>Boss_Neutral_Hit_Sword_03.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Sword_03_32513D82.wem</Path>
 				</File>
+				<File Id="748179291" Language="SFX">
+					<ShortName>Pumpkid_Sword_ChargedSlash_02.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_ChargedSlash_02_32513D82.wem</Path>
+				</File>
 				<File Id="749806527" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Overcharge_End_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Overcharge_End_01_32513D82.wem</Path>
@@ -614,6 +762,10 @@
 				<File Id="770007008" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Shot_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Shot_01_32513D82.wem</Path>
+				</File>
+				<File Id="775990223" Language="SFX">
+					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_01.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_01_32513D82.wem</Path>
 				</File>
 				<File Id="800218328" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_04.wav</ShortName>
@@ -623,6 +775,10 @@
 					<ShortName>Pumpkid_Crossbow_Overcharge_Start_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Overcharge_Start_01_32513D82.wem</Path>
 				</File>
+				<File Id="891292192" Language="SFX">
+					<ShortName>Pumpkid_Sword_Charging_Start_03.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Charging_Start_03_32513D82.wem</Path>
+				</File>
 				<File Id="897695796" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Crossbow_03.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Crossbow_03_32513D82.wem</Path>
@@ -630,6 +786,10 @@
 				<File Id="913476095" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Charging_Start_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Charging_Start_01_32513D82.wem</Path>
+				</File>
+				<File Id="913627695" Language="SFX">
+					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_03.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_03_32513D82.wem</Path>
 				</File>
 				<File Id="921005621" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Crossbow_01.wav</ShortName>
@@ -643,9 +803,29 @@
 					<ShortName>Boss_Neutral_Hit_Crossbow_06.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Crossbow_06_32513D82.wem</Path>
 				</File>
+				<File Id="939725492" Language="SFX">
+					<ShortName>Pumpkid_Sword_Charging_Start_06.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Charging_Start_06_32513D82.wem</Path>
+				</File>
+				<File Id="950553497" Language="SFX">
+					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_05.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_05_32513D82.wem</Path>
+				</File>
 				<File Id="952496903" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_ChargedShot_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_ChargedShot_03_32513D82.wem</Path>
+				</File>
+				<File Id="1000354372" Language="SFX">
+					<ShortName>Pumpkid_Sword_Charging_Start_05.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Charging_Start_05_32513D82.wem</Path>
+				</File>
+				<File Id="1009635318" Language="SFX">
+					<ShortName>Pumpkid_Sword_ChargedSlash_04.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_ChargedSlash_04_32513D82.wem</Path>
+				</File>
+				<File Id="1026996129" Language="SFX">
+					<ShortName>Pumpkid_Sword_ChargedSlash_03.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_ChargedSlash_03_32513D82.wem</Path>
 				</File>
 				<File Id="1032883723" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_03.wav</ShortName>
@@ -654,6 +834,14 @@
 				<File Id="1057149520" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Charging_Start_04.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Charging_Start_04_32513D82.wem</Path>
+				</File>
+				<File Id="1060718644" Language="SFX">
+					<ShortName>Pumpkid_Sword_ChargedSlash_01.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_ChargedSlash_01_32513D82.wem</Path>
+				</File>
+				<File Id="1067091891" Language="SFX">
+					<ShortName>Pumpkid_Sword_Charging_LP.wav</ShortName>
+					<Path>SFX\Pumpkid_Sword_Charging_LP_F2BF74AC.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<GameParameters>

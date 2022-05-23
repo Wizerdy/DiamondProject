@@ -19,14 +19,54 @@
 						<Action Name="" ID="{6F1867AC-2BB5-4957-A9CA-FD9C558B7487}" ShortID="373894956">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Pumpkid_Sword_NormalSlash" ID="{99FB33F6-E47A-43E1-95C3-5F7D86D9F90E}" WorkUnitID="{A47D9B32-28D3-4C70-93D8-31F1D4C08DF9}"/>
+									<ObjectRef Name="Pumpkid_Sword_Slash" ID="{C2D3641E-EF75-4863-B4C2-BA45BABC830B}" WorkUnitID="{A47D9B32-28D3-4C70-93D8-31F1D4C08DF9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{655F0597-01B9-48ED-888C-0A1CE34EAA69}" ShortID="832561513">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Sword_Charging_LP" ID="{35EDFFFD-D049-447A-82B1-54859DF973E3}" WorkUnitID="{A47D9B32-28D3-4C70-93D8-31F1D4C08DF9}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Pumpkid_Sword_Charge_Start" ID="{1A6EA451-FB3D-42BD-A998-ACA512026B6E}"/>
-				<Event Name="Pumpkid_Sword_Charge_Stop" ID="{E9D369B6-3032-4F8D-B9A7-484E97F75C73}"/>
+				<Event Name="Pumpkid_Sword_Charge_Start" ID="{1A6EA451-FB3D-42BD-A998-ACA512026B6E}">
+					<ChildrenList>
+						<Action Name="" ID="{2C628BE2-911A-4831-9F36-BCF9390D81FD}" ShortID="357210480">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Sword_Charging_Start" ID="{0336BF85-4DA7-4758-9F3F-85BAE7883CCE}" WorkUnitID="{A47D9B32-28D3-4C70-93D8-31F1D4C08DF9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{76DF7FE2-D4D5-48ED-8430-DE16B7ACBDEB}" ShortID="83915823">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Sword_Charging_LP" ID="{35EDFFFD-D049-447A-82B1-54859DF973E3}" WorkUnitID="{A47D9B32-28D3-4C70-93D8-31F1D4C08DF9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pumpkid_Sword_Charge_Stop" ID="{E9D369B6-3032-4F8D-B9A7-484E97F75C73}">
+					<ChildrenList>
+						<Action Name="" ID="{D626296A-9A5F-4AD2-941C-1FCF7B9AF1DB}" ShortID="315237268">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Sword_Charging_LP" ID="{35EDFFFD-D049-447A-82B1-54859DF973E3}" WorkUnitID="{A47D9B32-28D3-4C70-93D8-31F1D4C08DF9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="Pumpkid_Sword_Charge_Full" ID="{49328531-6897-42CD-89CD-3CC1F3C8E2A0}"/>
 			</ChildrenList>
 		</WorkUnit>

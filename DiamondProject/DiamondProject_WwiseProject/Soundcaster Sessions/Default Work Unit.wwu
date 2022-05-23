@@ -13,6 +13,14 @@
 							<ObjectRef Name="Pumpkid_Crossbow_Shot" ID="{4FC6C169-F707-4E7D-ABBA-14DBA7939FE6}" WorkUnitID="{3B31DA07-4C9F-4417-B422-960396712C4F}"/>
 							<Position X="1" Y="0"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Pumpkid_Sword_Charge_Start" ID="{1A6EA451-FB3D-42BD-A998-ACA512026B6E}" WorkUnitID="{EAF24BD5-BC8E-43C1-8F45-CE5B692A755B}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Pumpkid_Sword_Slash" ID="{9909D52D-EDE8-4C20-B425-46894FA46F6A}" WorkUnitID="{EAF24BD5-BC8E-43C1-8F45-CE5B692A755B}"/>
+							<Position X="3" Y="0"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
@@ -21,7 +29,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_CrossbowCharge" ID="{E2B49877-70F4-430C-9C06-62154265E570}"/>
-							<Value>0.936708860759494</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Pumpkid_Speed" ID="{BCB8007F-2341-4562-AB3E-736EA57E7B50}"/>
@@ -41,7 +49,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_SwordCharge" ID="{1610341F-5917-4EFA-8260-02D5E6F7404C}"/>
-							<Value>0.925457102672293</Value>
+							<Value>0</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
