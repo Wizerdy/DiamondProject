@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMB_ARENA = 3854123299U;
+        static const AkUniqueID AMB_THUNDER = 1809647772U;
         static const AkUniqueID AMB_VISUALNOVEL = 399517452U;
         static const AkUniqueID ATTACK = 180661997U;
         static const AkUniqueID BOSS_FALL_FALLDASH_CAST = 2378231684U;

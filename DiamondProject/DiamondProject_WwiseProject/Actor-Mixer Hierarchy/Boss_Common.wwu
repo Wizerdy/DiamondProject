@@ -48,14 +48,19 @@
 										<SwitchContainer Name="Boss_Neutral_Hit_Crossbow" ID="{F36B8C3B-D0BD-437D-84F3-0F0A25FB6A26}" ShortID="1043578073">
 											<PropertyList>
 												<Property Name="Color" Type="int16" Value="27"/>
-												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
 												</Reference>
+												<Reference Name="DefaultSwitchOrState">
+													<ObjectRef Name="Null" ID="{DF4EABE9-557B-413D-820F-BA4DF385B0D3}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+												<Reference Name="SwitchGroupOrStateGroup">
+													<ObjectRef Name="SW_CrossbowCharge" ID="{3561898B-0D27-4458-9104-AE69CF88327F}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -234,14 +239,212 @@
 													</ChildrenList>
 													<ObjectLists/>
 												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Boss_Neutral_Hit_ChargedCrossbow" ID="{0F0536CE-C093-47A9-8909-EF582C03F919}" ShortID="805914121">
+													<PropertyList>
+														<Property Name="Color" Type="int16" Value="3"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="OverrideColor" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{42D9AB16-85A3-4CBA-BCBA-ED4C8ACEAD51}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="75"/>
+																			<Property Name="Min" Type="Real64" Value="-75"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Boss_Neutral_Hit_ChargedCrossbow_01" ID="{C25EC9AA-BA18-4C00-B62D-F92233355C60}" ShortID="498120056">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Neutral_Hit_ChargedCrossbow_01" ID="{D9ED0C9A-6082-441C-B0B9-4C013ECC1B0E}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Neutral_Hit_ChargedCrossbow_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="407666927"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Neutral_Hit_ChargedCrossbow_01" ID="{D9ED0C9A-6082-441C-B0B9-4C013ECC1B0E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Neutral_Hit_ChargedCrossbow_02" ID="{171287F6-C050-4199-A44B-16CD3F8E91A7}" ShortID="648495673">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Neutral_Hit_ChargedCrossbow_02" ID="{AE4FF847-8741-491E-AAC4-303C4FD3D8B0}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Neutral_Hit_ChargedCrossbow_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="417406957"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Neutral_Hit_ChargedCrossbow_02" ID="{AE4FF847-8741-491E-AAC4-303C4FD3D8B0}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Neutral_Hit_ChargedCrossbow_03" ID="{E6C1AA44-7262-4069-982D-7372EE8170E4}" ShortID="327558937">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Neutral_Hit_ChargedCrossbow_03" ID="{AABE7841-B250-4C77-858C-924E055E0CDE}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Neutral_Hit_ChargedCrossbow_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="397383987"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Neutral_Hit_ChargedCrossbow_03" ID="{AABE7841-B250-4C77-858C-924E055E0CDE}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Neutral_Hit_ChargedCrossbow_04" ID="{C66DF2AF-CBBB-474E-8454-668A58900B11}" ShortID="15603786">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Neutral_Hit_ChargedCrossbow_04" ID="{EEF7DEC3-235C-4672-AD70-8638E5F4778C}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Neutral_Hit_ChargedCrossbow_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="480802557"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Neutral_Hit_ChargedCrossbow_04" ID="{EEF7DEC3-235C-4672-AD70-8638E5F4778C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Neutral_Hit_ChargedCrossbow_05" ID="{2A4B7E0D-FA46-4507-B455-414455B2D7AC}" ShortID="630120840">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Neutral_Hit_ChargedCrossbow_05" ID="{33CBEB8C-A0D7-41A2-AF82-2313EA70F391}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Neutral_Hit_ChargedCrossbow_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="147419843"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Neutral_Hit_ChargedCrossbow_05" ID="{33CBEB8C-A0D7-41A2-AF82-2313EA70F391}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Neutral_Hit_ChargedCrossbow_06" ID="{42DB330F-873E-4649-AEEF-D518F0EEB96B}" ShortID="624471345">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Neutral_Hit_ChargedCrossbow_06" ID="{D1631F1D-AC13-4651-96C0-2C46D6B750D4}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Neutral_Hit_ChargedCrossbow_06.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="346435354"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Neutral_Hit_ChargedCrossbow_06" ID="{D1631F1D-AC13-4651-96C0-2C46D6B750D4}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists/>
+												</RandomSequenceContainer>
 											</ChildrenList>
 											<ObjectLists/>
 											<GroupingInfo>
 												<GroupingBehaviorList>
 													<GroupingBehavior>
+														<ItemRef Name="Boss_Neutral_Hit_ChargedCrossbow" ID="{0F0536CE-C093-47A9-8909-EF582C03F919}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
 														<ItemRef Name="Boss_Neutral_Hit_Crossbow" ID="{0A085DDE-248A-4FA7-9CED-DB0B0C4F017D}"/>
 													</GroupingBehavior>
 												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Charging" ID="{9FCB8A33-95F1-4D77-96CB-07585D9D1FFF}"/>
+														<ItemList>
+															<ItemRef Name="Boss_Neutral_Hit_Crossbow" ID="{0A085DDE-248A-4FA7-9CED-DB0B0C4F017D}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Full" ID="{8D6FDE4B-E107-40B2-AC9A-6F70718021D4}"/>
+														<ItemList>
+															<ItemRef Name="Boss_Neutral_Hit_ChargedCrossbow" ID="{0F0536CE-C093-47A9-8909-EF582C03F919}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Null" ID="{DF4EABE9-557B-413D-820F-BA4DF385B0D3}"/>
+														<ItemList>
+															<ItemRef Name="Boss_Neutral_Hit_Crossbow" ID="{0A085DDE-248A-4FA7-9CED-DB0B0C4F017D}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
 											</GroupingInfo>
 										</SwitchContainer>
 										<SwitchContainer Name="Boss_Neutral_Hit_Sword" ID="{15A31AD8-8110-4D5E-9389-EA2FC790C4E9}" ShortID="249228396">
@@ -687,14 +890,19 @@
 										<SwitchContainer Name="Boss_Fall_Hit_Crossbow" ID="{D8351BDC-146A-485D-886B-5AA57C623586}" ShortID="211453612">
 											<PropertyList>
 												<Property Name="Color" Type="int16" Value="27"/>
-												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
 												</Reference>
+												<Reference Name="DefaultSwitchOrState">
+													<ObjectRef Name="Null" ID="{DF4EABE9-557B-413D-820F-BA4DF385B0D3}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+												<Reference Name="SwitchGroupOrStateGroup">
+													<ObjectRef Name="SW_CrossbowCharge" ID="{3561898B-0D27-4458-9104-AE69CF88327F}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -702,7 +910,6 @@
 													<PropertyList>
 														<Property Name="Color" Type="int16" Value="27"/>
 														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-														<Property Name="OverrideColor" Type="bool" Value="True"/>
 														<Property Name="Pitch" Type="int32">
 															<ModifierList>
 																<ModifierInfo>
@@ -726,6 +933,315 @@
 															<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Boss_Fall_Hit_Crossbow_01" ID="{F5D816FE-F6AB-4B07-A36D-FB4C1FFCE3CE}" ShortID="857414617">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_Crossbow_01" ID="{A08D5295-8D86-48D1-A13D-0DCB99AE464B}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_Crossbow_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="754367526"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_Crossbow_01" ID="{A08D5295-8D86-48D1-A13D-0DCB99AE464B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_Crossbow_02" ID="{D6BFFD9B-09EF-49D9-A1D1-BE324974B39F}" ShortID="31753241">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_Crossbow_02" ID="{C65CA76F-41F9-4D30-9003-F5040F864B7C}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_Crossbow_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="169866232"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_Crossbow_02" ID="{C65CA76F-41F9-4D30-9003-F5040F864B7C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_Crossbow_03" ID="{C2DA9DE8-C500-43B2-A13A-5C99A126806D}" ShortID="573363164">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_Crossbow_03" ID="{0D6C5676-4324-4D34-84F3-CCA7299561E2}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_Crossbow_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="202173429"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_Crossbow_03" ID="{0D6C5676-4324-4D34-84F3-CCA7299561E2}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_Crossbow_04" ID="{2548E5A3-6346-4E01-A1E5-E327AADB6744}" ShortID="482640830">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_Crossbow_04" ID="{189F99BB-BC55-4A6D-AD85-E4F376EAE1B7}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_Crossbow_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="662711703"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_Crossbow_04" ID="{189F99BB-BC55-4A6D-AD85-E4F376EAE1B7}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_Crossbow_05" ID="{C62ACE9A-265A-46DB-91DE-178FF2828567}" ShortID="571077239">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_Crossbow_05" ID="{473F6530-FDE3-4496-A634-54095737605F}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_Crossbow_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="293479431"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_Crossbow_05" ID="{473F6530-FDE3-4496-A634-54095737605F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_Crossbow_06" ID="{1BC10DC7-D06B-48C2-A22B-AC83E4DE9C61}" ShortID="217429352">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_Crossbow_06" ID="{DFCD2DE6-4D08-49ED-B6FA-76881EFF6602}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_Crossbow_06.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="803654761"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_Crossbow_06" ID="{DFCD2DE6-4D08-49ED-B6FA-76881EFF6602}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists/>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Boss_Fall_Hit_ChargedCrossbow" ID="{38C5D3CD-6FE0-4E57-8364-BED7AEAFEE02}" ShortID="206501634">
+													<PropertyList>
+														<Property Name="Color" Type="int16" Value="27"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{BFB56E43-4883-452C-BBE1-3DD7CEBE1933}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="75"/>
+																			<Property Name="Min" Type="Real64" Value="-75"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Boss_Fall_Hit_ChargedCrossbow_01" ID="{6FB69496-8258-4C8B-914C-B85BB44B1843}" ShortID="93898852">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_ChargedCrossbow_01" ID="{F431F2F7-A9F9-482C-AE74-24F2D0C2EC9F}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_ChargedCrossbow_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="959265766"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_ChargedCrossbow_01" ID="{F431F2F7-A9F9-482C-AE74-24F2D0C2EC9F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_ChargedCrossbow_02" ID="{7D0B5493-AF55-46A4-946A-93E1B7E77A2C}" ShortID="652965338">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_ChargedCrossbow_02" ID="{8F213A88-5E5C-4396-BA32-E5B6387D6957}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_ChargedCrossbow_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="266408248"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_ChargedCrossbow_02" ID="{8F213A88-5E5C-4396-BA32-E5B6387D6957}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_ChargedCrossbow_03" ID="{438EF587-0694-440A-8B26-C5186C092410}" ShortID="276969091">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_ChargedCrossbow_03" ID="{B8608965-FDC7-4F20-A596-9FD4E130CF2A}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_ChargedCrossbow_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="413862102"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_ChargedCrossbow_03" ID="{B8608965-FDC7-4F20-A596-9FD4E130CF2A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_ChargedCrossbow_04" ID="{E436C986-46C1-464E-9898-F0A0218B5BCB}" ShortID="588523404">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_ChargedCrossbow_04" ID="{A056EF64-AAC6-4F88-9DC5-7A31B3C04D1E}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_ChargedCrossbow_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="398311230"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_ChargedCrossbow_04" ID="{A056EF64-AAC6-4F88-9DC5-7A31B3C04D1E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_ChargedCrossbow_05" ID="{1016DE62-C555-4E42-B272-41F45EDB988B}" ShortID="1022202465">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_ChargedCrossbow_05" ID="{03AAC2E0-0336-4BC9-A0DB-5AAEEDBE7DE1}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_ChargedCrossbow_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="496499639"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_ChargedCrossbow_05" ID="{03AAC2E0-0336-4BC9-A0DB-5AAEEDBE7DE1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Fall_Hit_ChargedCrossbow_06" ID="{019B7D60-94C8-4245-BE2D-D6BB5FC61B5B}" ShortID="995961679">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Fall_Hit_ChargedCrossbow_06" ID="{2A1AADD2-209A-4453-93E2-419769AC91F1}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Fall_Hit_ChargedCrossbow_06.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="547379435"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Fall_Hit_ChargedCrossbow_06" ID="{2A1AADD2-209A-4453-93E2-419769AC91F1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 													<ObjectLists/>
 												</RandomSequenceContainer>
 											</ChildrenList>
@@ -735,7 +1251,30 @@
 													<GroupingBehavior>
 														<ItemRef Name="Boss_Fall_Hit_Crossbow" ID="{3C78DF5F-F9E9-4CBE-936D-CDAD6B65628B}"/>
 													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Boss_Fall_Hit_ChargedCrossbow" ID="{38C5D3CD-6FE0-4E57-8364-BED7AEAFEE02}"/>
+													</GroupingBehavior>
 												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Charging" ID="{9FCB8A33-95F1-4D77-96CB-07585D9D1FFF}"/>
+														<ItemList>
+															<ItemRef Name="Boss_Fall_Hit_Crossbow" ID="{3C78DF5F-F9E9-4CBE-936D-CDAD6B65628B}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Full" ID="{8D6FDE4B-E107-40B2-AC9A-6F70718021D4}"/>
+														<ItemList>
+															<ItemRef Name="Boss_Fall_Hit_ChargedCrossbow" ID="{38C5D3CD-6FE0-4E57-8364-BED7AEAFEE02}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Null" ID="{DF4EABE9-557B-413D-820F-BA4DF385B0D3}"/>
+														<ItemList>
+															<ItemRef Name="Boss_Fall_Hit_Crossbow" ID="{3C78DF5F-F9E9-4CBE-936D-CDAD6B65628B}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
 											</GroupingInfo>
 										</SwitchContainer>
 										<SwitchContainer Name="Boss_Fall_Hit_Sword" ID="{F94C096C-674F-4021-95C2-CCDC52171C5D}" ShortID="658245367">
@@ -1180,14 +1719,19 @@
 										<SwitchContainer Name="Boss_Winter_Hit_Crossbow" ID="{CE949D25-604D-4E27-AACE-472E44E5219A}" ShortID="604449642">
 											<PropertyList>
 												<Property Name="Color" Type="int16" Value="27"/>
-												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
 												</Reference>
+												<Reference Name="DefaultSwitchOrState">
+													<ObjectRef Name="Null" ID="{DF4EABE9-557B-413D-820F-BA4DF385B0D3}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+												<Reference Name="SwitchGroupOrStateGroup">
+													<ObjectRef Name="SW_CrossbowCharge" ID="{3561898B-0D27-4458-9104-AE69CF88327F}" WorkUnitID="{2B871358-8D00-4F3B-B556-30796ACFDADF}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -1195,7 +1739,6 @@
 													<PropertyList>
 														<Property Name="Color" Type="int16" Value="27"/>
 														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-														<Property Name="OverrideColor" Type="bool" Value="True"/>
 														<Property Name="Pitch" Type="int32">
 															<ModifierList>
 																<ModifierInfo>
@@ -1219,6 +1762,315 @@
 															<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Boss_Winter_Hit_Crossbow_01" ID="{7250680F-EE17-4CB5-9E38-FEB2B08C8FC5}" ShortID="657387933">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_Crossbow_01" ID="{72545715-D610-442C-A1F2-8474F2673C35}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_Crossbow_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="94260053"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_Crossbow_01" ID="{72545715-D610-442C-A1F2-8474F2673C35}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_Crossbow_02" ID="{2BB6BE09-39F9-405A-86AB-D3B3B5D340E5}" ShortID="885162800">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_Crossbow_02" ID="{85E8F988-20AB-46D3-9362-936D0FF51746}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_Crossbow_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="954208317"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_Crossbow_02" ID="{85E8F988-20AB-46D3-9362-936D0FF51746}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_Crossbow_03" ID="{F5E6BD24-A6FA-4F4B-87D1-CB37774DCB20}" ShortID="539540741">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_Crossbow_03" ID="{69EC1F93-F4DF-49CF-B757-C4F25AF8E1A7}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_Crossbow_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="183092715"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_Crossbow_03" ID="{69EC1F93-F4DF-49CF-B757-C4F25AF8E1A7}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_Crossbow_04" ID="{30F58E5E-25B3-4F6C-BC1C-91D969A8EDDB}" ShortID="27427927">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_Crossbow_04" ID="{0750FC2C-CBFE-40C3-9223-F1F1E5CC9DD1}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_Crossbow_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="162167388"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_Crossbow_04" ID="{0750FC2C-CBFE-40C3-9223-F1F1E5CC9DD1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_Crossbow_05" ID="{02E0230B-0612-42CC-AAE1-EC37468BAFC8}" ShortID="485798801">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_Crossbow_05" ID="{2DC5B84F-3808-4E71-B709-2B02C0BBE8E5}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_Crossbow_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1051322473"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_Crossbow_05" ID="{2DC5B84F-3808-4E71-B709-2B02C0BBE8E5}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_Crossbow_06" ID="{EBFDE0CB-946D-44EA-8DA6-A4F756DBA9B3}" ShortID="1041258416">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_Crossbow_06" ID="{8707D5B4-4F3D-41C3-A9A1-8EE2FD6049E8}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_Crossbow_06.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="706889324"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_Crossbow_06" ID="{8707D5B4-4F3D-41C3-A9A1-8EE2FD6049E8}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists/>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Boss_Winter_Hit_ChargedCrossbow" ID="{0D00C30A-0994-4942-8AAD-6BFD25710BC8}" ShortID="208856456">
+													<PropertyList>
+														<Property Name="Color" Type="int16" Value="27"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{277D9721-5DA7-496A-AC5B-76A88867D255}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="75"/>
+																			<Property Name="Min" Type="Real64" Value="-75"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Boss_Winter_Hit_ChargedCrossbow_01" ID="{0FA44B23-9CD8-493B-A9E4-E1ACDF3C427D}" ShortID="465125101">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_ChargedCrossbow_01" ID="{3C8EA060-A2C9-4DD6-BDD7-65A3DE6B1D6C}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_ChargedCrossbow_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="647087552"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_ChargedCrossbow_01" ID="{3C8EA060-A2C9-4DD6-BDD7-65A3DE6B1D6C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_ChargedCrossbow_02" ID="{C3DCBCC8-9C94-4F56-A629-819BA6CD4672}" ShortID="553642396">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_ChargedCrossbow_02" ID="{EA43592B-925C-4F58-B272-0E6987089591}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_ChargedCrossbow_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="873503196"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_ChargedCrossbow_02" ID="{EA43592B-925C-4F58-B272-0E6987089591}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_ChargedCrossbow_03" ID="{FFF9795E-08C2-444E-AF5E-7EC8A3BFB305}" ShortID="223784694">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_ChargedCrossbow_03" ID="{60202C3D-1643-4807-85D6-DC61BF57BEDF}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_ChargedCrossbow_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="397617279"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_ChargedCrossbow_03" ID="{60202C3D-1643-4807-85D6-DC61BF57BEDF}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_ChargedCrossbow_04" ID="{1CDBBE38-A9E9-42B4-B94B-BC215E33DEFB}" ShortID="78039276">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_ChargedCrossbow_04" ID="{988B14BD-F7FA-4844-8D2C-E9E1AC91DEB4}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_ChargedCrossbow_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1061311877"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_ChargedCrossbow_04" ID="{988B14BD-F7FA-4844-8D2C-E9E1AC91DEB4}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_ChargedCrossbow_05" ID="{9DC5F753-9ABE-42E7-989E-1C69D99F44AC}" ShortID="24581688">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_ChargedCrossbow_05" ID="{58CFF23A-7636-42E7-B2CB-766F256D1D8B}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_ChargedCrossbow_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="375332966"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_ChargedCrossbow_05" ID="{58CFF23A-7636-42E7-B2CB-766F256D1D8B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Boss_Winter_Hit_ChargedCrossbow_06" ID="{419DD828-9417-4D9B-B640-CAB1114B4484}" ShortID="280320814">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Boss_Winter_Hit_ChargedCrossbow_06" ID="{B718CDD8-DC22-4F7D-B2A2-79B0BB6E2F1B}">
+																	<Language>SFX</Language>
+																	<AudioFile>Boss_Winter_Hit_ChargedCrossbow_06.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="278522685"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists/>
+															<ActiveSourceList>
+																<ActiveSource Name="Boss_Winter_Hit_ChargedCrossbow_06" ID="{B718CDD8-DC22-4F7D-B2A2-79B0BB6E2F1B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 													<ObjectLists/>
 												</RandomSequenceContainer>
 											</ChildrenList>
@@ -1226,9 +2078,32 @@
 											<GroupingInfo>
 												<GroupingBehaviorList>
 													<GroupingBehavior>
+														<ItemRef Name="Boss_Winter_Hit_ChargedCrossbow" ID="{0D00C30A-0994-4942-8AAD-6BFD25710BC8}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
 														<ItemRef Name="Boss_Winter_Hit_Crossbow" ID="{F403D9B2-8456-44CE-A5A1-62EC4D17CD44}"/>
 													</GroupingBehavior>
 												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Charging" ID="{9FCB8A33-95F1-4D77-96CB-07585D9D1FFF}"/>
+														<ItemList>
+															<ItemRef Name="Boss_Winter_Hit_Crossbow" ID="{F403D9B2-8456-44CE-A5A1-62EC4D17CD44}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Full" ID="{8D6FDE4B-E107-40B2-AC9A-6F70718021D4}"/>
+														<ItemList>
+															<ItemRef Name="Boss_Winter_Hit_ChargedCrossbow" ID="{0D00C30A-0994-4942-8AAD-6BFD25710BC8}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Null" ID="{DF4EABE9-557B-413D-820F-BA4DF385B0D3}"/>
+														<ItemList>
+															<ItemRef Name="Boss_Winter_Hit_Crossbow" ID="{F403D9B2-8456-44CE-A5A1-62EC4D17CD44}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
 											</GroupingInfo>
 										</SwitchContainer>
 										<SwitchContainer Name="Boss_Winter_Hit_Sword" ID="{161D0045-AC93-41F8-83B8-2100E3DDAFB2}" ShortID="880647691">

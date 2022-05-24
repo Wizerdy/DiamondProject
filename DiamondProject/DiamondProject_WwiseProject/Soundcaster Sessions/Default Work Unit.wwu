@@ -10,16 +10,36 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="AMB_Arena" ID="{EC38944D-591B-4376-8C04-DC880E3FF575}" WorkUnitID="{CDDF101E-A503-4BEB-83B0-36A9F5F50823}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Pumpkid_Crossbow_Shot" ID="{4FC6C169-F707-4E7D-ABBA-14DBA7939FE6}" WorkUnitID="{3B31DA07-4C9F-4417-B422-960396712C4F}"/>
 							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Boss_FormChange_Fall" ID="{E62C570F-C51F-48F8-8AE9-43C14401868C}" WorkUnitID="{BFFE96BB-C3C3-4347-B599-64623B626CC2}"/>
+							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Pumpkid_Sword_Charge_Start" ID="{1A6EA451-FB3D-42BD-A998-ACA512026B6E}" WorkUnitID="{EAF24BD5-BC8E-43C1-8F45-CE5B692A755B}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Boss_FormChange_Neutral" ID="{D1C8892C-51FB-4110-B801-5A5F48C2556D}" WorkUnitID="{BFFE96BB-C3C3-4347-B599-64623B626CC2}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Pumpkid_Sword_Slash" ID="{9909D52D-EDE8-4C20-B425-46894FA46F6A}" WorkUnitID="{EAF24BD5-BC8E-43C1-8F45-CE5B692A755B}"/>
 							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Boss_FormChange_Winter" ID="{51985CA1-8F2C-4B50-A787-50EE401200BC}" WorkUnitID="{BFFE96BB-C3C3-4347-B599-64623B626CC2}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="AMB_Thunder" ID="{9F5A58EE-04A2-4B0B-8C1E-12F18B250AAA}" WorkUnitID="{CDDF101E-A503-4BEB-83B0-36A9F5F50823}"/>
+							<Position X="4" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -45,11 +65,11 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}"/>
-							<Value>3.54430379746835</Value>
+							<Value>1.22</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_SwordCharge" ID="{1610341F-5917-4EFA-8260-02D5E6F7404C}"/>
-							<Value>1</Value>
+							<Value>0</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">

@@ -75,6 +75,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="AMB_Thunder" ID="{9F5A58EE-04A2-4B0B-8C1E-12F18B250AAA}">
+					<ChildrenList>
+						<Action Name="" ID="{28567D74-D6F6-4F45-806B-B354947E7922}" ShortID="231659125">
+							<PropertyList>
+								<Property Name="Probability" Type="Real64" Value="80"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_SP_Thunder_Close" ID="{770DAEB9-7E5C-4B22-BC49-E5B2B74B1323}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -27,10 +27,19 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<BlendContainer Name="AMB_Fall" ID="{1E817D71-8DB4-4CA1-AF41-1FF32A7F8B17}" ShortID="74315591">
+								<Sound Name="AMB_Fall_Wind_Leaves_LP" ID="{2C533C46-502F-40A4-94D4-D8B7C08CC241}" ShortID="666449926">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="27"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="IsStreamingEnabled" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-14</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -40,12 +49,33 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_Fall_Wind_Leaves_LP" ID="{72109779-1865-4380-B2FA-C1441E58CF7C}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_Fall_Wind_Leaves_LP.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="386125571"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
 									<ObjectLists/>
-								</BlendContainer>
-								<BlendContainer Name="AMB_Winter" ID="{BF50079F-FE55-440E-8925-8484578AB96C}" ShortID="389154307">
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_Fall_Wind_Leaves_LP" ID="{72109779-1865-4380-B2FA-C1441E58CF7C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="AMB_Neutral_Wind_Rain_LP" ID="{E58B5426-82E8-498A-A844-3314D5D9B076}" ShortID="515193712">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="27"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="IsStreamingEnabled" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-14</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -55,12 +85,33 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_Neutral_Wind_Rain_LP" ID="{AE04C94F-6C55-4561-802F-AFE71A0DEA90}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_Neutral_Wind_Rain_LP.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="828571170"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
 									<ObjectLists/>
-								</BlendContainer>
-								<BlendContainer Name="AMB_Neutral" ID="{925D9697-ABD7-47C5-935A-6FF9C5E56788}" ShortID="92173019">
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_Neutral_Wind_Rain_LP" ID="{AE04C94F-6C55-4561-802F-AFE71A0DEA90}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="AMB_Winter_Wind_LP" ID="{B97AD3F4-BBCC-4647-8A63-E055836E3C11}" ShortID="875308755">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="27"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="IsStreamingEnabled" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-14</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -70,10 +121,495 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_Winter_Wind_LP" ID="{EF81E8F6-6DE6-4C9D-966D-335C843BABA0}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_Winter_Wind_LP.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="187233243"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
 									<ObjectLists/>
-								</BlendContainer>
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_Winter_Wind_LP" ID="{EF81E8F6-6DE6-4C9D-966D-335C843BABA0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="AMB_RFX_Thunder_Far" ID="{CBA1F1C6-7030-4160-8482-EE8D2BB1673D}" ShortID="162995082">
+									<PropertyList>
+										<Property Name="3DPosition" Type="int16" Value="2"/>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="InitialDelay" Type="Real64">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{807E3C81-9A41-47BF-92D4-A35D0C3C5784}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{6A2C1A7A-7F2E-4199-80A8-9E256AEC15DD}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="80"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{E165B13A-A4ED-4BD4-A65F-272A152D3436}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-7"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_AMB_RFX" ID="{4EFA5079-3B31-4EC5-B3CE-40E5D7FBEA26}" WorkUnitID="{0CCB3153-D387-4D3D-BD91-7B7B28086B0E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="AMB_RFX_Thunder_Far_01" ID="{9F02D967-CEA2-4955-A776-22EAC738B0F6}" ShortID="798481700">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_RFX_Thunder_Far_01" ID="{ACFDEB57-4ED1-4D45-9D3B-2053BBACE9C7}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_RFX_Thunder_Far_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="597288339"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_RFX_Thunder_Far_01" ID="{ACFDEB57-4ED1-4D45-9D3B-2053BBACE9C7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_RFX_Thunder_Far_02" ID="{F66FCD05-2C10-4E1C-BB8B-6FF35AC7C294}" ShortID="763141446">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_RFX_Thunder_Far_02" ID="{FB0F0401-D7C8-4F8E-8D91-C5E722622740}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_RFX_Thunder_Far_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="358078283"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_RFX_Thunder_Far_02" ID="{FB0F0401-D7C8-4F8E-8D91-C5E722622740}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_RFX_Thunder_Far_03" ID="{4FE13139-DCA0-4AFD-8378-D83DBF4C3309}" ShortID="181575869">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_RFX_Thunder_Far_03" ID="{57C508F6-D731-4ECD-80FE-B4E098780510}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_RFX_Thunder_Far_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1014061922"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_RFX_Thunder_Far_03" ID="{57C508F6-D731-4ECD-80FE-B4E098780510}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_RFX_Thunder_Far_04" ID="{1CFFBD5E-10B7-4201-ABAD-9C5F471F10EF}" ShortID="706380618">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_RFX_Thunder_Far_04" ID="{F0DDA7E2-934E-478D-8C16-D869780FBFFC}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_RFX_Thunder_Far_04.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="199717414"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_RFX_Thunder_Far_04" ID="{F0DDA7E2-934E-478D-8C16-D869780FBFFC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_RFX_Thunder_Far_05" ID="{03244A8C-589B-46F1-BA72-2A10795B3E7B}" ShortID="633565504">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_RFX_Thunder_Far_05" ID="{068B4FFE-C07E-4FA7-9EC1-5C19034A4D51}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_RFX_Thunder_Far_05.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="868366597"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_RFX_Thunder_Far_05" ID="{068B4FFE-C07E-4FA7-9EC1-5C19034A4D51}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_RFX_Thunder_Far_06" ID="{FBC1E05B-5EEC-48C0-A38E-18F72BE48503}" ShortID="1042599133">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_RFX_Thunder_Far_06" ID="{63330FEA-D317-4D21-9F2E-181D3FCF6074}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_RFX_Thunder_Far_06.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="639621472"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_RFX_Thunder_Far_06" ID="{63330FEA-D317-4D21-9F2E-181D3FCF6074}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_RFX_Thunder_Far_07" ID="{C3366560-D9B0-461D-9124-AD728FB70DD2}" ShortID="999545516">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_RFX_Thunder_Far_07" ID="{CF1E244A-971F-49D1-8CDD-6CBFD21B953B}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_RFX_Thunder_Far_07.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="690497515"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_RFX_Thunder_Far_07" ID="{CF1E244A-971F-49D1-8CDD-6CBFD21B953B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_RFX_Thunder_Far_08" ID="{0D0FAC12-F5DA-41C4-ABD2-CF2A87EBA5C8}" ShortID="336544812">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_RFX_Thunder_Far_08" ID="{11949582-9430-40C8-88DE-57AB510FC32C}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_RFX_Thunder_Far_08.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="267528143"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_RFX_Thunder_Far_08" ID="{11949582-9430-40C8-88DE-57AB510FC32C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_RFX_Thunder_Far_09" ID="{3C8C68A8-2585-44A1-835B-4B293A626874}" ShortID="629249856">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_RFX_Thunder_Far_09" ID="{81182DF5-1EC5-4045-B8E8-D8DAB7D97B64}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_RFX_Thunder_Far_09.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="463577561"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_RFX_Thunder_Far_09" ID="{81182DF5-1EC5-4045-B8E8-D8DAB7D97B64}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<PositioningInfo>
+										<Position Name="" ID="{E28ECA8B-4DD8-48E4-A422-F615A8741046}">
+											<PropertyList>
+												<Property Name="NewPathForEachSound" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismRandomOrSequence" Type="int16" Value="1"/>
+											</PropertyList>
+											<ChildrenList>
+												<Path2D Name="AMB_RFX_Thunder_Far_PathAMB_RFX_Thunder_Far_Path" ID="{706A8DD5-F5CF-4B2B-AFDE-37FA8D12C853}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="20"/>
+														<Property Name="RandomY" Type="Real64" Value="20"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>-28.93401</XPos>
+															<YPos>27.83133</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="AMB_RFX_Thunder_Far_PathAMB_RFX_Thunder_Far_Path_01" ID="{586A3273-F8D8-463E-ABE8-E291F195B38C}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="20"/>
+														<Property Name="RandomY" Type="Real64" Value="20"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>16.24365</XPos>
+															<YPos>20.60241</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="AMB_RFX_Thunder_Far_PathAMB_RFX_Thunder_Far_Path_02" ID="{106E8EBA-50B0-4CC2-83AE-B2DBB3B03F85}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="20"/>
+														<Property Name="RandomY" Type="Real64" Value="20"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>-49.74619</XPos>
+															<YPos>-4.93975</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="AMB_RFX_Thunder_Far_PathAMB_RFX_Thunder_Far_Path_03" ID="{6AEB3FA8-A4C4-4BEB-9938-0A44E9C11762}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="20"/>
+														<Property Name="RandomY" Type="Real64" Value="20"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>-8.62944</XPos>
+															<YPos>44.21687</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="AMB_RFX_Thunder_Far_PathAMB_RFX_Thunder_Far_Path_04" ID="{2022D059-8CDF-461B-A9A0-AD368E710FE6}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="20"/>
+														<Property Name="RandomY" Type="Real64" Value="20"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>11.16751</XPos>
+															<YPos>22.53013</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="AMB_RFX_Thunder_Far_PathAMB_RFX_Thunder_Far_Path_05" ID="{F37D7C8F-AC22-4550-A5E8-82B84AC79646}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="20"/>
+														<Property Name="RandomY" Type="Real64" Value="20"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>-1.52284</XPos>
+															<YPos>57.71085</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="AMB_RFX_Thunder_Far_PathAMB_RFX_Thunder_Far_Path_06" ID="{349D3BA0-E972-4F81-850F-2A1F62DF3F24}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="20"/>
+														<Property Name="RandomY" Type="Real64" Value="20"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>-5.58376</XPos>
+															<YPos>17.22892</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="AMB_RFX_Thunder_Far_PathAMB_RFX_Thunder_Far_Path_07" ID="{D7DA08DC-46F6-4C96-974A-0DB06DEB8E63}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="20"/>
+														<Property Name="RandomY" Type="Real64" Value="20"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>67.00508</XPos>
+															<YPos>10</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+												<Path2D Name="AMB_RFX_Thunder_Far_PathAMB_RFX_Thunder_Far_Path_08" ID="{6BB7D896-C759-4346-91D5-C2D59DF586DF}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="20"/>
+														<Property Name="RandomY" Type="Real64" Value="20"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>-18.78173</XPos>
+															<YPos>6.14458</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+											</ChildrenList>
+										</Position>
+									</PositioningInfo>
+									<ObjectLists/>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<ObjectLists/>
+							<BlendTrackList>
+								<BlendTrack Name="2D" ID="{D31F3F31-ADC2-44E8-B084-661B1C6F3451}" ShortID="939561985">
+									<PropertyList>
+										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="LayerCrossFadeControlInput">
+											<ObjectRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+										</Reference>
+									</ReferenceList>
+									<BlendTrackAssocList>
+										<BlendTrackAssoc>
+											<ItemRef Name="AMB_Neutral_Wind_Rain_LP" ID="{E58B5426-82E8-498A-A844-3314D5D9B076}"/>
+											<CrossfadingInfo>
+												<LeftEdgePos>0</LeftEdgePos>
+												<LeftFadingMode>Automatic</LeftFadingMode>
+												<RightEdgePos>1</RightEdgePos>
+												<RightFadingMode>Automatic</RightFadingMode>
+											</CrossfadingInfo>
+										</BlendTrackAssoc>
+										<BlendTrackAssoc>
+											<ItemRef Name="AMB_Fall_Wind_Leaves_LP" ID="{2C533C46-502F-40A4-94D4-D8B7C08CC241}"/>
+											<CrossfadingInfo>
+												<LeftEdgePos>0.5</LeftEdgePos>
+												<LeftFadingMode>Automatic</LeftFadingMode>
+												<RightEdgePos>2</RightEdgePos>
+												<RightFadingMode>Automatic</RightFadingMode>
+											</CrossfadingInfo>
+										</BlendTrackAssoc>
+										<BlendTrackAssoc>
+											<ItemRef Name="AMB_Winter_Wind_LP" ID="{B97AD3F4-BBCC-4647-8A63-E055836E3C11}"/>
+											<CrossfadingInfo>
+												<LeftEdgePos>1.5</LeftEdgePos>
+												<LeftFadingMode>Automatic</LeftFadingMode>
+												<RightEdgePos>4</RightEdgePos>
+												<RightFadingMode>Automatic</RightFadingMode>
+											</CrossfadingInfo>
+										</BlendTrackAssoc>
+									</BlendTrackAssocList>
+								</BlendTrack>
+								<BlendTrack Name="Thunder" ID="{B50EE098-28EE-4ECC-944B-D0EFA491D9BF}" ShortID="739753205">
+									<PropertyList>
+										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="LayerCrossFadeControlInput">
+											<ObjectRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+										</Reference>
+									</ReferenceList>
+									<BlendTrackAssocList>
+										<BlendTrackAssoc>
+											<ItemRef Name="AMB_RFX_Thunder_Far" ID="{CBA1F1C6-7030-4160-8482-EE8D2BB1673D}"/>
+											<CrossfadingInfo>
+												<LeftEdgePos>0</LeftEdgePos>
+												<LeftFadingMode>Automatic</LeftFadingMode>
+												<RightEdgePos>1.9</RightEdgePos>
+												<RightFadingMode>Automatic</RightFadingMode>
+											</CrossfadingInfo>
+										</BlendTrackAssoc>
+									</BlendTrackAssocList>
+								</BlendTrack>
+							</BlendTrackList>
 						</BlendContainer>
 						<BlendContainer Name="AMB_VisualNovel" ID="{416BFC6C-5F7F-4BF6-A7F3-C5DE582DCCC7}" ShortID="267433229">
 							<PropertyList>
@@ -90,6 +626,212 @@
 							</ReferenceList>
 							<ObjectLists/>
 						</BlendContainer>
+						<RandomSequenceContainer Name="AMB_SP_Thunder_Close" ID="{770DAEB9-7E5C-4B22-BC49-E5B2B74B1323}" ShortID="740639590">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{69E89A5F-5C66-4D5D-980E-532938700CF1}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{046148F2-5FBF-4C43-9A26-AA723E3869A4}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="AMB_SP_Thunder_Close_01" ID="{7E1804FD-7F21-430B-9229-ACD47188F97E}" ShortID="986946689">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_SP_Thunder_Close_01" ID="{869FC038-69FB-4A66-B4F9-22244EFAE2E1}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_SP_Thunder_Close_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="938139549"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_SP_Thunder_Close_01" ID="{869FC038-69FB-4A66-B4F9-22244EFAE2E1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="AMB_SP_Thunder_Close_02" ID="{00958C54-FDAF-4A13-99F2-11BDFE2D4FD3}" ShortID="843997900">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_SP_Thunder_Close_02" ID="{CCDDE4FD-895E-4179-88B9-230666011719}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_SP_Thunder_Close_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="457222669"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_SP_Thunder_Close_02" ID="{CCDDE4FD-895E-4179-88B9-230666011719}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="AMB_SP_Thunder_Close_03" ID="{69B05EA7-E428-4D02-A6D2-7EFF571DAEA7}" ShortID="969062097">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_SP_Thunder_Close_03" ID="{5F593216-D22F-4DC2-9DAA-B5452F57747D}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_SP_Thunder_Close_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="354687586"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_SP_Thunder_Close_03" ID="{5F593216-D22F-4DC2-9DAA-B5452F57747D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="AMB_SP_Thunder_Close_04" ID="{89AE6A28-6BD0-4826-905D-CFE51D9D6083}" ShortID="423910298">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_SP_Thunder_Close_04" ID="{F70730A1-5EAF-48DC-9E41-17AA6612261E}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_SP_Thunder_Close_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="206340077"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_SP_Thunder_Close_04" ID="{F70730A1-5EAF-48DC-9E41-17AA6612261E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="AMB_SP_Thunder_Close_05" ID="{2B003CBD-CE78-4BB4-A23D-0800CB9C5FB8}" ShortID="672979232">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_SP_Thunder_Close_05" ID="{A397C7A0-1DD2-42F8-ACD7-912745654AD9}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_SP_Thunder_Close_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="910820697"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_SP_Thunder_Close_05" ID="{A397C7A0-1DD2-42F8-ACD7-912745654AD9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="AMB_SP_Thunder_Close_06" ID="{B1E9F3AC-512B-43F5-9797-2B125E437C09}" ShortID="271429798">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_SP_Thunder_Close_06" ID="{19ADF9D7-1C92-424C-B6A1-112F3B81863A}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_SP_Thunder_Close_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="943433626"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_SP_Thunder_Close_06" ID="{19ADF9D7-1C92-424C-B6A1-112F3B81863A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="AMB_SP_Thunder_Close_07" ID="{3731C52E-D57F-479D-87FE-94D59B1A64F3}" ShortID="1068843655">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_SP_Thunder_Close_07" ID="{23FDE8B5-FE87-4FAD-8A5A-5835E8F9BE70}">
+											<Language>SFX</Language>
+											<AudioFile>AMB_SP_Thunder_Close_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="552454974"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_SP_Thunder_Close_07" ID="{23FDE8B5-FE87-4FAD-8A5A-5835E8F9BE70}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
