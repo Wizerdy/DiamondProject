@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using ToolsBoxEngine;
 
 [System.Serializable]
@@ -11,15 +12,19 @@ public class DamageHealth : MonoBehaviour {
     [SerializeField] bool _onlyDamageOnceEach = false;
     [SerializeField] string _damageType;
     [SerializeField] MultipleTagSelector _ignoreTag;
+
+    [SerializeField, HideInInspector] UnityEvent<GameObject> _onCollide;
+    [SerializeField, HideInInspector] UnityEvent<GameObject, int> _onDamage;
     
-    Tools.BasicDelegate<GameObject> _onCollide;
     List<GameObject> _hitted = new List<GameObject>();
 
     #region Properties
 
     public int Damage { get { return _damage; } set { _damage = value; } }
     public MultipleTagSelector Damageables { get { return _damageables; } set { _damageables = value; } }
-    public event Tools.BasicDelegate<GameObject> OnCollide { add { _onCollide += value; } remove { _onCollide -= value; } }
+
+    public event UnityAction<GameObject> OnCollide { add { _onCollide.AddListener(value); } remove { _onCollide.RemoveListener(value); } }
+    public event UnityAction<GameObject, int> OnDamage { add { _onDamage.AddListener(value); } remove { _onDamage.RemoveListener(value); } }
 
     #endregion
 
@@ -39,10 +44,13 @@ public class DamageHealth : MonoBehaviour {
         if (_damageables.Contains(collision.gameObject.tag)) {
             GameObject elderly = collision.transform.FindElderlyByTag().gameObject;
             if (_onlyDamageOnceEach && _hitted.Contains(elderly)) { return; }
-            Debug.Log(_damageType);
-            collision.gameObject.GetComponent<IHealth>()?.TakeDamage(_damage, _damageType);
             _hitted.Add(elderly);
             _onCollide?.Invoke(collision.gameObject);
+            IHealth health = collision.gameObject.GetComponent<IHealth>();
+            if (health != null && health.CanTakeDamage) {
+                health.TakeDamage(_damage, _damageType);
+                _onDamage?.Invoke(collision.gameObject, _damage);
+            }
             if (_destroyOnHit) {
                 Die();
             }
@@ -65,7 +73,9 @@ public class DamageHealth : MonoBehaviour {
     }
 
     public void SetValues(MultipleTagSelector damageables, int damage) {
-        _damageables = damageables;
+        if (damageables != null) {
+            _damageables = damageables;
+        }
         _damage = damage;
         ResetHitted();
     }

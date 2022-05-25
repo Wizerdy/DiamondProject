@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using ToolsBoxEngine;
 
 public class LeafBeam : BaseAttack {
@@ -15,22 +16,19 @@ public class LeafBeam : BaseAttack {
     private GameObject currentleafBeam;
     private float damageFrequencyTimer = 0f;
     private LineRenderer lineRenderer;
-    [SerializeField] delegate void OnBeamPlayerHitEvent();
-    OnBeamPlayerHitEvent onBeamPlayerHitEvent;
-    [SerializeField] delegate void OnBeamSpawnEvent();
-    OnBeamSpawnEvent onBeamSpawnEvent;
-    [SerializeField] delegate void OnBeamHitEvent();
-    OnBeamHitEvent onBeamHitEvent;
+
+    [SerializeField, HideInInspector] UnityEvent _onSpawn;
+    [SerializeField, HideInInspector] UnityEvent<GameObject> _onHit;
+
+    public event UnityAction OnSpawn { add => _onSpawn.AddListener(value); remove => _onSpawn.RemoveListener(value); }
+    public event UnityAction<GameObject> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
 
     protected override IEnumerator IExecute() {
         float _minDistLaserSquare = _minDistLaser * _minDistLaser;
         _rayAngularSpeed = Mathf.Acos((2 * _minDistLaserSquare - _rayLinearSpeed * _rayLinearSpeed) / (2 * _minDistLaserSquare));
         currentleafBeam = Instantiate(_leafBeamPrefab, _beamPosOnBoss + BossPos, Quaternion.identity).gameObject;
         lineRenderer = currentleafBeam.GetComponent<LineRenderer>();
-        onBeamSpawnEvent += OnSpawn;
-        onBeamPlayerHitEvent += OnRayHitPlayer;
-        onBeamHitEvent += OnRayHit;
-        onBeamSpawnEvent?.Invoke();
+        _onSpawn?.Invoke();
         float attackTimer = duration;
         Vector3 dir;
         Vector3 currentAim = (PlayerPos - BossPos).normalized * _minDistLaser + BossPos;
@@ -52,15 +50,15 @@ public class LeafBeam : BaseAttack {
             Debug.DrawRay(currentleafBeam.transform.position, currentAim - currentleafBeam.transform.position, Color.red);
             for (int i = 0; i < hits.Length; i++) {
                 RaycastHit2D hit = hits[i];
-                onBeamHitEvent?.Invoke();
-                if (hit.transform.gameObject.tag == "Player") {
-                    onBeamPlayerHitEvent?.Invoke();
+                _onHit?.Invoke(hit.collider.gameObject);
+                if (hit.transform.gameObject.CompareTag("Player")) {
                     hit.transform.gameObject.GetComponent<IHealth>()?.TakeDamage(_rayDamage);
                 }
             }
             attackTimer -= Time.deltaTime;
             yield return null;
         }
+        currentleafBeam.gameObject.SetActive(false);
         Destroy(currentleafBeam);
     }
 
@@ -71,21 +69,9 @@ public class LeafBeam : BaseAttack {
         lineRenderer.SetPosition(0, currentleafBeam.transform.position);
     }
 
-    private void OnSpawn() {
-
-    }
-
-    private void OnRayHitPlayer() {
-
-    }
-
-    private void OnRayHit() {
-
-    }
-
-    private void OnDestroy() {
-        onBeamSpawnEvent -= OnSpawn;
-        onBeamPlayerHitEvent -= OnRayHitPlayer;
-        onBeamHitEvent -= OnRayHit;
+    public override void End() {
+        base.End();
+        currentleafBeam.gameObject.SetActive(false);
+        Destroy(currentleafBeam);
     }
 }

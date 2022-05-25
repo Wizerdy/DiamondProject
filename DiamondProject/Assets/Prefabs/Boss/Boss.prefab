@@ -1815,7 +1815,7 @@ MonoBehaviour:
   _onAttackEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680249788666035302}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: MovementEnd
         m_Mode: 0
@@ -2288,7 +2288,7 @@ MonoBehaviour:
   _onEnterShape:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680249788666035302}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: SetShape
         m_Mode: 0
@@ -2324,7 +2324,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5680249788666035302}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: ChangeBehaviour
         m_Mode: 1
@@ -2351,7 +2351,7 @@ MonoBehaviour:
   _onExitShape:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680249788666035302}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: SetShape
         m_Mode: 0
@@ -2828,6 +2828,18 @@ PrefabInstance:
       propertyPath: _bossShapeSystem
       value: 
       objectReference: {fileID: 5680249788645268036}
+    - target: {fileID: 8301503317489124549, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _launcher
+      value: 
+      objectReference: {fileID: 5680249788377665366}
+    - target: {fileID: 8301503317489124549, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _bossHealth
+      value: 
+      objectReference: {fileID: 5680249788332393454}
+    - target: {fileID: 8301503317489124549, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _attackSystem
+      value: 
+      objectReference: {fileID: 5680249788377665360}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
 --- !u!114 &2966126495327107060 stripped
@@ -2846,52 +2858,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8101424016618067097, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
   m_PrefabInstance: {fileID: 5680249788904057773}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4520003439891824437}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd30b50c0c0c9a84f976ae2211111ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4520003439891824437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8101424016618067096, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-  m_PrefabInstance: {fileID: 5680249788904057773}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5680249788666035302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4520003439891824437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2de3d34aca8cdbf48bc1f18997410696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bossHealth: {fileID: 5680249788332393454}
-  _currentShape: {fileID: 0}
-  _launcher: {fileID: 5680249788377665366}
-  _waitTimeBeforeAction: 7
-  _timeBetweenAttacks: 5
-  state: 1
-  availableAttacks: []
-  _timeBetweenAttacksFALL: 5
-  _neutralAttacks:
-  - Trees
-  - Bullet Hell Neutral
-  - Leaf Beam Neutral
-  _fallAttacks:
-  - FollowPlayer
-  - Leaf Beam
-  - FallDash
-  - Boomerang
-  _winterAttacks:
-  - Ice Hell
-  - Bullet Hell
-  - Snow Absorption
-  lastAttack: 
-  lastAttackEnd: 
 --- !u!4 &4520003439891824443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8101424016618067094, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}

@@ -10,11 +10,13 @@ public class EntityRangedAttack : MonoBehaviour {
     [SerializeField] Animator _animator;
     [SerializeField] Transform _attackParent;
     [SerializeField] SpriteRenderer _spriteRenderer;
-    [Header("Values")]
+    [Header("Default bullet values")]
     [SerializeField] int _damage;
     [SerializeField] MultipleTagSelector _damageables = new MultipleTagSelector(MultipleTagSelector.State.EVERYTHING);
     [SerializeField] float _bulletSpeed;
     [SerializeField] float _cooldown = 1f;
+
+    [Space]
     [SerializeField] UnityEvent<Vector2> _onAttack;
 
     bool _canRangeAttack = true;
@@ -31,12 +33,20 @@ public class EntityRangedAttack : MonoBehaviour {
         if (!_canRangeAttack) { return; }
         _onAttack?.Invoke(direction);
 
-        UpdateDirection(direction);
-        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction.To3D()) * Quaternion.Euler(0f, 0f, 90f);
-        GameObject bull = Instantiate(_bullet, transform.position, rotation);
-        DamageHealth damageHealth = bull.GetComponent<DamageHealth>();
-        damageHealth?.SetValues(_damageables, _damage);
-        bull.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed;
+        Vector2 bulletDirection = direction;
+        GameObject bull = Instantiate(_bullet, transform.position, Quaternion.identity);
+        Bullet bullet = bull.GetComponent<Bullet>();
+        if (bull == null) {
+            DamageHealth damageHealth = bull.GetComponent<DamageHealth>();
+            damageHealth?.SetValues(_damageables, _damage);
+            bull.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed;
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction.To3D()) * Quaternion.Euler(0f, 0f, 90f);
+            bull.transform.rotation = rotation;
+        } else {
+            bulletDirection = bullet.ComputeDirection(direction);
+            bullet.Launch();
+        }
+        UpdateDirection(bulletDirection);
         _animator.SetTrigger("Range Attack");
         _canRangeAttack = false;
         StartCoroutine(Tools.Delay(() => _canRangeAttack = true, _cooldown));
@@ -49,5 +59,6 @@ public class EntityRangedAttack : MonoBehaviour {
 
     public void SetBullet(GameObject bullet) {
         _bullet = bullet;
+        _cooldown = bullet.GetComponent<Bullet>()?.Cooldown ?? _cooldown;
     }
 }

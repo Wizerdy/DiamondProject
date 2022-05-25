@@ -15,26 +15,29 @@ public class Lia : MonoBehaviour {
     [SerializeField] Trigger fall;
     [SerializeField] Trigger winter;
 
-    List<Shape> _shape = new List<Shape>();
+    List<Shape> _beatenShape = new List<Shape>();
+
     private void Update() {
-        if (!_shape.Contains(Shape.SPRING) && spring.IsTrigger()) {
+        if (!_beatenShape.Contains(Shape.SPRING) && spring.IsTrigger()) {
             NewForm(Shape.SPRING);
         }
-        if (!_shape.Contains(Shape.SUMMER) && summer.IsTrigger()) {
+        if (!_beatenShape.Contains(Shape.SUMMER) && summer.IsTrigger()) {
             NewForm(Shape.SUMMER);
         }
-        if (!_shape.Contains(Shape.FALL) && fall.IsTrigger()) {
+        if (!_beatenShape.Contains(Shape.FALL) && fall.IsTrigger()) {
             NewForm(Shape.FALL);
         }
-        if (!_shape.Contains(Shape.WINTER) && winter.IsTrigger()) {
+        if (!_beatenShape.Contains(Shape.WINTER) && winter.IsTrigger()) {
             NewForm(Shape.WINTER);
         }
     }
 
     public void NewForm(Shape shape) {
-        _shape.Add(shape);
-        _bossShapeSystem.ChangeShape(_shapeLibrary.GetBossShape(shape));
         _health.CurrentHealth = _health.MaxHealth;
+        _bossShapeSystem.ChangeShape(_shapeLibrary.GetBossShape(shape));
+        if (shape != Shape.NEUTRAL) {
+            _beatenShape.Add(shape);
+        }
     }
 
     public void ComputeDeath() {
