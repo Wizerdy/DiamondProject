@@ -74,9 +74,9 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Boss_Neutral_LeafBeam" ID="{81B2C826-8D24-4B64-B053-924721E09C67}">
+				<Event Name="Boss_Neutral_LeafBeam_Start" ID="{81B2C826-8D24-4B64-B053-924721E09C67}">
 					<ChildrenList>
-						<Action Name="" ID="{37351C06-9F77-48F0-BC01-1DCB4D0C9D08}" ShortID="78910420">
+						<Action Name="" ID="{B9CE4D76-8D08-4F95-B559-DC1A18CCCCBA}" ShortID="960001211">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="38"/>
 								<Property Name="GameParameterValue" Type="Real64" Value="2"/>
@@ -88,10 +88,21 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{02552364-17A0-411D-8BA6-0FC3D03E81A0}" ShortID="391810804">
+						<Action Name="" ID="{84A4DA2A-421E-4705-899E-49C08501CF28}" ShortID="215620893">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Boss_Neutral_LeafRain" ID="{3410FD31-6B89-4F2C-AEEF-28F264E55F45}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+									<ObjectRef Name="Boss_Fall_LeafBeam_Start" ID="{9AF25AA3-C9C8-4732-90B5-0D1F63DED886}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D3DE3C94-6F07-4DA9-B91A-4D89685FD849}" ShortID="870407837">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.1"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafBeam_LP" ID="{913BC5D4-DA11-4BAB-961D-F7B2F1E043F2}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -147,6 +158,40 @@
 				<Event Name="Boss_Neutral_BulletHell_Circle_Stop" ID="{5AD35634-BEEA-4D9E-A273-C666392A1E7E}"/>
 				<Event Name="Boss_Neutral_ExploBush_Cast" ID="{4B306485-15AE-4925-A644-1C021974C353}"/>
 				<Event Name="Boss_Neutral_Tree_Destroy" ID="{8A08593F-FDC7-4EE3-841B-0C6DD9123C49}"/>
+				<Event Name="Boss_Neutral_LeafBeam_Stop" ID="{C89A9B8C-FDBD-4DF7-8415-17EF721C21A4}">
+					<ChildrenList>
+						<Action Name="" ID="{1377FFA2-E618-4EFD-AE75-02D9711823A2}" ShortID="755484612">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{999442A7-F4EE-44DF-8487-E78162360C65}" ShortID="1006272930">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafBeam_End" ID="{5DACE5F8-DF4B-4E52-A052-2C10D01EB06F}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1A65390B-6533-4025-8BA6-DAE56F4B35FF}" ShortID="728052008">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="0.35"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafBeam_LP" ID="{913BC5D4-DA11-4BAB-961D-F7B2F1E043F2}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

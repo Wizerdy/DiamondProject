@@ -20,7 +20,8 @@ namespace AK
         static const AkUniqueID BOSS_FALL_FALLDASH_CAST = 2378231684U;
         static const AkUniqueID BOSS_FALL_FALLDASH_DASH = 2685031445U;
         static const AkUniqueID BOSS_FALL_FALLDASH_LEAF = 211307037U;
-        static const AkUniqueID BOSS_FALL_LEAFBEAM = 1302493604U;
+        static const AkUniqueID BOSS_FALL_LEAFBEAM_START = 403336105U;
+        static const AkUniqueID BOSS_FALL_LEAFBEAM_STOP = 3231837379U;
         static const AkUniqueID BOSS_FALL_LEAFBOOMERANG_BACK = 560939783U;
         static const AkUniqueID BOSS_FALL_LEAFBOOMERANG_CAST = 2779939727U;
         static const AkUniqueID BOSS_FALL_LEAFBOOMERANG_GO = 1047433676U;
@@ -37,7 +38,8 @@ namespace AK
         static const AkUniqueID BOSS_NEUTRAL_EXPLOBUSH_CAST = 1164125491U;
         static const AkUniqueID BOSS_NEUTRAL_EXPLOBUSH_EXPLOSION = 1792841279U;
         static const AkUniqueID BOSS_NEUTRAL_EXPLOBUSH_SUMMON = 738273803U;
-        static const AkUniqueID BOSS_NEUTRAL_LEAFBEAM = 1498567228U;
+        static const AkUniqueID BOSS_NEUTRAL_LEAFBEAM_START = 3985863633U;
+        static const AkUniqueID BOSS_NEUTRAL_LEAFBEAM_STOP = 2794118091U;
         static const AkUniqueID BOSS_NEUTRAL_TREE_ATTACK = 1234898960U;
         static const AkUniqueID BOSS_NEUTRAL_TREE_DESTROY = 2188453778U;
         static const AkUniqueID BOSS_NEUTRAL_TREE_SUMMON = 2933364317U;

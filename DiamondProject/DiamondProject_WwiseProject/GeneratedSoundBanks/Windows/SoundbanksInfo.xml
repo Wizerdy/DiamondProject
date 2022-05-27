@@ -21,6 +21,10 @@
 			<ShortName>AMB_Neutral_Wind_Rain_LP.wav</ShortName>
 			<Path>SFX\AMB_Neutral_Wind_Rain_LP_F2BF74AC.wem</Path>
 		</File>
+		<File Id="909766544" Language="SFX">
+			<ShortName>AMB_VisualNovel_LP.wav</ShortName>
+			<Path>SFX\AMB_VisualNovel_LP_F2BF74AC.wem</Path>
+		</File>
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
@@ -52,7 +56,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="624630184">
+		<SoundBank Id="4056684167" Language="SFX" Hash="1754665928">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -143,11 +147,57 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="399517452" Name="AMB_VisualNovel" ObjectPath="\Events\SD\AMB\AMB_VisualNovel" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="399517452" Name="AMB_VisualNovel" ObjectPath="\Events\SD\AMB\AMB_VisualNovel" DurationType="Infinite">
+					<ReferencedStreamedFiles>
+						<File Id="909766544" Language="SFX">
+							<ShortName>AMB_VisualNovel_LP.wav</ShortName>
+							<Path>SFX\AMB_VisualNovel_LP_F2BF74AC.wem</Path>
+						</File>
+					</ReferencedStreamedFiles>
+				</Event>
 				<Event Id="2378231684" Name="Boss_Fall_FallDash_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2685031445" Name="Boss_Fall_FallDash_Dash" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Dash" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="211307037" Name="Boss_Fall_FallDash_Leaf" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Leaf" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1302493604" Name="Boss_Fall_LeafBeam" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBeam" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="403336105" Name="Boss_Fall_LeafBeam_Start" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBeam_Start" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="34101360" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_Start_02.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_Start_02_32513D82.wem</Path>
+						</File>
+						<File Id="320628684" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_Start_01.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_Start_01_32513D82.wem</Path>
+						</File>
+						<File Id="545815232" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_Start_04.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_Start_04_32513D82.wem</Path>
+						</File>
+						<File Id="977735136" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_Start_03.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_Start_03_32513D82.wem</Path>
+						</File>
+						<File Id="988931632" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_LP.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_LP_F2BF74AC.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3231837379" Name="Boss_Fall_LeafBeam_Stop" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBeam_Stop" DurationType="OneShot" DurationMin="0.81097" DurationMax="0.974656">
+					<IncludedMemoryFiles>
+						<File Id="187020238" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_End_01.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_End_01_32513D82.wem</Path>
+						</File>
+						<File Id="423956916" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_End_03.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_End_03_32513D82.wem</Path>
+						</File>
+						<File Id="1069229627" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_End_02.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_End_02_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="560939783" Name="Boss_Fall_LeafBoomerang_Back" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Back" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2779939727" Name="Boss_Fall_LeafBoomerang_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1047433676" Name="Boss_Fall_LeafBoomerang_Go" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Go" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
@@ -751,7 +801,46 @@
 				<Event Id="1164125491" Name="Boss_Neutral_ExploBush_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_ExploBush_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1792841279" Name="Boss_Neutral_ExploBush_Explosion" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_ExploBush_Explosion" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="738273803" Name="Boss_Neutral_ExploBush_Summon" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_ExploBush_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1498567228" Name="Boss_Neutral_LeafBeam" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_LeafBeam" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3985863633" Name="Boss_Neutral_LeafBeam_Start" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_LeafBeam_Start" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="34101360" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_Start_02.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_Start_02_32513D82.wem</Path>
+						</File>
+						<File Id="320628684" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_Start_01.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_Start_01_32513D82.wem</Path>
+						</File>
+						<File Id="545815232" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_Start_04.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_Start_04_32513D82.wem</Path>
+						</File>
+						<File Id="977735136" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_Start_03.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_Start_03_32513D82.wem</Path>
+						</File>
+						<File Id="988931632" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_LP.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_LP_F2BF74AC.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2794118091" Name="Boss_Neutral_LeafBeam_Stop" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_LeafBeam_Stop" DurationType="OneShot" DurationMin="0.81097" DurationMax="0.974656">
+					<IncludedMemoryFiles>
+						<File Id="187020238" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_End_01.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_End_01_32513D82.wem</Path>
+						</File>
+						<File Id="423956916" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_End_03.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_End_03_32513D82.wem</Path>
+						</File>
+						<File Id="1069229627" Language="SFX">
+							<ShortName>Boss_Fall_LeafBeam_End_02.wav</ShortName>
+							<Path>SFX\Boss_Fall_LeafBeam_End_02_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1234898960" Name="Boss_Neutral_Tree_Attack" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Attack" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2188453778" Name="Boss_Neutral_Tree_Destroy" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Destroy" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2933364317" Name="Boss_Neutral_Tree_Summon" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
@@ -1113,8 +1202,13 @@
 				<File Id="187233243"/>
 				<File Id="386125571"/>
 				<File Id="828571170"/>
+				<File Id="909766544"/>
 			</ReferencedStreamedFiles>
 			<IncludedMemoryFiles>
+				<File Id="34101360" Language="SFX">
+					<ShortName>Boss_Fall_LeafBeam_Start_02.wav</ShortName>
+					<Path>SFX\Boss_Fall_LeafBeam_Start_02_32513D82.wem</Path>
+				</File>
 				<File Id="41016017" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Overcharge_Start_06.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Overcharge_Start_06_32513D82.wem</Path>
@@ -1207,6 +1301,10 @@
 					<ShortName>Boss_Winter_Hit_Crossbow_03.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_Crossbow_03_32513D82.wem</Path>
 				</File>
+				<File Id="187020238" Language="SFX">
+					<ShortName>Boss_Fall_LeafBeam_End_01.wav</ShortName>
+					<Path>SFX\Boss_Fall_LeafBeam_End_01_32513D82.wem</Path>
+				</File>
 				<File Id="187653369" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Shot_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Shot_03_32513D82.wem</Path>
@@ -1282,6 +1380,10 @@
 				<File Id="308880992" Language="SFX">
 					<ShortName>Boss_Fall_Hit_Sword_05.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_Sword_05_32513D82.wem</Path>
+				</File>
+				<File Id="320628684" Language="SFX">
+					<ShortName>Boss_Fall_LeafBeam_Start_01.wav</ShortName>
+					<Path>SFX\Boss_Fall_LeafBeam_Start_01_32513D82.wem</Path>
 				</File>
 				<File Id="326666348" Language="SFX">
 					<ShortName>Pumpkid_Sword_Charging_Start_01.wav</ShortName>
@@ -1363,6 +1465,10 @@
 					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_06.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_06_32513D82.wem</Path>
 				</File>
+				<File Id="423956916" Language="SFX">
+					<ShortName>Boss_Fall_LeafBeam_End_03.wav</ShortName>
+					<Path>SFX\Boss_Fall_LeafBeam_End_03_32513D82.wem</Path>
+				</File>
 				<File Id="430354181" Language="SFX">
 					<ShortName>Boss_Winter_Hit_Sword_05.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_Sword_05_32513D82.wem</Path>
@@ -1418,6 +1524,10 @@
 				<File Id="531303175" Language="SFX">
 					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_02.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_02_32513D82.wem</Path>
+				</File>
+				<File Id="545815232" Language="SFX">
+					<ShortName>Boss_Fall_LeafBeam_Start_04.wav</ShortName>
+					<Path>SFX\Boss_Fall_LeafBeam_Start_04_32513D82.wem</Path>
 				</File>
 				<File Id="547379435" Language="SFX">
 					<ShortName>Boss_Fall_Hit_ChargedCrossbow_06.wav</ShortName>
@@ -1651,6 +1761,14 @@
 					<ShortName>Boss_Fall_Hit_ChargedCrossbow_01.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_ChargedCrossbow_01_32513D82.wem</Path>
 				</File>
+				<File Id="977735136" Language="SFX">
+					<ShortName>Boss_Fall_LeafBeam_Start_03.wav</ShortName>
+					<Path>SFX\Boss_Fall_LeafBeam_Start_03_32513D82.wem</Path>
+				</File>
+				<File Id="988931632" Language="SFX">
+					<ShortName>Boss_Fall_LeafBeam_LP.wav</ShortName>
+					<Path>SFX\Boss_Fall_LeafBeam_LP_F2BF74AC.wem</Path>
+				</File>
 				<File Id="1000354372" Language="SFX">
 					<ShortName>Pumpkid_Sword_Charging_Start_05.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Charging_Start_05_32513D82.wem</Path>
@@ -1690,6 +1808,10 @@
 				<File Id="1067091891" Language="SFX">
 					<ShortName>Pumpkid_Sword_Charging_LP.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Charging_LP_F2BF74AC.wem</Path>
+				</File>
+				<File Id="1069229627" Language="SFX">
+					<ShortName>Boss_Fall_LeafBeam_End_02.wav</ShortName>
+					<Path>SFX\Boss_Fall_LeafBeam_End_02_32513D82.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<GameParameters>

@@ -30,12 +30,20 @@
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Boss_Fall_LeafBeam_Start" ID="{D458E5B3-261F-43EF-AA31-814E9E703AB2}" WorkUnitID="{4FFEBC92-E8B7-47DD-A5FD-205DC4A02202}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Pumpkid_Sword_Slash" ID="{9909D52D-EDE8-4C20-B425-46894FA46F6A}" WorkUnitID="{EAF24BD5-BC8E-43C1-8F45-CE5B692A755B}"/>
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Boss_FormChange_Winter" ID="{51985CA1-8F2C-4B50-A787-50EE401200BC}" WorkUnitID="{BFFE96BB-C3C3-4347-B599-64623B626CC2}"/>
 							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Boss_Fall_LeafBeam_Stop" ID="{54E97B08-7A2C-4A93-B8B0-00FD18ACABC0}" WorkUnitID="{4FFEBC92-E8B7-47DD-A5FD-205DC4A02202}"/>
+							<Position X="3" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="AMB_Thunder" ID="{9F5A58EE-04A2-4B0B-8C1E-12F18B250AAA}" WorkUnitID="{CDDF101E-A503-4BEB-83B0-36A9F5F50823}"/>
@@ -65,7 +73,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}"/>
-							<Value>1.22</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_SwordCharge" ID="{1610341F-5917-4EFA-8260-02D5E6F7404C}"/>
