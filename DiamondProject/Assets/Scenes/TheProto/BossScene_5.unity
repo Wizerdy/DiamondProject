@@ -2599,6 +2599,12 @@ MonoBehaviour:
   _ignoreTag:
     tags: []
     state: 0
+  _onCollide:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &934425231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2638,6 +2644,23 @@ MonoBehaviour:
   _ignoreTag:
     tags: []
     state: 0
+  _onCollide:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDamage:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &949551084 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+  m_PrefabInstance: {fileID: 5680249787929907757}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de3d34aca8cdbf48bc1f18997410696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &959864128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boss: {fileID: 11400000, guid: 116343d6813afc143820099c704afa3b, type: 2}
+  _lia: {fileID: 11400000, guid: 5792cd1fa853d0a49b84f95c78e28a2f, type: 2}
 --- !u!1 &1113016080
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,6 +4260,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3959631132869822229, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _bullet
+      value: 
+      objectReference: {fileID: 4847567384368089890, guid: ee2776f49acba5649b20cbd2090e18ac, type: 3}
     - target: {fileID: 3959631132869822231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_Size.x
       value: 1.194849
@@ -5959,33 +5987,81 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5680249788377665360, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onAttackEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 949551084}
+    - target: {fileID: 5680249788377665360, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onAttackEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MovementEnd
+      objectReference: {fileID: 0}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _initialForm
       value: 
       objectReference: {fileID: 11400000, guid: 5f76c4a29c1ff8e43b872cd33be7a0de, type: 2}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 949551084}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 949551084}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
       objectReference: {fileID: 1664892866}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetShape
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeBehaviour
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ChangeSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Set
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LiaAttack, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ChangeMap, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: DestroyWhenFormSetter, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5680249788645268039, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _timeBeforeChange
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _fallAttacks.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _fallAttacks.Array.data[5]
-      value: FallDash
-      objectReference: {fileID: 0}
-    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _neutralAttacks.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5680249788666035302, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _neutralAttacks.Array.data[3]
-      value: Movement
       objectReference: {fileID: 0}
     - target: {fileID: 6659388199860451846, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: m_Mesh

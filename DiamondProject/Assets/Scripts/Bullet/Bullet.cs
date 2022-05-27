@@ -15,11 +15,12 @@ public class Bullet : MonoBehaviour {
     [Tooltip("0f = infinite")]
     [SerializeField] float _range = 0f;
     [SerializeField] float _cooldown = 0.2f;
-    [SerializeField] float _speed = 5f;
+    [SerializeField] float _speed = 30f;
     [SerializeField] int _overheat = 5;
 
     float _lifetime = 0f;
     float _timer = 0f;
+    Vector2 _straightDirection = Vector2.up;
     Vector2 _direction = Vector2.up;
 
     void Reset() {
@@ -67,16 +68,27 @@ public class Bullet : MonoBehaviour {
 
     #endregion
 
-    public void Launch(Vector2 direction) {
-        if (_rigidbody == null) { return; }
-        if (_speed == 0f) { Debug.LogError("Can't divide by 0 btw (speed)"); return; }
-
-        _direction = direction;
+    public Vector2 ComputeDirection(Vector2 direction) {
+        _straightDirection = direction;
 
         float angleMax = _deflection * 360f;
         float angle = Random.Range(0f, angleMax) - (angleMax / 2f);
         direction = Quaternion.Euler(0f, 0f, angle) * direction;
-        Vector2 velocity = direction * _speed;
+
+        _direction = direction;
+        return direction;
+    }
+
+    public void Launch() {
+        if (_rigidbody == null) { return; }
+        if (_speed == 0f) { Debug.LogError("Can't divide by 0 btw (speed)"); return; }
+
+        //_direction = direction;
+
+        //float angleMax = _deflection * 360f;
+        //float angle = Random.Range(0f, angleMax) - (angleMax / 2f);
+        //direction = Quaternion.Euler(0f, 0f, angle) * direction;
+        Vector2 velocity = _direction * _speed;
         _rigidbody.velocity = velocity;
 
         _damageHealth.Damage = _damage;
@@ -84,10 +96,13 @@ public class Bullet : MonoBehaviour {
         _timer = 0f;
 
         _lifetime = _range / _speed;
+
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -_direction.To3D()) * Quaternion.Euler(0f, 0f, 90f);
+        transform.rotation = rotation;
     }
 
     void OnEnable() {
-        Launch(_direction);
+        Launch();
     }
 
     void Update() {
