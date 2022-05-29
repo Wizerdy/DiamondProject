@@ -254,6 +254,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WinterShape"",
+                    ""type"": ""Button"",
+                    ""id"": ""f063b53e-4dce-48d1-a76b-ca4456b06a28"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FallShape"",
+                    ""type"": ""Button"",
+                    ""id"": ""b28e67e2-21fd-46aa-995c-a595fbca1bf3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -265,6 +283,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Kill boss"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d24840da-618c-4afe-868b-7a7116eccbed"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WinterShape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""77707173-2ba9-4b72-b014-12fbfc0c6f1b"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FallShape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -289,6 +329,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // CheatCode
         m_CheatCode = asset.FindActionMap("CheatCode", throwIfNotFound: true);
         m_CheatCode_Killboss = m_CheatCode.FindAction("Kill boss", throwIfNotFound: true);
+        m_CheatCode_WinterShape = m_CheatCode.FindAction("WinterShape", throwIfNotFound: true);
+        m_CheatCode_FallShape = m_CheatCode.FindAction("FallShape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -480,11 +522,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_CheatCode;
     private ICheatCodeActions m_CheatCodeActionsCallbackInterface;
     private readonly InputAction m_CheatCode_Killboss;
+    private readonly InputAction m_CheatCode_WinterShape;
+    private readonly InputAction m_CheatCode_FallShape;
     public struct CheatCodeActions
     {
         private @PlayerControls m_Wrapper;
         public CheatCodeActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Killboss => m_Wrapper.m_CheatCode_Killboss;
+        public InputAction @WinterShape => m_Wrapper.m_CheatCode_WinterShape;
+        public InputAction @FallShape => m_Wrapper.m_CheatCode_FallShape;
         public InputActionMap Get() { return m_Wrapper.m_CheatCode; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -497,6 +543,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Killboss.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
                 @Killboss.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
                 @Killboss.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
+                @WinterShape.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnWinterShape;
+                @WinterShape.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnWinterShape;
+                @WinterShape.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnWinterShape;
+                @FallShape.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnFallShape;
+                @FallShape.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnFallShape;
+                @FallShape.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnFallShape;
             }
             m_Wrapper.m_CheatCodeActionsCallbackInterface = instance;
             if (instance != null)
@@ -504,6 +556,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Killboss.started += instance.OnKillboss;
                 @Killboss.performed += instance.OnKillboss;
                 @Killboss.canceled += instance.OnKillboss;
+                @WinterShape.started += instance.OnWinterShape;
+                @WinterShape.performed += instance.OnWinterShape;
+                @WinterShape.canceled += instance.OnWinterShape;
+                @FallShape.started += instance.OnFallShape;
+                @FallShape.performed += instance.OnFallShape;
+                @FallShape.canceled += instance.OnFallShape;
             }
         }
     }
@@ -527,5 +585,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface ICheatCodeActions
     {
         void OnKillboss(InputAction.CallbackContext context);
+        void OnWinterShape(InputAction.CallbackContext context);
+        void OnFallShape(InputAction.CallbackContext context);
     }
 }

@@ -33,7 +33,6 @@ public class Lia : MonoBehaviour {
     }
 
     public void NewForm(Shape shape) {
-        Debug.Log("G RAISON");
         _health.CurrentHealth = _health.MaxHealth;
         _bossShapeSystem.ChangeShape(_shapeLibrary.GetBossShape(shape));
         if (shape != Shape.NEUTRAL) {

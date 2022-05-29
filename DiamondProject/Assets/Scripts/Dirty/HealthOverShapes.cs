@@ -70,7 +70,6 @@ public class HealthOverShapes : MonoBehaviour {
     }
 
     public void LoadSaveTo(HUDHealth hud) {
-        Debug.Log(_save.currentHealth);
         hud.HealthReference.Load(_save);
         _save = null;
         _saveOwner = null;
