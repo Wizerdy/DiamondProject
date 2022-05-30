@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour {
     public bool CanTakeDamage;
     [SerializeField] Slider _healthBar;
-    [SerializeField] VisualEffect visualEffect;
+    [SerializeField] VisualEffects visualEffect;
     [SerializeField] int maxHealth = 500;
     [SerializeField] float hitVisualEffectTime;
     [SerializeField] int hitVisualEffectWeight;

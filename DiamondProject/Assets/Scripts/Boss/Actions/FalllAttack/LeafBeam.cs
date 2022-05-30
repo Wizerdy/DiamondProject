@@ -13,7 +13,7 @@ public class LeafBeam : BaseAttack {
     [SerializeField] private Vector3 _beamPosOnBoss;
     [SerializeField] float _minDistLaser = 5;
     private float damageFrequencyTimer = 0f;
-
+    GameObject currentBeam;
     [SerializeField, HideInInspector] UnityEvent _onStart;
     [SerializeField, HideInInspector] UnityEvent<GameObject> _onHit;
 
@@ -30,7 +30,7 @@ public class LeafBeam : BaseAttack {
         Vector3 currentAim = (PlayerPos - BossPos).normalized * _minDistLaser + BossPos;
         Vector3 nextPosition;
 
-        GameObject currentBeam = Instantiate(_leafBeamPrefab, _beamPosOnBoss + BossPos, Quaternion.identity).gameObject;
+        currentBeam = Instantiate(_leafBeamPrefab, _beamPosOnBoss + BossPos, Quaternion.identity).gameObject;
         GameObject rendererBeam = currentBeam.transform.GetChild(0).gameObject;
         GameObject impact = currentBeam.transform.GetChild(1).gameObject;
 
@@ -70,6 +70,10 @@ public class LeafBeam : BaseAttack {
             attackTimer -= Time.deltaTime;
             yield return null;
         }
+    }
+
+    public override void End() {
+        base.End();
         currentBeam.gameObject.SetActive(false);
         Destroy(currentBeam);
     }
