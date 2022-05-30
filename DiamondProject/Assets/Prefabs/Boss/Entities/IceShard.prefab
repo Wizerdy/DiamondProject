@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4849475643829659024}
   - component: {fileID: 7799374230629791716}
   - component: {fileID: 1300672329260990947}
+  - component: {fileID: 324279474039948189}
   - component: {fileID: 2683784733369323143}
   m_Layer: 0
   m_Name: IceShard
@@ -152,6 +153,40 @@ MonoBehaviour:
   lifeSpan: 7
   maxSize: 3
   growthSpeed: 1.75
+  _modDamage: {fileID: 324279474039948189}
+  _onShardSpawn:
+    m_PersistentCalls:
+      m_Calls: []
+  _onShardHit:
+    m_PersistentCalls:
+      m_Calls: []
+  _onShardDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &324279474039948189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434725201044603737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8552ec09ca4ab5443a2dbe899f496438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
+  _damageables:
+    tags:
+    - Player
+    state: 1
+  _destroyOnHit: 1
+  _onlyDamageOnceEach: 1
+  _damageType: 
+  _ignoreTag:
+    tags:
+    - Boss
+    state: 1
 --- !u!114 &2683784733369323143
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,8 +14,6 @@ public class BoomerangLeaf : BaseAttack {
     [SerializeField] int ghostLeaf;
     [SerializeField] List<Boomerang> leafs;
 
-
-
     protected override IEnumerator IExecute() {
         if (ghostLeaf >= leafsNumber) {
             yield break;
@@ -25,7 +23,7 @@ public class BoomerangLeaf : BaseAttack {
             ghosts.Add(i);
         }
         for (int i = 0; i < leafsNumber - ghostLeaf; i++) {
-            int r = Random.Range(0,ghosts.Count);
+            int r = Random.Range(0, ghosts.Count);
             ghosts.RemoveAt(r);
         }
         for (int i = 0; i < leafsNumber; i++) {
@@ -51,9 +49,9 @@ public class BoomerangLeaf : BaseAttack {
         while (leafs.Count != 0) {
             yield return new WaitForSeconds(0.1f);
         }
+    }
 
-        void RemoveLeafs(Boomerang boom){
-            leafs.Remove(boom);
-        }
+    void RemoveLeafs(Boomerang boom) {
+        leafs.Remove(boom);
     }
 }

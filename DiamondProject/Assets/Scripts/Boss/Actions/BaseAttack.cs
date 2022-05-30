@@ -12,9 +12,9 @@ public abstract class BaseAttack : MonoBehaviour {
     [SerializeField] protected Reference<PlayerController> _playerRef; // Enculé
     [SerializeField] protected float duration = 1;
     [SerializeField] protected float coolDown = 1;
-    [SerializeField] protected bool isPlaying = false;
-    [SerializeField] protected bool locked = false;
-    [SerializeField] protected bool NoEnd = false;
+    [SerializeField] protected bool _dontNeedEnd = false;
+    protected bool isPlaying = false;
+    protected bool locked = false;
     [SerializeField] protected Vector3 BossPos { get => _bossRef?.Instance.transform.position ?? Vector3.zero; set => _bossRef.Instance.transform.position = value; }
     [SerializeField] protected Vector3 PlayerPos { get => _playerRef?.Instance.transform.position ?? Vector3.zero; set => _playerRef.Instance.transform.position = value; }
 
@@ -25,6 +25,7 @@ public abstract class BaseAttack : MonoBehaviour {
 
     private void OnDisable() {
         attackSystem?.Instance?.Unregister(this);
+        Destroy(gameObject);
     }
 
     public void Execute() {
@@ -34,7 +35,7 @@ public abstract class BaseAttack : MonoBehaviour {
     }
 
     protected IEnumerator ILaunch() {
-        if (NoEnd) {
+        if (_dontNeedEnd) {
             StartCoroutine(IExecute());
             yield break;
         } else {
@@ -45,7 +46,8 @@ public abstract class BaseAttack : MonoBehaviour {
 
     protected abstract IEnumerator IExecute();
 
-    protected virtual void End() {
+    public virtual void End() {
+        StopAllCoroutines();
         isPlaying = false;
         OnEnd?.Invoke(this);
         gameObject.SetActive(false);

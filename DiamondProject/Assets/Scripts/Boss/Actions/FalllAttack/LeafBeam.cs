@@ -1,83 +1,80 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using ToolsBoxEngine;
 
 public class LeafBeam : BaseAttack {
-    [SerializeField] private GameObject leafBeamPrefab;
-    [SerializeField] private float rayAngularSpeed = 10f;
-    float currentSpeed = 10f;
-    [SerializeField] private int rayDamage = 5;
-    [SerializeField] private float damageFrequency = 1f;
+    [SerializeField] private GameObject _leafBeamPrefab;
+    [SerializeField] private float _rayAngularSpeed = 10f;
+    [SerializeField] private float _rayLinearSpeed = 10f;
+    [SerializeField] private int _rayDamage = 5;
+    //[SerializeField] private float _damageFrequency = 0f;
     [SerializeField] private Vector3 _beamPosOnBoss;
-    [SerializeField] float maxDistLaser = 50;
-
-    private GameObject currentleafBeam;
+    [SerializeField] float _minDistLaser = 5;
     private float damageFrequencyTimer = 0f;
-    private LineRenderer lineRenderer;
-    [SerializeField] delegate void OnBeamPlayerHitEvent();
-    OnBeamPlayerHitEvent onBeamPlayerHitEvent;
-    [SerializeField] delegate void OnBeamSpawnEvent();
-    OnBeamSpawnEvent onBeamSpawnEvent;
-    [SerializeField] delegate void OnBeamHitEvent();
-    OnBeamHitEvent onBeamHitEvent;
+    GameObject currentBeam;
+    [SerializeField, HideInInspector] UnityEvent _onStart;
+    [SerializeField, HideInInspector] UnityEvent<GameObject> _onHit;
+
+    public event UnityAction OnSpawn { add => _onStart.AddListener(value); remove => _onStart.RemoveListener(value); }
+    public event UnityAction<GameObject> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
 
     protected override IEnumerator IExecute() {
-        currentleafBeam = Instantiate(leafBeamPrefab, _beamPosOnBoss + BossPos, Quaternion.identity).gameObject;
-        lineRenderer = currentleafBeam.GetComponent<LineRenderer>();
-        onBeamSpawnEvent += OnSpawn;
-        onBeamPlayerHitEvent += OnRayHitPlayer;
-        onBeamHitEvent += OnRayHit;
-        onBeamSpawnEvent?.Invoke();
-        currentSpeed = rayAngularSpeed;
-        float attackTimer = duration;
+        _onStart?.Invoke();
+
+        float _minDistLaserSquare = _minDistLaser * _minDistLaser;
+        _rayAngularSpeed = Mathf.Acos((2 * _minDistLaserSquare - _rayLinearSpeed * _rayLinearSpeed) / (2 * _minDistLaserSquare));
+
         Vector3 dir;
-        Vector3 currentAim = PlayerPos - currentleafBeam.transform.position;
-        currentAim = Quaternion.Euler(0f, 0f, 10f) * currentAim;
+        Vector3 currentAim = (PlayerPos - BossPos).normalized * _minDistLaser + BossPos;
+        Vector3 nextPosition;
+
+        currentBeam = Instantiate(_leafBeamPrefab, _beamPosOnBoss + BossPos, Quaternion.identity).gameObject;
+        GameObject rendererBeam = currentBeam.transform.GetChild(0).gameObject;
+        GameObject impact = currentBeam.transform.GetChild(1).gameObject;
+
+        float attackTimer = duration;
         while (attackTimer > 0) {
-            currentleafBeam.transform.position = BossPos + _beamPosOnBoss;
-            dir = PlayerPos - currentleafBeam.transform.position;
-            currentAim = Vector3.RotateTowards(currentAim, dir, rayAngularSpeed * Time.deltaTime, 0);
-            UpdateRenderer(currentleafBeam.transform.position + currentAim.normalized * maxDistLaser);
-            RaycastHit2D[] hits = Physics2D.RaycastAll(currentleafBeam.transform.position, currentAim.normalized * maxDistLaser);
+            currentBeam.transform.position = BossPos + _beamPosOnBoss;
+            dir = (PlayerPos - currentAim).normalized;
+            nextPosition = currentAim + dir * Time.deltaTime * _rayLinearSpeed;
+            currentAim = nextPosition;
+
+            //if (Vector3.Distance(nextPosition, BossPos) < _minDistLaser) {
+            //    currentAim += Vector3.RotateTowards(currentAim - BossPos + (currentAim - BossPos).normalized, PlayerPos - BossPos, _rayAngularSpeed * Time.deltaTime, 0.0f) - (currentAim - BossPos);
+            //} else {
+            //    currentAim = nextPosition;
+            //}
+
+            Debug.DrawRay(BossPos, currentAim - BossPos, Color.blue);
+
+            Vector2 direction = currentAim - currentBeam.transform.position;
+            rendererBeam.transform.position = Vector3.Lerp(currentBeam.transform.position, currentAim, 0.5f);
+            rendererBeam.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+            rendererBeam.transform.localScale = new Vector3(4, Vector3.Distance(currentBeam.transform.position, currentAim), 1);
+            currentBeam.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+            rendererBeam.transform.GetChild(0).transform.position = currentBeam.transform.position;
+            impact.transform.position = currentAim;
+            impact.transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.forward);
+
+            RaycastHit2D[] hits = Physics2D.RaycastAll(currentBeam.transform.position, currentAim - currentBeam.transform.position, Vector3.Distance(currentAim, currentBeam.transform.position) + 1);
             for (int i = 0; i < hits.Length; i++) {
                 RaycastHit2D hit = hits[i];
-                onBeamHitEvent?.Invoke();
-                if (hit.transform.gameObject.tag == "Player" && damageFrequencyTimer <= 0) {
-                    onBeamPlayerHitEvent?.Invoke();
-                    hit.transform.gameObject.GetComponent<IHealth>()?.TakeDamage(rayDamage);
-                    damageFrequencyTimer = damageFrequency;
+                _onHit?.Invoke(hit.collider.gameObject);
+                if (hit.transform.gameObject.CompareTag("Player")) {
+                    hit.transform.gameObject.GetComponent<IHealth>()?.TakeDamage(_rayDamage);
                 }
             }
+            Debug.DrawRay(currentBeam.transform.position, currentAim - currentBeam.transform.position, Color.red);
             attackTimer -= Time.deltaTime;
-            damageFrequencyTimer -= Time.deltaTime;
             yield return null;
         }
-        Destroy(currentleafBeam);
     }
 
-    private void UpdateRenderer(Vector3 target) {
-        Vector2 direction = target - currentleafBeam.transform.position;
-        currentleafBeam.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        lineRenderer.SetPosition(1, target);
-        lineRenderer.SetPosition(0, currentleafBeam.transform.position);
-    }
-
-    private void OnSpawn() {
-
-    }
-
-    private void OnRayHitPlayer() {
-
-    }
-
-    private void OnRayHit() {
-
-    }
-
-    private void OnDestroy() {
-        onBeamSpawnEvent -= OnSpawn;
-        onBeamPlayerHitEvent -= OnRayHitPlayer;
-        onBeamHitEvent -= OnRayHit;
+    public override void End() {
+        base.End();
+        currentBeam.gameObject.SetActive(false);
+        Destroy(currentBeam);
     }
 }

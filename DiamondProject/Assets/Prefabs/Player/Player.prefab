@@ -5833,7 +5833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackParent: {fileID: 652180734932207057}
-  _attackAnimator: {fileID: 4346229573380257631}
+  _attackAnimator: {fileID: 1360015787222645749}
   _attackHitbox: {fileID: 7262411699775730752}
   _damage: 50
   _cooldownTime: 0.5
@@ -5841,22 +5841,11 @@ MonoBehaviour:
     tags:
     - Boss
     - Minion
+    - BossEntities
     state: 1
   _onAttack:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -5876,7 +5865,7 @@ MonoBehaviour:
   _attackParent: {fileID: 652180734932207057}
   _attackAnimator: {fileID: 1360015787222645749}
   _attackHitbox: {fileID: 7262411699775730752}
-  _dashDistance: 10
+  _dashDistance: 15
   _damage: 70
   _fullChargedDamageBonus: 30
   _cooldownTime: 1
@@ -5886,6 +5875,7 @@ MonoBehaviour:
     tags:
     - Boss
     - Minion
+    - BossEntities
     state: 1
   _damagesOverTime:
     serializedVersion: 2
@@ -5893,20 +5883,56 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.2
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3
+      value: 0.4
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6
+      value: 0.6
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8
+      value: 0.8
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -5923,6 +5949,15 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
+    - serializedVersion: 3
+      time: 0.4
+      value: 1
+      inSlope: 0.0127803795
+      outSlope: 0
+      tangentMode: 65
+      weightedMode: 1
+      inWeight: 0.73816156
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
@@ -5964,30 +5999,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
   _animator: {fileID: 1360015787222645749}
-  _attackParent: {fileID: 3047052000504567667}
-  _spriteRenderer: {fileID: 0}
+  _attackParent: {fileID: 652180734932207057}
+  _spriteRenderer: {fileID: 4976117880192038869}
   _damage: 10
   _damageables:
     tags:
     - Boss
     state: 1
   _bulletSpeed: 30
-  _rangedAttackCooldown: 0.2
+  _cooldown: 0.1
   _onAttack:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1366682634033476724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6104,14 +6127,15 @@ GameObject:
   - component: {fileID: 3959631132869822228}
   - component: {fileID: 3959631132869822229}
   - component: {fileID: 2161993602319532677}
+  - component: {fileID: 5514845525750395532}
   - component: {fileID: 5071417450549748302}
   - component: {fileID: 3959631132869822230}
-  - component: {fileID: 3959631132869822231}
   - component: {fileID: 4346229573380257631}
   - component: {fileID: 8519624037585074062}
   - component: {fileID: 9109140029771317965}
   - component: {fileID: 2554482497410507838}
   - component: {fileID: 7098635506327395466}
+  - component: {fileID: 7981918561045738840}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -6157,54 +6181,19 @@ MonoBehaviour:
   _chargeMeleeAttack: {fileID: 4325161512381794135}
   _rangedAttack: {fileID: 7873682425189889759}
   _chargeRangedAttack: {fileID: 1366682634033476724}
+  _overheat: {fileID: 5071417450549748302}
   _interact: {fileID: 3745787321201419433}
   _health: {fileID: 2161993602319532677}
-  _overheat: {fileID: 5071417450549748302}
   _sprite: {fileID: 1952372696}
   _camera: {fileID: 11400000, guid: a890bec94e85429448ffbb98be01752d, type: 2}
   _animator: {fileID: 4346229573380257631}
   _boss: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
   _onAttack:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerAttackTrigger, Assembly-CSharp
-        m_MethodName: PlayerHasAttacked
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerAttackTrigger, Assembly-CSharp
-        m_MethodName: PlayerHasAttacked
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerAttackTrigger, Assembly-CSharp
-        m_MethodName: PlayerHasAttacked
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _bullet: {fileID: 4847567384368089890, guid: ee2776f49acba5649b20cbd2090e18ac, type: 3}
   _clickTime: 0.15
-  _rangeAttackHeat: 5
+  _chargeSlow: 0.35
 --- !u!114 &2161993602319532677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6240,13 +6229,33 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _destroyOnDeath: 0
-  _resistances: []
+  _damageModifiers: []
   _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onInvicible:
+    m_PersistentCalls:
+      m_Calls: []
+  _onVulnerable:
     m_PersistentCalls:
       m_Calls: []
   _onLateStart:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5514845525750395532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959631132869822232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e0e21c0e60b6f46a7a10859a782dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 2161993602319532677}
+  _time: 1
 --- !u!114 &5071417450549748302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6293,32 +6302,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &3959631132869822231
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3959631132869822232}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.00952816}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3381804, y: 2.3864532}
-  m_EdgeRadius: 0
 --- !u!95 &4346229573380257631
 Animator:
   serializedVersion: 4
@@ -6395,6 +6378,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 5071417450549748302}
   target: {fileID: 11400000, guid: c25bb11aee1ddc74d849ee6c0057cd9c, type: 2}
+--- !u!70 &7981918561045738840
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959631132869822232}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04292965, y: -0.48653698}
+  m_Size: {x: 0.8911381, y: 2.2211113}
+  m_Direction: 0
 --- !u!1 &3959631133316557153
 GameObject:
   m_ObjectHideFlags: 0
@@ -7005,7 +7004,7 @@ MonoBehaviour:
   DestinationSceneName: VNScene
   LoadingMode: 0
   Priority: 4
-  InterpolateProgress: 0
+  InterpolateProgress: 1
   SecureLoad: 1
   BeforeEntryFadeDelay: 0
   EntryFadeDuration: 0.2
@@ -7124,8 +7123,17 @@ MonoBehaviour:
     - Boss
     state: 1
   _destroyOnHit: 0
-  _onlyDamageOnceEach: 0
-  _damageType: 
+  _onlyDamageOnceEach: 1
+  _damageType: Sword
+  _ignoreTag:
+    tags: []
+    state: 0
+  _onCollide:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &1783022779200444402
 Rigidbody2D:
   serializedVersion: 4
@@ -7160,7 +7168,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.013521582, y: 0.3141644}
+  m_Offset: {x: -0.013521582, y: -0.3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7171,7 +7179,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7607979, y: 1.7083211}
+  m_Size: {x: 0.7607979, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &7929814409363403156
 MonoBehaviour:
@@ -7196,9 +7204,9 @@ GameObject:
   - component: {fileID: 4395563488972246845}
   - component: {fileID: 8994368328233107023}
   - component: {fileID: 1406535348982061468}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Collider
-  m_TagString: Player
+  m_TagString: PlayerLegs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7943,6 +7951,7 @@ GameObject:
   - component: {fileID: 4896918249644399355}
   - component: {fileID: 8990786264109351080}
   - component: {fileID: 4244333875856624585}
+  - component: {fileID: 1091018938}
   m_Layer: 8
   m_Name: MeleeAttack
   m_TagString: Untagged
@@ -7979,6 +7988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Feedbacks:
   - {fileID: 4244333875856624585}
+  - {fileID: 1091018938}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
@@ -8059,6 +8069,46 @@ MonoBehaviour:
   MinPitch: 1.25
   MaxPitch: 1.5
   SfxAudioMixerGroup: {fileID: 0}
+--- !u!114 &1091018938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7502186468663363262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c9124fd3c24b44b9321e2c2e92d16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Wwise Event
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    ExcludeFromHoldingPauses: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  wwiseEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  myGameobject: {fileID: 0}
 --- !u!1 &7782579265942983602
 GameObject:
   m_ObjectHideFlags: 0
@@ -8157,52 +8207,60 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
+      propertyPath: lengthInSec
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: moveWithTransform
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime1
-      value: 32960
+      value: 13107
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime2
-      value: 65535
+      value: 26407
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime3
-      value: 65535
+      value: 39899
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key1.g
-      value: 0.043137256
+      value: 0.94509804
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key2.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key2.g
-      value: 0.1745283
+      value: 0.9137255
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key2.r
-      value: 0.5566247
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key3.b
-      value: 0.9433962
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key3.g
-      value: 0.24474904
+      value: 0.54901963
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key3.r
-      value: 0.64954126
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.m_NumColorKeys
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
@@ -8228,7 +8286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535252, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.86
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535252, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8264,7 +8322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535273, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: m_Name
-      value: HoldSwordAttackParticle
+      value: HoldRangeAttackParticle
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535273, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: m_IsActive
@@ -8275,52 +8333,60 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
+      propertyPath: lengthInSec
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: moveWithTransform
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime1
-      value: 32960
+      value: 13107
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime2
-      value: 65535
+      value: 26407
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime3
-      value: 65535
+      value: 39899
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key1.g
-      value: 0.043137256
+      value: 0.94509804
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key2.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key2.g
-      value: 0.1745283
+      value: 0.9137255
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key2.r
-      value: 0.5566247
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key3.b
-      value: 0.9433962
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key3.g
-      value: 0.24474904
+      value: 0.54901963
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key3.r
-      value: 0.64954126
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6178637882635535275, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.m_NumColorKeys
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e691e0b5c233cfe4b8b25a70194a5295, type: 3}

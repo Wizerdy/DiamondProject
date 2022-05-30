@@ -18,7 +18,7 @@ public class HealthProxy : MonoBehaviour, IHealth {
     }
 
     public void TakeDamage(int damage, string damageType = "") {
-        health.TakeDamage(damage);
+        health.TakeDamage(damage, damageType);
     }
 
     public void TakeHeal(int damage) {

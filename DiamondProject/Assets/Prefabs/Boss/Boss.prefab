@@ -11,8 +11,14 @@ GameObject:
   - component: {fileID: 175935978380704569}
   - component: {fileID: 3063354052670382493}
   - component: {fileID: 5680249788332393454}
+  - component: {fileID: 7406202153647235162}
   - component: {fileID: 3063354052670382467}
   - component: {fileID: 3063354052670382466}
+  - component: {fileID: 5522892815955880214}
+  - component: {fileID: 5522892815955880215}
+  - component: {fileID: 5522892815955880216}
+  - component: {fileID: 5522892815955880217}
+  - component: {fileID: 5522892815955880222}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -77,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6f3989b27671a4f8bd0b557e15c528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 1000
+  _maxHealth: 1001
   _onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -100,7 +106,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _destroyOnDeath: 0
-  _resistances: []
+  _damageModifiers: []
   _onMaxHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -113,6 +119,26 @@ MonoBehaviour:
   _onLateStart:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &7406202153647235162
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175935978380704573}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9ffb1e6b8c8fad498d85f7d1f2a2484, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3063354052670382467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +167,153 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 5680249788332393454}
   target: {fileID: 11400000, guid: 116343d6813afc143820099c704afa3b, type: 2}
+--- !u!114 &5522892815955880214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175935978380704573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024471420a6615a46bde0d5c1457428e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shapeSystem: {fileID: 11400000, guid: c9af7d84e00165c499c4c125a1f49581, type: 2}
+  _toInstantiate: []
+  _shapes: 0300000004000000
+  _onShapeChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5680249788332393454}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: RemoveDamageModifier
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5522892815955880216}
+          m_ObjectArgumentAssemblyTypeName: DamageModifier, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5680249788332393454}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: RemoveDamageModifier
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5522892815955880215}
+          m_ObjectArgumentAssemblyTypeName: DamageModifier, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _eventType: 0
+--- !u!114 &5522892815955880215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175935978380704573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c41b07ad15e214785b57d63ec4dc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  damageType: Distance
+  value: 1
+--- !u!114 &5522892815955880216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175935978380704573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c41b07ad15e214785b57d63ec4dc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  damageType: Sword
+  value: 1
+--- !u!114 &5522892815955880217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175935978380704573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024471420a6615a46bde0d5c1457428e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shapeSystem: {fileID: 11400000, guid: c9af7d84e00165c499c4c125a1f49581, type: 2}
+  _toInstantiate: []
+  _shapes: 00000000
+  _onShapeChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5680249788332393454}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: AddDamageModifier
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5522892815955880216}
+          m_ObjectArgumentAssemblyTypeName: DamageModifier, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5680249788332393454}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: AddDamageModifier
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5522892815955880215}
+          m_ObjectArgumentAssemblyTypeName: DamageModifier, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _eventType: 0
+--- !u!114 &5522892815955880222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175935978380704573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024471420a6615a46bde0d5c1457428e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shapeSystem: {fileID: 11400000, guid: c9af7d84e00165c499c4c125a1f49581, type: 2}
+  _toInstantiate: []
+  _shapes: 0400000003000000
+  _onShapeChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5680249788332393454}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _eventType: 1
 --- !u!1 &843685974685697844
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +969,52 @@ MonoBehaviour:
   NumberOfLoops: 2
   NumberOfLoopsLeft: 1
   InInfiniteLoop: 0
+--- !u!1 &3988792572486494927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3375869922033310475}
+  - component: {fileID: 2332122809792556573}
+  m_Layer: 0
+  m_Name: Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3375869922033310475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988792572486494927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5680249788595143013}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2332122809792556573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988792572486494927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e08a027914b434291544c8d3a093cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 3375869922033310475}
+  target: {fileID: 11400000, guid: 039a591fc6d789845a4541feec52cb0b, type: 2}
 --- !u!1 &5680249786933603650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,6 +1521,9 @@ MonoBehaviour:
   - {fileID: 391067967941441068, guid: 628b264f957cec24b9904cd8875bb8e1, type: 3}
   - {fileID: -7494688216887631774, guid: e57f4fd57b232234bbfd11d10d307308, type: 3}
   - {fileID: -8494409865561735005, guid: 14168dc1cdf69c544b1e2e370ecef08d, type: 3}
+  - {fileID: 6519549811556957593, guid: b9ccdb8b673d8234c8466b8727a14d0a, type: 3}
+  - {fileID: 1005890436504860818, guid: c722b66056ddfea46a7c99160b56655d, type: 3}
+  - {fileID: 2043366983554929250, guid: 196072e45dbfe9e45accd08dde824ba1, type: 3}
 --- !u!1 &5680249788330399389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,7 +1748,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05010158, y: -2.0458224}
+  m_Offset: {x: 0.06407672, y: -2.5162363}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1537,7 +1759,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4696512, y: 1.6847258}
+  m_Size: {x: 0.94423044, y: 0.7438972}
   m_EdgeRadius: 0
 --- !u!1 &5680249788377665365
 GameObject:
@@ -1593,7 +1815,7 @@ MonoBehaviour:
   _onAttackEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680249788666035302}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: MovementEnd
         m_Mode: 0
@@ -1957,7 +2179,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3375869922033310475}
   m_Father: {fileID: 175935978380704569}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2025,6 +2248,7 @@ GameObject:
   - component: {fileID: 5680249788645268036}
   - component: {fileID: 5680249788645268039}
   - component: {fileID: 5680249788645268033}
+  - component: {fileID: 1630664842379352371}
   m_Layer: 0
   m_Name: ShapeSystem
   m_TagString: Boss
@@ -2064,7 +2288,7 @@ MonoBehaviour:
   _onEnterShape:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680249788666035302}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: SetShape
         m_Mode: 0
@@ -2100,7 +2324,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5680249788666035302}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: ChangeBehaviour
         m_Mode: 1
@@ -2112,10 +2336,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7406202153647235162}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ShapeChange
+          m_BoolArgument: 0
+        m_CallState: 2
   _onExitShape:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680249788666035302}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: SetShape
         m_Mode: 0
@@ -2141,6 +2377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shapeSystem: {fileID: 5680249788645268036}
   _boss: {fileID: 3063354052670382493}
+  _timeBeforeChange: 0.5
 --- !u!114 &5680249788645268033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,6 +2396,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9f2d018ae8760d249ad843935e4b79f8, type: 2}
   - {fileID: 11400000, guid: f47203dd14543bd4a9bb2eeacc123b61, type: 2}
   - {fileID: 11400000, guid: 9cc302217a6051f48919c67e74013175, type: 2}
+--- !u!114 &1630664842379352371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5680249788645268037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e68792db1661564b82f197edcdab6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 5680249788645268036}
+  target: {fileID: 11400000, guid: c9af7d84e00165c499c4c125a1f49581, type: 2}
 --- !u!1 &5680249789032344795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,6 +2700,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 175935978380704569}
     m_Modifications:
+    - target: {fileID: 7493287481518169177, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _shapeSystem
+      value: 
+      objectReference: {fileID: 5680249788645268036}
     - target: {fileID: 8101424015359653998, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: _bossShapeSystem
       value: 
@@ -2466,12 +2721,12 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8101424015454722118, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _health
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8101424015454722118, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: _percentage
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101424015454722121, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _isShape
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8101424015454722121, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: _bossShapeSystem
@@ -2498,9 +2753,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5680249788645268036}
     - target: {fileID: 8101424016291808019, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _timeBeforeReset
-      value: 15
+      propertyPath: _childs.Array.size
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8101424016291808019, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _childs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2966126495327107060}
     - target: {fileID: 8101424016618067094, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2569,57 +2828,42 @@ PrefabInstance:
       propertyPath: _bossShapeSystem
       value: 
       objectReference: {fileID: 5680249788645268036}
+    - target: {fileID: 8301503317489124549, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _launcher
+      value: 
+      objectReference: {fileID: 5680249788377665366}
+    - target: {fileID: 8301503317489124549, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _bossHealth
+      value: 
+      objectReference: {fileID: 5680249788332393454}
+    - target: {fileID: 8301503317489124549, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _attackSystem
+      value: 
+      objectReference: {fileID: 5680249788377665360}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+--- !u!114 &2966126495327107060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7493287481518169177, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+  m_PrefabInstance: {fileID: 5680249788904057773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94ef0c5d64136145b95cdd4de0cc481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4520003439891824436 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8101424016618067097, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
   m_PrefabInstance: {fileID: 5680249788904057773}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4520003439891824437}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd30b50c0c0c9a84f976ae2211111ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4520003439891824437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8101424016618067096, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-  m_PrefabInstance: {fileID: 5680249788904057773}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5680249788666035302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4520003439891824437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2de3d34aca8cdbf48bc1f18997410696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bossHealth: {fileID: 5680249788332393454}
-  _currentShape: {fileID: 0}
-  _launcher: {fileID: 5680249788377665366}
-  _waitTimeBeforeAction: 7
-  _timeBetweenAttacks: 5
-  state: 1
-  availableAttacks: []
-  _timeBetweenAttacksFALL: 5
-  _neutralAttacks: []
-  _fallAttacks:
-  - Protector Trees
-  - Movement
-  - Leaf Beam
-  - Boomerang
-  - FallDash
-  _winterAttacks:
-  - Ice Hell
-  - Bullet Hell
-  - Snow Absorption
-  lastAttack: 
-  lastAttackEnd: 
 --- !u!4 &4520003439891824443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8101424016618067094, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}

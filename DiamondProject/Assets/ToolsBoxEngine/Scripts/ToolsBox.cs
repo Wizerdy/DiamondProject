@@ -2,10 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ToolsBoxEngine {
+    #region Enums
+
     public enum Axis { X, Y, Z, W }
     public enum DebugType { NORMAL, WARNING, ERROR }
+
+    public enum Comparison { EQUAL, DIFFERENT, LESS, LESS_EQUAL, GREATER, GREATER_EQUAL }
+    public enum BasicComparison { LESS, GREATER }
+
+    public enum LogicGate { AND, OR, NOR, XOR, NOT }
+
+    #endregion
 
     #region Nullable vector
     // Nullable Vector
@@ -137,6 +147,51 @@ namespace ToolsBoxEngine {
         public static Counted<T> operator --(Counted<T> a) {
             --a.count;
             return a;
+        }
+    }
+
+    public class Token {
+        int _token = 0;
+        UnityEvent _onEmpty = new UnityEvent();
+        UnityEvent _onFill = new UnityEvent();
+        UnityEvent<int> _onEarn = new UnityEvent<int>();
+        UnityEvent<int> _onLose = new UnityEvent<int>();
+
+        #region Events
+
+        public event UnityAction OnEmpty { add => _onEmpty.AddListener(value); remove => _onEmpty.RemoveListener(value); }
+        public event UnityAction OnFill { add => _onFill.AddListener(value); remove => _onFill.RemoveListener(value); }
+        public event UnityAction<int> OnEarn { add => _onEarn.AddListener(value); remove => _onEarn.RemoveListener(value); }
+        public event UnityAction<int> OnLose { add => _onLose.AddListener(value); remove => _onLose.RemoveListener(value); }
+
+        #endregion
+
+        public bool HasToken => _token > 0;
+
+        /// <summary>
+        /// Add Token (True++ / False--)
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <returns></returns>
+        public void AddToken(bool value) {
+            AddToken(value ? 1 : -1);
+        }
+
+        public void AddToken(int amount) {
+            if (amount == 0) { return; }
+            if (amount < 0 && _token == 0) { return; }
+
+            if (amount > 0) { _onEarn?.Invoke(amount); }
+            if (amount < 0) { _onLose?.Invoke(amount); }
+
+            if (_token == 0) { _onFill?.Invoke(); }
+            _token += amount;
+            Mathf.Max(0, _token);
+            if (_token == 0) { _onEmpty?.Invoke(); }
+        }
+
+        public void Reset() {
+            _token = 0;
         }
     }
 
@@ -336,6 +391,10 @@ namespace ToolsBoxEngine {
             return new Vector2(Mathf.Abs(vector.x), Mathf.Abs(vector.y));
         }
 
+        public static Vector3 Abs(this Vector3 vector) {
+            return new Vector3(Mathf.Abs(vector.x), Mathf.Abs(vector.y), Mathf.Abs(vector.z));
+        }
+
         public static Vector3 Positive(this Vector3 vector) {
             return new Vector3(vector.x.Positive(), vector.y.Positive(), vector.z.Positive());
         }
@@ -447,6 +506,46 @@ namespace ToolsBoxEngine {
             return false;
         }
 
+        public static bool Compare(this BasicComparison comparison, float number1, float number2) {
+            switch (comparison) {
+                case BasicComparison.LESS:
+                    if (number1 < number2) { return true; }
+                    break;
+                case BasicComparison.GREATER:
+                    if (number1 > number2) { return true; }
+                    break;
+                default:
+                    break;
+            }
+            return false;
+        }
+
+        public static bool Compare(this Comparison comparison, float number1, float number2) {
+            switch (comparison) {
+                case Comparison.EQUAL:
+                    if (number1 == number2) { return true; }
+                    break;
+                case Comparison.DIFFERENT:
+                    if (number1 != number2) { return true; }
+                    break;
+                case Comparison.LESS:
+                    if (number1 < number2) { return true; }
+                    break;
+                case Comparison.LESS_EQUAL:
+                    if (number1 <= number2) { return true; }
+                    break;
+                case Comparison.GREATER:
+                    if (number1 > number2) { return true; }
+                    break;
+                case Comparison.GREATER_EQUAL:
+                    if (number1 >= number2) { return true; }
+                    break;
+                default:
+                    break;
+            }
+            return false;
+        }
+
         #endregion
 
         #region Utilities
@@ -529,6 +628,10 @@ namespace ToolsBoxEngine {
                 target = target.parent;
             }
             return target;
+        }
+
+        public static bool IsValid(this IValid obj) {
+            return obj?.IsValid ?? false;
         }
 
         #endregion

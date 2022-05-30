@@ -53,10 +53,11 @@ MonoBehaviour:
       m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
   id: Bullet Hell
+  _bossRef: {fileID: 0}
+  _playerRef: {fileID: 0}
   duration: 1
   coolDown: 1
-  isPlaying: 0
-  locked: 0
+  _dontNeedEnd: 0
   numberOfWave: 15
   numberOfProjectilsPerWaves: 30
   delayBetweenWaves: 0.0001
@@ -66,8 +67,10 @@ MonoBehaviour:
   offSet: 0.15
   iceShardDamage: 5
   shardSpeed: 30
-  iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
+  shardLifetime: 5
+  _iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
   _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
+  bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
 --- !u!114 &-1307076030363579548
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using ToolsBoxEngine;
 
 public class IMeetARealBoss : MonoBehaviour {
     [SerializeField] Health _health;
@@ -38,5 +39,12 @@ public class IMeetARealBoss : MonoBehaviour {
 
     public void Death() {
         //gameObject.SetActive(false);
+    }
+
+    public void ChangeColor(Color color, float time = 0f) {
+        Color startColor = _spriteRenderer.color;
+        _spriteRenderer.color = color;
+        if (time <= 0f) { return; }
+        StartCoroutine(Tools.Delay(() => _spriteRenderer.color = startColor, time));
     }
 }

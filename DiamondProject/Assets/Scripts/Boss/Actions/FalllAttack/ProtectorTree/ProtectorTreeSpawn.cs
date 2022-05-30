@@ -5,15 +5,20 @@ using ToolsBoxEngine;
 using UnityEngine.Events;
 
 public class ProtectorTreeSpawn : BaseAttack {
-    [SerializeField] Shield shieldPrefab; 
-    [SerializeField] ProtectorTree protectorTreePrefab; 
-    [SerializeField] List<ProtectorTree> trees = new List<ProtectorTree>();
-    [SerializeField] Shield currentShield;
+    [Header("Reference")]
+    [SerializeField] HealthReference _bossHealth;
+    [SerializeField] TransformReference _shieldParent;
+    [SerializeField] Shield shieldPrefab;
+    [SerializeField] ProtectorTree protectorTreePrefab;
+    [Header("System")]
     [SerializeField] float _radius;
     [SerializeField] int _treeNumbers;
     [SerializeField] float _apparitionTime;
     [SerializeField] float _timeBeforeGrownAgain;
-    [SerializeField] UnityAction<ProtectorTree> onTreeDeath;
+    [HideInInspector, SerializeField] UnityAction<ProtectorTree> _onTreeDeath;
+
+    Shield currentShield;
+    List<ProtectorTree> trees = new List<ProtectorTree>();
 
     void SpawnTree(Vector3 position) {
         ProtectorTree newBossTree = Instantiate(protectorTreePrefab.gameObject).GetComponent<ProtectorTree>();
@@ -21,14 +26,15 @@ public class ProtectorTreeSpawn : BaseAttack {
             .SetApparitionTime(_apparitionTime);
         newBossTree.gameObject.SetActive(true);
         AddTree(newBossTree);
-        if(onTreeDeath == null) {
-            onTreeDeath += RemoveTree;
+        if(_onTreeDeath == null) {
+            _onTreeDeath += RemoveTree;
         }
-        newBossTree.onDeath.AddListener(onTreeDeath);
+        newBossTree.onDeath.AddListener(_onTreeDeath);
     }
     protected override IEnumerator IExecute() {
-        currentShield = Instantiate(shieldPrefab.gameObject, _bossRef.Instance.transform).GetComponent<Shield>();
-        currentShield.AttachToHealth(currentShield.transform.parent.GetComponentInChildren<Health>());
+        currentShield = Instantiate(shieldPrefab.gameObject, _shieldParent.Instance).GetComponent<Shield>();
+        //if (_shieldParent != null) { currentShield.transform.parent = _shieldParent.Instance; }
+        currentShield.AttachToHealth(_bossHealth.Instance);
         for (int i = 0; i < _treeNumbers; i++) {
             SpawnTree(CirclePoint(Vector3.zero, _radius, _treeNumbers, i, Vector3.forward));
         }
@@ -73,5 +79,15 @@ public class ProtectorTreeSpawn : BaseAttack {
         }
         result = Quaternion.Euler(axis * 360 / numberPoints * point) * origin * radius;
         return center + result;
+    }
+
+
+    void OnDestroy() {
+        for (int i = 0; i < trees.Count; i++) {
+            trees[i].Die();
+        }
+        if(currentShield != null) {
+            Destroy(currentShield.gameObject);
+        }
     }
 }
