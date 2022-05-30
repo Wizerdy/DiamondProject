@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TrackingThunder : BaseAttack {
+    [Header("Spawner Parameter")]
+    [SerializeField] int _number = 5;
+    [SerializeField] float _spawnDelay = 1f;
+
+    [Header("Lightninh Parameter")]
+    [SerializeField] float _delay = 3f;
+    [SerializeField] int _damage = 10;
+
+    [Header("Pas Touche")]
+    [SerializeField] TransformReference _target;
+    [SerializeField] private GameObject fireTree;
+
+    private void Spawn() {
+        GameObject lightning = Instantiate(fireTree, _target.Instance.position, Quaternion.identity);
+        lightning.GetComponent<FallingThunder>()?.Init(_damage, _delay);
+    }
+
+    protected override IEnumerator IExecute() {
+        float spawnRate = _spawnDelay;
+        int numberOfTreesSpawned = 0;
+
+        while (numberOfTreesSpawned < _number) {
+            spawnRate -= Time.deltaTime;
+            if (spawnRate <= 0) {
+                //SpawnTree(player, aimPosition);
+                Spawn();
+
+                spawnRate = _spawnDelay;
+                ++numberOfTreesSpawned;
+            }
+            yield return null;
+        }
+    }
+}

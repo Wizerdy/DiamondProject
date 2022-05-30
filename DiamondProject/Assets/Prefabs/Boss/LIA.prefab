@@ -366,6 +366,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8101424016618067094}
   - component: {fileID: 8101424016618067097}
+  - component: {fileID: 8301503317489124549}
+  - component: {fileID: 9159327450803986693}
+  - component: {fileID: 2700960435171505831}
   m_Layer: 0
   m_Name: LIA
   m_TagString: Untagged
@@ -409,6 +412,68 @@ MonoBehaviour:
   summer: {fileID: 8101424015454722118}
   fall: {fileID: 8101424015359654001}
   winter: {fileID: 8101424016291808019}
+--- !u!114 &8301503317489124549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016618067096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de3d34aca8cdbf48bc1f18997410696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss: {fileID: 0}
+  _bossHealth: {fileID: 0}
+  _launcher: {fileID: 0}
+  _attackSystem: {fileID: 0}
+  _waitTimeBeforeAction: 7
+  _timeBetweenAttacks: 5
+  _timeBetweenAttacksFALL: 5
+  _stuntColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _neutralAttacks:
+  - Thunder
+  - Bullet Hell Neutral
+  - Leaf Beam Neutral
+  - Movement
+  _fallAttacks:
+  - FollowPlayer
+  - Leaf Beam
+  - FallDash
+  - Boomerang
+  _winterAttacks:
+  - Ice Hell
+  - Bullet Hell
+  - Snow Absorption
+--- !u!114 &9159327450803986693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016618067096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32abbf14ab750734da4a99565c6acc9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 8101424016618067097}
+  target: {fileID: 11400000, guid: 5792cd1fa853d0a49b84f95c78e28a2f, type: 2}
+--- !u!114 &2700960435171505831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016618067096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4851860a21b0bb24a9aa93af191df83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 8301503317489124549}
+  target: {fileID: 11400000, guid: f6b30df2d60bdf148a59056903013e5c, type: 2}
 --- !u!1 &8101424017016352691
 GameObject:
   m_ObjectHideFlags: 0
