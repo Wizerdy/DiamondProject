@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.VFX;
+using ToolsBoxEngine;
+
+public class FallingThunder : MonoBehaviour {
+    [Header("References")]
+    [SerializeField] DamageHealth _damageHealth = null;
+    [SerializeField] VisualEffect _lightning = null;
+    [SerializeField] Vector3 _target;
+
+    [Header("Parameters")]
+    [SerializeField] float _height = 0f;
+    [SerializeField] float _hitTime = 1f;
+
+    int _damage = 10;
+
+    public void Init(int damage, Vector3 target, float delay) {
+        transform.position = transform.position.Override(_height);
+        _damageHealth?.SetDamage(_damage);
+        StartCoroutine(Tools.Delay(DoDamage, delay));
+    }
+
+    private void Start() {
+        _lightning?.SetVector3("position", transform.position.Override(_target.y));
+    }
+
+    private void DoDamage(float time) {
+
+    }
+}

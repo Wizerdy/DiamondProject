@@ -12,12 +12,12 @@ public class TrackingThunder : BaseAttack {
     [SerializeField] int _damage = 10;
 
     [Header("Pas Touche")]
-    [SerializeField] TransformReference _target;
+    [SerializeField] Reference<Transform> _target;
     [SerializeField] private GameObject fireTree;
 
     private void Spawn() {
-        GameObject lightning = Instantiate(fireTree, _target.Instance.position, Quaternion.identity);
-        lightning.GetComponent<FallingThunder>()?.Init(_damage, _delay);
+        GameObject lightning = Instantiate(fireTree, _target, Quaternion.identity);
+        lightning.GetComponent<FallingThunder>()?.Init(_damage, _target);
     }
 
     protected override IEnumerator IExecute() {
