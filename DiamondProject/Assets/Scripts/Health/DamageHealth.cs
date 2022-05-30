@@ -79,5 +79,9 @@ public class DamageHealth : MonoBehaviour {
         _damage = damage;
         ResetHitted();
     }
+
+    public void SetDamage(int damage) {
+        _damage = damage;
+    }
 }
 

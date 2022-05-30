@@ -11,6 +11,7 @@ public class LiaAttack : MonoBehaviour {
     }
 
     [Header("References")]
+    [SerializeField] IMeetARealBoss _boss;
     [SerializeField] Health _bossHealth;
     [SerializeField] AttackLauncher _launcher;
     [SerializeField] AttackSystem _attackSystem;
@@ -18,6 +19,7 @@ public class LiaAttack : MonoBehaviour {
     [SerializeField] float _waitTimeBeforeAction = 5f;
     [SerializeField] float _timeBetweenAttacks = 5f;
     [SerializeField] float _timeBetweenAttacksFALL = 3f;
+    [SerializeField] Color _stuntColor = Color.gray;
     //[Header("Behaviour")]
     [Header("Attacks")]
     [SerializeField] List<string> _neutralAttacks = new List<string>();
@@ -74,6 +76,7 @@ public class LiaAttack : MonoBehaviour {
         _attackSystem.ClearAttacks();
         if (time <= 0f) { return; }
         _stunt = true;
+        _boss?.ChangeColor(_stuntColor, time);
         StartCoroutine(Tools.Delay(() => _stunt = false, time));
     }
 
