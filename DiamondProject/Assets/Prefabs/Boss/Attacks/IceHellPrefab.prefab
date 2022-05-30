@@ -60,29 +60,29 @@ MonoBehaviour:
   _dontNeedEnd: 0
   firstPatterns:
   - chargeTime: 2
-    speed: 75
-    numberOfWaves: 3
-    numberOfIceShardsPerWave: 30
-    patternType: 1
-  - chargeTime: 0
-    speed: 52
+    speed: 20
     numberOfWaves: 5
-    numberOfIceShardsPerWave: 80
+    numberOfIceShardsPerWave: 5
+    patternType: 1
+  - chargeTime: 0.5
+    speed: 20
+    numberOfWaves: 5
+    numberOfIceShardsPerWave: 30
     patternType: 0
   secondPatterns:
   - chargeTime: 4
-    speed: 75
+    speed: 20
     numberOfWaves: 5
-    numberOfIceShardsPerWave: 80
-    patternType: 0
-  - chargeTime: 0
-    speed: 52
-    numberOfWaves: 3
     numberOfIceShardsPerWave: 30
+    patternType: 0
+  - chargeTime: 0.5
+    speed: 20
+    numberOfWaves: 5
+    numberOfIceShardsPerWave: 5
     patternType: 1
-  delayBetweenWaves: 0.5
+  delayBetweenWaves: 0.1
   spawnDistanceFromBoss: 1.5
-  gapWidth: 30
+  gapWidth: 15
   shardLifetime: 5
   iceShardDamage: 10
   iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
