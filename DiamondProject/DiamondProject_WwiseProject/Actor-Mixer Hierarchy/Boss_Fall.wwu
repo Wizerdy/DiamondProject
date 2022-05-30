@@ -95,7 +95,24 @@
 						<RandomSequenceContainer Name="Boss_Fall_Tree_Summon" ID="{B2756549-E171-4263-9A93-767DD18C549A}" ShortID="843747206">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{67C93312-429B-4F49-A102-7FBC25E7D14E}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -105,6 +122,100 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Fall_Tree_Summon_04" ID="{76E7994D-237D-47E9-96F0-EF962B4A5899}" ShortID="720575598">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Fall_Tree_Summon_04" ID="{8EBD5BD1-66D1-4BAC-867F-5CF8FA33DC33}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Fall_Tree_Summon_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="924453683"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Fall_Tree_Summon_04" ID="{8EBD5BD1-66D1-4BAC-867F-5CF8FA33DC33}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Fall_Tree_Summon_01" ID="{9DCE799F-E5C1-431A-B2F4-197A89816502}" ShortID="341875570">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Fall_Tree_Summon_01" ID="{C19A458D-D7DD-4A01-8C88-9ECD189F97B9}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Fall_Tree_Summon_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="624256207"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Fall_Tree_Summon_01" ID="{C19A458D-D7DD-4A01-8C88-9ECD189F97B9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Fall_Tree_Summon_02" ID="{0DE4330B-681F-482B-9065-89066C0A3A73}" ShortID="973669323">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Fall_Tree_Summon_02" ID="{93809BBF-C43C-4A2D-8B61-8BFBB9DFD497}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Fall_Tree_Summon_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="181650424"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Fall_Tree_Summon_02" ID="{93809BBF-C43C-4A2D-8B61-8BFBB9DFD497}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Fall_Tree_Summon_03" ID="{E93D70FF-E1C6-4CE7-8D6D-27AC9EBA7055}" ShortID="917722472">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Fall_Tree_Summon_03" ID="{70CF0F33-436E-4D80-A90D-F8F6382E733E}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Fall_Tree_Summon_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="25066018"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Fall_Tree_Summon_03" ID="{70CF0F33-436E-4D80-A90D-F8F6382E733E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Fall_LeafBeam_Start" ID="{9AF25AA3-C9C8-4732-90B5-0D1F63DED886}" ShortID="172849807">
@@ -353,6 +464,131 @@
 									<ObjectLists/>
 									<ActiveSourceList>
 										<ActiveSource Name="Boss_Fall_LeafBeam_End_03" ID="{C00714F9-7E5D-4012-983B-892D4496BC5F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Fall_Tree_Destroy" ID="{0F1C5A3C-F09B-4C24-9E32-325F4412B7E4}" ShortID="472084882">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{BBE29162-1586-4C66-86EB-D3B676592CF3}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Fall_Tree_Destroy_01" ID="{BEC121F8-4BDB-4B8E-B8A2-E163736D88DD}" ShortID="426389005">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Fall_Tree_Destroy_01" ID="{C3887057-CC86-40A8-A11D-E0E9FDA84304}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Fall_Tree_Destroy_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="450613878"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Fall_Tree_Destroy_01" ID="{C3887057-CC86-40A8-A11D-E0E9FDA84304}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Fall_Tree_Destroy_02" ID="{30C26A78-C605-40A0-867D-4D8BA34F8627}" ShortID="757403923">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Fall_Tree_Destroy_02" ID="{BEAE7D78-BD72-4DA5-AF4D-CAEA930A172C}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Fall_Tree_Destroy_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="230800816"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Fall_Tree_Destroy_02" ID="{BEAE7D78-BD72-4DA5-AF4D-CAEA930A172C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Fall_Tree_Destroy_03" ID="{A5301D23-8B27-4F89-907F-010F78B0D0D1}" ShortID="53288286">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Fall_Tree_Destroy_03" ID="{B4B7D5B7-3BDF-40C6-8E6C-304EF395DC28}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Fall_Tree_Destroy_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="330470008"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Fall_Tree_Destroy_03" ID="{B4B7D5B7-3BDF-40C6-8E6C-304EF395DC28}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Fall_Tree_Destroy_04" ID="{AA7FFBB7-934B-4CD3-9082-606827FFBFF3}" ShortID="43939873">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Fall_Tree_Destroy_04" ID="{375FCECA-C53F-4C64-A254-2CE9011C5F47}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Fall_Tree_Destroy_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="569951287"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Fall_Tree_Destroy_04" ID="{375FCECA-C53F-4C64-A254-2CE9011C5F47}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

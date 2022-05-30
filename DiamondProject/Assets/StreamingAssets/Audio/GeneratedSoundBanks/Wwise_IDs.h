@@ -40,6 +40,7 @@ namespace AK
         static const AkUniqueID BOSS_NEUTRAL_EXPLOBUSH_SUMMON = 738273803U;
         static const AkUniqueID BOSS_NEUTRAL_LEAFBEAM_START = 3985863633U;
         static const AkUniqueID BOSS_NEUTRAL_LEAFBEAM_STOP = 2794118091U;
+        static const AkUniqueID BOSS_NEUTRAL_THUNDER = 176032549U;
         static const AkUniqueID BOSS_NEUTRAL_TREE_ATTACK = 1234898960U;
         static const AkUniqueID BOSS_NEUTRAL_TREE_DESTROY = 2188453778U;
         static const AkUniqueID BOSS_NEUTRAL_TREE_SUMMON = 2933364317U;

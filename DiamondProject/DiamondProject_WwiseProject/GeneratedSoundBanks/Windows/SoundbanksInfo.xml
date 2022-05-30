@@ -56,7 +56,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="1754665928">
+		<SoundBank Id="4056684167" Language="SFX" Hash="2824956073">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -202,8 +202,46 @@
 				<Event Id="2779939727" Name="Boss_Fall_LeafBoomerang_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1047433676" Name="Boss_Fall_LeafBoomerang_Go" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Go" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="284830977" Name="Boss_Fall_Tree_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1992578794" Name="Boss_Fall_Tree_Destroy" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Destroy" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3962528453" Name="Boss_Fall_Tree_Summon" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1992578794" Name="Boss_Fall_Tree_Destroy" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Destroy" DurationType="OneShot" DurationMin="0.795309" DurationMax="0.870228">
+					<IncludedMemoryFiles>
+						<File Id="230800816" Language="SFX">
+							<ShortName>Boss_Fall_Tree_Destroy_02.wav</ShortName>
+							<Path>SFX\Boss_Fall_Tree_Destroy_02_32513D82.wem</Path>
+						</File>
+						<File Id="330470008" Language="SFX">
+							<ShortName>Boss_Fall_Tree_Destroy_03.wav</ShortName>
+							<Path>SFX\Boss_Fall_Tree_Destroy_03_32513D82.wem</Path>
+						</File>
+						<File Id="450613878" Language="SFX">
+							<ShortName>Boss_Fall_Tree_Destroy_01.wav</ShortName>
+							<Path>SFX\Boss_Fall_Tree_Destroy_01_32513D82.wem</Path>
+						</File>
+						<File Id="569951287" Language="SFX">
+							<ShortName>Boss_Fall_Tree_Destroy_04.wav</ShortName>
+							<Path>SFX\Boss_Fall_Tree_Destroy_04_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3962528453" Name="Boss_Fall_Tree_Summon" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Summon" DurationType="OneShot" DurationMin="1.105174" DurationMax="1.254456">
+					<IncludedMemoryFiles>
+						<File Id="25066018" Language="SFX">
+							<ShortName>Boss_Fall_Tree_Summon_03.wav</ShortName>
+							<Path>SFX\Boss_Fall_Tree_Summon_03_32513D82.wem</Path>
+						</File>
+						<File Id="181650424" Language="SFX">
+							<ShortName>Boss_Fall_Tree_Summon_02.wav</ShortName>
+							<Path>SFX\Boss_Fall_Tree_Summon_02_32513D82.wem</Path>
+						</File>
+						<File Id="624256207" Language="SFX">
+							<ShortName>Boss_Fall_Tree_Summon_01.wav</ShortName>
+							<Path>SFX\Boss_Fall_Tree_Summon_01_32513D82.wem</Path>
+						</File>
+						<File Id="924453683" Language="SFX">
+							<ShortName>Boss_Fall_Tree_Summon_04.wav</ShortName>
+							<Path>SFX\Boss_Fall_Tree_Summon_04_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="4139264525" Name="Boss_FormChange_Fall" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Fall" DurationType="OneShot" DurationMin="2.2" DurationMax="2.4">
 					<IncludedMemoryFiles>
 						<File Id="267909182" Language="SFX">
@@ -841,6 +879,38 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="176032549" Name="Boss_Neutral_Thunder" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Thunder" DurationType="OneShot" DurationMin="3.386306" DurationMax="5.280894">
+					<IncludedMemoryFiles>
+						<File Id="206340077" Language="SFX">
+							<ShortName>AMB_SP_Thunder_Close_04.wav</ShortName>
+							<Path>SFX\AMB_SP_Thunder_Close_04_32513D82.wem</Path>
+						</File>
+						<File Id="354687586" Language="SFX">
+							<ShortName>AMB_SP_Thunder_Close_03.wav</ShortName>
+							<Path>SFX\AMB_SP_Thunder_Close_03_32513D82.wem</Path>
+						</File>
+						<File Id="457222669" Language="SFX">
+							<ShortName>AMB_SP_Thunder_Close_02.wav</ShortName>
+							<Path>SFX\AMB_SP_Thunder_Close_02_32513D82.wem</Path>
+						</File>
+						<File Id="552454974" Language="SFX">
+							<ShortName>AMB_SP_Thunder_Close_07.wav</ShortName>
+							<Path>SFX\AMB_SP_Thunder_Close_07_32513D82.wem</Path>
+						</File>
+						<File Id="910820697" Language="SFX">
+							<ShortName>AMB_SP_Thunder_Close_05.wav</ShortName>
+							<Path>SFX\AMB_SP_Thunder_Close_05_32513D82.wem</Path>
+						</File>
+						<File Id="938139549" Language="SFX">
+							<ShortName>AMB_SP_Thunder_Close_01.wav</ShortName>
+							<Path>SFX\AMB_SP_Thunder_Close_01_32513D82.wem</Path>
+						</File>
+						<File Id="943433626" Language="SFX">
+							<ShortName>AMB_SP_Thunder_Close_06.wav</ShortName>
+							<Path>SFX\AMB_SP_Thunder_Close_06_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1234898960" Name="Boss_Neutral_Tree_Attack" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Attack" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2188453778" Name="Boss_Neutral_Tree_Destroy" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Destroy" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2933364317" Name="Boss_Neutral_Tree_Summon" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_Tree_Summon" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
@@ -1019,8 +1089,203 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="2921680214" Name="Pumpkid_Death" ObjectPath="\Events\SD\Pumpkid\Hit\Pumpkid_Death" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="504658162" Name="Pumpkid_Footstep" ObjectPath="\Events\SD\Pumpkid\Pumpkid_Foley\Pumpkid_Footstep" DurationType="OneShot" DurationMin="0." DurationMax="0.">
-					<SwitchContainers/>
+				<Event Id="504658162" Name="Pumpkid_Footstep" ObjectPath="\Events\SD\Pumpkid\Pumpkid_Foley\Pumpkid_Footstep" DurationType="OneShot" DurationMin="0." DurationMax="0.492527">
+					<IncludedMemoryFiles>
+						<File Id="17929780" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_09.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_09_32513D82.wem</Path>
+						</File>
+						<File Id="35171978" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_09.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_09_32513D82.wem</Path>
+						</File>
+						<File Id="35611936" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_06.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_06_32513D82.wem</Path>
+						</File>
+						<File Id="46823491" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_11.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_11_32513D82.wem</Path>
+						</File>
+						<File Id="81559422" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_02.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_02_32513D82.wem</Path>
+						</File>
+						<File Id="116755348" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_07.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_07_32513D82.wem</Path>
+						</File>
+						<File Id="118779785" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_04.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_04_32513D82.wem</Path>
+						</File>
+						<File Id="191952256" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_08.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_08_32513D82.wem</Path>
+						</File>
+						<File Id="202238285" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_06.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_06_32513D82.wem</Path>
+						</File>
+						<File Id="329105947" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_02.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_02_32513D82.wem</Path>
+						</File>
+						<File Id="331362898" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_12.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_12_32513D82.wem</Path>
+						</File>
+						<File Id="332218057" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_08.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_08_32513D82.wem</Path>
+						</File>
+						<File Id="373190220" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_12.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_12_32513D82.wem</Path>
+						</File>
+						<File Id="382793365" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_01_32513D82.wem</Path>
+						</File>
+						<File Id="395240068" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_03.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_03_32513D82.wem</Path>
+						</File>
+						<File Id="418780282" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_04.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_04_32513D82.wem</Path>
+						</File>
+						<File Id="475008457" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_10.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_10_32513D82.wem</Path>
+						</File>
+						<File Id="491936974" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_03.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_03_32513D82.wem</Path>
+						</File>
+						<File Id="568031982" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_01_32513D82.wem</Path>
+						</File>
+						<File Id="569824900" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_02.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_02_32513D82.wem</Path>
+						</File>
+						<File Id="579109371" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_07.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_07_32513D82.wem</Path>
+						</File>
+						<File Id="585703920" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_03.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_03_32513D82.wem</Path>
+						</File>
+						<File Id="687328621" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_05.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_05_32513D82.wem</Path>
+						</File>
+						<File Id="720767443" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_07.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_07_32513D82.wem</Path>
+						</File>
+						<File Id="725436989" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_04.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_04_32513D82.wem</Path>
+						</File>
+						<File Id="732390906" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_08.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_08_32513D82.wem</Path>
+						</File>
+						<File Id="773896156" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_05.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_05_32513D82.wem</Path>
+						</File>
+						<File Id="803432950" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_10.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_10_32513D82.wem</Path>
+						</File>
+						<File Id="827148803" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_09.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_09_32513D82.wem</Path>
+						</File>
+						<File Id="832535628" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_06.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_06_32513D82.wem</Path>
+						</File>
+						<File Id="855966794" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_01_32513D82.wem</Path>
+						</File>
+						<File Id="975536030" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Dirt_11.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Dirt_11_32513D82.wem</Path>
+						</File>
+						<File Id="992244842" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_12.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_12_32513D82.wem</Path>
+						</File>
+						<File Id="1024994750" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Leaf_11.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Leaf_11_32513D82.wem</Path>
+						</File>
+						<File Id="1049235258" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_10.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_10_32513D82.wem</Path>
+						</File>
+						<File Id="1070341170" Language="SFX">
+							<ShortName>Pumpkid_Footsteps_Ice_05.wav</ShortName>
+							<Path>SFX\Pumpkid_Footsteps_Ice_05_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{2353E11A-8B5D-41E3-B5D9-00E68429C458}">
+							<Media>
+								<File Id="35171978"/>
+								<File Id="46823491"/>
+								<File Id="81559422"/>
+								<File Id="191952256"/>
+								<File Id="202238285"/>
+								<File Id="373190220"/>
+								<File Id="382793365"/>
+								<File Id="579109371"/>
+								<File Id="585703920"/>
+								<File Id="725436989"/>
+								<File Id="1049235258"/>
+								<File Id="1070341170"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F998925D-C425-488B-BA53-94E91391FCC7}">
+							<Media>
+								<File Id="118779785"/>
+								<File Id="332218057"/>
+								<File Id="475008457"/>
+								<File Id="491936974"/>
+								<File Id="569824900"/>
+								<File Id="687328621"/>
+								<File Id="720767443"/>
+								<File Id="827148803"/>
+								<File Id="832535628"/>
+								<File Id="855966794"/>
+								<File Id="992244842"/>
+								<File Id="1024994750"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{1C878391-3A0B-4ACA-B003-88784F2F9432}">
+							<Media>
+								<File Id="17929780"/>
+								<File Id="35611936"/>
+								<File Id="116755348"/>
+								<File Id="329105947"/>
+								<File Id="331362898"/>
+								<File Id="395240068"/>
+								<File Id="418780282"/>
+								<File Id="568031982"/>
+								<File Id="732390906"/>
+								<File Id="773896156"/>
+								<File Id="803432950"/>
+								<File Id="975536030"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="906040055" Name="Pumpkid_Hit" ObjectPath="\Events\SD\Pumpkid\Hit\Pumpkid_Hit" DurationType="OneShot" DurationMin="0." DurationMax="0.">
 					<SwitchContainers/>
@@ -1205,9 +1470,25 @@
 				<File Id="909766544"/>
 			</ReferencedStreamedFiles>
 			<IncludedMemoryFiles>
+				<File Id="17929780" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_09.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_09_32513D82.wem</Path>
+				</File>
+				<File Id="25066018" Language="SFX">
+					<ShortName>Boss_Fall_Tree_Summon_03.wav</ShortName>
+					<Path>SFX\Boss_Fall_Tree_Summon_03_32513D82.wem</Path>
+				</File>
 				<File Id="34101360" Language="SFX">
 					<ShortName>Boss_Fall_LeafBeam_Start_02.wav</ShortName>
 					<Path>SFX\Boss_Fall_LeafBeam_Start_02_32513D82.wem</Path>
+				</File>
+				<File Id="35171978" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_09.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_09_32513D82.wem</Path>
+				</File>
+				<File Id="35611936" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_06.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_06_32513D82.wem</Path>
 				</File>
 				<File Id="41016017" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Overcharge_Start_06.wav</ShortName>
@@ -1216,6 +1497,10 @@
 				<File Id="41477260" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Sword_02.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Sword_02_32513D82.wem</Path>
+				</File>
+				<File Id="46823491" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_11.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_11_32513D82.wem</Path>
 				</File>
 				<File Id="50698222" Language="SFX">
 					<ShortName>Boss_Winter_Hit_Sword_06.wav</ShortName>
@@ -1236,6 +1521,10 @@
 				<File Id="71917482" Language="SFX">
 					<ShortName>Pumpkid_Sword_ChargedSlash_05.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_ChargedSlash_05_32513D82.wem</Path>
+				</File>
+				<File Id="81559422" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_02.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_02_32513D82.wem</Path>
 				</File>
 				<File Id="84113697" Language="SFX">
 					<ShortName>Pumpkid_Sword_Charging_Start_04.wav</ShortName>
@@ -1264,6 +1553,14 @@
 				<File Id="98400941" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Sword_05.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Sword_05_32513D82.wem</Path>
+				</File>
+				<File Id="116755348" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_07.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_07_32513D82.wem</Path>
+				</File>
+				<File Id="118779785" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_04.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_04_32513D82.wem</Path>
 				</File>
 				<File Id="121436246" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_05.wav</ShortName>
@@ -1297,6 +1594,10 @@
 					<ShortName>Boss_Fall_Hit_Crossbow_02.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_Crossbow_02_32513D82.wem</Path>
 				</File>
+				<File Id="181650424" Language="SFX">
+					<ShortName>Boss_Fall_Tree_Summon_02.wav</ShortName>
+					<Path>SFX\Boss_Fall_Tree_Summon_02_32513D82.wem</Path>
+				</File>
 				<File Id="183092715" Language="SFX">
 					<ShortName>Boss_Winter_Hit_Crossbow_03.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_Crossbow_03_32513D82.wem</Path>
@@ -1313,6 +1614,10 @@
 					<ShortName>Pumpkid_Sword_ChargedSlash_06.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_ChargedSlash_06_32513D82.wem</Path>
 				</File>
+				<File Id="191952256" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_08.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_08_32513D82.wem</Path>
+				</File>
 				<File Id="194444359" Language="SFX">
 					<ShortName>Boss_Winter_Hit_ChargedSword_04.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_ChargedSword_04_32513D82.wem</Path>
@@ -1325,6 +1630,10 @@
 					<ShortName>Boss_Fall_Hit_Crossbow_03.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_Crossbow_03_32513D82.wem</Path>
 				</File>
+				<File Id="202238285" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_06.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_06_32513D82.wem</Path>
+				</File>
 				<File Id="206340077" Language="SFX">
 					<ShortName>AMB_SP_Thunder_Close_04.wav</ShortName>
 					<Path>SFX\AMB_SP_Thunder_Close_04_32513D82.wem</Path>
@@ -1332,6 +1641,10 @@
 				<File Id="218820461" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Crossbow_02.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Crossbow_02_32513D82.wem</Path>
+				</File>
+				<File Id="230800816" Language="SFX">
+					<ShortName>Boss_Fall_Tree_Destroy_02.wav</ShortName>
+					<Path>SFX\Boss_Fall_Tree_Destroy_02_32513D82.wem</Path>
 				</File>
 				<File Id="247103131" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Shot_04.wav</ShortName>
@@ -1389,6 +1702,22 @@
 					<ShortName>Pumpkid_Sword_Charging_Start_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Charging_Start_01_32513D82.wem</Path>
 				</File>
+				<File Id="329105947" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_02.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_02_32513D82.wem</Path>
+				</File>
+				<File Id="330470008" Language="SFX">
+					<ShortName>Boss_Fall_Tree_Destroy_03.wav</ShortName>
+					<Path>SFX\Boss_Fall_Tree_Destroy_03_32513D82.wem</Path>
+				</File>
+				<File Id="331362898" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_12.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_12_32513D82.wem</Path>
+				</File>
+				<File Id="332218057" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_08.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_08_32513D82.wem</Path>
+				</File>
 				<File Id="346435354" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_ChargedCrossbow_06.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_ChargedCrossbow_06_32513D82.wem</Path>
@@ -1405,6 +1734,10 @@
 					<ShortName>AMB_RFX_Thunder_Far_02.wav</ShortName>
 					<Path>SFX\AMB_RFX_Thunder_Far_02_32513D82.wem</Path>
 				</File>
+				<File Id="373190220" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_12.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_12_32513D82.wem</Path>
+				</File>
 				<File Id="375332966" Language="SFX">
 					<ShortName>Boss_Winter_Hit_ChargedCrossbow_05.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_ChargedCrossbow_05_32513D82.wem</Path>
@@ -1420,6 +1753,14 @@
 				<File Id="382233845" Language="SFX">
 					<ShortName>Boss_Winter_Hit_Sword_03.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_Sword_03_32513D82.wem</Path>
+				</File>
+				<File Id="382793365" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_01.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_01_32513D82.wem</Path>
+				</File>
+				<File Id="395240068" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_03.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_03_32513D82.wem</Path>
 				</File>
 				<File Id="395691134" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Shot_02.wav</ShortName>
@@ -1461,6 +1802,10 @@
 					<ShortName>Boss_Neutral_Hit_ChargedCrossbow_02.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_ChargedCrossbow_02_32513D82.wem</Path>
 				</File>
+				<File Id="418780282" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_04.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_04_32513D82.wem</Path>
+				</File>
 				<File Id="421756444" Language="SFX">
 					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_06.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_06_32513D82.wem</Path>
@@ -1477,6 +1822,10 @@
 					<ShortName>Pumpkid_Crossbow_ChargedShot_06.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_ChargedShot_06_32513D82.wem</Path>
 				</File>
+				<File Id="450613878" Language="SFX">
+					<ShortName>Boss_Fall_Tree_Destroy_01.wav</ShortName>
+					<Path>SFX\Boss_Fall_Tree_Destroy_01_32513D82.wem</Path>
+				</File>
 				<File Id="457222669" Language="SFX">
 					<ShortName>AMB_SP_Thunder_Close_02.wav</ShortName>
 					<Path>SFX\AMB_SP_Thunder_Close_02_32513D82.wem</Path>
@@ -1489,9 +1838,17 @@
 					<ShortName>Boss_Fall_Hit_Sword_03.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_Sword_03_32513D82.wem</Path>
 				</File>
+				<File Id="475008457" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_10.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_10_32513D82.wem</Path>
+				</File>
 				<File Id="480802557" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_ChargedCrossbow_04.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_ChargedCrossbow_04_32513D82.wem</Path>
+				</File>
+				<File Id="491936974" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_03.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_03_32513D82.wem</Path>
 				</File>
 				<File Id="493228789" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_ChargedShot_04.wav</ShortName>
@@ -1545,6 +1902,22 @@
 					<ShortName>Boss_FormChange_Neutral.wav</ShortName>
 					<Path>SFX\Boss_FormChange_Neutral_32513D82.wem</Path>
 				</File>
+				<File Id="568031982" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_01.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_01_32513D82.wem</Path>
+				</File>
+				<File Id="569824900" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_02.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_02_32513D82.wem</Path>
+				</File>
+				<File Id="569951287" Language="SFX">
+					<ShortName>Boss_Fall_Tree_Destroy_04.wav</ShortName>
+					<Path>SFX\Boss_Fall_Tree_Destroy_04_32513D82.wem</Path>
+				</File>
+				<File Id="579109371" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_07.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_07_32513D82.wem</Path>
+				</File>
 				<File Id="580491370" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_ChargedSword_01.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_ChargedSword_01_32513D82.wem</Path>
@@ -1552,6 +1925,10 @@
 				<File Id="583103741" Language="SFX">
 					<ShortName>Pumpkid_Sword_Charging_Start_02.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Charging_Start_02_32513D82.wem</Path>
+				</File>
+				<File Id="585703920" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_03.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_03_32513D82.wem</Path>
 				</File>
 				<File Id="587447136" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_ChargedSword_06.wav</ShortName>
@@ -1581,6 +1958,10 @@
 					<ShortName>Boss_Fall_Hit_ChargedSword_02.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_ChargedSword_02_32513D82.wem</Path>
 				</File>
+				<File Id="624256207" Language="SFX">
+					<ShortName>Boss_Fall_Tree_Summon_01.wav</ShortName>
+					<Path>SFX\Boss_Fall_Tree_Summon_01_32513D82.wem</Path>
+				</File>
 				<File Id="633652544" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_ChargedShot_05.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_ChargedShot_05_32513D82.wem</Path>
@@ -1609,6 +1990,10 @@
 					<ShortName>Boss_Neutral_Hit_Sword_03.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Sword_03_32513D82.wem</Path>
 				</File>
+				<File Id="687328621" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_05.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_05_32513D82.wem</Path>
+				</File>
 				<File Id="690497515" Language="SFX">
 					<ShortName>AMB_RFX_Thunder_Far_07.wav</ShortName>
 					<Path>SFX\AMB_RFX_Thunder_Far_07_32513D82.wem</Path>
@@ -1616,6 +2001,18 @@
 				<File Id="706889324" Language="SFX">
 					<ShortName>Boss_Winter_Hit_Crossbow_06.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_Crossbow_06_32513D82.wem</Path>
+				</File>
+				<File Id="720767443" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_07.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_07_32513D82.wem</Path>
+				</File>
+				<File Id="725436989" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_04.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_04_32513D82.wem</Path>
+				</File>
+				<File Id="732390906" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_08.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_08_32513D82.wem</Path>
 				</File>
 				<File Id="736364457" Language="SFX">
 					<ShortName>Boss_Winter_Hit_ChargedSword_02.wav</ShortName>
@@ -1645,6 +2042,10 @@
 					<ShortName>Boss_Fall_Hit_Sword_06.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_Sword_06_32513D82.wem</Path>
 				</File>
+				<File Id="773896156" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_05.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_05_32513D82.wem</Path>
+				</File>
 				<File Id="775990223" Language="SFX">
 					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_01_32513D82.wem</Path>
@@ -1669,6 +2070,10 @@
 					<ShortName>Pumpkid_Sword_Slash_04.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Slash_04_32513D82.wem</Path>
 				</File>
+				<File Id="803432950" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_10.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_10_32513D82.wem</Path>
+				</File>
 				<File Id="803654761" Language="SFX">
 					<ShortName>Boss_Fall_Hit_Crossbow_06.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_Crossbow_06_32513D82.wem</Path>
@@ -1677,9 +2082,21 @@
 					<ShortName>Boss_Winter_Hit_ChargedSword_05.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_ChargedSword_05_32513D82.wem</Path>
 				</File>
+				<File Id="827148803" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_09.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_09_32513D82.wem</Path>
+				</File>
+				<File Id="832535628" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_06.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_06_32513D82.wem</Path>
+				</File>
 				<File Id="844700103" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Overcharge_Start_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Overcharge_Start_01_32513D82.wem</Path>
+				</File>
+				<File Id="855966794" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_01.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_01_32513D82.wem</Path>
 				</File>
 				<File Id="868366597" Language="SFX">
 					<ShortName>AMB_RFX_Thunder_Far_05.wav</ShortName>
@@ -1721,6 +2138,10 @@
 					<ShortName>Pumpkid_Crossbow_Charging_Start_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Charging_Start_03_32513D82.wem</Path>
 				</File>
+				<File Id="924453683" Language="SFX">
+					<ShortName>Boss_Fall_Tree_Summon_04.wav</ShortName>
+					<Path>SFX\Boss_Fall_Tree_Summon_04_32513D82.wem</Path>
+				</File>
 				<File Id="925048185" Language="SFX">
 					<ShortName>Boss_Fall_Hit_Sword_02.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_Sword_02_32513D82.wem</Path>
@@ -1761,6 +2182,10 @@
 					<ShortName>Boss_Fall_Hit_ChargedCrossbow_01.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_ChargedCrossbow_01_32513D82.wem</Path>
 				</File>
+				<File Id="975536030" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Dirt_11.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Dirt_11_32513D82.wem</Path>
+				</File>
 				<File Id="977735136" Language="SFX">
 					<ShortName>Boss_Fall_LeafBeam_Start_03.wav</ShortName>
 					<Path>SFX\Boss_Fall_LeafBeam_Start_03_32513D82.wem</Path>
@@ -1768,6 +2193,10 @@
 				<File Id="988931632" Language="SFX">
 					<ShortName>Boss_Fall_LeafBeam_LP.wav</ShortName>
 					<Path>SFX\Boss_Fall_LeafBeam_LP_F2BF74AC.wem</Path>
+				</File>
+				<File Id="992244842" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_12.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_12_32513D82.wem</Path>
 				</File>
 				<File Id="1000354372" Language="SFX">
 					<ShortName>Pumpkid_Sword_Charging_Start_05.wav</ShortName>
@@ -1781,6 +2210,10 @@
 					<ShortName>AMB_RFX_Thunder_Far_03.wav</ShortName>
 					<Path>SFX\AMB_RFX_Thunder_Far_03_32513D82.wem</Path>
 				</File>
+				<File Id="1024994750" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Leaf_11.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Leaf_11_32513D82.wem</Path>
+				</File>
 				<File Id="1026996129" Language="SFX">
 					<ShortName>Pumpkid_Sword_ChargedSlash_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_ChargedSlash_03_32513D82.wem</Path>
@@ -1788,6 +2221,10 @@
 				<File Id="1032883723" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Slash_03_32513D82.wem</Path>
+				</File>
+				<File Id="1049235258" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_10.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_10_32513D82.wem</Path>
 				</File>
 				<File Id="1051322473" Language="SFX">
 					<ShortName>Boss_Winter_Hit_Crossbow_05.wav</ShortName>
@@ -1812,6 +2249,10 @@
 				<File Id="1069229627" Language="SFX">
 					<ShortName>Boss_Fall_LeafBeam_End_02.wav</ShortName>
 					<Path>SFX\Boss_Fall_LeafBeam_End_02_32513D82.wem</Path>
+				</File>
+				<File Id="1070341170" Language="SFX">
+					<ShortName>Pumpkid_Footsteps_Ice_05.wav</ShortName>
+					<Path>SFX\Pumpkid_Footsteps_Ice_05_32513D82.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<GameParameters>
