@@ -51,6 +51,7 @@ namespace AK
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION = 2356299211U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_CAST = 2660008099U;
         static const AkUniqueID GAMESTART = 4058101365U;
+        static const AkUniqueID PLAY_MUSIC = 2932040671U;
         static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_FULL = 335910461U;
         static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_START = 219435418U;
         static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_STOP = 2182664242U;
@@ -64,6 +65,7 @@ namespace AK
         static const AkUniqueID PUMPKID_SWORD_CHARGE_START = 455128255U;
         static const AkUniqueID PUMPKID_SWORD_CHARGE_STOP = 1300717317U;
         static const AkUniqueID PUMPKID_SWORD_SLASH = 971183997U;
+        static const AkUniqueID SET_STATE_NEUTRAL = 1170226945U;
         static const AkUniqueID UI_MENU_BUTTON_BACK = 4197357760U;
         static const AkUniqueID UI_MENU_BUTTON_CONFIRM = 342937835U;
         static const AkUniqueID UI_MENU_BUTTON_HOVER = 707128413U;
@@ -100,6 +102,20 @@ namespace AK
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace ST_GAMEMODE
+
+        namespace ST_MUSIC
+        {
+            static const AkUniqueID GROUP = 1645386324U;
+
+            namespace STATE
+            {
+                static const AkUniqueID BOSS_FALL = 1800837750U;
+                static const AkUniqueID BOSS_NEUTRAL = 252776334U;
+                static const AkUniqueID BOSS_WINTER = 859005722U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID VISUAL_NOVEL = 1244431682U;
+            } // namespace STATE
+        } // namespace ST_MUSIC
 
     } // namespace STATES
 
