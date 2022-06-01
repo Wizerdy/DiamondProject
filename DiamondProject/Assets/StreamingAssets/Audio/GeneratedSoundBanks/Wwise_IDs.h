@@ -14,7 +14,6 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMB_ARENA = 3854123299U;
-        static const AkUniqueID AMB_THUNDER = 1809647772U;
         static const AkUniqueID AMB_VISUALNOVEL = 399517452U;
         static const AkUniqueID ATTACK = 180661997U;
         static const AkUniqueID BOSS_FALL_FALLDASH_CAST = 2378231684U;
@@ -40,6 +39,8 @@ namespace AK
         static const AkUniqueID BOSS_NEUTRAL_EXPLOBUSH_SUMMON = 738273803U;
         static const AkUniqueID BOSS_NEUTRAL_LEAFBEAM_START = 3985863633U;
         static const AkUniqueID BOSS_NEUTRAL_LEAFBEAM_STOP = 2794118091U;
+        static const AkUniqueID BOSS_NEUTRAL_ROCKSPIKES = 2318093787U;
+        static const AkUniqueID BOSS_NEUTRAL_ROCKSPIKES_CAST = 524303667U;
         static const AkUniqueID BOSS_NEUTRAL_THUNDER = 176032549U;
         static const AkUniqueID BOSS_NEUTRAL_TREE_ATTACK = 1234898960U;
         static const AkUniqueID BOSS_NEUTRAL_TREE_DESTROY = 2188453778U;
@@ -48,6 +49,8 @@ namespace AK
         static const AkUniqueID BOSS_WINTER_BULLETHELL_CIRCLE_START = 2077972986U;
         static const AkUniqueID BOSS_WINTER_BULLETHELL_CIRCLE_STOP = 941681938U;
         static const AkUniqueID BOSS_WINTER_ICEHELL = 3321318127U;
+        static const AkUniqueID BOSS_WINTER_ICESPIKES = 3647852147U;
+        static const AkUniqueID BOSS_WINTER_ICESPIKES_CAST = 599452203U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION = 2356299211U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_CAST = 2660008099U;
         static const AkUniqueID GAMESTART = 4058101365U;

@@ -58,6 +58,18 @@
 				<Event Name="Boss_Winter_BulletHell_Circle_Stop" ID="{5DAD9723-2DEA-48CC-92F1-8505762CF3E4}"/>
 				<Event Name="Boss_Winter_BulletHell_Circle_Start" ID="{AD19A5E8-EA40-40F4-8F3F-48D34124BA47}"/>
 				<Event Name="Boss_Winter_SnowAbsorption_Cast" ID="{040CFA28-6576-4E76-B0BF-5A369E249CCE}"/>
+				<Event Name="Boss_Winter_IceSpikes" ID="{E2AAE3EF-419B-44EC-ACDB-463B349084A7}">
+					<ChildrenList>
+						<Action Name="" ID="{D8093F39-91A7-43F3-BE09-B5C43D702179}" ShortID="842616400">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Winter_IceSpikes" ID="{67985FDF-8CC9-47AB-B9A6-326EA5F93631}" WorkUnitID="{B803E388-5F0F-4816-B66E-27C30DA27389}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Winter_IceSpikes_Cast" ID="{BFB63721-E1AF-4B0A-87F0-AED7F42CA935}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

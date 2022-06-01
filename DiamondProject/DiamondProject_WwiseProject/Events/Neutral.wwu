@@ -197,12 +197,24 @@
 						<Action Name="" ID="{8D403E4D-0C15-4839-8829-3D9271F2A3C0}" ShortID="329094996">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="AMB_SP_Thunder_Close" ID="{770DAEB9-7E5C-4B22-BC49-E5B2B74B1323}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
+									<ObjectRef Name="Boss_Neutral_Thunder" ID="{6B0439AA-B227-47CD-A97B-F9E9606BF15E}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Boss_Neutral_RockSpikes" ID="{B5323B8A-6446-495E-AB71-E62C3449655D}">
+					<ChildrenList>
+						<Action Name="" ID="{FE52D23C-E8AB-44C5-A367-1CBF33AD90E2}" ShortID="86343502">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_RockSpikes" ID="{F6D15A64-A755-4009-B6EA-904EA0E082E6}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_RockSpikes_Cast" ID="{34D1A4C2-CEFD-4DC5-BE82-D7743153C7F3}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

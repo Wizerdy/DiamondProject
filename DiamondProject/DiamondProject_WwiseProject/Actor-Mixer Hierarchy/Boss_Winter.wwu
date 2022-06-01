@@ -8,6 +8,7 @@
 			</PropertyList>
 			<ChildrenList>
 				<ActorMixer Name="Boss_Winter" ID="{5872D7AB-78DC-47A7-B4F5-CDC894F5B790}" ShortID="78774921">
+					<Comment>spirale, pics ice qui volent,</Comment>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
@@ -60,6 +61,156 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 								</Reference>
 							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_IceSpikes" ID="{67985FDF-8CC9-47AB-B9A6-326EA5F93631}" ShortID="718536339">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{45443BFA-39A5-4B49-8559-7FB1393595F4}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Winter_IceSpikes_01" ID="{6682CF2A-0861-444F-9F75-A311A27612CE}" ShortID="896648239">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_01" ID="{E2879FB5-90D6-403B-AFBD-EA5918E44833}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="979371832"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_01" ID="{E2879FB5-90D6-403B-AFBD-EA5918E44833}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceSpikes_02" ID="{CBD9D0C8-7301-4DAE-890B-2624B474561B}" ShortID="219852119">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_02" ID="{39F25519-2784-4282-AD80-5ED55E0E81B8}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="398635965"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_02" ID="{39F25519-2784-4282-AD80-5ED55E0E81B8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceSpikes_03" ID="{1160FCE6-6A76-4B8C-A149-628FA87E868F}" ShortID="754482793">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_03" ID="{0DD00128-C661-4A3B-9ED3-4E322AC8C51F}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="965414608"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_03" ID="{0DD00128-C661-4A3B-9ED3-4E322AC8C51F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceSpikes_04" ID="{BD8CC454-FBF4-403A-8B79-BDAA2E5D4846}" ShortID="971104777">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_04" ID="{C081BF00-225D-4968-B84A-50E27E2BD975}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="406881015"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_04" ID="{C081BF00-225D-4968-B84A-50E27E2BD975}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceSpikes_05" ID="{C6659B37-FFAC-43F7-8B56-7A37AC370DE0}" ShortID="41040452">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_05" ID="{E2FE0603-60BF-4D86-AC82-0D140260A024}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="165466198"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_05" ID="{E2FE0603-60BF-4D86-AC82-0D140260A024}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 					</ChildrenList>
