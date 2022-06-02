@@ -83,5 +83,9 @@ public class DamageHealth : MonoBehaviour {
     public void SetDamage(int damage) {
         _damage = damage;
     }
+
+    public void NotEditable() {
+        this.hideFlags = HideFlags.NotEditable;
+    }
 }
 

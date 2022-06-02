@@ -6,22 +6,21 @@ using ToolsBoxEngine;
 
 public class EntityChargeRanged : MonoBehaviour {
     [Header("Static")]
-    [SerializeField] GameObject _bullet;
+    //[SerializeField] GameObject _bullet;
     [SerializeField] Transform _entity = null;
     [SerializeField] Transform _attackParent = null;
     [SerializeField] Animator _attackAnimator = null;
-    [Header("Values")]
-    [SerializeField] float _bulletSpeed;
-    [SerializeField] float _dashDistance = 3f;
+    [Header("Default values")]
+    [SerializeField] float _bulletSpeed = 30f;
+    [SerializeField] float _recoilDistance = 3f;
     [SerializeField] int _damage = 10;
     [SerializeField] int _fullChargedDamageBonus = 10;
     [SerializeField] float _cooldownTime = 1f;
     [SerializeField] float _chargingTime = 3f;
-    [SerializeField] float _attackTime = 1f;
+    [SerializeField] float _recoilTime = 1f;
     [SerializeField] MultipleTagSelector _damageables = new MultipleTagSelector(MultipleTagSelector.State.EVERYTHING);
     [SerializeField] AnimationCurve _damagesOverTime = AnimationCurve.Linear(0, 0, 1, 1);
-    [SerializeField] AnimationCurve _distanceOverTime = AnimationCurve.Linear(0, 0, 1, 1);
-    //[SerializeField] AnimationCurve _attackTimeOverTime = AnimationCurve.Linear(0, 0, 1, 1);
+    [SerializeField] AnimationCurve _recoilOverTime = AnimationCurve.Linear(0, 0, 1, 1);
 
     // Events
     [SerializeField] UnityEvent<Vector2> _onCharging;
@@ -31,6 +30,7 @@ public class EntityChargeRanged : MonoBehaviour {
     [HideInInspector, SerializeField] UnityEvent<Vector2> _onOverCharge;
     [HideInInspector, SerializeField] UnityEvent _onAttackEnd;
 
+    GameObject _bullet = null;
     Vector2 _direction = Vector2.zero;
     float _chargingTimer = 0f;
 
@@ -77,6 +77,15 @@ public class EntityChargeRanged : MonoBehaviour {
         //_attackHitbox.OnCollide -= _InvokeOnHit;
     }
 
+    public void SetBullet(GameObject bullet) {
+        _bullet = bullet;
+        ChargedBullet chargedBullet = _bullet.GetComponent<ChargedBullet>();
+        if (chargedBullet == null) { Debug.Log("No Charged Bullet Assigned"); return; }
+        _chargingTime = chargedBullet.ChargingTime;
+        _cooldownTime = chargedBullet.Cooldown;
+        _recoilTime = chargedBullet.RecoilTime;
+    }
+
     public void StartCharging(Vector2 direction) {
         if (_isCharging) { return; }
         _isCharging = true;
@@ -97,42 +106,49 @@ public class EntityChargeRanged : MonoBehaviour {
     }
 
     public void Attack(Vector2 direction, float timer) {
-        UpdateDirection(direction);
+        if (!_canRangeAttack) { return; }
+        _onAttack?.Invoke(direction);
+        _isAttacking = true;
 
+        ChargedBullet chargedBullet = _bullet.GetComponent<ChargedBullet>();
+        direction = chargedBullet?.ComputeDirection(direction) ?? direction;
+        UpdateDirection(direction);
         float percentage = timer / _chargingTime;
+
+        // Damage
         int damage = Mathf.CeilToInt(_damagesOverTime.Evaluate(percentage) * _damage);
         if (percentage >= 1f) { damage += _fullChargedDamageBonus; }
 
-        //float attackTime = _attackTimeOverTime.Evaluate(percentage) * _attackTime;
-        float attackTime = _distanceOverTime.Evaluate(percentage) * _attackTime;
-        float distance = _distanceOverTime.Evaluate(percentage) * _dashDistance;
-        if (_routine_DashAttack != null) { StopCoroutine(_routine_DashAttack); }
-        if (attackTime > 0f) {
-            _isAttacking = true;
-            //_attackAnimator.SetBool("Dash Attack", true);
-            Attack(direction, damage);
-            _routine_DashAttack = StartCoroutine(IDashAttack(-direction, distance, attackTime));
+        // Recoil
+        float attackTime;
+        float distance;
+
+        if (chargedBullet == null) {
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction.To3D()) * Quaternion.Euler(0f, 0f, 90f);
+            GameObject bull = Instantiate(_bullet, transform.position, rotation);
+            DamageHealth damageHealth = bull.GetComponent<DamageHealth>();
+            damageHealth?.SetValues(_damageables, damage);
+            bull.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed;
+            attackTime = _recoilOverTime.Evaluate(percentage) * _recoilTime;
+            distance = _recoilOverTime.Evaluate(percentage) * _recoilDistance;
         } else {
-            _onAttackEnd?.Invoke();
+            ChargedBullet lastBullet = Instantiate(_bullet, transform.position, Quaternion.identity).GetComponent<ChargedBullet>();
+            lastBullet.Launch(percentage);
+            attackTime = lastBullet.RecoilTime;
+            distance = lastBullet.Recoil(percentage);
         }
-    }
 
-    public void Attack(Vector2 direction, int damage) {
-        if (!_canRangeAttack) { return; }
-        _onAttack?.Invoke(direction);
+        if (_routine_DashAttack != null) { StopCoroutine(_routine_DashAttack); }
 
-        UpdateDirection(direction);
-        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction.To3D()) * Quaternion.Euler(0f, 0f, 90f);
-        GameObject bull = Instantiate(_bullet, transform.position, rotation);
-        DamageHealth damageHealth = bull.GetComponent<DamageHealth>();
-        damageHealth?.SetValues(_damageables, damage);
-        bull.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed;
+        _routine_DashAttack = StartCoroutine(IDashAttack(-direction, distance, attackTime));
+
         _attackAnimator.SetTrigger("Range Attack");
         _canRangeAttack = false;
         StartCoroutine(Tools.Delay(() => _canRangeAttack = true, _cooldownTime));
     }
 
     IEnumerator IDashAttack(Vector2 direction, float distance, float time) {
+        if (time <= 0f) { yield break; }
         direction = direction.normalized;
         Vector2 position = _entity.Position2D();
         Vector2 target = direction * distance + position;
@@ -140,12 +156,10 @@ public class EntityChargeRanged : MonoBehaviour {
         while (timePassed < time) {
             yield return new WaitForEndOfFrame();
             timePassed += Time.deltaTime;
-
             _entity.position = Vector2.Lerp(position, target, timePassed / time).To3D(_entity.position.z, Axis.Z);
         }
 
         _isAttacking = false;
-        //_attackAnimator.SetBool("Dash Attack", false);
         _onAttackEnd?.Invoke();
     }
 
@@ -162,7 +176,7 @@ public class EntityChargeRanged : MonoBehaviour {
         if (!IsAttacking) { return; }
         Gizmos.color = Color.red;
         float percentage = _chargingTimer / _chargingTime;
-        float distance = _distanceOverTime.Evaluate(percentage) * _dashDistance;
+        float distance = _recoilOverTime.Evaluate(percentage) * _recoilDistance;
         Gizmos.DrawLine(_entity.position.Override(5f, Axis.Z), _entity.position + (_direction * distance).To3D(5f));
     }
 }

@@ -87,6 +87,10 @@ public class LiaAttack : MonoBehaviour {
         return winner;
     }
 
+    public void ClearAttacks() {
+        _attackSystem.ClearAttacks();
+    }
+
     #region Behaviour
     public IEnumerator NeutralBehaviour() {
 

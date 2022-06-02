@@ -47,4 +47,21 @@ public class IMeetARealBoss : MonoBehaviour {
         if (time <= 0f) { return; }
         StartCoroutine(Tools.Delay(() => _spriteRenderer.color = startColor, time));
     }
+
+    public Coroutine MoveTo(Vector2 position, float time) {
+        return StartCoroutine(IMoveTo(position, time));
+
+        IEnumerator IMoveTo(Vector2 position, float time) {
+            if (time == 0f) { transform.position = transform.Position2D(position); yield break; }
+            Vector2 startPosition = transform.position;
+            float timePassed = 0f;
+            while (timePassed < time) {
+                yield return new WaitForEndOfFrame();
+                timePassed += Time.deltaTime;
+                Vector2 vector = Vector2.Lerp(startPosition, position, timePassed / time);
+                //Debug.Log(vector + " .. " + timePassed / time);
+                transform.position = transform.position.Override(vector, Axis.X, Axis.Y);
+            }
+        }
+    }
 }

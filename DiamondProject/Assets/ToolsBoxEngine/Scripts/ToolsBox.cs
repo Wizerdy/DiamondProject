@@ -424,6 +424,24 @@ namespace ToolsBoxEngine {
             return transform.position.To2D(axis);
         }
 
+        public static Vector3 Position2D(this Transform transform, Vector2 position, Axis axis = Axis.Z) {
+            Vector3 output = transform.position;
+            switch (axis) {
+                case Axis.X:
+                    output = transform.position.Override(position, Axis.Y, Axis.Z);
+                    break;
+                case Axis.Y:
+                    output = transform.position.Override(position, Axis.X, Axis.Z);
+                    break;
+                case Axis.Z:
+                    output = transform.position.Override(position, Axis.X, Axis.Y);
+                    break;
+                default:
+                    break;
+            }
+            return output;
+        }
+
         public static int Find(this int[] array, int value) {
             for (int i = 0; i < array.Length; i++) {
                 if (array[i] == value) {

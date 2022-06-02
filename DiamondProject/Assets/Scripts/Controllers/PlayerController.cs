@@ -314,6 +314,7 @@ public class PlayerController : MonoBehaviour {
             _movement.RemoveSlow(_currentChargeSlow);
             _currentChargeSlow = null;
         }
+        _chargeRangedAttack?.SetBullet(_bullet);
         _chargeRangedAttack?.StopCharging(LookDirection);
         _onAttack?.Invoke(AttackType.RANGE);
     }
