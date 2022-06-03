@@ -4217,9 +4217,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1405585052}
     m_Modifications:
     - target: {fileID: 2161993602319532677, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _maxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161993602319532677, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1627650771}
+    - target: {fileID: 3959631131995836340, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _maxSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3959631132869822228, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4267,7 +4275,11 @@ PrefabInstance:
     - target: {fileID: 3959631132869822229, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _bullet
       value: 
-      objectReference: {fileID: 4847567384368089890, guid: ee2776f49acba5649b20cbd2090e18ac, type: 3}
+      objectReference: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
+    - target: {fileID: 3959631132869822229, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _clickTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3959631132869822229, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _chargeSlow
       value: 0.35
