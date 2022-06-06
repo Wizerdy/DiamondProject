@@ -3,8 +3,34 @@
 	<Events>
 		<WorkUnit Name="UI_General" ID="{FA16E315-DF81-4B77-BF1C-1D5CAC494DE2}" OwnerID="{654E10D7-2B56-4A9C-807D-CD40F6BF4DB7}" PersistMode="Nested">
 			<ChildrenList>
-				<Event Name="UI_Transition_ToArena" ID="{F317A20E-E143-41B3-82C4-1C69A7224139}"/>
-				<Event Name="UI_Transition_ToVisualNovel" ID="{459F8F47-19DC-4E35-B82D-3566DCF241CB}"/>
+				<Event Name="UI_Transition_ToArena" ID="{F317A20E-E143-41B3-82C4-1C69A7224139}">
+					<ChildrenList>
+						<Action Name="" ID="{DAA8318E-7BDA-45B8-BABD-5A4DE92DCE38}" ShortID="168488257">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_Transition_ToVisualNovel" ID="{459F8F47-19DC-4E35-B82D-3566DCF241CB}">
+					<ChildrenList>
+						<Action Name="" ID="{E09A3B32-662F-4CD8-8B0E-956F0F3B17E7}" ShortID="889546065">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Visual_Novel" ID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="UI_Menu_Close" ID="{228A8475-5541-412E-A922-B466A00CD655}">
 					<ChildrenList>
 						<Action Name="" ID="{CC591EE7-A851-423A-8713-B9A2D11EC3C5}" ShortID="68131922">
