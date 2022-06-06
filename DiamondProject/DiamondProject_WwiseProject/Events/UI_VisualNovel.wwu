@@ -3,20 +3,234 @@
 	<Events>
 		<WorkUnit Name="UI_VisualNovel" ID="{5BE134E0-2CC0-4838-914D-EDD53B33DA15}" OwnerID="{654E10D7-2B56-4A9C-807D-CD40F6BF4DB7}" PersistMode="Nested">
 			<ChildrenList>
-				<Event Name="UI_VisualNovel_Progression" ID="{C4B0B179-DCE1-47FE-AAFB-DDCBE326F46B}"/>
-				<Event Name="UI_VisualNovel_Book_Open" ID="{F57B6529-BB75-4D32-AD77-F3893593FDBE}"/>
-				<Event Name="UI_VisualNovel_Book_Close" ID="{4ED5E42B-084C-41F1-AF52-5B5FCBCAE5FC}"/>
-				<Event Name="UI_VisualNovel_Pass" ID="{E4BE708D-3C66-4915-9D44-C56B1AB04EBA}"/>
-				<Event Name="UI_VisualNovel_Norna_Eats" ID="{2A39D358-CC16-47F0-94F3-34EF3D5F3552}"/>
-				<Event Name="UI_VisualNovel_Book_TurnPage" ID="{DB2C723E-0509-49E8-9676-308D3D0B9747}"/>
-				<Event Name="UI_VisualNovel_WrongAnswer" ID="{5490120F-9266-411B-BA02-29F3E851CE64}"/>
-				<Event Name="UI_VisualNovel_Question" ID="{E40411AC-4409-4DEF-96BB-5BF351A5F3FA}"/>
-				<Event Name="UI_VisualNovel_Text_Start" ID="{68071C2C-DAE3-4450-BBA7-8E62C50B0F79}"/>
-				<Event Name="UI_VisualNovel_Button_Hover" ID="{7341836E-7F69-4DF9-8FB3-F0F435B36D3F}"/>
-				<Event Name="UI_VisualNovel_Skip_Start" ID="{24CA2472-B159-4CB1-ACAE-ACF21E6DACD6}"/>
-				<Event Name="UI_VisualNovel_Text_Stop" ID="{86BBA7C1-1798-47AD-8DC4-EBDB3E157203}"/>
-				<Event Name="UI_VisualNovel_GoodAnswer" ID="{F6340B28-F815-4551-B908-B24E7410AD35}"/>
-				<Event Name="UI_VisualNovel_Skip_Stop" ID="{CA609210-E689-4872-9706-E4312B8FB2CB}"/>
+				<Event Name="UI_VisualNovel_Progression" ID="{C4B0B179-DCE1-47FE-AAFB-DDCBE326F46B}">
+					<ChildrenList>
+						<Action Name="" ID="{6CFBCF66-2053-4787-A810-C2154BF01D59}" ShortID="1061525006">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Progression" ID="{FF15EC5B-0BE0-452D-A7B5-BAD577985A29}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Book_Open" ID="{F57B6529-BB75-4D32-AD77-F3893593FDBE}">
+					<ChildrenList>
+						<Action Name="" ID="{055E80F3-E110-4892-BFCE-3B10BCBBE538}" ShortID="515471445">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Book_Open" ID="{A4549A68-F2AE-4DA3-BEE6-2D0CA3098AB0}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Book_Close" ID="{4ED5E42B-084C-41F1-AF52-5B5FCBCAE5FC}">
+					<ChildrenList>
+						<Action Name="" ID="{E00F891C-3969-4146-8ACF-D03FE5B07CC9}" ShortID="121724924">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Book_Close" ID="{63BE22F9-A3D5-4B1E-A471-60430E06C95B}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Pass" ID="{E4BE708D-3C66-4915-9D44-C56B1AB04EBA}">
+					<ChildrenList>
+						<Action Name="" ID="{60522924-762C-4CE4-8CC2-0D151F2BACEF}" ShortID="113883569">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Pass" ID="{3D8FAE37-3198-4CC5-8A2E-0626A53B4D29}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Norna_Eats" ID="{2A39D358-CC16-47F0-94F3-34EF3D5F3552}">
+					<ChildrenList>
+						<Action Name="" ID="{4C27E384-2A8E-49A4-812A-D7A1C1C227AA}" ShortID="63679587">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Norna_Eats" ID="{8E1B6FB8-9DFB-4A2D-B204-93884F1A42CE}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Book_TurnPage" ID="{DB2C723E-0509-49E8-9676-308D3D0B9747}">
+					<ChildrenList>
+						<Action Name="" ID="{C6CD7266-AC11-4302-B90C-A1EB2D67C97C}" ShortID="256851009">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Book_TurnPage" ID="{F83627F1-8CA3-47A7-B646-856201773290}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_WrongAnswer" ID="{5490120F-9266-411B-BA02-29F3E851CE64}">
+					<ChildrenList>
+						<Action Name="" ID="{21695041-640F-428F-9167-96118E5B2565}" ShortID="751800892">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_WrongAnswer" ID="{47E0B886-B64F-452E-8BF4-4DAF132DCA7E}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Question" ID="{E40411AC-4409-4DEF-96BB-5BF351A5F3FA}">
+					<ChildrenList>
+						<Action Name="" ID="{B648DA6B-3B33-469E-8B8C-D16AF5D01526}" ShortID="193317849">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Question" ID="{95ECC7C1-B99B-47A2-8FCA-AFA10C98A437}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Text_Start" ID="{68071C2C-DAE3-4450-BBA7-8E62C50B0F79}">
+					<ChildrenList>
+						<Action Name="" ID="{097DA79B-E05D-4122-899C-F970667E4C80}" ShortID="989635305">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Text_LP" ID="{771FC281-913C-4705-8547-C78570ADF703}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{502835FA-0B1D-42F5-8C0D-E3E379F35868}" ShortID="1015235284">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="36"/>
+								<Property Name="SeekPercent" Type="Real64" Value="100">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{22EB025C-A0DB-4CEF-9BD0-358D6A1FA9D9}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Text_LP" ID="{771FC281-913C-4705-8547-C78570ADF703}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Button_Hover" ID="{7341836E-7F69-4DF9-8FB3-F0F435B36D3F}">
+					<ChildrenList>
+						<Action Name="" ID="{1E7736AC-15C8-4165-A2B2-5D6F23DEC508}" ShortID="286134217">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Menu_Button_Hover" ID="{4F1F0574-6450-4147-B993-F0ED732DC45D}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Skip_Start" ID="{24CA2472-B159-4CB1-ACAE-ACF21E6DACD6}">
+					<ChildrenList>
+						<Action Name="" ID="{D11B28E9-4E59-442C-85A2-A17DA8FA40BE}" ShortID="679300255">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Skipping" ID="{2D8A46B6-2538-4E20-840E-A792944E5265}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6DE413AC-4892-4110-81C6-55695D1815EB}" ShortID="374029780">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.05"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Skip_LP" ID="{DBD8CA61-81B6-4515-8279-71247D3D118B}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B79220EC-310D-463B-A5FA-466B7FAE6417}" ShortID="784537312">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="36"/>
+								<Property Name="SeekPercent" Type="Real64" Value="100">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{549345DE-17D4-45BD-A475-53750401BC5D}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Skip_LP" ID="{DBD8CA61-81B6-4515-8279-71247D3D118B}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Text_End" ID="{86BBA7C1-1798-47AD-8DC4-EBDB3E157203}">
+					<ChildrenList>
+						<Action Name="" ID="{64A57109-A3BB-4365-9BEA-BB3E8E58D16E}" ShortID="325018622">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Text_LP" ID="{771FC281-913C-4705-8547-C78570ADF703}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_GoodAnswer" ID="{F6340B28-F815-4551-B908-B24E7410AD35}">
+					<ChildrenList>
+						<Action Name="" ID="{AA803F2A-11D4-4B4E-BF01-E14A1E794D58}" ShortID="589755111">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_GoodAnswer" ID="{4C0271BF-EFC1-4C5F-9A7D-35668D626F5E}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_VisualNovel_Skip_End" ID="{CA609210-E689-4872-9706-E4312B8FB2CB}">
+					<ChildrenList>
+						<Action Name="" ID="{89C7E28C-4AF7-40CA-B98D-205FE26E689E}" ShortID="75054417">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Normal" ID="{D053143D-8E8E-42B0-B9AC-A8AD43BAF94E}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{020F6E9F-D3C3-4C32-950E-5EFC8A51703A}" ShortID="351954324">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_VisualNovel_Skip_LP" ID="{DBD8CA61-81B6-4515-8279-71247D3D118B}" WorkUnitID="{74EBE80C-207D-4793-8917-CA6BB4611903}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

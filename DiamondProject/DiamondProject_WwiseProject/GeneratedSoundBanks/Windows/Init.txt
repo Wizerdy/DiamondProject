@@ -14,10 +14,12 @@ Switch	ID	Name	Switch Group			Notes
 	2512384458	Fall	SW_BossForm			
 	2965343494	Winter	SW_BossForm			
 	54442137	Leaf	SW_Pumpkid_DamageType			
+	186852181	Thunder	SW_Pumpkid_DamageType			
 	344481046	Ice	SW_Pumpkid_DamageType			
 	1098478123	ExploBush	SW_Pumpkid_DamageType			
 	2144363834	Rock	SW_Pumpkid_DamageType			
 	3322072369	Tree	SW_Pumpkid_DamageType			
+	3340296461	Basic	SW_Pumpkid_DamageType			
 	784127654	Null	SW_SwordCharge			
 	2510516222	Full	SW_SwordCharge			
 	3828622232	Charging	SW_SwordCharge			
@@ -30,6 +32,7 @@ Switch	ID	Name	Switch Group			Notes
 State Group	ID	Name			Wwise Object Path	Notes
 	1645386324	ST_Music			\SD\ST_Music	
 	1923804120	ST_GameMode			\SD\ST_GameMode	
+	3616794558	ST_Skip			\SD\ST_Skip	
 
 State	ID	Name	State Group			Notes
 	252776334	Boss_Neutral	ST_Music			
@@ -40,14 +43,19 @@ State	ID	Name	State Group			Notes
 	748895195	None	ST_GameMode			
 	984691642	Ingame	ST_GameMode			
 	2607556080	Menu	ST_GameMode			
+	748895195	None	ST_Skip			
+	1160234136	Normal	ST_Skip			
+	2160573204	Skipping	ST_Skip			
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	247557814	Foley			\SD\Master\Pumpkid\Foley	
 	670611050	Neutral			\SD\Master\Boss\Neutral	
 	1116398592	Hit			\SD\Master\Pumpkid\Hit	
 	1117531639	AMB			\SD\Master\AMB	
+	1222112018	UI_General			\SD\Master\UI\UI_General	
 	1551306167	UI			\SD\Master\UI	
 	1560169506	Boss			\SD\Master\Boss	
+	2082918604	UI_VisualNovel			\SD\Master\UI\UI_VisualNovel	
 	2454616260	Sword			\SD\Master\Pumpkid\Sword	
 	2512384458	Fall			\SD\Master\Boss\Fall	
 	2523406417	Crossbow			\SD\Master\Pumpkid\Crossbow	

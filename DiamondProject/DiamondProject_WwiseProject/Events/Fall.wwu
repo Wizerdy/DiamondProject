@@ -156,8 +156,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Boss_Fall_FallDash_Cast" ID="{1FAD2567-154E-47FF-AEE6-0FBA0AA525E3}"/>
-				<Event Name="Boss_Fall_LeafBoomerang_Cast" ID="{BAFF8E2E-A533-45E0-834C-2BC6367298C6}"/>
+				<Event Name="Boss_Fall_FallDash_Cast" ID="{1FAD2567-154E-47FF-AEE6-0FBA0AA525E3}">
+					<ChildrenList>
+						<Action Name="" ID="{EFD827A1-303D-4299-B1F3-85678F4397C9}" ShortID="26702833">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_FallDash_Cast" ID="{9F8876C1-9E8D-4659-A4C4-753E44E973BD}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Fall_LeafBoomerang_Cast" ID="{BAFF8E2E-A533-45E0-834C-2BC6367298C6}">
+					<ChildrenList>
+						<Action Name="" ID="{977C0BA4-5FC3-493D-AE9F-B45D548F4991}" ShortID="577404597">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafBoomerang_Cast" ID="{F75F4B25-61EE-42D9-A871-A2DE46808E30}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="Boss_Fall_Tree_Destroy" ID="{8851F568-2FF9-4505-81EC-C9900B47EFDD}">
 					<ChildrenList>
 						<Action Name="" ID="{B4DC03AC-9DEF-48E3-9ECF-414E6E1CE4D9}" ShortID="363823055">
@@ -169,7 +189,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Boss_Fall_Tree_Cast" ID="{544FCA39-00EE-4DFB-A37E-E30555F2471E}"/>
+				<Event Name="Boss_Fall_Tree_Cast" ID="{544FCA39-00EE-4DFB-A37E-E30555F2471E}">
+					<ChildrenList>
+						<Action Name="" ID="{567F550B-4B70-4920-AA29-3CC658DFC4ED}" ShortID="161922569">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_Tree_Cast" ID="{CAB296D8-DA1B-4E10-A342-8C96BB10C14F}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="Boss_Fall_LeafBeam_Stop" ID="{54E97B08-7A2C-4A93-B8B0-00FD18ACABC0}">
 					<ChildrenList>
 						<Action Name="" ID="{1FEE2A8B-5A9E-49A6-A346-9C95B765E201}" ShortID="179358453">
@@ -199,6 +229,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Boss_Fall_LeafBeam_LP" ID="{913BC5D4-DA11-4BAB-961D-F7B2F1E043F2}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Fall_LeafBeam_Cast" ID="{D4EFC664-83A2-464C-9752-932E4A50A8AA}">
+					<ChildrenList>
+						<Action Name="" ID="{2D177D32-285B-4007-B0AC-35DB46491E83}" ShortID="537620073">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafBeam_Cast" ID="{B7590DDB-7423-4DA6-9320-08D68762A267}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

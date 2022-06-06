@@ -23,6 +23,16 @@
 						<State Name="Visual_Novel" ID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="ST_Skip" ID="{35788C8D-4A07-4955-A013-A57DC9BA0294}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{8A344E71-5CAD-4EAD-885D-7295E2638619}"/>
+						<State Name="Skipping" ID="{2D8A46B6-2538-4E20-840E-A792944E5265}"/>
+						<State Name="Normal" ID="{D053143D-8E8E-42B0-B9AC-A8AD43BAF94E}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

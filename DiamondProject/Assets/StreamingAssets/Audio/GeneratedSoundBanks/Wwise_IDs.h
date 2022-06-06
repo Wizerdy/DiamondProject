@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID BOSS_FALL_FALLDASH_CAST = 2378231684U;
         static const AkUniqueID BOSS_FALL_FALLDASH_DASH = 2685031445U;
         static const AkUniqueID BOSS_FALL_FALLDASH_LEAF = 211307037U;
+        static const AkUniqueID BOSS_FALL_LEAFBEAM_CAST = 215878414U;
         static const AkUniqueID BOSS_FALL_LEAFBEAM_START = 403336105U;
         static const AkUniqueID BOSS_FALL_LEAFBEAM_STOP = 3231837379U;
         static const AkUniqueID BOSS_FALL_LEAFBOOMERANG_BACK = 560939783U;
@@ -31,24 +32,12 @@ namespace AK
         static const AkUniqueID BOSS_FORMCHANGE_NEUTRAL = 3651181119U;
         static const AkUniqueID BOSS_FORMCHANGE_WINTER = 4024294733U;
         static const AkUniqueID BOSS_HIT = 1142827732U;
-        static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_CAST = 1678198802U;
-        static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_CIRCLE_START = 2188436774U;
-        static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_CIRCLE_STOP = 2772210022U;
-        static const AkUniqueID BOSS_NEUTRAL_EXPLOBUSH_CAST = 1164125491U;
-        static const AkUniqueID BOSS_NEUTRAL_EXPLOBUSH_EXPLOSION = 1792841279U;
-        static const AkUniqueID BOSS_NEUTRAL_EXPLOBUSH_SUMMON = 738273803U;
-        static const AkUniqueID BOSS_NEUTRAL_LEAFBEAM_START = 3985863633U;
-        static const AkUniqueID BOSS_NEUTRAL_LEAFBEAM_STOP = 2794118091U;
         static const AkUniqueID BOSS_NEUTRAL_ROCKSPIKES = 2318093787U;
         static const AkUniqueID BOSS_NEUTRAL_ROCKSPIKES_CAST = 524303667U;
         static const AkUniqueID BOSS_NEUTRAL_THUNDER = 176032549U;
-        static const AkUniqueID BOSS_NEUTRAL_TREE_ATTACK = 1234898960U;
-        static const AkUniqueID BOSS_NEUTRAL_TREE_DESTROY = 2188453778U;
-        static const AkUniqueID BOSS_NEUTRAL_TREE_SUMMON = 2933364317U;
+        static const AkUniqueID BOSS_NEUTRAL_THUNDER_CAST = 3515543061U;
         static const AkUniqueID BOSS_WINTER_BULLETHELL_CAST = 937314502U;
         static const AkUniqueID BOSS_WINTER_BULLETHELL_CHARGE = 3333600911U;
-        static const AkUniqueID BOSS_WINTER_BULLETHELL_CIRCLE_START = 2077972986U;
-        static const AkUniqueID BOSS_WINTER_BULLETHELL_CIRCLE_STOP = 941681938U;
         static const AkUniqueID BOSS_WINTER_BULLETHELL_THROW_END = 1623747723U;
         static const AkUniqueID BOSS_WINTER_BULLETHELL_THROW_START = 3534530672U;
         static const AkUniqueID BOSS_WINTER_ICEHELL_CAST = 1090748127U;
@@ -58,22 +47,18 @@ namespace AK
         static const AkUniqueID BOSS_WINTER_ICEHELL_SCATTER_THROW = 3053666057U;
         static const AkUniqueID BOSS_WINTER_ICESPIKES = 3647852147U;
         static const AkUniqueID BOSS_WINTER_ICESPIKES_CAST = 599452203U;
-        static const AkUniqueID BOSS_WINTER_SNOWABSORPTION = 2356299211U;
-        static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_CAST = 2660008099U;
         static const AkUniqueID GAMESTART = 4058101365U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
-        static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_FULL = 335910461U;
+        static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_END = 3836879481U;
         static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_START = 219435418U;
-        static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_STOP = 2182664242U;
         static const AkUniqueID PUMPKID_CROSSBOW_OVERCHARGE_END = 3990897451U;
         static const AkUniqueID PUMPKID_CROSSBOW_OVERCHARGE_START = 3561453072U;
         static const AkUniqueID PUMPKID_CROSSBOW_SHOT = 2202228643U;
         static const AkUniqueID PUMPKID_DEATH = 2921680214U;
         static const AkUniqueID PUMPKID_FOOTSTEP = 504658162U;
         static const AkUniqueID PUMPKID_HIT = 906040055U;
-        static const AkUniqueID PUMPKID_SWORD_CHARGE_FULL = 953869206U;
+        static const AkUniqueID PUMPKID_SWORD_CHARGE_END = 879795484U;
         static const AkUniqueID PUMPKID_SWORD_CHARGE_START = 455128255U;
-        static const AkUniqueID PUMPKID_SWORD_CHARGE_STOP = 1300717317U;
         static const AkUniqueID PUMPKID_SWORD_SLASH = 971183997U;
         static const AkUniqueID SET_STATE_NEUTRAL = 1170226945U;
         static const AkUniqueID UI_MENU_BUTTON_BACK = 4197357760U;
@@ -92,10 +77,10 @@ namespace AK
         static const AkUniqueID UI_VISUALNOVEL_PASS = 1724120604U;
         static const AkUniqueID UI_VISUALNOVEL_PROGRESSION = 2647056812U;
         static const AkUniqueID UI_VISUALNOVEL_QUESTION = 4105431731U;
+        static const AkUniqueID UI_VISUALNOVEL_SKIP_END = 2903156016U;
         static const AkUniqueID UI_VISUALNOVEL_SKIP_START = 1225793227U;
-        static const AkUniqueID UI_VISUALNOVEL_SKIP_STOP = 3260107369U;
+        static const AkUniqueID UI_VISUALNOVEL_TEXT_END = 4040312716U;
         static const AkUniqueID UI_VISUALNOVEL_TEXT_START = 570456047U;
-        static const AkUniqueID UI_VISUALNOVEL_TEXT_STOP = 2910950389U;
         static const AkUniqueID UI_VISUALNOVEL_WRONGANSWER = 2365488276U;
     } // namespace EVENTS
 
@@ -126,6 +111,18 @@ namespace AK
                 static const AkUniqueID VISUAL_NOVEL = 1244431682U;
             } // namespace STATE
         } // namespace ST_MUSIC
+
+        namespace ST_SKIP
+        {
+            static const AkUniqueID GROUP = 3616794558U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID NORMAL = 1160234136U;
+                static const AkUniqueID SKIPPING = 2160573204U;
+            } // namespace STATE
+        } // namespace ST_SKIP
 
     } // namespace STATES
 
@@ -173,10 +170,12 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID BASIC = 3340296461U;
                 static const AkUniqueID EXPLOBUSH = 1098478123U;
                 static const AkUniqueID ICE = 344481046U;
                 static const AkUniqueID LEAF = 54442137U;
                 static const AkUniqueID ROCK = 2144363834U;
+                static const AkUniqueID THUNDER = 186852181U;
                 static const AkUniqueID TREE = 3322072369U;
             } // namespace SWITCH
         } // namespace SW_PUMPKID_DAMAGETYPE
@@ -239,6 +238,8 @@ namespace AK
         static const AkUniqueID PUMPKID = 2863832581U;
         static const AkUniqueID SWORD = 2454616260U;
         static const AkUniqueID UI = 1551306167U;
+        static const AkUniqueID UI_GENERAL = 1222112018U;
+        static const AkUniqueID UI_VISUALNOVEL = 2082918604U;
         static const AkUniqueID WINTER = 2965343494U;
     } // namespace BUSSES
 

@@ -39,25 +39,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Boss_Winter_SnowAbsorption" ID="{851930B4-BFA7-45B0-A65B-66701F94D619}">
-					<ChildrenList>
-						<Action Name="" ID="{F4C3AA5C-C7AA-4642-A6F3-AB685BC13C82}" ShortID="427565022">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="38"/>
-								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Boss_Winter_BulletHell_Circle_Stop" ID="{5DAD9723-2DEA-48CC-92F1-8505762CF3E4}"/>
-				<Event Name="Boss_Winter_BulletHell_Circle_Start" ID="{AD19A5E8-EA40-40F4-8F3F-48D34124BA47}"/>
-				<Event Name="Boss_Winter_SnowAbsorption_Cast" ID="{040CFA28-6576-4E76-B0BF-5A369E249CCE}"/>
 				<Event Name="Boss_Winter_IceSpikes" ID="{E2AAE3EF-419B-44EC-ACDB-463B349084A7}">
 					<ChildrenList>
 						<Action Name="" ID="{D8093F39-91A7-43F3-BE09-B5C43D702179}" ShortID="842616400">
@@ -69,7 +50,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Boss_Winter_IceSpikes_Cast" ID="{BFB63721-E1AF-4B0A-87F0-AED7F42CA935}"/>
+				<Event Name="Boss_Winter_IceSpikes_Cast" ID="{BFB63721-E1AF-4B0A-87F0-AED7F42CA935}">
+					<ChildrenList>
+						<Action Name="" ID="{15BA3991-0B81-4D51-85CD-09652638D8C6}" ShortID="477413190">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Winter_IceSpikes_Cast" ID="{4D829797-8B20-442C-B2DC-D03EDE30F0F2}" WorkUnitID="{B803E388-5F0F-4816-B66E-27C30DA27389}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="Boss_Winter_IceHell_Focus_Throw" ID="{8DD15F2F-A882-4A42-BE8B-887D6B4F2665}">
 					<ChildrenList>
 						<Action Name="" ID="{B1B634ED-CA49-4610-9DCC-92F5D120F6D3}" ShortID="157426272">
