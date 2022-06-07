@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{CDDF101E-A503-4BEB-83B0-36A9F5F50823}" SchemaVersion="103" RootDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" ParentDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}">
+	<Events>
+		<WorkUnit Name="AMB" ID="{CDDF101E-A503-4BEB-83B0-36A9F5F50823}" OwnerID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="15"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="AMB_Arena" ID="{EC38944D-591B-4376-8C04-DC880E3FF575}">
+					<ChildrenList>
+						<Action Name="" ID="{188B10E0-AFD0-49D6-94FB-2DFC83C034A7}" ShortID="12951387">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_Season" ID="{642A0E33-9D8D-4505-98FA-C07EDBDB36BE}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{24EFE937-653E-4F53-BCB6-2AA7A26DDC74}" ShortID="1068210571">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_VisualNovel_LP" ID="{CD0F7A07-2648-4D2E-98F4-215633DFA8EB}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="AMB_VisualNovel" ID="{C75416CD-0ED1-40EF-ADBF-B4B8E035FE99}">
+					<ChildrenList>
+						<Action Name="" ID="{01AA0751-084E-4ADC-A457-F54862278027}" ShortID="810898495">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_VisualNovel_LP" ID="{CD0F7A07-2648-4D2E-98F4-215633DFA8EB}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9764ED2A-1E51-4ABC-B3DA-5A2D25EF601F}" ShortID="964661661">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_Season" ID="{642A0E33-9D8D-4505-98FA-C07EDBDB36BE}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="GameStart" ID="{6E44A03B-9547-491E-8BC9-01EA8AFFDFAB}">
+					<ChildrenList>
+						<Action Name="" ID="{EE6F3D46-A6EC-4CFB-85E8-1927528B7D13}" ShortID="50897868">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{AF01F299-ECE4-4A47-A112-FDB1620EE2E8}" ShortID="634628892">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{97EEDFB7-532E-4339-8AC1-1D349F6BD7E1}" ShortID="837698242">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{9CB63F6D-7A5D-4005-80DF-C1F0E6E43D6A}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

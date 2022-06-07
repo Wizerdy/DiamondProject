@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{CFA18F2A-78BD-44E7-8377-A21DFA4150C2}" SchemaVersion="103" RootDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" ParentDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}">
+	<Events>
+		<WorkUnit Name="Music" ID="{CFA18F2A-78BD-44E7-8377-A21DFA4150C2}" OwnerID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="13"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_Music" ID="{809CD040-7BE0-407B-A8F9-48C3D9CE1F4C}">
+					<ChildrenList>
+						<Action Name="" ID="{A9D9091B-0CAA-46C5-BBCD-E9C210B590F4}" ShortID="191584703">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{9CB63F6D-7A5D-4005-80DF-C1F0E6E43D6A}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Set_State_Neutral" ID="{7CCC43BB-A228-4ACB-A450-9C5855F73D48}">
+					<ChildrenList>
+						<Action Name="" ID="{C4BD8AEC-EB69-46F2-91B1-381275560D3F}" ShortID="88307135">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

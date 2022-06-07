@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{479247C9-D230-40C0-A45C-F0F180BE319B}" SchemaVersion="103">
+	<GameParameters>
+		<WorkUnit Name="SD" ID="{479247C9-D230-40C0-A45C-F0F180BE319B}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="3"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<GameParameter Name="RTPC_WeaponType" ID="{AD571BFF-B53F-4690-8FD3-0BF31CF3A8E8}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="6"/>
+						<Property Name="Max" Type="Real64" Value="6"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_Pumpkid_Speed" ID="{BCB8007F-2341-4562-AB3E-736EA57E7B50}"/>
+				<GameParameter Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="4"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_BossForm_Slow" ID="{0C47CED9-C68B-412E-9A6C-9EEEFF57A999}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="4"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="1"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_CrossbowCharge" ID="{E2B49877-70F4-430C-9C06-62154265E570}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_SwordCharge" ID="{1610341F-5917-4EFA-8260-02D5E6F7404C}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

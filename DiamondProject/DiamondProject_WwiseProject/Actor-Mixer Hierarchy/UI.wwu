@@ -1,0 +1,1903 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{74EBE80C-207D-4793-8917-CA6BB4611903}" SchemaVersion="103" RootDocumentID="{6D1F77A3-DCC8-4815-926D-36B821AE11B9}" ParentDocumentID="{6D1F77A3-DCC8-4815-926D-36B821AE11B9}">
+	<AudioObjects>
+		<WorkUnit Name="UI" ID="{74EBE80C-207D-4793-8917-CA6BB4611903}" OwnerID="{6D1F77A3-DCC8-4815-926D-36B821AE11B9}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="19"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="UI_General" ID="{BE987FB2-88C8-4AAE-BB59-00B7E3708F53}" ShortID="701880520">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="UI_Menu_Button_Back" ID="{FD88FBAD-220C-4977-A567-220750DF5E1D}" ShortID="1059239971">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2EC67757-AAE3-4911-9288-EF18F9A53281}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-22</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_Menu_Button_Back_02" ID="{D6DE454C-D22F-49B9-B6FF-5346B4C4261B}" ShortID="1054954167">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Back_02" ID="{439C51FB-01F9-42F7-B438-C2377B900A15}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Back_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1006023304"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Back_02" ID="{439C51FB-01F9-42F7-B438-C2377B900A15}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Back_01" ID="{67CAF0EA-3A3A-4F90-A114-8CCF6A703800}" ShortID="307002971">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Back_01" ID="{72F60232-483B-41B4-8E73-687F8A993656}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Back_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="202138746"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Back_01" ID="{72F60232-483B-41B4-8E73-687F8A993656}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_Menu_Button_Confirm" ID="{6FBBE533-DEF9-48E3-B5D5-76103BF4A154}" ShortID="111628979">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A2CD4E4F-EFA8-4D0D-89E4-05F5EAE56103}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-16</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_Menu_Button_Confirm_01" ID="{BEC1C514-AD16-4B8D-AFBE-957B10C6333C}" ShortID="739121899">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Confirm_01" ID="{971C673A-09BB-42CC-9DF4-55F5E58B4A76}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Confirm_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="564508933"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Confirm_01" ID="{971C673A-09BB-42CC-9DF4-55F5E58B4A76}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Confirm_02" ID="{3D9D0956-8E0C-43D4-9A7F-68CBF15EEAA9}" ShortID="438480686">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Confirm_02" ID="{1F87FC12-BA1E-4C64-BB8F-EA2BCD312B46}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Confirm_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="595480994"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Confirm_02" ID="{1F87FC12-BA1E-4C64-BB8F-EA2BCD312B46}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Confirm_03" ID="{53232FF3-CD75-4D61-B299-D23F002D3339}" ShortID="55406759">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Confirm_03" ID="{01E4A975-74B9-4489-B53E-E52EF087A618}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Confirm_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="755665230"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Confirm_03" ID="{01E4A975-74B9-4489-B53E-E52EF087A618}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_Menu_Open" ID="{019E8BB5-FCF2-49F2-8742-6DFCEC3AFD26}" ShortID="814923997">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{508D6473-844A-46B9-8F8F-869295D4116A}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_Menu_Open" ID="{FB5936B8-8C2F-48E6-91CB-E085200EFC16}" ShortID="24631541">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Open" ID="{3B81EA98-A0A2-4E80-9DDF-3EF3750B64F2}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Open.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="587697138"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Open" ID="{3B81EA98-A0A2-4E80-9DDF-3EF3750B64F2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_Menu_Close" ID="{B22C1D1E-1F21-41C9-B2B0-B008DA760BBC}" ShortID="796181966">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{77A71936-C35A-4668-8711-C71D2ACE4A69}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-16</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_Menu_Close" ID="{4BBE3001-3CAC-4C7E-AFDF-AAE3D303E6E9}" ShortID="695384911">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Close" ID="{7EF7ED47-26FA-429D-B1C7-6074B313EE1E}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Close.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="673124329"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Close" ID="{7EF7ED47-26FA-429D-B1C7-6074B313EE1E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_Menu_Button_Hover" ID="{4F1F0574-6450-4147-B993-F0ED732DC45D}" ShortID="13642747">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B33FFBE8-1D1C-4AB4-815A-4F495F8E305A}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-32</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_Menu_Button_Hover_04" ID="{6CB40635-5FE5-4F35-BCD9-BC6D906EF573}" ShortID="298088099">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_04" ID="{A4DCEA78-1F0E-4D07-BC5D-1600613AF5E0}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="495008831"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_04" ID="{A4DCEA78-1F0E-4D07-BC5D-1600613AF5E0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_01" ID="{FAB6BE7C-5CB6-40A7-B432-427255957BBD}" ShortID="534462181">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_01" ID="{ADE26461-974D-4EBD-BEF3-42B3462CB88F}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="988094646"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_01" ID="{ADE26461-974D-4EBD-BEF3-42B3462CB88F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_02" ID="{8C92BFF0-05AE-4194-8E8A-B8A82FE36059}" ShortID="464157835">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_02" ID="{0A7222A7-E2E5-4AD1-A6A7-48758580BF17}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="581326598"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_02" ID="{0A7222A7-E2E5-4AD1-A6A7-48758580BF17}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_12" ID="{0F6CDC65-411D-4BCB-B4C7-1E5F89901915}" ShortID="303190133">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_12" ID="{2F3C19B9-730B-4F08-86B6-B0CCAF74E9C8}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_12.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="651338625"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_12" ID="{2F3C19B9-730B-4F08-86B6-B0CCAF74E9C8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_03" ID="{E0A6973A-E67C-4C76-B47E-84E6E2FF9E2A}" ShortID="104204808">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_03" ID="{93ACCBDD-B1E4-46F9-B079-5B346C4CB1B8}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="155483028"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_03" ID="{93ACCBDD-B1E4-46F9-B079-5B346C4CB1B8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_06" ID="{3D9D732C-E25B-43FA-9E10-DE7987F88E49}" ShortID="188730789">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_06" ID="{12A94E74-BF54-451E-A977-5B64420A5558}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="107277466"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_06" ID="{12A94E74-BF54-451E-A977-5B64420A5558}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_07" ID="{39AC75D9-1062-4557-8D4F-7BD25EF8DDA6}" ShortID="620211732">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_07" ID="{61B29888-30EA-46A6-B21D-08D48286EB19}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="908734787"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_07" ID="{61B29888-30EA-46A6-B21D-08D48286EB19}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_10" ID="{7B3D0D83-D9AB-4937-AA50-8FDEF09D6269}" ShortID="123561460">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_10" ID="{D677D2E2-2ED9-4B3B-BF5E-EF45AF18E27B}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_10.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="245732919"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_10" ID="{D677D2E2-2ED9-4B3B-BF5E-EF45AF18E27B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_11" ID="{89B833A7-6252-4C6F-9E23-DC56EEB485D7}" ShortID="6293493">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_11" ID="{10DA80B7-4572-4917-879B-91E7F8F9C5CD}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_11.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="646859943"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_11" ID="{10DA80B7-4572-4917-879B-91E7F8F9C5CD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_05" ID="{B1C0E3CF-6D3C-41AB-9051-AF93F83024B4}" ShortID="114703317">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_05" ID="{32EFDCC0-70DF-42BF-A9AC-111377493D26}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="610144954"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_05" ID="{32EFDCC0-70DF-42BF-A9AC-111377493D26}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_09" ID="{CBADC513-91ED-443B-ABBB-3DF46026470E}" ShortID="363480280">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_09" ID="{C2520068-17BD-4164-9C00-8C400A457E2E}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_09.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="197367375"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_09" ID="{C2520068-17BD-4164-9C00-8C400A457E2E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Button_Hover_08" ID="{B96AF9C1-912E-4545-81AA-4EC93A8EA30A}" ShortID="147041724">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Button_Hover_08" ID="{343F90DB-5E5A-474E-BA24-0F627D4729DF}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Button_Hover_08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="37753733"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Button_Hover_08" ID="{343F90DB-5E5A-474E-BA24-0F627D4729DF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_Transition_ToVisualNovel" ID="{B4E0E610-B847-4A86-9C2E-E0ECB6240043}" ShortID="245764421">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{F1D45E2C-C565-4C01-AB15-6B66B3B88378}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_Transition_ToVisualNovel_01" ID="{96C3A7E5-CD67-41A7-9D79-A3D7C8AD5367}" ShortID="364545664">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Transition_ToVisualNovel_01" ID="{901CF970-34DF-4A13-BC49-7C9C9DDFCC90}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Transition_ToVisualNovel_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="150680571"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Transition_ToVisualNovel_01" ID="{901CF970-34DF-4A13-BC49-7C9C9DDFCC90}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Transition_ToVisualNovel_02" ID="{5495E923-16FB-4F0A-A73F-A48AFA56B0FC}" ShortID="376707285">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Transition_ToVisualNovel_02" ID="{1E6E27D3-1F09-4C7E-A61B-5790AC5B7C47}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Transition_ToVisualNovel_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="198574449"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Transition_ToVisualNovel_02" ID="{1E6E27D3-1F09-4C7E-A61B-5790AC5B7C47}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Transition_ToVisualNovel_03" ID="{8DD631BB-A41D-4F02-938A-F88CEDA78596}" ShortID="714150728">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Transition_ToVisualNovel_03" ID="{1FAEE9AF-50B8-47AE-9A2B-77EC20FD803D}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Transition_ToVisualNovel_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="511088004"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Transition_ToVisualNovel_03" ID="{1FAEE9AF-50B8-47AE-9A2B-77EC20FD803D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Transition_ToVisualNovel_04" ID="{B8DD5993-E83B-409A-BF0C-80FDB86A5E2C}" ShortID="395830749">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Transition_ToVisualNovel_04" ID="{F94CC073-E51C-4D12-A72B-1C25506831D1}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Transition_ToVisualNovel_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="903069355"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Transition_ToVisualNovel_04" ID="{F94CC073-E51C-4D12-A72B-1C25506831D1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_Transition_ToArena" ID="{4822DF8F-7230-4BE5-9977-270DFEE655CC}" ShortID="909508897">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{CEED9EC4-D53F-4FA4-ADA4-7D01478E5966}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_Transition_ToArena_01" ID="{56EA73C7-E348-4F30-A72E-A4E764722CF2}" ShortID="590783869">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Transition_ToArena_01" ID="{064CFB78-090E-4993-A36E-94DB3EF36497}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Transition_ToArena_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="614126307"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Transition_ToArena_01" ID="{064CFB78-090E-4993-A36E-94DB3EF36497}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Transition_ToArena_02" ID="{A61F8622-4499-4A48-BBC0-3D834272F0AA}" ShortID="199601505">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Transition_ToArena_02" ID="{9E2DAE13-17E7-45CA-8B56-B459851E90BB}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Transition_ToArena_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="490779034"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Transition_ToArena_02" ID="{9E2DAE13-17E7-45CA-8B56-B459851E90BB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Transition_ToArena_03" ID="{913E31C3-66AF-4826-9436-3DC78BA5EFE7}" ShortID="668907065">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_General" ID="{51044725-F7E5-4025-8667-BB6AA80A1779}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Transition_ToArena_03" ID="{99F82950-986A-4389-AC12-06FB29DA555A}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Transition_ToArena_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="310190414"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Transition_ToArena_03" ID="{99F82950-986A-4389-AC12-06FB29DA555A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+				<ActorMixer Name="UI_VisualNovel" ID="{CA4A31B6-75A9-47F6-890A-CC82AE6094AE}" ShortID="328950273">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="UI_VisualNovel_Book_Close" ID="{63BE22F9-A3D5-4B1E-A471-60430E06C95B}" ShortID="237332819">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{68A9BA00-471D-408E-91AF-CE290BC1FC24}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="7"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_VisualNovel_Book_Close_01" ID="{C7ED3C25-EC97-47E7-B015-311F4E210964}" ShortID="684798474">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Close_01" ID="{75591B11-9CF1-4449-824E-26793E2BC435}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Close_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="854483258"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Close_01" ID="{75591B11-9CF1-4449-824E-26793E2BC435}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Close_02" ID="{CDE16F60-4E4D-49B3-BB68-CA86868DBDF7}" ShortID="1073292167">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Close_02" ID="{79F712D4-839A-49E8-95A5-5678F8F771AD}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Close_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="936418326"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Close_02" ID="{79F712D4-839A-49E8-95A5-5678F8F771AD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Close_03" ID="{565FF777-94BB-4D20-AA37-B25C07B74F37}" ShortID="507288688">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Close_03" ID="{6DA43AC4-C1EB-49FD-8C28-CE9444AE225B}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Close_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="570921323"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Close_03" ID="{6DA43AC4-C1EB-49FD-8C28-CE9444AE225B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Close_04" ID="{25A9316C-6181-425B-B961-AF3191F6EB0A}" ShortID="651149773">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Close_04" ID="{3AFFD5ED-598C-4529-85E9-C55859C01842}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Close_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="335095342"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Close_04" ID="{3AFFD5ED-598C-4529-85E9-C55859C01842}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Close_05" ID="{7BF692E2-AF68-4124-9851-450874645061}" ShortID="506813743">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Close_05" ID="{DE837314-8CA2-405F-BB05-BD52DC3AAC4E}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Close_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="340463971"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Close_05" ID="{DE837314-8CA2-405F-BB05-BD52DC3AAC4E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Close_06" ID="{9BF2F80E-58FC-4100-B269-66D0B26B1F40}" ShortID="555243067">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Close_06" ID="{004E230E-B900-4EE4-AAC4-CFF7145F80DD}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Close_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="121256142"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Close_06" ID="{004E230E-B900-4EE4-AAC4-CFF7145F80DD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Close_07" ID="{1AA4568D-AAE2-4836-8A33-20DF11866FE2}" ShortID="506554490">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Close_07" ID="{D57FF8DE-5F94-478A-B77E-0720203FC828}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Close_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="813261721"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Close_07" ID="{D57FF8DE-5F94-478A-B77E-0720203FC828}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Close_08" ID="{6C623992-3A77-427F-9B68-797946F8EFEF}" ShortID="378137834">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Close_08" ID="{5E976CBA-F90C-4EAF-BB1C-275E0C068B72}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Close_08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1007968195"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Close_08" ID="{5E976CBA-F90C-4EAF-BB1C-275E0C068B72}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Close_09" ID="{12383F79-8316-42F6-8E32-09E2B3A2F865}" ShortID="395035228">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Close_09" ID="{2D3D53AA-2801-4421-975A-69460E51D0F4}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Close_09.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="532032661"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Close_09" ID="{2D3D53AA-2801-4421-975A-69460E51D0F4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_VisualNovel_Book_Open" ID="{A4549A68-F2AE-4DA3-BEE6-2D0CA3098AB0}" ShortID="477948262">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1E11BB82-60D9-462D-A035-D55102EEFA4F}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="7"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_VisualNovel_Book_Open_01" ID="{CA270424-E5D6-4514-927D-007D3E7F0A59}" ShortID="41468375">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Open_01" ID="{CC42D6B9-B056-47E6-A176-8CFFD5CA5A63}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Open_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="302685466"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Open_01" ID="{CC42D6B9-B056-47E6-A176-8CFFD5CA5A63}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Open_02" ID="{37A0D43C-3C5C-4908-81FF-E0A294D76366}" ShortID="845885244">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Open_02" ID="{0B35220F-D4AF-4570-804B-3D1306A96911}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Open_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="503186176"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Open_02" ID="{0B35220F-D4AF-4570-804B-3D1306A96911}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Open_03" ID="{3E9066E0-7A72-4653-B55C-D4C42223A711}" ShortID="31174145">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Open_03" ID="{94D969A2-1860-411B-913A-AA6BDA54D65A}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Open_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="204741038"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Open_03" ID="{94D969A2-1860-411B-913A-AA6BDA54D65A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Open_04" ID="{FDC36B7E-B1CC-46FC-8B09-AC86F3630B76}" ShortID="372985151">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Open_04" ID="{3D466425-D550-4EE7-9B2E-A3F8E39ACE4F}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Open_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="562086199"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Open_04" ID="{3D466425-D550-4EE7-9B2E-A3F8E39ACE4F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Open_05" ID="{0642EC6D-5B91-4664-8DEE-70DC4A673EDA}" ShortID="406001605">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Open_05" ID="{BA9F2763-4ED3-4CB2-ACC1-A3CCB81FA36F}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Open_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="651841357"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Open_05" ID="{BA9F2763-4ED3-4CB2-ACC1-A3CCB81FA36F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Open_06" ID="{876431DF-ADE2-4D00-874E-D10648092EDA}" ShortID="429645564">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Open_06" ID="{F2A403C3-BE89-401D-A90A-F399A4C3EEC6}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Open_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="821197284"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Open_06" ID="{F2A403C3-BE89-401D-A90A-F399A4C3EEC6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Open_07" ID="{08690B22-8D3E-4837-AC7A-D2C4806BD548}" ShortID="978362697">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Open_07" ID="{9D029927-B6CD-4AFF-8CA6-B275980FF7F9}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Open_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="560456463"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Open_07" ID="{9D029927-B6CD-4AFF-8CA6-B275980FF7F9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Open_08" ID="{22BF829F-039E-4AA2-975B-EA61B35FDE4E}" ShortID="1026248829">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Open_08" ID="{08120A36-3125-4501-8778-F6176B850E81}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Open_08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="16963911"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Open_08" ID="{08120A36-3125-4501-8778-F6176B850E81}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_Open_09" ID="{0ED45AD9-965A-47D7-871C-D731C4C5BFA1}" ShortID="888411204">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_Open_09" ID="{0F727120-961D-4F85-953D-95C8D6CA3882}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_Open_09.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="758968093"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_Open_09" ID="{0F727120-961D-4F85-953D-95C8D6CA3882}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_VisualNovel_Book_TurnPage" ID="{F83627F1-8CA3-47A7-B646-856201773290}" ShortID="869127575">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{449114DE-8540-4C04-AF11-B67223A6A8EB}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_VisualNovel_Book_TurnPage_01" ID="{98F42938-CB30-4892-AFEE-F4D25EE07C49}" ShortID="327505682">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_TurnPage_01" ID="{DB7D4CB9-C2A8-4BD6-B6BA-4E480236EC57}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_TurnPage_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="943391169"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_TurnPage_01" ID="{DB7D4CB9-C2A8-4BD6-B6BA-4E480236EC57}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_TurnPage_02" ID="{4EB13290-40F9-4B84-9E3D-73E391CAE540}" ShortID="698502253">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_TurnPage_02" ID="{CA1095AD-6208-4ADE-ADAB-53EC093CC982}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_TurnPage_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="321855095"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_TurnPage_02" ID="{CA1095AD-6208-4ADE-ADAB-53EC093CC982}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_TurnPage_03" ID="{6FDC3C78-CE88-4888-8A95-5393C2E03FBD}" ShortID="843635093">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_TurnPage_03" ID="{BE05DE96-B586-4233-8D1B-89D4EFF36A2D}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_TurnPage_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="394228327"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_TurnPage_03" ID="{BE05DE96-B586-4233-8D1B-89D4EFF36A2D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_TurnPage_04" ID="{C03BE085-4913-4272-8F82-596F514A5EA1}" ShortID="602518214">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_TurnPage_04" ID="{47700D70-11C6-4E24-AA75-F29B9CCC9761}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_TurnPage_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="681689917"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_TurnPage_04" ID="{47700D70-11C6-4E24-AA75-F29B9CCC9761}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_TurnPage_05" ID="{24E09E96-0ACB-480F-9AA4-81426B877FB9}" ShortID="247311748">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_TurnPage_05" ID="{B56A100A-E933-4C0F-B131-A2538EBF8476}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_TurnPage_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="215822360"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_TurnPage_05" ID="{B56A100A-E933-4C0F-B131-A2538EBF8476}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_TurnPage_06" ID="{FDC9AE1A-85F5-4577-85ED-6029DA96758A}" ShortID="865397269">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_TurnPage_06" ID="{82A06C82-062E-4974-9C6B-F1EF3D5C6669}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_TurnPage_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="930782740"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_TurnPage_06" ID="{82A06C82-062E-4974-9C6B-F1EF3D5C6669}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Book_TurnPage_07" ID="{CD154FC2-B24B-49BE-B7F1-23ACBCA69820}" ShortID="591739771">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Book_TurnPage_07" ID="{213391D1-78CF-4A2F-9F4E-403CA23CBA6C}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Book_TurnPage_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="999594410"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Book_TurnPage_07" ID="{213391D1-78CF-4A2F-9F4E-403CA23CBA6C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_VisualNovel_Norna_Eats" ID="{8E1B6FB8-9DFB-4A2D-B204-93884F1A42CE}" ShortID="634559801">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{97E725C0-08F2-47D9-9F96-8E9452A90697}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_VisualNovel_Norna_Eats_01" ID="{5DB4C54D-4455-4F3E-A017-D617CBADF4DB}" ShortID="707064455">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Norna_Eats_01" ID="{2838120B-1586-4239-A3C3-CBF7F655E26E}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Norna_Eats_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1060698846"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Norna_Eats_01" ID="{2838120B-1586-4239-A3C3-CBF7F655E26E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Norna_Eats_02" ID="{4A5EA69C-90A7-4BC4-A8E5-CE06DD2A9CC2}" ShortID="545475836">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Norna_Eats_02" ID="{47E4F812-B0D8-4581-80CE-8E9B3FEE778D}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Norna_Eats_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="436934808"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Norna_Eats_02" ID="{47E4F812-B0D8-4581-80CE-8E9B3FEE778D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Norna_Eats_03" ID="{2D2B0181-AD1E-49BE-9921-1BF2927D500E}" ShortID="624271142">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Norna_Eats_03" ID="{244183CE-3EBD-44C0-9E34-D7673E10C944}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Norna_Eats_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="725253936"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Norna_Eats_03" ID="{244183CE-3EBD-44C0-9E34-D7673E10C944}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Norna_Eats_04" ID="{E51976E6-C9F4-4BBA-99F3-D1E8BAED201B}" ShortID="588900631">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Norna_Eats_04" ID="{6264B466-F702-409F-9A2B-0278BD8F434A}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Norna_Eats_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="595213133"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Norna_Eats_04" ID="{6264B466-F702-409F-9A2B-0278BD8F434A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Norna_Eats_05" ID="{6291477C-2D01-4691-908C-1EA572E414EE}" ShortID="141304161">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Norna_Eats_05" ID="{1C61393B-450A-4A2B-B2D2-42EF57D197E6}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Norna_Eats_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="156707790"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Norna_Eats_05" ID="{1C61393B-450A-4A2B-B2D2-42EF57D197E6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Norna_Eats_06" ID="{502F857A-57EF-4FED-91AE-DEB1B9C42977}" ShortID="457073009">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Norna_Eats_06" ID="{E5EAE085-4FE6-41A1-B152-EF96CEC59E31}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Norna_Eats_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="258639454"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Norna_Eats_06" ID="{E5EAE085-4FE6-41A1-B152-EF96CEC59E31}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<Sound Name="UI_VisualNovel_Skip_LP" ID="{DBD8CA61-81B6-4515-8279-71247D3D118B}" ShortID="879590045">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-19</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_VisualNovel_Skip_LP" ID="{682B7B27-66CD-4BF5-A1C6-36A871072E77}">
+									<Language>SFX</Language>
+									<AudioFile>UI_VisualNovel_Skip_LP.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="716842537"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_VisualNovel_Skip_LP" ID="{682B7B27-66CD-4BF5-A1C6-36A871072E77}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UI_VisualNovel_Text_LP" ID="{771FC281-913C-4705-8547-C78570ADF703}" ShortID="291544358">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_VisualNovel_Text_LP" ID="{1CFD9150-ABA7-4283-B69F-35ED664FF7B2}">
+									<Language>SFX</Language>
+									<AudioFile>UI_VisualNovel_Text_LP.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1011675829"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="ST_Skip" ID="{35788C8D-4A07-4955-A013-A57DC9BA0294}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="Normal" ID="{D053143D-8E8E-42B0-B9AC-A8AD43BAF94E}"/>
+										<CustomState Name="" ID="{A6739060-A75A-471D-8F19-5AAB83FA3220}" ShortID="139173245"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Skipping" ID="{2D8A46B6-2538-4E20-840E-A792944E5265}"/>
+										<CustomState Name="" ID="{0F7D0569-4030-4FC3-9C29-23CACAD06524}" ShortID="1016978126">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16" Value="36"/>
+												<Property Name="Pitch" Type="int32" Value="500"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_VisualNovel_Text_LP" ID="{1CFD9150-ABA7-4283-B69F-35ED664FF7B2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="UI_VisualNovel_Pass" ID="{3D8FAE37-3198-4CC5-8A2E-0626A53B4D29}" ShortID="696050965">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_VisualNovel_Progression" ID="{FF15EC5B-0BE0-452D-A7B5-BAD577985A29}" ShortID="630317015">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_VisualNovel_Question" ID="{95ECC7C1-B99B-47A2-8FCA-AFA10C98A437}" ShortID="300490356">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_VisualNovel_GoodAnswer" ID="{4C0271BF-EFC1-4C5F-9A7D-35668D626F5E}" ShortID="98988103">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_VisualNovel_WrongAnswer" ID="{47E0B886-B64F-452E-8BF4-4DAF132DCA7E}" ShortID="108832141">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_VisualNovel_Button_Hover" ID="{B43C9B83-2DD4-49D5-8A6C-7862E0B7148D}" ShortID="109985736">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="UI_VisualNovel" ID="{A6A5B7EC-7848-4B93-9FFE-1CB1DF849563}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
