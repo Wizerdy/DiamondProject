@@ -8,6 +8,7 @@ public class SnowAbsorption : BaseAttack {
     //[SerializeField] private int numberOfShardToRemoveInCircle = 5;
     [SerializeField] private int numberOfCircleToSpawn = 10;
     [SerializeField] private float circleSpawnRatePerSecond = 1f;
+    [SerializeField] private float delayBeforeLaunch = 1f;
     //[SerializeField] private float circleRadius = 15f;
     //[SerializeField] private float circleSpawnRangeRadius = 150f;
 
@@ -84,7 +85,7 @@ public class SnowAbsorption : BaseAttack {
         float circlesSpawnRate = 0;
         int wavesSpawned = 0;
         circleRotation = Random.Range(0, 360);
-
+        yield return new WaitForSeconds(delayBeforeLaunch);
         while (wavesSpawned < numberOfCircleToSpawn) {
             circlesSpawnRate -= Time.deltaTime;
             if (circlesSpawnRate <= 0) {
