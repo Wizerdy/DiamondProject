@@ -81,7 +81,29 @@
 						<Action Name="" ID="{DB9AAEC9-4BCB-47AA-B6CF-159618B5E2B8}" ShortID="889410844">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Boss_Fall_LeafBoomerang_Grow" ID="{E45320EE-D5E8-47D3-B3B3-EEF27D728600}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+									<ObjectRef Name="Boss_Fall_LeafBoomerang_Go_LP" ID="{53673296-0E37-42AF-91F4-FFCC382E67DD}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D81F1BB6-CD19-4557-AB23-1C0EB7F8DA69}" ShortID="442665216">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="36"/>
+								<Property Name="SeekPercent" Type="Real64" Value="100">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{41A6E630-CF7E-4A88-BDC9-A46D289C76B0}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafBoomerang_Go_LP" ID="{53673296-0E37-42AF-91F4-FFCC382E67DD}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -104,7 +126,17 @@
 						<Action Name="" ID="{5EBE2133-B750-4CF2-9230-518C369B5E73}" ShortID="818570920">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Boss_Fall_LeafBoomerang_Move" ID="{7FF97611-3215-4F73-8A24-8E497F2E9989}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+									<ObjectRef Name="Boss_Fall_LeafBoomerang_Back" ID="{E45320EE-D5E8-47D3-B3B3-EEF27D728600}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{34A52957-3A52-4D63-ACDC-CD1C3EF32750}" ShortID="800195380">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafBoomerang_Go_LP" ID="{53673296-0E37-42AF-91F4-FFCC382E67DD}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -245,8 +277,53 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Boss_Fall_LeafShield_Start" ID="{CAB15FD4-D1CD-4BC3-A52A-8F9677C77B98}"/>
-				<Event Name="Boss_Fall_LeafShield_End" ID="{6FD53929-CFFC-48FA-B085-78EB13055066}"/>
+				<Event Name="Boss_Fall_LeafShield_Start" ID="{CAB15FD4-D1CD-4BC3-A52A-8F9677C77B98}">
+					<ChildrenList>
+						<Action Name="" ID="{4D1D5BF4-2E4B-4932-8949-5B5553AEC718}" ShortID="831982486">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafShield_LP" ID="{41D53774-2A47-483D-8F40-72B935F97445}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0BEEDDFD-A63E-4AFA-8B5D-6684DD46C71B}" ShortID="605916484">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="36"/>
+								<Property Name="SeekPercent" Type="Real64" Value="100">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{5B7732D7-42EE-4035-946E-EC94C905A22D}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafShield_LP" ID="{41D53774-2A47-483D-8F40-72B935F97445}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Fall_LeafShield_End" ID="{6FD53929-CFFC-48FA-B085-78EB13055066}">
+					<ChildrenList>
+						<Action Name="" ID="{E0E2A917-3DB7-457D-BA2A-915B9203482A}" ShortID="201042042">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_LeafShield_LP" ID="{41D53774-2A47-483D-8F40-72B935F97445}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
