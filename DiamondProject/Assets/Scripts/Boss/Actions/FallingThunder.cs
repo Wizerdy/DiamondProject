@@ -5,11 +5,12 @@ using UnityEngine;
 public class FallingThunder : MonoBehaviour {
     [Header("References")]
     [SerializeField] DamageHealth _damageHealth = null;
-    [SerializeField] VisualEffect _lightning = null;
-    
+    [SerializeField] VisualEffects _lightning = null;
+
     int _damage = 10;
 
-    private void Start() {
-        _lightning
-    }
+    //    private void Start() {
+    //        _lightning
+    //    }
+    //
 }

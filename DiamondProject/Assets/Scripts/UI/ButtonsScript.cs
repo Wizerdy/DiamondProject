@@ -9,7 +9,8 @@ public class ButtonsScript : MonoBehaviour {
    }
 
    public void ReloadScene() {
-        SceneManager.LoadScene(SceneManager.);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
    }
+
 
 }
