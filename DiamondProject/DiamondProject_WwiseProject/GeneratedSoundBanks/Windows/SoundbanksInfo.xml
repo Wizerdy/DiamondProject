@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
@@ -33,7 +33,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX">
+		<SoundBank Id="3161908922" Language="SFX" Hash="483436697">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -56,7 +56,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="4143580875">
+		<SoundBank Id="4056684167" Language="SFX" Hash="3644816142">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -170,6 +170,8 @@
 				<Event Id="560939783" Name="Boss_Fall_LeafBoomerang_Back" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Back" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2779939727" Name="Boss_Fall_LeafBoomerang_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Cast" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1047433676" Name="Boss_Fall_LeafBoomerang_Go" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafBoomerang_Go" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1464909380" Name="Boss_Fall_LeafShield_End" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafShield_End" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="464483319" Name="Boss_Fall_LeafShield_Start" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_LeafShield_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="284830977" Name="Boss_Fall_Tree_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Cast" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1992578794" Name="Boss_Fall_Tree_Destroy" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_Tree_Destroy" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.795309" DurationMax="0.870228">
 					<IncludedMemoryFiles>
@@ -1098,12 +1100,21 @@
 							<ShortName>Pumpkid_Music_Boss_Neutral_LP.wav</ShortName>
 							<Path>SFX\Pumpkid_Music_Boss_Neutral_LP_F2BF74AC.wem</Path>
 						</File>
+						<File Id="979463666" Language="SFX">
+							<ShortName>Pumpkid_Music_Boss_Winter_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Boss_Winter_LP_F2BF74AC.wem</Path>
+						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
 						<SwitchContainer SwitchValue="{D2667E05-EC4C-4758-9E51-D69AA3C24658}">
 							<Media>
 								<File Id="255063227"/>
 								<File Id="874425250"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{320F487F-3A5F-48B7-818E-10DC13BE27E1}">
+							<Media>
+								<File Id="979463666"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -1121,6 +1132,10 @@
 						<File Id="874425250" Language="SFX">
 							<ShortName>Pumpkid_Music_Boss_Neutral_LP.wav</ShortName>
 							<Path>SFX\Pumpkid_Music_Boss_Neutral_LP_F2BF74AC.wem</Path>
+						</File>
+						<File Id="979463666" Language="SFX">
+							<ShortName>Pumpkid_Music_Boss_Winter_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Boss_Winter_LP_F2BF74AC.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

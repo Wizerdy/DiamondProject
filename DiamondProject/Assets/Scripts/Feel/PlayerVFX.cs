@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
+using System;
 
 public class PlayerVFX : MonoBehaviour {
     [SerializeField] EntityMovement _eMovement;
     [SerializeField] EntityMeleeAttack _eMeleeAttack;
     [SerializeField] Health _eTempHealth;
     [SerializeField] EntityRangedAttack _eRangedAttack;
+    [SerializeField] EntityChargeAttack _eChargeAttack;
     [SerializeField] MMFeedbacks _acceleration;
     [SerializeField] MMFeedbacks _deceleration;
     [SerializeField] MMFeedbacks _meleeAttack;
@@ -29,8 +31,10 @@ public class PlayerVFX : MonoBehaviour {
         _eTempHealth.OnHit += PlayHitFeedback;
         _eTempHealth.OnDeath += PlayDeathFeedback;
         _eRangedAttack.OnAttack += PlayRangedAttackFeedback;
+        _eChargeAttack.OnCharging += PlayChargingAttackFeedback;
         //_eRangedAttack.OnHit += PlayRangedHitFeedback;
     }
+
 
     private void OnDestroy() {
         _eMovement.OnAcceleration -= PlayAccelerationFeedback;
@@ -42,6 +46,10 @@ public class PlayerVFX : MonoBehaviour {
         _eTempHealth.OnHit -= PlayHitFeedback;
         _eRangedAttack.OnAttack -= PlayRangedAttackFeedback;
         //_eRangedAttack.OnHit -= PlayRangedHitFeedback;
+    }
+
+    private void PlayChargingAttackFeedback(Vector2 direction) {
+        
     }
 
     private void PlayAccelerationFeedback(Vector2 direction) {

@@ -25,6 +25,8 @@ namespace AK
         static const AkUniqueID BOSS_FALL_LEAFBOOMERANG_BACK = 560939783U;
         static const AkUniqueID BOSS_FALL_LEAFBOOMERANG_CAST = 2779939727U;
         static const AkUniqueID BOSS_FALL_LEAFBOOMERANG_GO = 1047433676U;
+        static const AkUniqueID BOSS_FALL_LEAFSHIELD_END = 1464909380U;
+        static const AkUniqueID BOSS_FALL_LEAFSHIELD_START = 464483319U;
         static const AkUniqueID BOSS_FALL_TREE_CAST = 284830977U;
         static const AkUniqueID BOSS_FALL_TREE_DESTROY = 1992578794U;
         static const AkUniqueID BOSS_FALL_TREE_SUMMON = 3962528453U;
