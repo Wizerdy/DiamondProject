@@ -7,6 +7,7 @@ public class VNTrigger : ScriptableObject {
     public bool KnowFirstHintBoss = false;
     public bool KnowSecondHintBoss = false;
     public bool KnowFirstHintCharacter = false;
+    public int questionNumber = 0;
 
     public void ResetValue() {
         KnowFirstHintBoss = false;

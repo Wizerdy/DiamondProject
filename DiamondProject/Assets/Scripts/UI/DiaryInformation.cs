@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-enum hintType {
+public enum hintType {
     Trigger, Boss, Character
 }
 public class DiaryInformation : MonoBehaviour

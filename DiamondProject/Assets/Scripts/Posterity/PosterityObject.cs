@@ -11,6 +11,7 @@ public struct Hint {
     public bool alreadySawHint;
     public string defaultText;
     public string unlockedText;
+    public string quizzText;
 }
 
 [CreateAssetMenu(menuName = "PosterityObject")]
