@@ -10,6 +10,7 @@ public class EntityChargeRanged : MonoBehaviour {
     [SerializeField] Transform _entity = null;
     [SerializeField] Transform _attackParent = null;
     [SerializeField] Animator _attackAnimator = null;
+    [SerializeField] LayerMask _walls;
     [Header("Default values")]
     [SerializeField] float _bulletSpeed = 30f;
     [SerializeField] float _recoilDistance = 3f;
@@ -133,7 +134,7 @@ public class EntityChargeRanged : MonoBehaviour {
             distance = _recoilOverTime.Evaluate(percentage) * _recoilDistance;
         } else {
             ChargedBullet lastBullet = Instantiate(_bullet, transform.position, Quaternion.identity).GetComponent<ChargedBullet>();
-            lastBullet.Launch(percentage);
+            lastBullet.Launch(direction, percentage);
             attackTime = lastBullet.RecoilTime;
             distance = lastBullet.Recoil(percentage);
         }
@@ -156,7 +157,12 @@ public class EntityChargeRanged : MonoBehaviour {
         while (timePassed < time) {
             yield return new WaitForEndOfFrame();
             timePassed += Time.deltaTime;
-            _entity.position = Vector2.Lerp(position, target, timePassed / time).To3D(_entity.position.z, Axis.Z);
+            Vector2 nextPos = Vector2.Lerp(position, target, timePassed / time);
+            RaycastHit2D hit = Physics2D.Linecast(_entity.Position2D(), nextPos, _walls);
+            if (hit.collider != null) {
+                nextPos = hit.point;
+            }
+            _entity.position = nextPos.To3D(_entity.position.z, Axis.Z);
         }
 
         _isAttacking = false;

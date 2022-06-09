@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
         NONE, MELEE, RANGE
     }
 
+    [SerializeField] PlayerInput _input;
+
     [SerializeField] EntityMovement _movement;
     [SerializeField] EntityMeleeAttack _meleeAttack;
     [SerializeField] EntityChargeAttack _chargeMeleeAttack;
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] EntityOverHeat _overheat;
     [SerializeField] EntityInteract _interact;
     [SerializeField] Health _health;
+    [SerializeField] DamageModifier _lightningImmunity;
     [SerializeField] EntitySprite _sprite;
     [SerializeField] Reference<Camera> _camera;
     [SerializeField] Animator _animator;
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 
     [Header("Value")]
     [SerializeField] GameObject _bullet;
+    [SerializeField] GameObject _chargeBullet;
     [SerializeField] float _clickTime = 0.1f;
     //[SerializeField] int _rangeAttackHeat = 5;
     [SerializeField, Range(0f, 1f)] float _chargeSlow = 0.35f;
@@ -44,6 +48,11 @@ public class PlayerController : MonoBehaviour {
     ClickType _clickType = ClickType.NONE;
 
     float _deltaHeat = 0f;
+
+    InputAction _inMove;
+    InputAction _inMeleeAttack;
+    InputAction _inRangeAttack;
+    InputAction _inAttackDirection;
 
     #region Properties
 
@@ -86,9 +95,6 @@ public class PlayerController : MonoBehaviour {
 
         _controls = new PlayerControls();
         _controls.GamePlay.Enable();
-        //_controls.GamePlay.Move.performed += _Move;
-        //_controls.GamePlay.Move.canceled += _Move;
-
         _controls.GamePlay.Interact.started += _Interact;
 
         _controls.Battle.Enable();
@@ -101,7 +107,6 @@ public class PlayerController : MonoBehaviour {
         _controls.Battle.AttackDirection.performed += _SetMousePosition;
 
         _controls.Dialogue.Enable();
-        //_controls.Dialogue.DialogueInteraction.started += _DialogueInteraction;
 
         #endregion
 
@@ -131,6 +136,15 @@ public class PlayerController : MonoBehaviour {
         }
 
         #endregion
+
+        //_inMove = _input.actions["Move"];
+        //_inAttackDirection = _input.actions["AttackDirection"];
+    }
+
+    private void Start() {
+        _lightningImmunity.Resistance = DamageModifier.ResistanceType.NOMODIFIER;
+        _chargeRangedAttack?.SetBullet(_chargeBullet);
+        //InputSystem.EnableDevice(Mouse.current);
     }
 
     private void OnDestroy() {
@@ -147,13 +161,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-        //if (_controls.Battle.Attack.ReadValue<float>() == 1) {
-        //    MeleeAttack();
-        //}
+        Move(_controls.GamePlay.Move.ReadValue<Vector2>());
+        //Move(_inMove.ReadValue<Vector2>());
 
-        //if (_controls.GamePlay.Move.ReadValue<float>() == 1) {
-            Move(_controls.GamePlay.Move.ReadValue<Vector2>());
-        //}
+        //_SetMousePosition(_inAttackDirection.ReadValue<Vector2>());
+        //Debug.Log(_inAttackDirection.ReadValue<Vector2>());
 
         if (_clickType == ClickType.MELEE) {
             _clickTimer += Time.deltaTime;
@@ -303,6 +315,7 @@ public class PlayerController : MonoBehaviour {
     private void ChargeRangeAttack() {
         if (!_chargeRangedAttack?.CanAttack ?? true) { return; }
         if (_currentChargeSlow != null) { _movement.RemoveSlow(_currentChargeSlow); }
+        _lightningImmunity.Resistance = DamageModifier.ResistanceType.IMMUNITY;
         _currentChargeSlow = _movement.Slow(1f - _chargeSlow, _chargeRangedAttack.MaxChargeTime);
         _chargeRangedAttack?.StartCharging(LookDirection);
     }
@@ -314,7 +327,7 @@ public class PlayerController : MonoBehaviour {
             _movement.RemoveSlow(_currentChargeSlow);
             _currentChargeSlow = null;
         }
-        _chargeRangedAttack?.SetBullet(_bullet);
+        _lightningImmunity.Resistance = DamageModifier.ResistanceType.NOMODIFIER;
         _chargeRangedAttack?.StopCharging(LookDirection);
         _onAttack?.Invoke(AttackType.RANGE);
     }
@@ -349,12 +362,22 @@ public class PlayerController : MonoBehaviour {
     //    textInteraction?.OnClickEvent();
     //}
 
+    private void _SetMousePosition(Vector2 position) {
+        mousePosition = position;
+    }
+
     private void _SetMousePosition(InputAction.CallbackContext cc) {
         mousePosition = cc.ReadValue<Vector2>();
     }
 
     private void _Jump() {
         _animator.SetTrigger("Jump");
+    }
+
+    public void ThunderArrow() {
+        if (_chargeRangedAttack?.CanAttack ?? true) { return; }
+
+
     }
 
     //private void OnDrawGizmos() {

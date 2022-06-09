@@ -700,6 +700,14 @@ namespace ToolsBoxEngine {
             Print(type, "<b>" + hurler.name + "</b> hurled at you : <b>" + message + "</b>");
         }
 
+        public static string Print<T>(this List<T> list) {
+            string output = "";
+            for (int i = 0; i < list.Count; i++) {
+                output += "[" + list[i].ToString() + "]";
+            }
+            return output;
+        }
+
         #endregion
 
         #region Coroutines

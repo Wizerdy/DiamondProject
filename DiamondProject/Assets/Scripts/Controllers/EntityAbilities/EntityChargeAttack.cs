@@ -10,6 +10,7 @@ public class EntityChargeAttack : MonoBehaviour {
     [SerializeField] Transform _attackParent = null;
     [SerializeField] Animator _attackAnimator = null;
     [SerializeField] DamageHealth _attackHitbox = null;
+    [SerializeField] LayerMask _walls;
     [Header("Values")]
     [SerializeField] float _dashDistance = 3f;
     [SerializeField] int _damage = 10;
@@ -122,8 +123,12 @@ public class EntityChargeAttack : MonoBehaviour {
         while (timePassed < time) {
             yield return new WaitForEndOfFrame();
             timePassed += Time.deltaTime;
-
-            _entity.position = Vector2.Lerp(position, target, timePassed / time).To3D(_entity.position.z, Axis.Z);
+            Vector2 nextPos = Vector2.Lerp(position, target, timePassed / time);
+            RaycastHit2D hit = Physics2D.Linecast(_entity.Position2D(), nextPos, _walls);
+            if (hit.collider != null) {
+                nextPos = hit.point;
+            }
+            _entity.position = nextPos.To3D(_entity.position.z, Axis.Z);
         }
 
         _isAttacking = false;

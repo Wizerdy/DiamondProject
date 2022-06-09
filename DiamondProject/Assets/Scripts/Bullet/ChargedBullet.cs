@@ -76,11 +76,11 @@ public class ChargedBullet : MonoBehaviour {
         return _recoilOverTime.Evaluate(charge) * _recoil;
     }
 
-    public void Launch(float charge = 1f) {
+    public void Launch(Vector2 direction, float charge = 1f) {
         if (_rigidbody == null) { return; }
         if (_speed == 0f) { Debug.LogError("Can't divide by 0 btw (speed)"); return; }
 
-        Vector2 velocity = _direction * _speed;
+        Vector2 velocity = direction * _speed;
         _rigidbody.velocity = velocity;
 
         int damage = Mathf.RoundToInt(_damage * _damagesOverTime.Evaluate(charge)) + (charge >= 1f ? _fullChargedDamageBonus : 0);
@@ -90,13 +90,13 @@ public class ChargedBullet : MonoBehaviour {
 
         _lifetime = _range / _speed;
 
-        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -_direction.To3D()) * Quaternion.Euler(0f, 0f, 90f);
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction.To3D()) * Quaternion.Euler(0f, 0f, 90f);
         transform.rotation = rotation;
     }
 
-    void OnEnable() {
-        Launch();
-    }
+    //void OnEnable() {
+    //    Launch();
+    //}
 
     void Update() {
         UpdateRange();

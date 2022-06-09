@@ -152,6 +152,7 @@ public class HUDHealth : MonoBehaviour {
 
     private void TakeDamageHUD(int damage) {
         if (!_isActive) { return; }
+        if (damage <= 0) { return; }
         RedScreen();
 
         void RedScreen() {

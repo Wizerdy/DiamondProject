@@ -3324,6 +3324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1405585052}
   - component: {fileID: 1405585053}
+  - component: {fileID: 1405585054}
   m_Layer: 0
   m_Name: Entities
   m_TagString: Untagged
@@ -3363,6 +3364,36 @@ MonoBehaviour:
   _playerHealth: {fileID: 11400000, guid: f5c65a46c95138e438c3a07d070145b2, type: 2}
   _bossHealth: {fileID: 11400000, guid: 116343d6813afc143820099c704afa3b, type: 2}
   _posterity: {fileID: 11400000, guid: 8e55e4948e8a78e41a3d81207a9bcb23, type: 2}
+--- !u!114 &1405585054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405585051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 1a21d6ab85d30cd4589f38b90cceb607, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: GamePlay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1413421243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,13 +4599,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3959631132869822229, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
-      propertyPath: _bullet
+      propertyPath: _input
       value: 
-      objectReference: {fileID: 4847567384368089890, guid: ee2776f49acba5649b20cbd2090e18ac, type: 3}
-    - target: {fileID: 3959631132869822229, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
-      propertyPath: _chargeSlow
-      value: 0.35
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1405585054}
     - target: {fileID: 3959631132869822232, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_Name
       value: Player
