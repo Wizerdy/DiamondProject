@@ -14,6 +14,7 @@ public class DamageHealth : MonoBehaviour {
     [SerializeField] MultipleTagSelector _ignoreTag;
 
     [SerializeField, HideInInspector] UnityEvent<GameObject> _onCollide;
+    [SerializeField, HideInInspector] UnityEvent<GameObject> _onTrigger;
     [SerializeField, HideInInspector] UnityEvent<GameObject, int> _onDamage;
     
     List<GameObject> _hitted = new List<GameObject>();
@@ -24,6 +25,7 @@ public class DamageHealth : MonoBehaviour {
     public MultipleTagSelector Damageables { get { return _damageables; } set { _damageables = value; } }
 
     public event UnityAction<GameObject> OnCollide { add { _onCollide.AddListener(value); } remove { _onCollide.RemoveListener(value); } }
+    public event UnityAction<GameObject> OnTrigger { add { _onTrigger.AddListener(value); } remove { _onTrigger.RemoveListener(value); } }
     public event UnityAction<GameObject, int> OnDamage { add { _onDamage.AddListener(value); } remove { _onDamage.RemoveListener(value); } }
 
     #endregion
@@ -57,8 +59,10 @@ public class DamageHealth : MonoBehaviour {
             return;
         }
 
+        if (!hardHit) { _onTrigger?.Invoke(collision.gameObject); }
+        else if (hardHit) { _onCollide?.Invoke(collision.gameObject); }
+
         if (hardHit && _destroyOnHit) {
-            _onCollide?.Invoke(collision.gameObject);
             Die();
         }
     }

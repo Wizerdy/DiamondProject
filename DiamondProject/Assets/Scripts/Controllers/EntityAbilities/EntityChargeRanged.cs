@@ -27,6 +27,7 @@ public class EntityChargeRanged : MonoBehaviour {
     [SerializeField] UnityEvent<Vector2> _onCharging;
     [SerializeField] UnityEvent<Vector2> _onAttack;
     [SerializeField] UnityEvent<GameObject> _onHit;
+    [SerializeField] UnityEvent<GameObject> _onTrigger;
 
     [HideInInspector, SerializeField] UnityEvent<Vector2> _onOverCharge;
     [HideInInspector, SerializeField] UnityEvent _onAttackEnd;
@@ -54,15 +55,12 @@ public class EntityChargeRanged : MonoBehaviour {
     public event UnityAction<Vector2> OnAttack { add => _onAttack.AddListener(value); remove => _onAttack.RemoveListener(value); }
     public event UnityAction<Vector2> OnOverCharge { add => _onOverCharge.AddListener(value); remove => _onOverCharge.RemoveListener(value); }
     public event UnityAction<GameObject> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
+    public event UnityAction<GameObject> OnTrigger { add => _onTrigger.AddListener(value); remove => _onTrigger.RemoveListener(value); }
     public event UnityAction OnAttackEnd { add => _onAttackEnd.AddListener(value); remove => _onAttackEnd.RemoveListener(value); }
 
     #endregion
 
     #endregion
-
-    private void Awake() {
-        //_attackHitbox.OnCollide += _InvokeOnHit;
-    }
 
     private void Update() {
         if (_isCharging) {
@@ -72,10 +70,6 @@ public class EntityChargeRanged : MonoBehaviour {
                 _onOverCharge?.Invoke(_direction);
             }
         }
-    }
-
-    private void OnDestroy() {
-        //_attackHitbox.OnCollide -= _InvokeOnHit;
     }
 
     public void SetBullet(GameObject bullet) {
@@ -129,6 +123,7 @@ public class EntityChargeRanged : MonoBehaviour {
             GameObject bull = Instantiate(_bullet, transform.position, rotation);
             DamageHealth damageHealth = bull.GetComponent<DamageHealth>();
             damageHealth?.SetValues(_damageables, damage);
+            if (damageHealth != null) { damageHealth.OnCollide += _InvokeOnHit; damageHealth.OnTrigger += _InvokeOnTrigger; }
             bull.GetComponent<Rigidbody2D>().velocity = direction * _bulletSpeed;
             attackTime = _recoilOverTime.Evaluate(percentage) * _recoilTime;
             distance = _recoilOverTime.Evaluate(percentage) * _recoilDistance;
@@ -137,7 +132,11 @@ public class EntityChargeRanged : MonoBehaviour {
             lastBullet.Launch(direction, percentage);
             attackTime = lastBullet.RecoilTime;
             distance = lastBullet.Recoil(percentage);
+
+            DamageHealth damageHealth = lastBullet.GetComponent<DamageHealth>();
+            if (damageHealth != null) { damageHealth.OnCollide += _InvokeOnHit; damageHealth.OnTrigger += _InvokeOnTrigger; }
         }
+
 
         if (_routine_DashAttack != null) { StopCoroutine(_routine_DashAttack); }
 
@@ -176,6 +175,10 @@ public class EntityChargeRanged : MonoBehaviour {
 
     void _InvokeOnHit(GameObject obj) {
         _onHit?.Invoke(obj);
+    }
+
+    void _InvokeOnTrigger(GameObject obj) {
+        _onTrigger?.Invoke(obj);
     }
 
     private void OnDrawGizmosSelected() {

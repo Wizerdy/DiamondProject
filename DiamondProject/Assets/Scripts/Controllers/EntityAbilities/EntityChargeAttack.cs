@@ -27,6 +27,7 @@ public class EntityChargeAttack : MonoBehaviour {
     [SerializeField] UnityEvent<Vector2> _onCharging;
     [SerializeField] UnityEvent<Vector2> _onAttack;
     [SerializeField] UnityEvent<GameObject> _onHit;
+    [SerializeField] UnityEvent<GameObject> _onTrigger;
 
     [HideInInspector, SerializeField] UnityEvent<Vector2> _onOverCharge;
     [HideInInspector, SerializeField] UnityEvent _onAttackEnd;
@@ -51,6 +52,7 @@ public class EntityChargeAttack : MonoBehaviour {
     public event UnityAction<Vector2> OnAttack { add => _onAttack.AddListener(value); remove => _onAttack.RemoveListener(value); }
     public event UnityAction<Vector2> OnOverCharge { add => _onOverCharge.AddListener(value); remove => _onOverCharge.RemoveListener(value); }
     public event UnityAction<GameObject> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
+    public event UnityAction<GameObject> OnTrigger { add => _onTrigger.AddListener(value); remove => _onTrigger.RemoveListener(value); }
     public event UnityAction OnAttackEnd { add => _onAttackEnd.AddListener(value); remove => _onAttackEnd.RemoveListener(value); }
 
     #endregion
@@ -59,6 +61,7 @@ public class EntityChargeAttack : MonoBehaviour {
 
     private void Awake() {
         _attackHitbox.OnCollide += _InvokeOnHit;
+        _attackHitbox.OnTrigger += _InvokeOnTrigger;
     }
 
     private void Update() {
@@ -73,6 +76,7 @@ public class EntityChargeAttack : MonoBehaviour {
 
     private void OnDestroy() {
         _attackHitbox.OnCollide -= _InvokeOnHit;
+        _attackHitbox.OnTrigger -= _InvokeOnTrigger;
     }
 
     public void StartCharging(Vector2 direction) {
@@ -143,6 +147,10 @@ public class EntityChargeAttack : MonoBehaviour {
 
     void _InvokeOnHit(GameObject obj) {
         _onHit?.Invoke(obj);
+    }
+
+    void _InvokeOnTrigger(GameObject obj) {
+        _onTrigger?.Invoke(obj);
     }
 
     private void OnDrawGizmosSelected() {
