@@ -45,18 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ba930c3f69766489c60ddfdae57cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
+  _bossRef: {fileID: 0}
   id: ExploBush
+  _playerRef: {fileID: 0}
   duration: 1
   coolDown: 1
-  isPlaying: 0
-  locked: 1
+  _dontNeedEnd: 0
+  _castTime: 0
+  _onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCast:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
   missileSpeed: 5
   missileRotationSpeed: 80
   missileLifetime: 10

@@ -45,19 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff85167d01a36354e9926ebe3e290902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
-  id: Bullet Hell
   _bossRef: {fileID: 0}
+  id: Bullet Hell
   _playerRef: {fileID: 0}
   duration: 1
   coolDown: 1
   _dontNeedEnd: 0
+  _castTime: 0
+  _onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCast:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
   numberOfWave: 15
   numberOfProjectilsPerWaves: 30
   delayBetweenWaves: 0.0001

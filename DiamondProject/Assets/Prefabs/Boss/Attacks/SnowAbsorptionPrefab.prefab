@@ -45,19 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489c3af8ab526ab48a3ad56803c6c9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
-  id: Snow Absorption
   _bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
+  id: Snow Absorption
   _playerRef: {fileID: 0}
   duration: 1
   coolDown: 1
   _dontNeedEnd: 0
+  _castTime: 0
+  _onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCast:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
   numberOfCircleToSpawn: 10
   circleSpawnRatePerSecond: 1
   iceWall: {fileID: 4119513334794404808, guid: d0820be9d9eddde44982d00557180974, type: 3}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] DamageModifier _lightningImmunity;
     [SerializeField] EntitySprite _sprite;
     [SerializeField] Reference<Camera> _camera;
+    [SerializeField] SkeletonMecanim _spine;
     [SerializeField] Animator _animator;
     [SerializeField] Reference<IMeetARealBoss> _boss;
     [SerializeField] UnityEvent<AttackType> _onAttack;
@@ -144,6 +146,10 @@ public class PlayerController : MonoBehaviour {
     private void Start() {
         _lightningImmunity.Resistance = DamageModifier.ResistanceType.NOMODIFIER;
         _chargeRangedAttack?.SetBullet(_chargeBullet);
+
+
+        _chargeMeleeAttack.OnAttack += _DashingAnimator;
+        _chargeMeleeAttack.OnAttackEnd += _StopDashingAnimator;
         //InputSystem.EnableDevice(Mouse.current);
     }
 
@@ -207,6 +213,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Move(Vector2 direction) {
         if (!CanMove) { direction = Vector2.zero; }
+        _animator?.SetBool("Running", direction != Vector2.zero);
         _movement?.Move(direction);
     }
 
@@ -364,20 +371,36 @@ public class PlayerController : MonoBehaviour {
 
     private void _SetMousePosition(Vector2 position) {
         mousePosition = position;
+        PlayerTurnover();
     }
 
     private void _SetMousePosition(InputAction.CallbackContext cc) {
-        mousePosition = cc.ReadValue<Vector2>();
+        _SetMousePosition(cc.ReadValue<Vector2>());
     }
 
-    private void _Jump() {
-        _animator.SetTrigger("Jump");
+    private void PlayerTurnover() {
+        //Debug.Log(_spine.skeleton.Skin);
+        Vector2 direction = LookDirection;
+        if (direction.x > 0) { _spine.skeleton.ScaleX = -1f; }
+        else { _spine.skeleton.ScaleX = 1f; }
+        if (direction.y > 0) { _spine.skeleton.SetSkin("Back"); }
+        else { _spine.skeleton.SetSkin("Front"); }
+        _spine.Skeleton.SetSlotsToSetupPose();
+        _spine.LateUpdate();
     }
 
     public void ThunderArrow() {
         if (_chargeRangedAttack?.CanAttack ?? true) { return; }
 
 
+    }
+
+    private void _DashingAnimator(Vector2 vector) {
+        _animator?.SetBool("Dashing", true);
+    }
+
+    private void _StopDashingAnimator() {
+        _animator?.SetBool("Dashing", false);
     }
 
     //private void OnDrawGizmos() {

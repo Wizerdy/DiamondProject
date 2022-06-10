@@ -45,18 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7920b6f39768004c9bf032806982fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
+  _bossRef: {fileID: 0}
   id: Bramble Ball
+  _playerRef: {fileID: 0}
   duration: 1
   coolDown: 1
-  isPlaying: 0
-  locked: 0
+  _dontNeedEnd: 0
+  _castTime: 0
+  _onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCast:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
   _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
   speed: 5
   damage: 20

@@ -64,4 +64,9 @@ public class IMeetARealBoss : MonoBehaviour {
             }
         }
     }
+
+    public void SetAnimatorTrigger(string trigger) {
+        if (trigger == "") { return; }
+        _animator?.SetTrigger(trigger);
+    }
 }

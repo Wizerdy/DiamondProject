@@ -459,6 +459,8 @@ MonoBehaviour:
     - BossEntities
     - Structure
     - PlayerLegs
+    - Laser
+    - Enemy
     state: 2
   _destroyOnHit: 1
   _onlyDamageOnceEach: 0
@@ -467,6 +469,9 @@ MonoBehaviour:
     tags: []
     state: 0
   _onCollide:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTrigger:
     m_PersistentCalls:
       m_Calls: []
   _onDamage:

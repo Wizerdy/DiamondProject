@@ -45,27 +45,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04690150f3f1a174ebe48a19e83fd75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
-  id: Leaf Beam
   _bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
+  id: Leaf Beam
   _playerRef: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   duration: 5
   coolDown: 1
   _dontNeedEnd: 0
+  _castTime: 0
+  _onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCast:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
   _leafBeamPrefab: {fileID: 1059472417401592482, guid: 887f720744278974bb86bef2592970ee, type: 3}
   _rayAngularSpeed: 10
   _rayLinearSpeed: 15
   _rayDamage: 5
   _beamPosOnBoss: {x: 0, y: 5, z: 0}
   _minDistLaser: 10
-  lineRendererActivated: 1
-  _onSpawn:
+  _onStart:
     m_PersistentCalls:
       m_Calls: []
   _onHit:

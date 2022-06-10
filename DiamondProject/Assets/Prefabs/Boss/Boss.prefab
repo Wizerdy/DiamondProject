@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5522892815955880215}
   - component: {fileID: 5522892815955880216}
   - component: {fileID: 5522892815955880217}
-  - component: {fileID: 5522892815955880222}
+  - component: {fileID: 881197982305486143}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -289,7 +289,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _eventType: 0
---- !u!114 &5522892815955880222
+--- !u!114 &881197982305486143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,28 +298,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 175935978380704573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 024471420a6615a46bde0d5c1457428e, type: 3}
+  m_Script: {fileID: 11500000, guid: fab4a7e9a5f631c4bb77a8ab197d511e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shapeSystem: {fileID: 11400000, guid: c9af7d84e00165c499c4c125a1f49581, type: 2}
-  _toInstantiate: []
-  _shapes: 0400000003000000
-  _onShapeChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5680249788332393454}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 500
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _eventType: 1
+  source: {fileID: 3063354052670382493}
+  target: {fileID: 11400000, guid: 51c649c5126fe7a478232854d723dc0e, type: 2}
 --- !u!1 &843685974685697844
 GameObject:
   m_ObjectHideFlags: 0
