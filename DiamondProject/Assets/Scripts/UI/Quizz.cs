@@ -6,6 +6,7 @@ using Fungus;
 public class Quizz : MonoBehaviour
 {
     [SerializeField] private Flowchart flowchart;
+    [SerializeField] private Flowchart responseBookFlowchart;
     private int responseNumber = 0;
     public void QuestionReaction(int responseNum) {
         responseNumber = responseNum;
@@ -16,9 +17,28 @@ public class Quizz : MonoBehaviour
         return responseNumber;
     }
 
-    public bool IsResponseCorrespondingToQuestion(int questionNum, int responseNum) {
-        if (questionNum == responseNum)
-            return true;
-        return false;
+    public bool IsResponseCorrespondingToQuestion(bool isFall,int questionNum, int responseNum) {
+        if (isFall) {
+            if (questionNum == 3 && responseNum == 2)
+                return true;
+            if (questionNum == 5 && responseNum == 1)
+                return true;
+
+            return false;
+        } else {
+            if (questionNum == 3 && responseNum == 6)
+                return true;
+            if (questionNum == 5 && responseNum == 5)
+                return true;
+
+            return false;
+        }
+    }
+
+    public void OpenResopnseBook() {
+        responseBookFlowchart.SendFungusMessage("OpenReponseBook");
+    }
+    public void CloseResopnseBook() {
+        responseBookFlowchart.SendFungusMessage("CloseResponseBook");
     }
 }

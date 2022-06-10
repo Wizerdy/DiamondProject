@@ -9,43 +9,62 @@ public class QuizzInformation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI informationTxtComponent;
     [SerializeField] private PosterityObject posterity;
     [SerializeField] private hintType hintType;
+    [SerializeField] private GameObject btnResponse;
     private string informationText;
 
     private void Start() {
         switch (hintType) {
-            case hintType.Trigger:
-                for (int i = 0; i < posterity.triggerHintList.Count; i++) {
-                    if (posterity.triggerHintList[i].id == entryId) {
-                        if (posterity.triggerHintList[i].isTrigger)
-                            informationText = posterity.triggerHintList[i].quizzText;
+            case hintType.FallBoss:
+                for (int i = 0; i < posterity.fallBossHintList.Count; i++) {
+                    if (posterity.fallBossHintList[i].id == entryId) {
+                        if (posterity.fallBossHintList[i].isTrigger) {
+                            informationText = posterity.fallBossHintList[i].unlockedText;
+                            btnResponse.SetActive(true);
+                        }
                         else
-                            informationText = posterity.triggerHintList[i].defaultText;
+                            informationText = posterity.fallBossHintList[i].defaultText;
 
                         informationTxtComponent.text = informationText;
                         return;
                     }
                 }
                 break;
-            case hintType.Boss:
-                for (int i = 0; i < posterity.bossHintList.Count; i++) {
-                    if (posterity.bossHintList[i].id == entryId) {
-                        if (posterity.bossHintList[i].isTrigger)
-                            informationText = posterity.bossHintList[i].quizzText;
-                        else
-                            informationText = posterity.bossHintList[i].defaultText;
+            case hintType.FallAttack:
+                for (int i = 0; i < posterity.fallAttackHintList.Count; i++) {
+                    if (posterity.fallAttackHintList[i].id == entryId) {
+                        if (posterity.fallAttackHintList[i].isTrigger) {
+                            informationText = posterity.fallAttackHintList[i].unlockedText;
+                            btnResponse.SetActive(true);
+                        } else
+                            informationText = posterity.fallAttackHintList[i].defaultText;
 
                         informationTxtComponent.text = informationText;
                         return;
                     }
                 }
                 break;
-            case hintType.Character:
-                for (int i = 0; i < posterity.characterHintList.Count; i++) {
-                    if (posterity.characterHintList[i].id == entryId) {
-                        if (posterity.characterHintList[i].isTrigger)
-                            informationText = posterity.characterHintList[i].quizzText;
-                        else
-                            informationText = posterity.characterHintList[i].defaultText;
+            case hintType.WinterBoss:
+                for (int i = 0; i < posterity.winterBossHintList.Count; i++) {
+                    if (posterity.winterBossHintList[i].id == entryId) {
+                        if (posterity.winterBossHintList[i].isTrigger) {
+                            informationText = posterity.winterBossHintList[i].unlockedText;
+                            btnResponse.SetActive(true);
+                        } else
+                            informationText = posterity.winterBossHintList[i].defaultText;
+
+                        informationTxtComponent.text = informationText;
+                        return;
+                    }
+                }
+                break;
+            case hintType.WinterAttack:
+                for (int i = 0; i < posterity.winterAttackHintList.Count; i++) {
+                    if (posterity.winterAttackHintList[i].id == entryId) {
+                        if (posterity.winterAttackHintList[i].isTrigger) {
+                            informationText = posterity.winterAttackHintList[i].unlockedText;
+                            btnResponse.SetActive(true);
+                        } else
+                            informationText = posterity.winterAttackHintList[i].defaultText;
 
                         informationTxtComponent.text = informationText;
                         return;

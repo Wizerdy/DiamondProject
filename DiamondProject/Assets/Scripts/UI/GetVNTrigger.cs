@@ -21,6 +21,22 @@ public class GetVNTrigger : MonoBehaviour
         vnTrigger.KnowSecondHintBoss = true;
     }
 
+    public bool DoKnowWinterBossHint() {
+        return vnTrigger.knowWinterBossHint;
+    }
+
+    public void LearnFallBossHint() {
+        vnTrigger.knowFallBossHint = true;
+    }
+
+    public bool DoKnowFallBossHint() {
+        return vnTrigger.knowFallBossHint;
+    }
+
+    public void LearnWinterBossHint() {
+        vnTrigger.knowWinterBossHint = true;
+    }
+
     // CHARACTER HINT
 
     public bool DoKnowCharacterFirstHint() {

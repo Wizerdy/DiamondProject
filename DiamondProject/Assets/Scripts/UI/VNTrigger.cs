@@ -9,9 +9,14 @@ public class VNTrigger : ScriptableObject {
     public bool KnowFirstHintCharacter = false;
     public int questionNumber = 0;
 
+    public bool knowWinterBossHint = false;
+    public bool knowFallBossHint = false;
+
     public void ResetValue() {
         KnowFirstHintBoss = false;
         KnowSecondHintBoss = false;
         KnowFirstHintCharacter = false;
+        knowWinterBossHint = false;
+        knowFallBossHint = false;
     }
 }

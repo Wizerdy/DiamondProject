@@ -11,7 +11,6 @@ public struct Hint {
     public bool alreadySawHint;
     public string defaultText;
     public string unlockedText;
-    public string quizzText;
 }
 
 [CreateAssetMenu(menuName = "PosterityObject")]
@@ -38,9 +37,15 @@ public class PosterityObject : ScriptableObject {
     public bool winterFormTriggerActivated = false;
 
     public GameObject arrow;
-    public List<Hint> triggerHintList = new List<Hint>();
-    public List<Hint> bossHintList = new List<Hint>();
-    public List<Hint> characterHintList = new List<Hint>();
+    //public List<Hint> triggerHintList = new List<Hint>();
+    //public List<Hint> bossHintList = new List<Hint>();
+    //public List<Hint> characterHintList = new List<Hint>();
+    [Header("Fall form")]
+    public List<Hint> fallBossHintList = new List<Hint>();
+    public List<Hint> fallAttackHintList = new List<Hint>();
+    [Header("Winter form")]
+    public List<Hint> winterBossHintList = new List<Hint>();
+    public List<Hint> winterAttackHintList = new List<Hint>();
     public void ResetValues() {
         nbCorpse = 0;
         nbTimeTalkedToNorna = 0;
