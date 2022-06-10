@@ -8,18 +8,21 @@ public class FallingThunder : MonoBehaviour {
     [Header("References")]
     [SerializeField] DamageHealth _damageHealth = null;
     [SerializeField] VisualEffect _lightning = null;
+    [SerializeField] TransformScaler _shadow = null;
 
     [Header("Parameters")]
     [SerializeField] float _height = 0f;
-    [SerializeField] float _delay = 1f;
+    [SerializeField] float _damageTime = 1f;
 
     Vector3 _target;
     int _damage = 10;
 
     public void Init(int damage, float delay) {
+        _shadow?.SetTime(delay);
+        _shadow?.ScaleMe();
         _target = transform.position;
         _damageHealth?.SetDamage(_damage);
-        StartCoroutine(Tools.Delay(DoDamage, _delay, delay));
+        StartCoroutine(Tools.Delay(DoDamage, _damageTime, delay));
     }
 
     private void Start() {
@@ -33,8 +36,10 @@ public class FallingThunder : MonoBehaviour {
         StartCoroutine(CollisionTime(time));
 
         IEnumerator CollisionTime(float time) {
-            _damageHealth.gameObject.SetActive(true);
+            float lightningDelay = _lightning?.GetFloat("ImpactDelay") ?? 0f;
             _lightning.gameObject.SetActive(true);
+            yield return new WaitForSeconds(lightningDelay);
+            _damageHealth.gameObject.SetActive(true);
             yield return new WaitForSeconds(time);
             _damageHealth.gameObject.SetActive(false);
             _lightning.gameObject.SetActive(false);

@@ -108,7 +108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8101424015454722120
 Transform:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8101424016153837573
 Transform:
   m_ObjectHideFlags: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   _childs: []
   _childGate: 0
   _shapeSystem: {fileID: 0}
-  _time: 15
+  _time: 20
   _condition: 1
   _resetOnNewShape: 1
 --- !u!114 &8101424016291808016
@@ -408,6 +408,8 @@ MonoBehaviour:
   _boss: {fileID: 0}
   _bossShapeSystem: {fileID: 0}
   _shapeLibrary: {fileID: 0}
+  _attacks: {fileID: 8301503317489124549}
+  _moveCenterTime: 2
   spring: {fileID: 8101424016153837571}
   summer: {fileID: 8101424015454722118}
   fall: {fileID: 8101424015359654001}

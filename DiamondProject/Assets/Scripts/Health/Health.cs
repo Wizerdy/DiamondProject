@@ -74,11 +74,14 @@ public class Health : MonoBehaviour, IHealth {
         _maxHealth = data.maxHealth;
     } 
 
-    public void TakeDamage(int amount, string damageTypes = "") {
+    public void TakeDamage(int amount, string damageType = "") {
         if (!CanTakeDamage) { return; }
-            if (_damageModifiers.Contains(damageTypes)) {
-                amount = _damageModifiers.Get(damageTypes).Modify(amount);
+            if (_damageModifiers.Contains(damageType)) {
+                amount = _damageModifiers.Get(damageType).Modify(amount);
             }
+
+            if (amount <= 0) { return; }
+
             _currentHealth -= amount;
             _currentHealth = Mathf.Max(0, _currentHealth);
             _onHit?.Invoke(amount);

@@ -27,12 +27,12 @@ public class LiaAttack : MonoBehaviour {
     [SerializeField] List<string> _winterAttacks = new List<string>();
 
     LIAState state = LIAState.ACTION; 
-    List<string> availableAttacks;
-    Coroutine _currentBehaviour;
-    BossShape _currentShape;
+    List<string> availableAttacks = new List<string>();
+    Coroutine _currentBehaviour = null;
+    BossShape _currentShape = null;
     float _timer = 2f;
     bool _stunt = false;
-    string lastAttack;
+    string lastAttack = "";
     //string lastAttackEnd;
 
     void Start() {
@@ -87,9 +87,13 @@ public class LiaAttack : MonoBehaviour {
         return winner;
     }
 
+    public void ClearAttacks() {
+        _attackSystem.ClearAttacks();
+    }
+
     #region Behaviour
     public IEnumerator NeutralBehaviour() {
-
+        availableAttacks.Clear();
         availableAttacks = _neutralAttacks;
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
@@ -133,6 +137,7 @@ public class LiaAttack : MonoBehaviour {
     }
 
     public IEnumerator FallBehaviour() {
+        availableAttacks.Clear();
         availableAttacks = _fallAttacks;
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
@@ -168,7 +173,10 @@ public class LiaAttack : MonoBehaviour {
     }
 
     public IEnumerator WinterBehaviour() {
-        availableAttacks = _winterAttacks;
+        availableAttacks.Clear();
+        Debug.Log("1. " + availableAttacks.Print());
+        availableAttacks = new List<string>(_winterAttacks);
+        Debug.Log("2. " + availableAttacks.Print());
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
         yield return new WaitForSeconds(_waitTimeBeforeAction);
