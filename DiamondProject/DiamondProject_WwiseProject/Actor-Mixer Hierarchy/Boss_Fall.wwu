@@ -940,7 +940,6 @@
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 							</PropertyList>
@@ -952,13 +951,37 @@
 									<ObjectRef Name="Fall" ID="{32FA44DF-87D3-49F0-BD3B-DF73520403A7}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_VO_FallDash" ID="{C6B59A41-46EC-4145-83A7-D1005FFAD540}" ShortID="370913306">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_FallDash" ID="{6A4821C3-3996-41E0-9C34-E52A0C099114}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_FallDash.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="525739532"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_FallDash" ID="{6A4821C3-3996-41E0-9C34-E52A0C099114}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Fall_LeafBoomerang_Cast" ID="{F75F4B25-61EE-42D9-A871-A2DE46808E30}" ShortID="533254072">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 							</PropertyList>
@@ -970,13 +993,60 @@
 									<ObjectRef Name="Fall" ID="{32FA44DF-87D3-49F0-BD3B-DF73520403A7}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_VO_LeafBoomerang_01" ID="{A3DE1AEB-24CF-4BEC-ADEA-6A48295F9F7B}" ShortID="393337433">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_LeafBoomerang_01" ID="{A3E503EA-0313-4578-B67F-0C5D49585305}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_LeafBoomerang_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="605509969"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_LeafBoomerang_01" ID="{A3E503EA-0313-4578-B67F-0C5D49585305}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_LeafBoomerang_02" ID="{907E74B2-62C8-4D2E-B9BE-362FAA126A29}" ShortID="916131033">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_LeafBoomerang_02" ID="{478631C4-2C4C-4F50-9CAB-119E4875557F}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_LeafBoomerang_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="858164438"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_LeafBoomerang_02" ID="{478631C4-2C4C-4F50-9CAB-119E4875557F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Fall_Tree_Cast" ID="{CAB296D8-DA1B-4E10-A342-8C96BB10C14F}" ShortID="653596298">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 							</PropertyList>
@@ -988,13 +1058,38 @@
 									<ObjectRef Name="Fall" ID="{32FA44DF-87D3-49F0-BD3B-DF73520403A7}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_VO_Tree" ID="{7A9ED19E-DFE9-4621-84F7-912074545D31}" ShortID="259062559">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_Tree" ID="{4DA091A2-352C-4CB4-9D07-C035A4366151}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_Tree.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="407933390"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_Tree" ID="{4DA091A2-352C-4CB4-9D07-C035A4366151}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Fall_LeafBeam_Cast" ID="{B7590DDB-7423-4DA6-9320-08D68762A267}" ShortID="624986746">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 							</PropertyList>
@@ -1006,12 +1101,83 @@
 									<ObjectRef Name="Fall" ID="{32FA44DF-87D3-49F0-BD3B-DF73520403A7}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_VO_LeafBeam_01" ID="{DBD09958-E53E-4C8C-8FF8-665E6A7ADCE2}" ShortID="577562406">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_LeafBeam_01" ID="{340C78E1-DDCF-4559-BC6D-B3C0CAF1AD21}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_LeafBeam_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="459910668"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_LeafBeam_01" ID="{340C78E1-DDCF-4559-BC6D-B3C0CAF1AD21}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_LeafBeam_02" ID="{3EE14420-33B2-4B50-ACD0-25EDC0353A72}" ShortID="871375475">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_LeafBeam_02" ID="{08ADADAF-1AB9-4AF5-8EF4-B5E67EAADB12}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_LeafBeam_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1005691052"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_LeafBeam_02" ID="{08ADADAF-1AB9-4AF5-8EF4-B5E67EAADB12}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_LeafBeam_03" ID="{9DB3A370-BD46-4AC9-AA32-9F9C34C91011}" ShortID="623827853">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_LeafBeam_03" ID="{21B536BC-B9F4-4A11-B896-561FCE6F3E48}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_LeafBeam_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="393667027"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_LeafBeam_03" ID="{21B536BC-B9F4-4A11-B896-561FCE6F3E48}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Fall_Thunder_Cast" ID="{8E45D321-AEEF-4CC0-83D7-ECDD0BDFF0F5}" ShortID="980535779">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="Color" Type="int16" Value="23"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>

@@ -44,6 +44,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{24169CC5-1E86-458E-86C8-8E5C62CC46F6}" ShortID="675010775">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Winter_IceHell_Cast" ID="{B0D89820-701C-42EB-9943-5176C7E0E617}" WorkUnitID="{B803E388-5F0F-4816-B66E-27C30DA27389}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Boss_Winter_IceSpikes" ID="{E2AAE3EF-419B-44EC-ACDB-463B349084A7}">
@@ -226,6 +233,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Boss_Winter_SnowAbsorption_LP" ID="{830D85B6-F6EE-4EE0-A35F-E20F346F5576}" WorkUnitID="{B803E388-5F0F-4816-B66E-27C30DA27389}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Winter_SnowAbsorption_Cast" ID="{4E7E6CD5-EA16-429E-923E-75EEA42F8165}">
+					<ChildrenList>
+						<Action Name="" ID="{50DD2B6F-7E21-4FC5-8CE5-F39DE0825DF1}" ShortID="538832202">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Winter_SnowAbsorption_Cast" ID="{880B71E2-A17A-40DD-844B-2309052F64D3}" WorkUnitID="{B803E388-5F0F-4816-B66E-27C30DA27389}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

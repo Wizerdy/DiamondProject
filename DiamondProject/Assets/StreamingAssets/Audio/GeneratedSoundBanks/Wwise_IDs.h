@@ -51,6 +51,7 @@ namespace AK
         static const AkUniqueID BOSS_WINTER_ICEHELL_SCATTER_THROW = 3053666057U;
         static const AkUniqueID BOSS_WINTER_ICESPIKES = 3647852147U;
         static const AkUniqueID BOSS_WINTER_ICESPIKES_CAST = 599452203U;
+        static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_CAST = 2660008099U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_END = 1918681101U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_START = 4119016838U;
         static const AkUniqueID GAMESTART = 4058101365U;
