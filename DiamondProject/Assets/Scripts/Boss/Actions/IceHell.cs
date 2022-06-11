@@ -59,7 +59,7 @@ public class IceHell : BaseAttack {
         GameObject shard = Instantiate(iceShard, spawnPos, Quaternion.Euler(0.0f, 0.0f, currentShardAngle));
         IceShard _iceShard = shard.GetComponent<IceShard>();
 
-        _iceShard.Init(_target?.Instance, _speed, iceShardDamage, shotDir * _speed, shardLifetime);
+        _iceShard.Init(ShardType.iceHell, _target?.Instance, _speed, iceShardDamage, shotDir * _speed, shardLifetime);
 
         _shardCount++;
         _iceShard.OnShardDestroy += () => _shardCount--;
