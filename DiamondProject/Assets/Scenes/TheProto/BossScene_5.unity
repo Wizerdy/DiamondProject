@@ -6145,6 +6145,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5f76c4a29c1ff8e43b872cd33be7a0de, type: 2}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -6160,6 +6176,14 @@ PrefabInstance:
       propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1897836331}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6177,6 +6201,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1664892866}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1897836331}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnKillForm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetShape
       objectReference: {fileID: 0}
@@ -6193,6 +6233,18 @@ PrefabInstance:
       value: Set
       objectReference: {fileID: 0}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: OnFirstTimeSawForm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PosterityVNValue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LiaAttack, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: LiaAttack, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -6203,6 +6255,26 @@ PrefabInstance:
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: DestroyWhenFormSetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: PosterityVNValue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 265803178}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 265803178}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: BossShapeSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onEnterShape.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: BossShapeSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5680249788645268039, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _timeBeforeChange
