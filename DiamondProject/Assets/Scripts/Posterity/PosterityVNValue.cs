@@ -87,4 +87,44 @@ public class PosterityVNValue : MonoBehaviour
         }
 
     }
+
+    public void OnFirstTimeSawForm (BossShapeSystem shape) {
+        switch (shape.Shape.Type) {
+            case Shape.NEUTRAL:
+                break;
+            case Shape.SPRING:
+                break;
+            case Shape.SUMMER:
+                break;
+            case Shape.FALL:
+                posterityObj.sawFallForm = true;
+                break;
+            case Shape.WINTER:
+                posterityObj.sawWinterForm = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void OnKillForm(BossShapeSystem shape) {
+        switch (shape.Shape.Type) {
+            case Shape.NEUTRAL:
+                posterityObj.killNeutralForm = true;
+                break;
+            case Shape.SPRING:
+                break;
+            case Shape.SUMMER:
+                break;
+            case Shape.FALL:
+                posterityObj.killFallForm = true;
+                break;
+            case Shape.WINTER:
+                posterityObj.killWinterForm = true;
+                break;
+            default:
+                break;
+        }
+    }
+
 }

@@ -28,9 +28,16 @@ public class PosterityObject : ScriptableObject {
     public bool gotToAnotherBoss = false;
     public int numberOfTriggerActivate = 0;
 
+    [Header("For VN Scene")]
+    public bool killNeutralForm = false;
+    public bool killFallForm = false;
+    public bool killWinterForm = false;
+
+    public bool sawFallForm = false;
+    public bool sawWinterForm = false;
+
     public bool firstTimeTalking = true;
 
-    public int numberOfTimeTalkingToFairy = 0;
     public int nbTimeTalkedToNorna = 0;
     public int nbCorpse = 0;
 
@@ -65,7 +72,6 @@ public class PosterityObject : ScriptableObject {
         numberOfTriggerActivate = 0;
 
         firstTimeTalking = true;
-        numberOfTimeTalkingToFairy = 0;
     }
 
     public void ResetValuesBeforeBoss() {
