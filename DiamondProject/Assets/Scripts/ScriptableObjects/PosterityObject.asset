@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
   resetOnStart: 1
-  deathCount: 14
-  bossDeathCount: 8
+  deathCount: 26
+  bossDeathCount: 12
   maxLifeModifier: 0
   extraLife: 0
   nearSight: 0
@@ -24,8 +24,8 @@ MonoBehaviour:
   numberOfTriggerActivate: 0
   firstTimeTalking: 0
   numberOfTimeTalkingToFairy: 1
-  nbTimeTalkedToNorna: 2
-  nbCorpse: 3
+  nbTimeTalkedToNorna: 3
+  nbCorpse: 2
   winterFormTriggerActivated: 0
   arrow: {fileID: 0}
   fallBossHintList:
@@ -60,7 +60,7 @@ MonoBehaviour:
     unlockedText: Arbres qui poussent au milieu du terrain
   - id: 2
     description: Second fall attack hint
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -119,7 +119,7 @@ MonoBehaviour:
     unlockedText: Bullet Hell
   - id: 3
     description: Third winter attack hint
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
