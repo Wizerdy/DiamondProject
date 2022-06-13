@@ -50,21 +50,16 @@ public class IceHell : BaseAttack {
         float rad = currentShardAngle * Mathf.Deg2Rad;
         float X = Mathf.Cos(rad);
         float Y = Mathf.Sin(rad);
+
         Vector3 spawnDir = new Vector3(X, Y, 0);
+        Vector3 shotDir = (spawnDir - transform.position).normalized;
 
-        float shotDirX = Mathf.Sin(((currentShardAngle) * Mathf.PI) / 180f);
-        float shotDirY = Mathf.Cos(((currentShardAngle) * Mathf.PI) / 180f);
-        Vector3 shotMoveVector = new Vector3(shotDirX, shotDirY, 0f);
-        Vector3 shotDir = (shotMoveVector - transform.position).normalized;
+        Vector3 spawnPos = bossRef.Instance.transform.position + spawnDir * spawnDistanceFromBoss;
 
-        Vector3 spawnPos = bossRef.Instance.transform.position + shotDir * spawnDistanceFromBoss;
-
-        float angle = (Mathf.Atan2(X, Y) * 180 / Mathf.PI) % 360;
-
-        GameObject shard = Instantiate(iceShard, spawnPos, Quaternion.Euler(0.0f, 0.0f, angle));
+        GameObject shard = Instantiate(iceShard, spawnPos, Quaternion.Euler(0.0f, 0.0f, currentShardAngle));
         IceShard _iceShard = shard.GetComponent<IceShard>();
 
-        _iceShard.Init(_target?.Instance, _speed, iceShardDamage, shotDir * _speed, shardLifetime);
+        _iceShard.Init(ShardType.iceHell, _target?.Instance, _speed, iceShardDamage, shotDir * _speed, shardLifetime);
 
         _shardCount++;
         _iceShard.OnShardDestroy += () => _shardCount--;
@@ -140,10 +135,10 @@ public class IceHell : BaseAttack {
         int randomPattern = Random.Range(1, 3);
         switch (randomPattern) {
             case 1:
-                yield return StartCoroutine(UseShardPattern(firstPatterns, 0));
+                yield return StartCoroutine(UseShardPattern(firstPatterns));
                 break;
             case 2:
-                yield return StartCoroutine(UseShardPattern(secondPatterns, 1));
+                yield return StartCoroutine(UseShardPattern(secondPatterns));
                 break;
             default:
                 Debug.Log("ICE HELL PATTERN ERROR");
@@ -155,13 +150,11 @@ public class IceHell : BaseAttack {
         }
     }
 
-    IEnumerator UseShardPattern(Pattern[] _pattern, int num) {
+    IEnumerator UseShardPattern(Pattern[] _pattern) {
         float spawnRate = 0;
 
-        CalculateCurrentShardAngle(_pattern, num);
-
         for (int i = 0; i < _pattern.Length; i++) {
-
+            CalculateCurrentShardAngle(_pattern, i);
             yield return new WaitForSeconds(_pattern[i].chargeTime);
 
             int numberOfWaves = 0;
@@ -175,8 +168,7 @@ public class IceHell : BaseAttack {
                         ++numberOfShardsSpawned;
                         yield return null;
                     }
-
-                    CalculateCurrentShardAngle(_pattern, num);
+                    CalculateCurrentShardAngle(_pattern, i);
 
                     spawnRate = delayBetweenWaves;
                     ++numberOfWaves;
@@ -185,15 +177,16 @@ public class IceHell : BaseAttack {
                 }
                 yield return null;
             }
+
         }
     }
 
-    private void CalculateCurrentShardAngle(Pattern[] _pattern, int num) {
-        if (_pattern[num].patternType == PatternType.Focus) {
-            offSetBetweenShard = gapWidth / _pattern[num].numberOfIceShardsPerWave;
-            currentShardAngle = lowerLimit + offSetBetweenShard;
+    private void CalculateCurrentShardAngle(Pattern[] _patterns, int currentPattern) {
+        if (_patterns[currentPattern].patternType == PatternType.Focus) {
+            offSetBetweenShard = gapWidth / _patterns[currentPattern].numberOfIceShardsPerWave;
+            currentShardAngle = lowerLimit + offSetBetweenShard * 3;
         } else {
-            offSetBetweenShard = (360 - gapWidth) / _pattern[num].numberOfIceShardsPerWave;
+            offSetBetweenShard = (360 - gapWidth) / _patterns[currentPattern].numberOfIceShardsPerWave;
             currentShardAngle = upperLimit - offSetBetweenShard;
         }
     }

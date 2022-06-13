@@ -5,6 +5,7 @@ using UnityEngine;
 public class GetVNTrigger : MonoBehaviour
 {
     [SerializeField] private VNTrigger vnTrigger;
+    [SerializeField] private PosterityObject posterity;
 
     // BOSS HINT
     public bool DoKnowBossFirstHint() {
@@ -21,6 +22,22 @@ public class GetVNTrigger : MonoBehaviour
         vnTrigger.KnowSecondHintBoss = true;
     }
 
+    public bool DoKnowWinterBossHint() {
+        return vnTrigger.knowWinterBossHint;
+    }
+
+    public void LearnFallBossHint() {
+        vnTrigger.knowFallBossHint = true;
+    }
+
+    public bool DoKnowFallBossHint() {
+        return vnTrigger.knowFallBossHint;
+    }
+
+    public void LearnWinterBossHint() {
+        vnTrigger.knowWinterBossHint = true;
+    }
+
     // CHARACTER HINT
 
     public bool DoKnowCharacterFirstHint() {
@@ -30,4 +47,39 @@ public class GetVNTrigger : MonoBehaviour
     public void LearnCharacterFirstHint() {
         vnTrigger.KnowFirstHintCharacter = true;
     }
+
+    public bool DidSawFall() {
+        if (posterity.sawFallForm)
+            return true;
+
+        return false;
+    }
+
+    public bool DidSawWinter() {
+        if (posterity.sawWinterForm)
+            return true;
+
+        return false;
+    }
+    public bool DidKillNeutral() {
+        if (posterity.killNeutralForm)
+            return true;
+
+        return false;
+    }
+
+    public bool DidKillFall() {
+        if (posterity.killFallForm)
+            return true;
+
+        return false;
+    }
+
+    public bool DidKillWinter() {
+        if (posterity.killWinterForm)
+            return true;
+
+        return false;
+    }
+
 }

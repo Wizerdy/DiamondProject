@@ -49,7 +49,7 @@ public class BulletHell : BaseAttack {
         IceShard iceShard = shard.GetComponent<IceShard>();
         if (iceShard == null) { return; }
         _shardCount++;
-        iceShard.Init(_target?.Instance, shardSpeed, iceShardDamage, -shotDir, shardLifetime);
+        iceShard.Init(ShardType.bulletHell, _target?.Instance, shardSpeed, iceShardDamage, -shotDir, shardLifetime);
         iceShard.OnShardDestroy += () => _shardCount--;
     }
 

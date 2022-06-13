@@ -16,7 +16,7 @@ public class LeafBeam : BaseAttack {
     private float damageFrequencyTimer = 0f;
     GameObject currentBeam;
     [SerializeField, HideInInspector] UnityEvent _onStart;
-    [SerializeField, HideInInspector] UnityEvent<GameObject> _onHit;
+    [SerializeField] UnityEvent<GameObject> _onHit;
 
     public event UnityAction OnSpawn { add => _onStart.AddListener(value); remove => _onStart.RemoveListener(value); }
     public event UnityAction<GameObject> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
