@@ -127,4 +127,7 @@ public class PosterityVNValue : MonoBehaviour
         }
     }
 
+    public GameObject GetArrow() {
+        return posterityObj.arrow;
+    }
 }
