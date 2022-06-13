@@ -6,6 +6,9 @@ public class GetVNTrigger : MonoBehaviour
 {
     [SerializeField] private VNTrigger vnTrigger;
     [SerializeField] private PosterityObject posterity;
+    [SerializeField] private GameObject arrowNeutral;
+    [SerializeField] private GameObject arrowSleep;
+    [SerializeField] private GameObject arrowBoomerang;
 
     // BOSS HINT
     public bool DoKnowBossFirstHint() {
@@ -82,4 +85,15 @@ public class GetVNTrigger : MonoBehaviour
         return false;
     }
 
+    public void ChangeToNeutralArrow() {
+        posterity.arrow = arrowNeutral;
+    }
+
+    public void ChangeToSleepArrow() {
+        posterity.arrow = arrowSleep;
+    }
+
+    public void ChangeToBoomerangArrow() {
+        posterity.arrow = arrowBoomerang;
+    }
 }
