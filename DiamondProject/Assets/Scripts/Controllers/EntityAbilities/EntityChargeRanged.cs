@@ -40,6 +40,8 @@ public class EntityChargeRanged : MonoBehaviour {
     bool _isCharging = false;
     bool _isAttacking = false;
 
+    bool _thunderArrow = false;
+
     Coroutine _routine_DashAttack;
 
     #region Properties
@@ -179,6 +181,11 @@ public class EntityChargeRanged : MonoBehaviour {
 
     void _InvokeOnTrigger(GameObject obj) {
         _onTrigger?.Invoke(obj);
+    }
+
+    public void ThunderArrow() {
+        if (!_isCharging) { return; }
+        _thunderArrow = true;
     }
 
     private void OnDrawGizmosSelected() {
