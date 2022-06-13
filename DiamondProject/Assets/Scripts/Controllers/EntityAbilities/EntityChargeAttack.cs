@@ -10,9 +10,11 @@ public class EntityChargeAttack : MonoBehaviour {
     [SerializeField] Transform _attackParent = null;
     [SerializeField] Animator _attackAnimator = null;
     [SerializeField] DamageHealth _attackHitbox = null;
+    [SerializeField] LayerMask _walls;
     [Header("Values")]
     [SerializeField] float _dashDistance = 3f;
     [SerializeField] int _damage = 10;
+    [SerializeField] int _fullChargedDamageBonus = 10;
     [SerializeField] float _cooldownTime = 1f;
     [SerializeField] float _chargingTime = 3f;
     [SerializeField] float _attackTime = 1f;
@@ -25,6 +27,7 @@ public class EntityChargeAttack : MonoBehaviour {
     [SerializeField] UnityEvent<Vector2> _onCharging;
     [SerializeField] UnityEvent<Vector2> _onAttack;
     [SerializeField] UnityEvent<GameObject> _onHit;
+    [SerializeField] UnityEvent<GameObject> _onTrigger;
 
     [HideInInspector, SerializeField] UnityEvent<Vector2> _onOverCharge;
     [HideInInspector, SerializeField] UnityEvent _onAttackEnd;
@@ -41,6 +44,7 @@ public class EntityChargeAttack : MonoBehaviour {
 
     public bool CanAttack => !IsAttacking;
     public bool IsAttacking => _isAttacking || _isCharging;
+    public float MaxChargeTime => _chargingTime;
 
     #region Events
 
@@ -48,6 +52,7 @@ public class EntityChargeAttack : MonoBehaviour {
     public event UnityAction<Vector2> OnAttack { add => _onAttack.AddListener(value); remove => _onAttack.RemoveListener(value); }
     public event UnityAction<Vector2> OnOverCharge { add => _onOverCharge.AddListener(value); remove => _onOverCharge.RemoveListener(value); }
     public event UnityAction<GameObject> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
+    public event UnityAction<GameObject> OnTrigger { add => _onTrigger.AddListener(value); remove => _onTrigger.RemoveListener(value); }
     public event UnityAction OnAttackEnd { add => _onAttackEnd.AddListener(value); remove => _onAttackEnd.RemoveListener(value); }
 
     #endregion
@@ -56,6 +61,7 @@ public class EntityChargeAttack : MonoBehaviour {
 
     private void Awake() {
         _attackHitbox.OnCollide += _InvokeOnHit;
+        _attackHitbox.OnTrigger += _InvokeOnTrigger;
     }
 
     private void Update() {
@@ -70,6 +76,7 @@ public class EntityChargeAttack : MonoBehaviour {
 
     private void OnDestroy() {
         _attackHitbox.OnCollide -= _InvokeOnHit;
+        _attackHitbox.OnTrigger -= _InvokeOnTrigger;
     }
 
     public void StartCharging(Vector2 direction) {
@@ -96,6 +103,7 @@ public class EntityChargeAttack : MonoBehaviour {
 
         float percentage = timer / _chargingTime;
         int damage = Mathf.CeilToInt(_damagesOverTime.Evaluate(percentage) * _damage);
+        if (percentage >= 1f) { damage += _fullChargedDamageBonus; }
         _attackHitbox.SetValues(_damageables, damage);
 
         //float attackTime = _attackTimeOverTime.Evaluate(percentage) * _attackTime;
@@ -119,8 +127,12 @@ public class EntityChargeAttack : MonoBehaviour {
         while (timePassed < time) {
             yield return new WaitForEndOfFrame();
             timePassed += Time.deltaTime;
-
-            _entity.position = Vector2.Lerp(position, target, timePassed / time).To3D(_entity.position.z, Axis.Z);
+            Vector2 nextPos = Vector2.Lerp(position, target, timePassed / time);
+            RaycastHit2D hit = Physics2D.Linecast(_entity.Position2D(), nextPos, _walls);
+            if (hit.collider != null) {
+                nextPos = hit.point;
+            }
+            _entity.position = nextPos.To3D(_entity.position.z, Axis.Z);
         }
 
         _isAttacking = false;
@@ -137,7 +149,11 @@ public class EntityChargeAttack : MonoBehaviour {
         _onHit?.Invoke(obj);
     }
 
-    private void OnDrawGizmos() {
+    void _InvokeOnTrigger(GameObject obj) {
+        _onTrigger?.Invoke(obj);
+    }
+
+    private void OnDrawGizmosSelected() {
         if (!IsAttacking) { return; }
         Gizmos.color = Color.red;
         float percentage = _chargingTimer / _chargingTime;

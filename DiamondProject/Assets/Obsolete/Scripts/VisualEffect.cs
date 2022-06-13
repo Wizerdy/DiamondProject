@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisualEffect : MonoBehaviour {
+public class VisualEffects : MonoBehaviour {
     
     [System.Serializable]
     struct SpriteColor {

@@ -50,12 +50,12 @@ MonoBehaviour:
   - {fileID: 8101424015359654000}
   - {fileID: 8101424015359653998}
   _childGate: 0
-  _shouldAttack: 1
-  _attackType: 2
-  _timeBeforeReset: 3
+  _player: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   _attackNumberToReach: 20
-  _attackNumber: 0
-  _isActivable: 0
+  _attackType: 2
+  _condition: 5
+  _resetOnError: 1
+  _timeBeforeReset: 0
 --- !u!114 &8101424015359654000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   _childGate: 0
   _isInside: 0
   _shouldEnter: 0
-  radius: 11
+  _radius: 10
   _timeBeforeTrigger: 0
   _timeSince: 0
 --- !u!114 &8101424015359653998
@@ -108,7 +108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8101424015454722120
 Transform:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   _childs:
   - {fileID: 8101424015454722121}
   _childGate: 0
-  _health: {fileID: 0}
+  _health: {fileID: 11400000, guid: f5c65a46c95138e438c3a07d070145b2, type: 2}
   _percentage: 1
 --- !u!114 &8101424015454722121
 MonoBehaviour:
@@ -175,7 +175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8101424016153837573
 Transform:
   m_ObjectHideFlags: 0
@@ -207,12 +207,12 @@ MonoBehaviour:
   - {fileID: 8101424016153837570}
   - {fileID: 8101424016153837568}
   _childGate: 0
-  _shouldAttack: 1
-  _attackType: 1
-  _timeBeforeReset: 3
+  _player: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   _attackNumberToReach: 10
-  _attackNumber: 0
-  _isActivable: 0
+  _attackType: 1
+  _condition: 5
+  _resetOnError: 1
+  _timeBeforeReset: 3
 --- !u!114 &8101424016153837570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   _childGate: 0
   _isInside: 0
   _shouldEnter: 1
-  radius: 10
+  _radius: 10
   _timeBeforeTrigger: 0
   _timeSince: 0
 --- !u!114 &8101424016153837568
@@ -247,7 +247,7 @@ MonoBehaviour:
   _childs: []
   _childGate: 0
   _bossShapeSystem: {fileID: 0}
-  _isShape: 0
+  _isShape: 1
 --- !u!1 &8101424016291808021
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +258,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8101424016291808018}
   - component: {fileID: 8101424016291808019}
+  - component: {fileID: 7232478467426181594}
+  - component: {fileID: 7493287481518169177}
   - component: {fileID: 8101424016291808016}
   m_Layer: 0
   m_Name: Winter
@@ -295,13 +297,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childs:
   - {fileID: 8101424016291808016}
+  - {fileID: 7232478467426181594}
   _childGate: 0
-  _shouldAttack: 0
-  _attackType: 0
-  _timeBeforeReset: 15
+  _player: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   _attackNumberToReach: 0
-  _attackNumber: 0
-  _isActivable: 0
+  _attackType: 0
+  _condition: 0
+  _resetOnError: 0
+  _timeBeforeReset: 15
+--- !u!114 &7232478467426181594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016291808021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b659d87a9a6c1cc449a5d43330a720eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childs: []
+  _childGate: 0
+  _health: {fileID: 11400000, guid: f5c65a46c95138e438c3a07d070145b2, type: 2}
+  _hitTime: 15
+  _triggerType: 0
+--- !u!114 &7493287481518169177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016291808021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94ef0c5d64136145b95cdd4de0cc481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childs: []
+  _childGate: 0
+  _shapeSystem: {fileID: 0}
+  _time: 20
+  _condition: 1
+  _resetOnNewShape: 1
 --- !u!114 &8101424016291808016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +366,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8101424016618067094}
   - component: {fileID: 8101424016618067097}
+  - component: {fileID: 8301503317489124549}
+  - component: {fileID: 9159327450803986693}
+  - component: {fileID: 2700960435171505831}
   m_Layer: 0
   m_Name: LIA
   m_TagString: Untagged
@@ -363,13 +404,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd30b50c0c0c9a84f976ae2211111ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: {fileID: 0}
   _boss: {fileID: 0}
   _bossShapeSystem: {fileID: 0}
   _shapeLibrary: {fileID: 0}
+  _attacks: {fileID: 8301503317489124549}
+  _moveCenterTime: 2
   spring: {fileID: 8101424016153837571}
   summer: {fileID: 8101424015454722118}
   fall: {fileID: 8101424015359654001}
   winter: {fileID: 8101424016291808019}
+--- !u!114 &8301503317489124549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016618067096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de3d34aca8cdbf48bc1f18997410696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss: {fileID: 0}
+  _bossHealth: {fileID: 0}
+  _launcher: {fileID: 0}
+  _attackSystem: {fileID: 0}
+  _waitTimeBeforeAction: 7
+  _timeBetweenAttacks: 5
+  _timeBetweenAttacksFALL: 5
+  _stuntColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _neutralAttacks:
+  - Thunder
+  - Bullet Hell Neutral
+  - Leaf Beam Neutral
+  - Movement
+  _fallAttacks:
+  - FollowPlayer
+  - Leaf Beam
+  - FallDash
+  - Boomerang
+  _winterAttacks:
+  - Ice Hell
+  - Bullet Hell
+  - Snow Absorption
+--- !u!114 &9159327450803986693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016618067096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32abbf14ab750734da4a99565c6acc9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 8101424016618067097}
+  target: {fileID: 11400000, guid: 5792cd1fa853d0a49b84f95c78e28a2f, type: 2}
+--- !u!114 &2700960435171505831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101424016618067096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4851860a21b0bb24a9aa93af191df83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 8301503317489124549}
+  target: {fileID: 11400000, guid: f6b30df2d60bdf148a59056903013e5c, type: 2}
 --- !u!1 &8101424017016352691
 GameObject:
   m_ObjectHideFlags: 0

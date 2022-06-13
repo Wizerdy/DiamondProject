@@ -1,43 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class IceShard : MonoBehaviour
 {
-    [SerializeField] private float lifeSpan = 15f;
-    [SerializeField] private float maxSize = 3f;
-    [SerializeField] private float growthSpeed = 1f;
+    [SerializeField] string targetTag = "Player";
+    [SerializeField] float lifeSpan = 15f;
+    [SerializeField] float maxSize = 3f;
+    [SerializeField] float growthSpeed = 1f;
+    [SerializeField] DamageHealth _modDamage = null;
 
-    private Vector3 aimDir = new Vector3(0, 0, 0);
+    [HideInInspector, SerializeField] UnityEvent<IceShard> _onShardSpawn;
+    [HideInInspector, SerializeField] UnityEvent<GameObject> _onShardHit;
+    [HideInInspector, SerializeField] UnityEvent _onShardDestroy;
 
-    [SerializeField] delegate void OnShardPlayerHitEvent();
-    OnShardPlayerHitEvent onShardPlayerHitEvent;
-    [SerializeField] delegate void OnShardSpawnEvent();
-    OnShardSpawnEvent onShardSpawnEvent;
+    Vector3 aimDir = new Vector3(0, 0, 0);
 
-    private float shardSpeed = 10f;
-    private int shardDamage = 5;
-    private Transform target;
-    private Rigidbody2D rb;
-    private float _lifeTimer;
-    private Vector3 size;
-    private bool isTargetingPlayer = false;
-    private bool canMove = false;
+    float shardSpeed = 10f;
+    int shardDamage = 5;
+    Transform target;
+    Rigidbody2D rb;
+    float _lifeTimer;
+    Vector3 size;
+    bool isTargetingPlayer = false;
+    bool canMove = false;
 
-    public void Init(Transform _target, float _ShardSpeed, int _ShardDamage, Vector3 _aimDir) {
-        target = _target;
-        shardSpeed = _ShardSpeed;
-        shardDamage = _ShardDamage;
-        aimDir = _aimDir;
-    }
+    public event UnityAction<IceShard> OnShardSpawn { add => _onShardSpawn.AddListener(value); remove => _onShardSpawn.RemoveListener(value); }
+    public event UnityAction<GameObject> OnShardHit { add => _onShardHit.AddListener(value); remove => _onShardHit.RemoveListener(value); }
+    public event UnityAction OnShardDestroy { add => _onShardDestroy.AddListener(value); remove => _onShardDestroy.RemoveListener(value); }
 
     //method overload
-    public void Init(Transform _target, float _ShardSpeed, int _ShardDamage, Vector3 _aimDir, bool _isTargetingPlayer) {
+    public void Init(Transform _target, float _ShardSpeed, int _ShardDamage, Vector3 _aimDir, float lifetime, bool _isTargetingPlayer = false) {
         target = _target;
         shardSpeed = _ShardSpeed;
         shardDamage = _ShardDamage;
         aimDir = _aimDir;
         isTargetingPlayer = _isTargetingPlayer;
+        lifeSpan = lifetime;
     }
 
     private void Start() {
@@ -46,13 +46,15 @@ public class IceShard : MonoBehaviour
 
         //transform.localScale = new Vector3(0,0,1);
         //StartCoroutine(Growth());
-        onShardPlayerHitEvent += OnSpawn;
-        onShardSpawnEvent += OnShardHitPlayer;
-
-        onShardSpawnEvent?.Invoke();
+        _onShardSpawn?.Invoke(this);
 
         _lifeTimer = lifeSpan;
         size = new Vector3(maxSize, maxSize, 1);
+
+        if (_modDamage != null) {
+            _modDamage.Damage = shardDamage;
+            _modDamage.OnCollide += _OnHit;
+        }
     }
 
     private void FixedUpdate() {
@@ -80,6 +82,7 @@ public class IceShard : MonoBehaviour
         }
 
     }
+
     //private IEnumerator Growth() {
     //    while(transform.localScale.x < maxSize) {
     //        Vector3 growth = new Vector3(transform.localScale.x + growthSpeed * Time.deltaTime, transform.localScale.y + growthSpeed * Time.deltaTime, 1
@@ -92,28 +95,30 @@ public class IceShard : MonoBehaviour
 
     private void KillShard() {
         gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Player") {
-            collision.gameObject.GetComponent<IHealth>()?.TakeDamage(shardDamage);
-            onShardPlayerHitEvent?.Invoke();
-            KillShard();
-        }
+    private void OnDisable() {
+        Destroy(gameObject);
     }
 
-    private void OnSpawn() {
-
-    }
-
-    private void OnShardHitPlayer() {
-        
-    }
-
+    //private void OnTriggerEnter2D(Collider2D collision) {
+    //    if (collision.gameObject.tag == targetTag) {
+    //        collision.gameObject.GetComponent<IHealth>()?.TakeDamage(shardDamage);
+    //        _onShardHit?.Invoke(collision.gameObject);
+    //        KillShard();
+    //    }
+    //}
 
     private void OnDestroy() {
-        onShardSpawnEvent -= OnSpawn;
-        onShardPlayerHitEvent -= OnShardHitPlayer;
+        if (_modDamage != null) {
+            _modDamage.OnCollide -= _OnHit;
+        }
 
+        _onShardDestroy?.Invoke();
+    }
+
+    private void _OnHit(GameObject target) {
+        _onShardHit?.Invoke(target);
     }
 }

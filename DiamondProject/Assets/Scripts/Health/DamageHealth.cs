@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using ToolsBoxEngine;
 
 [System.Serializable]
@@ -10,41 +11,58 @@ public class DamageHealth : MonoBehaviour {
     [SerializeField] bool _destroyOnHit;
     [SerializeField] bool _onlyDamageOnceEach = false;
     [SerializeField] string _damageType;
+    [SerializeField] MultipleTagSelector _ignoreTag;
+
+    [SerializeField, HideInInspector] UnityEvent<GameObject> _onCollide;
+    [SerializeField, HideInInspector] UnityEvent<GameObject> _onTrigger;
+    [SerializeField, HideInInspector] UnityEvent<GameObject, int> _onDamage;
     
-    Tools.BasicDelegate<GameObject> _onCollide;
     List<GameObject> _hitted = new List<GameObject>();
 
     #region Properties
 
     public int Damage { get { return _damage; } set { _damage = value; } }
     public MultipleTagSelector Damageables { get { return _damageables; } set { _damageables = value; } }
-    public event Tools.BasicDelegate<GameObject> OnCollide { add { _onCollide += value; } remove { _onCollide -= value; } }
+
+    public event UnityAction<GameObject> OnCollide { add { _onCollide.AddListener(value); } remove { _onCollide.RemoveListener(value); } }
+    public event UnityAction<GameObject> OnTrigger { add { _onTrigger.AddListener(value); } remove { _onTrigger.RemoveListener(value); } }
+    public event UnityAction<GameObject, int> OnDamage { add { _onDamage.AddListener(value); } remove { _onDamage.RemoveListener(value); } }
 
     #endregion
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        Collide(collision.collider, true);
+        Collide(collision.collider);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         Collide(collision);
     }
 
-    private void Collide(Collider2D collision, bool hardHit = false) {
+    private void Collide(Collider2D collision) {
+        if (_ignoreTag.Contains(collision.gameObject.tag)) { return; }
+
+        bool hardHit = !collision.isTrigger;
+
         if (_damageables.Contains(collision.gameObject.tag)) {
             GameObject elderly = collision.transform.FindElderlyByTag().gameObject;
             if (_onlyDamageOnceEach && _hitted.Contains(elderly)) { return; }
-            collision.gameObject.GetComponent<IHealth>()?.TakeDamage(_damage, _damageType);
             _hitted.Add(elderly);
             _onCollide?.Invoke(collision.gameObject);
+            IHealth health = collision.gameObject.GetComponent<IHealth>();
+            if (health != null && health.CanTakeDamage) {
+                health.TakeDamage(_damage, _damageType);
+                _onDamage?.Invoke(collision.gameObject, _damage);
+            }
             if (_destroyOnHit) {
                 Die();
             }
             return;
         }
 
+        if (!hardHit) { _onTrigger?.Invoke(collision.gameObject); }
+        else if (hardHit) { _onCollide?.Invoke(collision.gameObject); }
+
         if (hardHit && _destroyOnHit) {
-            _onCollide?.Invoke(collision.gameObject);
             Die();
         }
     }
@@ -59,9 +77,19 @@ public class DamageHealth : MonoBehaviour {
     }
 
     public void SetValues(MultipleTagSelector damageables, int damage) {
-        _damageables = damageables;
+        if (damageables != null) {
+            _damageables = damageables;
+        }
         _damage = damage;
         ResetHitted();
+    }
+
+    public void SetDamage(int damage) {
+        _damage = damage;
+    }
+
+    public void NotEditable() {
+        this.hideFlags = HideFlags.NotEditable;
     }
 }
 

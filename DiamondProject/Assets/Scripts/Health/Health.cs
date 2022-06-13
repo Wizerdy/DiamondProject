@@ -11,24 +11,28 @@ public class Health : MonoBehaviour, IHealth {
     [SerializeField] UnityEvent<int> _onHeal;
     [SerializeField] UnityEvent _onDeath;
     [SerializeField] bool _destroyOnDeath = true;
-    [SerializeField] List<string> _resistances = new List<string>();
+    [SerializeField] List<DamageModifier> _damageModifiers = new List<DamageModifier>();
 
     [SerializeField, HideInInspector] UnityEvent<int> _onMaxHealthChange;
+    [SerializeField, HideInInspector] UnityEvent _onInvicible;
+    [SerializeField, HideInInspector] UnityEvent _onVulnerable;
     [SerializeField, HideInInspector] UnityEvent _onLateStart;
 
-    int _invicibilityToken = 0;
+    Token _invicibilityToken = new Token();
     int _currentHealth;
 
     #region Properties
 
     public int MaxHealth { get => _maxHealth; set => SetMaxHealth(value); }
     public int CurrentHealth { get { return _currentHealth; } set { ChangeHealth(value - _currentHealth); } }
-    public float Percentage { get { return MaxHealth == 0 ? _currentHealth / MaxHealth : 1f; } }
+    public float Percentage { get { return MaxHealth == 0 ? _currentHealth / MaxHealth : 1f; } set { CurrentHealth = Mathf.RoundToInt(_maxHealth * value); } }
     public bool CanTakeDamage {
-        get { return _invicibilityToken <= 0; }
-        set { _invicibilityToken += (value ? -1 : 1); _invicibilityToken = Mathf.Max(0, _invicibilityToken); }
+        get { return !_invicibilityToken.HasToken; }
+        set { _invicibilityToken.AddToken(!value); }
     }
 
+    public event UnityAction OnInvicible { add => _onInvicible.AddListener(value); remove => _onInvicible.RemoveListener(value); }
+    public event UnityAction OnVulnerable { add => _onVulnerable.AddListener(value); remove => _onVulnerable.RemoveListener(value); }
     public event UnityAction<int> OnHit { add => _onHit.AddListener(value); remove => _onHit.RemoveListener(value); }
     public event UnityAction<int> OnHeal { add => _onHeal.AddListener(value); remove => _onHeal.RemoveListener(value); }
     public event UnityAction OnDeath { add => _onDeath.AddListener(value); remove => _onDeath.RemoveListener(value); }
@@ -37,10 +41,19 @@ public class Health : MonoBehaviour, IHealth {
 
     #endregion
 
+    #region Unity Callbacks
+
+    private void Awake() {
+        _invicibilityToken.OnFill += () => _onInvicible?.Invoke();
+        _invicibilityToken.OnEmpty += () => _onVulnerable?.Invoke();
+    }
+
     private void Start() {
         _currentHealth = _maxHealth;
         _onLateStart?.Invoke();
     }
+
+    #endregion
 
     private void ChangeHealth(int amount) {
         if (amount == 0) { return; }
@@ -51,9 +64,24 @@ public class Health : MonoBehaviour, IHealth {
         }
     }
 
-    public void TakeDamage(int amount, string damageTypes = "") {
+    public HealthData Save() {
+        return new HealthData().Set(_maxHealth, _currentHealth);
+    }
+
+    public void Load(HealthData data) {
+        if (data == null) { return; }
+        _currentHealth = data.currentHealth;
+        _maxHealth = data.maxHealth;
+    } 
+
+    public void TakeDamage(int amount, string damageType = "") {
         if (!CanTakeDamage) { return; }
-        if (damageTypes == "" || !_resistances.Contains(damageTypes)) {
+            if (_damageModifiers.Contains(damageType)) {
+                amount = _damageModifiers.Get(damageType).Modify(amount);
+            }
+
+            if (amount <= 0) { return; }
+
             _currentHealth -= amount;
             _currentHealth = Mathf.Max(0, _currentHealth);
             _onHit?.Invoke(amount);
@@ -61,6 +89,15 @@ public class Health : MonoBehaviour, IHealth {
             if (_currentHealth <= 0) {
                 Die();
             }
+    }
+
+    public void TakeDamage(int amount) {
+        _currentHealth -= amount;
+        _currentHealth = Mathf.Max(0, _currentHealth);
+        _onHit?.Invoke(amount);
+
+        if (_currentHealth <= 0) {
+            Die();
         }
     }
 
@@ -77,23 +114,43 @@ public class Health : MonoBehaviour, IHealth {
         }
     }
 
-    public void AddResistance(string newResistances) {
-        if (!_resistances.Contains(newResistances)) {
-            _resistances.Add(newResistances);
+    public void AddDamageModifier(DamageModifier dm) {
+        _damageModifiers.Add(dm);
+    }
+
+    public void RemoveDamageModifier(DamageModifier dm) {
+        if (_damageModifiers.Contains(dm)) {
+            _damageModifiers.Remove(dm);
         }
     }
 
-    public void RemoveResistance(string newResistances) {
-        if (_resistances.Contains(newResistances)) {
-            _resistances.Remove(newResistances);
-        }
-    }
-
-    void SetMaxHealth(int amount) {
+    public void SetMaxHealth(int amount) {
         if (amount == _maxHealth) { return; }
         int delta = amount - _maxHealth;
         if (_currentHealth == _maxHealth || _currentHealth > amount) { _currentHealth = amount; }
         _maxHealth = amount;
         _onMaxHealthChange?.Invoke(delta);
+    }
+
+    //private void AddInvicibilityToken(int amount) {
+    //    if (_invicibilityToken == 0 && amount > 0) {
+    //        _onInvicible?.Invoke();
+    //    } else if (_invicibilityToken > 0 && _invicibilityToken - amount <= 0) {
+    //        _onVulnerable?.Invoke();
+    //    }
+    //    this.Hurl(_invicibilityToken.ToString());
+    //    _invicibilityToken += amount;
+    //    _invicibilityToken = Mathf.Max(0, _invicibilityToken);
+    //}
+}
+
+public class HealthData {
+    public int maxHealth;
+    public int currentHealth;
+
+    public HealthData Set(int maxHealth, int currentHealth) {
+        this.maxHealth = maxHealth;
+        this.currentHealth = currentHealth;
+        return this;
     }
 }

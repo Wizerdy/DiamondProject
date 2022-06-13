@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Reference/VisualEffect")]
-public class VisualEffectReference : Reference<VisualEffect> {
+public class VisualEffectReference : Reference<VisualEffects> {
 
 }

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3440608959053010894
 Transform:
   m_ObjectHideFlags: 0
@@ -45,19 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18156d19e0dcc84085208b64be2121a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
+  _bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
   id: Ice Hell
+  _playerRef: {fileID: 0}
   duration: 5
   coolDown: 1
-  isPlaying: 0
-  locked: 0
-  _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
+  _dontNeedEnd: 0
+  _castTime: 0
+  _onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCast:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
   firstPatterns:
   - chargeTime: 2
     speed: 75
@@ -80,12 +84,14 @@ MonoBehaviour:
     numberOfWaves: 3
     numberOfIceShardsPerWave: 30
     patternType: 1
+  delayBetweenWaves: 0.5
+  spawnDistanceFromBoss: 1.5
+  gapWidth: 30
+  shardLifetime: 5
   iceShardDamage: 10
-  delayBetweenWaves: 1
-  delayBetweenShards: 0.01
-  angleOffSet: 25
-  spawnDistance: 0.1
   iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
+  bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
+  _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
 --- !u!114 &-2029285435866036004
 MonoBehaviour:
   m_ObjectHideFlags: 0
