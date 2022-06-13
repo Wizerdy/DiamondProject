@@ -19,4 +19,8 @@ public class ButtonsScript : MonoBehaviour {
     public void StartTime() {
         Time.timeScale = 1;
     }
+
+    public void Quit() {
+        Application.Quit();
+    }
 }

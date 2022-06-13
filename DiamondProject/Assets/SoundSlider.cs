@@ -10,6 +10,8 @@ public class SoundSlider : MonoBehaviour {
     [SerializeField] bool _isActive;
     [SerializeField] Button _onOff;
     [SerializeField] Image _onOffImage;
+    [SerializeField] Sprite _onSprite;
+    [SerializeField] Sprite _offSprite;
     [SerializeField] Slider _slider;
     [SerializeField] TMP_Text _valueLabel;
     [SerializeField] TMP_Text _titleLabel;
@@ -27,8 +29,10 @@ public class SoundSlider : MonoBehaviour {
     }
 
     public void UpdateSlider() {
-        _onOffImage.color = _isActive ? Color.green : Color.red;
+        _onOffImage.sprite = _isActive ? _onSprite : _offSprite;
         _valueLabel.text = _slider.value.ToString();
-        _onUpdate?.Invoke(_slider.value);
+        if (_isActive) {
+            _onUpdate?.Invoke(_slider.value);
+        }
     }
 }
