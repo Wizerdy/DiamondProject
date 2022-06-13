@@ -8,8 +8,8 @@ public abstract class BaseAttack : MonoBehaviour {
     [SerializeField] UnityEvent<BaseAttack> OnEnd;
     [SerializeField] Reference<AttackSystem> attackSystem;
     [SerializeField] public string id = "";
-    [SerializeField] protected BossReference _bossRef; // Fils de put
-    [SerializeField] protected Reference<PlayerController> _playerRef; // Enculé
+    [SerializeField] protected BossReference _bossRef;
+    [SerializeField] protected Reference<PlayerController> _playerRef;
     [SerializeField] protected float duration = 1;
     [SerializeField] protected float coolDown = 1;
     [SerializeField] protected bool _dontNeedEnd = false;
