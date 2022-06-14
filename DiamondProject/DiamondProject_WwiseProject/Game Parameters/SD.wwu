@@ -19,7 +19,11 @@
 						<Property Name="Max" Type="Real64" Value="6"/>
 					</PropertyList>
 				</GameParameter>
-				<GameParameter Name="RTPC_Pumpkid_Speed" ID="{BCB8007F-2341-4562-AB3E-736EA57E7B50}"/>
+				<GameParameter Name="RTPC_Pumpkid_Speed" ID="{BCB8007F-2341-4562-AB3E-736EA57E7B50}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
 				<GameParameter Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}">
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="0"/>
@@ -51,6 +55,17 @@
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="0"/>
 						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_GeneralVolume" ID="{DD015EBB-11E6-4575-BF2F-8407D85C8C2B}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_SFXVolume" ID="{720BFC33-18EC-4C00-A115-B3CAFCBD224D}"/>
+				<GameParameter Name="RTPC_MusicVolume" ID="{E7DBE861-BE12-4A74-9ECB-778C9C290D09}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
 					</PropertyList>
 				</GameParameter>
 			</ChildrenList>
