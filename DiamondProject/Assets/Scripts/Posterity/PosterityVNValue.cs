@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class PosterityVNValue : MonoBehaviour
 {
     [SerializeField] private PosterityObject posterityObj;
+    [SerializeField] private GameObject spriteFeedBack;
 
     private Hint hint;
     public void ArrowHit(GameObject obj) {
