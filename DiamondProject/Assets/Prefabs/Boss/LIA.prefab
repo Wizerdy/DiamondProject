@@ -108,7 +108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8101424015454722120
 Transform:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8101424016153837573
 Transform:
   m_ObjectHideFlags: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   _childs: []
   _childGate: 0
   _shapeSystem: {fileID: 0}
-  _time: 15
+  _time: 20
   _condition: 1
   _resetOnNewShape: 1
 --- !u!114 &8101424016291808016
@@ -408,6 +408,8 @@ MonoBehaviour:
   _boss: {fileID: 0}
   _bossShapeSystem: {fileID: 0}
   _shapeLibrary: {fileID: 0}
+  _attacks: {fileID: 8301503317489124549}
+  _moveCenterTime: 2
   spring: {fileID: 8101424016153837571}
   summer: {fileID: 8101424015454722118}
   fall: {fileID: 8101424015359654001}
@@ -424,14 +426,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de3d34aca8cdbf48bc1f18997410696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _boss: {fileID: 0}
   _bossHealth: {fileID: 0}
   _launcher: {fileID: 0}
   _attackSystem: {fileID: 0}
   _waitTimeBeforeAction: 7
   _timeBetweenAttacks: 5
   _timeBetweenAttacksFALL: 5
+  _stuntColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _neutralAttacks:
-  - Trees
+  - Thunder
   - Bullet Hell Neutral
   - Leaf Beam Neutral
   - Movement

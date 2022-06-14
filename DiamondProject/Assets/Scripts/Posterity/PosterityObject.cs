@@ -28,17 +28,31 @@ public class PosterityObject : ScriptableObject {
     public bool gotToAnotherBoss = false;
     public int numberOfTriggerActivate = 0;
 
+    [Header("For VN Scene")]
+    public bool killNeutralForm = false;
+    public bool killFallForm = false;
+    public bool killWinterForm = false;
+
+    public bool sawFallForm = false;
+    public bool sawWinterForm = false;
+
     public bool firstTimeTalking = true;
 
-    public int numberOfTimeTalkingToFairy = 0;
     public int nbTimeTalkedToNorna = 0;
     public int nbCorpse = 0;
 
     public bool winterFormTriggerActivated = false;
 
-    public List<Hint> triggerHintList = new List<Hint>();
-    public List<Hint> bossHintList = new List<Hint>();
-    public List<Hint> characterHintList = new List<Hint>();
+    public GameObject arrow;
+    //public List<Hint> triggerHintList = new List<Hint>();
+    //public List<Hint> bossHintList = new List<Hint>();
+    //public List<Hint> characterHintList = new List<Hint>();
+    [Header("Fall form")]
+    public List<Hint> fallBossHintList = new List<Hint>();
+    public List<Hint> fallAttackHintList = new List<Hint>();
+    [Header("Winter form")]
+    public List<Hint> winterBossHintList = new List<Hint>();
+    public List<Hint> winterAttackHintList = new List<Hint>();
     public void ResetValues() {
         nbCorpse = 0;
         nbTimeTalkedToNorna = 0;
@@ -58,7 +72,6 @@ public class PosterityObject : ScriptableObject {
         numberOfTriggerActivate = 0;
 
         firstTimeTalking = true;
-        numberOfTimeTalkingToFairy = 0;
     }
 
     public void ResetValuesBeforeBoss() {

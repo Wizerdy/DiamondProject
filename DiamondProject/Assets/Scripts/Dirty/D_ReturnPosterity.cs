@@ -39,17 +39,8 @@ public class D_ReturnPosterity : MonoBehaviour {
         return _posterity.numberOfTriggerActivate;
     }
 
-    public int ReturnNumberOfTimeTalkedToFairy() {
-        if (_posterity == null) { return 0; }
-        return _posterity.numberOfTimeTalkingToFairy;
-    }
-
     public void NotFirstTimeTalking() {
         _posterity.firstTimeTalking = false;
-    }
-
-    public void IncrementeFairyDialogue() {
-        ++_posterity.numberOfTimeTalkingToFairy;
     }
 
     public void ResetValueBeforeBoss() {

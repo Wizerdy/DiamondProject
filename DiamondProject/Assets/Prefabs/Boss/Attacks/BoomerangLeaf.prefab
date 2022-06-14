@@ -44,19 +44,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e8864318de04469e46f7b0e0e2583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
-  id: Boomerang
   _bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
+  id: Boomerang
   _playerRef: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
   duration: 1
   coolDown: 1
   _dontNeedEnd: 1
+  _castTime: 0
+  _onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCast:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
   _boomerangPrefab: {fileID: -1796964455406050113, guid: d9570dfe0ebe64a4fa9d565d2e8d96ef, type: 3}
   _firstSpeed: 5
   _secondspeed: 30

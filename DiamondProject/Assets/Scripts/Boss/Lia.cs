@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using ToolsBoxEngine;
 
 public class Lia : MonoBehaviour {
     [SerializeField] Health _health;
     [SerializeField] IMeetARealBoss _boss;
     [SerializeField] BossShapeSystem _bossShapeSystem;
     [SerializeField] ShapeLibrary _shapeLibrary;
+    [SerializeField] LiaAttack _attacks;
+
+    [Header("Values")]
+    [SerializeField] float _moveCenterTime = 2f;
 
     [Header("Triggers")]
     [SerializeField] Trigger spring;
@@ -15,15 +20,15 @@ public class Lia : MonoBehaviour {
     [SerializeField] Trigger fall;
     [SerializeField] Trigger winter;
 
+    [SerializeField, HideInInspector] UnityEvent _onCentering;
+
     List<Shape> _beatenShape = new List<Shape>();
+    bool _morphing = false;
+
+    public event UnityAction OnCentering { add => _onCentering.AddListener(value); remove => _onCentering.RemoveListener(value); }
 
     private void Update() {
-        if (!_beatenShape.Contains(Shape.SPRING) && spring.IsTrigger()) {
-            NewForm(Shape.SPRING);
-        }
-        if (!_beatenShape.Contains(Shape.SUMMER) && summer.IsTrigger()) {
-            NewForm(Shape.SUMMER);
-        }
+        if (_morphing) { return; }
         if (!_beatenShape.Contains(Shape.FALL) && fall.IsTrigger()) {
             NewForm(Shape.FALL);
         }
@@ -33,6 +38,18 @@ public class Lia : MonoBehaviour {
     }
 
     public void NewForm(Shape shape) {
+        _attacks.StopBehaviour();
+        _attacks.ClearAttacks();
+        _boss.MoveTo(Vector2.zero, _moveCenterTime);
+        StartCoroutine(Tools.Delay(ChangeForm, shape, _moveCenterTime));
+        _health.CanTakeDamage = false;
+        StartCoroutine(Tools.Delay(() => _health.CanTakeDamage = true, _moveCenterTime));
+        _morphing = true;
+        StartCoroutine(Tools.Delay(() => _morphing = false, _moveCenterTime));
+        _onCentering?.Invoke();
+    }
+
+    public void ChangeForm(Shape shape) {
         _health.CurrentHealth = _health.MaxHealth;
         _bossShapeSystem.ChangeShape(_shapeLibrary.GetBossShape(shape));
         if (shape != Shape.NEUTRAL) {

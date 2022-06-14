@@ -14,7 +14,6 @@ public class FallDash : BaseAttack {
     [SerializeField] private float leafSpeed = 10f;
 
     protected override IEnumerator IExecute() {
-        isPlaying = true;
         yield return new WaitForSeconds(dashLoadingTime);
         RaycastHit2D[] raycastHit2D;
         Vector3 dashDir = (PlayerPos - BossPos).normalized;
