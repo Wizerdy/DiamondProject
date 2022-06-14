@@ -13,7 +13,10 @@ public class Boomerang : MonoBehaviour {
     [SerializeField] Rigidbody2D rb;
     [SerializeField] DamageHealth dh;
     [SerializeField] bool comeback;
+    [SerializeField] UnityEvent _onComeback;
     [SerializeField] UnityEvent<Boomerang> _onDeath;
+
+    public event UnityAction OnComeback { add => _onComeback.AddListener(value); remove => _onComeback.RemoveListener(value); }
     public event UnityAction<Boomerang> OnDeath { add => _onDeath.AddListener(value); remove => _onDeath.RemoveListener(value); }
 
     public Boomerang SetDirection(Vector3 direction) {
@@ -30,18 +33,17 @@ public class Boomerang : MonoBehaviour {
         this._firstSpeed = speed;
         return this;
     }
+
     public Boomerang SetSecondSpeed(float speed) {
         this._secondSpeed = speed;
         return this;
     }
+
     public Boomerang SetDamage(int damage) {
         _damage = damage;
         return this;
     }
 
-
-
-    // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = _direction * _firstSpeed;
@@ -49,7 +51,13 @@ public class Boomerang : MonoBehaviour {
         dh.Damage = _damage;
         _depart = transform.position;
     }
+
     private void Update() {
+        float manatthanMax = Mathf.Abs(_destination.x - _depart.x) + Mathf.Abs(_destination.y - _depart.y);
+        float manatthanCurrent = Mathf.Abs(_destination.x - transform.position.x) + Mathf.Abs(_destination.y - transform.position.y);
+        float percentage = Mathf.InverseLerp(0, manatthanMax, manatthanCurrent);
+        AkSoundEngine.SetRTPCValue("RTPC_LeafBoomerang_Position", percentage);
+
         if (!comeback) {
             if (_direction == Vector3.left && transform.position.x <= _destination.x) {
                 Comeback();
@@ -78,6 +86,7 @@ public class Boomerang : MonoBehaviour {
         _direction *= -1;
         rb.velocity = _direction * _secondSpeed;
         transform.localScale *= -1;
+        _onComeback?.Invoke();
     }
 
     private void Die() {
