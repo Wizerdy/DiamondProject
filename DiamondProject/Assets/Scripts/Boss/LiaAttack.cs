@@ -199,23 +199,6 @@ public class LiaAttack : MonoBehaviour {
         if (attack == null) {
             return;
         }
-        switch (_currentShape.Type) {
-            case Shape.NEUTRAL:
-            default:               
-                if (_neutralAttacks.Contains(attack.id)){
-                    availableAttacks.Add(attack.id);
-                }
-                break;
-            case Shape.FALL:
-                if (_fallAttacks.Contains(attack.id)){
-                    availableAttacks.Add(attack.id);
-                }
-                break;
-            case Shape.WINTER:
-                if (_winterAttacks.Contains(attack.id)){
-                    availableAttacks.Add(attack.id);
-                }
-                break;
-        }
+        availableAttacks.Add(attack.id);
     }
 }
