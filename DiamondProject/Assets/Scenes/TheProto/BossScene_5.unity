@@ -4896,6 +4896,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1897836331}
     - target: {fileID: 2161993602319532677, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _maxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161993602319532677, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1627650771}
@@ -4951,10 +4955,6 @@ PrefabInstance:
       propertyPath: _input
       value: 
       objectReference: {fileID: 1405585054}
-    - target: {fileID: 3959631132869822229, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
-      propertyPath: _bullet
-      value: 
-      objectReference: {fileID: 4847567384368089890, guid: 926c297511747224fad1217bde893de4, type: 3}
     - target: {fileID: 3959631132869822232, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6507,14 +6507,6 @@ PrefabInstance:
     - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _waitTimeBeforeAction
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _neutralAttacks.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _neutralAttacks.Array.data[1]
-      value: Movement
       objectReference: {fileID: 0}
     - target: {fileID: 4520003440881538012, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: m_Enabled
