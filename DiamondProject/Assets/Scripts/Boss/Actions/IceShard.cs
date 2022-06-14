@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum ShardType {
+    iceHell, bulletHell
+}
+
 public class IceShard : MonoBehaviour
 {
     [SerializeField] string targetTag = "Player";
@@ -25,19 +29,21 @@ public class IceShard : MonoBehaviour
     Vector3 size;
     bool isTargetingPlayer = false;
     bool canMove = false;
+    public ShardType shardType;
 
     public event UnityAction<IceShard> OnShardSpawn { add => _onShardSpawn.AddListener(value); remove => _onShardSpawn.RemoveListener(value); }
     public event UnityAction<GameObject> OnShardHit { add => _onShardHit.AddListener(value); remove => _onShardHit.RemoveListener(value); }
     public event UnityAction OnShardDestroy { add => _onShardDestroy.AddListener(value); remove => _onShardDestroy.RemoveListener(value); }
 
     //method overload
-    public void Init(Transform _target, float _ShardSpeed, int _ShardDamage, Vector3 _aimDir, float lifetime, bool _isTargetingPlayer = false) {
+    public void Init(ShardType _shardType, Transform _target, float _ShardSpeed, int _ShardDamage, Vector3 _aimDir, float lifetime, bool _isTargetingPlayer = false) {
         target = _target;
         shardSpeed = _ShardSpeed;
         shardDamage = _ShardDamage;
         aimDir = _aimDir;
         isTargetingPlayer = _isTargetingPlayer;
         lifeSpan = lifetime;
+        shardType = _shardType;
     }
 
     private void Start() {

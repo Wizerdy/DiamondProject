@@ -6,7 +6,7 @@ using MoreMountains.Feedbacks;
 
 public class BossVFX : MonoBehaviour {
     [Header("References")]
-    [SerializeField] TrackingTree _trackingTree;
+    [SerializeField] TrackingThunder _trackingTree;
     [SerializeField] FireMissile _fireMissile;
     [SerializeField] Fireball _fireball;
     [SerializeField] HealthProxy _healthProxy;

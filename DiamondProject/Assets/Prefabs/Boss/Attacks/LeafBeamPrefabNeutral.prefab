@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2043366983554929249}
+  - component: {fileID: 8516656307579925494}
   - component: {fileID: 2043366983554929250}
   - component: {fileID: 986219382987071674}
   m_Layer: 0
@@ -33,6 +34,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8516656307579925494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043366983554929251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248573e5fd7dbdc4f8f455bcddcce746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: {fileID: 2043366983554929250}
+  _boss: {fileID: 11400000, guid: 51c649c5126fe7a478232854d723dc0e, type: 2}
+  _trigger: Focus
+  _onExecute: 1
+  _onCast: 1
+  _onEnd: 0
 --- !u!114 &2043366983554929250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,25 +64,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04690150f3f1a174ebe48a19e83fd75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
-  id: Leaf Beam Neutral
   _bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
+  id: Leaf Beam Neutral
   _playerRef: {fileID: 11400000, guid: f67ae7b8516b72d469dd293ea913c49a, type: 2}
-  duration: 10
+  duration: 5
   coolDown: 1
   _dontNeedEnd: 0
+  _castTime: 1
+  _onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCast:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
   _leafBeamPrefab: {fileID: 1059472417401592482, guid: 887f720744278974bb86bef2592970ee, type: 3}
   _rayAngularSpeed: 10
   _rayLinearSpeed: 15
   _rayDamage: 5
+  _radius: 2
   _beamPosOnBoss: {x: 0, y: 5, z: 0}
-  _minDistLaser: 10
+  _minDistLaser: 5
+  _onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  _onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4638404884051111936, guid: 83f7cc071adccc04db083eae9ab5b0e7, type: 3}
+        m_TargetAssemblyTypeName: PosterityVNValue, Assembly-CSharp
+        m_MethodName: IfBeamHitArrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &986219382987071674
 MonoBehaviour:
   m_ObjectHideFlags: 0

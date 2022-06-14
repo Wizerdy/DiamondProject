@@ -98,10 +98,10 @@ public class HUDHealth : MonoBehaviour {
 
         if (!_isActive) {
             ChangeFillColor(_disableColor);
-            _lifeText.gameObject.SetActive(false);
+            _lifeText?.gameObject.SetActive(false);
         } else {
             if (!_health.IsValid()) { return; }
-            _lifeText.gameObject.SetActive(true);
+            _lifeText?.gameObject.SetActive(true);
             if (_health.Instance.CanTakeDamage) {
                 ChangeFillColor(_startColor);
             } else {
@@ -152,6 +152,7 @@ public class HUDHealth : MonoBehaviour {
 
     private void TakeDamageHUD(int damage) {
         if (!_isActive) { return; }
+        if (damage <= 0) { return; }
         RedScreen();
 
         void RedScreen() {

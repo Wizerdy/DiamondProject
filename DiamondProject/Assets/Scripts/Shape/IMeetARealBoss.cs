@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.Events;
+using ToolsBoxEngine;
 
 public class IMeetARealBoss : MonoBehaviour {
     [SerializeField] Health _health;
     [SerializeField] SpriteRenderer _spriteRenderer;
     [SerializeField] Animator _animator;
+    [SerializeField] SkeletonMecanim _spine;
 
     [SerializeField] UnityEvent<int> _onInvincibility;
     [SerializeField] UnityEvent _onDeath;
@@ -38,5 +41,61 @@ public class IMeetARealBoss : MonoBehaviour {
 
     public void Death() {
         //gameObject.SetActive(false);
+    }
+
+    public void ChangeColor(Color color, float time = 0f) {
+        Color startColor = _spriteRenderer.color;
+        _spriteRenderer.color = color;
+        if (time <= 0f) { return; }
+        StartCoroutine(Tools.Delay(() => _spriteRenderer.color = startColor, time));
+    }
+
+    public Coroutine MoveTo(Vector2 position, float time) {
+        return StartCoroutine(IMoveTo(position, time));
+
+        IEnumerator IMoveTo(Vector2 position, float time) {
+            if (time == 0f) { transform.position = transform.Position2D(position); yield break; }
+            Vector2 startPosition = transform.position;
+            float timePassed = 0f;
+            while (timePassed < time) {
+                yield return new WaitForEndOfFrame();
+                timePassed += Time.deltaTime;
+                Vector2 vector = Vector2.Lerp(startPosition, position, timePassed / time);
+                //Debug.Log(vector + " .. " + timePassed / time);
+                transform.position = transform.position.Override(vector, Axis.X, Axis.Y);
+            }
+        }
+    }
+
+    public void SetAnimatorTrigger(string trigger) {
+        if (trigger == "") { return; }
+        _animator?.SetTrigger(trigger);
+    }
+
+    public void SetAnimatorBool(string trigger, bool state) {
+        if (trigger == "") { return; }
+        _animator?.SetBool(trigger, state);
+    }
+
+    public void SetSkin(Shape shape, int percentage = 100) {
+        if (percentage % 25 != 0) { Debug.LogWarning("Wrong percentage - SetSkin : " + percentage); percentage = 100; }
+        string newSkin = "";
+        switch (shape) {
+            case Shape.NEUTRAL:
+                newSkin += "Neutre";
+                break;
+            case Shape.FALL:
+                newSkin += "Automne_" + percentage;
+                break;
+            case Shape.WINTER:
+                newSkin += "Hiver_" + percentage;
+                break;
+            default:
+                break;
+        }
+
+        _spine.skeleton.SetSkin(newSkin);
+        _spine.Skeleton.SetSlotsToSetupPose();
+        _spine.LateUpdate();
     }
 }

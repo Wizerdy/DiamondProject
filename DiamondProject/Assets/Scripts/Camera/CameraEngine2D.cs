@@ -40,6 +40,7 @@ public class CameraEngine2D : MonoBehaviour {
     }
 
     private void Start() {
+        transform.localPosition = Vector3.zero.Override(transform.localPosition, Axis.Z);
         ResetStartPosition();
         Zoom(2f, 0.2f);
         //StartCoroutine(Tools.Delay<float, float, Vector3?>(Zoom, 0.2f, 5f, null, 0.2f));
@@ -60,6 +61,10 @@ public class CameraEngine2D : MonoBehaviour {
         Vector3 destination = Vector3.zero.Override(newZ, Axis.Z);
         destination -= unzoomedPosition.Value;
         Move(destination, time, curve, Axis.Z);
+    }
+
+    public void ChangeParent(Camera parent) {
+        ChangeParent(parent, 2f, null);
     }
 
     public void ChangeParent(Camera parent, float time, AnimationCurve curve = null) {

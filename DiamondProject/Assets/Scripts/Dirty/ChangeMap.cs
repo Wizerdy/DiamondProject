@@ -11,6 +11,7 @@ public class ChangeMap : MonoBehaviour {
     }
 
     [SerializeField] BossShapeSystem _shapeSystem;
+    [SerializeField] ChangeBossOnShape _changeShape;
 
     [Header("Renderer")]
     [SerializeField] SpriteRenderer _spriteRenderer;
@@ -24,11 +25,13 @@ public class ChangeMap : MonoBehaviour {
     Coroutine routine_ChangeSprite;
 
     private void Awake() {
-        _shapeSystem.OnEnterShape += ChangeSprite;
+        //_shapeSystem.OnEnterShape += ChangeSprite;
+        _changeShape.OnSpriteChange += ChangeSprite;
     }
 
     private void OnDestroy() {
-        _shapeSystem.OnEnterShape -= ChangeSprite;
+        //_shapeSystem.OnEnterShape -= ChangeSprite;
+        _changeShape.OnSpriteChange -= ChangeSprite;
     }
 
     public void ChangeSprite(BossShape shape) {

@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 1726073712233740706}
   - component: {fileID: 1735998592836663502}
   - component: {fileID: 6038740818519240514}
+  - component: {fileID: 8883314476890764831}
   m_Layer: 9
   m_Name: BoomeragneBullet
   m_TagString: Bullet
@@ -486,6 +487,9 @@ MonoBehaviour:
   _onCollide:
     m_PersistentCalls:
       m_Calls: []
+  _onTrigger:
+    m_PersistentCalls:
+      m_Calls: []
   _onDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -509,7 +513,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f43b4fa0b625a664697baf961d18734a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -530,7 +534,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e1792f585164b834c836f9d32e296be7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 806624b0d06e4434aba8c2b3c6aa85da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -579,7 +583,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2, y: 0.23}
+    oldSize: {x: 1.2, y: 1.16}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -588,6 +592,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33510616, y: 0.23}
   m_EdgeRadius: 0
+--- !u!114 &8883314476890764831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847567384368089890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373556d3a3b883748826dd27c4266c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shadowColor: {r: 0, g: 0, b: 0, a: 0.5254902}
+  _light: {fileID: 11400000, guid: 3bb8f2ce7cd7bb44887aeb8fb5e80ab6, type: 2}
+  _effect: {fileID: 0}
+  _height: 1
 --- !u!1 &5537545531246756685
 GameObject:
   m_ObjectHideFlags: 0

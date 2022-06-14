@@ -5,6 +5,10 @@ using UnityEngine;
 public class GetVNTrigger : MonoBehaviour
 {
     [SerializeField] private VNTrigger vnTrigger;
+    [SerializeField] private PosterityObject posterity;
+    [SerializeField] private GameObject arrowNeutral;
+    [SerializeField] private GameObject arrowSleep;
+    [SerializeField] private GameObject arrowBoomerang;
 
     // BOSS HINT
     public bool DoKnowBossFirstHint() {
@@ -21,6 +25,22 @@ public class GetVNTrigger : MonoBehaviour
         vnTrigger.KnowSecondHintBoss = true;
     }
 
+    public bool DoKnowWinterBossHint() {
+        return vnTrigger.knowWinterBossHint;
+    }
+
+    public void LearnFallBossHint() {
+        vnTrigger.knowFallBossHint = true;
+    }
+
+    public bool DoKnowFallBossHint() {
+        return vnTrigger.knowFallBossHint;
+    }
+
+    public void LearnWinterBossHint() {
+        vnTrigger.knowWinterBossHint = true;
+    }
+
     // CHARACTER HINT
 
     public bool DoKnowCharacterFirstHint() {
@@ -29,5 +49,51 @@ public class GetVNTrigger : MonoBehaviour
 
     public void LearnCharacterFirstHint() {
         vnTrigger.KnowFirstHintCharacter = true;
+    }
+
+    public bool DidSawFall() {
+        if (posterity.sawFallForm)
+            return true;
+
+        return false;
+    }
+
+    public bool DidSawWinter() {
+        if (posterity.sawWinterForm)
+            return true;
+
+        return false;
+    }
+    public bool DidKillNeutral() {
+        if (posterity.killNeutralForm)
+            return true;
+
+        return false;
+    }
+
+    public bool DidKillFall() {
+        if (posterity.killFallForm)
+            return true;
+
+        return false;
+    }
+
+    public bool DidKillWinter() {
+        if (posterity.killWinterForm)
+            return true;
+
+        return false;
+    }
+
+    public void ChangeToNeutralArrow() {
+        posterity.arrow = arrowNeutral;
+    }
+
+    public void ChangeToSleepArrow() {
+        posterity.arrow = arrowSleep;
+    }
+
+    public void ChangeToBoomerangArrow() {
+        posterity.arrow = arrowBoomerang;
     }
 }

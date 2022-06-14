@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1005890436504860821}
+  - component: {fileID: 7632341544135766295}
   - component: {fileID: 1005890436504860818}
   - component: {fileID: -1307076030363579548}
   m_Layer: 0
@@ -33,6 +34,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7632341544135766295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005890436504860819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248573e5fd7dbdc4f8f455bcddcce746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: {fileID: 1005890436504860818}
+  _boss: {fileID: 11400000, guid: 51c649c5126fe7a478232854d723dc0e, type: 2}
+  _trigger: Spike
+  _onExecute: 1
+  _onCast: 0
+  _onEnd: 0
 --- !u!114 &1005890436504860818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,21 +64,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff85167d01a36354e9926ebe3e290902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
-  id: Bullet Hell
   _bossRef: {fileID: 0}
+  id: Bullet Hell
   _playerRef: {fileID: 0}
   duration: 1
   coolDown: 1
-  isPlaying: 0
-  locked: 0
-  NoEnd: 0
+  _dontNeedEnd: 0
+  _castTime: 1
+  _onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCast:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
   numberOfWave: 15
   numberOfProjectilsPerWaves: 30
   delayBetweenWaves: 0.0001
@@ -69,8 +90,10 @@ MonoBehaviour:
   offSet: 0.15
   iceShardDamage: 5
   shardSpeed: 30
+  shardLifetime: 5
   _iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
   _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
+  bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
 --- !u!114 &-1307076030363579548
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -234,7 +234,9 @@ namespace ToolsBoxEngine {
 
         public delegate void BasicDelegate<T1, T2, T3>(T1 arg1, T2 arg2, T3 arg3);
 
-        public delegate T BasicDelegateReturn<T>(T arg);
+        public delegate T BasicDelegateReturn<T>();
+
+        public delegate T BasicDelegateReturnArg<T>(T arg);
 
         public delegate T2 BasicDelegateReturn<T1, T2>(T1 arg);
 
@@ -422,6 +424,24 @@ namespace ToolsBoxEngine {
 
         public static Vector2 Position2D(this Transform transform, Axis axis = Axis.Z) {
             return transform.position.To2D(axis);
+        }
+
+        public static Vector3 Position2D(this Transform transform, Vector2 position, Axis axis = Axis.Z) {
+            Vector3 output = transform.position;
+            switch (axis) {
+                case Axis.X:
+                    output = transform.position.Override(position, Axis.Y, Axis.Z);
+                    break;
+                case Axis.Y:
+                    output = transform.position.Override(position, Axis.X, Axis.Z);
+                    break;
+                case Axis.Z:
+                    output = transform.position.Override(position, Axis.X, Axis.Y);
+                    break;
+                default:
+                    break;
+            }
+            return output;
         }
 
         public static int Find(this int[] array, int value) {
@@ -682,26 +702,38 @@ namespace ToolsBoxEngine {
             Print(type, "<b>" + hurler.name + "</b> hurled at you : <b>" + message + "</b>");
         }
 
+        public static string Print<T>(this List<T> list) {
+            string output = "";
+            for (int i = 0; i < list.Count; i++) {
+                output += "[" + list[i].ToString() + "]";
+            }
+            return output;
+        }
+
         #endregion
 
         #region Coroutines
 
         public static IEnumerator Delay<T1, T2, T3>(BasicDelegate<T1, T2, T3> function, T1 arg1, T2 arg2, T3 arg3, float time) {
+            if (time <= 0f) { function(arg1, arg2, arg3); yield break; }
             yield return new WaitForSeconds(time);
             function(arg1, arg2, arg3);
         }
 
         public static IEnumerator Delay<T1, T2>(BasicDelegate<T1, T2> function, T1 arg1, T2 arg2, float time) {
+            if (time <= 0f) { function(arg1, arg2); yield break; }
             yield return new WaitForSeconds(time);
             function(arg1, arg2);
         }
 
         public static IEnumerator Delay<T>(BasicDelegate<T> function, T arg, float time) {
+            if (time <= 0f) { function(arg); yield break; }
             yield return new WaitForSeconds(time);
             function(arg);
         }
 
         public static IEnumerator Delay(BasicDelegate function, float time) {
+            if (time <= 0f) { function(); yield break; }
             yield return new WaitForSeconds(time);
             function();
         }
