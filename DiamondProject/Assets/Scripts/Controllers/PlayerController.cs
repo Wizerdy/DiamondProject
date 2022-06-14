@@ -147,7 +147,6 @@ public class PlayerController : MonoBehaviour {
         _lightningImmunity.Resistance = DamageModifier.ResistanceType.NOMODIFIER;
         _chargeRangedAttack?.SetBullet(_chargeBullet);
 
-
         _chargeMeleeAttack.OnAttack += _DashingAnimator;
         _chargeMeleeAttack.OnAttackEnd += _StopDashingAnimator;
         //InputSystem.EnableDevice(Mouse.current);

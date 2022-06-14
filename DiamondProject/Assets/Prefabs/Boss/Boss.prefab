@@ -108,7 +108,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _destroyOnDeath: 0
-  _damageModifiers: []
+  _damageModifiers:
+  - {fileID: 7793879828692182868}
   _onMaxHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -2868,26 +2869,6 @@ PrefabInstance:
       propertyPath: _bossShapeSystem
       value: 
       objectReference: {fileID: 5680249788645268036}
-    - target: {fileID: 8101424015359654000, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _radius
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 8101424015359654001, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _isActivable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8101424015359654001, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _attackNumberToReach
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8101424015454722118, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _percentage
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8101424015454722121, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _isShape
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8101424015454722121, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: _bossShapeSystem
       value: 
@@ -2896,30 +2877,10 @@ PrefabInstance:
       propertyPath: _bossShapeSystem
       value: 
       objectReference: {fileID: 5680249788645268036}
-    - target: {fileID: 8101424016153837570, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _radius
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8101424016153837571, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _isActivable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8101424016153837571, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _attackNumberToReach
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8101424016291808016, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: _bossShapeSystem
       value: 
       objectReference: {fileID: 5680249788645268036}
-    - target: {fileID: 8101424016291808019, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _childs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8101424016291808019, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: _childs.Array.data[2]
-      value: 
-      objectReference: {fileID: 2966126495327107060}
     - target: {fileID: 8101424016618067094, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2968,10 +2929,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LIA
       objectReference: {fileID: 0}
-    - target: {fileID: 8101424016618067096, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-      propertyPath: m_TagString
-      value: Boss
-      objectReference: {fileID: 0}
     - target: {fileID: 8101424016618067097, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
       propertyPath: _boss
       value: 
@@ -3006,17 +2963,6 @@ PrefabInstance:
       objectReference: {fileID: 5680249788377665360}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
---- !u!114 &2966126495327107060 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7493287481518169177, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
-  m_PrefabInstance: {fileID: 5680249788904057773}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94ef0c5d64136145b95cdd4de0cc481, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4520003439891824436 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8101424016618067097, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
@@ -3033,6 +2979,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8101424016618067094, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
   m_PrefabInstance: {fileID: 5680249788904057773}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7793879828692182868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2521208197425564921, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+  m_PrefabInstance: {fileID: 5680249788904057773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c41b07ad15e214785b57d63ec4dc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8002737192118626437
 PrefabInstance:
   m_ObjectHideFlags: 0

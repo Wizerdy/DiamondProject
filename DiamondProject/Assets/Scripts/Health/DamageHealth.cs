@@ -22,6 +22,7 @@ public class DamageHealth : MonoBehaviour {
     #region Properties
 
     public int Damage { get { return _damage; } set { _damage = value; } }
+    public string DamageType { get { return _damageType; } set { _damageType = value; } }
     public MultipleTagSelector Damageables { get { return _damageables; } set { _damageables = value; } }
 
     public event UnityAction<GameObject> OnCollide { add { _onCollide.AddListener(value); } remove { _onCollide.RemoveListener(value); } }
@@ -42,7 +43,6 @@ public class DamageHealth : MonoBehaviour {
         if (_ignoreTag.Contains(obj.tag)) { return; }
 
         if (_damageables.Contains(obj.tag)) {
-            this.Hurl("TAPER");
             GameObject elderly = obj.transform.FindElderlyByTag().gameObject;
             if (_onlyDamageOnceEach && _hitted.Contains(elderly)) { return; }
             _hitted.Add(elderly);

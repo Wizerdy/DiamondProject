@@ -1197,7 +1197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1822744040261573402, guid: 78faacf52b2d7e24ead199ced679fe06, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1822744040606039228, guid: 78faacf52b2d7e24ead199ced679fe06, type: 3}
       propertyPath: m_Color.b
@@ -3992,6 +3992,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1605749834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 765661128575600137, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+  m_PrefabInstance: {fileID: 1739688776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1621201342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4850,6 +4855,38 @@ PrefabInstance:
       propertyPath: addNormals
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 879398007486362779, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050940502003162264, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _onUse.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050940502003162264, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _onUse.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050940502003162264, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _onUse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1605749834}
+    - target: {fileID: 1050940502003162264, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _onUse.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050940502003162264, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _onUse.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050940502003162264, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _onUse.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050940502003162264, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _onUse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1366682634033476724, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4933,10 +4970,6 @@ PrefabInstance:
     - target: {fileID: 4690901537901384628, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5514845525750395532, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
-      propertyPath: _time
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7881441683567772896, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: m_Mesh
@@ -6468,24 +6501,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _fallAttacks.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _fallAttacks.Array.data[0]
-      value: FallDash
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _neutralAttacks.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
-      propertyPath: _neutralAttacks.Array.data[0]
-      value: Leaf Beam Neutral
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _neutralAttacks.Array.data[1]
       value: Movement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520003440881538012, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520003440881538013, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5680249788377665360, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onAttackEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target

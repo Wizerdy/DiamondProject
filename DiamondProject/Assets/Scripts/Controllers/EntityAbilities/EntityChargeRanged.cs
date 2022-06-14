@@ -131,6 +131,7 @@ public class EntityChargeRanged : MonoBehaviour {
             distance = _recoilOverTime.Evaluate(percentage) * _recoilDistance;
         } else {
             ChargedBullet lastBullet = Instantiate(_bullet, transform.position, Quaternion.identity).GetComponent<ChargedBullet>();
+            if (_thunderArrow) { lastBullet.ThunderStruck(); }
             lastBullet.Launch(direction, percentage);
             attackTime = lastBullet.RecoilTime;
             distance = lastBullet.Recoil(percentage);
@@ -139,9 +140,9 @@ public class EntityChargeRanged : MonoBehaviour {
             if (damageHealth != null) { damageHealth.OnCollide += _InvokeOnHit; damageHealth.OnTrigger += _InvokeOnTrigger; }
         }
 
+        _thunderArrow = false;
 
-        if (_routine_DashAttack != null) { StopCoroutine(_routine_DashAttack); }
-
+        if (_routine_DashAttack != null) { StopCoroutine(_routine_DashAttack); } 
         _routine_DashAttack = StartCoroutine(IDashAttack(-direction, distance, attackTime));
 
         _attackAnimator.SetTrigger("Range Attack");

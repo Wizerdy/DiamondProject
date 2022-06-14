@@ -68,63 +68,63 @@ public class PlayerVFX : MonoBehaviour {
     }
 
     private void PlayChargeAttackEndFeedback() {
-        _chargeAtkEnd.PlayFeedbacks();
+        _chargeAtkEnd?.PlayFeedbacks();
     }
 
     private void PlayChargeRangeEndFeedback() {
-        _chargeRangeEnd.PlayFeedbacks();
+        _chargeRangeEnd?.PlayFeedbacks();
     }
 
     private void PlayChargeRangeFeedback(Vector2 direction) {
-        _chargeRange.PlayFeedbacks();
+        _chargeRange?.PlayFeedbacks();
     }
 
     private void PlayChargingRangeFeedback(Vector2 direction) {
-        _chargingRange.PlayFeedbacks();
+        _chargingRange?.PlayFeedbacks();
     }
 
     private void PlayChargeAttackFeedback(Vector2 direction) {
-        _chargeAtk.PlayFeedbacks();
+        _chargeAtk?.PlayFeedbacks();
     }
 
     private void PlayChargingAttackFeedback(Vector2 direction) {
-        _chargingAtk.PlayFeedbacks();
+        _chargingAtk?.PlayFeedbacks();
     }
 
     private void PlayAccelerationFeedback(Vector2 direction) {
-        _acceleration.PlayFeedbacks();
+        _acceleration?.PlayFeedbacks();
     }
 
     private void PlayDecelerationFeedback(Vector2 direction) {
-        _deceleration.PlayFeedbacks();
+        _deceleration?.PlayFeedbacks();
     }
 
     private void PlayTurnAroundFeedback(Vector2 direction) {
-        _turnAround.PlayFeedbacks();
+        _turnAround?.PlayFeedbacks();
     }
 
     private void PlayMeleeAttackFeedback(Vector2 direction) {
-        _meleeAttack.PlayFeedbacks();
+        _meleeAttack?.PlayFeedbacks();
     }
 
     private void PlayMeleeHitFeedback(GameObject go) {
-        _meleeHit.PlayFeedbacks();
+        _meleeHit?.PlayFeedbacks();
     }
 
     private void PlayHitFeedback(int amount) {
-        _hit.PlayFeedbacks();
+        _hit?.PlayFeedbacks();
     }
 
     private void PlayDeathFeedback() {
-        _death.PlayFeedbacks();
+        _death?.PlayFeedbacks();
     }
 
     private void PlayRangedAttackFeedback(Vector2 direction) {
-        _rangeAttack.PlayFeedbacks();
+        _rangeAttack?.PlayFeedbacks();
     }
 
     private void PlayRangedHitFeedback(Vector2 direction) {
-        _rangeHit.PlayFeedbacks();
+        _rangeHit?.PlayFeedbacks();
     }
 
 }

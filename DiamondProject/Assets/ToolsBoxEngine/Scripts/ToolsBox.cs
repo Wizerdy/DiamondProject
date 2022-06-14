@@ -540,25 +540,25 @@ namespace ToolsBoxEngine {
             return false;
         }
 
-        public static bool Compare(this Comparison comparison, float number1, float number2) {
+        public static bool Compare(this Comparison comparison, float number, float source) {
             switch (comparison) {
                 case Comparison.EQUAL:
-                    if (number1 == number2) { return true; }
+                    if (number == source) { return true; }
                     break;
                 case Comparison.DIFFERENT:
-                    if (number1 != number2) { return true; }
+                    if (number != source) { return true; }
                     break;
                 case Comparison.LESS:
-                    if (number1 < number2) { return true; }
+                    if (number < source) { return true; }
                     break;
                 case Comparison.LESS_EQUAL:
-                    if (number1 <= number2) { return true; }
+                    if (number <= source) { return true; }
                     break;
                 case Comparison.GREATER:
-                    if (number1 > number2) { return true; }
+                    if (number > source) { return true; }
                     break;
                 case Comparison.GREATER_EQUAL:
-                    if (number1 >= number2) { return true; }
+                    if (number >= source) { return true; }
                     break;
                 default:
                     break;
