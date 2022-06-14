@@ -30,6 +30,10 @@
 							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Boss_Winter_SnowAbsorption_End" ID="{66969378-B0D8-4617-9011-36A9EB6B1BBB}" WorkUnitID="{448E012B-2339-4E2C-B5E9-12639F7AAEFD}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Boss_Winter_BulletHell_Charge" ID="{6FDD312D-FB6E-4FDF-9FFF-E3D74F9D4A23}" WorkUnitID="{448E012B-2339-4E2C-B5E9-12639F7AAEFD}"/>
 							<Position X="1" Y="3"/>
 						</Module>
@@ -73,6 +77,10 @@
 							<ObjectRef Name="Boss_Winter_BulletHell_Throw_End" ID="{BE04C535-2085-4DDC-BB8F-7394CD32C9C4}" WorkUnitID="{448E012B-2339-4E2C-B5E9-12639F7AAEFD}"/>
 							<Position X="3" Y="3"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Boss_Winter_SnowAbsorption_Start" ID="{C59BC5D0-7B21-43DF-9B6E-E805BEA399A5}" WorkUnitID="{448E012B-2339-4E2C-B5E9-12639F7AAEFD}"/>
+							<Position X="3" Y="4"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
@@ -81,11 +89,15 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_CrossbowCharge" ID="{E2B49877-70F4-430C-9C06-62154265E570}"/>
-							<Value>1</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Pumpkid_Speed" ID="{BCB8007F-2341-4562-AB3E-736EA57E7B50}"/>
 							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_LeafBoomerang_Position" ID="{FA64947E-C90A-4687-B945-C5773D7026D1}"/>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_WeaponType" ID="{AD571BFF-B53F-4690-8FD3-0BF31CF3A8E8}"/>
@@ -97,17 +109,17 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}"/>
-							<Value>3.49</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_SwordCharge" ID="{1610341F-5917-4EFA-8260-02D5E6F7404C}"/>
-							<Value>0</Value>
+							<Value>0.34</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}"/>
+						<CurrentStateRef Name="Boss_Fall" ID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}"/>
 						<CurrentStateRef Name="Normal" ID="{D053143D-8E8E-42B0-B9AC-A8AD43BAF94E}"/>
-						<CurrentStateRef Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+						<CurrentStateRef Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Charging" ID="{9FCB8A33-95F1-4D77-96CB-07585D9D1FFF}"/>

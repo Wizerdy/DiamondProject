@@ -115,7 +115,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-16</Value>
+										<Value>-7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1806,8 +1806,26 @@
 						</Sound>
 						<RandomSequenceContainer Name="UI_VisualNovel_Pass" ID="{3D8FAE37-3198-4CC5-8A2E-0626A53B4D29}" ShortID="696050965">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{4CBFC940-E734-4A7A-962B-A68FF9B6E835}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-27</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1817,6 +1835,123 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_VisualNovel_Pass_01" ID="{CC298087-E9AB-4445-B556-7F79272F12EB}" ShortID="859282244">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Pass_01" ID="{69AA80E8-2DE6-4DD7-8C66-80390EEF5D87}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Pass_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="999905703"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Pass_01" ID="{69AA80E8-2DE6-4DD7-8C66-80390EEF5D87}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Pass_02" ID="{1FD7ECF7-090B-46A2-8888-77BA084860E8}" ShortID="153297602">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Pass_02" ID="{6337E6EB-5E97-4F70-A06E-E07985B13392}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Pass_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="214014276"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Pass_02" ID="{6337E6EB-5E97-4F70-A06E-E07985B13392}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Pass_03" ID="{E9DAE389-AF5C-4AFD-97C0-ECBD86A2498D}" ShortID="735826283">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Pass_03" ID="{CD0139F1-A1BC-4015-B21A-631BCD85883A}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Pass_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="369451252"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Pass_03" ID="{CD0139F1-A1BC-4015-B21A-631BCD85883A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Pass_04" ID="{1C370365-F49F-43B9-ABF6-64C2DF5949F8}" ShortID="552324190">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Pass_04" ID="{7836D957-8251-47D3-A4FC-AE6D589B82AB}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Pass_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="537379845"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Pass_04" ID="{7836D957-8251-47D3-A4FC-AE6D589B82AB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_VisualNovel_Pass_05" ID="{DB927ECD-61A6-4ED7-97E7-C5DEE0ED357C}" ShortID="876887763">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_VisualNovel_Pass_05" ID="{8C3D4184-0986-4FA5-8221-84576D2F7DB8}">
+											<Language>SFX</Language>
+											<AudioFile>UI_VisualNovel_Pass_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="79343636"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_VisualNovel_Pass_05" ID="{8C3D4184-0986-4FA5-8221-84576D2F7DB8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="UI_VisualNovel_Progression" ID="{FF15EC5B-0BE0-452D-A7B5-BAD577985A29}" ShortID="630317015">
