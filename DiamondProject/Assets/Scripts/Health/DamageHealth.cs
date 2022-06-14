@@ -22,6 +22,7 @@ public class DamageHealth : MonoBehaviour {
     #region Properties
 
     public int Damage { get { return _damage; } set { _damage = value; } }
+    public string DamageType { get { return _damageType; } set { _damageType = value; } }
     public MultipleTagSelector Damageables { get { return _damageables; } set { _damageables = value; } }
 
     public event UnityAction<GameObject> OnCollide { add { _onCollide.AddListener(value); } remove { _onCollide.RemoveListener(value); } }
@@ -31,27 +32,25 @@ public class DamageHealth : MonoBehaviour {
     #endregion
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        Collide(collision.collider);
+        Collide(collision.gameObject, !collision.collider.isTrigger);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        Collide(collision);
+        Collide(collision.gameObject, !collision.isTrigger);
     }
 
-    private void Collide(Collider2D collision) {
-        if (_ignoreTag.Contains(collision.gameObject.tag)) { return; }
+    private void Collide(GameObject obj, bool hardHit = true) {
+        if (_ignoreTag.Contains(obj.tag)) { return; }
 
-        bool hardHit = !collision.isTrigger;
-
-        if (_damageables.Contains(collision.gameObject.tag)) {
-            GameObject elderly = collision.transform.FindElderlyByTag().gameObject;
+        if (_damageables.Contains(obj.tag)) {
+            GameObject elderly = obj.transform.FindElderlyByTag().gameObject;
             if (_onlyDamageOnceEach && _hitted.Contains(elderly)) { return; }
             _hitted.Add(elderly);
-            _onCollide?.Invoke(collision.gameObject);
-            IHealth health = collision.gameObject.GetComponent<IHealth>();
+            _onCollide?.Invoke(obj);
+            IHealth health = obj.GetComponent<IHealth>();
             if (health != null && health.CanTakeDamage) {
                 health.TakeDamage(_damage, _damageType);
-                _onDamage?.Invoke(collision.gameObject, _damage);
+                _onDamage?.Invoke(obj, _damage);
             }
             if (_destroyOnHit) {
                 Die();
@@ -59,8 +58,8 @@ public class DamageHealth : MonoBehaviour {
             return;
         }
 
-        if (!hardHit) { _onTrigger?.Invoke(collision.gameObject); }
-        else if (hardHit) { _onCollide?.Invoke(collision.gameObject); }
+        if (!hardHit) { _onTrigger?.Invoke(obj); }
+        else if (hardHit) { _onCollide?.Invoke(obj); }
 
         if (hardHit && _destroyOnHit) {
             Die();
@@ -90,6 +89,10 @@ public class DamageHealth : MonoBehaviour {
 
     public void NotEditable() {
         this.hideFlags = HideFlags.NotEditable;
+    }
+
+    public void Hit(Collider2D collision) {
+        Collide(collision.gameObject, !collision.isTrigger);
     }
 }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using ToolsBoxEngine;
 
 public class ChangeBossOnShape : MonoBehaviour {
@@ -9,6 +10,9 @@ public class ChangeBossOnShape : MonoBehaviour {
     [SerializeField] IMeetARealBoss _boss;
     [Header("System")]
     [SerializeField] float _timeBeforeChange = 0f;
+    [SerializeField] UnityEvent<BossShape> _onSpriteChange;
+
+    public event UnityAction<BossShape> OnSpriteChange { add => _onSpriteChange.AddListener(value); remove => _onSpriteChange.RemoveListener(value); }
 
     private void Reset() {
         _shapeSystem = GetComponent<BossShapeSystem>();
@@ -29,12 +33,14 @@ public class ChangeBossOnShape : MonoBehaviour {
     }
 
     public void ChangeShape(BossShape shape) {
-        if (_boss == null) { return; }
-        if (shape.ColorSwap) {
-            _boss.ColorSwap(shape.Red, shape.Green, shape.Blue);
-        } else {
-            _boss.Sprite = shape.Sprite;
-            _boss.Animator = shape.Animator;
-        }
+        _boss.SetSkin(shape.Type);
+        _onSpriteChange?.Invoke(shape);
+        //if (_boss == null) { return; }
+        //if (shape.ColorSwap) {
+        //    _boss.ColorSwap(shape.Red, shape.Green, shape.Blue);
+        //} else {
+        //    _boss.Sprite = shape.Sprite;
+        //    _boss.Animator = shape.Animator;
+        //}
     }
 }

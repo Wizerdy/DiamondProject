@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}" SchemaVersion="103">
+	<States>
+		<WorkUnit Name="SD" ID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="3"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<StateGroup Name="ST_GameMode" ID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}">
+					<ChildrenList>
+						<State Name="None" ID="{7760B096-6CF4-4C28-81AB-7C165E71B6F1}"/>
+						<State Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+						<State Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="ST_Music" ID="{194F3E66-AE7B-48DF-A9FA-68B2E56BF04E}">
+					<ChildrenList>
+						<State Name="None" ID="{E41A927F-FA07-4820-804C-4BFFD4E1B196}"/>
+						<State Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}"/>
+						<State Name="Boss_Winter" ID="{320F487F-3A5F-48B7-818E-10DC13BE27E1}"/>
+						<State Name="Boss_Fall" ID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}"/>
+						<State Name="Narration" ID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}"/>
+						<State Name="Silence" ID="{77B7DB0D-E160-42A6-BE76-AE2C19030B87}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="ST_Skip" ID="{35788C8D-4A07-4955-A013-A57DC9BA0294}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{8A344E71-5CAD-4EAD-885D-7295E2638619}"/>
+						<State Name="Skipping" ID="{2D8A46B6-2538-4E20-840E-A792944E5265}"/>
+						<State Name="Normal" ID="{D053143D-8E8E-42B0-B9AC-A8AD43BAF94E}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

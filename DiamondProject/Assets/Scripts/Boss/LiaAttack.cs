@@ -48,6 +48,12 @@ public class LiaAttack : MonoBehaviour {
         _currentBehaviour = ChooseBehaviour();
     }
 
+    public void StopBehaviour() {
+        if (_currentBehaviour != null) {
+            StopCoroutine(_currentBehaviour);
+        }
+    }
+
     Coroutine ChooseBehaviour() {
         switch (_currentShape.Type) {
             case Shape.NEUTRAL:
@@ -94,7 +100,7 @@ public class LiaAttack : MonoBehaviour {
     #region Behaviour
     public IEnumerator NeutralBehaviour() {
         availableAttacks.Clear();
-        availableAttacks = _neutralAttacks;
+        availableAttacks = new List<string>(_neutralAttacks);
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
         yield return new WaitForSeconds(_waitTimeBeforeAction);
@@ -138,7 +144,7 @@ public class LiaAttack : MonoBehaviour {
 
     public IEnumerator FallBehaviour() {
         availableAttacks.Clear();
-        availableAttacks = _fallAttacks;
+        availableAttacks = new List<string>(_fallAttacks);
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
         yield return new WaitForSeconds(_waitTimeBeforeAction);
@@ -174,9 +180,7 @@ public class LiaAttack : MonoBehaviour {
 
     public IEnumerator WinterBehaviour() {
         availableAttacks.Clear();
-        Debug.Log("1. " + availableAttacks.Print());
         availableAttacks = new List<string>(_winterAttacks);
-        Debug.Log("2. " + availableAttacks.Print());
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
         yield return new WaitForSeconds(_waitTimeBeforeAction);
@@ -192,9 +196,25 @@ public class LiaAttack : MonoBehaviour {
     #endregion
 
     public void MovementEnd(BaseAttack attack) {
-        if (attack == null) {
-            return;
+        if (attack == null) { return; }
+
+        switch (_currentShape.Type) {
+            case Shape.NEUTRAL:
+            default:               
+                if (_neutralAttacks.Contains(attack.id)){
+                    availableAttacks.Add(attack.id);
+                }
+                break;
+            case Shape.FALL:
+                if (_fallAttacks.Contains(attack.id)){
+                    availableAttacks.Add(attack.id);
+                }
+                break;
+            case Shape.WINTER:
+                if (_winterAttacks.Contains(attack.id)){
+                    availableAttacks.Add(attack.id);
+                }
+                break;
         }
-        availableAttacks.Add(attack.id);
     }
 }

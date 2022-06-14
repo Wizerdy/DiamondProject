@@ -10,6 +10,7 @@ public class EntityChargeRanged : MonoBehaviour {
     [SerializeField] Transform _entity = null;
     [SerializeField] Transform _attackParent = null;
     [SerializeField] Animator _attackAnimator = null;
+    [SerializeField] SpriteRenderer _spriteRenderer = null;
     [SerializeField] LayerMask _walls;
     [Header("Default values")]
     [SerializeField] float _bulletSpeed = 30f;
@@ -40,6 +41,8 @@ public class EntityChargeRanged : MonoBehaviour {
     bool _isCharging = false;
     bool _isAttacking = false;
 
+    bool _thunderArrow = false;
+
     Coroutine _routine_DashAttack;
 
     #region Properties
@@ -63,6 +66,7 @@ public class EntityChargeRanged : MonoBehaviour {
     #endregion
 
     private void Update() {
+        AkSoundEngine.SetRTPCValue("RTPC_CrossbowCharge", _chargingTimer / _chargingTime);
         if (_isCharging) {
             _chargingTimer += Time.deltaTime;
             if (_chargingTimer >= _chargingTime) {
@@ -95,7 +99,10 @@ public class EntityChargeRanged : MonoBehaviour {
     public void StopCharging(Vector2 direction) {
         if (!_isCharging) { return; }
         _isCharging = false;
+
+
         Attack(direction, _chargingTimer);
+        _chargingTimer = 0f;
         _onAttack?.Invoke(direction);
         _attackAnimator.SetBool("Charge Range", false);
     }
@@ -129,6 +136,7 @@ public class EntityChargeRanged : MonoBehaviour {
             distance = _recoilOverTime.Evaluate(percentage) * _recoilDistance;
         } else {
             ChargedBullet lastBullet = Instantiate(_bullet, transform.position, Quaternion.identity).GetComponent<ChargedBullet>();
+            if (_thunderArrow) { lastBullet.ThunderStruck(); }
             lastBullet.Launch(direction, percentage);
             attackTime = lastBullet.RecoilTime;
             distance = lastBullet.Recoil(percentage);
@@ -137,9 +145,9 @@ public class EntityChargeRanged : MonoBehaviour {
             if (damageHealth != null) { damageHealth.OnCollide += _InvokeOnHit; damageHealth.OnTrigger += _InvokeOnTrigger; }
         }
 
+        NoThunderArrow();
 
-        if (_routine_DashAttack != null) { StopCoroutine(_routine_DashAttack); }
-
+        if (_routine_DashAttack != null) { StopCoroutine(_routine_DashAttack); } 
         _routine_DashAttack = StartCoroutine(IDashAttack(-direction, distance, attackTime));
 
         _attackAnimator.SetTrigger("Range Attack");
@@ -170,6 +178,7 @@ public class EntityChargeRanged : MonoBehaviour {
 
     public void UpdateDirection(Vector2 direction) {
         _direction = direction;
+        _spriteRenderer.flipY = direction.x > 0;
         _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
     }
 
@@ -179,6 +188,17 @@ public class EntityChargeRanged : MonoBehaviour {
 
     void _InvokeOnTrigger(GameObject obj) {
         _onTrigger?.Invoke(obj);
+    }
+
+    public void ThunderArrow() {
+        if (!_isCharging) { return; }
+        _thunderArrow = true;
+        _spriteRenderer?.material.SetInteger("_Active", 1);
+    }
+
+    public void NoThunderArrow() {
+        _thunderArrow = false;
+        _spriteRenderer?.material.SetInteger("_Active", 0);
     }
 
     private void OnDrawGizmosSelected() {

@@ -418,15 +418,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1735998592836663502}
   _damageHealth: {fileID: 3284727387380998033}
-  _damage: 10
+  _damage: 5
   _damageables:
     tags:
     - Boss
     state: 1
   _deflection: 0.02
-  _range: 150
+  _range: 180
   _cooldown: 0.2
-  _speed: 30
+  _speed: 25
   _overheat: 3
 --- !u!114 &7479794409865448269
 MonoBehaviour:
@@ -443,8 +443,8 @@ MonoBehaviour:
   _rigidbody: {fileID: 1735998592836663502}
   _damageHealth: {fileID: 3284727387380998033}
   _backTime: 0.5
-  _backSpeed: 10
-  _backDamage: 5
+  _backSpeed: 35
+  _backDamage: 10
 --- !u!114 &3284727387380998033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +487,9 @@ MonoBehaviour:
   _onCollide:
     m_PersistentCalls:
       m_Calls: []
+  _onTrigger:
+    m_PersistentCalls:
+      m_Calls: []
   _onDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -510,7 +513,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f43b4fa0b625a664697baf961d18734a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -531,7 +534,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e1792f585164b834c836f9d32e296be7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 806624b0d06e4434aba8c2b3c6aa85da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -580,7 +583,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2, y: 0.23}
+    oldSize: {x: 1.2, y: 1.16}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

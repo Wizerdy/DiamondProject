@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}" SchemaVersion="103">
+	<InteractiveMusic>
+		<WorkUnit Name="SD" ID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="3"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<MusicSwitchContainer Name="Music" ID="{9CB63F6D-7A5D-4005-80DF-C1F0E6E43D6A}" ShortID="202692033">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{642EDF65-56EF-42C3-9108-9B4AE08ECA69}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Folder Name="Boss" ID="{5FD91A80-F4E5-4254-BC67-950BF4D20666}" ShortID="445852194">
+							<ChildrenList>
+								<MusicPlaylistContainer Name="Boss_Neutral" ID="{2493C1E9-73B3-4172-AFA4-36856A284353}" ShortID="698222061">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicSegment Name="Boss_Neutral_Intro" ID="{8F0FCA61-BFD2-4D24-B215-D09FDFF215F4}" ShortID="799891800">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="Pumpkid_Music_Boss_Neutral_Intro" ID="{741A632A-F9E9-4E2F-A61C-C96526BB5D7F}" ShortID="135157704">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Pumpkid_Music_Boss_Neutral_Intro" ID="{3CD2DAD5-AB3B-4374-BEFB-F0249F765CF5}">
+															<Language>SFX</Language>
+															<AudioFile>Pumpkid_Music_Boss_Neutral_Intro.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="255063227"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{C3576890-C09D-4333-BA1B-C228015A9312}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<ObjectLists>
+														<ObjectList Name="Sequences">
+															<Reference>
+																<Local>
+																	<MusicTrackSequence Name="" ID="{A54375FB-2A7C-4C3F-8CD2-4BFBE47EBBBB}">
+																		<ObjectLists>
+																			<ObjectList Name="Clips">
+																				<Reference>
+																					<Local>
+																						<MusicClip Name="Pumpkid_Music_Boss_Neutral_Intro" ID="{8EEFCF3D-DE69-4EB1-871E-401B290EA1D8}">
+																							<PropertyList>
+																								<Property Name="EndTrimOffset" Type="Real64" Value="1500"/>
+																								<Property Name="FadeInMode" Type="int16" Value="0"/>
+																								<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																							</PropertyList>
+																							<AudioSourceRef Name="Pumpkid_Music_Boss_Neutral_Intro" ID="{3CD2DAD5-AB3B-4374-BEFB-F0249F765CF5}"/>
+																						</MusicClip>
+																					</Local>
+																				</Reference>
+																			</ObjectList>
+																		</ObjectLists>
+																	</MusicTrackSequence>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicTrack>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Cues">
+													<Reference>
+														<Local>
+															<MusicCue Name="Entry Cue" ID="{15AB0BF0-C751-4047-A378-430FEB10A9DF}"/>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicCue Name="Exit Cue" ID="{279EE3CB-D111-45E9-9CA3-38811C5777B5}">
+																<PropertyList>
+																	<Property Name="CueType" Type="int16" Value="1"/>
+																	<Property Name="TimeMs" Type="Real64" Value="1500"/>
+																</PropertyList>
+															</MusicCue>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicSegment>
+										<MusicSegment Name="Boss_Neutral_LP" ID="{5BEA6B6C-52AB-4C78-AE2B-AD2C2428F1F4}" ShortID="465324183">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="48000"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="Pumpkid_Music_Boss_Neutral_LP" ID="{159FBF31-0606-4CF0-88B7-8529873D7CC0}" ShortID="698543016">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Pumpkid_Music_Boss_Neutral_LP" ID="{775513F5-EF25-4BE3-80F5-EA2162A9553F}">
+															<Language>SFX</Language>
+															<AudioFile>Pumpkid_Music_Boss_Neutral_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="874425250"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{642DAC7B-D20A-40B4-8212-92ED88A81B33}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<ObjectLists>
+														<ObjectList Name="Sequences">
+															<Reference>
+																<Local>
+																	<MusicTrackSequence Name="" ID="{A43C7404-33FF-4A22-BD0B-118E03B31625}">
+																		<ObjectLists>
+																			<ObjectList Name="Clips">
+																				<Reference>
+																					<Local>
+																						<MusicClip Name="Pumpkid_Music_Boss_Neutral_LP" ID="{188AB999-4464-4304-BB32-2C721BD8A226}">
+																							<PropertyList>
+																								<Property Name="EndTrimOffset" Type="Real64" Value="48000"/>
+																								<Property Name="FadeInMode" Type="int16" Value="0"/>
+																								<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																							</PropertyList>
+																							<AudioSourceRef Name="Pumpkid_Music_Boss_Neutral_LP" ID="{775513F5-EF25-4BE3-80F5-EA2162A9553F}"/>
+																						</MusicClip>
+																					</Local>
+																				</Reference>
+																			</ObjectList>
+																		</ObjectLists>
+																	</MusicTrackSequence>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicTrack>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Cues">
+													<Reference>
+														<Local>
+															<MusicCue Name="Entry Cue" ID="{10E2BBD6-5EEB-43CB-ACB6-FD70C7BAB1D1}"/>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicCue Name="Exit Cue" ID="{7AD37C0F-0DD8-433D-B49C-4DF14F916144}">
+																<PropertyList>
+																	<Property Name="CueType" Type="int16" Value="1"/>
+																	<Property Name="TimeMs" Type="Real64" Value="48000"/>
+																</PropertyList>
+															</MusicCue>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicSegment>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{870CABE3-DF40-4506-9641-084D6A53BE16}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{09F58815-A162-4B3E-9636-C3918D74D8AD}">
+													<PropertyList>
+														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{6A001540-8376-4C13-8E5F-64DD207EE8A6}">
+																<PropertyList>
+																	<Property Name="FadeOffset" Type="Real64" Value="1"/>
+																	<Property Name="FadeTime" Type="Real64" Value="1"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+													</TransitionInfo>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists/>
+									<Playlist>
+										<MusicPlaylistItem Name="" ID="{1ED5CBCC-6653-4C53-AFA4-137ECF956155}" ShortID="664930870">
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{9B62822B-7CE1-4CDA-A8FD-3C0150FFAEB6}" ShortID="111456987">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Boss_Neutral_Intro" ID="{8F0FCA61-BFD2-4D24-B215-D09FDFF215F4}"/>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{5E254E3D-AD8B-44E3-83CD-FBC8B423841A}" ShortID="992858637">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="0"/>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Boss_Neutral_LP" ID="{5BEA6B6C-52AB-4C78-AE2B-AD2C2428F1F4}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</Playlist>
+								</MusicPlaylistContainer>
+								<MusicPlaylistContainer Name="Boss_Winter" ID="{BBE6E62D-9D5E-44CB-93EC-22F5F3851DC2}" ShortID="246937583">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicSegment Name="Boss_Winter_LP" ID="{EDBF6349-AC2F-4CE2-967E-0CD80AF64280}" ShortID="131946398">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="48000"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="Pumpkid_Music_Boss_Winter_LP" ID="{BD406F6F-00ED-467D-8D14-38D04C532F84}" ShortID="910534288">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Pumpkid_Music_Boss_Winter_LP" ID="{88533387-7566-4582-BE34-B9D61FDE8E37}">
+															<Language>SFX</Language>
+															<AudioFile>Pumpkid_Music_Boss_Winter_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="979463666"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{47EE2F58-2B66-4838-B6EF-BB5159018ADC}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<ObjectLists>
+														<ObjectList Name="Sequences">
+															<Reference>
+																<Local>
+																	<MusicTrackSequence Name="" ID="{9F04B5CF-EB05-430C-91EE-F58371431314}">
+																		<ObjectLists>
+																			<ObjectList Name="Clips">
+																				<Reference>
+																					<Local>
+																						<MusicClip Name="Pumpkid_Music_Boss_Winter_LP" ID="{45345723-66C2-44FE-A185-3A5D59D6AA5A}">
+																							<PropertyList>
+																								<Property Name="EndTrimOffset" Type="Real64" Value="48000"/>
+																								<Property Name="FadeInMode" Type="int16" Value="0"/>
+																								<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																							</PropertyList>
+																							<AudioSourceRef Name="Pumpkid_Music_Boss_Winter_LP" ID="{88533387-7566-4582-BE34-B9D61FDE8E37}"/>
+																						</MusicClip>
+																					</Local>
+																				</Reference>
+																			</ObjectList>
+																		</ObjectLists>
+																	</MusicTrackSequence>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicTrack>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Cues">
+													<Reference>
+														<Local>
+															<MusicCue Name="Entry Cue" ID="{58B44B54-629B-4B76-8656-DA84A6B635D8}"/>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicCue Name="Exit Cue" ID="{C5677DE3-640E-482F-BE46-605CBA12C944}">
+																<PropertyList>
+																	<Property Name="CueType" Type="int16" Value="1"/>
+																	<Property Name="TimeMs" Type="Real64" Value="48000"/>
+																</PropertyList>
+															</MusicCue>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicSegment>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{58276EFE-2FDC-4086-A8CB-9D7D6FCF0CEE}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{7E92FB2D-9E65-4A45-AE29-CC70BA7A6C31}">
+													<TransitionInfo/>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists/>
+									<Playlist>
+										<MusicPlaylistItem Name="" ID="{85AD3682-C4D9-4F47-815B-86BA5ACD8006}" ShortID="868336003">
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{9F401953-83F4-4BB7-A83B-2D054760376B}" ShortID="550829280">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="0"/>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Boss_Winter_LP" ID="{EDBF6349-AC2F-4CE2-967E-0CD80AF64280}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</Playlist>
+								</MusicPlaylistContainer>
+								<MusicPlaylistContainer Name="Boss_Fall" ID="{96CC2E45-9495-46C7-86F4-315F88ABE706}" ShortID="1002173890">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicSegment Name="Boss_Fall_LP" ID="{47ADB939-C254-4610-B4FB-B1F7A1B0DC58}" ShortID="91125094">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="48000"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="Pumpkid_Music_Boss_Fall_LP" ID="{6B97D001-358E-47F3-9AD6-61D7A4E3A29D}" ShortID="712690381">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Pumpkid_Music_Boss_Fall_LP" ID="{AC0C437A-46F0-4EE4-B334-E07985D4471C}">
+															<Language>SFX</Language>
+															<AudioFile>Pumpkid_Music_Boss_Fall_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="138315815"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{E58550D4-B267-4537-8682-6A26A00AB5CD}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<ObjectLists>
+														<ObjectList Name="Sequences">
+															<Reference>
+																<Local>
+																	<MusicTrackSequence Name="" ID="{10D66F7C-AF44-4184-B7BB-FA6463DF4538}">
+																		<ObjectLists>
+																			<ObjectList Name="Clips">
+																				<Reference>
+																					<Local>
+																						<MusicClip Name="Pumpkid_Music_Boss_Fall_LP" ID="{08AEC416-2D2F-4C0E-B9C7-8D059CAAAE7C}">
+																							<PropertyList>
+																								<Property Name="EndTrimOffset" Type="Real64" Value="48000"/>
+																								<Property Name="FadeInMode" Type="int16" Value="0"/>
+																								<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																							</PropertyList>
+																							<AudioSourceRef Name="Pumpkid_Music_Boss_Fall_LP" ID="{AC0C437A-46F0-4EE4-B334-E07985D4471C}"/>
+																						</MusicClip>
+																					</Local>
+																				</Reference>
+																			</ObjectList>
+																		</ObjectLists>
+																	</MusicTrackSequence>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicTrack>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Cues">
+													<Reference>
+														<Local>
+															<MusicCue Name="Entry Cue" ID="{3539E2D7-8E48-4811-BF8B-EBE7E332E8E9}"/>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicCue Name="Exit Cue" ID="{5D489D08-9ADB-47A7-AD0A-941AACA58951}">
+																<PropertyList>
+																	<Property Name="CueType" Type="int16" Value="1"/>
+																	<Property Name="TimeMs" Type="Real64" Value="48000"/>
+																</PropertyList>
+															</MusicCue>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicSegment>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{E36CDDA1-0944-4AE2-8F22-AD28205C3CF7}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{D711F6CD-AEFE-43E3-95F1-9A3EF868835B}">
+													<TransitionInfo/>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists/>
+									<Playlist>
+										<MusicPlaylistItem Name="" ID="{F4709939-338D-4622-8A96-092A5F687FB7}" ShortID="44195580">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{81C0CB7D-4705-4598-B697-D5C5FE861875}" ShortID="341422416">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Boss_Fall_LP" ID="{47ADB939-C254-4610-B4FB-B1F7A1B0DC58}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</Playlist>
+								</MusicPlaylistContainer>
+							</ChildrenList>
+						</Folder>
+						<MusicPlaylistContainer Name="Narration" ID="{8677E933-DDA4-432D-B1BC-3E53DF4923F7}" ShortID="550606861">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Narration_LP" ID="{A0F35D56-D365-4DD4-8FA1-540C22CADB3C}" ShortID="559768371">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="52800"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Pumpkid_Music_Narration_LP" ID="{B7130333-BDFC-4CC7-B315-792BFD268AD3}" ShortID="408166230">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Pumpkid_Music_Narration_LP" ID="{BB06C753-426A-4421-8E67-8128A5631EE2}">
+													<Language>SFX</Language>
+													<AudioFile>Pumpkid_Music_Narration_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1048384188"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{650A6948-9B11-4199-9B3C-88878B872B0E}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{8C86AD71-25F1-4855-9D9F-1E8EFDF1A256}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Pumpkid_Music_Narration_LP" ID="{1A43B904-7757-4BBC-BBEF-2CA8B817D0C9}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="52800"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Pumpkid_Music_Narration_LP" ID="{BB06C753-426A-4421-8E67-8128A5631EE2}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{70155F1B-AEA1-4115-B0FD-EDE40792D762}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{A3D94BAE-73BF-4387-91E5-8F2B22EADD11}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="38400"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{89D41D32-BAF1-4DDF-A74D-52C9AC1C584B}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{8EF4479C-9F52-49E2-97A3-1D3A822ECD96}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{7E130781-E2B7-465F-98AC-6505E1011A93}" ShortID="860094775">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{E1898870-0189-4E2C-8DE6-D1EEB2B5DD19}" ShortID="934217529">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Narration_LP" ID="{A0F35D56-D365-4DD4-8FA1-540C22CADB3C}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Silence" ID="{B9783597-74D2-4153-BEF4-04AED2273400}" ShortID="833154259">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{642EDF65-56EF-42C3-9108-9B4AE08ECA69}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Silence" ID="{DD0C3DDD-205C-4058-A9A7-1BC381B7FD4E}" ShortID="365414221">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="28929.1338582677"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Silence" ID="{320A5DC6-A1D9-47E1-AE13-C5AA290015EF}" ShortID="937449137">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Silence" ID="{47906BCA-B3C5-448D-B029-14922801E6C2}">
+													<Language>SFX</Language>
+													<AudioFile>Silence.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="843824305"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{BB85D2A6-6597-4689-88B4-81C29B3B7321}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{75A1F970-E894-4DE2-856F-4CCDF698A9E5}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Silence" ID="{B06A7050-5067-4E84-9019-76FFA77D5772}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="28800"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Silence" ID="{47906BCA-B3C5-448D-B029-14922801E6C2}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{D1120642-04FF-457C-A705-C88C551D687F}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{3B04F15A-075C-4386-AFB9-1A4E9B8DFF1D}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="28750"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{20C6A2B5-77AA-4D85-A86B-C1E52659EDC3}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{48D9DBAF-A8E0-4FA2-BE70-358868795E19}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{B072EACC-BF74-41D2-BBF2-3305500CD5E8}" ShortID="40160400">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{36D524E0-4AB7-461C-AA1F-947190524974}" ShortID="863609519">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Silence" ID="{DD0C3DDD-205C-4058-A9A7-1BC381B7FD4E}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{F396E523-7F7F-44B1-88C0-C6B0F514B968}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{A3216AA2-2AB8-4711-91DD-C156C36EAF23}">
+									<PropertyList>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+									</PropertyList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{FEFB6C6F-E864-4AC1-9578-E542581519DA}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{46C68205-2F44-493F-A30E-2DC1EDFE1A7F}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="-1"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{F27B0B9A-9596-4AD2-AD43-ACB60FBD8DD5}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="1"/>
+										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Boss_Winter" ID="{BBE6E62D-9D5E-44CB-93EC-22F5F3851DC2}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Boss_Neutral" ID="{2493C1E9-73B3-4172-AFA4-36856A284353}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<JumpToPlaylistItemRef Name="" ID="{85AD3682-C4D9-4F47-815B-86BA5ACD8006}"/>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{ED149CD0-0F8C-4E36-B541-D9730172F9AF}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeOffset" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{7F1C6C6B-AA81-4ED9-AA6E-015D5436638B}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{0723E15E-134E-42EC-BDBB-CC0FCABE07FC}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="1"/>
+										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Boss_Neutral" ID="{2493C1E9-73B3-4172-AFA4-36856A284353}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Boss_Winter" ID="{BBE6E62D-9D5E-44CB-93EC-22F5F3851DC2}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<JumpToPlaylistItemRef Name="" ID="{5E254E3D-AD8B-44E3-83CD-FBC8B423841A}"/>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{B8553F24-2F6E-436D-93F5-98F7DA806892}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeOffset" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{774A3A9B-9852-4A6D-B0B2-B8FC59372AA9}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{B11EB97C-72DE-4385-8802-C366E94DF344}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="1"/>
+										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Boss_Fall" ID="{96CC2E45-9495-46C7-86F4-315F88ABE706}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Boss_Neutral" ID="{2493C1E9-73B3-4172-AFA4-36856A284353}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<JumpToPlaylistItemRef Name="" ID="{F4709939-338D-4622-8A96-092A5F687FB7}"/>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{ACEBA455-1805-4CDD-BABB-7F2DDDD2626E}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeOffset" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{7806E771-AF89-43FC-BFB2-03D415F13817}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{6A2250BA-9944-4002-829C-9AA0C35D7599}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="1"/>
+										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Boss_Neutral" ID="{2493C1E9-73B3-4172-AFA4-36856A284353}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Boss_Fall" ID="{96CC2E45-9495-46C7-86F4-315F88ABE706}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<JumpToPlaylistItemRef Name="" ID="{5E254E3D-AD8B-44E3-83CD-FBC8B423841A}"/>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{C0AB6F46-5AD5-43E3-B438-66F36A388494}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeOffset" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{6CB4FA19-8E7A-4CB6-8B29-A3B94655A387}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{C116CF92-3E9E-4192-B21E-D69E4C04E126}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="1"/>
+										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Boss_Winter" ID="{BBE6E62D-9D5E-44CB-93EC-22F5F3851DC2}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Boss_Fall" ID="{96CC2E45-9495-46C7-86F4-315F88ABE706}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{7ACBDDB1-953B-47B9-83B4-2BBAD7351F24}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeOffset" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{C2C967A4-1368-4B29-B05B-C2E045494711}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{0ACE98E8-2417-4400-9C74-87921FAE57E5}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+										<Property Name="DestinationPlaylistJumpTo" Type="int16" Value="1"/>
+										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Boss_Fall" ID="{96CC2E45-9495-46C7-86F4-315F88ABE706}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Boss_Winter" ID="{BBE6E62D-9D5E-44CB-93EC-22F5F3851DC2}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{C46C03FA-DF69-4D99-8EB3-9505306A1597}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeOffset" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{BF87C42D-4F34-4CEA-8FE7-0FAA45848E24}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="2"/>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{C594806C-4B7E-449A-A05D-6267DEEC3228}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Silence" ID="{B9783597-74D2-4153-BEF4-04AED2273400}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Boss_Fall" ID="{96CC2E45-9495-46C7-86F4-315F88ABE706}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<JumpToPlaylistItemRef Name="" ID="{36D524E0-4AB7-461C-AA1F-947190524974}"/>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{7E96931E-ED28-46AE-A200-9005359E7C65}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{02A9685B-74F6-4348-80DD-E572F1BB1608}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{2E008A5E-357C-44E4-BEB2-D3CF664E2F58}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Silence" ID="{B9783597-74D2-4153-BEF4-04AED2273400}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Boss_Neutral" ID="{2493C1E9-73B3-4172-AFA4-36856A284353}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{2ACD8D3C-47F1-4C1E-B17E-42A65DF895B6}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="10"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<DestinationFadeIn>
+											<MusicFade Name="Destination Fade-in" ID="{26DF9EDE-4DFE-42D3-8719-FC0D95FFC4ED}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</DestinationFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{6736425F-792C-457A-BCD7-43E0ED92E327}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Silence" ID="{B9783597-74D2-4153-BEF4-04AED2273400}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Boss_Winter" ID="{BBE6E62D-9D5E-44CB-93EC-22F5F3851DC2}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{E7F546F6-68AA-4E25-A72F-53797898CD91}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{B87EA5B1-464E-4773-BE86-73703E6CEAFA}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Silence" ID="{B9783597-74D2-4153-BEF4-04AED2273400}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Narration" ID="{8677E933-DDA4-432D-B1BC-3E53DF4923F7}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{99605F0B-4379-4629-80B7-CB7A09EA496E}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ObjectLists/>
+					<ArgumentList>
+						<ArgumentRef Name="ST_Music" ID="{194F3E66-AE7B-48DF-A9FA-68B2E56BF04E}"/>
+					</ArgumentList>
+					<EntryList>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Boss_Fall" ID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Boss_Fall" ID="{96CC2E45-9495-46C7-86F4-315F88ABE706}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Boss_Neutral" ID="{2493C1E9-73B3-4172-AFA4-36856A284353}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Boss_Winter" ID="{320F487F-3A5F-48B7-818E-10DC13BE27E1}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Boss_Winter" ID="{BBE6E62D-9D5E-44CB-93EC-22F5F3851DC2}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Narration" ID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Narration" ID="{8677E933-DDA4-432D-B1BC-3E53DF4923F7}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+					</EntryList>
+				</MusicSwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

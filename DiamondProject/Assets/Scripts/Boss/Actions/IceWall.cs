@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(LineRenderer))]
 public class IceWall : MonoBehaviour {
@@ -17,6 +18,10 @@ public class IceWall : MonoBehaviour {
     private float circleAngle = 0;
 
     //private List<Vector2> colliderPoints = new List<Vector2>();
+
+    [SerializeField] UnityEvent _onWallDestroy;
+
+    public event UnityAction OnWallDestroy { add => _onWallDestroy.AddListener(value); remove => _onWallDestroy.RemoveListener(value); }
 
     void Start() {
         //line = gameObject.GetComponent<LineRenderer>();
@@ -140,5 +145,13 @@ public class IceWall : MonoBehaviour {
         if (collision.gameObject.tag == "Player") {
             collision.gameObject.GetComponent<IHealth>()?.TakeDamage(damage);
         }
+    }
+
+    private void OnDisable() {
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy() {
+        _onWallDestroy?.Invoke();
     }
 }

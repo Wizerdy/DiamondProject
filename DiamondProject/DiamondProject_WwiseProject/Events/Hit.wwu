@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{215ABD2D-5E3E-402E-8204-42BE8E56D4B0}" SchemaVersion="103" RootDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" ParentDocumentID="{ACD8354D-748D-44C9-9637-56BC40B116AF}">
+	<Events>
+		<WorkUnit Name="Hit" ID="{215ABD2D-5E3E-402E-8204-42BE8E56D4B0}" OwnerID="{ACD8354D-748D-44C9-9637-56BC40B116AF}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Pumpkid_Death" ID="{B30C951D-33FC-48A1-B8F8-5451084E4DEA}">
+					<ChildrenList>
+						<Action Name="" ID="{2AECA5B8-27F9-4F0E-8C9C-D3FCB0654D7B}" ShortID="232912242">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Death" ID="{F8075086-A1F9-4BFD-8282-FB4795DD5038}" WorkUnitID="{E9A5E751-F127-480F-A685-489C17A537CD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{303C376B-FE58-4A1F-BDCE-7691D84A7984}" ShortID="97715695">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pumpkid_Hit" ID="{6074064A-D4C8-4243-9093-1DFE3096CC1A}">
+					<ChildrenList>
+						<Action Name="" ID="{326DF32C-7FDE-48BE-BDB5-024E5A69D225}" ShortID="377064409">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Hit" ID="{AEAF7459-8761-48AE-8720-7250625BA840}" WorkUnitID="{E9A5E751-F127-480F-A685-489C17A537CD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

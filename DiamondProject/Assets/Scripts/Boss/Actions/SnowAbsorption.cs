@@ -30,11 +30,15 @@ public class SnowAbsorption : BaseAttack {
 
     //private int _shardCount = 0;
     private int circleRotation;
+    int _waveCount = 0;
+
     private void SpawnCircle() {
+        _waveCount++;
         GameObject _iceWall = Instantiate(iceWall, new Vector3 (0, 0, 0), Quaternion.Euler(0.0f, 0.0f, -circleRotation));
         IceWall wall = _iceWall.GetComponent<IceWall>();
         wall.Init(segments, radius, wallGapWidth, wallSpeed, wallDamage);
-        
+        wall.OnWallDestroy += () => --_waveCount;
+
         //transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, -randomAngle);
         //Vector3 circleCenterPos = new Vector3(
         //    transform.position.x + halfwidthEllipse * Mathf.Cos(randomAngle * Mathf.PI / 180f),
@@ -102,8 +106,8 @@ public class SnowAbsorption : BaseAttack {
             yield return null;
         }
 
-        //while (_shardCount > 0) {
-        //    yield return null;
-        //}
+        while (_waveCount > 0) {
+            yield return null;
+        }
     }
 }

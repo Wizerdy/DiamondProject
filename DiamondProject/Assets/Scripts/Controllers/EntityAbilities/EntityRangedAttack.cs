@@ -59,6 +59,7 @@ public class EntityRangedAttack : MonoBehaviour {
 
     public void UpdateDirection(Vector2 direction) {
         //if (_spriteRenderer != null) { _spriteRenderer.transform.localScale = _spriteRenderer.transform.localScale.Override(); }
+        _spriteRenderer.flipY = direction.x > 0;
         _attackParent.rotation = Quaternion.LookRotation(Vector3.forward, direction.To3D());
     }
 

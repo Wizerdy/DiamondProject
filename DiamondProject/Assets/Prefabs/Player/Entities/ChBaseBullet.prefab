@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 3857499495338575479}
   - component: {fileID: 1013045834084131242}
   - component: {fileID: 3284727387380998033}
+  - component: {fileID: 5410436971588616984}
   - component: {fileID: 1726073712233740706}
   - component: {fileID: 1735998592836663502}
   - component: {fileID: 6038740818519240514}
@@ -417,6 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1735998592836663502}
   _damageHealth: {fileID: 3284727387380998033}
+  _electricEntity: {fileID: 5410436971588616984}
   _damage: 70
   _fullChargedDamageBonus: 30
   _damageables:
@@ -520,9 +522,30 @@ MonoBehaviour:
   _onCollide:
     m_PersistentCalls:
       m_Calls: []
+  _onTrigger:
+    m_PersistentCalls:
+      m_Calls: []
   _onDamage:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5410436971588616984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847567384368089890}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd08fcf605a0544ebcdd93e41be8a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageHealth: {fileID: 3284727387380998033}
+  _bonusDamage: 10
+  _name: Lightning
+  _sprite: {fileID: 1726073712233740706}
+  _waveLength: 0.4
+  _waveSpeed: -3
 --- !u!212 &1726073712233740706
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -543,7 +566,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f43b4fa0b625a664697baf961d18734a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -9,6 +9,7 @@ public class LeafBeam : BaseAttack {
     [SerializeField] private float _rayAngularSpeed = 10f;
     [SerializeField] private float _rayLinearSpeed = 10f;
     [SerializeField] private int _rayDamage = 5;
+    [SerializeField] private int _radius = 5;
     //[SerializeField] private float _damageFrequency = 0f;
     [SerializeField] private Vector3 _beamPosOnBoss;
     [SerializeField] float _minDistLaser = 5;
@@ -22,7 +23,6 @@ public class LeafBeam : BaseAttack {
 
     protected override IEnumerator IExecute() {
         _onStart?.Invoke();
-
         float _minDistLaserSquare = _minDistLaser * _minDistLaser;
         _rayAngularSpeed = Mathf.Acos((2 * _minDistLaserSquare - _rayLinearSpeed * _rayLinearSpeed) / (2 * _minDistLaserSquare));
 
@@ -33,6 +33,7 @@ public class LeafBeam : BaseAttack {
         currentBeam = Instantiate(_leafBeamPrefab, _beamPosOnBoss + BossPos, Quaternion.identity).gameObject;
         GameObject rendererBeam = currentBeam.transform.GetChild(0).gameObject;
         GameObject impact = currentBeam.transform.GetChild(1).gameObject;
+        //impact.transform.GetChild(1).transform.localScale = new Vector3(_radius, _radius, _radius);
 
         float attackTimer = duration;
         while (attackTimer > 0) {
@@ -47,6 +48,7 @@ public class LeafBeam : BaseAttack {
             //    currentAim = nextPosition;
             //}
 
+
             Debug.DrawRay(BossPos, currentAim - BossPos, Color.blue);
 
             Vector2 direction = currentAim - currentBeam.transform.position;
@@ -55,13 +57,13 @@ public class LeafBeam : BaseAttack {
             rendererBeam.transform.localScale = new Vector3(4, Vector3.Distance(currentBeam.transform.position, currentAim), 1);
             currentBeam.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
             rendererBeam.transform.GetChild(0).transform.position = currentBeam.transform.position;
+            //rendererBeam.transform.GetChild(0).transform.localPosition = rendererBeam.transform.GetChild(0).transform.localPosition.Override(-0.2f, Axis.Y);
             impact.transform.position = currentAim;
             impact.transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.forward);
-
-            RaycastHit2D[] hits = Physics2D.RaycastAll(currentBeam.transform.position, currentAim - currentBeam.transform.position, Vector3.Distance(currentAim, currentBeam.transform.position) + 1);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(impact.transform.position, _radius);
             for (int i = 0; i < hits.Length; i++) {
-                RaycastHit2D hit = hits[i];
-                _onHit?.Invoke(hit.collider.gameObject);
+                Collider2D hit = hits[i];
+                _onHit?.Invoke(hit.gameObject);
                 if (hit.transform.gameObject.CompareTag("Player")) {
                     hit.transform.gameObject.GetComponent<IHealth>()?.TakeDamage(_rayDamage);
                 }
