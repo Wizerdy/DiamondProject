@@ -56,6 +56,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{7E2E068E-7E8E-412D-BCA9-C153D5B285E6}" ShortID="62039861">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_VO_ChangeForm" ID="{FBA740E1-2FAD-4A94-8B4F-C0CA9186357C}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Boss_FormChange_Neutral" ID="{D1C8892C-51FB-4110-B801-5A5F48C2556D}">
@@ -106,6 +113,13 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2C80939E-ABE5-4B52-9CB1-9D8622696977}" ShortID="1022890490">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_VO_Hit" ID="{A9DCBDAF-16F3-4805-8118-86C9EF451D0B}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -164,6 +178,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{43DEFF06-4386-4DBB-B902-DBED87A1B8EC}" ShortID="908029145">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_VO_ChangeForm" ID="{FBA740E1-2FAD-4A94-8B4F-C0CA9186357C}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Boss_Hit" ID="{46837D47-97FC-4842-9C5F-56D0F6F599EC}">
@@ -172,6 +193,32 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Boss_Hit" ID="{112C23FF-F9E0-4DAD-AB61-F37E881BBF77}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C2976524-D120-4FE0-BAF0-7698ED35A051}" ShortID="895966718">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_VO_Hit" ID="{A9DCBDAF-16F3-4805-8118-86C9EF451D0B}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Stun" ID="{4C13558A-8403-4C1E-87D9-E241BE6D49D9}"/>
+				<Event Name="Boss_Death" ID="{EA32CBB0-ED44-4F6A-B66B-3B7804360635}">
+					<ChildrenList>
+						<Action Name="" ID="{B6E330DD-A6A3-4FFE-B90D-C17EB6147F2B}" ShortID="159156364">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Death" ID="{CA88D672-276F-40E7-A467-B64AD129737C}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4D59790E-A68E-4B85-B7FB-4A664CACE6EC}" ShortID="1015193235">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_VO_Death" ID="{D6DD1383-C934-4347-A41C-25C01655D182}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

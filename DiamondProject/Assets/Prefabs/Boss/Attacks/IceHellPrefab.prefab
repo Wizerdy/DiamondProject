@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6586360117969832350}
   - component: {fileID: 6293329550915062344}
   - component: {fileID: 8131329985484474038}
-  - component: {fileID: 3230702887130877040}
   - component: {fileID: 1793933122519583863}
   m_Layer: 0
   m_Name: OnCast
@@ -120,30 +119,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 12870386a9171814380b6dd44f9d5f9f, type: 2}
   myGameobject: {fileID: 1150741105703306806}
---- !u!114 &3230702887130877040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150741105703306806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 278cba4854782f344bdcef27372cc082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c9a1b7d4e10376a4aa8abb03ddb86a30, type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &1793933122519583863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +333,6 @@ GameObject:
   - component: {fileID: 7828236927129413698}
   - component: {fileID: 8726493419441103310}
   - component: {fileID: 5126812378776506092}
-  - component: {fileID: 2839179307125511162}
   - component: {fileID: 8164859117276226352}
   m_Layer: 0
   m_Name: OnExecute
@@ -465,32 +439,8 @@ MonoBehaviour:
   wwiseEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d8d307e6d079f8e4f9d3d5a150238f41, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 12870386a9171814380b6dd44f9d5f9f, type: 2}
   myGameobject: {fileID: 5006572131633603774}
---- !u!114 &2839179307125511162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5006572131633603774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 278cba4854782f344bdcef27372cc082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c9a1b7d4e10376a4aa8abb03ddb86a30, type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &8164859117276226352
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -109,6 +109,7 @@
 									</ModifierList>
 								</Property>
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-4</Value>
@@ -116,9 +117,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="ATT_Basic" ID="{A67E0D10-0A4D-4AAB-8FFE-46E7D9897F04}" WorkUnitID="{0CCB3153-D387-4D3D-BD91-7B7B28086B0E}"/>
-								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
 								</Reference>
@@ -310,6 +308,7 @@
 									</ModifierList>
 								</Property>
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-7</Value>
@@ -317,9 +316,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="ATT_Basic" ID="{A67E0D10-0A4D-4AAB-8FFE-46E7D9897F04}" WorkUnitID="{0CCB3153-D387-4D3D-BD91-7B7B28086B0E}"/>
-								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
 								</Reference>
@@ -448,8 +444,10 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Neutral_RockSpikes_Cast" ID="{6EC5084D-A3EE-4F13-91D9-4C86DDCA8234}" ShortID="733417063">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -459,6 +457,77 @@
 									<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_VO_RockSpike_01" ID="{3E93637D-B8C9-45E9-B7C3-6474341798DA}" ShortID="747817165">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_RockSpike_01" ID="{3E3F3D81-584C-4174-8BB7-5998431F8942}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_RockSpike_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="211485485"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_RockSpike_01" ID="{3E3F3D81-584C-4174-8BB7-5998431F8942}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_RockSpike_02" ID="{B1D49429-5716-40AE-AB5F-8F518F737B4D}" ShortID="320360384">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_RockSpike_02" ID="{6F136B8B-C76C-481B-B7FD-D957D15FD0CB}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_RockSpike_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="261560676"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_RockSpike_02" ID="{6F136B8B-C76C-481B-B7FD-D957D15FD0CB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_RockSpike_03" ID="{1B880088-DC8B-4629-82E9-28B259F0AC64}" ShortID="596622125">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_RockSpike_03" ID="{5D226BF5-06F9-4AC8-A268-99EE925D8A76}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_RockSpike_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="713241705"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_RockSpike_03" ID="{5D226BF5-06F9-4AC8-A268-99EE925D8A76}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Neutral_Tree_Destroy" ID="{09B96E63-4B5F-4009-8F74-AB4942E62AB0}" ShortID="870852179">
@@ -478,8 +547,10 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Neutral_Thunder_Cast" ID="{E1A1212F-9F85-4B71-AB58-BF44BD9EE49E}" ShortID="520444573">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -489,6 +560,77 @@
 									<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_VO_Thunder_01" ID="{036C85FC-BCC8-4B18-8B15-34B6943C43B1}" ShortID="74392390">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_Thunder_01" ID="{3F1DDA70-F32B-4DC7-90EF-E0091030E154}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_Thunder_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="117397154"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_Thunder_01" ID="{3F1DDA70-F32B-4DC7-90EF-E0091030E154}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_Thunder_02" ID="{2E04A550-C751-486A-8A5E-BADA74A2E074}" ShortID="37041979">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_Thunder_02" ID="{F6E0C40F-6747-4558-B853-2A3773F0EBBB}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_Thunder_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="551466816"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_Thunder_02" ID="{F6E0C40F-6747-4558-B853-2A3773F0EBBB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_Thunder_03" ID="{29B9BB7C-7B81-430B-A849-9FC394C7AAE9}" ShortID="178222595">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_Thunder_03" ID="{1FED1564-1350-46A8-B2E3-A3159D0AAC85}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_Thunder_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1015851507"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_Thunder_03" ID="{1FED1564-1350-46A8-B2E3-A3159D0AAC85}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 					</ChildrenList>
