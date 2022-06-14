@@ -65,9 +65,9 @@ public class EntityChargeRanged : MonoBehaviour {
     #endregion
 
     private void Update() {
+        AkSoundEngine.SetRTPCValue("RTPC_CrossbowCharge", _chargingTimer / _chargingTime);
         if (_isCharging) {
             _chargingTimer += Time.deltaTime;
-            AkSoundEngine.SetRTPCValue("RTPC_CrossbowCharge", _chargingTimer / _chargingTime);
             if (_chargingTimer >= _chargingTime) {
                 StopCharging(_direction);
                 _onOverCharge?.Invoke(_direction);
@@ -98,7 +98,10 @@ public class EntityChargeRanged : MonoBehaviour {
     public void StopCharging(Vector2 direction) {
         if (!_isCharging) { return; }
         _isCharging = false;
+
+
         Attack(direction, _chargingTimer);
+        _chargingTimer = 0f;
         _onAttack?.Invoke(direction);
         _attackAnimator.SetBool("Charge Range", false);
     }
