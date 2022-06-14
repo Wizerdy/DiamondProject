@@ -206,19 +206,19 @@
 					</ChildrenList>
 				</Event>
 				<Event Name="Boss_Stun" ID="{4C13558A-8403-4C1E-87D9-E241BE6D49D9}"/>
-				<Event Name="Boss_Death" ID="{8126A3FA-58D6-485C-9889-9DB383F560B6}">
+				<Event Name="Boss_Death" ID="{EA32CBB0-ED44-4F6A-B66B-3B7804360635}">
 					<ChildrenList>
-						<Action Name="" ID="{BEF10296-E047-4F85-8368-676C4A86B084}" ShortID="44310003">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Boss_VO_Death" ID="{D6DD1383-C934-4347-A41C-25C01655D182}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{17336699-50DC-43F5-AEFD-C72CA67DC9D1}" ShortID="648621156">
+						<Action Name="" ID="{B6E330DD-A6A3-4FFE-B90D-C17EB6147F2B}" ShortID="159156364">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Boss_Death" ID="{CA88D672-276F-40E7-A467-B64AD129737C}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4D59790E-A68E-4B85-B7FB-4A664CACE6EC}" ShortID="1015193235">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_VO_Death" ID="{D6DD1383-C934-4347-A41C-25C01655D182}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
