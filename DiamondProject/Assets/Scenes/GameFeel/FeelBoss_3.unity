@@ -2615,6 +2615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shapeSystem: {fileID: 0}
+  _changeShape: {fileID: 0}
   _spriteRenderer: {fileID: 0}
   _shapes: []
   _transitionRenderer: {fileID: 0}
@@ -4967,6 +4968,9 @@ MonoBehaviour:
   _onCollide:
     m_PersistentCalls:
       m_Calls: []
+  _onTrigger:
+    m_PersistentCalls:
+      m_Calls: []
   _onDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -5007,6 +5011,9 @@ MonoBehaviour:
     tags: []
     state: 0
   _onCollide:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTrigger:
     m_PersistentCalls:
       m_Calls: []
   _onDamage:
@@ -5278,28 +5285,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1198408164 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 508996320404214175, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
-  m_PrefabInstance: {fileID: 1739688776}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1245563674 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3496006384030968403, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
-  m_PrefabInstance: {fileID: 1739688776}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1309317844
 GameObject:
   m_ObjectHideFlags: 0
@@ -7705,7 +7690,7 @@ PrefabInstance:
     - target: {fileID: 7159676193215690231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _chargeAtkEnd
       value: 
-      objectReference: {fileID: 1245563674}
+      objectReference: {fileID: 0}
     - target: {fileID: 7159676193215690231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _eChargeRange
       value: 
@@ -7717,7 +7702,7 @@ PrefabInstance:
     - target: {fileID: 7159676193215690231, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _chargeRangeEnd
       value: 
-      objectReference: {fileID: 1198408164}
+      objectReference: {fileID: 0}
     - target: {fileID: 7422822697510669116, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: looping
       value: 0
@@ -7765,6 +7750,10 @@ PrefabInstance:
     - target: {fileID: 7422822697510669116, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.m_NumColorKeys
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881441683567772896, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8990786264109351080, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: Feedbacks.Array.size
@@ -10481,6 +10470,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 32290686068225981, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 32290686068225981, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 32290686068225981, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[6].m_Value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 32290686068225981, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[7].m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -11395,6 +11400,10 @@ PrefabInstance:
     - target: {fileID: 2562539886478211056, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934628414955997457, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4520003440807670763, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _health
