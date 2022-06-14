@@ -67,6 +67,7 @@ public class EntityChargeAttack : MonoBehaviour {
     private void Update() {
         if (_isCharging) {
             _chargingTimer += Time.deltaTime;
+            AkSoundEngine.SetRTPCValue("RTPC_SwordCharge", _chargingTimer / _chargingTime);
             if (_chargingTimer >= _chargingTime) {
                 StopCharging(_direction);
                 _onOverCharge?.Invoke(_direction);
