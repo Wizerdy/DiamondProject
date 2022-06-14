@@ -113,13 +113,13 @@ public class EntityChargeAttack : MonoBehaviour {
         if (attackTime >= 0f) {
             _isAttacking = true;
             _attackAnimator.SetBool("Dash Attack", true);
-            _routine_DashAttack = StartCoroutine(IDashAttack(direction, distance, attackTime));
+            _routine_DashAttack = StartCoroutine(IDashAttack(direction, distance, attackTime, damage));
         } else {
             _onAttackEnd?.Invoke();
         }
     }
 
-    IEnumerator IDashAttack(Vector2 direction, float distance, float time) {
+    IEnumerator IDashAttack(Vector2 direction, float distance, float time, int damage) {
         direction = direction.normalized;
         Vector2 position = _entity.Position2D();
         Vector2 target = direction * distance + position;
@@ -128,8 +128,13 @@ public class EntityChargeAttack : MonoBehaviour {
             yield return new WaitForEndOfFrame();
             timePassed += Time.deltaTime;
             Vector2 nextPos = Vector2.Lerp(position, target, timePassed / time);
-            RaycastHit2D hit = Physics2D.Linecast(_entity.Position2D(), nextPos, _walls);
-            if (hit.collider != null) {
+            RaycastHit2D hit = Physics2D.Linecast(_entity.Position2D(), nextPos);
+            IHealth hitHealth = hit.collider.gameObject.GetComponent<IHealth>();
+            if (hitHealth != null) {
+                _attackHitbox.SetValues(_damageables, damage);
+                _attackHitbox.Hit(hit.collider);
+            }
+            if (_walls.Contains(hit.collider.gameObject.layer)) {
                 nextPos = hit.point;
             }
             _entity.position = nextPos.To3D(_entity.position.z, Axis.Z);

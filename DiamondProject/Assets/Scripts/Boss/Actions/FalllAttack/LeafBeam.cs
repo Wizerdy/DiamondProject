@@ -57,6 +57,7 @@ public class LeafBeam : BaseAttack {
             rendererBeam.transform.localScale = new Vector3(4, Vector3.Distance(currentBeam.transform.position, currentAim), 1);
             currentBeam.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
             rendererBeam.transform.GetChild(0).transform.position = currentBeam.transform.position;
+            //rendererBeam.transform.GetChild(0).transform.localPosition = rendererBeam.transform.GetChild(0).transform.localPosition.Override(-0.2f, Axis.Y);
             impact.transform.position = currentAim;
             impact.transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.forward);
             Collider2D[] hits = Physics2D.OverlapCircleAll(impact.transform.position, _radius);

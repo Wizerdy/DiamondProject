@@ -48,6 +48,12 @@ public class LiaAttack : MonoBehaviour {
         _currentBehaviour = ChooseBehaviour();
     }
 
+    public void StopBehaviour() {
+        if (_currentBehaviour != null) {
+            StopCoroutine(_currentBehaviour);
+        }
+    }
+
     Coroutine ChooseBehaviour() {
         switch (_currentShape.Type) {
             case Shape.NEUTRAL:
@@ -174,9 +180,7 @@ public class LiaAttack : MonoBehaviour {
 
     public IEnumerator WinterBehaviour() {
         availableAttacks.Clear();
-        Debug.Log("1. " + availableAttacks.Print());
         availableAttacks = new List<string>(_winterAttacks);
-        Debug.Log("2. " + availableAttacks.Print());
         _bossHealth.CanTakeDamage = false;
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
         yield return new WaitForSeconds(_waitTimeBeforeAction);

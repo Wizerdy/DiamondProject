@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6821045671374717883}
+  - component: {fileID: 5945866861168263028}
   - component: {fileID: -7494688216887631774}
   m_Layer: 0
   m_Name: FallDash
@@ -32,6 +33,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5945866861168263028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140256541865477262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248573e5fd7dbdc4f8f455bcddcce746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: {fileID: -7494688216887631774}
+  _boss: {fileID: 11400000, guid: 51c649c5126fe7a478232854d723dc0e, type: 2}
+  _trigger: Dash
+  _onExecute: 1
+  _onCast: 1
+  _onEnd: 0
 --- !u!114 &-7494688216887631774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +70,7 @@ MonoBehaviour:
   duration: 1
   coolDown: 1
   _dontNeedEnd: 0
-  _castTime: 0
+  _castTime: 0.2
   _onExecute:
     m_PersistentCalls:
       m_Calls: []
@@ -64,7 +83,7 @@ MonoBehaviour:
   leafPrefab: {fileID: 8625124664747513456, guid: 69d9d5dd0fbd1d6458f8a911ce3207a6, type: 3}
   dashSpeed: 30
   dashDamage: 30
-  dashLoadingTime: 3
+  dashLoadingTime: 0
   dashMaxRange: 50
   minDistOfWall: 7
   spawnLeafEveryOneDivideByX: 5

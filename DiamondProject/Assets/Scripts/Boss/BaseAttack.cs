@@ -30,8 +30,8 @@ public abstract class BaseAttack : MonoBehaviour {
     public event UnityAction<BaseAttack> OnEnd { add => _onEnd.AddListener(value); remove => _onEnd.RemoveListener(value); }
 
     private void OnEnable() {
-        Execute();
         attackSystem?.Instance?.Register(this);
+        Execute();
     }
 
     private void OnDisable() {
@@ -41,9 +41,11 @@ public abstract class BaseAttack : MonoBehaviour {
 
     public void Execute() {
         isPlaying = true;
+
+        _onExecute?.Invoke(this);
+
         StartCoroutine(Tools.Delay(() => { StartCoroutine(ILaunch()); _onCast?.Invoke(this); }, _castTime));
         //StartCoroutine(ILaunch());
-        _onExecute?.Invoke(this);
     }
 
     protected IEnumerator ILaunch() {
