@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 175935978380704573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5680249788342967249}
@@ -66,7 +66,7 @@ MonoBehaviour:
   _health: {fileID: 5680249788332393454}
   _spriteRenderer: {fileID: 5680249788595143012}
   _animator: {fileID: 3393462403668250656}
-  _spine: {fileID: 0}
+  _spine: {fileID: 4535153167675045433}
   _onInvincibility:
     m_PersistentCalls:
       m_Calls: []
@@ -990,7 +990,7 @@ Transform:
   m_GameObject: {fileID: 2587240347584630880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.21, y: 0.14, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5680249786933603677}
@@ -1853,7 +1853,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029226005, y: 0}
+  m_Offset: {x: -0.058861732, y: 1.3336077}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1864,7 +1864,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.614327, y: 5.258309}
+  m_Size: {x: 3.0292273, y: 7.9255238}
   m_EdgeRadius: 0
 --- !u!114 &2101061635675969003
 MonoBehaviour:
@@ -1892,7 +1892,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06407672, y: -2.5162363}
+  m_Offset: {x: 0.27152687, y: -2.323604}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1903,7 +1903,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.94423044, y: 0.7438972}
+  m_Size: {x: 1.774031, y: 1.1884329}
   m_EdgeRadius: 0
 --- !u!1 &5680249788377665365
 GameObject:
@@ -1959,7 +1959,7 @@ MonoBehaviour:
   _onAttackEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4458722367781711720}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: MovementEnd
         m_Mode: 0
@@ -2432,7 +2432,7 @@ MonoBehaviour:
   _onEnterShape:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4458722367781711720}
         m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
         m_MethodName: SetShape
         m_Mode: 0
@@ -2444,13 +2444,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChangeMap, Assembly-CSharp
-        m_MethodName: ChangeSprite
-        m_Mode: 0
+      - m_Target: {fileID: 4458722367781711720}
+        m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
+        m_MethodName: ChangeBehaviour
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PosterityVNValue, Assembly-CSharp
+        m_MethodName: OnFirstTimeSawForm
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5680249788645268036}
+          m_ObjectArgumentAssemblyTypeName: BossShapeSystem, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2468,40 +2480,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
-        m_MethodName: ChangeBehaviour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2587240347584630880}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 3063354052670382493}
+        m_TargetAssemblyTypeName: IMeetARealBoss, Assembly-CSharp
+        m_MethodName: SetAnimatorTrigger
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ShapeChange
+          m_StringArgument: ShapeShift
           m_BoolArgument: 0
         m_CallState: 2
   _onExitShape:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LiaAttack, Assembly-CSharp
-        m_MethodName: SetShape
-        m_Mode: 0
+        m_TargetAssemblyTypeName: PosterityVNValue, Assembly-CSharp
+        m_MethodName: OnKillForm
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 5680249788645268036}
+          m_ObjectArgumentAssemblyTypeName: BossShapeSystem, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2521,7 +2521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shapeSystem: {fileID: 5680249788645268036}
   _boss: {fileID: 3063354052670382493}
-  _timeBeforeChange: 0.5
+  _timeBeforeChange: 1.2
   _onSpriteChange:
     m_PersistentCalls:
       m_Calls: []
@@ -2961,8 +2961,23 @@ PrefabInstance:
       propertyPath: _attackSystem
       value: 
       objectReference: {fileID: 5680249788377665360}
+    - target: {fileID: 8301503317489124549, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+      propertyPath: _waitTimeBeforeAction
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+--- !u!114 &4458722367781711720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8301503317489124549, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
+  m_PrefabInstance: {fileID: 5680249788904057773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de3d34aca8cdbf48bc1f18997410696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4520003439891824436 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8101424016618067097, guid: c5d5c5c4286b5dd49a5d30ada94df37d, type: 3}
