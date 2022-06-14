@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
   resetOnStart: 1
-  deathCount: 28
-  bossDeathCount: 13
+  deathCount: 31
+  bossDeathCount: 14
   maxLifeModifier: 0
   extraLife: 0
   nearSight: 0
@@ -25,22 +25,22 @@ MonoBehaviour:
   numberOfTimeDyingWithoutKillingForm: 0
   killNeutralForm: 1
   killFallForm: 1
-  killWinterForm: 0
-  sawFallForm: 0
-  sawWinterForm: 0
+  killWinterForm: 1
+  sawFallForm: 1
+  sawWinterForm: 1
   firstTimeTalking: 0
-  nbTimeTalkedToNorna: 1
+  nbTimeTalkedToNorna: 0
   nbCorpse: 0
   winterFormTriggerActivated: 0
   arrow: {fileID: 4847567384368089890, guid: 926c297511747224fad1217bde893de4, type: 3}
   fallBossHintList:
-  - id: 1
-    description: First fall boss hint
-    isTrigger: 0
+  - id: 0
+    description: 
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: "D\xE9truire tous les arbres"
+    defaultText: 
+    unlockedText: 
   - id: 2
     description: Second fall boss hint
     isTrigger: 0
