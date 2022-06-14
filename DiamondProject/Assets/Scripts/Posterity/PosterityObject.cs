@@ -29,6 +29,7 @@ public class PosterityObject : ScriptableObject {
     public int numberOfTriggerActivate = 0;
 
     [Header("For VN Scene")]
+    public int numberOfTimeDyingWithoutKillingForm = 0;
     public bool killNeutralForm = false;
     public bool killFallForm = false;
     public bool killWinterForm = false;

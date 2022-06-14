@@ -10,6 +10,46 @@ public class GetVNTrigger : MonoBehaviour
     [SerializeField] private GameObject arrowSleep;
     [SerializeField] private GameObject arrowBoomerang;
 
+    private Hint hint;
+    public void LearnHint(hintType type, int index) {
+        switch (type) {
+            case hintType.FallBoss:
+                hint.isTrigger = true;
+                posterity.fallBossHintList[index] = hint;
+                break;
+            case hintType.FallAttack:
+                hint.isTrigger = true;
+                posterity.fallAttackHintList[index] = hint;
+                break;
+            case hintType.WinterBoss:
+                hint.isTrigger = true;
+                posterity.winterBossHintList[index] = hint;
+                break;
+            case hintType.WinterAttack:
+                hint.isTrigger = true;
+                posterity.winterAttackHintList[index] = hint;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public bool DidSawText(int index) {
+        return vnTrigger.alreadySawText[index];
+    }
+
+    public void SeeText(int index) {
+        vnTrigger.alreadySawText[index] = true;
+    }
+
+    public void AddNumberOfTimeDyingWithoutKillingForm() {
+        ++posterity.numberOfTimeDyingWithoutKillingForm;
+    }
+
+    public int ReturnNumberOfTimeDyingWithoutKillingForm() {
+        return posterity.numberOfTimeDyingWithoutKillingForm;
+    }
+
     // BOSS HINT
     public bool DoKnowBossFirstHint() {
         return vnTrigger.KnowFirstHintBoss;

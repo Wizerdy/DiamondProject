@@ -109,6 +109,7 @@ public class PosterityVNValue : MonoBehaviour
     }
 
     public void OnKillForm(BossShapeSystem shape) {
+        posterityObj.numberOfTimeDyingWithoutKillingForm = 0;
         switch (shape.Shape.Type) {
             case Shape.NEUTRAL:
                 posterityObj.killNeutralForm = true;
