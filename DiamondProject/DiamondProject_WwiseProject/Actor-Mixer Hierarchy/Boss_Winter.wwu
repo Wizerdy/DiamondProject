@@ -1,0 +1,1448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B803E388-5F0F-4816-B66E-27C30DA27389}" SchemaVersion="103" RootDocumentID="{6D1F77A3-DCC8-4815-926D-36B821AE11B9}" ParentDocumentID="{B1630466-6BA0-49D7-B78B-921D2E207E66}">
+	<AudioObjects>
+		<WorkUnit Name="Boss_Winter" ID="{B803E388-5F0F-4816-B66E-27C30DA27389}" OwnerID="{B1630466-6BA0-49D7-B78B-921D2E207E66}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="1"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="Boss_Winter" ID="{5872D7AB-78DC-47A7-B4F5-CDC894F5B790}" ShortID="78774921">
+					<Comment>spirale, pics ice qui volent,</Comment>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Winter" ID="{E66BD1BA-C06B-4E79-B94B-23BF48E98291}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Boss_Winter_IceHell_Cast" ID="{B0D89820-701C-42EB-9943-5176C7E0E617}" ShortID="160690489">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_SnowAbsorption" ID="{2486BFA1-1F39-4C15-A383-58A4F2F770F3}" ShortID="1027945094">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_IceSpikes" ID="{67985FDF-8CC9-47AB-B9A6-326EA5F93631}" ShortID="718536339">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{45443BFA-39A5-4B49-8559-7FB1393595F4}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ATT_Basic" ID="{A67E0D10-0A4D-4AAB-8FFE-46E7D9897F04}" WorkUnitID="{0CCB3153-D387-4D3D-BD91-7B7B28086B0E}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Winter_IceSpikes_01" ID="{6682CF2A-0861-444F-9F75-A311A27612CE}" ShortID="896648239">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_01" ID="{E2879FB5-90D6-403B-AFBD-EA5918E44833}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="979371832"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_01" ID="{E2879FB5-90D6-403B-AFBD-EA5918E44833}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceSpikes_02" ID="{CBD9D0C8-7301-4DAE-890B-2624B474561B}" ShortID="219852119">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_02" ID="{39F25519-2784-4282-AD80-5ED55E0E81B8}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="398635965"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_02" ID="{39F25519-2784-4282-AD80-5ED55E0E81B8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceSpikes_03" ID="{1160FCE6-6A76-4B8C-A149-628FA87E868F}" ShortID="754482793">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_03" ID="{0DD00128-C661-4A3B-9ED3-4E322AC8C51F}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="965414608"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_03" ID="{0DD00128-C661-4A3B-9ED3-4E322AC8C51F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceSpikes_04" ID="{BD8CC454-FBF4-403A-8B79-BDAA2E5D4846}" ShortID="971104777">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_04" ID="{C081BF00-225D-4968-B84A-50E27E2BD975}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="406881015"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_04" ID="{C081BF00-225D-4968-B84A-50E27E2BD975}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceSpikes_05" ID="{C6659B37-FFAC-43F7-8B56-7A37AC370DE0}" ShortID="41040452">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceSpikes_05" ID="{E2FE0603-60BF-4D86-AC82-0D140260A024}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceSpikes_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="165466198"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceSpikes_05" ID="{E2FE0603-60BF-4D86-AC82-0D140260A024}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_IceHell_Focus_Charge" ID="{7F96A78F-11EA-4F91-8CE3-AEBF78B54F74}" ShortID="383873459">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{F2813B2E-DE59-4058-84FE-4E8AD287C4B9}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ATT_Basic" ID="{A67E0D10-0A4D-4AAB-8FFE-46E7D9897F04}" WorkUnitID="{0CCB3153-D387-4D3D-BD91-7B7B28086B0E}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Winter_IceHell_Focus_Charge_01" ID="{C426D16E-ABC0-46C2-AD13-3D04613E1167}" ShortID="903068433">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Charge_01" ID="{B94D44B9-7DD2-4EDB-AD68-4B06F71A1DB8}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Charge_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="76197746"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Charge_01" ID="{B94D44B9-7DD2-4EDB-AD68-4B06F71A1DB8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Charge_02" ID="{7FA4B8A9-2BAF-49E7-8A82-9451ADD88E76}" ShortID="993084947">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Charge_02" ID="{86EEE3A5-F954-4445-9832-5F21C0C461EE}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Charge_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="547837803"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Charge_02" ID="{86EEE3A5-F954-4445-9832-5F21C0C461EE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Charge_03" ID="{FD9D2A65-1ADF-4B18-BDA2-41D305EDAF1E}" ShortID="305998766">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Charge_03" ID="{6A146457-1744-4D32-B90E-0549945D48EA}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Charge_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="73949753"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Charge_03" ID="{6A146457-1744-4D32-B90E-0549945D48EA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Charge_04" ID="{079D4B1D-3EA1-4995-8BB5-233A96776928}" ShortID="126859144">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Charge_04" ID="{3F3C2254-1B03-4870-BE0C-ACC2DC02E886}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Charge_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="683235496"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Charge_04" ID="{3F3C2254-1B03-4870-BE0C-ACC2DC02E886}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Charge_05" ID="{DF5BA8AB-9644-4A17-A749-70542A5F48C5}" ShortID="4929323">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Charge_05" ID="{C956EB3B-4EDD-429F-9E25-8585CDFC2D64}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Charge_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="747803629"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Charge_05" ID="{C956EB3B-4EDD-429F-9E25-8585CDFC2D64}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Charge_06" ID="{5F844988-C1F9-411D-95AD-28FF4D28CC96}" ShortID="646138712">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Charge_06" ID="{DA412564-E4C4-438F-92FD-6339587B5767}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Charge_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="320896785"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Charge_06" ID="{DA412564-E4C4-438F-92FD-6339587B5767}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_IceHell_Focus_Throw" ID="{912CAE77-C016-49FC-8110-DC8E8E1AF698}" ShortID="497254953">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{C80CA627-074E-495B-82DC-B1BCFC380FE0}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ATT_Basic" ID="{A67E0D10-0A4D-4AAB-8FFE-46E7D9897F04}" WorkUnitID="{0CCB3153-D387-4D3D-BD91-7B7B28086B0E}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Winter_IceHell_Focus_Throw_01" ID="{83D436FA-7461-4C27-B4CF-46FB26E62EE4}" ShortID="679399025">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Throw_01" ID="{AEBDEE00-7FD9-4E9E-AB1D-0F9DB406E5B2}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Throw_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="72943911"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Throw_01" ID="{AEBDEE00-7FD9-4E9E-AB1D-0F9DB406E5B2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Throw_02" ID="{3ADF9735-EB2B-495E-A8D8-5DFBEEDD79AF}" ShortID="417671218">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Throw_02" ID="{101AFCF3-C2E3-4781-91A2-75560BB11FF6}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Throw_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="910347845"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Throw_02" ID="{101AFCF3-C2E3-4781-91A2-75560BB11FF6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Throw_03" ID="{473AFB42-648B-4347-A08C-8F6E7E2B30C7}" ShortID="971809812">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Throw_03" ID="{12CA54DA-E072-4C09-B39F-01745A98EB81}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Throw_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="701612605"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Throw_03" ID="{12CA54DA-E072-4C09-B39F-01745A98EB81}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Throw_04" ID="{CD95FE12-AE33-442F-BD45-1E9B1DE74AD5}" ShortID="146321299">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Throw_04" ID="{01567026-3D3F-4060-9793-8580FB97C1DE}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Throw_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="764080611"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Throw_04" ID="{01567026-3D3F-4060-9793-8580FB97C1DE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Throw_05" ID="{5E2792FD-4CC5-4095-8DCC-05EC96922B6F}" ShortID="345752423">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Throw_05" ID="{81F0A45A-EF9C-467B-9EFA-4DA78E965A95}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Throw_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="976167390"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Throw_05" ID="{81F0A45A-EF9C-467B-9EFA-4DA78E965A95}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Focus_Throw_06" ID="{21354FAD-A9ED-4697-9166-D47A146800CA}" ShortID="884231790">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Focus_Throw_06" ID="{DB00F607-62D9-407F-8252-83221F3A5725}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Focus_Throw_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="137092334"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Focus_Throw_06" ID="{DB00F607-62D9-407F-8252-83221F3A5725}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_IceHell_Scatter_Charge" ID="{1B4BB9F6-8C59-4C50-9F2F-43A77323E647}" ShortID="472408256">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{5E2FCA22-4A38-4334-998D-994C33F406EB}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Charge_01" ID="{45D8A929-0027-4CA4-A58B-D72540D7996E}" ShortID="448386853">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Charge_01" ID="{D508DB65-F5DC-4416-A93C-31B236096D22}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Charge_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="456805073"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Charge_01" ID="{D508DB65-F5DC-4416-A93C-31B236096D22}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Charge_02" ID="{59286C3A-AC41-4EB7-89AF-AFF7A26D26D3}" ShortID="65839746">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Charge_02" ID="{0A5BF10C-DBA3-45F9-8DFE-F3F68FCE8FEF}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Charge_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="674305507"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Charge_02" ID="{0A5BF10C-DBA3-45F9-8DFE-F3F68FCE8FEF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Charge_03" ID="{5AE0D910-E827-44EA-8A8B-7720833F34CE}" ShortID="476281249">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Charge_03" ID="{CA7D0F6F-18F1-4DCA-B470-824FE04ADA62}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Charge_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="947023092"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Charge_03" ID="{CA7D0F6F-18F1-4DCA-B470-824FE04ADA62}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Charge_04" ID="{58C59F19-F0AD-4D73-92DB-7F211788E2A1}" ShortID="623893649">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Charge_04" ID="{9ED29540-6D0B-4256-A0A5-AB7A579E0E40}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Charge_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="167554122"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Charge_04" ID="{9ED29540-6D0B-4256-A0A5-AB7A579E0E40}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Charge_05" ID="{A66BEC47-310E-4BC7-8AAA-13B11950E5D0}" ShortID="476470422">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Charge_05" ID="{96829D06-098B-4167-9F79-2345962C02F8}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Charge_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="137589296"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Charge_05" ID="{96829D06-098B-4167-9F79-2345962C02F8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Charge_06" ID="{7410D124-17FD-4FEB-B0A5-2EA58022E88D}" ShortID="1024906377">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Charge_06" ID="{4871E2FE-BE5A-4B09-80A9-C149DB7E2D92}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Charge_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="253420629"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Charge_06" ID="{4871E2FE-BE5A-4B09-80A9-C149DB7E2D92}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_IceHell_Scatter_Throw" ID="{ACC34AA4-42F3-4CE2-9F57-C2684C254BF5}" ShortID="616345397">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{5E944CB7-3A90-4482-A6AB-8C4AD568F496}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Throw_01" ID="{3355F0B1-2C8B-406C-BB19-05BCEB1B6633}" ShortID="952213537">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Throw_01" ID="{6E44B707-CAB1-4661-B2E5-7868CEC1937B}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Throw_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="425254547"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Throw_01" ID="{6E44B707-CAB1-4661-B2E5-7868CEC1937B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Throw_02" ID="{17C739EF-434D-46B6-A8C0-25531E068097}" ShortID="90217727">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Throw_02" ID="{3D93ACE7-1D18-474B-BBB3-48F6804287B7}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Throw_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="314282251"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Throw_02" ID="{3D93ACE7-1D18-474B-BBB3-48F6804287B7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Throw_03" ID="{C6878FA7-0C54-4C38-A909-AFBD1E320794}" ShortID="577516644">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Throw_03" ID="{5E156276-96A6-430B-ACB2-AB1D580234CA}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Throw_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="178366894"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Throw_03" ID="{5E156276-96A6-430B-ACB2-AB1D580234CA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Throw_04" ID="{EB7E41D5-034F-444F-A695-67AF35946429}" ShortID="564586275">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Throw_04" ID="{319FC876-BFF2-4308-8A7A-E89FD6CF0F73}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Throw_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="915859855"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Throw_04" ID="{319FC876-BFF2-4308-8A7A-E89FD6CF0F73}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Throw_05" ID="{60C9A815-A03C-4277-A7FA-BC4BD4CEBFF8}" ShortID="158013138">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Throw_05" ID="{C3D9C5C1-4CD2-48D4-A224-863E79CD9331}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Throw_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="684974500"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Throw_05" ID="{C3D9C5C1-4CD2-48D4-A224-863E79CD9331}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_IceHell_Scatter_Throw_06" ID="{0E0032D1-5DF3-4253-A6E5-CF458F9B3B70}" ShortID="177139765">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_IceHell_Scatter_Throw_06" ID="{B761D09A-CB2A-4E5E-855F-A9F5769B1F42}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_IceHell_Scatter_Throw_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="884855950"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_IceHell_Scatter_Throw_06" ID="{B761D09A-CB2A-4E5E-855F-A9F5769B1F42}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<Sound Name="Boss_Winter_BulletHell_Throw_LP" ID="{E6D71C8E-663A-499D-BDCB-1F74450F8506}" ShortID="805163491">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Boss_Winter_BulletHell_Throw_LP" ID="{927455F0-A00C-43FA-93E1-441580393EF4}">
+									<Language>SFX</Language>
+									<AudioFile>Boss_Winter_BulletHell_Throw_LP.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="383519426"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Boss_Winter_BulletHell_Throw_LP" ID="{927455F0-A00C-43FA-93E1-441580393EF4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="Boss_Winter_BulletHell_Charge" ID="{8363E392-F124-4C24-8F33-E95233C86150}" ShortID="1046518545">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B826FB4B-ECE8-4918-AD67-028850AFD16E}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Winter_BulletHell_Charge_01" ID="{26754C1F-AD26-4F84-8875-D8293A984A98}" ShortID="841382921">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Charge_01" ID="{39B645DE-BF87-4ACF-BD35-675CF9C4382A}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Charge_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="431829460"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Charge_01" ID="{39B645DE-BF87-4ACF-BD35-675CF9C4382A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Charge_02" ID="{737FB580-C750-4FFC-88B5-D25F4C9F71AD}" ShortID="750172298">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Charge_02" ID="{F494A89A-9632-4061-8262-E14F535D579C}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Charge_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="465416063"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Charge_02" ID="{F494A89A-9632-4061-8262-E14F535D579C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Charge_03" ID="{B89BCA4C-082A-42B1-934C-88759483A60D}" ShortID="850674187">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Charge_03" ID="{BA59ACF4-8C87-4C2E-9B67-B96E0F281AB3}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Charge_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="634449438"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Charge_03" ID="{BA59ACF4-8C87-4C2E-9B67-B96E0F281AB3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Charge_04" ID="{7A11BE75-0BCF-4D32-9CE6-7ED6B691EE10}" ShortID="9531113">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Charge_04" ID="{CB87E8B7-FA0F-4764-ACC5-E44F68B44FC0}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Charge_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="51275956"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Charge_04" ID="{CB87E8B7-FA0F-4764-ACC5-E44F68B44FC0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Charge_05" ID="{8BAC3877-9D50-496B-A401-6A02450AC05D}" ShortID="430841945">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Charge_05" ID="{2331277C-3A16-40E3-BE0F-5EC85B2876DD}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Charge_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="982279997"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Charge_05" ID="{2331277C-3A16-40E3-BE0F-5EC85B2876DD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Charge_06" ID="{7D57317D-695A-4F5C-BB6A-0C416DEB4058}" ShortID="333644872">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Charge_06" ID="{34E1EFC5-4528-464E-B183-0CE1C047025D}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Charge_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1017079809"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Charge_06" ID="{34E1EFC5-4528-464E-B183-0CE1C047025D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_BulletHell_Throw_End" ID="{7AED1B88-2DBE-4B96-BFCD-CA5E06BEC04D}" ShortID="765266511">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E3F62242-70F6-4426-BC93-442E0CB04286}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Winter_BulletHell_Throw_End_01" ID="{A725891D-9A88-467B-BDA2-F9ED5FEA9A71}" ShortID="171207310">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_End_01" ID="{A1595A79-B16C-44E1-8B6F-8BF57FA229FB}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_End_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="351641755"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_End_01" ID="{A1595A79-B16C-44E1-8B6F-8BF57FA229FB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Throw_End_02" ID="{317F9599-A589-4631-B396-E377F9E1F832}" ShortID="391762578">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_End_02" ID="{5DB7164F-B765-41CC-9A1C-2DD567156D66}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_End_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="537034951"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_End_02" ID="{5DB7164F-B765-41CC-9A1C-2DD567156D66}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Throw_End_03" ID="{EC63008B-BF25-40DF-A2CE-AE2887B5F8FC}" ShortID="357226698">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_End_03" ID="{C576B302-CBFB-4BFF-8ACF-3F45182B0DC6}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_End_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="93275430"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_End_03" ID="{C576B302-CBFB-4BFF-8ACF-3F45182B0DC6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Throw_End_04" ID="{7FD97C43-3F02-41C5-B20A-2330B7A922F4}" ShortID="505786584">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_End_04" ID="{A8715E35-FF63-4B85-A03E-E70383F4D4E6}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_End_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="734100683"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_End_04" ID="{A8715E35-FF63-4B85-A03E-E70383F4D4E6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Throw_End_05" ID="{E538C0A9-9FB4-4A2A-BC05-87E91B254B77}" ShortID="736109740">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_End_05" ID="{80B6CE4E-5070-441B-AA51-B77EE4CF4DA5}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_End_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="19942001"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_End_05" ID="{80B6CE4E-5070-441B-AA51-B77EE4CF4DA5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_BulletHell_Throw_Start" ID="{76E52D81-451A-4560-9E83-1BF8E814C074}" ShortID="599119747">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{18462403-7071-48E0-9B6B-936C667C40D3}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Winter_BulletHell_Throw_Start_01" ID="{22EF7FA6-4477-409B-866C-6098FFEFA0CB}" ShortID="750972496">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_Start_01" ID="{9208AEB2-147C-43F4-9AC1-2882250458E7}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_Start_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="323075578"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_Start_01" ID="{9208AEB2-147C-43F4-9AC1-2882250458E7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Throw_Start_02" ID="{8022A581-6545-4165-A7A0-AA2C01C5CC1E}" ShortID="332811553">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_Start_02" ID="{7DFA8A25-7FD0-4B39-901F-E6B3C5B75F89}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_Start_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="504228588"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_Start_02" ID="{7DFA8A25-7FD0-4B39-901F-E6B3C5B75F89}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Throw_Start_03" ID="{EC833817-918C-4DAC-B514-25C0B30B4E75}" ShortID="851545886">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_Start_03" ID="{215D6197-99D7-4823-9125-832FE87F51AE}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_Start_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="245302172"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_Start_03" ID="{215D6197-99D7-4823-9125-832FE87F51AE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Throw_Start_04" ID="{21EEDF85-E248-4C4A-BE22-930B7D408B7C}" ShortID="554455727">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_Start_04" ID="{661B1129-7D25-4EEC-91D5-2542F5CBBA61}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_Start_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="288339937"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_Start_04" ID="{661B1129-7D25-4EEC-91D5-2542F5CBBA61}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Winter_BulletHell_Throw_Start_05" ID="{535729B8-F5DA-4C5E-94F9-F3400639215A}" ShortID="464210645">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Winter_BulletHell_Throw_Start_05" ID="{CE0108DD-BCAE-44A1-BE31-BF92E98E4D44}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Winter_BulletHell_Throw_Start_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="335525681"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Winter_BulletHell_Throw_Start_05" ID="{CE0108DD-BCAE-44A1-BE31-BF92E98E4D44}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_IceSpikes_Cast" ID="{4D829797-8B20-442C-B2DC-D03EDE30F0F2}" ShortID="309334597">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Winter" ID="{E66BD1BA-C06B-4E79-B94B-23BF48E98291}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Winter_SnowAbsorption_Cast" ID="{880B71E2-A17A-40DD-844B-2309052F64D3}" ShortID="260921293">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Winter" ID="{E66BD1BA-C06B-4E79-B94B-23BF48E98291}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

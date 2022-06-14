@@ -12,6 +12,7 @@ public class BossVFX : MonoBehaviour {
     [SerializeField] HealthProxy _healthProxy;
     [SerializeField] IMeetARealBoss _boss;
     [SerializeField] BossShapeSystem _shapeSystem;
+    
     [Header("VFX")]
     [SerializeField] MMFeedbacks _growTree;
     [SerializeField] MMFeedbacks _minion;

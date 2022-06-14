@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5460DFED-5C58-49B9-A997-E6F8B65EC317}" SchemaVersion="103" RootDocumentID="{AD2D2BD8-14DA-4A17-9806-BC86C375DACA}" ParentDocumentID="{68904370-6AB9-470F-90AA-694CADF04C01}">
+	<Events>
+		<WorkUnit Name="Neutral" ID="{5460DFED-5C58-49B9-A997-E6F8B65EC317}" OwnerID="{68904370-6AB9-470F-90AA-694CADF04C01}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="5"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Boss_Neutral_Thunder" ID="{A422D6F6-5319-438C-A579-2E76FFAF41BA}">
+					<ChildrenList>
+						<Action Name="" ID="{8D403E4D-0C15-4839-8829-3D9271F2A3C0}" ShortID="329094996">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_Thunder" ID="{6B0439AA-B227-47CD-A97B-F9E9606BF15E}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_RockSpikes" ID="{B5323B8A-6446-495E-AB71-E62C3449655D}">
+					<ChildrenList>
+						<Action Name="" ID="{FE52D23C-E8AB-44C5-A367-1CBF33AD90E2}" ShortID="86343502">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_RockSpikes" ID="{F6D15A64-A755-4009-B6EA-904EA0E082E6}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_RockSpikes_Cast" ID="{34D1A4C2-CEFD-4DC5-BE82-D7743153C7F3}">
+					<ChildrenList>
+						<Action Name="" ID="{4A76B657-61D1-40C3-BE9B-80A05EAC71FF}" ShortID="788259329">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_RockSpikes_Cast" ID="{6EC5084D-A3EE-4F13-91D9-4C86DDCA8234}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_Thunder_Cast" ID="{5E402C23-8FB9-4510-87C1-034423DD9922}">
+					<ChildrenList>
+						<Action Name="" ID="{7F3E1491-5004-45C7-9A81-0282863C36B6}" ShortID="1062314541">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall_Thunder_Cast" ID="{8E45D321-AEEF-4CC0-83D7-ECDD0BDFF0F5}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

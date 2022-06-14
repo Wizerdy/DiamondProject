@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2B871358-8D00-4F3B-B556-30796ACFDADF}" SchemaVersion="103">
+	<Switches>
+		<WorkUnit Name="SD" ID="{2B871358-8D00-4F3B-B556-30796ACFDADF}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="3"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<SwitchGroup Name="SW_WeaponType" ID="{5266B77C-C892-459D-8C33-DEED65C8FBF6}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Sword" ID="{C048370F-6C06-44F9-A59D-F9974C9B9D1D}"/>
+						<Switch Name="Crossbow" ID="{42E621F9-0F64-4704-80F0-11ADD76663A0}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_WeaponType" ID="{AD571BFF-B53F-4690-8FD3-0BF31CF3A8E8}"/>
+						<Curve Name="" ID="{5920407D-DDF6-4912-BF54-EE95A4ABAA5F}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>2</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="SW_BossForm" ID="{559ECB7B-E93E-4A33-87AB-2F5FB2D45205}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Neutral" ID="{7C092A90-46FD-4CEC-9026-CAB624431E18}"/>
+						<Switch Name="Winter" ID="{DAB86AC5-41EC-41E6-B8A6-65E8BB56192F}"/>
+						<Switch Name="Fall" ID="{9462570B-C14A-425D-A809-38A78DCFFD30}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}"/>
+						<Curve Name="" ID="{023E9713-A53F-4DA1-AF76-40DD6515183E}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>4</XPos>
+									<YPos>2</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="SW_Pumpkid_DamageType" ID="{5D076CA1-1CC0-4A3F-BF52-CD3E126D9AA9}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Ice" ID="{15CDBC5E-4537-47F9-9057-48240844FB1F}"/>
+						<Switch Name="Leaf" ID="{B8164F47-9266-492E-9042-F72B32697039}"/>
+						<Switch Name="Tree" ID="{F0C41576-CE0E-4120-BA56-9DC36CD5983C}"/>
+						<Switch Name="Rock" ID="{05516B7C-9E4B-4A98-84DA-71D98811992B}"/>
+						<Switch Name="ExploBush" ID="{69D77020-DB2B-4EF7-86ED-538E23287A58}"/>
+						<Switch Name="Thunder" ID="{4FDADE57-6B42-4107-AF94-66E00A119BBB}"/>
+						<Switch Name="Basic" ID="{BB3C0031-A53B-49ED-87E8-8CDD4C447D53}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}"/>
+						<Curve Name="" ID="{19A8C5C4-EF7C-4BB4-80E7-D167E2210012}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.9</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>1.9</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2.91688</XPos>
+									<YPos>4</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>3.9</XPos>
+									<YPos>5</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>4.65541</XPos>
+									<YPos>6</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>6</XPos>
+									<YPos>7</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="SW_Ground" ID="{57D5A368-1DF3-4632-B56F-8FDD3E756369}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Ice" ID="{2353E11A-8B5D-41E3-B5D9-00E68429C458}"/>
+						<Switch Name="Dirt" ID="{1C878391-3A0B-4ACA-B003-88784F2F9432}"/>
+						<Switch Name="Leaf" ID="{F998925D-C425-488B-BA53-94E91391FCC7}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}"/>
+						<Curve Name="" ID="{5B59615D-345E-49EB-8C96-E68C90CE2A0C}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>2</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>4</XPos>
+									<YPos>1</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="SW_CrossbowCharge" ID="{3561898B-0D27-4458-9104-AE69CF88327F}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Full" ID="{8D6FDE4B-E107-40B2-AC9A-6F70718021D4}"/>
+						<Switch Name="Charging" ID="{9FCB8A33-95F1-4D77-96CB-07585D9D1FFF}"/>
+						<Switch Name="Null" ID="{DF4EABE9-557B-413D-820F-BA4DF385B0D3}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_CrossbowCharge" ID="{E2B49877-70F4-430C-9C06-62154265E570}"/>
+						<Curve Name="" ID="{D1CF5A5A-CC9A-4920-9BA4-B5F3C1CEEFED}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>3</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.01</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.99</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>1</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="SW_SwordCharge" ID="{39431601-81F7-4013-A228-D6B99C2B4D2E}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Null" ID="{E4BA7FC8-305F-49BB-9090-3623F72A27BE}"/>
+						<Switch Name="Charging" ID="{BF75F53E-4C6E-48D6-AF0C-04E6FDB8734A}"/>
+						<Switch Name="Full" ID="{F5B3942B-F16A-47C5-8313-F97EDB924856}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_SwordCharge" ID="{1610341F-5917-4EFA-8260-02D5E6F7404C}"/>
+						<Curve Name="" ID="{131BC300-9057-4DD3-B7A3-0809098D6EEC}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.01</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.99</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>3</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>
