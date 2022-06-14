@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
@@ -33,7 +33,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1564914208">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -56,7 +56,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="2338512409">
+		<SoundBank Id="4056684167" Language="SFX" Hash="1412442774">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -1407,6 +1407,10 @@
 				</Event>
 				<Event Id="4058101365" Name="GameStart" ObjectPath="\Events\SD\AMB\GameStart" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="138315815" Language="SFX">
+							<ShortName>Pumpkid_Music_Boss_Fall_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Boss_Fall_LP_F2BF74AC.wem</Path>
+						</File>
 						<File Id="255063227" Language="SFX">
 							<ShortName>Pumpkid_Music_Boss_Neutral_Intro.wav</ShortName>
 							<Path>SFX\Pumpkid_Music_Boss_Neutral_Intro_F2BF74AC.wem</Path>
@@ -1419,8 +1423,17 @@
 							<ShortName>Pumpkid_Music_Boss_Winter_LP.wav</ShortName>
 							<Path>SFX\Pumpkid_Music_Boss_Winter_LP_F2BF74AC.wem</Path>
 						</File>
+						<File Id="1048384188" Language="SFX">
+							<ShortName>Pumpkid_Music_Narration_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Narration_LP_F2BF74AC.wem</Path>
+						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
+						<SwitchContainer SwitchValue="{62530452-1DB7-4255-9FEC-6E714BD83DF0}">
+							<Media>
+								<File Id="138315815"/>
+							</Media>
+						</SwitchContainer>
 						<SwitchContainer SwitchValue="{D2667E05-EC4C-4758-9E51-D69AA3C24658}">
 							<Media>
 								<File Id="255063227"/>
@@ -1432,6 +1445,11 @@
 								<File Id="979463666"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}">
+							<Media>
+								<File Id="1048384188"/>
+							</Media>
+						</SwitchContainer>
 					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry Id="252776334" Name="Boss_Neutral" ObjectPath="\States\SD\ST_Music\Boss_Neutral"/>
@@ -1440,6 +1458,10 @@
 				</Event>
 				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\SD\Music\Play_Music" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="138315815" Language="SFX">
+							<ShortName>Pumpkid_Music_Boss_Fall_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Boss_Fall_LP_F2BF74AC.wem</Path>
+						</File>
 						<File Id="255063227" Language="SFX">
 							<ShortName>Pumpkid_Music_Boss_Neutral_Intro.wav</ShortName>
 							<Path>SFX\Pumpkid_Music_Boss_Neutral_Intro_F2BF74AC.wem</Path>
@@ -1451,6 +1473,10 @@
 						<File Id="979463666" Language="SFX">
 							<ShortName>Pumpkid_Music_Boss_Winter_LP.wav</ShortName>
 							<Path>SFX\Pumpkid_Music_Boss_Winter_LP_F2BF74AC.wem</Path>
+						</File>
+						<File Id="1048384188" Language="SFX">
+							<ShortName>Pumpkid_Music_Narration_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Narration_LP_F2BF74AC.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -2046,9 +2072,29 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="2397442311" Name="Set_State_Fall" ObjectPath="\Events\SD\Music\Set_State_Fall" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="1800837750" Name="Boss_Fall" ObjectPath="\States\SD\ST_Music\Boss_Fall"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1772629426" Name="Set_State_Narration" ObjectPath="\Events\SD\Music\Set_State_Narration" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="1170226945" Name="Set_State_Neutral" ObjectPath="\Events\SD\Music\Set_State_Neutral" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
 					<ActionSetState>
 						<ActionSetStateEntry Id="252776334" Name="Boss_Neutral" ObjectPath="\States\SD\ST_Music\Boss_Neutral"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2712071725" Name="Set_State_Silence" ObjectPath="\Events\SD\Music\Set_State_Silence" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="3041563226" Name="Silence" ObjectPath="\States\SD\ST_Music\Silence"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3733622879" Name="Set_State_Winter" ObjectPath="\Events\SD\Music\Set_State_Winter" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="859005722" Name="Boss_Winter" ObjectPath="\States\SD\ST_Music\Boss_Winter"/>
 					</ActionSetState>
 				</Event>
 				<Event Id="582090995" Name="Tree_Hit" ObjectPath="\Events\SD\Other\Tree_Hit" DurationType="OneShot" DurationMin="0.303321" DurationMax="0.419385">
@@ -2220,7 +2266,7 @@
 						</File>
 					</IncludedMemoryFiles>
 					<ActionSetState>
-						<ActionSetStateEntry Id="1244431682" Name="Visual_Novel" ObjectPath="\States\SD\ST_Music\Visual_Novel"/>
+						<ActionSetStateEntry Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration"/>
 					</ActionSetState>
 				</Event>
 				<Event Id="2436199045" Name="UI_VisualNovel_Book_Close" ObjectPath="\Events\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_Close" DurationType="OneShot" DurationMin="0.412747" DurationMax="0.491614">
@@ -4040,13 +4086,13 @@
 				<StateGroup Id="859005722" Name="Boss_Winter" ObjectPath="\States\SD\ST_Music\Boss_Winter" GUID="{320F487F-3A5F-48B7-818E-10DC13BE27E1}">
 					<States/>
 				</StateGroup>
+				<StateGroup Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration" GUID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}">
+					<States/>
+				</StateGroup>
 				<StateGroup Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame" GUID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}">
 					<States/>
 				</StateGroup>
 				<StateGroup Id="1160234136" Name="Normal" ObjectPath="\States\SD\ST_Skip\Normal" GUID="{D053143D-8E8E-42B0-B9AC-A8AD43BAF94E}">
-					<States/>
-				</StateGroup>
-				<StateGroup Id="1244431682" Name="Visual_Novel" ObjectPath="\States\SD\ST_Music\Visual_Novel" GUID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}">
 					<States/>
 				</StateGroup>
 				<StateGroup Id="1645386324" Name="ST_Music" ObjectPath="\States\SD\ST_Music" GUID="{194F3E66-AE7B-48DF-A9FA-68B2E56BF04E}">
@@ -4055,7 +4101,8 @@
 						<State Id="252776334" Name="Boss_Neutral" ObjectPath="\States\SD\ST_Music\Boss_Neutral" GUID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}"/>
 						<State Id="859005722" Name="Boss_Winter" ObjectPath="\States\SD\ST_Music\Boss_Winter" GUID="{320F487F-3A5F-48B7-818E-10DC13BE27E1}"/>
 						<State Id="1800837750" Name="Boss_Fall" ObjectPath="\States\SD\ST_Music\Boss_Fall" GUID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}"/>
-						<State Id="1244431682" Name="Visual_Novel" ObjectPath="\States\SD\ST_Music\Visual_Novel" GUID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}"/>
+						<State Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration" GUID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}"/>
+						<State Id="3041563226" Name="Silence" ObjectPath="\States\SD\ST_Music\Silence" GUID="{77B7DB0D-E160-42A6-BE76-AE2C19030B87}"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="1800837750" Name="Boss_Fall" ObjectPath="\States\SD\ST_Music\Boss_Fall" GUID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}">
@@ -4065,6 +4112,9 @@
 					<States/>
 				</StateGroup>
 				<StateGroup Id="2607556080" Name="Menu" ObjectPath="\States\SD\ST_GameMode\Menu" GUID="{17E591A0-2A02-4487-833D-2908B70064BE}">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="3041563226" Name="Silence" ObjectPath="\States\SD\ST_Music\Silence" GUID="{77B7DB0D-E160-42A6-BE76-AE2C19030B87}">
 					<States/>
 				</StateGroup>
 			</StateGroups>

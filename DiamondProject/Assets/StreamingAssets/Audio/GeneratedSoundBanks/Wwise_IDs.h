@@ -69,7 +69,11 @@ namespace AK
         static const AkUniqueID PUMPKID_SWORD_CHARGE_END = 879795484U;
         static const AkUniqueID PUMPKID_SWORD_CHARGE_START = 455128255U;
         static const AkUniqueID PUMPKID_SWORD_SLASH = 971183997U;
+        static const AkUniqueID SET_STATE_FALL = 2397442311U;
+        static const AkUniqueID SET_STATE_NARRATION = 1772629426U;
         static const AkUniqueID SET_STATE_NEUTRAL = 1170226945U;
+        static const AkUniqueID SET_STATE_SILENCE = 2712071725U;
+        static const AkUniqueID SET_STATE_WINTER = 3733622879U;
         static const AkUniqueID TREE_HIT = 582090995U;
         static const AkUniqueID UI_MENU_BUTTON_BACK = 4197357760U;
         static const AkUniqueID UI_MENU_BUTTON_CONFIRM = 342937835U;
@@ -117,8 +121,9 @@ namespace AK
                 static const AkUniqueID BOSS_FALL = 1800837750U;
                 static const AkUniqueID BOSS_NEUTRAL = 252776334U;
                 static const AkUniqueID BOSS_WINTER = 859005722U;
+                static const AkUniqueID NARRATION = 930427193U;
                 static const AkUniqueID NONE = 748895195U;
-                static const AkUniqueID VISUAL_NOVEL = 1244431682U;
+                static const AkUniqueID SILENCE = 3041563226U;
             } // namespace STATE
         } // namespace ST_MUSIC
 
