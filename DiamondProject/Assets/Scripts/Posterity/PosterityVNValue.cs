@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class PosterityVNValue : MonoBehaviour
 {
     [SerializeField] private PosterityObject posterityObj;
+    [SerializeField] private GameObject spriteFeedBack;
 
     private Hint hint;
     public void ArrowHit(GameObject obj) {
@@ -108,6 +109,7 @@ public class PosterityVNValue : MonoBehaviour
     }
 
     public void OnKillForm(BossShapeSystem shape) {
+        posterityObj.numberOfTimeDyingWithoutKillingForm = 0;
         switch (shape.Shape.Type) {
             case Shape.NEUTRAL:
                 posterityObj.killNeutralForm = true;

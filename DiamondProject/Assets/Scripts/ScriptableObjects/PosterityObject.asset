@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
   resetOnStart: 1
-  deathCount: 26
-  bossDeathCount: 12
+  deathCount: 31
+  bossDeathCount: 14
   maxLifeModifier: 0
   extraLife: 0
   nearSight: 0
@@ -22,29 +22,45 @@ MonoBehaviour:
   dontSeeHealthBar: 0
   gotToAnotherBoss: 0
   numberOfTriggerActivate: 0
+  numberOfTimeDyingWithoutKillingForm: 1
+  killNeutralForm: 0
+  killFallForm: 0
+  killWinterForm: 0
+  sawFallForm: 0
+  sawWinterForm: 0
   firstTimeTalking: 0
-  numberOfTimeTalkingToFairy: 1
-  nbTimeTalkedToNorna: 3
-  nbCorpse: 2
+  nbTimeTalkedToNorna: 1
+  nbCorpse: 1
   winterFormTriggerActivated: 0
-  arrow: {fileID: 0}
+  arrow: {fileID: 4847567384368089890, guid: ee2776f49acba5649b20cbd2090e18ac, type: 3}
   fallBossHintList:
   - id: 1
-    description: First fall boss hint
+    defaultName: "Indice Forme Automne N\xB01"
+    unlockedName: "Indice Forme Automne N\xB01"
+    isTrigger: 1
+    didNornaGaveHint: 0
+    alreadySawHint: 0
+    defaultText: ???
+    unlockedText: "Attaquer de loin proche des rebords de l'ar\xE8ne"
+  - id: 2
+    defaultName: "Indice Forme Automne N\xB02"
+    unlockedName: "Indice Forme Automne N\xB02"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
     unlockedText: "D\xE9truire tous les arbres"
-  - id: 2
-    description: Second fall boss hint
+  - id: 3
+    defaultName: "Indice Forme Automne N\xB03"
+    unlockedName: "Indice Forme Automne N\xB03"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
     unlockedText: Attaquer le + rapidement possible
-  - id: 3
-    description: Third fall boss hint
+  - id: 4
+    defaultName: "Indice Forme Automne N\xB04"
+    unlockedName: "Indice Forme Automne N\xB04"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
@@ -52,50 +68,67 @@ MonoBehaviour:
     unlockedText: En profiter avant que le bouclier ne se reforme
   fallAttackHintList:
   - id: 1
-    description: First fall attack hint
+    defaultName: ???
+    unlockedName: Arbres Protecteurs
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Arbres qui poussent au milieu du terrain
+    defaultText: "Tir charg\xE9e sur un des arbres ?"
+    unlockedText: "Arbres qui repoussent apr\xE8s un certain temps une fois d\xE9truit."
   - id: 2
-    description: Second fall attack hint
+    defaultName: ???
+    unlockedName: Bouclier Automnale
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Bouclier autour du Boss
+    defaultText: "Attaque charg\xE9e sur l'ennemi malgr\xE9 sa protection ?"
+    unlockedText: "Bouclier qui prot\xE8ge de toutes les attaques"
   - id: 3
-    description: Third fall attack hint
+    defaultName: ???
+    unlockedName: Feuilles Boomerang
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Feuilles boomerang
+    defaultText: "Attaque charg\xE9e sur une feuille g\xE9ante... \xE9viter de se
+      prendre des d\xE9g\xE2ts"
+    unlockedText: "Feuilles g\xE9antes qui font un aller-retour sur tout le terrain.
+      Lente \xE0 l'aller, rapide au retour."
   - id: 4
-    description: Fourth fall attack hint
+    defaultName: ???
+    unlockedName: Rayon Automnal
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Rayon automnal
+    defaultText: Tir sur le rayon de front ?
+    unlockedText: "Attaque charg\xE9e suivant la position du joueur."
   winterBossHintList:
   - id: 1
-    description: First winter boss hint
+    defaultName: "Indice forme Hiver N\xB01"
+    unlockedName: "Indice forme Hiver N\xB01"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: Le Boss ne bouge pas alors pas la peine de se presser
+    unlockedText: Ne pas recevoir un coup et ne pas attaquer
   - id: 2
-    description: Second winter boss hint
+    defaultName: "Indice forme Hiver N\xB02"
+    unlockedName: "Indice forme Hiver N\xB02"
+    isTrigger: 1
+    didNornaGaveHint: 0
+    alreadySawHint: 0
+    defaultText: ???
+    unlockedText: Le Boss ne bouge pas alors pas la peine de se presser
+  - id: 3
+    defaultName: "Indice forme Hiver N\xB03"
+    unlockedName: "Indice forme Hiver N\xB03"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
     unlockedText: "Comprendre la dur\xE9e et le fonctionnement de chaque attaquue"
-  - id: 3
-    description: Third winter boss hint
+  - id: 4
+    defaultName: "Indice forme Hiver N\xB04"
+    unlockedName: "Indice forme Hiver N\xB04"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
@@ -104,23 +137,29 @@ MonoBehaviour:
       / se d\xE9roule"
   winterAttackHintList:
   - id: 1
-    description: First winter attack hint
+    defaultName: ???
+    unlockedName: Enfer de glace
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Ice Hell
+    defaultText: "Peut-\xEAtre que je pourrais me prendre l'attaque de front en fon\xE7ant
+      dessus ?"
+    unlockedText: "Attaques de projectiles en 2 \xE9tapes. D'abord, une vague de
+      projectiles recouvre une grande partie du terrain Ensuite, une autre vague
+      plus petite est lanc\xE9e dans notre direction"
   - id: 2
-    description: Second winter attack hint
+    defaultName: ???
+    unlockedName: Projectiles de glace
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Bullet Hell
+    defaultText: "Je pourrais charger sur 2 vagues en m\xEAme temps ?"
+    unlockedText: "Vagues de projectiles regroupant l'enti\xE8ret\xE9 du terrain."
   - id: 3
-    description: Third winter attack hint
+    defaultName: ???
+    unlockedName: Absorption de neige
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Snow Absorption
+    defaultText: Je pourrais tirer sur ces ondes qui m'entoure ?
+    unlockedText: "Vagues d'avalanches qui s'approche de Gw\xE9nia en l'entourant."
