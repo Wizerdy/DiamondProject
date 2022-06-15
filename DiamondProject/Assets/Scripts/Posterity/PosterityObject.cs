@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public struct Hint {
     public int id;
-    public string description;
+    public string defaultName;
+    public string unlockedName;
     public bool isTrigger;
     public bool didNornaGaveHint;
     public bool alreadySawHint;
