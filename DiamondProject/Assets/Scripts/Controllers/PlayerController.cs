@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] SkeletonMecanim _spine;
     [SerializeField] Animator _animator;
     [SerializeField] Reference<IMeetARealBoss> _boss;
+    [SerializeField] GameObject _pauseUI;
     [SerializeField] UnityEvent<AttackType> _onAttack;
 
     [Header("Value")]
@@ -115,6 +116,7 @@ public class PlayerController : MonoBehaviour {
         _controls.Dialogue.Enable();
 
         _controls.UI.Enable();
+        _controls.UI.Pause.performed += _TogglePause;
 
         #endregion
 
@@ -423,6 +425,24 @@ public class PlayerController : MonoBehaviour {
         _animator?.SetBool("Dashing", false);
     }
 
+    private void _TogglePause(InputAction.CallbackContext cc) {
+        if (_pauseUI.gameObject.activeSelf) {
+            Unpause();
+        } else {
+            Pause();
+        }
+    }
+
+    public void Pause() {
+        Time.timeScale = 0f;
+        _pauseUI.SetActive(true);
+    }
+
+    public void Unpause() {
+        Time.timeScale = 1f;
+        _pauseUI.SetActive(false);
+    }
+
     public void EnableInput(InputType inputType, bool state) {
         switch (inputType) {
             case InputType.MOVEMENT:
@@ -448,5 +468,4 @@ public class PlayerController : MonoBehaviour {
                 break;
         }
     }
-
 }
