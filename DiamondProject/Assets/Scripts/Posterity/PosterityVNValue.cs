@@ -47,8 +47,8 @@ public class PosterityVNValue : MonoBehaviour
     public void IfBeamHitArrow(GameObject obj) {
         hint = posterityObj.fallAttackHintList[3];
         if (!hint.isTrigger) {
-            if (obj.GetComponent<ChargedBullet>()) {
-                spriteFeedBack?.SetActive(true);
+            if (obj?.gameObject?.GetComponent<ChargedBullet>() ?? false) {
+                //spriteFeedBack?.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.fallAttackHintList[3] = hint;
                 return;

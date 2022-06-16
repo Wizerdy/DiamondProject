@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using MoreMountains.Feedbacks;
 using ToolsBoxEngine;
 
 public class Lia : MonoBehaviour {
@@ -10,6 +11,7 @@ public class Lia : MonoBehaviour {
     [SerializeField] BossShapeSystem _bossShapeSystem;
     [SerializeField] ShapeLibrary _shapeLibrary;
     [SerializeField] LiaAttack _attacks;
+    [SerializeField] MMFeedbacks _deathFeedback;
 
     [Header("Values")]
     [SerializeField] float _moveCenterTime = 2f;
@@ -23,12 +25,15 @@ public class Lia : MonoBehaviour {
 
     [SerializeField, HideInInspector] UnityEvent _onCentering;
 
+    int _neutralHealth = 1001;
+
     List<Shape> _beatenShape = new List<Shape>();
     bool _morphing = false;
 
     public event UnityAction OnCentering { add => _onCentering.AddListener(value); remove => _onCentering.RemoveListener(value); }
 
     private void Start() {
+        _neutralHealth = _health.MaxHealth;
         _health.CanTakeDamage = false;
         StartCoroutine(
             Tools.Delay(
@@ -54,15 +59,24 @@ public class Lia : MonoBehaviour {
         if (!_beatenShape.Contains(Shape.WINTER) && winter.IsTrigger()) {
             NewForm(Shape.WINTER);
         }
+
+        if (_health.CurrentHealth == 1 && _attacks.CanAct) {
+            _attacks.CanAct = false;
+            _boss.SetAnimatorTrigger("KO");
+        }
     }
 
     public void NewForm(Shape shape, bool moveToCenter = true) {
         _attacks.StopBehaviour();
         _attacks.ClearAttacks();
+        if (_bossShapeSystem.Shape?.Type == Shape.NEUTRAL && shape != Shape.NEUTRAL) {
+            _neutralHealth -= 500;
+        }
         if (!moveToCenter) {
             ChangeForm(shape);
             return;
         }
+
         _boss.MoveTo(Vector2.zero, _moveCenterTime);
         StartCoroutine(Tools.Delay(ChangeForm, shape, _moveCenterTime));
         _health.CanTakeDamage = false;
@@ -73,7 +87,11 @@ public class Lia : MonoBehaviour {
     }
 
     public void ChangeForm(Shape shape) {
-        _health.CurrentHealth = _health.MaxHealth;
+        if (shape == Shape.NEUTRAL) {
+            _health.CurrentHealth = _neutralHealth;
+        } else {
+            _health.CurrentHealth = _health.MaxHealth;
+        }
         _bossShapeSystem.ChangeShape(_shapeLibrary.GetBossShape(shape));
         if (shape != Shape.NEUTRAL) {
             _beatenShape.Add(shape);
@@ -84,7 +102,11 @@ public class Lia : MonoBehaviour {
         if (_bossShapeSystem.Shape.Type != Shape.NEUTRAL) {
             NewForm(Shape.NEUTRAL);
         } else {
-            _boss.Death();
+            EndGame();
         }
+    }
+
+    public void EndGame() {
+        _deathFeedback?.PlayFeedbacks();
     }
 }

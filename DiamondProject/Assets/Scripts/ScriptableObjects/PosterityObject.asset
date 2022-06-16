@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
   resetOnStart: 1
-  deathCount: 0
+  deathCount: 63
   bossDeathCount: 0
   maxLifeModifier: 0
   extraLife: 0
@@ -24,13 +24,13 @@ MonoBehaviour:
   numberOfTriggerActivate: 0
   numberOfTimeDyingWithoutKillingForm: 0
   killNeutralForm: 1
-  killFallForm: 0
-  killWinterForm: 0
-  sawFallForm: 0
+  killFallForm: 1
+  killWinterForm: 1
+  sawFallForm: 1
   sawWinterForm: 1
-  firstTimeTalking: 0
-  nbTimeTalkedToNorna: 1
-  nbCorpse: 1
+  firstTimeTalking: 1
+  nbTimeTalkedToNorna: 0
+  nbCorpse: 0
   winterFormTriggerActivated: 0
   arrow: {fileID: 4847567384368089890, guid: ee2776f49acba5649b20cbd2090e18ac, type: 3}
   chargedArrow: {fileID: 4847567384368089890, guid: 70e0bc24b89b00446b4ed33c89543422, type: 3}
@@ -81,7 +81,7 @@ MonoBehaviour:
   - id: 2
     defaultName: ???
     unlockedName: Bouclier Automnale
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Attaque charg\xE9e sur l'ennemi malgr\xE9 sa protection ?"
@@ -143,7 +143,7 @@ MonoBehaviour:
   - id: 1
     defaultName: ???
     unlockedName: Enfer de glace
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Peut-\xEAtre que je pourrais me prendre l'attaque de front en fon\xE7ant
@@ -154,7 +154,7 @@ MonoBehaviour:
   - id: 2
     defaultName: ???
     unlockedName: Projectiles de glace
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Je pourrais charger sur 2 vagues en m\xEAme temps ?"

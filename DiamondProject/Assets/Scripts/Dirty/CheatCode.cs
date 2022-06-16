@@ -7,6 +7,7 @@ using ToolsBoxEngine;
 public class CheatCode : MonoBehaviour {
     [SerializeField] HealthReference _boss;
     [SerializeField] LiaReference _lia;
+    [SerializeField] PlayerControllerReference _playerController;
 
     PlayerControls _playerControls;
 
@@ -16,7 +17,15 @@ public class CheatCode : MonoBehaviour {
         _playerControls.CheatCode.Killboss.started += _KillBoss;
         _playerControls.CheatCode.WinterShape.started += _ChangeShape_Winter;
         _playerControls.CheatCode.FallShape.started += _ChangeShape_Fall;
+        _playerControls.CheatCode.Suicide.started += _Suicide;
     }
+
+    //private void OnDestroy() {
+    //    _playerControls.CheatCode.Killboss.started -= _KillBoss;
+    //    _playerControls.CheatCode.WinterShape.started -= _ChangeShape_Winter;
+    //    _playerControls.CheatCode.FallShape.started -= _ChangeShape_Fall;
+    //    _playerControls.CheatCode.Suicide.started -= _Suicide;
+    //}
 
     private void _KillBoss(InputAction.CallbackContext cc) {
         if (cc.ReadValue<float>() == 1f) {
@@ -39,6 +48,13 @@ public class CheatCode : MonoBehaviour {
         if (!_lia.IsValid()) { return; }
         if (cc.ReadValue<float>() == 1f) {
             _lia.Instance.NewForm(Shape.FALL);
+        }
+    }
+
+    private void _Suicide(InputAction.CallbackContext cc) {
+        if (!_playerController.IsValid()) { return; }
+        if (cc.ReadValue<float>() == 1f) {
+            _playerController.Instance.Health.TakeDamage(9999, "");
         }
     }
 }
