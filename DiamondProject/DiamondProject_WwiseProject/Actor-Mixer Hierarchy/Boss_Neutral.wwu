@@ -633,6 +633,900 @@
 							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
+						<Sound Name="Boss_Neutral_RockBeam_LP" ID="{AD859117-DB86-46A3-83EE-67C4B234D1C9}" ShortID="475115706">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Boss_Neutral_RockBeam_LP" ID="{26F15524-2CE3-439D-B2B8-B3C80DE49F3B}">
+									<Language>SFX</Language>
+									<AudioFile>Boss_Neutral_RockBeam_LP.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="199005510"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Boss_Neutral_RockBeam_LP" ID="{26F15524-2CE3-439D-B2B8-B3C80DE49F3B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="Boss_Neutral_RockBeam_End" ID="{BB2EFDA3-7971-4C74-9271-65E5A2BA9CB8}" ShortID="700169994">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{8D5BCDF0-3F17-4FBC-86E9-DC374179EF2B}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Neutral_RockBeam_End_01" ID="{BF5FDB8D-7FBE-4625-8B61-5867F91F7123}" ShortID="741320094">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_RockBeam_End_01" ID="{D5B9FED7-875D-44D2-91FE-2DFBA2C9B9BB}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_RockBeam_End_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="946692638"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_RockBeam_End_01" ID="{D5B9FED7-875D-44D2-91FE-2DFBA2C9B9BB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_RockBeam_End_02" ID="{78EC9683-09CE-4EEE-AE00-C0D0808A5740}" ShortID="664359604">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_RockBeam_End_02" ID="{8F737885-1DD6-444F-AF0B-1E68B84E3CC4}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_RockBeam_End_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="133093267"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_RockBeam_End_02" ID="{8F737885-1DD6-444F-AF0B-1E68B84E3CC4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_RockBeam_End_03" ID="{D442833F-EF65-47E5-9B7C-F59A7FEC2007}" ShortID="418960760">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_RockBeam_End_03" ID="{21006821-C56F-4536-8826-BF0E6C0E0231}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_RockBeam_End_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="280619426"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_RockBeam_End_03" ID="{21006821-C56F-4536-8826-BF0E6C0E0231}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Neutral_RockBeam_Start" ID="{DAA94EDD-6AB9-48DA-9843-25B4BE1E053E}" ShortID="478733463">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{63BF43A9-A60A-42A9-936E-F75D88C66407}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Neutral_RockBeam_Start_01" ID="{0651CB6D-3F4B-4026-8E9B-3374FD1C5872}" ShortID="511202084">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_RockBeam_Start_01" ID="{D1D37B36-569E-44BE-95CE-E33B94B23F67}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_RockBeam_Start_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="332630146"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_RockBeam_Start_01" ID="{D1D37B36-569E-44BE-95CE-E33B94B23F67}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_RockBeam_Start_02" ID="{80C05E37-415F-480C-B30F-B3230B503D5F}" ShortID="412274174">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_RockBeam_Start_02" ID="{C1A6763E-ECDD-4D82-94B5-AE7B28C72E58}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_RockBeam_Start_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="769670159"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_RockBeam_Start_02" ID="{C1A6763E-ECDD-4D82-94B5-AE7B28C72E58}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_RockBeam_Start_03" ID="{D900CA04-92E3-4377-BDB5-1403DA05940C}" ShortID="424033700">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_RockBeam_Start_03" ID="{7C9B9E22-CE5F-46F0-AE28-356FC70CFD60}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_RockBeam_Start_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="6106138"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_RockBeam_Start_03" ID="{7C9B9E22-CE5F-46F0-AE28-356FC70CFD60}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_RockBeam_Start_04" ID="{C614A38A-9B62-4477-91B2-3F43F7FC3C90}" ShortID="691953981">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_RockBeam_Start_04" ID="{042CC1E2-E0F6-402B-B85F-BB48711E90E6}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_RockBeam_Start_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="504403960"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_RockBeam_Start_04" ID="{042CC1E2-E0F6-402B-B85F-BB48711E90E6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<Sound Name="Boss_Neutral_BulletHell_LP" ID="{8AAC7CB2-2E9E-424C-880D-17713D891ACB}" ShortID="500080369">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Boss_Neutral_BulletHell_LP" ID="{F86ECBAB-1A00-4BB1-BCA5-F4A3AB0FA69A}">
+									<Language>SFX</Language>
+									<AudioFile>Boss_Neutral_BulletHell_LP.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="700072660"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Boss_Neutral_BulletHell_LP" ID="{F86ECBAB-1A00-4BB1-BCA5-F4A3AB0FA69A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="Boss_Neutral_BulletHell_Charge" ID="{0AB55743-010A-4112-B691-DB2CC9F8FD20}" ShortID="232976136">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{EEC4ECFD-9399-44E1-A1C9-CAAFFBE28A15}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Neutral_BulletHell_Charge_01" ID="{00F8DBC5-71C2-47D3-AAE0-35893BF14029}" ShortID="36546458">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Charge_01" ID="{74255824-E8AE-4781-BB92-FCDA6A5601E5}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Charge_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="994598152"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Charge_01" ID="{74255824-E8AE-4781-BB92-FCDA6A5601E5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Charge_02" ID="{3972BFBA-BC80-45D4-AE08-4D1B1669A1A0}" ShortID="291464365">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Charge_02" ID="{94B4DB64-6838-4325-87C0-A426AF3B9FCC}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Charge_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="184402970"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Charge_02" ID="{94B4DB64-6838-4325-87C0-A426AF3B9FCC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Charge_03" ID="{264E3C64-FAD7-43AB-9153-9CDC027AFCDB}" ShortID="210468493">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Charge_03" ID="{C530593F-21CB-4770-B7FC-F5002C8A10AD}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Charge_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="357014102"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Charge_03" ID="{C530593F-21CB-4770-B7FC-F5002C8A10AD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Charge_04" ID="{5AB8A331-84DA-4B44-815E-440BE5CD9A2C}" ShortID="340397383">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Charge_04" ID="{23407389-E3B8-45C4-983D-648878EA13EF}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Charge_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="592907571"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Charge_04" ID="{23407389-E3B8-45C4-983D-648878EA13EF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Charge_05" ID="{B567CA7E-306A-4ECF-8CC1-24482445793A}" ShortID="116180062">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Charge_05" ID="{6B84646E-46B7-4C41-BD59-886BE1028423}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Charge_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="524598232"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Charge_05" ID="{6B84646E-46B7-4C41-BD59-886BE1028423}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Charge_06" ID="{0CAE3F5D-C81C-45C5-AD56-875C22F8A806}" ShortID="259443924">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Charge_06" ID="{35320408-E5E2-4356-8835-21F8305B81C8}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Charge_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="335940997"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Charge_06" ID="{35320408-E5E2-4356-8835-21F8305B81C8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Neutral_BulletHell_Throw_End" ID="{87B2E05B-C018-4A26-B481-52A1AE3B0479}" ShortID="1054406347">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{95241DD8-510F-40B9-8BC5-5BA97AC3A4CE}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_End_01" ID="{A9198534-61AA-4310-AF44-CAAEA382E85E}" ShortID="829499392">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_End_01" ID="{34764F1F-54E9-4C27-901B-7DF6C3940FD7}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_End_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="486118687"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_End_01" ID="{34764F1F-54E9-4C27-901B-7DF6C3940FD7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_End_02" ID="{51E1CABA-EBF3-423B-94FF-96F12A8FA8FD}" ShortID="1015083637">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_End_02" ID="{BEA736D2-E17A-43D2-BF95-8C8D4C706C13}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_End_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="444308902"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_End_02" ID="{BEA736D2-E17A-43D2-BF95-8C8D4C706C13}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_End_03" ID="{CE010E91-F5EB-44E4-BF9F-1A72AF278A8F}" ShortID="810045039">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_End_03" ID="{A7C3F4D1-B651-474D-9E23-C07C770B5DEC}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_End_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="736301436"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_End_03" ID="{A7C3F4D1-B651-474D-9E23-C07C770B5DEC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_End_04" ID="{F49F1EBB-269D-45D3-88EE-E661F30105BF}" ShortID="608624981">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_End_04" ID="{BE2764AA-E27E-4A1D-94CC-84C78767121F}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_End_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="789686974"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_End_04" ID="{BE2764AA-E27E-4A1D-94CC-84C78767121F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_End_05" ID="{740A0838-A166-4FC8-B209-A049C0D9E076}" ShortID="839040639">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_End_05" ID="{2B0BD428-8332-4AAC-90C2-4610526E0B62}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_End_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="801832429"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_End_05" ID="{2B0BD428-8332-4AAC-90C2-4610526E0B62}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_Neutral_BulletHell_Throw_Start" ID="{50984432-4E1F-4932-B721-E061437A04B5}" ShortID="30843116">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{24D2D949-7DAF-4D5A-BA9E-D7690890C73A}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_Start_01" ID="{6CB061EB-1703-4E66-856A-31269DB7E35D}" ShortID="716761720">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_Start_01" ID="{2C34E182-6B1F-429D-9809-8F0F1A7E0258}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_Start_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="262042519"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_Start_01" ID="{2C34E182-6B1F-429D-9809-8F0F1A7E0258}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_Start_02" ID="{A5DAD5DB-B85A-4A71-8B74-280A126654C4}" ShortID="428112343">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_Start_02" ID="{6345DE42-128F-4690-832C-D02A115F249C}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_Start_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="600106881"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_Start_02" ID="{6345DE42-128F-4690-832C-D02A115F249C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_Start_03" ID="{3A1FD199-657D-44C5-A35F-731B15835700}" ShortID="192869080">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_Start_03" ID="{3B8368C7-8AA5-496D-8C08-437F84BEB655}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_Start_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="264613149"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_Start_03" ID="{3B8368C7-8AA5-496D-8C08-437F84BEB655}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_Start_04" ID="{91CEA5E7-3906-49E8-AF78-B47617265A4C}" ShortID="1022328490">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_Start_04" ID="{1EF9E49F-9259-4E76-BF4B-658430A31155}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_Start_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="557287027"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_Start_04" ID="{1EF9E49F-9259-4E76-BF4B-658430A31155}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_Neutral_BulletHell_Throw_Start_05" ID="{72FACB08-09E8-4BEB-B5F0-2A00E9BC56E1}" ShortID="271784720">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_Neutral_BulletHell_Throw_Start_05" ID="{1AB15832-6EDE-4541-87BF-4118433CD9D3}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_Neutral_BulletHell_Throw_Start_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="951361729"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_Neutral_BulletHell_Throw_Start_05" ID="{1AB15832-6EDE-4541-87BF-4118433CD9D3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_VO_RockBeam" ID="{89519532-EBD3-472F-909F-8E8AC966C8E1}" ShortID="351045764">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_VO_RockBeam_01" ID="{11BE681B-7232-4948-80A8-0F93EF9844B4}" ShortID="760210673">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_RockBeam_01" ID="{A9A0FFDB-15D7-434F-A084-73ADBF3051FA}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_RockBeam_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="179338101"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_RockBeam_01" ID="{A9A0FFDB-15D7-434F-A084-73ADBF3051FA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_RockBeam_02" ID="{E8EEB340-7839-49E0-BDB2-17FF950EC818}" ShortID="322616125">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_RockBeam_02" ID="{65674523-FDF4-4432-8A46-BBFB85A7F283}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_RockBeam_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="982527385"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_RockBeam_02" ID="{65674523-FDF4-4432-8A46-BBFB85A7F283}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_RockBeam_03" ID="{8124C66B-A822-43F7-A1D6-6394CDA03963}" ShortID="68502291">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_RockBeam_03" ID="{53B02BD4-DD4A-45DB-B7E3-D64EB7857A9B}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_RockBeam_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="83430892"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_RockBeam_03" ID="{53B02BD4-DD4A-45DB-B7E3-D64EB7857A9B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Boss_VO_NeutralBulletHell" ID="{33CBBD2B-F706-4D5D-9210-AD3777DC1869}" ShortID="482668281">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Boss_VO_NeutralBulletHell_01" ID="{F06D28B6-92A9-420E-A8ED-95C9322A64A1}" ShortID="819911146">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_NeutralBulletHell_01" ID="{EC127C98-3A78-4F80-8924-5680563ACCC3}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_NeutralBulletHell_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="677712772"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_NeutralBulletHell_01" ID="{EC127C98-3A78-4F80-8924-5680563ACCC3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_NeutralBulletHell_02" ID="{F2ADE182-DC39-441E-B110-A227EBBFE0FC}" ShortID="391652342">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_NeutralBulletHell_02" ID="{4AA7A229-A416-4848-AC9B-85197C8A7E70}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_NeutralBulletHell_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="308001205"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_NeutralBulletHell_02" ID="{4AA7A229-A416-4848-AC9B-85197C8A7E70}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Boss_VO_NeutralBulletHell_03" ID="{E4232ACE-C626-4A3F-A4EF-7F5DF27BF78C}" ShortID="879465147">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Boss_VO_NeutralBulletHell_03" ID="{54CDECA1-7ED2-45DB-B926-7A7D33C79593}">
+											<Language>SFX</Language>
+											<AudioFile>Boss_VO_NeutralBulletHell_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="355570202"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Boss_VO_NeutralBulletHell_03" ID="{54CDECA1-7ED2-45DB-B926-7A7D33C79593}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
