@@ -78,6 +78,7 @@ namespace AK
         static const AkUniqueID PUMPKID_SWORD_CHARGE_END = 879795484U;
         static const AkUniqueID PUMPKID_SWORD_CHARGE_START = 455128255U;
         static const AkUniqueID PUMPKID_SWORD_SLASH = 971183997U;
+        static const AkUniqueID RETURNTOMAINMENU = 3638260058U;
         static const AkUniqueID SET_STATE_FALL = 2397442311U;
         static const AkUniqueID SET_STATE_NARRATION = 1772629426U;
         static const AkUniqueID SET_STATE_NEUTRAL = 1170226945U;
