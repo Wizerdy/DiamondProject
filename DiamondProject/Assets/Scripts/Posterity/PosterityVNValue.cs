@@ -13,7 +13,7 @@ public class PosterityVNValue : MonoBehaviour
         hint = posterityObj.fallAttackHintList[0];
         if (!hint.isTrigger) {
             if (obj.gameObject.GetComponent<ProtectorTree>()) {
-                spriteFeedBack.SetActive(true);
+                spriteFeedBack?.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.fallAttackHintList[0] = hint;
                 return;
@@ -25,7 +25,7 @@ public class PosterityVNValue : MonoBehaviour
         hint = posterityObj.fallAttackHintList[2];
         if (!hint.isTrigger) {
             if (obj.gameObject.GetComponent<Boomerang>()) {
-                spriteFeedBack.SetActive(true);
+                spriteFeedBack?.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.fallAttackHintList[2] = hint;
                 return;
@@ -35,7 +35,7 @@ public class PosterityVNValue : MonoBehaviour
         hint = posterityObj.winterAttackHintList[2];
         if (!hint.isTrigger) {
             if (obj.gameObject.GetComponent<IceWall>()) {
-                spriteFeedBack.SetActive(true);
+                spriteFeedBack?.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.winterAttackHintList[2] = hint;
                 return;
@@ -48,7 +48,7 @@ public class PosterityVNValue : MonoBehaviour
         hint = posterityObj.fallAttackHintList[3];
         if (!hint.isTrigger) {
             if (obj.GetComponent<ChargedBullet>()) {
-                spriteFeedBack.SetActive(true);
+                spriteFeedBack?.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.fallAttackHintList[3] = hint;
                 return;
@@ -64,7 +64,7 @@ public class PosterityVNValue : MonoBehaviour
             HealthProxy _health = obj.gameObject.GetComponent<HealthProxy>();
             if (_health != null) {
                 if (!_health.CanTakeDamage && _health.gameObject.tag == "Boss") {
-                    spriteFeedBack.SetActive(true);
+                    spriteFeedBack?.SetActive(true);
                     hint.isTrigger = true;
                     posterityObj.fallAttackHintList[1] = hint;
                     return;
@@ -77,7 +77,7 @@ public class PosterityVNValue : MonoBehaviour
         hint = posterityObj.winterAttackHintList[1];
         if (!hint.isTrigger) {
             if (obj.GetComponent<IceShard>()?.shardType == ShardType.bulletHell) {
-                spriteFeedBack.SetActive(true);
+                spriteFeedBack?.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.winterAttackHintList[1] = hint;
                 return;
@@ -88,7 +88,7 @@ public class PosterityVNValue : MonoBehaviour
         hint = posterityObj.winterAttackHintList[0];
         if (!hint.isTrigger) {
             if (obj.GetComponent<IceShard>()?.shardType == ShardType.iceHell) {
-                spriteFeedBack.SetActive(true);
+                spriteFeedBack?.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.winterAttackHintList[0] = hint;
                 return;
