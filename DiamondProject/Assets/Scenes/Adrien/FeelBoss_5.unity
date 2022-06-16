@@ -1528,6 +1528,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1822744041458098998, guid: 78faacf52b2d7e24ead199ced679fe06, type: 3}
   m_PrefabInstance: {fileID: 1822744041929485662}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &476498769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4321539996836635661, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+  m_PrefabInstance: {fileID: 5680249787929907757}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &526851794
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,6 +3530,8 @@ MonoBehaviour:
   _lifeText: {fileID: 1960359709}
   _invicibleColor: {r: 0.618221, g: 0.8490566, b: 0.4437522, a: 1}
   _disableColor: {r: 0, g: 0, b: 0, a: 0}
+  _fillOnEnable: 1
+  _fillTime: 3
   _onHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -4392,6 +4405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
+  _offset: {x: 0, y: 0, z: 0}
   _camera: {fileID: 1621201346}
   _useBounds: 1
   _top: 25
@@ -5089,6 +5103,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1405585052}
     m_Modifications:
+    - target: {fileID: 879398007486362779, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
+      propertyPath: _acceleration
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1366682634033476724, guid: 1d6ee15f05e46df4797032d6a4b3e37d, type: 3}
       propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6681,6 +6699,50 @@ PrefabInstance:
     - target: {fileID: 3934628414955997457, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _acting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _neutralAttacks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _neutralAttacks.Array.data[1]
+      value: Movement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458722367781711720, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _neutralAttacks.Array.data[2]
+      value: Boomerang
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788332393454, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788332393454, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788332393454, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 476498769}
+    - target: {fileID: 5680249788332393454, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788332393454, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayFeedbacks
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788332393454, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MoreMountains.Feedbacks.MMFeedbacks, MoreMountains.Feedbacks
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680249788332393454, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+      propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5680249788645268036, guid: c7552ad348094c546957ec3ba587feed, type: 3}
       propertyPath: _onExitShape.m_PersistentCalls.m_Calls.Array.data[0].m_Target

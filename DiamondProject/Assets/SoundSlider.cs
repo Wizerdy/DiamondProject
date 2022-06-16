@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
-
 public class SoundSlider : MonoBehaviour {
     [SerializeField] bool _isActive;
     [SerializeField] Button _onOff;
@@ -23,6 +22,7 @@ public class SoundSlider : MonoBehaviour {
         _onOffImage = _onOff.GetComponent<Image>();
         UpdateSlider();
     }
+
     public void InverseState() {
         _isActive = !_isActive;
         UpdateSlider();
@@ -34,5 +34,17 @@ public class SoundSlider : MonoBehaviour {
         if (_isActive) {
             _onUpdate?.Invoke(_slider.value);
         }
+    }
+
+    public void SetRTPCValueGeneralVolume(float value) {
+        AkSoundEngine.SetRTPCValue("RTPC_GeneralVolume", value);
+    }
+
+    public void SetRTPCValueSFXVolume(float value) {
+        AkSoundEngine.SetRTPCValue("RTPC_SFXVolume", value);
+    }
+
+    public void SetRTPCValueMusicVolume(float value) {
+        AkSoundEngine.SetRTPCValue("RTPC_MusicVolume", value);
     }
 }
