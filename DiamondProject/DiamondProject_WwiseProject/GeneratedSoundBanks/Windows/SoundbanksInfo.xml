@@ -28,7 +28,7 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="957529568">
+		<SoundBank Id="1355168291" Language="SFX" Hash="29614094">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -37,6 +37,25 @@
 				<GameParameter Id="2644490154" Name="RTPC_SFXVolume" ObjectPath="\Game Parameters\SD\RTPC_SFXVolume"/>
 				<GameParameter Id="2888337175" Name="RTPC_GeneralVolume" ObjectPath="\Game Parameters\SD\RTPC_GeneralVolume"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1645386324" Name="ST_Music" ObjectPath="\States\SD\ST_Music" GUID="{194F3E66-AE7B-48DF-A9FA-68B2E56BF04E}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\SD\ST_Music\None" GUID="{E41A927F-FA07-4820-804C-4BFFD4E1B196}"/>
+						<State Id="252776334" Name="Boss_Neutral" ObjectPath="\States\SD\ST_Music\Boss_Neutral" GUID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}"/>
+						<State Id="859005722" Name="Boss_Winter" ObjectPath="\States\SD\ST_Music\Boss_Winter" GUID="{320F487F-3A5F-48B7-818E-10DC13BE27E1}"/>
+						<State Id="1800837750" Name="Boss_Fall" ObjectPath="\States\SD\ST_Music\Boss_Fall" GUID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}"/>
+						<State Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration" GUID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}"/>
+						<State Id="3041563226" Name="Silence" ObjectPath="\States\SD\ST_Music\Silence" GUID="{77B7DB0D-E160-42A6-BE76-AE2C19030B87}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="1923804120" Name="ST_GameMode" ObjectPath="\States\SD\ST_GameMode" GUID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\SD\ST_GameMode\None" GUID="{7760B096-6CF4-4C28-81AB-7C165E71B6F1}"/>
+						<State Id="2607556080" Name="Menu" ObjectPath="\States\SD\ST_GameMode\Menu" GUID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+						<State Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame" GUID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 		<SoundBank Id="3161908922" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
@@ -61,7 +80,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="862738374">
+		<SoundBank Id="4056684167" Language="SFX" Hash="1452895494">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -377,45 +396,29 @@
 				</Event>
 				<Event Id="3651181119" Name="Boss_FormChange_Neutral" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Neutral" DurationType="OneShot" DurationMin="2.2" DurationMax="2.4">
 					<IncludedMemoryFiles>
-						<File Id="44283980" Language="SFX">
-							<ShortName>Boss_VO_Hit_03.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_03_32513D82.wem</Path>
-						</File>
-						<File Id="112609575" Language="SFX">
-							<ShortName>Boss_VO_Hit_07.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_07_32513D82.wem</Path>
-						</File>
-						<File Id="147152395" Language="SFX">
-							<ShortName>Boss_VO_Hit_02.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_02_32513D82.wem</Path>
+						<File Id="250189180" Language="SFX">
+							<ShortName>Boss_VO_ChangeForm_01.wav</ShortName>
+							<Path>SFX\Boss_VO_ChangeForm_01_32513D82.wem</Path>
 						</File>
 						<File Id="267909182" Language="SFX">
 							<ShortName>Boss_FormChange_Fall.wav</ShortName>
 							<Path>SFX\Boss_FormChange_Fall_32513D82.wem</Path>
 						</File>
-						<File Id="282029165" Language="SFX">
-							<ShortName>Boss_VO_Hit_04.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_04_32513D82.wem</Path>
-						</File>
 						<File Id="399149927" Language="SFX">
 							<ShortName>Boss_FormChange_Winter.wav</ShortName>
 							<Path>SFX\Boss_FormChange_Winter_32513D82.wem</Path>
-						</File>
-						<File Id="489761037" Language="SFX">
-							<ShortName>Boss_VO_Hit_01.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_01_32513D82.wem</Path>
 						</File>
 						<File Id="559235580" Language="SFX">
 							<ShortName>Boss_FormChange_Neutral.wav</ShortName>
 							<Path>SFX\Boss_FormChange_Neutral_32513D82.wem</Path>
 						</File>
-						<File Id="814012367" Language="SFX">
-							<ShortName>Boss_VO_Hit_06.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_06_32513D82.wem</Path>
+						<File Id="592204584" Language="SFX">
+							<ShortName>Boss_VO_ChangeForm_03.wav</ShortName>
+							<Path>SFX\Boss_VO_ChangeForm_03_32513D82.wem</Path>
 						</File>
-						<File Id="845589795" Language="SFX">
-							<ShortName>Boss_VO_Hit_05.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_05_32513D82.wem</Path>
+						<File Id="664506628" Language="SFX">
+							<ShortName>Boss_VO_ChangeForm_02.wav</ShortName>
+							<Path>SFX\Boss_VO_ChangeForm_02_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<ActionSetState>
@@ -1616,9 +1619,17 @@
 						</SwitchContainer>
 					</SwitchContainers>
 					<ActionSetState>
-						<ActionSetStateEntry Id="252776334" Name="Boss_Neutral" ObjectPath="\States\SD\ST_Music\Boss_Neutral"/>
+						<ActionSetStateEntry Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration"/>
 						<ActionSetStateEntry Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame"/>
 					</ActionSetState>
+				</Event>
+				<Event Id="2007880638" Name="Intro_Pumpkid_Footsteps" ObjectPath="\Events\SD\Other\Intro_Pumpkid_Footsteps" DurationType="OneShot" DurationMin="4.069458" DurationMax="4.069458">
+					<IncludedMemoryFiles>
+						<File Id="898660779" Language="SFX">
+							<ShortName>Intro_Pumpkid_Footsteps.wav</ShortName>
+							<Path>SFX\Intro_Pumpkid_Footsteps_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\SD\Music\Play_Music" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -2906,6 +2917,10 @@
 					<ShortName>Boss_Winter_IceHell_Scatter_Charge_05.wav</ShortName>
 					<Path>SFX\Boss_Winter_IceHell_Scatter_Charge_05_32513D82.wem</Path>
 				</File>
+				<File Id="138315815" Language="SFX">
+					<ShortName>Pumpkid_Music_Boss_Fall_LP.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Boss_Fall_LP_F2BF74AC.wem</Path>
+				</File>
 				<File Id="143946023" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Charging_Start_05.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Charging_Start_05_32513D82.wem</Path>
@@ -3085,6 +3100,10 @@
 				<File Id="253420629" Language="SFX">
 					<ShortName>Boss_Winter_IceHell_Scatter_Charge_06.wav</ShortName>
 					<Path>SFX\Boss_Winter_IceHell_Scatter_Charge_06_32513D82.wem</Path>
+				</File>
+				<File Id="255063227" Language="SFX">
+					<ShortName>Pumpkid_Music_Boss_Neutral_Intro.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Boss_Neutral_Intro_F2BF74AC.wem</Path>
 				</File>
 				<File Id="257330112" Language="SFX">
 					<ShortName>Boss_VO_Death.wav</ShortName>
@@ -4062,6 +4081,10 @@
 					<ShortName>Boss_Winter_Hit_ChargedCrossbow_02.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_ChargedCrossbow_02_32513D82.wem</Path>
 				</File>
+				<File Id="874425250" Language="SFX">
+					<ShortName>Pumpkid_Music_Boss_Neutral_LP.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Boss_Neutral_LP_F2BF74AC.wem</Path>
+				</File>
 				<File Id="875541440" Language="SFX">
 					<ShortName>Boss_Fall_Hit_Sword_04.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_Sword_04_32513D82.wem</Path>
@@ -4081,6 +4104,10 @@
 				<File Id="897695796" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Crossbow_03.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Crossbow_03_32513D82.wem</Path>
+				</File>
+				<File Id="898660779" Language="SFX">
+					<ShortName>Intro_Pumpkid_Footsteps.wav</ShortName>
+					<Path>SFX\Intro_Pumpkid_Footsteps_32513D82.wem</Path>
 				</File>
 				<File Id="901198388" Language="SFX">
 					<ShortName>Boss_Fall_FallDash_Dash_02.wav</ShortName>
@@ -4226,6 +4253,10 @@
 					<ShortName>Boss_Winter_IceSpikes_01.wav</ShortName>
 					<Path>SFX\Boss_Winter_IceSpikes_01_32513D82.wem</Path>
 				</File>
+				<File Id="979463666" Language="SFX">
+					<ShortName>Pumpkid_Music_Boss_Winter_LP.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Boss_Winter_LP_F2BF74AC.wem</Path>
+				</File>
 				<File Id="982279997" Language="SFX">
 					<ShortName>Boss_Winter_BulletHell_Charge_05.wav</ShortName>
 					<Path>SFX\Boss_Winter_BulletHell_Charge_05_32513D82.wem</Path>
@@ -4322,6 +4353,10 @@
 					<ShortName>Pumpkid_Sword_Slash_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Slash_03_32513D82.wem</Path>
 				</File>
+				<File Id="1048384188" Language="SFX">
+					<ShortName>Pumpkid_Music_Narration_LP.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Narration_LP_F2BF74AC.wem</Path>
+				</File>
 				<File Id="1049235258" Language="SFX">
 					<ShortName>Pumpkid_Footsteps_Ice_10.wav</ShortName>
 					<Path>SFX\Pumpkid_Footsteps_Ice_10_32513D82.wem</Path>
@@ -4402,6 +4437,13 @@
 				</StateGroup>
 				<StateGroup Id="1800837750" Name="Boss_Fall" ObjectPath="\States\SD\ST_Music\Boss_Fall" GUID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}">
 					<States/>
+				</StateGroup>
+				<StateGroup Id="1923804120" Name="ST_GameMode" ObjectPath="\States\SD\ST_GameMode" GUID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\SD\ST_GameMode\None" GUID="{7760B096-6CF4-4C28-81AB-7C165E71B6F1}"/>
+						<State Id="2607556080" Name="Menu" ObjectPath="\States\SD\ST_GameMode\Menu" GUID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+						<State Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame" GUID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+					</States>
 				</StateGroup>
 				<StateGroup Id="2160573204" Name="Skipping" ObjectPath="\States\SD\ST_Skip\Skipping" GUID="{2D8A46B6-2538-4E20-840E-A792944E5265}">
 					<States/>

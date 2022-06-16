@@ -109,7 +109,7 @@
 									</ModifierList>
 								</Property>
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
-								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-4</Value>
@@ -1363,7 +1363,12 @@
 							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="Boss_VO_RockBeam" ID="{89519532-EBD3-472F-909F-8E8AC966C8E1}" ShortID="351045764">
+						<RandomSequenceContainer Name="Boss_Neutral_RockBeam_Cast" ID="{89519532-EBD3-472F-909F-8E8AC966C8E1}" ShortID="351045764">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
@@ -1445,7 +1450,12 @@
 							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="Boss_VO_NeutralBulletHell" ID="{33CBBD2B-F706-4D5D-9210-AD3777DC1869}" ShortID="482668281">
+						<RandomSequenceContainer Name="Boss_Neutral_BulletHell_Cast" ID="{33CBBD2B-F706-4D5D-9210-AD3777DC1869}" ShortID="482668281">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>

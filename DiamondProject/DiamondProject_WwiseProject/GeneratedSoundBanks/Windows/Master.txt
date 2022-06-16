@@ -41,6 +41,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1804500156	Boss_Neutral_BulletHell_Throw_Start			\SD\Boss\Neutral\Boss_Neutral_BulletHell_Throw_Start	
 	1918681101	Boss_Winter_SnowAbsorption_End			\SD\Boss\Winter\Boss_Winter_SnowAbsorption_End	
 	1992578794	Boss_Fall_Tree_Destroy			\SD\Boss\Fall\Boss_Fall_Tree_Destroy	
+	2007880638	Intro_Pumpkid_Footsteps			\SD\Other\Intro_Pumpkid_Footsteps	
 	2060042005	UI_Transition_ToVisualNovel			\SD\UI\UI_General\UI_Transition_ToVisualNovel	
 	2202228643	Pumpkid_Crossbow_Shot			\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Shot	
 	2318093787	Boss_Neutral_RockSpikes			\SD\Boss\Neutral\Boss_Neutral_RockSpikes	
@@ -122,6 +123,7 @@ Switch	ID	Name	Switch Group			Notes
 
 State Group	ID	Name			Wwise Object Path	Notes
 	1645386324	ST_Music			\SD\ST_Music	
+	1923804120	ST_GameMode			\SD\ST_GameMode	
 	3616794558	ST_Skip			\SD\ST_Skip	
 
 State	ID	Name	State Group			Notes
@@ -131,11 +133,19 @@ State	ID	Name	State Group			Notes
 	930427193	Narration	ST_Music			
 	1800837750	Boss_Fall	ST_Music			
 	3041563226	Silence	ST_Music			
+	748895195	None	ST_GameMode			
+	984691642	Ingame	ST_GameMode			
+	2607556080	Menu	ST_GameMode			
 	748895195	None	ST_Skip			
 	1160234136	Normal	ST_Skip			
 	2160573204	Skipping	ST_Skip			
 
 Custom State	ID	Name	State Group	Owner		Notes
+	187604756	Menu	ST_GameMode	\Master-Mixer Hierarchy\SD\Master\Master_Volume\Volume_SFX\Pumpkid		
+	458513121	Narration	ST_Music	\Master-Mixer Hierarchy\SD\Master\Master_Volume\Music_Volume\Music		
+	717822587	Menu	ST_GameMode	\Master-Mixer Hierarchy\SD\Master\Master_Volume\Volume_SFX\AMB		
+	781121344	Menu	ST_GameMode	\Master-Mixer Hierarchy\SD\Master\Master_Volume\Music_Volume\Music		
+	969220821	Menu	ST_GameMode	\Master-Mixer Hierarchy\SD\Master\Master_Volume\Volume_SFX\Boss		
 	1016978126	Skipping	ST_Skip	\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Text_LP		
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
@@ -203,7 +213,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	79343636	UI_VisualNovel_Pass_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_VisualNovel_Pass_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Pass\UI_VisualNovel_Pass_05		3966
 	81559422	Pumpkid_Footsteps_Ice_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Footsteps_Ice_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\PumpKid_Fol\Pumpkid_Fol\Pumkid_Footsteps\Pumpkid_Footsteps_Ice\Pumpkid_Footsteps_Ice_02		7075
 	81790678	Boss_VO_IceHell_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_IceHell_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceHell_Cast\Boss_VO_IceHell_02		44078
-	83430892	Boss_VO_RockBeam_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_RockBeam_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_VO_RockBeam\Boss_VO_RockBeam_03		34374
+	83430892	Boss_VO_RockBeam_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_RockBeam_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_RockBeam_Cast\Boss_VO_RockBeam_03		34374
 	84113697	Pumpkid_Sword_Charging_Start_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Sword_Charging_Start_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Charging_Start\Pumpkid_Sword_Charging_Start_04		8121
 	87485873	Boss_Neutral_Hit_Sword_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_Hit_Sword_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword_06		5059
 	93275430	Boss_Winter_BulletHell_Throw_End_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_BulletHell_Throw_End_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_BulletHell_Throw_End\Boss_Winter_BulletHell_Throw_End_03		43728
@@ -241,7 +251,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	167554122	Boss_Winter_IceHell_Scatter_Charge_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_IceHell_Scatter_Charge_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceHell_Scatter_Charge\Boss_Winter_IceHell_Scatter_Charge_04		65606
 	169866232	Boss_Fall_Hit_Crossbow_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Fall_Hit_Crossbow_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Fall_Hit\Boss_Fall_Hit_Crossbow\Boss_Fall_Hit_Crossbow\Boss_Fall_Hit_Crossbow_02		7731
 	178366894	Boss_Winter_IceHell_Scatter_Throw_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_IceHell_Scatter_Throw_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceHell_Scatter_Throw\Boss_Winter_IceHell_Scatter_Throw_03		40335
-	179338101	Boss_VO_RockBeam_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_RockBeam_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_VO_RockBeam\Boss_VO_RockBeam_01		32687
+	179338101	Boss_VO_RockBeam_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_RockBeam_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_RockBeam_Cast\Boss_VO_RockBeam_01		32687
 	181650424	Boss_Fall_Tree_Summon_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Fall_Tree_Summon_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Fall\Boss_Fall\Boss_Fall_Tree_Summon\Boss_Fall_Tree_Summon_02		38596
 	183092715	Boss_Winter_Hit_Crossbow_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_Hit_Crossbow_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Winter_Hit\Boss_Winter_Hit_Crossbow\Boss_Winter_Hit_Crossbow\Boss_Winter_Hit_Crossbow_03		12430
 	184402970	Boss_Neutral_BulletHell_Charge_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_BulletHell_Charge_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_BulletHell_Charge\Boss_Neutral_BulletHell_Charge_02		29127
@@ -293,7 +303,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	291630395	Boss_Neutral_Hit_Sword_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_Hit_Sword_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword_01		4835
 	293479431	Boss_Fall_Hit_Crossbow_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Fall_Hit_Crossbow_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Fall_Hit\Boss_Fall_Hit_Crossbow\Boss_Fall_Hit_Crossbow\Boss_Fall_Hit_Crossbow_05		8433
 	302685466	UI_VisualNovel_Book_Open_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_VisualNovel_Book_Open_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_Open\UI_VisualNovel_Book_Open_01		14339
-	308001205	Boss_VO_NeutralBulletHell_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_NeutralBulletHell_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_VO_NeutralBulletHell\Boss_VO_NeutralBulletHell_02		40144
+	308001205	Boss_VO_NeutralBulletHell_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_NeutralBulletHell_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_BulletHell_Cast\Boss_VO_NeutralBulletHell_02		40144
 	308880992	Boss_Fall_Hit_Sword_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Fall_Hit_Sword_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Fall_Hit\Boss_Fall_Hit_Sword\Boss_Fall_Hit_Sword\Boss_Fall_Hit_Sword_05		7075
 	310190414	UI_Transition_ToArena_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_Transition_ToArena_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_General\UI_Transition_ToArena\UI_Transition_ToArena_03		46882
 	314282251	Boss_Winter_IceHell_Scatter_Throw_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_IceHell_Scatter_Throw_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceHell_Scatter_Throw\Boss_Winter_IceHell_Scatter_Throw_02		37473
@@ -315,7 +325,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	346435354	Boss_Neutral_Hit_ChargedCrossbow_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_Hit_ChargedCrossbow_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_ChargedCrossbow\Boss_Neutral_Hit_ChargedCrossbow_06		14912
 	350373782	Pumpkid_Crossbow_Boomerang_Return_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Crossbow_Boomerang_Return_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Crossbow\Crossbow\Pumpkid_Crossbow_Boomerang_Return\Pumpkid_Crossbow_Boomerang_Return_04		8291
 	351641755	Boss_Winter_BulletHell_Throw_End_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_BulletHell_Throw_End_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_BulletHell_Throw_End\Boss_Winter_BulletHell_Throw_End_01		48252
-	355570202	Boss_VO_NeutralBulletHell_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_NeutralBulletHell_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_VO_NeutralBulletHell\Boss_VO_NeutralBulletHell_03		45761
+	355570202	Boss_VO_NeutralBulletHell_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_NeutralBulletHell_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_BulletHell_Cast\Boss_VO_NeutralBulletHell_03		45761
 	357014102	Boss_Neutral_BulletHell_Charge_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_BulletHell_Charge_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_BulletHell_Charge\Boss_Neutral_BulletHell_Charge_03		29888
 	358044945	Pumpkid_Sword_Slash_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Sword_Slash_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Slash\Pumpkid_Sword_NormalSlash\Pumpkid_Sword_Slash_02		5563
 	358078283	AMB_RFX_Thunder_Far_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\AMB_RFX_Thunder_Far_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\AMB\AMB\AMB_Season\AMB_RFX_Thunder_Far\AMB_RFX_Thunder_Far_02		108213
@@ -452,7 +462,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	668476340	Boss_Neutral_Hit_Sword_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_Hit_Sword_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_Sword_03		5312
 	673124329	UI_Menu_Close	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_Menu_Close_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_General\UI_Menu_Close\UI_Menu_Close		16265
 	674305507	Boss_Winter_IceHell_Scatter_Charge_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_IceHell_Scatter_Charge_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceHell_Scatter_Charge\Boss_Winter_IceHell_Scatter_Charge_02		45971
-	677712772	Boss_VO_NeutralBulletHell_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_NeutralBulletHell_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_VO_NeutralBulletHell\Boss_VO_NeutralBulletHell_01		41918
+	677712772	Boss_VO_NeutralBulletHell_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_NeutralBulletHell_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_BulletHell_Cast\Boss_VO_NeutralBulletHell_01		41918
 	678975763	Pumpkid_Crossbow_ThunderShot_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Crossbow_ThunderShot_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Crossbow\Crossbow\Pumpkid_Crossbow_ThunderShot\Pumpkid_Crossbow_ThunderShot_02		22226
 	681689917	UI_VisualNovel_Book_TurnPage_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_VisualNovel_Book_TurnPage_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_TurnPage\UI_VisualNovel_Book_TurnPage_04		11029
 	683235496	Boss_Winter_IceHell_Focus_Charge_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_IceHell_Focus_Charge_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceHell_Focus_Charge\Boss_Winter_IceHell_Focus_Charge_04		35142
@@ -522,6 +532,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	884855950	Boss_Winter_IceHell_Scatter_Throw_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_IceHell_Scatter_Throw_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceHell_Scatter_Throw\Boss_Winter_IceHell_Scatter_Throw_06		38668
 	891292192	Pumpkid_Sword_Charging_Start_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Sword_Charging_Start_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Charging_Start\Pumpkid_Sword_Charging_Start_03		8724
 	897695796	Boss_Neutral_Hit_Crossbow_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_Hit_Crossbow_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow_03		8004
+	898660779	Intro_Pumpkid_Footsteps	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Intro_Pumpkid_Footsteps_32513D82.wem		\Actor-Mixer Hierarchy\SD\Other\Intro_Pumpkid_Footsteps		108106
 	901198388	Boss_Fall_FallDash_Dash_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Fall_FallDash_Dash_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Fall\Boss_Fall\Boss_Fall_FallDash_Dash\Boss_Fall_FallDash_Dash_02		13039
 	903069355	UI_Transition_ToVisualNovel_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_Transition_ToVisualNovel_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_General\UI_Transition_ToVisualNovel\UI_Transition_ToVisualNovel_04		34281
 	907148925	Boss_VO_SnowAbsorption_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_SnowAbsorption_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_SnowAbsorption_Cast\Boss_VO_SnowAbsorption_01		43568
@@ -560,7 +571,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	979371832	Boss_Winter_IceSpikes_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_IceSpikes_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceSpikes\Boss_Winter_IceSpikes_01		54843
 	979463666	Pumpkid_Music_Boss_Winter_LP	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Music_Boss_Winter_LP_F2BF74AC.wem		\Interactive Music Hierarchy\SD\Music\Boss\Boss_Winter\Boss_Winter_LP\Pumpkid_Music_Boss_Winter_LP		1710404
 	982279997	Boss_Winter_BulletHell_Charge_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_BulletHell_Charge_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_BulletHell_Charge\Boss_Winter_BulletHell_Charge_05		59885
-	982527385	Boss_VO_RockBeam_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_RockBeam_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_VO_RockBeam\Boss_VO_RockBeam_02		33819
+	982527385	Boss_VO_RockBeam_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_RockBeam_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_RockBeam_Cast\Boss_VO_RockBeam_02		33819
 	984718196	Boss_VO_IceSpike_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_IceSpike_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceSpikes_Cast\Boss_VO_IceSpike_01		43272
 	988094646	UI_Menu_Button_Hover_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_Menu_Button_Hover_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_General\UI_Menu_Button_Hover\UI_Menu_Button_Hover_01		1804
 	988931632	Boss_Fall_LeafBeam_LP	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Fall_LeafBeam_LP_F2BF74AC.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Fall\Boss_Fall\Boss_Fall_LeafBeam_LP		143872

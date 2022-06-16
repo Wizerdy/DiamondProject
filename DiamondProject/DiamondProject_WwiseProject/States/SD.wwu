@@ -13,6 +13,20 @@
 						<State Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
 						<State Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
 					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+							<EndState Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+							<Time>0.7</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+							<EndState Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+							<Time>0</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
 				</StateGroup>
 				<StateGroup Name="ST_Music" ID="{194F3E66-AE7B-48DF-A9FA-68B2E56BF04E}">
 					<ChildrenList>
