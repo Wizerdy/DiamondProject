@@ -18,8 +18,16 @@
 							<Position X="0" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Pumpkid_Footstep" ID="{0F02F93F-2454-43E1-95CF-4CA41BD8F61A}" WorkUnitID="{F33FAAD9-D315-4371-B720-A5D8DBC687F3}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="UI_VisualNovel_Text_Start" ID="{68071C2C-DAE3-4450-BBA7-8E62C50B0F79}" WorkUnitID="{5BE134E0-2CC0-4838-914D-EDD53B33DA15}"/>
 							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="GameStart" ID="{6E44A03B-9547-491E-8BC9-01EA8AFFDFAB}" WorkUnitID="{CDDF101E-A503-4BEB-83B0-36A9F5F50823}"/>
+							<Position X="0" Y="5"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Pumpkid_Crossbow_Shot" ID="{4FC6C169-F707-4E7D-ABBA-14DBA7939FE6}" WorkUnitID="{3B31DA07-4C9F-4417-B422-960396712C4F}"/>
@@ -42,6 +50,10 @@
 							<Position X="1" Y="4"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="UI_Transition_ToArena" ID="{F317A20E-E143-41B3-82C4-1C69A7224139}" WorkUnitID="{FA16E315-DF81-4B77-BF1C-1D5CAC494DE2}"/>
+							<Position X="1" Y="5"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Pumpkid_Sword_Charge_Start" ID="{1A6EA451-FB3D-42BD-A998-ACA512026B6E}" WorkUnitID="{EAF24BD5-BC8E-43C1-8F45-CE5B692A755B}"/>
 							<Position X="2" Y="0"/>
 						</Module>
@@ -62,6 +74,14 @@
 							<Position X="2" Y="4"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="UI_Transition_ToVisualNovel" ID="{459F8F47-19DC-4E35-B82D-3566DCF241CB}" WorkUnitID="{FA16E315-DF81-4B77-BF1C-1D5CAC494DE2}"/>
+							<Position X="2" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="UI_Menu_Button_Back" ID="{8377A8C9-243F-4E7D-88C1-B67264C5FBBD}" WorkUnitID="{FA16E315-DF81-4B77-BF1C-1D5CAC494DE2}"/>
+							<Position X="2" Y="6"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Pumpkid_Sword_Slash" ID="{9909D52D-EDE8-4C20-B425-46894FA46F6A}" WorkUnitID="{EAF24BD5-BC8E-43C1-8F45-CE5B692A755B}"/>
 							<Position X="3" Y="0"/>
 						</Module>
@@ -80,6 +100,14 @@
 						<Module>
 							<ObjectRef Name="Boss_Winter_SnowAbsorption_Start" ID="{C59BC5D0-7B21-43DF-9B6E-E805BEA399A5}" WorkUnitID="{448E012B-2339-4E2C-B5E9-12639F7AAEFD}"/>
 							<Position X="3" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="UI_Menu_Button_Hover" ID="{6E6EB605-66E8-436F-8B3E-B142DF763B21}" WorkUnitID="{FA16E315-DF81-4B77-BF1C-1D5CAC494DE2}"/>
+							<Position X="3" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="UI_Menu_Button_Confirm" ID="{56BD74E6-E60A-43B9-90EE-28D05903302D}" WorkUnitID="{FA16E315-DF81-4B77-BF1C-1D5CAC494DE2}"/>
+							<Position X="3" Y="6"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -129,15 +157,15 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Boss_Fall" ID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}"/>
-						<CurrentStateRef Name="Normal" ID="{D053143D-8E8E-42B0-B9AC-A8AD43BAF94E}"/>
-						<CurrentStateRef Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+						<CurrentStateRef Name="None" ID="{E41A927F-FA07-4820-804C-4BFFD4E1B196}"/>
+						<CurrentStateRef Name="None" ID="{8A344E71-5CAD-4EAD-885D-7295E2638619}"/>
+						<CurrentStateRef Name="None" ID="{7760B096-6CF4-4C28-81AB-7C165E71B6F1}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Charging" ID="{9FCB8A33-95F1-4D77-96CB-07585D9D1FFF}"/>
 						<CurrentSwitchRef Name="Crossbow" ID="{42E621F9-0F64-4704-80F0-11ADD76663A0}"/>
 						<CurrentSwitchRef Name="Dirt" ID="{1C878391-3A0B-4ACA-B003-88784F2F9432}"/>
-						<CurrentSwitchRef Name="Fall" ID="{9462570B-C14A-425D-A809-38A78DCFFD30}"/>
+						<CurrentSwitchRef Name="Winter" ID="{DAB86AC5-41EC-41E6-B8A6-65E8BB56192F}"/>
 						<CurrentSwitchRef Name="ExploBush" ID="{69D77020-DB2B-4EF7-86ED-538E23287A58}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>

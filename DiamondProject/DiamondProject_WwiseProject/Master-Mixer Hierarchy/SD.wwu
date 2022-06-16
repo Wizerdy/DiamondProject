@@ -114,6 +114,27 @@
 													<ObjectLists/>
 												</Bus>
 											</ChildrenList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="ST_GameMode" ID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+														<CustomState Name="" ID="{B9614053-3684-4E96-900B-39F3E0F131E9}" ShortID="187604756">
+															<PropertyList>
+																<Property Name="BusVolume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+														<CustomState Name="" ID="{4D825347-80F4-4D84-954F-A22B874C2E46}" ShortID="644806310"/>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
 											<ObjectLists/>
 										</Bus>
 										<Bus Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}">
@@ -140,6 +161,27 @@
 													<ObjectLists/>
 												</Bus>
 											</ChildrenList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="ST_GameMode" ID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+														<CustomState Name="" ID="{7595CDDD-9A25-4757-9775-FBD188272068}" ShortID="969220821">
+															<PropertyList>
+																<Property Name="BusVolume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+														<CustomState Name="" ID="{E482E7B9-77A6-426E-BFFE-944915A4CE30}" ShortID="234464150"/>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
 											<ObjectLists/>
 										</Bus>
 										<Bus Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}">
@@ -147,6 +189,28 @@
 												<Property Name="Color" Type="int16" Value="15"/>
 												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="ST_GameMode" ID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+														<CustomState Name="" ID="{C819EA56-5F30-420D-A893-A7BE854A4A5B}" ShortID="717822587">
+															<PropertyList>
+																<Property Name="BusVolume" Type="Real64" Value="-6"/>
+																<Property Name="Lowpass" Type="int16" Value="35"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+														<CustomState Name="" ID="{2694BABC-7ED6-4F86-ABCE-322E62E63148}" ShortID="457601988"/>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
 											<ObjectLists/>
 										</Bus>
 									</ChildrenList>
@@ -187,9 +251,63 @@
 									<ChildrenList>
 										<Bus Name="Music" ID="{642EDF65-56EF-42C3-9108-9B4AE08ECA69}">
 											<PropertyList>
+												<Property Name="BusVolume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Color" Type="int16" Value="13"/>
 												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="ST_GameMode" ID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}"/>
+													</StateGroupInfo>
+													<StateGroupInfo>
+														<StateGroupRef Name="ST_Music" ID="{194F3E66-AE7B-48DF-A9FA-68B2E56BF04E}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Boss_Fall" ID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}"/>
+														<CustomState Name="" ID="{23AE254B-9605-4D8C-ABFD-1039CF865F81}" ShortID="305697722"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Silence" ID="{77B7DB0D-E160-42A6-BE76-AE2C19030B87}"/>
+														<CustomState Name="" ID="{E5C38A68-15FA-412F-A482-F322B3F41856}" ShortID="204040614"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Narration" ID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}"/>
+														<CustomState Name="" ID="{FA2E9C6B-2D25-427E-B817-FCD40A1D9FC3}" ShortID="458513121">
+															<PropertyList>
+																<Property Name="BusVolume" Type="Real64" Value="-3"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Menu" ID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+														<CustomState Name="" ID="{7F7DBC4F-825E-49A2-AA97-CC7CE707CF4E}" ShortID="781121344">
+															<PropertyList>
+																<Property Name="BusVolume" Type="Real64" Value="-4"/>
+																<Property Name="Lowpass" Type="int16" Value="35"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}"/>
+														<CustomState Name="" ID="{03BE6C5C-2037-451D-A0A6-803783C012BD}" ShortID="162322160"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Boss_Winter" ID="{320F487F-3A5F-48B7-818E-10DC13BE27E1}"/>
+														<CustomState Name="" ID="{31DF3530-932D-4BAF-BE1C-5737AF3842A9}" ShortID="637480834"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Ingame" ID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+														<CustomState Name="" ID="{6E1D6E12-00D2-4D81-9B29-CEB06138237D}" ShortID="115869131"/>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
 											<ObjectLists/>
 										</Bus>
 									</ChildrenList>

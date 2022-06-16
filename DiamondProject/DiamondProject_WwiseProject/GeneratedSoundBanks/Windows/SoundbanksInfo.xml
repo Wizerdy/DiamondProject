@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
@@ -28,7 +28,7 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="957529568">
+		<SoundBank Id="1355168291" Language="SFX" Hash="29614094">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -37,8 +37,27 @@
 				<GameParameter Id="2644490154" Name="RTPC_SFXVolume" ObjectPath="\Game Parameters\SD\RTPC_SFXVolume"/>
 				<GameParameter Id="2888337175" Name="RTPC_GeneralVolume" ObjectPath="\Game Parameters\SD\RTPC_GeneralVolume"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1645386324" Name="ST_Music" ObjectPath="\States\SD\ST_Music" GUID="{194F3E66-AE7B-48DF-A9FA-68B2E56BF04E}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\SD\ST_Music\None" GUID="{E41A927F-FA07-4820-804C-4BFFD4E1B196}"/>
+						<State Id="252776334" Name="Boss_Neutral" ObjectPath="\States\SD\ST_Music\Boss_Neutral" GUID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}"/>
+						<State Id="859005722" Name="Boss_Winter" ObjectPath="\States\SD\ST_Music\Boss_Winter" GUID="{320F487F-3A5F-48B7-818E-10DC13BE27E1}"/>
+						<State Id="1800837750" Name="Boss_Fall" ObjectPath="\States\SD\ST_Music\Boss_Fall" GUID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}"/>
+						<State Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration" GUID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}"/>
+						<State Id="3041563226" Name="Silence" ObjectPath="\States\SD\ST_Music\Silence" GUID="{77B7DB0D-E160-42A6-BE76-AE2C19030B87}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="1923804120" Name="ST_GameMode" ObjectPath="\States\SD\ST_GameMode" GUID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\SD\ST_GameMode\None" GUID="{7760B096-6CF4-4C28-81AB-7C165E71B6F1}"/>
+						<State Id="2607556080" Name="Menu" ObjectPath="\States\SD\ST_GameMode\Menu" GUID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+						<State Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame" GUID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="483436697">
+		<SoundBank Id="3161908922" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -61,7 +80,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="80985451">
+		<SoundBank Id="4056684167" Language="SFX" Hash="1452895494">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -377,45 +396,29 @@
 				</Event>
 				<Event Id="3651181119" Name="Boss_FormChange_Neutral" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Neutral" DurationType="OneShot" DurationMin="2.2" DurationMax="2.4">
 					<IncludedMemoryFiles>
-						<File Id="44283980" Language="SFX">
-							<ShortName>Boss_VO_Hit_03.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_03_32513D82.wem</Path>
-						</File>
-						<File Id="112609575" Language="SFX">
-							<ShortName>Boss_VO_Hit_07.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_07_32513D82.wem</Path>
-						</File>
-						<File Id="147152395" Language="SFX">
-							<ShortName>Boss_VO_Hit_02.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_02_32513D82.wem</Path>
+						<File Id="250189180" Language="SFX">
+							<ShortName>Boss_VO_ChangeForm_01.wav</ShortName>
+							<Path>SFX\Boss_VO_ChangeForm_01_32513D82.wem</Path>
 						</File>
 						<File Id="267909182" Language="SFX">
 							<ShortName>Boss_FormChange_Fall.wav</ShortName>
 							<Path>SFX\Boss_FormChange_Fall_32513D82.wem</Path>
 						</File>
-						<File Id="282029165" Language="SFX">
-							<ShortName>Boss_VO_Hit_04.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_04_32513D82.wem</Path>
-						</File>
 						<File Id="399149927" Language="SFX">
 							<ShortName>Boss_FormChange_Winter.wav</ShortName>
 							<Path>SFX\Boss_FormChange_Winter_32513D82.wem</Path>
-						</File>
-						<File Id="489761037" Language="SFX">
-							<ShortName>Boss_VO_Hit_01.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_01_32513D82.wem</Path>
 						</File>
 						<File Id="559235580" Language="SFX">
 							<ShortName>Boss_FormChange_Neutral.wav</ShortName>
 							<Path>SFX\Boss_FormChange_Neutral_32513D82.wem</Path>
 						</File>
-						<File Id="814012367" Language="SFX">
-							<ShortName>Boss_VO_Hit_06.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_06_32513D82.wem</Path>
+						<File Id="592204584" Language="SFX">
+							<ShortName>Boss_VO_ChangeForm_03.wav</ShortName>
+							<Path>SFX\Boss_VO_ChangeForm_03_32513D82.wem</Path>
 						</File>
-						<File Id="845589795" Language="SFX">
-							<ShortName>Boss_VO_Hit_05.wav</ShortName>
-							<Path>SFX\Boss_VO_Hit_05_32513D82.wem</Path>
+						<File Id="664506628" Language="SFX">
+							<ShortName>Boss_VO_ChangeForm_02.wav</ShortName>
+							<Path>SFX\Boss_VO_ChangeForm_02_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<ActionSetState>
@@ -1021,13 +1024,158 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1678198802" Name="Boss_Neutral_BulletHell_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="340683315" Name="Boss_Neutral_BulletHell_Charge" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Charge" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1804500156" Name="Boss_Neutral_BulletHell_Throw_Start" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Throw_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1548392208" Name="Boss_Neutral_BulletHell_Throw_Stop" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Throw_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="446657731" Name="Boss_Neutral_RockBeam_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockBeam_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2535422893" Name="Boss_Neutral_RockBeam_End" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockBeam_End" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1309462310" Name="Boss_Neutral_RockBeam_Start" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockBeam_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1678198802" Name="Boss_Neutral_BulletHell_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Cast" DurationType="OneShot" DurationMin="1.435625" DurationMax="1.473812">
+					<IncludedMemoryFiles>
+						<File Id="308001205" Language="SFX">
+							<ShortName>Boss_VO_NeutralBulletHell_02.wav</ShortName>
+							<Path>SFX\Boss_VO_NeutralBulletHell_02_32513D82.wem</Path>
+						</File>
+						<File Id="355570202" Language="SFX">
+							<ShortName>Boss_VO_NeutralBulletHell_03.wav</ShortName>
+							<Path>SFX\Boss_VO_NeutralBulletHell_03_32513D82.wem</Path>
+						</File>
+						<File Id="677712772" Language="SFX">
+							<ShortName>Boss_VO_NeutralBulletHell_01.wav</ShortName>
+							<Path>SFX\Boss_VO_NeutralBulletHell_01_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="340683315" Name="Boss_Neutral_BulletHell_Charge" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Charge" DurationType="OneShot" DurationMin="1.117423" DurationMax="1.257197">
+					<IncludedMemoryFiles>
+						<File Id="184402970" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Charge_02.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Charge_02_32513D82.wem</Path>
+						</File>
+						<File Id="335940997" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Charge_06.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Charge_06_32513D82.wem</Path>
+						</File>
+						<File Id="357014102" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Charge_03.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Charge_03_32513D82.wem</Path>
+						</File>
+						<File Id="524598232" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Charge_05.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Charge_05_32513D82.wem</Path>
+						</File>
+						<File Id="592907571" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Charge_04.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Charge_04_32513D82.wem</Path>
+						</File>
+						<File Id="994598152" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Charge_01.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Charge_01_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1804500156" Name="Boss_Neutral_BulletHell_Throw_Start" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Throw_Start" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="262042519" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_Start_01.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_01_32513D82.wem</Path>
+						</File>
+						<File Id="264613149" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_Start_03.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_03_32513D82.wem</Path>
+						</File>
+						<File Id="557287027" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_Start_04.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_04_32513D82.wem</Path>
+						</File>
+						<File Id="600106881" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_Start_02.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_02_32513D82.wem</Path>
+						</File>
+						<File Id="700072660" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_LP.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_LP_F2BF74AC.wem</Path>
+						</File>
+						<File Id="951361729" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_Start_05.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_05_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1548392208" Name="Boss_Neutral_BulletHell_Throw_Stop" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Throw_Stop" DurationType="OneShot" DurationMin="1.06276" DurationMax="1.167933">
+					<IncludedMemoryFiles>
+						<File Id="444308902" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_End_02.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_End_02_32513D82.wem</Path>
+						</File>
+						<File Id="486118687" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_End_01.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_End_01_32513D82.wem</Path>
+						</File>
+						<File Id="736301436" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_End_03.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_End_03_32513D82.wem</Path>
+						</File>
+						<File Id="789686974" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_End_04.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_End_04_32513D82.wem</Path>
+						</File>
+						<File Id="801832429" Language="SFX">
+							<ShortName>Boss_Neutral_BulletHell_Throw_End_05.wav</ShortName>
+							<Path>SFX\Boss_Neutral_BulletHell_Throw_End_05_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="446657731" Name="Boss_Neutral_RockBeam_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockBeam_Cast" DurationType="OneShot" DurationMin="1.123396" DurationMax="1.206708">
+					<IncludedMemoryFiles>
+						<File Id="83430892" Language="SFX">
+							<ShortName>Boss_VO_RockBeam_03.wav</ShortName>
+							<Path>SFX\Boss_VO_RockBeam_03_32513D82.wem</Path>
+						</File>
+						<File Id="179338101" Language="SFX">
+							<ShortName>Boss_VO_RockBeam_01.wav</ShortName>
+							<Path>SFX\Boss_VO_RockBeam_01_32513D82.wem</Path>
+						</File>
+						<File Id="982527385" Language="SFX">
+							<ShortName>Boss_VO_RockBeam_02.wav</ShortName>
+							<Path>SFX\Boss_VO_RockBeam_02_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2535422893" Name="Boss_Neutral_RockBeam_End" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockBeam_End" DurationType="OneShot" DurationMin="1.377991" DurationMax="1.547875">
+					<IncludedMemoryFiles>
+						<File Id="133093267" Language="SFX">
+							<ShortName>Boss_Neutral_RockBeam_End_02.wav</ShortName>
+							<Path>SFX\Boss_Neutral_RockBeam_End_02_32513D82.wem</Path>
+						</File>
+						<File Id="280619426" Language="SFX">
+							<ShortName>Boss_Neutral_RockBeam_End_03.wav</ShortName>
+							<Path>SFX\Boss_Neutral_RockBeam_End_03_32513D82.wem</Path>
+						</File>
+						<File Id="946692638" Language="SFX">
+							<ShortName>Boss_Neutral_RockBeam_End_01.wav</ShortName>
+							<Path>SFX\Boss_Neutral_RockBeam_End_01_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1309462310" Name="Boss_Neutral_RockBeam_Start" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockBeam_Start" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="6106138" Language="SFX">
+							<ShortName>Boss_Neutral_RockBeam_Start_03.wav</ShortName>
+							<Path>SFX\Boss_Neutral_RockBeam_Start_03_32513D82.wem</Path>
+						</File>
+						<File Id="199005510" Language="SFX">
+							<ShortName>Boss_Neutral_RockBeam_LP.wav</ShortName>
+							<Path>SFX\Boss_Neutral_RockBeam_LP_F2BF74AC.wem</Path>
+						</File>
+						<File Id="332630146" Language="SFX">
+							<ShortName>Boss_Neutral_RockBeam_Start_01.wav</ShortName>
+							<Path>SFX\Boss_Neutral_RockBeam_Start_01_32513D82.wem</Path>
+						</File>
+						<File Id="504403960" Language="SFX">
+							<ShortName>Boss_Neutral_RockBeam_Start_04.wav</ShortName>
+							<Path>SFX\Boss_Neutral_RockBeam_Start_04_32513D82.wem</Path>
+						</File>
+						<File Id="769670159" Language="SFX">
+							<ShortName>Boss_Neutral_RockBeam_Start_02.wav</ShortName>
+							<Path>SFX\Boss_Neutral_RockBeam_Start_02_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2318093787" Name="Boss_Neutral_RockSpikes" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockSpikes" DurationType="OneShot" DurationMin="1.618389" DurationMax="1.914415">
 					<IncludedMemoryFiles>
 						<File Id="33126280" Language="SFX">
@@ -1116,7 +1264,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1642963821" Name="Boss_Stun" ObjectPath="\Events\SD\Boss\Common\Boss_Stun" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1642963821" Name="Boss_Stun" ObjectPath="\Events\SD\Boss\Common\Boss_Stun" DurationType="OneShot" DurationMin="0.764028" DurationMax="0.833178">
+					<IncludedMemoryFiles>
+						<File Id="596982696" Language="SFX">
+							<ShortName>Boss_Common_Stun.wav</ShortName>
+							<Path>SFX\Boss_Common_Stun_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="937314502" Name="Boss_Winter_BulletHell_Cast" ObjectPath="\Events\SD\Boss\Winter\Boss_Winter_BulletHell_Cast" DurationType="OneShot" DurationMin="1.516604" DurationMax="1.633542">
 					<IncludedMemoryFiles>
 						<File Id="436028695" Language="SFX">
@@ -1464,9 +1619,17 @@
 						</SwitchContainer>
 					</SwitchContainers>
 					<ActionSetState>
-						<ActionSetStateEntry Id="252776334" Name="Boss_Neutral" ObjectPath="\States\SD\ST_Music\Boss_Neutral"/>
+						<ActionSetStateEntry Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration"/>
 						<ActionSetStateEntry Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame"/>
 					</ActionSetState>
+				</Event>
+				<Event Id="2007880638" Name="Intro_Pumpkid_Footsteps" ObjectPath="\Events\SD\Other\Intro_Pumpkid_Footsteps" DurationType="OneShot" DurationMin="4.069458" DurationMax="4.069458">
+					<IncludedMemoryFiles>
+						<File Id="898660779" Language="SFX">
+							<ShortName>Intro_Pumpkid_Footsteps.wav</ShortName>
+							<Path>SFX\Intro_Pumpkid_Footsteps_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\SD\Music\Play_Music" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -2534,6 +2697,10 @@
 				<File Id="909766544"/>
 			</ReferencedStreamedFiles>
 			<IncludedMemoryFiles>
+				<File Id="6106138" Language="SFX">
+					<ShortName>Boss_Neutral_RockBeam_Start_03.wav</ShortName>
+					<Path>SFX\Boss_Neutral_RockBeam_Start_03_32513D82.wem</Path>
+				</File>
 				<File Id="14654696" Language="SFX">
 					<ShortName>Boss_VO_IceHell_03.wav</ShortName>
 					<Path>SFX\Boss_VO_IceHell_03_32513D82.wem</Path>
@@ -2662,6 +2829,10 @@
 					<ShortName>Boss_VO_IceHell_02.wav</ShortName>
 					<Path>SFX\Boss_VO_IceHell_02_32513D82.wem</Path>
 				</File>
+				<File Id="83430892" Language="SFX">
+					<ShortName>Boss_VO_RockBeam_03.wav</ShortName>
+					<Path>SFX\Boss_VO_RockBeam_03_32513D82.wem</Path>
+				</File>
 				<File Id="84113697" Language="SFX">
 					<ShortName>Pumpkid_Sword_Charging_Start_04.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Charging_Start_04_32513D82.wem</Path>
@@ -2730,6 +2901,10 @@
 					<ShortName>Pumpkid_Sword_Slash_05.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Slash_05_32513D82.wem</Path>
 				</File>
+				<File Id="133093267" Language="SFX">
+					<ShortName>Boss_Neutral_RockBeam_End_02.wav</ShortName>
+					<Path>SFX\Boss_Neutral_RockBeam_End_02_32513D82.wem</Path>
+				</File>
 				<File Id="136462715" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Slash_01_32513D82.wem</Path>
@@ -2741,6 +2916,10 @@
 				<File Id="137589296" Language="SFX">
 					<ShortName>Boss_Winter_IceHell_Scatter_Charge_05.wav</ShortName>
 					<Path>SFX\Boss_Winter_IceHell_Scatter_Charge_05_32513D82.wem</Path>
+				</File>
+				<File Id="138315815" Language="SFX">
+					<ShortName>Pumpkid_Music_Boss_Fall_LP.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Boss_Fall_LP_F2BF74AC.wem</Path>
 				</File>
 				<File Id="143946023" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Charging_Start_05.wav</ShortName>
@@ -2802,6 +2981,10 @@
 					<ShortName>Boss_Winter_IceHell_Scatter_Throw_03.wav</ShortName>
 					<Path>SFX\Boss_Winter_IceHell_Scatter_Throw_03_32513D82.wem</Path>
 				</File>
+				<File Id="179338101" Language="SFX">
+					<ShortName>Boss_VO_RockBeam_01.wav</ShortName>
+					<Path>SFX\Boss_VO_RockBeam_01_32513D82.wem</Path>
+				</File>
 				<File Id="181650424" Language="SFX">
 					<ShortName>Boss_Fall_Tree_Summon_02.wav</ShortName>
 					<Path>SFX\Boss_Fall_Tree_Summon_02_32513D82.wem</Path>
@@ -2809,6 +2992,10 @@
 				<File Id="183092715" Language="SFX">
 					<ShortName>Boss_Winter_Hit_Crossbow_03.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_Crossbow_03_32513D82.wem</Path>
+				</File>
+				<File Id="184402970" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Charge_02.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Charge_02_32513D82.wem</Path>
 				</File>
 				<File Id="187020238" Language="SFX">
 					<ShortName>Boss_Fall_LeafBeam_End_01.wav</ShortName>
@@ -2837,6 +3024,10 @@
 				<File Id="198574449" Language="SFX">
 					<ShortName>UI_Transition_ToVisualNovel_02.wav</ShortName>
 					<Path>SFX\UI_Transition_ToVisualNovel_02_32513D82.wem</Path>
+				</File>
+				<File Id="199005510" Language="SFX">
+					<ShortName>Boss_Neutral_RockBeam_LP.wav</ShortName>
+					<Path>SFX\Boss_Neutral_RockBeam_LP_F2BF74AC.wem</Path>
 				</File>
 				<File Id="199717414" Language="SFX">
 					<ShortName>AMB_RFX_Thunder_Far_04.wav</ShortName>
@@ -2910,6 +3101,10 @@
 					<ShortName>Boss_Winter_IceHell_Scatter_Charge_06.wav</ShortName>
 					<Path>SFX\Boss_Winter_IceHell_Scatter_Charge_06_32513D82.wem</Path>
 				</File>
+				<File Id="255063227" Language="SFX">
+					<ShortName>Pumpkid_Music_Boss_Neutral_Intro.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Boss_Neutral_Intro_F2BF74AC.wem</Path>
+				</File>
 				<File Id="257330112" Language="SFX">
 					<ShortName>Boss_VO_Death.wav</ShortName>
 					<Path>SFX\Boss_VO_Death_32513D82.wem</Path>
@@ -2925,6 +3120,14 @@
 				<File Id="261560676" Language="SFX">
 					<ShortName>Boss_VO_RockSpike_02.wav</ShortName>
 					<Path>SFX\Boss_VO_RockSpike_02_32513D82.wem</Path>
+				</File>
+				<File Id="262042519" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_Start_01.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_01_32513D82.wem</Path>
+				</File>
+				<File Id="264613149" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_Start_03.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_03_32513D82.wem</Path>
 				</File>
 				<File Id="266408248" Language="SFX">
 					<ShortName>Boss_Fall_Hit_ChargedCrossbow_02.wav</ShortName>
@@ -2958,6 +3161,10 @@
 					<ShortName>Boss_Fall_LeafBoomerang_Back_04.wav</ShortName>
 					<Path>SFX\Boss_Fall_LeafBoomerang_Back_04_32513D82.wem</Path>
 				</File>
+				<File Id="280619426" Language="SFX">
+					<ShortName>Boss_Neutral_RockBeam_End_03.wav</ShortName>
+					<Path>SFX\Boss_Neutral_RockBeam_End_03_32513D82.wem</Path>
+				</File>
 				<File Id="282029165" Language="SFX">
 					<ShortName>Boss_VO_Hit_04.wav</ShortName>
 					<Path>SFX\Boss_VO_Hit_04_32513D82.wem</Path>
@@ -2981,6 +3188,10 @@
 				<File Id="302685466" Language="SFX">
 					<ShortName>UI_VisualNovel_Book_Open_01.wav</ShortName>
 					<Path>SFX\UI_VisualNovel_Book_Open_01_32513D82.wem</Path>
+				</File>
+				<File Id="308001205" Language="SFX">
+					<ShortName>Boss_VO_NeutralBulletHell_02.wav</ShortName>
+					<Path>SFX\Boss_VO_NeutralBulletHell_02_32513D82.wem</Path>
 				</File>
 				<File Id="308880992" Language="SFX">
 					<ShortName>Boss_Fall_Hit_Sword_05.wav</ShortName>
@@ -3034,6 +3245,10 @@
 					<ShortName>Pumpkid_Footsteps_Leaf_08.wav</ShortName>
 					<Path>SFX\Pumpkid_Footsteps_Leaf_08_32513D82.wem</Path>
 				</File>
+				<File Id="332630146" Language="SFX">
+					<ShortName>Boss_Neutral_RockBeam_Start_01.wav</ShortName>
+					<Path>SFX\Boss_Neutral_RockBeam_Start_01_32513D82.wem</Path>
+				</File>
 				<File Id="335095342" Language="SFX">
 					<ShortName>UI_VisualNovel_Book_Close_04.wav</ShortName>
 					<Path>SFX\UI_VisualNovel_Book_Close_04_32513D82.wem</Path>
@@ -3041,6 +3256,10 @@
 				<File Id="335525681" Language="SFX">
 					<ShortName>Boss_Winter_BulletHell_Throw_Start_05.wav</ShortName>
 					<Path>SFX\Boss_Winter_BulletHell_Throw_Start_05_32513D82.wem</Path>
+				</File>
+				<File Id="335940997" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Charge_06.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Charge_06_32513D82.wem</Path>
 				</File>
 				<File Id="340463971" Language="SFX">
 					<ShortName>UI_VisualNovel_Book_Close_05.wav</ShortName>
@@ -3057,6 +3276,14 @@
 				<File Id="351641755" Language="SFX">
 					<ShortName>Boss_Winter_BulletHell_Throw_End_01.wav</ShortName>
 					<Path>SFX\Boss_Winter_BulletHell_Throw_End_01_32513D82.wem</Path>
+				</File>
+				<File Id="355570202" Language="SFX">
+					<ShortName>Boss_VO_NeutralBulletHell_03.wav</ShortName>
+					<Path>SFX\Boss_VO_NeutralBulletHell_03_32513D82.wem</Path>
+				</File>
+				<File Id="357014102" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Charge_03.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Charge_03_32513D82.wem</Path>
 				</File>
 				<File Id="358044945" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_02.wav</ShortName>
@@ -3202,6 +3429,10 @@
 					<ShortName>UI_VisualNovel_Norna_Eats_02.wav</ShortName>
 					<Path>SFX\UI_VisualNovel_Norna_Eats_02_32513D82.wem</Path>
 				</File>
+				<File Id="444308902" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_End_02.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_End_02_32513D82.wem</Path>
+				</File>
 				<File Id="450050272" Language="SFX">
 					<ShortName>Boss_VO_IceHell_01.wav</ShortName>
 					<Path>SFX\Boss_VO_IceHell_01_32513D82.wem</Path>
@@ -3250,6 +3481,10 @@
 					<ShortName>Boss_Fall_LeafShield_LP.wav</ShortName>
 					<Path>SFX\Boss_Fall_LeafShield_LP_F2BF74AC.wem</Path>
 				</File>
+				<File Id="486118687" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_End_01.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_End_01_32513D82.wem</Path>
+				</File>
 				<File Id="488728320" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_ThunderShot_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_ThunderShot_01_32513D82.wem</Path>
@@ -3294,6 +3529,10 @@
 					<ShortName>Boss_Winter_BulletHell_Throw_Start_02.wav</ShortName>
 					<Path>SFX\Boss_Winter_BulletHell_Throw_Start_02_32513D82.wem</Path>
 				</File>
+				<File Id="504403960" Language="SFX">
+					<ShortName>Boss_Neutral_RockBeam_Start_04.wav</ShortName>
+					<Path>SFX\Boss_Neutral_RockBeam_Start_04_32513D82.wem</Path>
+				</File>
 				<File Id="511088004" Language="SFX">
 					<ShortName>UI_Transition_ToVisualNovel_03.wav</ShortName>
 					<Path>SFX\UI_Transition_ToVisualNovel_03_32513D82.wem</Path>
@@ -3301,6 +3540,10 @@
 				<File Id="514922674" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_ChargedSword_04.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_ChargedSword_04_32513D82.wem</Path>
+				</File>
+				<File Id="524598232" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Charge_05.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Charge_05_32513D82.wem</Path>
 				</File>
 				<File Id="525368919" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Overcharge_Start_04.wav</ShortName>
@@ -3361,6 +3604,10 @@
 				<File Id="555168088" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Sword_04.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Sword_04_32513D82.wem</Path>
+				</File>
+				<File Id="557287027" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_Start_04.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_04_32513D82.wem</Path>
 				</File>
 				<File Id="559235580" Language="SFX">
 					<ShortName>Boss_FormChange_Neutral.wav</ShortName>
@@ -3438,6 +3685,10 @@
 					<ShortName>Pumpkid_Crossbow_Overcharge_End_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Overcharge_End_03_32513D82.wem</Path>
 				</File>
+				<File Id="592907571" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Charge_04.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Charge_04_32513D82.wem</Path>
+				</File>
 				<File Id="594801048" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_ChargedSword_03.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_ChargedSword_03_32513D82.wem</Path>
@@ -3454,9 +3705,17 @@
 					<ShortName>Boss_Winter_Hit_Sword_02.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_Sword_02_32513D82.wem</Path>
 				</File>
+				<File Id="596982696" Language="SFX">
+					<ShortName>Boss_Common_Stun.wav</ShortName>
+					<Path>SFX\Boss_Common_Stun_32513D82.wem</Path>
+				</File>
 				<File Id="597288339" Language="SFX">
 					<ShortName>AMB_RFX_Thunder_Far_01.wav</ShortName>
 					<Path>SFX\AMB_RFX_Thunder_Far_01_32513D82.wem</Path>
+				</File>
+				<File Id="600106881" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_Start_02.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_02_32513D82.wem</Path>
 				</File>
 				<File Id="605363948" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_ThunderShot_03.wav</ShortName>
@@ -3566,6 +3825,10 @@
 					<ShortName>Boss_Winter_IceHell_Scatter_Charge_02.wav</ShortName>
 					<Path>SFX\Boss_Winter_IceHell_Scatter_Charge_02_32513D82.wem</Path>
 				</File>
+				<File Id="677712772" Language="SFX">
+					<ShortName>Boss_VO_NeutralBulletHell_01.wav</ShortName>
+					<Path>SFX\Boss_VO_NeutralBulletHell_01_32513D82.wem</Path>
+				</File>
 				<File Id="678975763" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_ThunderShot_02.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_ThunderShot_02_32513D82.wem</Path>
@@ -3589,6 +3852,10 @@
 				<File Id="690497515" Language="SFX">
 					<ShortName>AMB_RFX_Thunder_Far_07.wav</ShortName>
 					<Path>SFX\AMB_RFX_Thunder_Far_07_32513D82.wem</Path>
+				</File>
+				<File Id="700072660" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_LP.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_LP_F2BF74AC.wem</Path>
 				</File>
 				<File Id="701612605" Language="SFX">
 					<ShortName>Boss_Winter_IceHell_Focus_Throw_03.wav</ShortName>
@@ -3629,6 +3896,10 @@
 				<File Id="734100683" Language="SFX">
 					<ShortName>Boss_Winter_BulletHell_Throw_End_04.wav</ShortName>
 					<Path>SFX\Boss_Winter_BulletHell_Throw_End_04_32513D82.wem</Path>
+				</File>
+				<File Id="736301436" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_End_03.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_End_03_32513D82.wem</Path>
 				</File>
 				<File Id="736364457" Language="SFX">
 					<ShortName>Boss_Winter_Hit_ChargedSword_02.wav</ShortName>
@@ -3690,6 +3961,10 @@
 					<ShortName>Boss_Fall_LeafBoomerang_Go_LP.wav</ShortName>
 					<Path>SFX\Boss_Fall_LeafBoomerang_Go_LP_F2BF74AC.wem</Path>
 				</File>
+				<File Id="769670159" Language="SFX">
+					<ShortName>Boss_Neutral_RockBeam_Start_02.wav</ShortName>
+					<Path>SFX\Boss_Neutral_RockBeam_Start_02_32513D82.wem</Path>
+				</File>
 				<File Id="770007008" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_Shot_01.wav</ShortName>
 					<Path>SFX\Pumpkid_Crossbow_Shot_01_32513D82.wem</Path>
@@ -3718,6 +3993,10 @@
 					<ShortName>Boss_Fall_Hit_ChargedSword_03.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_ChargedSword_03_32513D82.wem</Path>
 				</File>
+				<File Id="789686974" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_End_04.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_End_04_32513D82.wem</Path>
+				</File>
 				<File Id="795142198" Language="SFX">
 					<ShortName>Boss_VO_IceSpike_02.wav</ShortName>
 					<Path>SFX\Boss_VO_IceSpike_02_32513D82.wem</Path>
@@ -3729,6 +4008,10 @@
 				<File Id="800218328" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_04.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Slash_04_32513D82.wem</Path>
+				</File>
+				<File Id="801832429" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_End_05.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_End_05_32513D82.wem</Path>
 				</File>
 				<File Id="803432950" Language="SFX">
 					<ShortName>Pumpkid_Footsteps_Dirt_10.wav</ShortName>
@@ -3798,6 +4081,10 @@
 					<ShortName>Boss_Winter_Hit_ChargedCrossbow_02.wav</ShortName>
 					<Path>SFX\Boss_Winter_Hit_ChargedCrossbow_02_32513D82.wem</Path>
 				</File>
+				<File Id="874425250" Language="SFX">
+					<ShortName>Pumpkid_Music_Boss_Neutral_LP.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Boss_Neutral_LP_F2BF74AC.wem</Path>
+				</File>
 				<File Id="875541440" Language="SFX">
 					<ShortName>Boss_Fall_Hit_Sword_04.wav</ShortName>
 					<Path>SFX\Boss_Fall_Hit_Sword_04_32513D82.wem</Path>
@@ -3817,6 +4104,10 @@
 				<File Id="897695796" Language="SFX">
 					<ShortName>Boss_Neutral_Hit_Crossbow_03.wav</ShortName>
 					<Path>SFX\Boss_Neutral_Hit_Crossbow_03_32513D82.wem</Path>
+				</File>
+				<File Id="898660779" Language="SFX">
+					<ShortName>Intro_Pumpkid_Footsteps.wav</ShortName>
+					<Path>SFX\Intro_Pumpkid_Footsteps_32513D82.wem</Path>
 				</File>
 				<File Id="901198388" Language="SFX">
 					<ShortName>Boss_Fall_FallDash_Dash_02.wav</ShortName>
@@ -3910,6 +4201,10 @@
 					<ShortName>UI_VisualNovel_Book_TurnPage_01.wav</ShortName>
 					<Path>SFX\UI_VisualNovel_Book_TurnPage_01_32513D82.wem</Path>
 				</File>
+				<File Id="946692638" Language="SFX">
+					<ShortName>Boss_Neutral_RockBeam_End_01.wav</ShortName>
+					<Path>SFX\Boss_Neutral_RockBeam_End_01_32513D82.wem</Path>
+				</File>
 				<File Id="947023092" Language="SFX">
 					<ShortName>Boss_Winter_IceHell_Scatter_Charge_03.wav</ShortName>
 					<Path>SFX\Boss_Winter_IceHell_Scatter_Charge_03_32513D82.wem</Path>
@@ -3917,6 +4212,10 @@
 				<File Id="950553497" Language="SFX">
 					<ShortName>Pumpkid_Sword_NotFullyChargedSlash_05.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_NotFullyChargedSlash_05_32513D82.wem</Path>
+				</File>
+				<File Id="951361729" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Throw_Start_05.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Throw_Start_05_32513D82.wem</Path>
 				</File>
 				<File Id="952496903" Language="SFX">
 					<ShortName>Pumpkid_Crossbow_ChargedShot_03.wav</ShortName>
@@ -3954,9 +4253,17 @@
 					<ShortName>Boss_Winter_IceSpikes_01.wav</ShortName>
 					<Path>SFX\Boss_Winter_IceSpikes_01_32513D82.wem</Path>
 				</File>
+				<File Id="979463666" Language="SFX">
+					<ShortName>Pumpkid_Music_Boss_Winter_LP.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Boss_Winter_LP_F2BF74AC.wem</Path>
+				</File>
 				<File Id="982279997" Language="SFX">
 					<ShortName>Boss_Winter_BulletHell_Charge_05.wav</ShortName>
 					<Path>SFX\Boss_Winter_BulletHell_Charge_05_32513D82.wem</Path>
+				</File>
+				<File Id="982527385" Language="SFX">
+					<ShortName>Boss_VO_RockBeam_02.wav</ShortName>
+					<Path>SFX\Boss_VO_RockBeam_02_32513D82.wem</Path>
 				</File>
 				<File Id="984718196" Language="SFX">
 					<ShortName>Boss_VO_IceSpike_01.wav</ShortName>
@@ -3977,6 +4284,10 @@
 				<File Id="992775264" Language="SFX">
 					<ShortName>Boss_Neutral_RockSpikes_05.wav</ShortName>
 					<Path>SFX\Boss_Neutral_RockSpikes_05_32513D82.wem</Path>
+				</File>
+				<File Id="994598152" Language="SFX">
+					<ShortName>Boss_Neutral_BulletHell_Charge_01.wav</ShortName>
+					<Path>SFX\Boss_Neutral_BulletHell_Charge_01_32513D82.wem</Path>
 				</File>
 				<File Id="999594410" Language="SFX">
 					<ShortName>UI_VisualNovel_Book_TurnPage_07.wav</ShortName>
@@ -4041,6 +4352,10 @@
 				<File Id="1032883723" Language="SFX">
 					<ShortName>Pumpkid_Sword_Slash_03.wav</ShortName>
 					<Path>SFX\Pumpkid_Sword_Slash_03_32513D82.wem</Path>
+				</File>
+				<File Id="1048384188" Language="SFX">
+					<ShortName>Pumpkid_Music_Narration_LP.wav</ShortName>
+					<Path>SFX\Pumpkid_Music_Narration_LP_F2BF74AC.wem</Path>
 				</File>
 				<File Id="1049235258" Language="SFX">
 					<ShortName>Pumpkid_Footsteps_Ice_10.wav</ShortName>
@@ -4122,6 +4437,13 @@
 				</StateGroup>
 				<StateGroup Id="1800837750" Name="Boss_Fall" ObjectPath="\States\SD\ST_Music\Boss_Fall" GUID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}">
 					<States/>
+				</StateGroup>
+				<StateGroup Id="1923804120" Name="ST_GameMode" ObjectPath="\States\SD\ST_GameMode" GUID="{A241C4B5-001A-4B28-8F11-19A8503D6A9D}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\SD\ST_GameMode\None" GUID="{7760B096-6CF4-4C28-81AB-7C165E71B6F1}"/>
+						<State Id="2607556080" Name="Menu" ObjectPath="\States\SD\ST_GameMode\Menu" GUID="{17E591A0-2A02-4487-833D-2908B70064BE}"/>
+						<State Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame" GUID="{FD3BC984-3DF0-4DEA-9C83-38489F9B08DE}"/>
+					</States>
 				</StateGroup>
 				<StateGroup Id="2160573204" Name="Skipping" ObjectPath="\States\SD\ST_Skip\Skipping" GUID="{2D8A46B6-2538-4E20-840E-A792944E5265}">
 					<States/>

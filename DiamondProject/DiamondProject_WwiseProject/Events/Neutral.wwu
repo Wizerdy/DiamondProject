@@ -51,13 +51,117 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Boss_Neutral_RockBeam_Cast" ID="{4D9CB2A4-B6B2-4500-AC57-8FCFF339A9F5}"/>
-				<Event Name="Boss_Neutral_RockBeam_Start" ID="{519C942B-DA14-404B-9D97-6500FF0F0FBB}"/>
-				<Event Name="Boss_Neutral_RockBeam_End" ID="{5EB2D133-01C2-4013-9654-898E317D88C6}"/>
-				<Event Name="Boss_Neutral_BulletHell_Cast" ID="{18894BFB-1F7A-4606-BF26-19AB74E1AFB3}"/>
-				<Event Name="Boss_Neutral_BulletHell_Charge" ID="{3BFBEEF9-1080-49AD-BBBD-2E287135D887}"/>
-				<Event Name="Boss_Neutral_BulletHell_Throw_Start" ID="{1EDAB7AE-8F6C-4433-ADC4-67E755B1C92B}"/>
-				<Event Name="Boss_Neutral_BulletHell_Throw_Stop" ID="{49282D8C-FB5C-4BC1-848A-375C3725A541}"/>
+				<Event Name="Boss_Neutral_RockBeam_Cast" ID="{4D9CB2A4-B6B2-4500-AC57-8FCFF339A9F5}">
+					<ChildrenList>
+						<Action Name="" ID="{D229C5EF-05A5-4219-B56F-96E4A2EC78A4}" ShortID="934551967">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_RockBeam_Cast" ID="{89519532-EBD3-472F-909F-8E8AC966C8E1}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_RockBeam_Start" ID="{519C942B-DA14-404B-9D97-6500FF0F0FBB}">
+					<ChildrenList>
+						<Action Name="" ID="{DA3E981C-DABC-4314-8BAB-CAAC8BC94308}" ShortID="531310639">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_RockBeam_Start" ID="{DAA94EDD-6AB9-48DA-9843-25B4BE1E053E}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FA3A947D-9BA2-4861-BFA5-8267E226829C}" ShortID="230573539">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_RockBeam_LP" ID="{AD859117-DB86-46A3-83EE-67C4B234D1C9}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_RockBeam_End" ID="{5EB2D133-01C2-4013-9654-898E317D88C6}">
+					<ChildrenList>
+						<Action Name="" ID="{305FC6ED-E518-48CF-8620-87D6307E0CCE}" ShortID="157596913">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_RockBeam_End" ID="{BB2EFDA3-7971-4C74-9271-65E5A2BA9CB8}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8210FAB5-3C08-4866-BE2C-077501C491D1}" ShortID="1046893286">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_RockBeam_LP" ID="{AD859117-DB86-46A3-83EE-67C4B234D1C9}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_BulletHell_Cast" ID="{18894BFB-1F7A-4606-BF26-19AB74E1AFB3}">
+					<ChildrenList>
+						<Action Name="" ID="{20B1B4D6-26EE-4084-8FE8-62B89E3952D7}" ShortID="269561911">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_BulletHell_Cast" ID="{33CBBD2B-F706-4D5D-9210-AD3777DC1869}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_BulletHell_Charge" ID="{3BFBEEF9-1080-49AD-BBBD-2E287135D887}">
+					<ChildrenList>
+						<Action Name="" ID="{52C677FC-3334-46EA-9974-EDFFE1E17C64}" ShortID="673117839">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_BulletHell_Charge" ID="{0AB55743-010A-4112-B691-DB2CC9F8FD20}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_BulletHell_Throw_Start" ID="{1EDAB7AE-8F6C-4433-ADC4-67E755B1C92B}">
+					<ChildrenList>
+						<Action Name="" ID="{4C5413E8-3231-48E3-8BC7-8721E7036C9F}" ShortID="643537039">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_BulletHell_Throw_Start" ID="{50984432-4E1F-4932-B721-E061437A04B5}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{14B43E6E-4B63-4489-8B18-0E56521AA3AD}" ShortID="109901693">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_BulletHell_LP" ID="{8AAC7CB2-2E9E-424C-880D-17713D891ACB}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Neutral_BulletHell_Throw_Stop" ID="{49282D8C-FB5C-4BC1-848A-375C3725A541}">
+					<ChildrenList>
+						<Action Name="" ID="{D0664C8C-D82C-4D60-818D-842016F16A7C}" ShortID="698209330">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_BulletHell_Throw_End" ID="{87B2E05B-C018-4A26-B481-52A1AE3B0479}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9EFC4040-078C-44A4-BC19-C0ABEED95EAE}" ShortID="255667674">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral_BulletHell_LP" ID="{8AAC7CB2-2E9E-424C-880D-17713D891ACB}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
