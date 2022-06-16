@@ -49,7 +49,7 @@ public class HealthOverShapes : MonoBehaviour {
     #endregion
 
     void Start() {
-        _baseHealth.gameObject.SetActive(true);
+        //_baseHealth.gameObject.SetActive(true);
         foreach (KeyValuePair<Shape, HUDHealth> hud in _shapeHealth) {
             hud.Value.gameObject.SetActive(false);
             hud.Value.Attach();

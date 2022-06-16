@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 
 public enum hintType {
-    FallBoss, FallAttack, WinterBoss, WinterAttack
+    FallBoss, FallAttack, WinterBoss, WinterAttack, FallName, FallAttackName, WinterName, WinterAttackName
 }
 public class DiaryInformation : MonoBehaviour
 {
@@ -60,6 +60,58 @@ public class DiaryInformation : MonoBehaviour
                             informationText = posterity.winterAttackHintList[i].unlockedText;
                         else
                             informationText = posterity.winterAttackHintList[i].defaultText;
+
+                        informationTxtComponent.text = informationText;
+                        return;
+                    }
+                }
+                break;
+            case hintType.FallName:
+                for (int i = 0; i < posterity.fallBossHintList.Count; i++) {
+                    if (posterity.fallBossHintList[i].id == entryId) {
+                        if (posterity.fallBossHintList[i].isTrigger)
+                            informationText = posterity.fallBossHintList[i].unlockedName;
+                        else
+                            informationText = posterity.fallBossHintList[i].defaultName;
+
+                        informationTxtComponent.text = informationText;
+                        return;
+                    }
+                }
+                break;
+            case hintType.FallAttackName:
+                for (int i = 0; i < posterity.fallAttackHintList.Count; i++) {
+                    if (posterity.fallAttackHintList[i].id == entryId) {
+                        if (posterity.fallAttackHintList[i].isTrigger)
+                            informationText = posterity.fallAttackHintList[i].unlockedName;
+                        else
+                            informationText = posterity.fallAttackHintList[i].defaultName;
+
+                        informationTxtComponent.text = informationText;
+                        return;
+                    }
+                }
+                break;
+            case hintType.WinterName:
+                for (int i = 0; i < posterity.winterBossHintList.Count; i++) {
+                    if (posterity.winterBossHintList[i].id == entryId) {
+                        if (posterity.winterBossHintList[i].isTrigger)
+                            informationText = posterity.winterBossHintList[i].unlockedName;
+                        else
+                            informationText = posterity.winterBossHintList[i].defaultName;
+
+                        informationTxtComponent.text = informationText;
+                        return;
+                    }
+                }
+                break;
+            case hintType.WinterAttackName:
+                for (int i = 0; i < posterity.winterAttackHintList.Count; i++) {
+                    if (posterity.winterAttackHintList[i].id == entryId) {
+                        if (posterity.winterAttackHintList[i].isTrigger)
+                            informationText = posterity.winterAttackHintList[i].unlockedName;
+                        else
+                            informationText = posterity.winterAttackHintList[i].defaultName;
 
                         informationTxtComponent.text = informationText;
                         return;

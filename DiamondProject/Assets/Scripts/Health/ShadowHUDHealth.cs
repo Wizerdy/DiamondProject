@@ -20,6 +20,10 @@ public class ShadowHUDHealth : MonoBehaviour {
         _hudHealth.OnHealthChange += _ShadowHealthBar;
     }
 
+    private void OnEnable() {
+        SetShadowHealthBar(0f);
+    }
+
     private void OnDestroy() {
         _hudHealth.OnHealthChange -= _ShadowHealthBar;
     }
@@ -49,7 +53,7 @@ public class ShadowHUDHealth : MonoBehaviour {
     }
 
     IEnumerator ChangeHealthOverTime(Slider slider, float target, float time) {
-        if (time <= 0f) { slider.value = target; }
+        if (time <= 0f) { slider.value = target; yield break; }
         float timePassed = 0f;
         float startPercentage = slider.value;
         while (timePassed < time) {

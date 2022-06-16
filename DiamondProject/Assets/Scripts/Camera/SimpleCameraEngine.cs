@@ -16,10 +16,9 @@ public class SimpleCameraEngine : MonoBehaviour {
 
     private void Awake() {
         _camera = GetComponent<Camera>();
-    }
-
-    void Start() {
-        Adopt(_parent, 0f);
+        if (_parent != null) {
+            Adopt(_parent, 0f);
+        }
     }
 
     public void Adopt(Camera camera) {

@@ -540,25 +540,25 @@ namespace ToolsBoxEngine {
             return false;
         }
 
-        public static bool Compare(this Comparison comparison, float number1, float number2) {
+        public static bool Compare(this Comparison comparison, float number, float source) {
             switch (comparison) {
                 case Comparison.EQUAL:
-                    if (number1 == number2) { return true; }
+                    if (number == source) { return true; }
                     break;
                 case Comparison.DIFFERENT:
-                    if (number1 != number2) { return true; }
+                    if (number != source) { return true; }
                     break;
                 case Comparison.LESS:
-                    if (number1 < number2) { return true; }
+                    if (number < source) { return true; }
                     break;
                 case Comparison.LESS_EQUAL:
-                    if (number1 <= number2) { return true; }
+                    if (number <= source) { return true; }
                     break;
                 case Comparison.GREATER:
-                    if (number1 > number2) { return true; }
+                    if (number > source) { return true; }
                     break;
                 case Comparison.GREATER_EQUAL:
-                    if (number1 >= number2) { return true; }
+                    if (number >= source) { return true; }
                     break;
                 default:
                     break;
@@ -735,6 +735,21 @@ namespace ToolsBoxEngine {
         public static IEnumerator Delay(BasicDelegate function, float time) {
             if (time <= 0f) { function(); yield break; }
             yield return new WaitForSeconds(time);
+            function();
+        }
+
+        public static IEnumerator Delay<T1, T2>(BasicDelegate<T1, T2> function, T1 arg1, T2 arg2, Coroutine routine) {
+            yield return routine;
+            function(arg1, arg2);
+        }
+
+        public static IEnumerator Delay<T>(BasicDelegate<T> function, T arg, Coroutine routine) {
+            yield return routine;
+            function(arg);
+        }
+
+        public static IEnumerator Delay(BasicDelegate function, Coroutine routine) {
+            yield return routine;
             function();
         }
 

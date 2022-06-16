@@ -11,6 +11,7 @@ public class BossShapeSystem : MonoBehaviour {
     [SerializeField] UnityEvent<BossShape> _onExitShape;
 
     public BossShape Shape => _currentShape;
+    public bool HasShape => _currentShape != null;
 
     #region Events
 
@@ -20,7 +21,7 @@ public class BossShapeSystem : MonoBehaviour {
     #endregion
 
     void Start() {
-        ChangeShape(_initialForm);
+        //ChangeShape(_initialForm);
     }
 
     public void ChangeShape(BossShape shape) {

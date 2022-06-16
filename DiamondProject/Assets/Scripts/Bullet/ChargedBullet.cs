@@ -7,6 +7,7 @@ public class ChargedBullet : MonoBehaviour {
     [Header("Reference")]
     [SerializeField] Rigidbody2D _rigidbody = null;
     [SerializeField] DamageHealth _damageHealth = null;
+    [SerializeField] ElectricEntity _electricEntity = null;
 
     [Header("Values")]
 
@@ -110,5 +111,10 @@ public class ChargedBullet : MonoBehaviour {
             _rigidbody.gameObject.SetActive(false);
             Destroy(_rigidbody.gameObject);
         }
+    }
+
+    public void ThunderStruck() {
+        if (_electricEntity == null) { return; }
+        _electricEntity.enabled = true;
     }
 }
