@@ -92,6 +92,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="AMB_MainMenu_LP" ID="{0C6DB562-3B4C-419D-97CA-BC54449FB65F}">
+					<ChildrenList>
+						<Action Name="" ID="{1E89933F-FD61-4FE3-BF81-73C51C6BDD9C}" ShortID="481662977">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_MainMenu_LP" ID="{CE139614-CA0A-4899-AAE9-71B84D70AE83}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
