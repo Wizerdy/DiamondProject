@@ -24,7 +24,6 @@ public class EntityMovement : MonoBehaviour {
         }
     }
 
-
     [SerializeField] Rigidbody2D _rb = null;
     [SerializeField] float _maxSpeed = 5f;
     [SerializeField] AmplitudeCurve _acceleration;
@@ -55,6 +54,8 @@ public class EntityMovement : MonoBehaviour {
     List<SpeedModifier> _slows = new List<SpeedModifier>();
     SpeedModifier _currentSlow = null;
 
+    SpeedModifier _moveToSlow = null;
+
     #region Properties
 
     public bool CanMove {
@@ -75,7 +76,7 @@ public class EntityMovement : MonoBehaviour {
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Start() {
+    private void Awake() {
         _turnAroundRadian = Mathf.Cos(_turnAroundAngle / 2f);
         if (_turnAroundAngle == 360f) { _turnAroundRadian = -10f; }
         _currentMaxSpeed = _maxSpeed;
@@ -120,6 +121,24 @@ public class EntityMovement : MonoBehaviour {
 
     public void Move(Vector2 direction) {
         _direction = direction;
+    }
+
+    public Coroutine MoveTo(Vector2 position, float speedFactor = 1f) {
+        return StartCoroutine(IMoveTo(position, speedFactor));
+    }
+
+    IEnumerator IMoveTo(Vector2 position, float speedFactor) {
+        _moveToSlow = Slow(speedFactor, 50f);
+        while (transform.Position2D() != position) {
+            Vector2 direction = (position - transform.Position2D());
+            if (direction.sqrMagnitude < 1f) {
+                Move(Vector2.zero);
+                break;
+            }
+            Move(direction.normalized);
+            yield return new WaitForEndOfFrame();
+        }
+        RemoveSlow(_moveToSlow);
     }
 
     private void StartAcceleration() {
