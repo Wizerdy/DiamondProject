@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
@@ -57,7 +57,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1564914208">
+		<SoundBank Id="3161908922" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -80,7 +80,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="1874777088">
+		<SoundBank Id="4056684167" Language="SFX" Hash="596912359">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -1562,6 +1562,50 @@
 							<ShortName>Pumpkid_Music_Boss_Neutral_Intro.wav</ShortName>
 							<Path>SFX\Pumpkid_Music_Boss_Neutral_Intro_F2BF74AC.wem</Path>
 						</File>
+						<File Id="840506363" Language="SFX">
+							<ShortName>AMB_MainMenu_LP.wav</ShortName>
+							<Path>SFX\AMB_MainMenu_LP_F2BF74AC.wem</Path>
+						</File>
+						<File Id="843824305" Language="SFX">
+							<ShortName>Silence.wav</ShortName>
+							<Path>SFX\Silence_F2BF74AC.wem</Path>
+						</File>
+						<File Id="874425250" Language="SFX">
+							<ShortName>Pumpkid_Music_Boss_Neutral_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Boss_Neutral_LP_F2BF74AC.wem</Path>
+						</File>
+						<File Id="979463666" Language="SFX">
+							<ShortName>Pumpkid_Music_Boss_Winter_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Boss_Winter_LP_F2BF74AC.wem</Path>
+						</File>
+						<File Id="1048384188" Language="SFX">
+							<ShortName>Pumpkid_Music_Narration_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Narration_LP_F2BF74AC.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame"/>
+						<ActionSetStateEntry Id="3041563226" Name="Silence" ObjectPath="\States\SD\ST_Music\Silence"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2007880638" Name="Intro_Pumpkid_Footsteps" ObjectPath="\Events\SD\Other\Intro_Pumpkid_Footsteps" DurationType="OneShot" DurationMin="4.069458" DurationMax="4.069458">
+					<IncludedMemoryFiles>
+						<File Id="898660779" Language="SFX">
+							<ShortName>Intro_Pumpkid_Footsteps.wav</ShortName>
+							<Path>SFX\Intro_Pumpkid_Footsteps_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\SD\Music\Play_Music" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="138315815" Language="SFX">
+							<ShortName>Pumpkid_Music_Boss_Fall_LP.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Boss_Fall_LP_F2BF74AC.wem</Path>
+						</File>
+						<File Id="255063227" Language="SFX">
+							<ShortName>Pumpkid_Music_Boss_Neutral_Intro.wav</ShortName>
+							<Path>SFX\Pumpkid_Music_Boss_Neutral_Intro_F2BF74AC.wem</Path>
+						</File>
 						<File Id="843824305" Language="SFX">
 							<ShortName>Silence.wav</ShortName>
 							<Path>SFX\Silence_F2BF74AC.wem</Path>
@@ -1607,46 +1651,6 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
-					<ActionSetState>
-						<ActionSetStateEntry Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration"/>
-						<ActionSetStateEntry Id="984691642" Name="Ingame" ObjectPath="\States\SD\ST_GameMode\Ingame"/>
-					</ActionSetState>
-				</Event>
-				<Event Id="2007880638" Name="Intro_Pumpkid_Footsteps" ObjectPath="\Events\SD\Other\Intro_Pumpkid_Footsteps" DurationType="OneShot" DurationMin="4.069458" DurationMax="4.069458">
-					<IncludedMemoryFiles>
-						<File Id="898660779" Language="SFX">
-							<ShortName>Intro_Pumpkid_Footsteps.wav</ShortName>
-							<Path>SFX\Intro_Pumpkid_Footsteps_32513D82.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\SD\Music\Play_Music" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="138315815" Language="SFX">
-							<ShortName>Pumpkid_Music_Boss_Fall_LP.wav</ShortName>
-							<Path>SFX\Pumpkid_Music_Boss_Fall_LP_F2BF74AC.wem</Path>
-						</File>
-						<File Id="255063227" Language="SFX">
-							<ShortName>Pumpkid_Music_Boss_Neutral_Intro.wav</ShortName>
-							<Path>SFX\Pumpkid_Music_Boss_Neutral_Intro_F2BF74AC.wem</Path>
-						</File>
-						<File Id="843824305" Language="SFX">
-							<ShortName>Silence.wav</ShortName>
-							<Path>SFX\Silence_F2BF74AC.wem</Path>
-						</File>
-						<File Id="874425250" Language="SFX">
-							<ShortName>Pumpkid_Music_Boss_Neutral_LP.wav</ShortName>
-							<Path>SFX\Pumpkid_Music_Boss_Neutral_LP_F2BF74AC.wem</Path>
-						</File>
-						<File Id="979463666" Language="SFX">
-							<ShortName>Pumpkid_Music_Boss_Winter_LP.wav</ShortName>
-							<Path>SFX\Pumpkid_Music_Boss_Winter_LP_F2BF74AC.wem</Path>
-						</File>
-						<File Id="1048384188" Language="SFX">
-							<ShortName>Pumpkid_Music_Narration_LP.wav</ShortName>
-							<Path>SFX\Pumpkid_Music_Narration_LP_F2BF74AC.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="601976890" Name="Pumpkid_Crossbow_Boomerang_Return" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Boomerang_Return" DurationType="OneShot" DurationMin="0.510742" DurationMax="0.573241">
 					<IncludedMemoryFiles>
@@ -2270,6 +2274,11 @@
 				<Event Id="3733622879" Name="Set_State_Winter" ObjectPath="\Events\SD\Music\Set_State_Winter" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
 					<ActionSetState>
 						<ActionSetStateEntry Id="859005722" Name="Boss_Winter" ObjectPath="\States\SD\ST_Music\Boss_Winter"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="711914504" Name="Start_Intro" ObjectPath="\Events\SD\AMB\Start_Intro" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<ActionSetState>
+						<ActionSetStateEntry Id="930427193" Name="Narration" ObjectPath="\States\SD\ST_Music\Narration"/>
 					</ActionSetState>
 				</Event>
 				<Event Id="582090995" Name="Tree_Hit" ObjectPath="\Events\SD\Other\Tree_Hit" DurationType="OneShot" DurationMin="0.303321" DurationMax="0.419385">

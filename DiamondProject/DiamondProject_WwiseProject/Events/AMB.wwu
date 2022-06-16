@@ -32,6 +32,17 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{1DF44E16-15B7-4A4A-8BB6-07F174800A92}" ShortID="215655096">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_MainMenu_LP" ID="{CE139614-CA0A-4899-AAE9-71B84D70AE83}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="AMB_VisualNovel" ID="{C75416CD-0ED1-40EF-ADBF-B4B8E035FE99}">
@@ -79,7 +90,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Narration" ID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+									<ObjectRef Name="Silence" ID="{77B7DB0D-E160-42A6-BE76-AE2C19030B87}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -87,6 +98,13 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Music" ID="{9CB63F6D-7A5D-4005-80DF-C1F0E6E43D6A}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{00FFE2C5-32E5-4FC1-8F93-8817B6D8019E}" ShortID="358294684">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_MainMenu_LP" ID="{CE139614-CA0A-4899-AAE9-71B84D70AE83}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -101,6 +119,20 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="AMB_MainMenu_LP" ID="{CE139614-CA0A-4899-AAE9-71B84D70AE83}" WorkUnitID="{9BA6F2E3-24A3-4239-B430-824F4CBD7485}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Start_Intro" ID="{0317554B-691C-44D4-BEE7-E1085A94FF7D}">
+					<ChildrenList>
+						<Action Name="" ID="{7012E243-168C-4EF3-823A-385EDB6A9DAC}" ShortID="686613323">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Narration" ID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

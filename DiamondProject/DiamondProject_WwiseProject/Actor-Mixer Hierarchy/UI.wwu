@@ -1957,7 +1957,11 @@
 						<RandomSequenceContainer Name="UI_VisualNovel_Progression" ID="{FF15EC5B-0BE0-452D-A7B5-BAD577985A29}" ShortID="630317015">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1997,7 +2001,11 @@
 						<RandomSequenceContainer Name="UI_VisualNovel_Question" ID="{95ECC7C1-B99B-47A2-8FCA-AFA10C98A437}" ShortID="300490356">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2037,7 +2045,11 @@
 						<RandomSequenceContainer Name="UI_VisualNovel_GoodAnswer" ID="{4C0271BF-EFC1-4C5F-9A7D-35668D626F5E}" ShortID="98988103">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2077,7 +2089,11 @@
 						<RandomSequenceContainer Name="UI_VisualNovel_WrongAnswer" ID="{47E0B886-B64F-452E-8BF4-4DAF132DCA7E}" ShortID="108832141">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2117,7 +2133,6 @@
 						<RandomSequenceContainer Name="UI_VisualNovel_Button_Hover" ID="{B43C9B83-2DD4-49D5-8A6C-7862E0B7148D}" ShortID="109985736">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="27"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>

@@ -83,6 +83,7 @@ namespace AK
         static const AkUniqueID SET_STATE_NEUTRAL = 1170226945U;
         static const AkUniqueID SET_STATE_SILENCE = 2712071725U;
         static const AkUniqueID SET_STATE_WINTER = 3733622879U;
+        static const AkUniqueID START_INTRO = 711914504U;
         static const AkUniqueID TREE_HIT = 582090995U;
         static const AkUniqueID UI_MENU_BUTTON_BACK = 4197357760U;
         static const AkUniqueID UI_MENU_BUTTON_CONFIRM = 342937835U;
