@@ -7,9 +7,9 @@ using ToolsBoxEngine;
 public abstract class BaseAttack : MonoBehaviour {
     [Header("Static")]
     [SerializeField] Reference<AttackSystem> attackSystem;
-    [SerializeField] protected BossReference _bossRef; // Fils de put
+    [SerializeField] protected BossReference _bossRef;
     [SerializeField] public string id = "";
-    [SerializeField] protected Reference<PlayerController> _playerRef; // Enculé
+    [SerializeField] protected Reference<PlayerController> _playerRef;
 
     [Header("Values")]
     [SerializeField] protected float duration = 1;
@@ -44,6 +44,7 @@ public abstract class BaseAttack : MonoBehaviour {
 
         _onExecute?.Invoke(this);
 
+        StartCoroutine(ICast());
         StartCoroutine(Tools.Delay(() => { StartCoroutine(ILaunch()); _onCast?.Invoke(this); }, _castTime));
         //StartCoroutine(ILaunch());
     }
@@ -59,6 +60,7 @@ public abstract class BaseAttack : MonoBehaviour {
     }
 
     protected abstract IEnumerator IExecute();
+    protected virtual IEnumerator ICast() { yield break; }
 
     public virtual void End() {
         StopAllCoroutines();

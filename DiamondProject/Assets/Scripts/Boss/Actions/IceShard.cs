@@ -12,7 +12,7 @@ public class IceShard : MonoBehaviour
     [SerializeField] string targetTag = "Player";
     [SerializeField] float lifeSpan = 15f;
     [SerializeField] float maxSize = 3f;
-    [SerializeField] float growthSpeed = 1f;
+    [SerializeField] float growthTime = 1f;
     [SerializeField] DamageHealth _modDamage = null;
 
     [HideInInspector, SerializeField] UnityEvent<IceShard> _onShardSpawn;
@@ -61,11 +61,22 @@ public class IceShard : MonoBehaviour
             _modDamage.Damage = shardDamage;
             _modDamage.OnCollide += _OnHit;
         }
+
+        StartCoroutine(Growth(growthTime));
     }
 
     private void FixedUpdate() {
-        if (canMove)
+        if (canMove) {
             rb.velocity = aimDir.normalized * shardSpeed;
+            _lifeTimer -= Time.deltaTime;
+            if (_lifeTimer <= 0) {
+                KillShard();
+            }
+        }
+    }
+
+    public void Launch() {
+        canMove = true;
     }
 
     private void Update() {
@@ -77,16 +88,21 @@ public class IceShard : MonoBehaviour
             aimDir = dir;
         }
 
-        transform.localScale = Vector3.Lerp(transform.localScale, size, growthSpeed * Time.deltaTime);
-        if (transform.localScale.x > maxSize - 0.25f) {
-            canMove = true;
+        //transform.localScale = Vector3.Lerp(transform.localScale, size, growthTime * Time.deltaTime);
+        //if (transform.localScale.x > maxSize - 0.25f) {
 
-            _lifeTimer -= Time.deltaTime;
-            if (_lifeTimer <= 0) {
-                KillShard();
-            }
+        //}
+    }
+
+    IEnumerator Growth(float time) {
+        if (time <= 0f) { transform.localScale = size; yield break; }
+        float timePassed = 0f;
+        transform.localScale = Vector3.zero;
+        while (timePassed < time) {
+            yield return null;
+            timePassed += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(Vector3.zero, size, timePassed / time);
         }
-
     }
 
     //private IEnumerator Growth() {
