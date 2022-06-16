@@ -44,17 +44,15 @@ public class IceShard : MonoBehaviour
         isTargetingPlayer = _isTargetingPlayer;
         lifeSpan = lifetime;
         shardType = _shardType;
+        canMove = false;
+        _lifeTimer = lifeSpan;
     }
 
     private void Start() {
-        canMove = false;
         rb = GetComponent<Rigidbody2D>();
 
-        //transform.localScale = new Vector3(0,0,1);
-        //StartCoroutine(Growth());
         _onShardSpawn?.Invoke(this);
 
-        _lifeTimer = lifeSpan;
         size = new Vector3(maxSize, maxSize, 1);
 
         if (_modDamage != null) {

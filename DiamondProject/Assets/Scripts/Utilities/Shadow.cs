@@ -18,6 +18,7 @@ public class Shadow : MonoBehaviour {
         _shadow = new GameObject(gameObject.name + " Shadow");
         _shadow.transform.parent = transform;
         _shadow.transform.localEulerAngles = Vector3.zero;
+        _shadow.transform.localScale = Vector3.one;
         _shadowSR = _shadow.AddComponent<SpriteRenderer>();
         _shadowSR.sprite = _sr.sprite;
         _shadowSR.color = _shadowColor;
@@ -29,6 +30,9 @@ public class Shadow : MonoBehaviour {
     }
 
     void UpdateShadow() {
+        if (_shadowSR.sprite != _sr.sprite) {
+            _shadowSR.sprite = _sr.sprite;
+        }
         _shadow.transform.position = (transform.position - _light.Instance.transform.position).normalized * _height + transform.position;
     }
 

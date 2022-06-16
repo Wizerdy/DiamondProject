@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ToolsBoxEngine;
 
 enum PatternType { Scatter, Focus }
 [System.Serializable]
@@ -29,7 +30,9 @@ public class IceHell : BaseAttack {
     [Header("Spawner")]
     [SerializeField] private float _delayBetweenWaves = 0.1f;
     [SerializeField] private float _spawnDistanceFromBoss = 1.5f;
-    [SerializeField] private int _gapWidth = 15;
+    [SerializeField] private float _gapWidth = 15f;
+    [SerializeField] private float _timeBetweenWaves = 0.2f;
+    [SerializeField] private float _timeBetweenPatterns = 1f;
 
     [Header("Shard")]
     [SerializeField] private float _shardLifetime = 5f;
@@ -50,7 +53,7 @@ public class IceHell : BaseAttack {
 
     Pattern[] _currentPattern;
 
-    private void SpawnIceShard(PatternType _patternType, float _speed) {
+    private IceShard SpawnIceShard(PatternType _patternType, float _speed) {
         float rad = _currentShardAngle * Mathf.Deg2Rad;
         float X = Mathf.Cos(rad);
         float Y = Mathf.Sin(rad);
@@ -69,51 +72,111 @@ public class IceHell : BaseAttack {
         _shardCount++;
         iceShard.OnShardDestroy += () => _shardCount--;
 
-        if (_patternType == PatternType.Focus)
-            _currentShardAngle += _offSetBetweenShard;
-        else
-            _currentShardAngle -= _offSetBetweenShard;
+        //if (_patternType == PatternType.Focus)
+        //    _currentShardAngle += _offSetBetweenShard;
+        //else
+        //    _currentShardAngle -= _offSetBetweenShard;
+        _currentShardAngle += _offSetBetweenShard;
+        return iceShard;
     }
 
     protected override IEnumerator ICast() {
         int randomPattern = Random.Range(1, 3);
         _currentPattern = (randomPattern == 1 ? firstPatterns : secondPatterns);
+        Vector3 playerPosition = _target.Instance?.position ?? Vector3.zero;
+        Vector3 dirToPlayer = (Vector3)(playerPosition - _bossRef.Instance?.transform.position);
+        //Debug.DrawRay(_bossRef.Instance.transform.position, dirToPlayer, Color.red, 10f);
+        //dirToPlayer = _target.Instance.transform.InverseTransformDirection(dirToPlayer);
+        float angleToPlayer = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg;
 
-        for (int i = 0; i < _currentPattern.Length; i++) {
-            float numberOfShardsSpawned = 0;
-            while (numberOfShardsSpawned < _currentPattern[i].numberOfIceShardsPerWave) {
-                SpawnIceShard(_currentPattern[i].patternType, _currentPattern[i].speed);
-                ++numberOfShardsSpawned;
-            }
+        _upperLimit = angleToPlayer + _gapWidth / 2;
+        _lowerLimit = angleToPlayer - _gapWidth / 2;
+        //Debug.DrawRay(_bossRef.Instance.transform.position, new Vector3(Mathf.Cos(_lowerLimit * Mathf.Deg2Rad), Mathf.Sin(_lowerLimit * Mathf.Deg2Rad), 0f) * 10f, Color.blue, 10f);
+        //Debug.DrawRay(_bossRef.Instance.transform.position, new Vector3(Mathf.Cos(_upperLimit * Mathf.Deg2Rad), Mathf.Sin(_upperLimit * Mathf.Deg2Rad), 0f) * 10f, Color.green, 10f);
+
+        WaitForSeconds timeBetweenWaves = new WaitForSeconds(_timeBetweenWaves);
+        for (int i = 0; i < _currentPattern[0].numberOfWaves; i++) {
+            SpawnWave(_currentPattern[0]);
+            yield return timeBetweenWaves;
+            //yield return new WaitForSeconds(_currentPattern[0].chargeTime);
+            //LaunchShards();
+        }
+        yield return new WaitForSeconds(_timeBetweenPatterns);
+        for (int i = 0; i < _currentPattern[1].numberOfWaves; i++) {
+            SpawnWave(_currentPattern[1]);
+            yield return timeBetweenWaves;
+            //yield return new WaitForSeconds(_currentPattern[1].chargeTime);
+            //LaunchShards();
         }
         yield return null;
     }
 
     protected override IEnumerator IExecute() {
-        Vector3 playerPosition = _target.Instance?.position ?? Vector3.zero;
-        Vector3 dirToPlayer = (Vector3)(playerPosition - _bossRef.Instance?.transform.position);
-        dirToPlayer = _target.Instance.transform.InverseTransformDirection(dirToPlayer);
-        float angleToPlayer = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg;
+        //Vector3 playerPosition = _target.Instance?.position ?? Vector3.zero;
+        //Vector3 dirToPlayer = (Vector3)(playerPosition - _bossRef.Instance?.transform.position);
+        //dirToPlayer = _target.Instance.transform.InverseTransformDirection(dirToPlayer);
+        //float angleToPlayer = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg;
 
-        _upperLimit = angleToPlayer + _gapWidth / 2;
-        _lowerLimit = angleToPlayer - _gapWidth / 2;
+        //_upperLimit = angleToPlayer + _gapWidth / 2;
+        //_lowerLimit = angleToPlayer - _gapWidth / 2;
 
-        int randomPattern = Random.Range(1, 3);
-        switch (randomPattern) {
-            case 1:
-                yield return StartCoroutine(UseShardPattern(firstPatterns));
-                break;
-            case 2:
-                yield return StartCoroutine(UseShardPattern(secondPatterns));
-                break;
-            default:
-                Debug.Log("ICE HELL PATTERN ERROR");
-                break;
-        }
+        //int randomPattern = Random.Range(1, 3);
+        //switch (randomPattern) {
+        //    case 1:
+        //        yield return StartCoroutine(UseShardPattern(firstPatterns));
+        //        break;
+        //    case 2:
+        //        yield return StartCoroutine(UseShardPattern(secondPatterns));
+        //        break;
+        //    default:
+        //        Debug.Log("ICE HELL PATTERN ERROR");
+        //        break;
+        //}
+
+        //yield return new WaitForSeconds(_currentPattern[0].chargeTime);
+
+        ////LaunchShards();
+
+        //for (int i = 1; i < _currentPattern[0].numberOfWaves; i++) {
+        //    SpawnWave(_currentPattern[0]);
+        //    yield return new WaitForSeconds(_currentPattern[0].chargeTime);
+        //    //LaunchShards();
+        //}
+
+        //for (int i = 0; i < _currentPattern[1].numberOfWaves; i++) {
+        //    SpawnWave(_currentPattern[1]);
+        //    yield return new WaitForSeconds(_currentPattern[1].chargeTime);
+        //    //LaunchShards();
+        //}
 
         while (_shardCount > 0) {
             yield return null;
         }
+    }
+
+    private void SpawnWave(Pattern pattern) {
+        CalculateCurrentShardAngle(pattern);
+
+        //int numberOfWaves = 0;
+        //while (numberOfWaves < pattern.numberOfWaves) {
+
+        int numberOfShardsSpawned = 0;
+        while (numberOfShardsSpawned < pattern.numberOfIceShardsPerWave) {
+            IceShard shard = SpawnIceShard(pattern.patternType, pattern.speed);
+            StartCoroutine(Tools.Delay(() => shard.Launch(), pattern.chargeTime));
+            ++numberOfShardsSpawned;
+        }
+        CalculateCurrentShardAngle(pattern);
+
+            //++numberOfWaves;
+        //}
+    }
+
+    private void LaunchShards() {
+        for (int i = 0; i < _shards.Count; i++) {
+            _shards[i].Launch();
+        }
+        _shards.Clear();
     }
 
     IEnumerator UseShardPattern(Pattern[] _pattern) {
@@ -152,8 +215,18 @@ public class IceHell : BaseAttack {
             _offSetBetweenShard = _gapWidth / _patterns[currentPattern].numberOfIceShardsPerWave;
             _currentShardAngle = _lowerLimit + _offSetBetweenShard * 3;
         } else {
-            _offSetBetweenShard = (360 - _gapWidth) / _patterns[currentPattern].numberOfIceShardsPerWave;
+            _offSetBetweenShard = (360f - _gapWidth) / _patterns[currentPattern].numberOfIceShardsPerWave;
             _currentShardAngle = _upperLimit - _offSetBetweenShard;
+        }
+    }
+
+    private void CalculateCurrentShardAngle(Pattern pattern) {
+        if (pattern.patternType == PatternType.Focus) {
+            _offSetBetweenShard = _gapWidth / (float)pattern.numberOfIceShardsPerWave;
+            _currentShardAngle = _lowerLimit/*+ _offSetBetweenShard * 3*/;
+        } else {
+            _offSetBetweenShard = (360f - _gapWidth) / (float)pattern.numberOfIceShardsPerWave;
+            _currentShardAngle = _upperLimit/*- _offSetBetweenShard*/;
         }
     }
 }

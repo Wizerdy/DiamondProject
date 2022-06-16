@@ -9,7 +9,7 @@ public abstract class BaseAttack : MonoBehaviour {
     [SerializeField] Reference<AttackSystem> attackSystem;
     [SerializeField] protected BossReference _bossRef;
     [SerializeField] public string id = "";
-    [SerializeField] protected Reference<PlayerController> _playerRef;
+    [SerializeField] protected TransformReference _playerPos;
 
     [Header("Values")]
     [SerializeField] protected float duration = 1;
@@ -19,7 +19,7 @@ public abstract class BaseAttack : MonoBehaviour {
     protected bool isPlaying = false;
     protected bool locked = false;
     [SerializeField] protected Vector3 BossPos { get => _bossRef?.Instance.transform.position ?? Vector3.zero; set => _bossRef.Instance.transform.position = value; }
-    [SerializeField] protected Vector3 PlayerPos { get => _playerRef?.Instance.transform.position ?? Vector3.zero; set => _playerRef.Instance.transform.position = value; }
+    [SerializeField] protected Vector3 PlayerPos { get => _playerPos.Instance.position; set => _playerPos.Instance.position = value; }
 
     [SerializeField] UnityEvent<BaseAttack> _onExecute;
     [SerializeField] UnityEvent<BaseAttack> _onCast;
