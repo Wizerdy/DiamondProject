@@ -738,6 +738,21 @@ namespace ToolsBoxEngine {
             function();
         }
 
+        public static IEnumerator Delay<T1, T2>(BasicDelegate<T1, T2> function, T1 arg1, T2 arg2, Coroutine routine) {
+            yield return routine;
+            function(arg1, arg2);
+        }
+
+        public static IEnumerator Delay<T>(BasicDelegate<T> function, T arg, Coroutine routine) {
+            yield return routine;
+            function(arg);
+        }
+
+        public static IEnumerator Delay(BasicDelegate function, Coroutine routine) {
+            yield return routine;
+            function();
+        }
+
         #endregion
     }
 

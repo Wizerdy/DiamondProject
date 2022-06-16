@@ -14,6 +14,8 @@ public class HUDHealth : MonoBehaviour {
     [SerializeField] TextMeshProUGUI _lifeText;
     [SerializeField] Color _invicibleColor = Color.white;
     [SerializeField] Color _disableColor = Color.grey;
+    [SerializeField] bool _fillOnEnable = true;
+    [SerializeField] float _fillTime = 3f;
 
     [HideInInspector, SerializeField] UnityEvent<float> _onHealthChange;
 
@@ -50,8 +52,16 @@ public class HUDHealth : MonoBehaviour {
         Attach();
     }
 
+    private void OnEnable() {
+        if (_fillOnEnable) {
+            StartCoroutine(ChangeHealthOverTime(_healthBar, 0f, 0f));
+            float percentage = (float)_health.Instance.CurrentHealth / (float)_health.Instance.MaxHealth;
+            StartCoroutine(ChangeHealthOverTime(_healthBar, 1f, _fillTime));
+        }
+    }
+
     private void OnStart() {
-        UpdateHUD(0);
+        //UpdateHUD(0);
     }
 
     private void OnDestroy() {

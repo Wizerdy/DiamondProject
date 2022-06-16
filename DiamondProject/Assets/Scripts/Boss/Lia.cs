@@ -13,6 +13,7 @@ public class Lia : MonoBehaviour {
 
     [Header("Values")]
     [SerializeField] float _moveCenterTime = 2f;
+    [SerializeField] Shape _initialShape = Shape.NEUTRAL;
 
     [Header("Triggers")]
     [SerializeField] Trigger spring;
@@ -27,6 +28,24 @@ public class Lia : MonoBehaviour {
 
     public event UnityAction OnCentering { add => _onCentering.AddListener(value); remove => _onCentering.RemoveListener(value); }
 
+    private void Start() {
+        _health.CanTakeDamage = false;
+        StartCoroutine(
+            Tools.Delay(
+                (Shape shape, bool movetocenter) => { NewForm(shape, movetocenter); _health.CanTakeDamage = true; },
+                _initialShape,
+                false,
+                StartCoroutine(WaitForActing())
+            )
+        );
+    }
+
+    IEnumerator WaitForActing() {
+        while (!_attacks.CanAct) {
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
     private void Update() {
         if (_morphing) { return; }
         if (!_beatenShape.Contains(Shape.FALL) && fall.IsTrigger()) {
@@ -37,9 +56,13 @@ public class Lia : MonoBehaviour {
         }
     }
 
-    public void NewForm(Shape shape) {
+    public void NewForm(Shape shape, bool moveToCenter = true) {
         _attacks.StopBehaviour();
         _attacks.ClearAttacks();
+        if (!moveToCenter) {
+            ChangeForm(shape);
+            return;
+        }
         _boss.MoveTo(Vector2.zero, _moveCenterTime);
         StartCoroutine(Tools.Delay(ChangeForm, shape, _moveCenterTime));
         _health.CanTakeDamage = false;

@@ -11,7 +11,7 @@ public class GetHintFeedBack : MonoBehaviour
 
     private bool isInvisible = false;
     private float transparancy = 1;
-    private float time = 5f;
+    private float time;
 
     private void OnEnable() {
         time = duration;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class ButtonsScript : MonoBehaviour {
@@ -22,5 +23,9 @@ public class ButtonsScript : MonoBehaviour {
 
     public void Quit() {
         Application.Quit();
+    }
+
+    public void UnselectButton() {
+        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(null);
     }
 }
