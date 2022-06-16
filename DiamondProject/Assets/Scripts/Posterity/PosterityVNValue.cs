@@ -48,7 +48,6 @@ public class PosterityVNValue : MonoBehaviour
         hint = posterityObj.fallAttackHintList[3];
         if (!hint.isTrigger) {
             if (obj.GetComponent<ChargedBullet>()) {
-                spriteFeedBack.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.fallAttackHintList[3] = hint;
                 return;

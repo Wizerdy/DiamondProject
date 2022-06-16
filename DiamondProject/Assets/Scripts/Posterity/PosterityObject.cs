@@ -19,7 +19,7 @@ public class PosterityObject : ScriptableObject {
     public bool resetOnStart = true;
     public int deathCount = 0;
     public int bossDeathCount = 0;
-
+    public GameObject baseBullet;
     [Header("Bonus")]
     public int maxLifeModifier = 0;
     public int extraLife = 0;
@@ -46,20 +46,58 @@ public class PosterityObject : ScriptableObject {
     public bool winterFormTriggerActivated = false;
 
     public GameObject arrow;
-    //public List<Hint> triggerHintList = new List<Hint>();
-    //public List<Hint> bossHintList = new List<Hint>();
-    //public List<Hint> characterHintList = new List<Hint>();
     [Header("Fall form")]
     public List<Hint> fallBossHintList = new List<Hint>();
     public List<Hint> fallAttackHintList = new List<Hint>();
     [Header("Winter form")]
     public List<Hint> winterBossHintList = new List<Hint>();
     public List<Hint> winterAttackHintList = new List<Hint>();
+
+    private Hint hint;
     public void ResetValues() {
         nbCorpse = 0;
         nbTimeTalkedToNorna = 0;
         deathCount = 0;
         bossDeathCount = 0;
+        numberOfTimeDyingWithoutKillingForm = 0;
+        killNeutralForm = false;
+        killFallForm = false;
+        killWinterForm = false;
+
+        sawFallForm = false;
+        sawWinterForm = false;
+
+        firstTimeTalking = true;
+
+        nbTimeTalkedToNorna = 0;
+        nbCorpse = 0;
+        winterFormTriggerActivated = false;
+        arrow = baseBullet;
+
+        hint.isTrigger = false;
+        for (int i = 0; i < fallBossHintList.Count; i++) {
+            hint = fallBossHintList[i];
+            hint.isTrigger = false;
+            fallBossHintList[i] = hint;
+        }
+
+        for (int i = 0; i < fallAttackHintList.Count; i++) {
+            hint = fallAttackHintList[i];
+            hint.isTrigger = false;
+            fallAttackHintList[i] = hint;
+        }
+
+        for (int i = 0; i < winterBossHintList.Count; i++) {
+            hint = winterBossHintList[i];
+            hint.isTrigger = false;
+            winterBossHintList[i] = hint;
+        }
+
+        for (int i = 0; i < winterAttackHintList.Count; i++) {
+            hint = winterAttackHintList[i];
+            hint.isTrigger = false;
+            winterAttackHintList[i] = hint;
+        }
         ResetBonusAndMalus();
     }
 
