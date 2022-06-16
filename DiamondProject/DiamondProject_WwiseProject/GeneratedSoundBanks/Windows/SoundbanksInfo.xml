@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Fork\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Projects\DiamondProject\DiamondProject\DiamondProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
@@ -28,12 +28,17 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2372092241">
+		<SoundBank Id="1355168291" Language="SFX" Hash="957529568">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="2378823330" Name="RTPC_MusicVolume" ObjectPath="\Game Parameters\SD\RTPC_MusicVolume"/>
+				<GameParameter Id="2644490154" Name="RTPC_SFXVolume" ObjectPath="\Game Parameters\SD\RTPC_SFXVolume"/>
+				<GameParameter Id="2888337175" Name="RTPC_GeneralVolume" ObjectPath="\Game Parameters\SD\RTPC_GeneralVolume"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1564914208">
+		<SoundBank Id="3161908922" Language="SFX" Hash="483436697">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -56,7 +61,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="1412442774">
+		<SoundBank Id="4056684167" Language="SFX" Hash="80985451">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -1016,6 +1021,13 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="1678198802" Name="Boss_Neutral_BulletHell_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="340683315" Name="Boss_Neutral_BulletHell_Charge" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Charge" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1804500156" Name="Boss_Neutral_BulletHell_Throw_Start" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Throw_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1548392208" Name="Boss_Neutral_BulletHell_Throw_Stop" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Throw_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="446657731" Name="Boss_Neutral_RockBeam_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockBeam_Cast" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2535422893" Name="Boss_Neutral_RockBeam_End" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockBeam_End" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1309462310" Name="Boss_Neutral_RockBeam_Start" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockBeam_Start" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2318093787" Name="Boss_Neutral_RockSpikes" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_RockSpikes" DurationType="OneShot" DurationMin="1.618389" DurationMax="1.914415">
 					<IncludedMemoryFiles>
 						<File Id="33126280" Language="SFX">
@@ -4075,7 +4087,10 @@
 				<GameParameter Id="90049299" Name="RTPC_WeaponType" ObjectPath="\Game Parameters\SD\RTPC_WeaponType"/>
 				<GameParameter Id="1533370991" Name="RTPC_CrossbowCharge" ObjectPath="\Game Parameters\SD\RTPC_CrossbowCharge"/>
 				<GameParameter Id="2323919714" Name="RTPC_SwordCharge" ObjectPath="\Game Parameters\SD\RTPC_SwordCharge"/>
+				<GameParameter Id="2378823330" Name="RTPC_MusicVolume" ObjectPath="\Game Parameters\SD\RTPC_MusicVolume"/>
+				<GameParameter Id="2644490154" Name="RTPC_SFXVolume" ObjectPath="\Game Parameters\SD\RTPC_SFXVolume"/>
 				<GameParameter Id="2664983669" Name="RTPC_LeafBoomerang_Position" ObjectPath="\Game Parameters\SD\RTPC_LeafBoomerang_Position"/>
+				<GameParameter Id="2888337175" Name="RTPC_GeneralVolume" ObjectPath="\Game Parameters\SD\RTPC_GeneralVolume"/>
 				<GameParameter Id="3290513731" Name="RTPC_Boss_AttackType" ObjectPath="\Game Parameters\SD\RTPC_Boss_AttackType"/>
 				<GameParameter Id="3679360398" Name="RTPC_BossForm" ObjectPath="\Game Parameters\SD\RTPC_BossForm"/>
 			</GameParameters>
