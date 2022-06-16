@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public struct Hint {
     public int id;
-    public string description;
+    public string defaultName;
+    public string unlockedName;
     public bool isTrigger;
     public bool didNornaGaveHint;
     public bool alreadySawHint;
@@ -29,6 +30,7 @@ public class PosterityObject : ScriptableObject {
     public int numberOfTriggerActivate = 0;
 
     [Header("For VN Scene")]
+    public int numberOfTimeDyingWithoutKillingForm = 0;
     public bool killNeutralForm = false;
     public bool killFallForm = false;
     public bool killWinterForm = false;

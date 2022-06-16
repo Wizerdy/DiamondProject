@@ -32,6 +32,62 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Set_State_Fall" ID="{E714833A-554C-4E58-A556-4D6E0CC9CD7C}">
+					<ChildrenList>
+						<Action Name="" ID="{9CF30C46-643F-46AE-B9CF-E8C8D4B361F2}" ShortID="717492856">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Fall" ID="{62530452-1DB7-4255-9FEC-6E714BD83DF0}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Set_State_Winter" ID="{3C7F73F3-594A-442E-8A47-E7A9FB8BE132}">
+					<ChildrenList>
+						<Action Name="" ID="{BC32B9F7-01C8-45C8-AF0C-A32860EB24CF}" ShortID="131664947">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Winter" ID="{320F487F-3A5F-48B7-818E-10DC13BE27E1}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Set_State_Silence" ID="{B34A2BFB-09BD-4E06-9012-77685C7CFD59}">
+					<ChildrenList>
+						<Action Name="" ID="{EE3EDA20-45F2-4C64-A800-E448AF774E26}" ShortID="579779850">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Silence" ID="{77B7DB0D-E160-42A6-BE76-AE2C19030B87}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Set_State_Narration" ID="{6F64D990-C94A-43ED-AC66-2363DF6CC757}">
+					<ChildrenList>
+						<Action Name="" ID="{28DC8C96-B03E-4172-AF45-F4870671DFC9}" ShortID="1059582070">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Narration" ID="{0D17C4D8-B8AF-438F-967A-A4939763FCB1}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour {
         NONE, MELEE, RANGE
     }
 
+    public enum InputType {
+        MOVEMENT, COMBAT, UI
+    }
+
     [SerializeField] PlayerInput _input;
 
     [SerializeField] EntityMovement _movement;
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] SkeletonMecanim _spine;
     [SerializeField] Animator _animator;
     [SerializeField] Reference<IMeetARealBoss> _boss;
+    [SerializeField] GameObject _pauseUI;
     [SerializeField] UnityEvent<AttackType> _onAttack;
 
     [Header("Value")]
@@ -110,6 +115,9 @@ public class PlayerController : MonoBehaviour {
 
         _controls.Dialogue.Enable();
 
+        _controls.UI.Enable();
+        _controls.UI.Pause.performed += _TogglePause;
+
         #endregion
 
         if (_interact != null) { _interact.OnStopInteract += _StopInteracting; }
@@ -147,7 +155,6 @@ public class PlayerController : MonoBehaviour {
         _lightningImmunity.Resistance = DamageModifier.ResistanceType.NOMODIFIER;
         _chargeRangedAttack?.SetBullet(_chargeBullet);
 
-
         _chargeMeleeAttack.OnAttack += _DashingAnimator;
         _chargeMeleeAttack.OnAttackEnd += _StopDashingAnimator;
         //InputSystem.EnableDevice(Mouse.current);
@@ -167,32 +174,36 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-        Move(_controls.GamePlay.Move.ReadValue<Vector2>());
+        if (_controls.GamePlay.enabled) {
+            Move(_controls.GamePlay.Move.ReadValue<Vector2>());
+        }
         //Move(_inMove.ReadValue<Vector2>());
 
         //_SetMousePosition(_inAttackDirection.ReadValue<Vector2>());
         //Debug.Log(_inAttackDirection.ReadValue<Vector2>());
 
-        if (_clickType == ClickType.MELEE) {
-            _clickTimer += Time.deltaTime;
-            if (_clickTimer > _clickTime) {
-                if (!_chargeMeleeAttack?.IsAttacking ?? false) { ChargeMeleeAttack(); }
-                _chargeMeleeAttack?.UpdateDirection(LookDirection);
+        if (_controls.Battle.enabled) {
+            if (_clickType == ClickType.MELEE) {
+                _clickTimer += Time.deltaTime;
+                if (_clickTimer > _clickTime) {
+                    if (!_chargeMeleeAttack?.IsAttacking ?? false) { ChargeMeleeAttack(); }
+                    _chargeMeleeAttack?.UpdateDirection(LookDirection);
+                }
             }
-        }
 
-        if (_clickType == ClickType.RANGE) {
-            _clickTimer += Time.deltaTime;
-            if (_clickTimer > _clickTime) {
-                if (!_chargeRangedAttack?.IsAttacking ?? false) { ChargeRangeAttack(); }
+            if (_clickType == ClickType.RANGE) {
+                _clickTimer += Time.deltaTime;
+                if (_clickTimer > _clickTime) {
+                    if (!_chargeRangedAttack?.IsAttacking ?? false) { ChargeRangeAttack(); }
 
-                _chargeRangedAttack?.UpdateDirection(LookDirection);
-                float delta = (_overheat.MaxHeat / _chargeRangedAttack.MaxChargeTime) * Time.deltaTime - 0.001f;
-                if (_deltaHeat >= 1f) {
-                    _overheat.Heat += Mathf.FloorToInt(delta + _deltaHeat);
-                    _deltaHeat = (delta + _deltaHeat) % 1;
-                } else {
-                    _deltaHeat += delta;
+                    _chargeRangedAttack?.UpdateDirection(LookDirection);
+                    float delta = (_overheat.MaxHeat / _chargeRangedAttack.MaxChargeTime) * Time.deltaTime - 0.001f;
+                    if (_deltaHeat >= 1f) {
+                        _overheat.Heat += Mathf.FloorToInt(delta + _deltaHeat);
+                        _deltaHeat = (delta + _deltaHeat) % 1;
+                    } else {
+                        _deltaHeat += delta;
+                    }
                 }
             }
         }
@@ -206,6 +217,22 @@ public class PlayerController : MonoBehaviour {
     #endregion
 
     #region Movements
+
+    public void MoveTo(Vector2 position, float speedFactor = 1f) {
+        StartCoroutine(IMoveTo(position, speedFactor));
+
+        IEnumerator IMoveTo(Vector2 position, float speedFactor = 1f) {
+            CanMove = false;
+            _animator?.SetBool("Running", true);
+            yield return _movement?.MoveTo(position, speedFactor);
+            _animator?.SetBool("Running", false);
+            CanMove = true;
+        }
+    }
+
+    public void LookAt(Vector2 direction) {
+        PlayerTurnover(direction);
+    }
 
     private void _Move(InputAction.CallbackContext cc) {
         Move(cc.ReadValue<Vector2>());
@@ -371,28 +398,23 @@ public class PlayerController : MonoBehaviour {
 
     private void _SetMousePosition(Vector2 position) {
         mousePosition = position;
-        PlayerTurnover();
+        PlayerTurnover(LookDirection);
     }
 
     private void _SetMousePosition(InputAction.CallbackContext cc) {
         _SetMousePosition(cc.ReadValue<Vector2>());
     }
 
-    private void PlayerTurnover() {
+    private void PlayerTurnover(Vector2 direction) {
         //Debug.Log(_spine.skeleton.Skin);
-        Vector2 direction = LookDirection;
+        if (_spine == null || _spine.skeleton == null) { return; }
+
         if (direction.x > 0) { _spine.skeleton.ScaleX = -1f; }
         else { _spine.skeleton.ScaleX = 1f; }
         if (direction.y > 0) { _spine.skeleton.SetSkin("Back"); }
         else { _spine.skeleton.SetSkin("Front"); }
         _spine.Skeleton.SetSlotsToSetupPose();
         _spine.LateUpdate();
-    }
-
-    public void ThunderArrow() {
-        if (_chargeRangedAttack?.CanAttack ?? true) { return; }
-
-
     }
 
     private void _DashingAnimator(Vector2 vector) {
@@ -403,8 +425,47 @@ public class PlayerController : MonoBehaviour {
         _animator?.SetBool("Dashing", false);
     }
 
-    //private void OnDrawGizmos() {
-    //    Gizmos.color = Color.blue;
-    //    Gizmos.DrawLine(transform.position.Override(5f, Axis.Z), transform.position + (LookDirection * 5f).To3D(5f));
-    //}
+    private void _TogglePause(InputAction.CallbackContext cc) {
+        if (_pauseUI.gameObject.activeSelf) {
+            Unpause();
+        } else {
+            Pause();
+        }
+    }
+
+    public void Pause() {
+        Time.timeScale = 0f;
+        _pauseUI.SetActive(true);
+    }
+
+    public void Unpause() {
+        Time.timeScale = 1f;
+        _pauseUI.SetActive(false);
+    }
+
+    public void EnableInput(InputType inputType, bool state) {
+        switch (inputType) {
+            case InputType.MOVEMENT:
+                if (state) {
+                    _controls.GamePlay.Enable();
+                } else {
+                    _controls.GamePlay.Disable();
+                }
+                break;
+            case InputType.COMBAT:
+                if (state) {
+                    _controls.Battle.Enable();
+                } else {
+                    _controls.Battle.Disable();
+                }
+                break;
+            case InputType.UI:
+                if (state) {
+                    _controls.UI.Enable();
+                } else {
+                    _controls.UI.Disable();
+                }
+                break;
+        }
+    }
 }

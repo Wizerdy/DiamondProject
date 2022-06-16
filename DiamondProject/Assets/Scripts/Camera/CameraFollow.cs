@@ -5,6 +5,7 @@ using ToolsBoxEngine;
 
 public class CameraFollow : MonoBehaviour {
     [SerializeField] TransformReference _target;
+    [SerializeField] Vector3 _offset = Vector3.zero;
     [SerializeField] Camera _camera;
     [Header("Bounds")]
     [SerializeField] bool _useBounds = false;
@@ -20,7 +21,7 @@ public class CameraFollow : MonoBehaviour {
         //if (!_camera?.IsValid ?? true) { return; }
         if (!_target?.IsValid ?? true) { return; }
 
-        Vector3 position = _target.Instance.position;
+        Vector3 position = _target.Instance.position + _offset;
         if (_useBounds) {
             if (position.x + Width > _right) {
                 position.x = _right - Width;

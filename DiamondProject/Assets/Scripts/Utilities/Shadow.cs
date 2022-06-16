@@ -12,6 +12,7 @@ public class Shadow : MonoBehaviour {
     [SerializeField] TransformReference _light;
     [SerializeField] VisualEffect _effect;
     [SerializeField] float _height;
+
     private void Start() {
         _sr = GetComponent<SpriteRenderer>();
         _shadow = new GameObject(gameObject.name + " Shadow");
@@ -29,5 +30,13 @@ public class Shadow : MonoBehaviour {
 
     void UpdateShadow() {
         _shadow.transform.position = (transform.position - _light.Instance.transform.position).normalized * _height + transform.position;
+    }
+
+    public void YesShadow() {
+        _shadow.SetActive(true);
+    }
+
+    public void NoShadow() {
+        _shadow.SetActive(false);
     }
 }

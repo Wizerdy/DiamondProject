@@ -45,12 +45,19 @@
 						<Action Name="" ID="{7F3E1491-5004-45C7-9A81-0282863C36B6}" ShortID="1062314541">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Boss_Fall_Thunder_Cast" ID="{8E45D321-AEEF-4CC0-83D7-ECDD0BDFF0F5}" WorkUnitID="{5FCB9839-7939-41D8-9854-525A76C83C57}"/>
+									<ObjectRef Name="Boss_Neutral_Thunder_Cast" ID="{E1A1212F-9F85-4B71-AB58-BF44BD9EE49E}" WorkUnitID="{95752A2D-38FA-446E-9F28-6F1AEA1DC8FB}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Boss_Neutral_RockBeam_Cast" ID="{4D9CB2A4-B6B2-4500-AC57-8FCFF339A9F5}"/>
+				<Event Name="Boss_Neutral_RockBeam_Start" ID="{519C942B-DA14-404B-9D97-6500FF0F0FBB}"/>
+				<Event Name="Boss_Neutral_RockBeam_End" ID="{5EB2D133-01C2-4013-9654-898E317D88C6}"/>
+				<Event Name="Boss_Neutral_BulletHell_Cast" ID="{18894BFB-1F7A-4606-BF26-19AB74E1AFB3}"/>
+				<Event Name="Boss_Neutral_BulletHell_Charge" ID="{3BFBEEF9-1080-49AD-BBBD-2E287135D887}"/>
+				<Event Name="Boss_Neutral_BulletHell_Throw_Start" ID="{1EDAB7AE-8F6C-4433-ADC4-67E755B1C92B}"/>
+				<Event Name="Boss_Neutral_BulletHell_Throw_Stop" ID="{49282D8C-FB5C-4BC1-848A-375C3725A541}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

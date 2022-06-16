@@ -65,6 +65,7 @@ public class EntityChargeAttack : MonoBehaviour {
     }
 
     private void Update() {
+        AkSoundEngine.SetRTPCValue("RTPC_SwordCharge", _chargingTimer / _chargingTime);
         if (_isCharging) {
             _chargingTimer += Time.deltaTime;
             if (_chargingTimer >= _chargingTime) {
@@ -93,7 +94,10 @@ public class EntityChargeAttack : MonoBehaviour {
     public void StopCharging(Vector2 direction) {
         if (!_isCharging) { return; }
         _isCharging = false;
+
+
         Attack(direction, _chargingTimer);
+        _chargingTimer = 0f;
         _onAttack?.Invoke(direction);
         _attackAnimator.SetBool("Charge Attack", false);
     }

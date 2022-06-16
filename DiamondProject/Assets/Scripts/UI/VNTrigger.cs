@@ -12,6 +12,8 @@ public class VNTrigger : ScriptableObject {
     public bool knowWinterBossHint = false;
     public bool knowFallBossHint = false;
 
+    public List<bool> alreadySawText = new List<bool>();
+
     public void ResetValue() {
         KnowFirstHintBoss = false;
         KnowSecondHintBoss = false;
