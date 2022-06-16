@@ -443,6 +443,16 @@ public class PlayerController : MonoBehaviour {
         _pauseUI.SetActive(false);
     }
 
+    public void SetBullet(GameObject bullet, GameObject chargedBullet) {
+        if (bullet != null) {
+            _bullet = bullet;
+        }
+        if (chargedBullet != null) {
+            _chargeBullet = chargedBullet;
+            _chargeRangedAttack?.SetBullet(_chargeBullet);
+        }
+    }
+
     public void EnableInput(InputType inputType, bool state) {
         switch (inputType) {
             case InputType.MOVEMENT:

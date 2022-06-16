@@ -39,10 +39,6 @@ public class IMeetARealBoss : MonoBehaviour {
         _animator.runtimeAnimatorController = animatorController;
     }
 
-    public void Death() {
-        //gameObject.SetActive(false);
-    }
-
     public void ChangeColor(Color color, float time = 0f) {
         Color startColor = _spriteRenderer.color;
         _spriteRenderer.color = color;

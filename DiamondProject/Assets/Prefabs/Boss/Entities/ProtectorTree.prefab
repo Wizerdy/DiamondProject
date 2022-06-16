@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 5243907187015130308}
   - component: {fileID: 7966743475885978344}
   - component: {fileID: -4743802281087441283}
+  - component: {fileID: -2966158885554861414}
   - component: {fileID: 1168343187918062123}
   - component: {fileID: 9200263429881609659}
   - component: {fileID: 7481926552493838065}
@@ -370,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88d280d98e8453458d4e9de59e25003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 2
   destination: {x: 0, y: 0, z: 0}
   apparitionTime: 1
   onDeath:
@@ -388,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6f3989b27671a4f8bd0b557e15c528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 2
   _onHit:
     m_PersistentCalls:
       m_Calls:
@@ -447,7 +448,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _destroyOnDeath: 0
-  _damageModifiers: []
+  _damageModifiers:
+  - {fileID: -2966158885554861414}
   _onMaxHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -458,6 +460,24 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _onLateStart:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-2966158885554861414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243907187015130306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c41b07ad15e214785b57d63ec4dc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  damageType: Sword
+  value: 1
+  _onUse:
     m_PersistentCalls:
       m_Calls: []
 --- !u!61 &1168343187918062123

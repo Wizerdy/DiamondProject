@@ -242,11 +242,11 @@ MonoBehaviour:
   attackSystem: {fileID: 11400000, guid: 254c6cb8e60f60640849f307f3f0366c, type: 2}
   _bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
   id: Ice Hell
-  _playerRef: {fileID: 0}
+  _playerPos: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
   duration: 5
   coolDown: 1
   _dontNeedEnd: 0
-  _castTime: 1
+  _castTime: 4
   _onExecute:
     m_PersistentCalls:
       m_Calls:
@@ -283,32 +283,33 @@ MonoBehaviour:
   firstPatterns:
   - chargeTime: 2
     speed: 50
-    numberOfWaves: 5
+    numberOfWaves: 2
     numberOfIceShardsPerWave: 5
     patternType: 1
-  - chargeTime: 0.5
+  - chargeTime: 2
     speed: 50
-    numberOfWaves: 5
+    numberOfWaves: 2
     numberOfIceShardsPerWave: 50
     patternType: 0
   secondPatterns:
-  - chargeTime: 4
+  - chargeTime: 2
     speed: 50
-    numberOfWaves: 5
+    numberOfWaves: 2
     numberOfIceShardsPerWave: 50
     patternType: 0
-  - chargeTime: 0.5
+  - chargeTime: 2
     speed: 50
-    numberOfWaves: 5
+    numberOfWaves: 2
     numberOfIceShardsPerWave: 5
     patternType: 1
-  delayBetweenWaves: 0.1
-  spawnDistanceFromBoss: 1.5
-  gapWidth: 15
-  shardLifetime: 5
-  iceShardDamage: 10
-  iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
-  bossRef: {fileID: 11400000, guid: a7d04d85a9c602a4f91061c0836ad18b, type: 2}
+  _delayBetweenWaves: 0.1
+  _spawnDistanceFromBoss: 1.5
+  _gapWidth: 30
+  _timeBetweenWaves: 0.07
+  _timeBetweenPatterns: 1
+  _shardLifetime: 5
+  _iceShardDamage: 10
+  _iceShard: {fileID: 8434725201044603737, guid: 51be1ee6b76630741bd76964cc13695e, type: 3}
   _target: {fileID: 11400000, guid: 80978337ea3272247a513f7967200e58, type: 2}
 --- !u!114 &-2029285435866036004
 MonoBehaviour:

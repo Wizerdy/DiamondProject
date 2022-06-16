@@ -46,6 +46,7 @@ public class PosterityObject : ScriptableObject {
     public bool winterFormTriggerActivated = false;
 
     public GameObject arrow;
+    public GameObject chargedArrow;
     //public List<Hint> triggerHintList = new List<Hint>();
     //public List<Hint> bossHintList = new List<Hint>();
     //public List<Hint> characterHintList = new List<Hint>();

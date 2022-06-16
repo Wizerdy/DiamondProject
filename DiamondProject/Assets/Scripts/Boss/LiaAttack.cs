@@ -90,8 +90,11 @@ public class LiaAttack : MonoBehaviour {
         _attackSystem.ClearAttacks();
         if (time <= 0f) { return; }
         _stunt = true;
-        _boss?.ChangeColor(_stuntColor, time);
+        //_boss?.ChangeColor(_stuntColor, time);
         StartCoroutine(Tools.Delay(() => _stunt = false, time));
+        _boss?.SetAnimatorBool("Sleeping", true);
+        Debug.Log("tamer");
+        StartCoroutine(Tools.Delay((bool state) => _boss?.SetAnimatorBool("Sleeping", state), false, time));
     }
 
     public string Attack(params string[] attacksId) {

@@ -133,13 +133,15 @@ public class EntityChargeAttack : MonoBehaviour {
             timePassed += Time.deltaTime;
             Vector2 nextPos = Vector2.Lerp(position, target, timePassed / time);
             RaycastHit2D hit = Physics2D.Linecast(_entity.Position2D(), nextPos);
-            IHealth hitHealth = hit.collider.gameObject.GetComponent<IHealth>();
-            if (hitHealth != null) {
-                _attackHitbox.SetValues(_damageables, damage);
-                _attackHitbox.Hit(hit.collider);
-            }
-            if (_walls.Contains(hit.collider.gameObject.layer)) {
-                nextPos = hit.point;
+            if (hit.collider != null) {
+                IHealth hitHealth = hit.collider?.gameObject?.GetComponent<IHealth>();
+                if (hitHealth != null) {
+                    _attackHitbox.SetValues(_damageables, damage);
+                    _attackHitbox.Hit(hit.collider);
+                }
+                if (_walls.Contains(hit.collider.gameObject.layer)) {
+                    nextPos = hit.point;
+                }
             }
             _entity.position = nextPos.To3D(_entity.position.z, Axis.Z);
         }
