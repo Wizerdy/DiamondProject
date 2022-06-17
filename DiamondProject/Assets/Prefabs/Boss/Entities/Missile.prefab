@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -3818824319388365566}
   - component: {fileID: 1426407013473854675}
   - component: {fileID: 5580226926986109085}
+  - component: {fileID: 611452823991916772}
+  - component: {fileID: 5163440342124624760}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Minion
@@ -137,8 +139,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _destroyOnDeath: 1
-  _resistances: []
+  _damageModifiers: []
   _onMaxHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onInvicible:
+    m_PersistentCalls:
+      m_Calls: []
+  _onVulnerable:
     m_PersistentCalls:
       m_Calls: []
   _onLateStart:
@@ -156,6 +164,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &611452823991916772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854611740216456229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 0
+  OffsetTransform: {fileID: 0}
+--- !u!114 &5163440342124624760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854611740216456229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 0
+  OffsetTransform: {fileID: 0}
 --- !u!1 &7721715158986719864
 GameObject:
   m_ObjectHideFlags: 0
