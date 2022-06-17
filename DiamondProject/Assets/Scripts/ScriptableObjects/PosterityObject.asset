@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
   resetOnStart: 1
-  deathCount: 63
+  deathCount: 0
   bossDeathCount: 0
   maxLifeModifier: 0
   extraLife: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   dontSeeHealthBar: 0
   gotToAnotherBoss: 0
   numberOfTriggerActivate: 0
-  numberOfTimeDyingWithoutKillingForm: 0
+  numberOfTimeDyingWithoutKillingForm: 2
   killNeutralForm: 1
   killFallForm: 1
   killWinterForm: 1
@@ -43,16 +43,14 @@ MonoBehaviour:
     alreadySawHint: 0
     defaultText: Attaquer sans se faire toucher(?)
     unlockedText: "Attaquer de loin proche des rebords de l'ar\xE8ne"
-  - id: 2
-    defaultName: ???
-    unlockedName: Vaincre Forme Automne
-    isTrigger: 0
+  - id: 0
+    defaultName: 
+    unlockedName: 
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: "D\xE9truis les arbres pour d\xE9truire le bouclier. Une fois d\xE9truit,
-      on pourra l'attaquer. Attention, il reste extr\xEAmement mobile et difficile
-      \xE0 toucher."
+    defaultText: 
+    unlockedText: 
   - id: 3
     defaultName: ???
     unlockedName: LoremIpsum
