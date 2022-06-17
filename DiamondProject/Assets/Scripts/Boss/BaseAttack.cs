@@ -29,7 +29,7 @@ public abstract class BaseAttack : MonoBehaviour {
     public event UnityAction<BaseAttack> OnCast { add => _onCast.AddListener(value); remove => _onCast.RemoveListener(value); }
     public event UnityAction<BaseAttack> OnEnd { add => _onEnd.AddListener(value); remove => _onEnd.RemoveListener(value); }
 
-    private void OnEnable() {
+    private void Start() {
         attackSystem?.Instance?.Register(this);
         Execute();
     }

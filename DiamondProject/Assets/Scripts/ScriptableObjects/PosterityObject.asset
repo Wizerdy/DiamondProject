@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e8850685be031428ff4e1e0077999e, type: 3}
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
-  resetOnStart: 0
+  resetOnStart: 1
   deathCount: 0
   bossDeathCount: 0
-  baseBullet: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
   maxLifeModifier: 0
   extraLife: 0
   nearSight: 0
@@ -23,17 +22,18 @@ MonoBehaviour:
   dontSeeHealthBar: 0
   gotToAnotherBoss: 0
   numberOfTriggerActivate: 0
-  numberOfTimeDyingWithoutKillingForm: 0
+  numberOfTimeDyingWithoutKillingForm: 2
   killNeutralForm: 0
   killFallForm: 0
   killWinterForm: 0
   sawFallForm: 0
   sawWinterForm: 0
-  firstTimeTalking: 0
-  nbTimeTalkedToNorna: 0
-  nbCorpse: 0
+  firstTimeTalking: 1
+  nbTimeTalkedToNorna: 1
+  nbCorpse: 1
   winterFormTriggerActivated: 0
   arrow: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
+  chargedArrow: {fileID: 4847567384368089890, guid: 70e0bc24b89b00446b4ed33c89543422, type: 3}
   fallBossHintList:
   - id: 1
     defaultName: ???
