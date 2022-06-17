@@ -63,7 +63,7 @@ public class HealthOverShapes : MonoBehaviour {
 
     public void EnableBar(HUDHealth hud) {
         if (_saveOwner == hud) {
-            LoadSaveTo(hud);
+            //LoadSaveTo(hud);
         }
         hud.Active = true;
         hud.UpdateHUD(0);
@@ -91,7 +91,7 @@ public class HealthOverShapes : MonoBehaviour {
             default:
                 _shapeHealth[shape.Type].Active = false;
                 _shapeHealth[shape.Type].gameObject.SetActive(false);
-                if (_save != null) { _save.currentHealth -= _healthLoseOnShapeChange; }
+                //if (_save != null) { _save.currentHealth -= _healthLoseOnShapeChange; }
                 break;
         }
     }

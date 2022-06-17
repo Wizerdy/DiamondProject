@@ -11,6 +11,7 @@ public class DamageHealth : MonoBehaviour {
     [SerializeField] bool _destroyOnHit;
     [SerializeField] bool _onlyDamageOnceEach = false;
     [SerializeField] string _damageType;
+    [SerializeField] GameObject _root = null;
     [SerializeField] MultipleTagSelector _ignoreTag;
 
     [SerializeField, HideInInspector] UnityEvent<GameObject> _onCollide;
@@ -71,8 +72,13 @@ public class DamageHealth : MonoBehaviour {
     }
 
     public void Die() {
-        gameObject.SetActive(false);
-        Destroy(gameObject);
+        if (_root != null) {
+            _root.gameObject.SetActive(false);
+            Destroy(_root);
+        } else {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
     }
 
     public void SetValues(MultipleTagSelector damageables, int damage) {

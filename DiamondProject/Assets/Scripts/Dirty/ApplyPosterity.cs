@@ -18,9 +18,14 @@ public class ApplyPosterity : MonoBehaviour {
     [SerializeField] GameObject _nearsightPanel;
     [SerializeField] Material _nearsightMaterial;
 
+    [Header("Bullet")]
+    [SerializeField] PlayerController _playerController;
+
+
     void Start() {
         if (_deathManager != null) { _deathManager.ExtraLife = _posterity.extraLife; }
         if (_playerHealth != null) { _playerHealth.Instance.MaxHealth += _posterity.maxLifeModifier; }
+        if (_playerController != null) { _playerController.SetBullet(_posterity.arrow, _posterity.chargedArrow); }
     }
 
     void Update() {

@@ -378,6 +378,7 @@ GameObject:
   - component: {fileID: 1735998592836663502}
   - component: {fileID: 6038740818519240514}
   - component: {fileID: 6358842062485675521}
+  - component: {fileID: -8895562905211905667}
   m_Layer: 9
   m_Name: BaseBullet
   m_TagString: Bullet
@@ -459,12 +460,11 @@ MonoBehaviour:
     - BossEntities
     - Structure
     - PlayerLegs
-    - Laser
-    - Enemy
     state: 2
   _destroyOnHit: 1
   _onlyDamageOnceEach: 0
   _damageType: Distance
+  _root: {fileID: 0}
   _ignoreTag:
     tags: []
     state: 0
@@ -542,6 +542,20 @@ MonoBehaviour:
   _sprite: {fileID: 4742298827040375335}
   _waveLength: 0.4
   _waveSpeed: -1
+--- !u!114 &-8895562905211905667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847567384368089890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 0
+  OffsetTransform: {fileID: 0}
 --- !u!1 &5537545531246756685
 GameObject:
   m_ObjectHideFlags: 0

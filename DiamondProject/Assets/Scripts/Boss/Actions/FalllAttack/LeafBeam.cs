@@ -76,7 +76,8 @@ public class LeafBeam : BaseAttack {
 
     public override void End() {
         base.End();
-        currentBeam.gameObject.SetActive(false);
+        if (currentBeam == null) { return; }
+        currentBeam?.gameObject.SetActive(false);
         Destroy(currentBeam);
     }
 }

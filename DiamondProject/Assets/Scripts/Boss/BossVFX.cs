@@ -20,7 +20,9 @@ public class BossVFX : MonoBehaviour {
     [SerializeField] MMFeedbacks _hit;
     [SerializeField] MMFeedbacks _heal;
     [SerializeField] MMFeedbacks _death;
-    [SerializeField] MMFeedbacks _changeShape;
+    [SerializeField] MMFeedbacks _changeShapeNeutral;
+    [SerializeField] MMFeedbacks _changeShapeFall;
+    [SerializeField] MMFeedbacks _changeShapeWinter;
 
     private void Start() {
         //_trackingTree.OnCast += BossGrowTreeFeedback;
@@ -72,6 +74,23 @@ public class BossVFX : MonoBehaviour {
     }
 
     private void BossChangeShapeFeedback(BossShape shape) {
-        _changeShape?.PlayFeedbacks();
+        switch (shape.Type) {
+            case Shape.NEUTRAL:
+                _changeShapeNeutral.PlayFeedbacks();
+                break;
+            case Shape.SPRING:
+                break;
+            case Shape.SUMMER:
+                break;
+            case Shape.FALL:
+                _changeShapeFall.PlayFeedbacks();
+                break;
+            case Shape.WINTER:
+                _changeShapeWinter.PlayFeedbacks();
+                break;
+            default:
+                _changeShapeNeutral.PlayFeedbacks();
+                break;
+        }
     }
 }

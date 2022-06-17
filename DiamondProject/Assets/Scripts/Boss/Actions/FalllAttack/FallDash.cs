@@ -17,6 +17,7 @@ public class FallDash : BaseAttack {
         yield return new WaitForSeconds(dashLoadingTime);
         RaycastHit2D[] raycastHit2D;
         Vector3 dashDir = (PlayerPos - BossPos).normalized;
+        if (dashDir == Vector3.zero) { dashDir = Vector3.up; }
         dashDir = new Vector3(dashDir.x, dashDir.y, 0);
         raycastHit2D = Physics2D.RaycastAll(BossPos, dashDir, dashMaxRange + minDistOfWall);
         //Debug.DrawRay(BossPos, dashDir * (dashMaxRange + minDistOfWall), Color.red, 100f);
@@ -30,6 +31,7 @@ public class FallDash : BaseAttack {
                 }
             }
         }
+        if (dashDist <= 0 ) { yield break; }
         Vector3 dashDepart = BossPos;
         Vector3 dashDest = BossPos + dashDir * dashDist;
         float dashCurrentPos = 0;
