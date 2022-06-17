@@ -53,6 +53,9 @@ MonoBehaviour:
   damage: 10
   edgeCollider: {fileID: 4119513334794404855}
   line: {fileID: 4119513334794404854}
+  _onWallDestroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!120 &4119513334794404854
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +76,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: 0fdf97416997f0a4dbf3deb6a8ef7d05, type: 3}
+  - {fileID: 2100000, guid: 9767c03d1ffdb114bae44cb0046d323d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
