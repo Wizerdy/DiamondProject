@@ -35,6 +35,12 @@ public class Quizz : MonoBehaviour
         }
     }
 
+    public bool AlreadyUseAnswer(int rightAnswerNum, int questionNum) {
+        if (rightAnswerNum == questionNum)
+            return true;
+        return false;
+    }
+
     public void OpenResopnseBook() {
         responseBookFlowchart.SendFungusMessage("OpenReponseBook");
     }
