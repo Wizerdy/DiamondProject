@@ -14,6 +14,8 @@ public class IMeetARealBoss : MonoBehaviour {
     [SerializeField] UnityEvent<int> _onInvincibility;
     [SerializeField] UnityEvent _onDeath;
 
+    Shape _currentShape = Shape.NEUTRAL;
+
     #region Properties
 
     public Sprite Sprite { get => _spriteRenderer?.sprite; set => ChangeSprite(value); }
@@ -74,6 +76,7 @@ public class IMeetARealBoss : MonoBehaviour {
     }
 
     public void SetSkin(Shape shape, int percentage = 100) {
+        _currentShape = shape;
         if (percentage % 25 != 0) { Debug.LogWarning("Wrong percentage - SetSkin : " + percentage); percentage = 100; }
         string newSkin = "";
         switch (shape) {
@@ -93,5 +96,16 @@ public class IMeetARealBoss : MonoBehaviour {
         _spine.skeleton.SetSkin(newSkin);
         _spine.Skeleton.SetSlotsToSetupPose();
         _spine.LateUpdate();
+    }
+
+    public void UpdateHealthSkin() {
+        float percentage = (float)_health.CurrentHealth / (float)_health.MaxHealth;
+        ChangeHealthSkin(Mathf.RoundToInt(percentage * 100f / 25f) * 25);
+    }
+
+    public void ChangeHealthSkin(int percentage) {
+        if (_currentShape == Shape.NEUTRAL) { return; }
+        if (percentage % 25 != 0 || percentage == 0) { return; }
+        SetSkin(_currentShape, percentage);
     }
 }

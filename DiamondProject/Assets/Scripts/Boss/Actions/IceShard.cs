@@ -31,6 +31,8 @@ public class IceShard : MonoBehaviour
     bool canMove = false;
     public ShardType shardType;
 
+    public bool Launched => canMove;
+
     public event UnityAction<IceShard> OnShardSpawn { add => _onShardSpawn.AddListener(value); remove => _onShardSpawn.RemoveListener(value); }
     public event UnityAction<GameObject> OnShardHit { add => _onShardHit.AddListener(value); remove => _onShardHit.RemoveListener(value); }
     public event UnityAction OnShardDestroy { add => _onShardDestroy.AddListener(value); remove => _onShardDestroy.RemoveListener(value); }
