@@ -298,6 +298,45 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""UI"",
+            ""id"": ""8a632b9f-9b3b-401b-a0c9-8e3404a4f00e"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""98aa4f36-bee9-4f0f-8670-89cb069ec120"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""304acb19-f706-4cd3-8004-52b0a0604c66"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1b30e4d-a00d-40d1-b552-20f120101dad"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""CheatCode"",
             ""id"": ""8004fd96-6426-448c-bafe-dfa96e4d1414"",
             ""actions"": [
@@ -323,6 +362,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""name"": ""FallShape"",
                     ""type"": ""Button"",
                     ""id"": ""b28e67e2-21fd-46aa-995c-a595fbca1bf3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Suicide"",
+                    ""type"": ""Button"",
+                    ""id"": ""dcb7da2e-ab98-4303-b71a-924852640ee4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -362,43 +410,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""FallShape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""UI"",
-            ""id"": ""8a632b9f-9b3b-401b-a0c9-8e3404a4f00e"",
-            ""actions"": [
-                {
-                    ""name"": ""Pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""98aa4f36-bee9-4f0f-8670-89cb069ec120"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""304acb19-f706-4cd3-8004-52b0a0604c66"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d1b30e4d-a00d-40d1-b552-20f120101dad"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""id"": ""2cb7387c-ce1b-4ed1-b877-eef4dfb4737f"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Pause"",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Suicide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -448,14 +468,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_DialogueInteraction = m_Dialogue.FindAction("DialogueInteraction", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
         // CheatCode
         m_CheatCode = asset.FindActionMap("CheatCode", throwIfNotFound: true);
         m_CheatCode_Killboss = m_CheatCode.FindAction("Kill boss", throwIfNotFound: true);
         m_CheatCode_WinterShape = m_CheatCode.FindAction("WinterShape", throwIfNotFound: true);
         m_CheatCode_FallShape = m_CheatCode.FindAction("FallShape", throwIfNotFound: true);
-        // UI
-        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
+        m_CheatCode_Suicide = m_CheatCode.FindAction("Suicide", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -643,55 +664,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public DialogueActions @Dialogue => new DialogueActions(this);
 
-    // CheatCode
-    private readonly InputActionMap m_CheatCode;
-    private ICheatCodeActions m_CheatCodeActionsCallbackInterface;
-    private readonly InputAction m_CheatCode_Killboss;
-    private readonly InputAction m_CheatCode_WinterShape;
-    private readonly InputAction m_CheatCode_FallShape;
-    public struct CheatCodeActions
-    {
-        private @PlayerControls m_Wrapper;
-        public CheatCodeActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Killboss => m_Wrapper.m_CheatCode_Killboss;
-        public InputAction @WinterShape => m_Wrapper.m_CheatCode_WinterShape;
-        public InputAction @FallShape => m_Wrapper.m_CheatCode_FallShape;
-        public InputActionMap Get() { return m_Wrapper.m_CheatCode; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(CheatCodeActions set) { return set.Get(); }
-        public void SetCallbacks(ICheatCodeActions instance)
-        {
-            if (m_Wrapper.m_CheatCodeActionsCallbackInterface != null)
-            {
-                @Killboss.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
-                @Killboss.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
-                @Killboss.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
-                @WinterShape.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnWinterShape;
-                @WinterShape.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnWinterShape;
-                @WinterShape.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnWinterShape;
-                @FallShape.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnFallShape;
-                @FallShape.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnFallShape;
-                @FallShape.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnFallShape;
-            }
-            m_Wrapper.m_CheatCodeActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Killboss.started += instance.OnKillboss;
-                @Killboss.performed += instance.OnKillboss;
-                @Killboss.canceled += instance.OnKillboss;
-                @WinterShape.started += instance.OnWinterShape;
-                @WinterShape.performed += instance.OnWinterShape;
-                @WinterShape.canceled += instance.OnWinterShape;
-                @FallShape.started += instance.OnFallShape;
-                @FallShape.performed += instance.OnFallShape;
-                @FallShape.canceled += instance.OnFallShape;
-            }
-        }
-    }
-    public CheatCodeActions @CheatCode => new CheatCodeActions(this);
-
     // UI
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
@@ -724,6 +696,63 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // CheatCode
+    private readonly InputActionMap m_CheatCode;
+    private ICheatCodeActions m_CheatCodeActionsCallbackInterface;
+    private readonly InputAction m_CheatCode_Killboss;
+    private readonly InputAction m_CheatCode_WinterShape;
+    private readonly InputAction m_CheatCode_FallShape;
+    private readonly InputAction m_CheatCode_Suicide;
+    public struct CheatCodeActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CheatCodeActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Killboss => m_Wrapper.m_CheatCode_Killboss;
+        public InputAction @WinterShape => m_Wrapper.m_CheatCode_WinterShape;
+        public InputAction @FallShape => m_Wrapper.m_CheatCode_FallShape;
+        public InputAction @Suicide => m_Wrapper.m_CheatCode_Suicide;
+        public InputActionMap Get() { return m_Wrapper.m_CheatCode; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CheatCodeActions set) { return set.Get(); }
+        public void SetCallbacks(ICheatCodeActions instance)
+        {
+            if (m_Wrapper.m_CheatCodeActionsCallbackInterface != null)
+            {
+                @Killboss.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
+                @Killboss.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
+                @Killboss.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnKillboss;
+                @WinterShape.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnWinterShape;
+                @WinterShape.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnWinterShape;
+                @WinterShape.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnWinterShape;
+                @FallShape.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnFallShape;
+                @FallShape.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnFallShape;
+                @FallShape.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnFallShape;
+                @Suicide.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSuicide;
+                @Suicide.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSuicide;
+                @Suicide.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSuicide;
+            }
+            m_Wrapper.m_CheatCodeActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Killboss.started += instance.OnKillboss;
+                @Killboss.performed += instance.OnKillboss;
+                @Killboss.canceled += instance.OnKillboss;
+                @WinterShape.started += instance.OnWinterShape;
+                @WinterShape.performed += instance.OnWinterShape;
+                @WinterShape.canceled += instance.OnWinterShape;
+                @FallShape.started += instance.OnFallShape;
+                @FallShape.performed += instance.OnFallShape;
+                @FallShape.canceled += instance.OnFallShape;
+                @Suicide.started += instance.OnSuicide;
+                @Suicide.performed += instance.OnSuicide;
+                @Suicide.canceled += instance.OnSuicide;
+            }
+        }
+    }
+    public CheatCodeActions @CheatCode => new CheatCodeActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -758,14 +787,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnDialogueInteraction(InputAction.CallbackContext context);
     }
+    public interface IUIActions
+    {
+        void OnPause(InputAction.CallbackContext context);
+    }
     public interface ICheatCodeActions
     {
         void OnKillboss(InputAction.CallbackContext context);
         void OnWinterShape(InputAction.CallbackContext context);
         void OnFallShape(InputAction.CallbackContext context);
-    }
-    public interface IUIActions
-    {
-        void OnPause(InputAction.CallbackContext context);
+        void OnSuicide(InputAction.CallbackContext context);
     }
 }

@@ -16,11 +16,11 @@ public class LiaAttack : MonoBehaviour {
     [SerializeField] AttackLauncher _launcher;
     [SerializeField] AttackSystem _attackSystem;
     [Header("Values")]
+    [SerializeField] bool _acting = false;
     [SerializeField] float _waitTimeBeforeAction = 5f;
     [SerializeField] float _timeBetweenAttacks = 5f;
     [SerializeField] float _timeBetweenAttacksFALL = 3f;
     [SerializeField] Color _stuntColor = Color.gray;
-    //[Header("Behaviour")]
     [Header("Attacks")]
     [SerializeField] List<string> _neutralAttacks = new List<string>();
     [SerializeField] List<string> _fallAttacks = new List<string>();
@@ -35,10 +35,18 @@ public class LiaAttack : MonoBehaviour {
     string lastAttack = "";
     //string lastAttackEnd;
 
+    public bool CanAct { get => !_stunt && _acting; set => Acting(value); }
+
     void Start() {
-        _bossHealth.CanTakeDamage = false;
+        //_bossHealth.CanTakeDamage = false;
         _timer = _timeBetweenAttacks;
-        StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
+        //if (_acting) {
+        //    StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
+        //}
+    }
+
+    public void Acting(bool state) {
+        _acting = state;
     }
 
     public void ChangeBehaviour() {
@@ -82,8 +90,11 @@ public class LiaAttack : MonoBehaviour {
         _attackSystem.ClearAttacks();
         if (time <= 0f) { return; }
         _stunt = true;
-        _boss?.ChangeColor(_stuntColor, time);
+        //_boss?.ChangeColor(_stuntColor, time);
         StartCoroutine(Tools.Delay(() => _stunt = false, time));
+        _boss?.SetAnimatorBool("Sleeping", true);
+        Debug.Log("tamer");
+        StartCoroutine(Tools.Delay((bool state) => _boss?.SetAnimatorBool("Sleeping", state), false, time));
     }
 
     public string Attack(params string[] attacksId) {
@@ -106,7 +117,7 @@ public class LiaAttack : MonoBehaviour {
         yield return new WaitForSeconds(_waitTimeBeforeAction);
         float timer = 10f;
         while (true) {
-            while (_stunt) { yield return null; }
+            while (!CanAct) { yield return null; }
             if (timer > 10f) {
                 timer = 0f;
                 lastAttack = "Movement";
@@ -115,7 +126,7 @@ public class LiaAttack : MonoBehaviour {
                     timer += Time.deltaTime;
                     yield return null;
                 }
-                while (_stunt) { yield return null; }
+                while (!CanAct) { yield return null; }
             }
             availableAttacks.Remove("Movement");
             lastAttack = Tools.Random(availableAttacks.ToArray());
@@ -150,14 +161,14 @@ public class LiaAttack : MonoBehaviour {
         yield return new WaitForSeconds(_waitTimeBeforeAction);
         Attack("Protector Trees");
         while (true) {
-            while (_stunt) { yield return null; }
+            while (!CanAct) { yield return null; }
             state = LIAState.MOVEMENT;
             lastAttack = "FollowPlayer";
             availableAttacks.Remove(Attack(lastAttack));
             while (!availableAttacks.Contains(lastAttack)) {
                 yield return null;
             }
-            while (_stunt) { yield return null; }
+            while (!CanAct) { yield return null; }
             state = LIAState.ACTION;
             availableAttacks.Remove("FollowPlayer");
             lastAttack = Tools.Random(availableAttacks.ToArray());
@@ -166,7 +177,7 @@ public class LiaAttack : MonoBehaviour {
             while (!availableAttacks.Contains(lastAttack) && lastAttack != "Boomerang") {
                 yield return null;
             }
-            while (_stunt) { yield return null; }
+            while (!CanAct) { yield return null; }
             float random = Random.Range(0, 99);
             if(random < 40) {
                 lastAttack = "FallDash";
@@ -185,7 +196,7 @@ public class LiaAttack : MonoBehaviour {
         StartCoroutine(Tools.Delay(() => _bossHealth.CanTakeDamage = true, _waitTimeBeforeAction));
         yield return new WaitForSeconds(_waitTimeBeforeAction);
         while (true) {
-            while (_stunt) { yield return null; }
+            while (!CanAct) { yield return null; }
             lastAttack = Tools.Random(availableAttacks.ToArray());
             availableAttacks.Remove(Attack(lastAttack));
             while (!availableAttacks.Contains(lastAttack)) {

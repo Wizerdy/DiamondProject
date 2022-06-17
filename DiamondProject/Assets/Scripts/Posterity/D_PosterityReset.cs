@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class D_PosterityReset : MonoBehaviour {
     [SerializeField] PosterityObject _posterity;
+    [SerializeField] VNTrigger vnTrigger;
 
     static D_PosterityReset _instance;
 
@@ -15,6 +16,10 @@ public class D_PosterityReset : MonoBehaviour {
         if (_posterity == null) { return; }
         if (_posterity.resetOnStart) {
             _posterity.ResetValues();
+        }
+        if (vnTrigger == null) { return; }
+        if (vnTrigger.ResetOnPlay) {
+            vnTrigger.ResetValue();
         }
     }
 }

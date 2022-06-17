@@ -14,12 +14,13 @@ public class SimpleCameraEngine : MonoBehaviour {
     Coroutine _routine_MoveTo = null;
     Coroutine _routine_ZoomTo = null;
 
+    bool _transitioning = false;
+
     private void Awake() {
         _camera = GetComponent<Camera>();
-    }
-
-    void Start() {
-        Adopt(_parent, 0f);
+        if (_parent != null) {
+            Adopt(_parent, 0f);
+        }
     }
 
     public void Adopt(Camera camera) {
@@ -34,6 +35,8 @@ public class SimpleCameraEngine : MonoBehaviour {
             _camera.orthographicSize = camera.orthographicSize;
             return;
         }
+        _transitioning = true;
+        StartCoroutine(Tools.Delay(() => _transitioning = false, time));
         ZoomTo(camera.orthographicSize, time, curve);
         MoveTo(Vector2.zero, time, curve);
         _parent = camera;
@@ -73,5 +76,10 @@ public class SimpleCameraEngine : MonoBehaviour {
             float nextSize = Mathf.Lerp(startSize, target, curve.Evaluate(percentage));
             _camera.orthographicSize = nextSize;
         }
+    }
+
+    private void Update() {
+        if (_parent == null || _transitioning) { return; }
+        _camera.orthographicSize = _parent.orthographicSize;
     }
 }

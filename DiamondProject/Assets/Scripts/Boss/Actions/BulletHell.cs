@@ -51,6 +51,7 @@ public class BulletHell : BaseAttack {
         _shardCount++;
         iceShard.Init(ShardType.bulletHell, _target?.Instance, shardSpeed, iceShardDamage, -shotDir, shardLifetime);
         iceShard.OnShardDestroy += () => _shardCount--;
+        iceShard.Launch();
     }
 
     protected override IEnumerator IExecute() {

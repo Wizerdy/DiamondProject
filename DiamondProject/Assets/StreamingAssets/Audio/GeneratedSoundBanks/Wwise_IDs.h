@@ -35,6 +35,13 @@ namespace AK
         static const AkUniqueID BOSS_FORMCHANGE_NEUTRAL = 3651181119U;
         static const AkUniqueID BOSS_FORMCHANGE_WINTER = 4024294733U;
         static const AkUniqueID BOSS_HIT = 1142827732U;
+        static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_CAST = 1678198802U;
+        static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_CHARGE = 340683315U;
+        static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_THROW_START = 1804500156U;
+        static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_THROW_STOP = 1548392208U;
+        static const AkUniqueID BOSS_NEUTRAL_ROCKBEAM_CAST = 446657731U;
+        static const AkUniqueID BOSS_NEUTRAL_ROCKBEAM_END = 2535422893U;
+        static const AkUniqueID BOSS_NEUTRAL_ROCKBEAM_START = 1309462310U;
         static const AkUniqueID BOSS_NEUTRAL_ROCKSPIKES = 2318093787U;
         static const AkUniqueID BOSS_NEUTRAL_ROCKSPIKES_CAST = 524303667U;
         static const AkUniqueID BOSS_NEUTRAL_THUNDER = 176032549U;
@@ -55,6 +62,7 @@ namespace AK
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_END = 1918681101U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_START = 4119016838U;
         static const AkUniqueID GAMESTART = 4058101365U;
+        static const AkUniqueID INTRO_PUMPKID_FOOTSTEPS = 2007880638U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
         static const AkUniqueID PUMPKID_CROSSBOW_BOOMERANG_RETURN = 601976890U;
         static const AkUniqueID PUMPKID_CROSSBOW_CHARGE_END = 3836879481U;
@@ -226,8 +234,11 @@ namespace AK
         static const AkUniqueID RTPC_BOSSFORM = 3679360398U;
         static const AkUniqueID RTPC_BOSSFORM_SLOW = 1139492498U;
         static const AkUniqueID RTPC_CROSSBOWCHARGE = 1533370991U;
+        static const AkUniqueID RTPC_GENERALVOLUME = 2888337175U;
         static const AkUniqueID RTPC_LEAFBOOMERANG_POSITION = 2664983669U;
+        static const AkUniqueID RTPC_MUSICVOLUME = 2378823330U;
         static const AkUniqueID RTPC_PUMPKID_SPEED = 3854188899U;
+        static const AkUniqueID RTPC_SFXVOLUME = 2644490154U;
         static const AkUniqueID RTPC_SWORDCHARGE = 2323919714U;
         static const AkUniqueID RTPC_WEAPONTYPE = 90049299U;
     } // namespace GAME_PARAMETERS
@@ -249,13 +260,16 @@ namespace AK
         static const AkUniqueID HIT = 1116398592U;
         static const AkUniqueID MASTER = 4056684167U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MASTER_VOLUME = 4179668880U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID MUSIC_VOLUME = 1006694123U;
         static const AkUniqueID NEUTRAL = 670611050U;
         static const AkUniqueID PUMPKID = 2863832581U;
         static const AkUniqueID SWORD = 2454616260U;
         static const AkUniqueID UI = 1551306167U;
         static const AkUniqueID UI_GENERAL = 1222112018U;
         static const AkUniqueID UI_VISUALNOVEL = 2082918604U;
+        static const AkUniqueID VOLUME_SFX = 3673881719U;
         static const AkUniqueID WINTER = 2965343494U;
     } // namespace BUSSES
 

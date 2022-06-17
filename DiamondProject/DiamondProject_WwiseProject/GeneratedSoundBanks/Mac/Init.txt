@@ -48,23 +48,31 @@ State	ID	Name	State Group			Notes
 	1160234136	Normal	ST_Skip			
 	2160573204	Skipping	ST_Skip			
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2378823330	RTPC_MusicVolume			\SD\RTPC_MusicVolume	
+	2644490154	RTPC_SFXVolume			\SD\RTPC_SFXVolume	
+	2888337175	RTPC_GeneralVolume			\SD\RTPC_GeneralVolume	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
-	247557814	Foley			\SD\Master\Pumpkid\Foley	
-	670611050	Neutral			\SD\Master\Boss\Neutral	
-	1116398592	Hit			\SD\Master\Pumpkid\Hit	
-	1117531639	AMB			\SD\Master\AMB	
-	1222112018	UI_General			\SD\Master\UI\UI_General	
-	1551306167	UI			\SD\Master\UI	
-	1560169506	Boss			\SD\Master\Boss	
-	2082918604	UI_VisualNovel			\SD\Master\UI\UI_VisualNovel	
-	2454616260	Sword			\SD\Master\Pumpkid\Sword	
-	2512384458	Fall			\SD\Master\Boss\Fall	
-	2523406417	Crossbow			\SD\Master\Pumpkid\Crossbow	
-	2863832581	Pumpkid			\SD\Master\Pumpkid	
-	2965343494	Winter			\SD\Master\Boss\Winter	
+	247557814	Foley			\SD\Master\Master_Volume\Volume_SFX\Pumpkid\Foley	
+	670611050	Neutral			\SD\Master\Master_Volume\Volume_SFX\Boss\Neutral	
+	1006694123	Music_Volume			\SD\Master\Master_Volume\Music_Volume	
+	1116398592	Hit			\SD\Master\Master_Volume\Volume_SFX\Pumpkid\Hit	
+	1117531639	AMB			\SD\Master\Master_Volume\Volume_SFX\AMB	
+	1222112018	UI_General			\SD\Master\Master_Volume\Volume_SFX\UI\UI_General	
+	1551306167	UI			\SD\Master\Master_Volume\Volume_SFX\UI	
+	1560169506	Boss			\SD\Master\Master_Volume\Volume_SFX\Boss	
+	2082918604	UI_VisualNovel			\SD\Master\Master_Volume\Volume_SFX\UI\UI_VisualNovel	
+	2454616260	Sword			\SD\Master\Master_Volume\Volume_SFX\Pumpkid\Sword	
+	2512384458	Fall			\SD\Master\Master_Volume\Volume_SFX\Boss\Fall	
+	2523406417	Crossbow			\SD\Master\Master_Volume\Volume_SFX\Pumpkid\Crossbow	
+	2863832581	Pumpkid			\SD\Master\Master_Volume\Volume_SFX\Pumpkid	
+	2965343494	Winter			\SD\Master\Master_Volume\Volume_SFX\Boss\Winter	
+	3673881719	Volume_SFX			\SD\Master\Master_Volume\Volume_SFX	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
-	3991942870	Music			\SD\Master\Music	
+	3991942870	Music			\SD\Master\Master_Volume\Music_Volume\Music	
 	4056684167	Master			\SD\Master	
+	4179668880	Master_Volume			\SD\Master\Master_Volume	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

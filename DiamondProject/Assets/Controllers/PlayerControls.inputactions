@@ -276,6 +276,45 @@
             ]
         },
         {
+            "name": "UI",
+            "id": "8a632b9f-9b3b-401b-a0c9-8e3404a4f00e",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "98aa4f36-bee9-4f0f-8670-89cb069ec120",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "304acb19-f706-4cd3-8004-52b0a0604c66",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1b30e4d-a00d-40d1-b552-20f120101dad",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "CheatCode",
             "id": "8004fd96-6426-448c-bafe-dfa96e4d1414",
             "actions": [
@@ -301,6 +340,15 @@
                     "name": "FallShape",
                     "type": "Button",
                     "id": "b28e67e2-21fd-46aa-995c-a595fbca1bf3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Suicide",
+                    "type": "Button",
+                    "id": "dcb7da2e-ab98-4303-b71a-924852640ee4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -340,43 +388,15 @@
                     "action": "FallShape",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "8a632b9f-9b3b-401b-a0c9-8e3404a4f00e",
-            "actions": [
-                {
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "98aa4f36-bee9-4f0f-8670-89cb069ec120",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "304acb19-f706-4cd3-8004-52b0a0604c66",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "d1b30e4d-a00d-40d1-b552-20f120101dad",
-                    "path": "<Gamepad>/start",
+                    "id": "2cb7387c-ce1b-4ed1-b877-eef4dfb4737f",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Pause",
+                    "groups": "Keyboard",
+                    "action": "Suicide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

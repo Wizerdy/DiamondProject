@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4119513334794404853}
   - component: {fileID: 4119513334794404854}
   - component: {fileID: 4119513334794404855}
+  - component: {fileID: -152570804747052931}
+  - component: {fileID: 6068446348175890438}
   m_Layer: 0
   m_Name: IceWall
   m_TagString: Untagged
@@ -53,6 +55,9 @@ MonoBehaviour:
   damage: 10
   edgeCollider: {fileID: 4119513334794404855}
   line: {fileID: 4119513334794404854}
+  _onWallDestroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!120 &4119513334794404854
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +78,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: 0fdf97416997f0a4dbf3deb6a8ef7d05, type: 3}
+  - {fileID: 2100000, guid: 9767c03d1ffdb114bae44cb0046d323d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,3 +179,31 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &-152570804747052931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119513334794404808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 0
+  OffsetTransform: {fileID: 0}
+--- !u!114 &6068446348175890438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119513334794404808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 0
+  OffsetTransform: {fileID: 0}

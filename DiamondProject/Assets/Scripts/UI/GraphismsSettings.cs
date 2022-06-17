@@ -40,10 +40,10 @@ public class GraphismsSettings : MonoBehaviour {
         for (int i = 0; i < _resolutions.Length; i++) {
             if (Screen.width == _resolutions[i].width && Screen.height == _resolutions[i].height) {
                 _selectedResolution = i;
-                UpdateLabelResolution();
                 break;
             }
         }
+        UpdateLabelResolution();
         //UpdateLabelFramerate();
     }
 
