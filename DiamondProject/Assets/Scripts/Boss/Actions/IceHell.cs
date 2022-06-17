@@ -154,6 +154,15 @@ public class IceHell : BaseAttack {
         }
     }
 
+    public override void End() {
+        base.End();
+        for (int i = 0; i < _shards.Count; i++) {
+            if (!_shards[i].Launched) {
+                Destroy(_shards[i].gameObject);
+            }
+        }
+    }
+
     private void SpawnWave(Pattern pattern) {
         CalculateCurrentShardAngle(pattern);
 
