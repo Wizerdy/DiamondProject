@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2842759496821591751}
   - component: {fileID: 101263905000557582}
+  - component: {fileID: -6646665963124890908}
   m_Layer: 0
   m_Name: LeafBeam
   m_TagString: Untagged
@@ -46,6 +47,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6646665963124890908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059472417401592482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 0
+  OffsetTransform: {fileID: 0}
 --- !u!1 &2067406490836323462
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +209,7 @@ GameObject:
   - component: {fileID: 2905224301438660464}
   - component: {fileID: 7255045075939415602}
   - component: {fileID: 2043196871650820561}
+  - component: {fileID: 5162791373307412027}
   m_Layer: 0
   m_Name: LeafImpactParticule
   m_TagString: Untagged
@@ -4996,6 +5012,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5162791373307412027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532150920245723875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 1
+  OffsetTransform: {fileID: 1980883693515425487}
 --- !u!1 &5039957622659810660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5027,6 +5057,7 @@ Transform:
   - {fileID: 2519455367451221422}
   - {fileID: 2905224301438660464}
   - {fileID: 9186240905110352339}
+  - {fileID: 1980883693515425487}
   m_Father: {fileID: 2842759496821591751}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5125,6 +5156,7 @@ GameObject:
   - component: {fileID: 2519455367451221422}
   - component: {fileID: 5146738583545288292}
   - component: {fileID: 3844607047195082325}
+  - component: {fileID: 4891974936527876420}
   m_Layer: 0
   m_Name: LeafImpactParticule (1)
   m_TagString: Untagged
@@ -9926,6 +9958,51 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4891974936527876420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7101951388134952213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 1
+  OffsetTransform: {fileID: 1980883693515425487}
+--- !u!1 &7487926040289763360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980883693515425487}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1980883693515425487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7487926040289763360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8526256535446828516}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2775342786701048671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10023,6 +10100,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4dbbcf51e68b094c9c5a98008f4100a, type: 3}
+--- !u!1 &4051809478333491501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2213823574054195826, guid: e4dbbcf51e68b094c9c5a98008f4100a, type: 3}
+  m_PrefabInstance: {fileID: 2775342786701048671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1591336829082645722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4051809478333491501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 1
+  OffsetTransform: {fileID: 2842759496821591751}
 --- !u!4 &4051809478333491506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2213823574054195821, guid: e4dbbcf51e68b094c9c5a98008f4100a, type: 3}
@@ -10102,10 +10198,6 @@ PrefabInstance:
     - target: {fileID: 3707444902035020559, guid: 8d48d8a006e0adc44b7d811645d04bcd, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707444902035020559, guid: 8d48d8a006e0adc44b7d811645d04bcd, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3707444902035020559, guid: 8d48d8a006e0adc44b7d811645d04bcd, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value

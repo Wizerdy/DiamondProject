@@ -161,6 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3041989850840130943}
   - component: {fileID: 5762960992896167171}
+  - component: {fileID: 2552787923791424585}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -235,6 +236,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2552787923791424585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4872682049853256176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 1
+  OffsetTransform: {fileID: 5243907187015130308}
 --- !u!1 &4947481563589175603
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8381748459169821292}
   - component: {fileID: 3618416743659444959}
+  - component: {fileID: 1698052007224369339}
   m_Layer: 0
   m_Name: Leaves
   m_TagString: Untagged
@@ -319,6 +335,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1698052007224369339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947481563589175603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 1
+  OffsetTransform: {fileID: 8847490637495336697}
 --- !u!1 &5243907187015130306
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,11 +360,11 @@ GameObject:
   - component: {fileID: 5243907187015130308}
   - component: {fileID: 7966743475885978344}
   - component: {fileID: -4743802281087441283}
-  - component: {fileID: -2966158885554861414}
   - component: {fileID: 1168343187918062123}
   - component: {fileID: 9200263429881609659}
   - component: {fileID: 7481926552493838065}
   - component: {fileID: 8572126424569078571}
+  - component: {fileID: -2966158885554861414}
   m_Layer: 0
   m_Name: ProtectorTree
   m_TagString: BossEntities
@@ -356,6 +386,7 @@ Transform:
   m_Children:
   - {fileID: 97666293046446717}
   - {fileID: 3152973277759347080}
+  - {fileID: 8847490637495336697}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -371,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88d280d98e8453458d4e9de59e25003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 100
   destination: {x: 0, y: 0, z: 0}
   apparitionTime: 1
   onDeath:
@@ -389,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6f3989b27671a4f8bd0b557e15c528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 2
+  _maxHealth: 100
   _onHit:
     m_PersistentCalls:
       m_Calls:
@@ -448,8 +479,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _destroyOnDeath: 0
-  _damageModifiers:
-  - {fileID: -2966158885554861414}
+  _damageModifiers: []
   _onMaxHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -460,24 +490,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _onLateStart:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &-2966158885554861414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243907187015130306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c41b07ad15e214785b57d63ec4dc32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  damageType: Sword
-  value: 1
-  _onUse:
     m_PersistentCalls:
       m_Calls: []
 --- !u!61 &1168343187918062123
@@ -566,6 +578,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2966158885554861414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243907187015130306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c41b07ad15e214785b57d63ec4dc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  damageType: Sword
+  value: 1
+  _onUse:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &5963542642194198020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8847490637495336697}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8847490637495336697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5963542642194198020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5243907187015130308}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7988664926113933990
 GameObject:
   m_ObjectHideFlags: 0
