@@ -528,7 +528,7 @@ MonoBehaviour:
   _range: 0
   _cooldown: 0.2
   _speed: 30
-  _overheat: 1
+  _overheat: 100
 --- !u!114 &-9082608685847824500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,6 +576,8 @@ MonoBehaviour:
     - BossEntities
     - Structure
     - PlayerLegs
+    - Laser
+    - Enemy
     state: 2
   _destroyOnHit: 1
   _onlyDamageOnceEach: 0
