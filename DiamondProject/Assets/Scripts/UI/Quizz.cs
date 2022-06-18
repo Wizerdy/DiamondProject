@@ -26,9 +26,9 @@ public class Quizz : MonoBehaviour
 
             return false;
         } else {
-            if (questionNum == 3 && responseNum == 6)
+            if (questionNum == 2 && responseNum == 5)
                 return true;
-            if (questionNum == 5 && responseNum == 5)
+            if (questionNum == 4 && responseNum == 7)
                 return true;
 
             return false;

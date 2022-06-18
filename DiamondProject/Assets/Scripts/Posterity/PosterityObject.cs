@@ -47,21 +47,58 @@ public class PosterityObject : ScriptableObject {
 
     public GameObject arrow;
     public GameObject chargedArrow;
-    //public List<Hint> triggerHintList = new List<Hint>();
-    //public List<Hint> bossHintList = new List<Hint>();
-    //public List<Hint> characterHintList = new List<Hint>();
+
     [Header("Fall form")]
     public List<Hint> fallBossHintList = new List<Hint>();
     public List<Hint> fallAttackHintList = new List<Hint>();
     [Header("Winter form")]
     public List<Hint> winterBossHintList = new List<Hint>();
     public List<Hint> winterAttackHintList = new List<Hint>();
+
+    private Hint hint;
     public void ResetValues() {
+        numberOfTimeDyingWithoutKillingForm = 0;
+        killNeutralForm = false;
+        killFallForm = false;
+        killWinterForm = false;
+        sawFallForm = false;
+        sawWinterForm = false;
+        firstTimeTalking = true;
+
+        winterFormTriggerActivated = false;
+
         nbCorpse = 0;
         nbTimeTalkedToNorna = 0;
         deathCount = 0;
         bossDeathCount = 0;
         ResetBonusAndMalus();
+        ResetHint();
+    }
+
+    public void ResetHint() {
+        for (int i = 0; i < fallBossHintList.Count; i++) {
+            hint = fallBossHintList[i];
+            hint.isTrigger = false;
+            fallBossHintList[i] = hint;
+        }
+
+        for (int i = 0; i < fallAttackHintList.Count; i++) {
+            hint = fallBossHintList[i];
+            hint.isTrigger = false;
+            fallAttackHintList[i] = hint;
+        }
+
+        for (int i = 0; i < winterBossHintList.Count; i++) {
+            hint = fallBossHintList[i];
+            hint.isTrigger = false;
+            winterBossHintList[i] = hint;
+        }
+
+        for (int i = 0; i < winterAttackHintList.Count; i++) {
+            hint = fallBossHintList[i];
+            hint.isTrigger = false;
+            winterAttackHintList[i] = hint;
+        }
     }
 
     public void ResetBonusAndMalus() {
