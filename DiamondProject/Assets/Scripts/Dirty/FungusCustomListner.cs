@@ -5,60 +5,84 @@ using UnityEngine;
 using UnityEngine.Events;
 using Fungus;
 
-public class FungusCustomListner : MonoBehaviour {
-    [SerializeField] UnityEvent<Writer> OnInput;
-    [SerializeField] UnityEvent<Writer, WriterState> OnStart;
-    [SerializeField] UnityEvent<Writer, WriterState> OnPause;
-    [SerializeField] UnityEvent<Writer, WriterState> OnResume;
-    [SerializeField] UnityEvent<Writer, WriterState> OnEnd;
-    [SerializeField] UnityEvent<Writer> OnGlyph;
-
-    void Start() {
-        WriterSignals.OnWriterState += _CallStateFunction;
-        WriterSignals.OnWriterInput += _CallInputFunction;
-        WriterSignals.OnWriterGlyph += _CallGlyphFunction;
+public class FungusCustomListner : MonoBehaviour, IWriterListener {
+    enum State {
+        INPUT, START, PAUSE, RESUME, END, GLYPH, ALL_WORDS_WRITTEN, VOICE_OVER
     }
 
-    void OnDestroy() {
-        WriterSignals.OnWriterState -= _CallStateFunction;
-        WriterSignals.OnWriterInput -= _CallInputFunction;
-        WriterSignals.OnWriterGlyph -= _CallGlyphFunction;
-    }
+    [SerializeField] UnityEvent _onInput;
+    [SerializeField] UnityEvent _onStart;
+    [SerializeField] UnityEvent _onPause;
+    [SerializeField] UnityEvent _onResume;
+    [SerializeField] UnityEvent _onEnd;
+    [SerializeField] UnityEvent _onGlyph;
+    [SerializeField] UnityEvent _onAllWordsWritten;
+    [SerializeField] UnityEvent _onVoiceOver;
 
-    void _CallInputFunction(Writer writer) {
-        try {
-            OnInput?.Invoke(writer);
-        } catch (Exception e) {
-            Debug.LogException(e);
-        }
-    }
-
-    void _CallGlyphFunction(Writer writer) {
-        try {
-            OnGlyph?.Invoke(writer);
-        } catch (Exception e) {
-            Debug.LogException(e);
-        }
-    }
-
-    void _CallStateFunction(Writer writer, WriterState state) {
+    void _CallStateFunction(State state) {
         try {
             switch (state) {
-                case WriterState.Start:
-                    OnStart?.Invoke(writer, state);
+                case State.INPUT:
+                    _onInput?.Invoke();
                     break;
-                case WriterState.Pause:
-                    OnPause?.Invoke(writer, state);
+                case State.START:
+                    _onStart?.Invoke();
                     break;
-                case WriterState.Resume:
-                    OnResume?.Invoke(writer, state);
+                case State.PAUSE:
+                    _onPause?.Invoke();
                     break;
-                case WriterState.End:
-                    OnEnd?.Invoke(writer, state);
+                case State.RESUME:
+                    _onResume?.Invoke();
+                    break;
+                case State.END:
+                    _onEnd?.Invoke();
+                    break;
+                case State.GLYPH:
+                    _onGlyph?.Invoke();
+                    break;
+                case State.ALL_WORDS_WRITTEN:
+                    _onAllWordsWritten?.Invoke();
+                    break;
+                case State.VOICE_OVER:
+                    _onVoiceOver?.Invoke();
+                    break;
+                default:
                     break;
             }
         } catch (Exception e) {
             Debug.LogException(e);
         }
+    }
+
+    void IWriterListener.OnInput() {
+        _CallStateFunction(State.INPUT);
+    }
+
+    void IWriterListener.OnStart(AudioClip audioClip) {
+        _CallStateFunction(State.START);
+    }
+
+    void IWriterListener.OnPause() {
+        _CallStateFunction(State.PAUSE);
+    }
+
+    void IWriterListener.OnResume() {
+        _CallStateFunction(State.RESUME);
+    }
+
+    void IWriterListener.OnEnd(bool stopAudio) {
+        _CallStateFunction(State.END);
+    }
+
+    void IWriterListener.OnGlyph() {
+        _CallStateFunction(State.GLYPH);
+    }
+
+    public void OnAllWordsWritten() {
+        _CallStateFunction(State.ALL_WORDS_WRITTEN);
+    }
+
+    public void OnVoiceover(AudioClip voiceOverClip) {
+        _CallStateFunction(State.VOICE_OVER);
     }
 }
