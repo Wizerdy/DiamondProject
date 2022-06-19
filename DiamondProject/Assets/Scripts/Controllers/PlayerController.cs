@@ -161,14 +161,17 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnDestroy() {
-        _controls.GamePlay.Move.performed -= _Move;
-        _controls.GamePlay.Move.canceled -= _Move;
-
         _controls.GamePlay.Interact.started -= _Interact;
 
-        _controls.Battle.AttackDirection.performed += _SetMousePosition;
+        _controls.Battle.MeleeAttack.performed -= _MeleeAttackPerformed;
+        _controls.Battle.MeleeAttack.canceled -= _MeleeAttackCanceled;
 
-        //_controls.Dialogue.DialogueInteraction.started -= _DialogueInteraction;
+        _controls.Battle.RangedAttack.performed -= _RangeAttackPerformed;
+        _controls.Battle.RangedAttack.canceled -= _RangeAttackCanceled;
+
+        _controls.Battle.AttackDirection.performed -= _SetMousePosition;
+
+        _controls.UI.Pause.performed -= _TogglePause;
 
         if (_interact != null) { _interact.OnStopInteract -= _StopInteracting; }
     }
