@@ -15,19 +15,14 @@ public class SoundSlider : MonoBehaviour {
     [SerializeField] TMP_Text _valueLabel;
     [SerializeField] TMP_Text _titleLabel;
     [SerializeField] UnityEvent<float> _onUpdate;
-    [SerializeField] GameObject menuPanel;
 
     float oldValue = 100f;
 
     public event UnityAction<float> OnUpdate { add => _onUpdate.AddListener(value); remove => _onUpdate.RemoveListener(value); }
 
-    private void Awake() {
-        _slider.value = oldValue;
-        menuPanel.SetActive(false);
-    }
-
-    private void Start() {
-        _onOffImage.sprite = _onOff.GetComponent<Image>().sprite;
+    public void Start() {
+        _onOffImage = _onOff.GetComponent<Image>();
+        _onOffImage.sprite = _onOffImage.sprite;
         if (!_isActive) {
             oldValue = _slider.value;
             _slider.value = 0;

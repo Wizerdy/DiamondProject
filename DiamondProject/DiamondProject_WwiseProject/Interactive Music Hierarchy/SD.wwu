@@ -1038,7 +1038,7 @@
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{7E96931E-ED28-46AE-A200-9005359E7C65}">
 												<PropertyList>
-													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="2"/>
 													<Property Name="FadeType" Type="int16" Value="1"/>
 												</PropertyList>
 											</MusicFade>
@@ -1071,7 +1071,7 @@
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{2ACD8D3C-47F1-4C1E-B17E-42A65DF895B6}">
 												<PropertyList>
-													<Property Name="FadeTime" Type="Real64" Value="10"/>
+													<Property Name="FadeTime" Type="Real64" Value="2"/>
 													<Property Name="FadeType" Type="int16" Value="1"/>
 												</PropertyList>
 											</MusicFade>
@@ -1104,7 +1104,7 @@
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{E7F546F6-68AA-4E25-A72F-53797898CD91}">
 												<PropertyList>
-													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="2"/>
 													<Property Name="FadeType" Type="int16" Value="1"/>
 												</PropertyList>
 											</MusicFade>
@@ -1130,7 +1130,7 @@
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{99605F0B-4379-4629-80B7-CB7A09EA496E}">
 												<PropertyList>
-													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeTime" Type="Real64" Value="2"/>
 													<Property Name="FadeType" Type="int16" Value="1"/>
 												</PropertyList>
 											</MusicFade>
@@ -1224,6 +1224,14 @@
 							</Path>
 							<AudioNodeInfo>
 								<AudioNodeRef Name="Narration" ID="{8677E933-DDA4-432D-B1BC-3E53DF4923F7}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Silence" ID="{77B7DB0D-E160-42A6-BE76-AE2C19030B87}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Silence" ID="{B9783597-74D2-4153-BEF4-04AED2273400}" WorkUnitID="{A53F7B7C-2ABE-40B3-85C1-9AA6844D8363}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 					</EntryList>

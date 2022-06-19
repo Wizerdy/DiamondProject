@@ -5,19 +5,34 @@
 			<ChildrenList>
 				<Event Name="Pumpkid_Death" ID="{B30C951D-33FC-48A1-B8F8-5451084E4DEA}">
 					<ChildrenList>
+						<Action Name="" ID="{589D8D63-9B4C-4AD4-9E02-D09CC358B9DE}" ShortID="744046687">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{575D5DED-B93B-4BCF-89C4-4E9DA319C3C9}" ShortID="932758113">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid" ID="{1D89F02D-E472-4196-9B8B-5CCD1F74EA51}" WorkUnitID="{88B54CAF-F905-4FB5-B5DC-C5A91458E56E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{2AECA5B8-27F9-4F0E-8C9C-D3FCB0654D7B}" ShortID="232912242">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Pumpkid_Death" ID="{F8075086-A1F9-4BFD-8282-FB4795DD5038}" WorkUnitID="{E9A5E751-F127-480F-A685-489C17A537CD}"/>
 								</Reference>
 							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{303C376B-FE58-4A1F-BDCE-7691D84A7984}" ShortID="97715695">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="3"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList/>
 						</Action>
 					</ChildrenList>
 				</Event>
