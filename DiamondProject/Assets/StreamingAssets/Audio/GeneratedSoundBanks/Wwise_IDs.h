@@ -62,6 +62,7 @@ namespace AK
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_CAST = 2660008099U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_END = 1918681101U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_START = 4119016838U;
+        static const AkUniqueID CINEMATIC_END = 1826203734U;
         static const AkUniqueID GAMESTART = 4058101365U;
         static const AkUniqueID INTRO_PUMPKID_FOOTSTEPS = 2007880638U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
