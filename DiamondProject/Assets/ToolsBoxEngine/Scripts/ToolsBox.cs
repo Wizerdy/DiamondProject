@@ -744,6 +744,12 @@ namespace ToolsBoxEngine {
             function(arg);
         }
 
+        public static IEnumerator UnscaledDelay(BasicDelegate function, float time) {
+            if (time <= 0f) { function(); yield break; }
+            yield return new WaitForSecondsRealtime(time);
+            function();
+        }
+
         public static IEnumerator Delay<T1, T2>(BasicDelegate<T1, T2> function, T1 arg1, T2 arg2, Coroutine routine) {
             yield return routine;
             function(arg1, arg2);
