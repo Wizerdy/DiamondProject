@@ -88,6 +88,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Cinematic_End" ID="{D8FEDD8E-5371-4FF0-9536-57A7F7E3FBEC}">
+					<ChildrenList>
+						<Action Name="" ID="{F98BCE3D-7357-4172-B95A-2A4EDB7DDB92}" ShortID="756542499">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}" WorkUnitID="{A4106812-EC52-40A6-BE08-CF96C0553F8C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
