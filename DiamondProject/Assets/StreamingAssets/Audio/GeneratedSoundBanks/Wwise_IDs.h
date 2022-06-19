@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMB_ARENA = 3854123299U;
+        static const AkUniqueID AMB_MAINMENU_LP = 3422565739U;
         static const AkUniqueID AMB_VISUALNOVEL = 399517452U;
         static const AkUniqueID ATTACK = 180661997U;
         static const AkUniqueID BOSS_DEATH = 4052139381U;
@@ -61,6 +62,7 @@ namespace AK
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_CAST = 2660008099U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_END = 1918681101U;
         static const AkUniqueID BOSS_WINTER_SNOWABSORPTION_START = 4119016838U;
+        static const AkUniqueID CINEMATIC_END = 1826203734U;
         static const AkUniqueID GAMESTART = 4058101365U;
         static const AkUniqueID INTRO_PUMPKID_FOOTSTEPS = 2007880638U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
@@ -77,11 +79,13 @@ namespace AK
         static const AkUniqueID PUMPKID_SWORD_CHARGE_END = 879795484U;
         static const AkUniqueID PUMPKID_SWORD_CHARGE_START = 455128255U;
         static const AkUniqueID PUMPKID_SWORD_SLASH = 971183997U;
+        static const AkUniqueID RETURNTOMAINMENU = 3638260058U;
         static const AkUniqueID SET_STATE_FALL = 2397442311U;
         static const AkUniqueID SET_STATE_NARRATION = 1772629426U;
         static const AkUniqueID SET_STATE_NEUTRAL = 1170226945U;
         static const AkUniqueID SET_STATE_SILENCE = 2712071725U;
         static const AkUniqueID SET_STATE_WINTER = 3733622879U;
+        static const AkUniqueID START_INTRO = 711914504U;
         static const AkUniqueID TREE_HIT = 582090995U;
         static const AkUniqueID UI_MENU_BUTTON_BACK = 4197357760U;
         static const AkUniqueID UI_MENU_BUTTON_CONFIRM = 342937835U;
