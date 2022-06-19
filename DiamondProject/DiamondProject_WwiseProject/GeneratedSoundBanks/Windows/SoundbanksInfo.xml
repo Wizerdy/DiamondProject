@@ -80,7 +80,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="306179547">
+		<SoundBank Id="4056684167" Language="SFX" Hash="152752799">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -1004,6 +1004,22 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="3689825234" Name="Boss_Land" ObjectPath="\Events\SD\Boss\Common\Boss_Land" DurationType="OneShot" DurationMin="2.2" DurationMax="2.4">
+					<IncludedMemoryFiles>
+						<File Id="267909182" Language="SFX">
+							<ShortName>Boss_FormChange_Fall.wav</ShortName>
+							<Path>SFX\Boss_FormChange_Fall_32513D82.wem</Path>
+						</File>
+						<File Id="399149927" Language="SFX">
+							<ShortName>Boss_FormChange_Winter.wav</ShortName>
+							<Path>SFX\Boss_FormChange_Winter_32513D82.wem</Path>
+						</File>
+						<File Id="559235580" Language="SFX">
+							<ShortName>Boss_FormChange_Neutral.wav</ShortName>
+							<Path>SFX\Boss_FormChange_Neutral_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1678198802" Name="Boss_Neutral_BulletHell_Cast" ObjectPath="\Events\SD\Boss\Neutral\Boss_Neutral_BulletHell_Cast" DurationType="OneShot" DurationMin="1.435625" DurationMax="1.473812">
 					<IncludedMemoryFiles>
 						<File Id="308001205" Language="SFX">
@@ -1241,6 +1257,22 @@
 						<File Id="1015851507" Language="SFX">
 							<ShortName>Boss_VO_Thunder_03.wav</ShortName>
 							<Path>SFX\Boss_VO_Thunder_03_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3897662290" Name="Boss_Scream" ObjectPath="\Events\SD\Boss\Common\Boss_Scream" DurationType="OneShot" DurationMin="1.583458" DurationMax="1.60625">
+					<IncludedMemoryFiles>
+						<File Id="250189180" Language="SFX">
+							<ShortName>Boss_VO_ChangeForm_01.wav</ShortName>
+							<Path>SFX\Boss_VO_ChangeForm_01_32513D82.wem</Path>
+						</File>
+						<File Id="592204584" Language="SFX">
+							<ShortName>Boss_VO_ChangeForm_03.wav</ShortName>
+							<Path>SFX\Boss_VO_ChangeForm_03_32513D82.wem</Path>
+						</File>
+						<File Id="664506628" Language="SFX">
+							<ShortName>Boss_VO_ChangeForm_02.wav</ShortName>
+							<Path>SFX\Boss_VO_ChangeForm_02_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -2113,6 +2145,42 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
+				</Event>
+				<Event Id="3871438628" Name="Pumpkid_Jump" ObjectPath="\Events\SD\Pumpkid\Pumpkid_Foley\Pumpkid_Jump" DurationType="OneShot" DurationMin="0.346912" DurationMax="0.37831">
+					<IncludedMemoryFiles>
+						<File Id="136462715" Language="SFX">
+							<ShortName>Pumpkid_Sword_Slash_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Sword_Slash_01_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3304894887" Name="Pumpkid_Land" ObjectPath="\Events\SD\Pumpkid\Pumpkid_Foley\Pumpkid_Land" DurationType="OneShot" DurationMin="0." DurationMax="0.292679">
+					<IncludedMemoryFiles>
+						<File Id="35589408" Language="SFX">
+							<ShortName>Pumpkid_Hit_Basic_02.wav</ShortName>
+							<Path>SFX\Pumpkid_Hit_Basic_02_32513D82.wem</Path>
+						</File>
+						<File Id="151229973" Language="SFX">
+							<ShortName>Pumpkid_Hit_Basic_05.wav</ShortName>
+							<Path>SFX\Pumpkid_Hit_Basic_05_32513D82.wem</Path>
+						</File>
+						<File Id="359942129" Language="SFX">
+							<ShortName>Pumpkid_Hit_Basic_03.wav</ShortName>
+							<Path>SFX\Pumpkid_Hit_Basic_03_32513D82.wem</Path>
+						</File>
+						<File Id="933154456" Language="SFX">
+							<ShortName>Pumpkid_Hit_Basic_01.wav</ShortName>
+							<Path>SFX\Pumpkid_Hit_Basic_01_32513D82.wem</Path>
+						</File>
+						<File Id="941813945" Language="SFX">
+							<ShortName>Pumpkid_Hit_Basic_04.wav</ShortName>
+							<Path>SFX\Pumpkid_Hit_Basic_04_32513D82.wem</Path>
+						</File>
+						<File Id="961740614" Language="SFX">
+							<ShortName>Pumpkid_Hit_Basic_06.wav</ShortName>
+							<Path>SFX\Pumpkid_Hit_Basic_06_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="879795484" Name="Pumpkid_Sword_Charge_End" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_End" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="455128255" Name="Pumpkid_Sword_Charge_Start" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Charge_Start" DurationType="Infinite">

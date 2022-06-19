@@ -36,6 +36,7 @@ namespace AK
         static const AkUniqueID BOSS_FORMCHANGE_NEUTRAL = 3651181119U;
         static const AkUniqueID BOSS_FORMCHANGE_WINTER = 4024294733U;
         static const AkUniqueID BOSS_HIT = 1142827732U;
+        static const AkUniqueID BOSS_LAND = 3689825234U;
         static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_CAST = 1678198802U;
         static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_CHARGE = 340683315U;
         static const AkUniqueID BOSS_NEUTRAL_BULLETHELL_THROW_START = 1804500156U;
@@ -47,6 +48,7 @@ namespace AK
         static const AkUniqueID BOSS_NEUTRAL_ROCKSPIKES_CAST = 524303667U;
         static const AkUniqueID BOSS_NEUTRAL_THUNDER = 176032549U;
         static const AkUniqueID BOSS_NEUTRAL_THUNDER_CAST = 3515543061U;
+        static const AkUniqueID BOSS_SCREAM = 3897662290U;
         static const AkUniqueID BOSS_STUN = 1642963821U;
         static const AkUniqueID BOSS_WINTER_BULLETHELL_CAST = 937314502U;
         static const AkUniqueID BOSS_WINTER_BULLETHELL_CHARGE = 3333600911U;
@@ -76,6 +78,8 @@ namespace AK
         static const AkUniqueID PUMPKID_DEATH = 2921680214U;
         static const AkUniqueID PUMPKID_FOOTSTEP = 504658162U;
         static const AkUniqueID PUMPKID_HIT = 906040055U;
+        static const AkUniqueID PUMPKID_JUMP = 3871438628U;
+        static const AkUniqueID PUMPKID_LAND = 3304894887U;
         static const AkUniqueID PUMPKID_SWORD_CHARGE_END = 879795484U;
         static const AkUniqueID PUMPKID_SWORD_CHARGE_START = 455128255U;
         static const AkUniqueID PUMPKID_SWORD_SLASH = 971183997U;

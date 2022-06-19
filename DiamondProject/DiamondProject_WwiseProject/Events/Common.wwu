@@ -227,6 +227,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Boss_Scream" ID="{8564C02B-EF3E-4D99-B70B-2918D4AB750B}">
+					<ChildrenList>
+						<Action Name="" ID="{185293A0-2C33-4D7E-BE40-4FE13A23ADAF}" ShortID="691949520">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_VO_ChangeForm" ID="{FBA740E1-2FAD-4A94-8B4F-C0CA9186357C}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_Land" ID="{44E719E6-1A90-436C-8E9B-6C777D79105C}">
+					<ChildrenList>
+						<Action Name="" ID="{77C7E22E-BEAB-45CF-85B0-F1583973BAAF}" ShortID="229506741">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Boss_FormChange" ID="{2A5765ED-4D5F-4306-8CF9-509559D34DB3}" WorkUnitID="{159D81FD-B3DC-4C01-A614-F0B0179F80B9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

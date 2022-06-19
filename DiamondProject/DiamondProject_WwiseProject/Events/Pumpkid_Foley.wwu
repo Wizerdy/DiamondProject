@@ -14,6 +14,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Pumpkid_Jump" ID="{6AF6B3D0-5154-485C-A6E1-FE4F7BE3F14A}">
+					<ChildrenList>
+						<Action Name="" ID="{A8B20A43-3483-4088-AA29-BB27E9B3C023}" ShortID="712757756">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Sword_Slash_01" ID="{5B79363E-C589-41D7-88E6-07610CA3DC94}" WorkUnitID="{A47D9B32-28D3-4C70-93D8-31F1D4C08DF9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pumpkid_Land" ID="{83E404A6-B488-4D8C-9D3E-28C4A73FD8FB}">
+					<ChildrenList>
+						<Action Name="" ID="{AD9B7748-AD38-4AF9-86A1-263DA6F4F7CD}" ShortID="748876217">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Hit" ID="{AEAF7459-8761-48AE-8720-7250625BA840}" WorkUnitID="{E9A5E751-F127-480F-A685-489C17A537CD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
