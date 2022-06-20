@@ -14,6 +14,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Pumpkid_Jump" ID="{6AF6B3D0-5154-485C-A6E1-FE4F7BE3F14A}">
+					<ChildrenList>
+						<Action Name="" ID="{A8B20A43-3483-4088-AA29-BB27E9B3C023}" ShortID="712757756">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Jump" ID="{4D9B3906-A38B-4C76-AFCA-4A86B8DFCD26}" WorkUnitID="{F55CF417-5CB9-4B74-B37D-811B0B9E6A82}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pumpkid_Land" ID="{83E404A6-B488-4D8C-9D3E-28C4A73FD8FB}">
+					<ChildrenList>
+						<Action Name="" ID="{AD9B7748-AD38-4AF9-86A1-263DA6F4F7CD}" ShortID="748876217">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pumpkid_Land" ID="{2017E00F-8625-4038-B589-D8097EA2F858}" WorkUnitID="{F55CF417-5CB9-4B74-B37D-811B0B9E6A82}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
