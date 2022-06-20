@@ -30,7 +30,7 @@ public class PosterityObject : ScriptableObject {
     public int numberOfTriggerActivate = 0;
 
     [Header("For VN Scene")]
-    public float textSpeed = 400;
+    public float textSpeed = 50f;
     public int numberOfTimeDyingWithoutKillingForm = 0;
     public bool killNeutralForm = false;
     public bool killFallForm = false;
@@ -57,8 +57,9 @@ public class PosterityObject : ScriptableObject {
     public List<Hint> winterAttackHintList = new List<Hint>();
 
     private Hint hint;
+
     public void ResetValues() {
-        textSpeed = 400;
+        textSpeed = 50f;
         numberOfTimeDyingWithoutKillingForm = 0;
         killNeutralForm = false;
         killFallForm = false;
