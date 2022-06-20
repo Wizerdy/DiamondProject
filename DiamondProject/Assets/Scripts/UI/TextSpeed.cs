@@ -12,12 +12,13 @@ public class TextSpeed : MonoBehaviour
     void Start()
     {
         slider.minValue = 1;
-        slider.maxValue = 10;
+        slider.maxValue = 100;
         slider.wholeNumbers = true;
-        slider.value = 4;
+        slider.value = 50;
     }
 
     public void OnValueChange(float value) {
-        posterity.textSpeed = value * 100;
+        posterity.textSpeed = value * 10;
+        ApplyTextSpeed.instance?.ChangeTexteSpeed();
     }
 }
