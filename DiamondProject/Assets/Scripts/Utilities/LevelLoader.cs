@@ -1,11 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour {
+    [SerializeField] UnityEvent<Scene> _onExitScene;
     float _timeScale = 0f;
     AsyncOperation _sceneLoading;
+
+    public event UnityAction<Scene> OnExitScene { add => _onExitScene.AddListener(value); remove => _onExitScene.RemoveListener(value); }
 
     public void Update() {
         _timeScale = Time.timeScale;
@@ -35,6 +40,11 @@ public class LevelLoader : MonoBehaviour {
     }
 
     public void ChangeToLoadedScene() {
+        try {
+            _onExitScene?.Invoke(SceneManager.GetActiveScene());
+        } catch (Exception e) {
+            Debug.LogException(e);
+        }
         _sceneLoading.allowSceneActivation = true;
     }
 

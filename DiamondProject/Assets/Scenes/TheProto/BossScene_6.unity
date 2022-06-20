@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &3365659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5680249788377665360, guid: c7552ad348094c546957ec3ba587feed, type: 3}
+  m_PrefabInstance: {fileID: 5680249787929907757}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fc47fd02cf56f4786aef1234d8c174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &14237649
 GameObject:
   m_ObjectHideFlags: 0
@@ -6973,8 +6984,8 @@ MonoBehaviour:
   - {fileID: 895346568}
   - {fileID: 895346578}
   - {fileID: 895346577}
-  - {fileID: 895346592}
   - {fileID: 895346586}
+  - {fileID: 895346592}
   - {fileID: 895346571}
   - {fileID: 895346587}
   - {fileID: 895346582}
@@ -8109,8 +8120,6 @@ MonoBehaviour:
     - BossEntities
     - Structure
     - PlayerLegs
-    - Laser
-    - Enemy
     state: 2
   _destroyOnHit: 0
   _onlyDamageOnceEach: 0
@@ -8160,8 +8169,6 @@ MonoBehaviour:
     - BossEntities
     - Structure
     - PlayerLegs
-    - Laser
-    - Enemy
     state: 2
   _destroyOnHit: 0
   _onlyDamageOnceEach: 0
@@ -12929,6 +12936,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9dc1b2566e4c440aed9bb53e6b3ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onExitScene:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3365659}
+        m_TargetAssemblyTypeName: AttackSystem, Assembly-CSharp
+        m_MethodName: ClearAttacks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1780554905
 GameObject:
   m_ObjectHideFlags: 0
