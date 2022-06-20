@@ -239,6 +239,8 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID RTPC_BOSS_ATTACKTYPE = 3290513731U;
+        static const AkUniqueID RTPC_BOSS_DISTANCE = 3857907778U;
+        static const AkUniqueID RTPC_BOSS_POSITION = 4099717930U;
         static const AkUniqueID RTPC_BOSSFORM = 3679360398U;
         static const AkUniqueID RTPC_BOSSFORM_SLOW = 1139492498U;
         static const AkUniqueID RTPC_CROSSBOWCHARGE = 1533370991U;
