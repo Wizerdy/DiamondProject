@@ -31,54 +31,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<SwitchContainer Name="dirt" ID="{20E27B61-7E4D-4D5F-97AD-A3849AB2DA42}" ShortID="682805897">
-									<PropertyList>
-										<Property Name="Color" Type="int16" Value="27"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
-										</Reference>
-									</ReferenceList>
-									<ObjectLists/>
-									<GroupingInfo/>
-								</SwitchContainer>
-								<SwitchContainer Name="leaf" ID="{533AE4CD-EAE4-4DFC-B5F2-D4E7A902F932}" ShortID="1065047056">
-									<PropertyList>
-										<Property Name="Color" Type="int16" Value="27"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
-										</Reference>
-									</ReferenceList>
-									<ObjectLists/>
-									<GroupingInfo/>
-								</SwitchContainer>
-								<SwitchContainer Name="ice" ID="{01767718-CE91-4330-BAA6-6BBB6F8F4D0F}" ShortID="340157274">
-									<PropertyList>
-										<Property Name="Color" Type="int16" Value="27"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
-										</Reference>
-									</ReferenceList>
-									<ObjectLists/>
-									<GroupingInfo/>
-								</SwitchContainer>
 								<RandomSequenceContainer Name="Pumpkid_Footsteps_Dirt" ID="{60B4FC6E-8746-40F4-AD71-0E10DCD4DC40}" ShortID="514703578">
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
@@ -1047,19 +999,10 @@
 							<GroupingInfo>
 								<GroupingBehaviorList>
 									<GroupingBehavior>
-										<ItemRef Name="ice" ID="{01767718-CE91-4330-BAA6-6BBB6F8F4D0F}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="dirt" ID="{20E27B61-7E4D-4D5F-97AD-A3849AB2DA42}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
 										<ItemRef Name="Pumpkid_Footsteps_Leaf" ID="{747A3D6C-6687-4052-9443-1B67D5BF19EA}"/>
 									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="Pumpkid_Footsteps_Dirt" ID="{60B4FC6E-8746-40F4-AD71-0E10DCD4DC40}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="leaf" ID="{533AE4CD-EAE4-4DFC-B5F2-D4E7A902F932}"/>
 									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="Pumpkid_Footsteps_Ice" ID="{9A5400E3-56DE-45E9-B3A3-C2BC718F234D}"/>
@@ -1070,13 +1013,11 @@
 										<SwitchRef Name="Ice" ID="{2353E11A-8B5D-41E3-B5D9-00E68429C458}"/>
 										<ItemList>
 											<ItemRef Name="Pumpkid_Footsteps_Ice" ID="{9A5400E3-56DE-45E9-B3A3-C2BC718F234D}"/>
-											<ItemRef Name="ice" ID="{01767718-CE91-4330-BAA6-6BBB6F8F4D0F}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
 										<SwitchRef Name="Leaf" ID="{F998925D-C425-488B-BA53-94E91391FCC7}"/>
 										<ItemList>
-											<ItemRef Name="leaf" ID="{533AE4CD-EAE4-4DFC-B5F2-D4E7A902F932}"/>
 											<ItemRef Name="Pumpkid_Footsteps_Leaf" ID="{747A3D6C-6687-4052-9443-1B67D5BF19EA}"/>
 										</ItemList>
 									</Grouping>
@@ -1084,13 +1025,34 @@
 										<SwitchRef Name="Dirt" ID="{1C878391-3A0B-4ACA-B003-88784F2F9432}"/>
 										<ItemList>
 											<ItemRef Name="Pumpkid_Footsteps_Dirt" ID="{60B4FC6E-8746-40F4-AD71-0E10DCD4DC40}"/>
-											<ItemRef Name="dirt" ID="{20E27B61-7E4D-4D5F-97AD-A3849AB2DA42}"/>
 										</ItemList>
 									</Grouping>
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
 						<RandomSequenceContainer Name="Pumpkid_Land" ID="{2017E00F-8625-4038-B589-D8097EA2F858}" ShortID="919490618">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2D67B0EF-C6C0-46D0-95C6-BDCA0DCABC0E}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-21</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
@@ -1099,9 +1061,171 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Pumpkid_Land_01" ID="{111AB693-0B78-48AB-9686-5620EE357017}" ShortID="79036552">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Land_01" ID="{E362683E-58E4-42A3-8AB2-0C48FB6E2020}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Land_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="51101211"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Land_01" ID="{E362683E-58E4-42A3-8AB2-0C48FB6E2020}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Land_02" ID="{8CB165E7-2A57-4251-8C92-6525ADCABE81}" ShortID="491388313">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Land_02" ID="{8229FAD2-4B5A-4A44-ACAA-5B003CB1450C}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Land_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="329955783"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Land_02" ID="{8229FAD2-4B5A-4A44-ACAA-5B003CB1450C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Land_03" ID="{5C97468A-840A-4B53-BB64-43BA99AA0CDF}" ShortID="422837340">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Land_03" ID="{F55CEEAF-5614-47D2-8239-DC62D630EB76}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Land_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="944514198"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Land_03" ID="{F55CEEAF-5614-47D2-8239-DC62D630EB76}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Land_04" ID="{EC5B0D12-20C9-4C26-973D-933A158FC942}" ShortID="89602868">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Land_04" ID="{12221B7F-04AF-4C40-ACCD-0F1AE66CEF6F}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Land_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="911479097"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Land_04" ID="{12221B7F-04AF-4C40-ACCD-0F1AE66CEF6F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Land_05" ID="{118C6998-CFA5-4190-83E7-57462777C289}" ShortID="278207044">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Land_05" ID="{02B1BA53-B03C-43AC-9575-0494196CD1E2}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Land_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="221860220"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Land_05" ID="{02B1BA53-B03C-43AC-9575-0494196CD1E2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Land_06" ID="{DC640589-BE18-4377-B121-EFE6AAA2BF33}" ShortID="294157203">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Land_06" ID="{3E874404-9793-4250-87D0-B272C13086B6}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Land_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="839161817"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Land_06" ID="{3E874404-9793-4250-87D0-B272C13086B6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Pumpkid_Jump" ID="{4D9B3906-A38B-4C76-AFCA-4A86B8DFCD26}" ShortID="141589052">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{AACAC124-E759-4BD9-8CA7-34DB8F79B026}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-21</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
@@ -1110,6 +1234,146 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Pumpkid_Jump_01" ID="{1ECA9459-5E06-43D8-8407-6FC19297E12B}" ShortID="691218826">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Jump_01" ID="{C8C87024-D253-48F5-BFA1-E56A036CA84C}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Jump_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="910355172"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Jump_01" ID="{C8C87024-D253-48F5-BFA1-E56A036CA84C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Jump_02" ID="{32C37788-FEF5-4C6E-85BE-56119905E862}" ShortID="501899576">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Jump_02" ID="{23C6C44B-4DA8-441A-B5E5-B21838AFD3C9}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Jump_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="597921826"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Jump_02" ID="{23C6C44B-4DA8-441A-B5E5-B21838AFD3C9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Jump_03" ID="{5539EB37-5059-4F98-B09F-0E80A4A1054A}" ShortID="654849236">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Jump_03" ID="{5F6E9C09-6E8A-403E-8D0E-4F3543EE497D}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Jump_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="560849828"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Jump_03" ID="{5F6E9C09-6E8A-403E-8D0E-4F3543EE497D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Jump_04" ID="{3DA71389-1234-4F97-9218-E9527154F9A4}" ShortID="1006375178">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Jump_04" ID="{72AB938E-6D1A-4F1E-B5CD-1A72CE184A9F}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Jump_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="651358055"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Jump_04" ID="{72AB938E-6D1A-4F1E-B5CD-1A72CE184A9F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Jump_05" ID="{B8438FB0-1856-4741-B0B2-A3A4FF0CFB72}" ShortID="977302969">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Jump_05" ID="{5886C30A-DADD-45C8-B666-827578ACCFD7}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Jump_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="780494896"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Jump_05" ID="{5886C30A-DADD-45C8-B666-827578ACCFD7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Pumpkid_Jump_06" ID="{85BDA7B1-812B-4999-BED0-9D79DC7E705A}" ShortID="954045429">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AB26355B-7BA7-45C8-B727-967A0F656D4A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Pumpkid_Jump_06" ID="{816B5968-9B7B-4299-8DA7-EDE5023D1B04}">
+											<Language>SFX</Language>
+											<AudioFile>Pumpkid_Jump_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="141663781"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Pumpkid_Jump_06" ID="{816B5968-9B7B-4299-8DA7-EDE5023D1B04}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
 					</ChildrenList>
