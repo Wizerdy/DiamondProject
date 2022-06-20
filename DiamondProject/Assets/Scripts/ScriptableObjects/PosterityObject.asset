@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
   resetOnStart: 1
-  deathCount: 0
+  deathCount: 1
   bossDeathCount: 0
   maxLifeModifier: 0
   extraLife: 0
@@ -23,32 +23,31 @@ MonoBehaviour:
   gotToAnotherBoss: 0
   numberOfTriggerActivate: 0
   textSpeed: 50
-  numberOfTimeDyingWithoutKillingForm: 1
+  numberOfTimeDyingWithoutKillingForm: 2
   killNeutralForm: 0
   killFallForm: 0
   killWinterForm: 0
   sawFallForm: 0
   sawWinterForm: 0
   firstTimeTalking: 1
-  nbTimeTalkedToNorna: 1
-  nbCorpse: 1
+  nbTimeTalkedToNorna: 3
+  nbCorpse: 3
   winterFormTriggerActivated: 0
   arrow: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
   chargedArrow: {fileID: 4847567384368089890, guid: 70e0bc24b89b00446b4ed33c89543422, type: 3}
   fallBossHintList:
-  - id: 1
-    defaultName: ???
-    unlockedName: Transformation
-    isTrigger: 0
+  - id: 0
+    defaultName: 
+    unlockedName: 
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: "Touche Gw\xE9nia avec une fl\xE8che charg\xE9e apr\xE8s s'\xEAtre
-      pris la foudre."
+    defaultText: 
+    unlockedText: 
   - id: 2
     defaultName: ???
     unlockedName: "Faiblesse n\xB01"
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -56,7 +55,7 @@ MonoBehaviour:
   - id: 3
     defaultName: ???
     unlockedName: "Faiblesse n\xB02"
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -64,7 +63,7 @@ MonoBehaviour:
   - id: 4
     defaultName: ???
     unlockedName: "Faiblesse n\xB03"
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -73,7 +72,7 @@ MonoBehaviour:
   - id: 1
     defaultName: ???
     unlockedName: Arbres Protecteurs
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Tir charg\xE9e sur un des arbres ?"
@@ -81,7 +80,7 @@ MonoBehaviour:
   - id: 2
     defaultName: ???
     unlockedName: Bouclier Automnale
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Attaque charg\xE9e sur l'ennemi malgr\xE9 sa protection ?"
@@ -89,7 +88,7 @@ MonoBehaviour:
   - id: 3
     defaultName: ???
     unlockedName: Feuilles Boomerang
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Attaque charg\xE9e sur une feuille g\xE9ante... \xE9viter de se
@@ -99,24 +98,24 @@ MonoBehaviour:
   - id: 4
     defaultName: ???
     unlockedName: Rayon Automnal
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: Tir sur le rayon de front ?
     unlockedText: "Attaque charg\xE9e suivant la position du joueur."
   winterBossHintList:
-  - id: 1
-    defaultName: ???
-    unlockedName: Transformation
-    isTrigger: 0
+  - id: 0
+    defaultName: 
+    unlockedName: 
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Ne pas recevoir un coup et ne pas attaquer
+    defaultText: 
+    unlockedText: 
   - id: 2
     defaultName: ???
     unlockedName: "Faiblesse n\xB01"
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -124,7 +123,7 @@ MonoBehaviour:
   - id: 3
     defaultName: ???
     unlockedName: "Faiblesse n\xB02"
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -132,7 +131,7 @@ MonoBehaviour:
   - id: 4
     defaultName: ???
     unlockedName: "Faiblesse n\xB03"
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -142,7 +141,7 @@ MonoBehaviour:
   - id: 1
     defaultName: ???
     unlockedName: Enfer de glace
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Peut-\xEAtre que je pourrais me prendre l'attaque de front en fon\xE7ant
@@ -153,7 +152,7 @@ MonoBehaviour:
   - id: 2
     defaultName: ???
     unlockedName: Projectiles de glace
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Je pourrais charger sur 2 vagues en m\xEAme temps ?"
@@ -161,7 +160,7 @@ MonoBehaviour:
   - id: 3
     defaultName: ???
     unlockedName: Absorption de neige
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: Je pourrais tirer sur ces ondes qui m'entoure ?

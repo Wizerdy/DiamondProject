@@ -5,13 +5,23 @@ using Fungus;
 
 public class ApplyTextSpeed : MonoBehaviour
 {
+    public static ApplyTextSpeed instance;
+
     [SerializeField] private PosterityObject posterity;
     [SerializeField] private Writer defaultSayDialog;
     [SerializeField] private Writer smallSayDialog;
     [SerializeField] private Writer FlavorSaydialog;
-    // Start is called before the first frame update
+
     void Start()
     {
+        if (instance != null) {
+            Destroy(gameObject); 
+            return; 
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this);
+
         defaultSayDialog.SetTextSpeed(posterity.textSpeed);
         smallSayDialog.SetTextSpeed(posterity.textSpeed);
         FlavorSaydialog.SetTextSpeed(posterity.textSpeed);

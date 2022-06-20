@@ -67,6 +67,7 @@ public class LeafBeam : BaseAttack {
                 if (hit.transform.gameObject.CompareTag("Player")) {
                     hit.transform.gameObject.GetComponent<IHealth>()?.TakeDamage(_rayDamage);
                 }
+                PosterityVNValue.instance.IfBeamHitArrow(hit.gameObject);
             }
             Debug.DrawRay(currentBeam.transform.position, currentAim - currentBeam.transform.position, Color.red);
             attackTimer -= Time.deltaTime;

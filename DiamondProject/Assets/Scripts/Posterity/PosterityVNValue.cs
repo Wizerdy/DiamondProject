@@ -5,10 +5,23 @@ using UnityEngine.Events;
 
 public class PosterityVNValue : MonoBehaviour
 {
+    public static PosterityVNValue instance;
+
     [SerializeField] private PosterityObject posterityObj;
     [SerializeField] private GameObject spriteFeedBack;
 
     private Hint hint;
+
+    private void Start() {
+        if (instance != null) {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this);
+    }
+
     public void ArrowHit(GameObject obj) {
         hint = posterityObj.fallAttackHintList[0];
         if (!hint.isTrigger) {
