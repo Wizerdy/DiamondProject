@@ -28,7 +28,7 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1890765036">
+		<SoundBank Id="1355168291" Language="SFX" Hash="747797818">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -80,7 +80,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="3005948758">
+		<SoundBank Id="4056684167" Language="SFX" Hash="2508390777">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -402,7 +402,7 @@
 						<ActionSetSwitchEntry Id="2512384458" Name="Fall" ObjectPath="\Switches\SD\SW_BossForm\Fall"/>
 					</ActionSetSwitch>
 				</Event>
-				<Event Id="3651181119" Name="Boss_FormChange_Neutral" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Neutral" DurationType="OneShot" DurationMin="2.2" DurationMax="2.4">
+				<Event Id="3651181119" Name="Boss_FormChange_Neutral" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Neutral" DurationType="OneShot" DurationMin="2.7" DurationMax="2.9">
 					<IncludedMemoryFiles>
 						<File Id="250189180" Language="SFX">
 							<ShortName>Boss_VO_ChangeForm_01.wav</ShortName>
@@ -436,7 +436,7 @@
 						<ActionSetSwitchEntry Id="670611050" Name="Neutral" ObjectPath="\Switches\SD\SW_BossForm\Neutral"/>
 					</ActionSetSwitch>
 				</Event>
-				<Event Id="4024294733" Name="Boss_FormChange_Winter" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Winter" DurationType="OneShot" DurationMin="2.2" DurationMax="2.4">
+				<Event Id="4024294733" Name="Boss_FormChange_Winter" ObjectPath="\Events\SD\Boss\Common\Boss_FormChange_Winter" DurationType="OneShot" DurationMin="2.7" DurationMax="2.9">
 					<IncludedMemoryFiles>
 						<File Id="250189180" Language="SFX">
 							<ShortName>Boss_VO_ChangeForm_01.wav</ShortName>
@@ -1572,33 +1572,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1826203734" Name="Cinematic_End" ObjectPath="\Events\SD\Music\Cinematic_End" DurationType="OneShot" DurationMin="2.2" DurationMax="2.4">
-					<IncludedMemoryFiles>
-						<File Id="250189180" Language="SFX">
-							<ShortName>Boss_VO_ChangeForm_01.wav</ShortName>
-							<Path>SFX\Boss_VO_ChangeForm_01_32513D82.wem</Path>
-						</File>
-						<File Id="267909182" Language="SFX">
-							<ShortName>Boss_FormChange_Fall.wav</ShortName>
-							<Path>SFX\Boss_FormChange_Fall_32513D82.wem</Path>
-						</File>
-						<File Id="399149927" Language="SFX">
-							<ShortName>Boss_FormChange_Winter.wav</ShortName>
-							<Path>SFX\Boss_FormChange_Winter_32513D82.wem</Path>
-						</File>
-						<File Id="559235580" Language="SFX">
-							<ShortName>Boss_FormChange_Neutral.wav</ShortName>
-							<Path>SFX\Boss_FormChange_Neutral_32513D82.wem</Path>
-						</File>
-						<File Id="592204584" Language="SFX">
-							<ShortName>Boss_VO_ChangeForm_03.wav</ShortName>
-							<Path>SFX\Boss_VO_ChangeForm_03_32513D82.wem</Path>
-						</File>
-						<File Id="664506628" Language="SFX">
-							<ShortName>Boss_VO_ChangeForm_02.wav</ShortName>
-							<Path>SFX\Boss_VO_ChangeForm_02_32513D82.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="1826203734" Name="Cinematic_End" ObjectPath="\Events\SD\Music\Cinematic_End" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
 					<ActionSetState>
 						<ActionSetStateEntry Id="252776334" Name="Boss_Neutral" ObjectPath="\States\SD\ST_Music\Boss_Neutral"/>
 					</ActionSetState>
@@ -4662,6 +4636,7 @@
 				<GameParameter Id="2888337175" Name="RTPC_GeneralVolume" ObjectPath="\Game Parameters\SD\RTPC_GeneralVolume"/>
 				<GameParameter Id="3290513731" Name="RTPC_Boss_AttackType" ObjectPath="\Game Parameters\SD\RTPC_Boss_AttackType"/>
 				<GameParameter Id="3679360398" Name="RTPC_BossForm" ObjectPath="\Game Parameters\SD\RTPC_BossForm"/>
+				<GameParameter Id="4099717930" Name="RTPC_Boss_Position" ObjectPath="\Game Parameters\SD\RTPC_Boss_Position"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="252776334" Name="Boss_Neutral" ObjectPath="\States\SD\ST_Music\Boss_Neutral" GUID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}">

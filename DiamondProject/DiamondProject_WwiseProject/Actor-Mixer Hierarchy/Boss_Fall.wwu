@@ -9,6 +9,44 @@
 			<ChildrenList>
 				<ActorMixer Name="Boss_Fall" ID="{095F4CF2-967C-45A1-9488-196669F79606}" ShortID="45060958">
 					<Comment>arbres, leaf beam, dash, mur de feuilles (boomerang)</Comment>
+					<PropertyList>
+						<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{1960BB69-23CD-44DE-9A81-CB3219AFCFAA}" ShortID="581924373">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="RTPC_Boss_Position" ID="{EF5CA548-FC50-4A2F-B967-1650C38A9D94}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{DD143719-5F94-40EA-915B-9F0D6BFBAD10}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>-1</XPos>
+												<YPos>-8</YPos>
+												<Flags>5</Flags>
+												<SegmentShape>Exp1</SegmentShape>
+											</Point>
+											<Point>
+												<XPos>-0</XPos>
+												<YPos>-0</YPos>
+												<Flags>0</Flags>
+												<SegmentShape>Log1</SegmentShape>
+											</Point>
+											<Point>
+												<XPos>1</XPos>
+												<YPos>-8</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
@@ -1531,6 +1569,47 @@
 							<ObjectLists/>
 						</RandomSequenceContainer>
 					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{1EC9E776-79F0-4ACE-91BE-AF1795EA9F0F}">
+							<PropertyList>
+								<Property Name="PanX" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{F3B5B9BE-7D04-48A8-BAC9-26E56729E04C}" ShortID="612615112">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_Boss_Position" ID="{EF5CA548-FC50-4A2F-B967-1650C38A9D94}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{3B6F7625-2B8E-454D-A647-189E0F837B89}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="1"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-1</XPos>
+														<YPos>75</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Exp2</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-0</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Log2</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>-75</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+						</Panner>
+					</PositioningInfo>
 					<ObjectLists/>
 				</ActorMixer>
 			</ChildrenList>

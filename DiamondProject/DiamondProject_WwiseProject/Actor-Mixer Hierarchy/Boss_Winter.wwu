@@ -9,6 +9,44 @@
 			<ChildrenList>
 				<ActorMixer Name="Boss_Winter" ID="{5872D7AB-78DC-47A7-B4F5-CDC894F5B790}" ShortID="78774921">
 					<Comment>spirale, pics ice qui volent,</Comment>
+					<PropertyList>
+						<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{9E666163-7FDB-4768-BBDC-93E94466CAA7}" ShortID="588292863">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="RTPC_Boss_Position" ID="{EF5CA548-FC50-4A2F-B967-1650C38A9D94}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{CE53EF53-D573-4DCA-A583-49C790A81397}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>-1</XPos>
+												<YPos>-8</YPos>
+												<Flags>5</Flags>
+												<SegmentShape>Exp1</SegmentShape>
+											</Point>
+											<Point>
+												<XPos>-0</XPos>
+												<YPos>-0</YPos>
+												<Flags>0</Flags>
+												<SegmentShape>Log1</SegmentShape>
+											</Point>
+											<Point>
+												<XPos>1</XPos>
+												<YPos>-8</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{76675201-3EF2-4BE1-9A5C-DF225099BA6B}"/>
@@ -1054,7 +1092,9 @@
 						</RandomSequenceContainer>
 						<Sound Name="Boss_Winter_BulletHell_Throw_LP" ID="{E6D71C8E-663A-499D-BDCB-1F74450F8506}" ShortID="805163491">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-11</Value>
@@ -1085,7 +1125,9 @@
 						</Sound>
 						<RandomSequenceContainer Name="Boss_Winter_BulletHell_Charge" ID="{8363E392-F124-4C24-8F33-E95233C86150}" ShortID="1046518545">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -1100,6 +1142,7 @@
 									</ModifierList>
 								</Property>
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-6</Value>
@@ -1258,7 +1301,9 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Winter_BulletHell_Throw_End" ID="{7AED1B88-2DBE-4B96-BFCD-CA5E06BEC04D}" ShortID="765266511">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -1273,6 +1318,7 @@
 									</ModifierList>
 								</Property>
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-8</Value>
@@ -1408,7 +1454,9 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Winter_BulletHell_Throw_Start" ID="{76E52D81-451A-4560-9E83-1BF8E814C074}" ShortID="599119747">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -1423,6 +1471,7 @@
 									</ModifierList>
 								</Property>
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-8</Value>
@@ -1830,6 +1879,47 @@
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{58A55D65-A444-4CE0-9C11-52EDB366CAC6}">
+							<PropertyList>
+								<Property Name="PanX" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{16D56918-BE69-4C70-A999-3038CE80C73A}" ShortID="157966173">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_Boss_Position" ID="{EF5CA548-FC50-4A2F-B967-1650C38A9D94}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{15F9CFBB-CB82-4BD1-97D3-BC746027A341}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="1"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-1</XPos>
+														<YPos>75</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Exp2</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-0</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Log2</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>-75</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+						</Panner>
+					</PositioningInfo>
 					<ObjectLists/>
 				</ActorMixer>
 			</ChildrenList>
