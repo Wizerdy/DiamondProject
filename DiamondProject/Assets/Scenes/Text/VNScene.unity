@@ -11216,6 +11216,7 @@ GameObject:
   - component: {fileID: 435231916}
   - component: {fileID: 435231917}
   - component: {fileID: 435231918}
+  - component: {fileID: 435231919}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -11235,6 +11236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9dc1b2566e4c440aed9bb53e6b3ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onExitScene:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &435231906
 Transform:
   m_ObjectHideFlags: 0
@@ -11389,6 +11393,22 @@ MonoBehaviour:
   - {fileID: 502097269}
   - {fileID: 1945659997}
   - {fileID: 2122150506}
+--- !u!114 &435231919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435231904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388c4bb5ab1306f43a68c1835cfeb01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posterity: {fileID: 11400000, guid: 8e55e4948e8a78e41a3d81207a9bcb23, type: 2}
+  defaultSayDialog: {fileID: 20581239}
+  smallSayDialog: {fileID: 1810903935}
+  FlavorSaydialog: {fileID: 1793373843}
 --- !u!1 &436658571
 GameObject:
   m_ObjectHideFlags: 0
