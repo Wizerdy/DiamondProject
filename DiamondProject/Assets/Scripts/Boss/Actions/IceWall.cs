@@ -41,6 +41,9 @@ public class IceWall : MonoBehaviour {
             _points[i] = new Vector2();
         }
         CreateWalls();
+        SetGraphics();
+        SetEdgeCollider();
+        edgeCollider.enabled = true;
     }
 
     public void Init(int _segments, float _radius, float _gapWidth, float _speed, int _damage) {
