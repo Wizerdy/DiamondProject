@@ -16,6 +16,7 @@ public class IceWall : MonoBehaviour {
 
     [SerializeField] private LineRenderer line;
     private float circleAngle = 0;
+    [SerializeField] List<VisualEffects> effects = new List<VisualEffects>();
 
     //private List<Vector2> colliderPoints = new List<Vector2>();
 

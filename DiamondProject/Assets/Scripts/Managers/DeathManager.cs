@@ -26,7 +26,8 @@ public class DeathManager : MonoBehaviour {
         }
 
         if (_levelLoader != null) {
-            StartCoroutine(Tools.UnscaledDelay(_levelLoader.LoadLevel, _nextLevel, _nextLevelDelay));
+            _levelLoader.LoadLevel(_nextLevel, false);
+            StartCoroutine(Tools.UnscaledDelay(_levelLoader.ChangeToLoadedScene, _nextLevelDelay));
         }
         //_levelLoader?.LoadLevel(_nextLevel);
     }

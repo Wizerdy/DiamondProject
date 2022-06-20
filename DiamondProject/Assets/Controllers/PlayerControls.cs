@@ -375,6 +375,42 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ZoomPlayer"",
+                    ""type"": ""Button"",
+                    ""id"": ""cfbde4c0-b377-43ed-87cd-4d8b84e0b128"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SeeWholeArena"",
+                    ""type"": ""Button"",
+                    ""id"": ""c1671125-f7a4-48c3-b6df-3b4a5f4fa3c2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SlowMotion"",
+                    ""type"": ""Button"",
+                    ""id"": ""9e937406-97ea-49c3-b6c7-713419174110"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleUI"",
+                    ""type"": ""Button"",
+                    ""id"": ""3a9b21be-b181-4bfc-aa14-d9850073c9a2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -419,6 +455,50 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Suicide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""530d5995-c96f-42f1-b7a3-a3e809c8e8bf"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZoomPlayer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c49b9830-fa00-4047-a407-4af4322afbb2"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SeeWholeArena"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d3520d4-5f33-49de-8eb2-4252e58974da"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlowMotion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a8e8734-45e8-487a-80b8-824ea0db9b67"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -477,6 +557,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_CheatCode_WinterShape = m_CheatCode.FindAction("WinterShape", throwIfNotFound: true);
         m_CheatCode_FallShape = m_CheatCode.FindAction("FallShape", throwIfNotFound: true);
         m_CheatCode_Suicide = m_CheatCode.FindAction("Suicide", throwIfNotFound: true);
+        m_CheatCode_ZoomPlayer = m_CheatCode.FindAction("ZoomPlayer", throwIfNotFound: true);
+        m_CheatCode_SeeWholeArena = m_CheatCode.FindAction("SeeWholeArena", throwIfNotFound: true);
+        m_CheatCode_SlowMotion = m_CheatCode.FindAction("SlowMotion", throwIfNotFound: true);
+        m_CheatCode_ToggleUI = m_CheatCode.FindAction("ToggleUI", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -704,6 +788,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_CheatCode_WinterShape;
     private readonly InputAction m_CheatCode_FallShape;
     private readonly InputAction m_CheatCode_Suicide;
+    private readonly InputAction m_CheatCode_ZoomPlayer;
+    private readonly InputAction m_CheatCode_SeeWholeArena;
+    private readonly InputAction m_CheatCode_SlowMotion;
+    private readonly InputAction m_CheatCode_ToggleUI;
     public struct CheatCodeActions
     {
         private @PlayerControls m_Wrapper;
@@ -712,6 +800,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @WinterShape => m_Wrapper.m_CheatCode_WinterShape;
         public InputAction @FallShape => m_Wrapper.m_CheatCode_FallShape;
         public InputAction @Suicide => m_Wrapper.m_CheatCode_Suicide;
+        public InputAction @ZoomPlayer => m_Wrapper.m_CheatCode_ZoomPlayer;
+        public InputAction @SeeWholeArena => m_Wrapper.m_CheatCode_SeeWholeArena;
+        public InputAction @SlowMotion => m_Wrapper.m_CheatCode_SlowMotion;
+        public InputAction @ToggleUI => m_Wrapper.m_CheatCode_ToggleUI;
         public InputActionMap Get() { return m_Wrapper.m_CheatCode; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -733,6 +825,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Suicide.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSuicide;
                 @Suicide.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSuicide;
                 @Suicide.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSuicide;
+                @ZoomPlayer.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnZoomPlayer;
+                @ZoomPlayer.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnZoomPlayer;
+                @ZoomPlayer.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnZoomPlayer;
+                @SeeWholeArena.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSeeWholeArena;
+                @SeeWholeArena.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSeeWholeArena;
+                @SeeWholeArena.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSeeWholeArena;
+                @SlowMotion.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSlowMotion;
+                @SlowMotion.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSlowMotion;
+                @SlowMotion.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnSlowMotion;
+                @ToggleUI.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnToggleUI;
+                @ToggleUI.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnToggleUI;
+                @ToggleUI.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnToggleUI;
             }
             m_Wrapper.m_CheatCodeActionsCallbackInterface = instance;
             if (instance != null)
@@ -749,6 +853,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Suicide.started += instance.OnSuicide;
                 @Suicide.performed += instance.OnSuicide;
                 @Suicide.canceled += instance.OnSuicide;
+                @ZoomPlayer.started += instance.OnZoomPlayer;
+                @ZoomPlayer.performed += instance.OnZoomPlayer;
+                @ZoomPlayer.canceled += instance.OnZoomPlayer;
+                @SeeWholeArena.started += instance.OnSeeWholeArena;
+                @SeeWholeArena.performed += instance.OnSeeWholeArena;
+                @SeeWholeArena.canceled += instance.OnSeeWholeArena;
+                @SlowMotion.started += instance.OnSlowMotion;
+                @SlowMotion.performed += instance.OnSlowMotion;
+                @SlowMotion.canceled += instance.OnSlowMotion;
+                @ToggleUI.started += instance.OnToggleUI;
+                @ToggleUI.performed += instance.OnToggleUI;
+                @ToggleUI.canceled += instance.OnToggleUI;
             }
         }
     }
@@ -797,5 +913,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnWinterShape(InputAction.CallbackContext context);
         void OnFallShape(InputAction.CallbackContext context);
         void OnSuicide(InputAction.CallbackContext context);
+        void OnZoomPlayer(InputAction.CallbackContext context);
+        void OnSeeWholeArena(InputAction.CallbackContext context);
+        void OnSlowMotion(InputAction.CallbackContext context);
+        void OnToggleUI(InputAction.CallbackContext context);
     }
 }
