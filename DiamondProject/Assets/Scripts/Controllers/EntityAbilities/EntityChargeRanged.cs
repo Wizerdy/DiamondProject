@@ -30,7 +30,7 @@ public class EntityChargeRanged : MonoBehaviour {
     [SerializeField] UnityEvent<GameObject> _onHit;
     [SerializeField] UnityEvent<GameObject> _onTrigger;
 
-    [HideInInspector, SerializeField] UnityEvent<Vector2> _onOverCharge;
+    [SerializeField] UnityEvent<Vector2> _onOverCharge;
     [HideInInspector, SerializeField] UnityEvent _onAttackEnd;
 
     GameObject _bullet = null;
