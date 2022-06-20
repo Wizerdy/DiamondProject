@@ -22,15 +22,15 @@ MonoBehaviour:
   dontSeeHealthBar: 0
   gotToAnotherBoss: 0
   numberOfTriggerActivate: 0
-  numberOfTimeDyingWithoutKillingForm: 2
+  numberOfTimeDyingWithoutKillingForm: 0
   killNeutralForm: 0
   killFallForm: 0
   killWinterForm: 0
   sawFallForm: 0
   sawWinterForm: 0
   firstTimeTalking: 1
-  nbTimeTalkedToNorna: 1
-  nbCorpse: 1
+  nbTimeTalkedToNorna: 0
+  nbCorpse: 0
   winterFormTriggerActivated: 0
   arrow: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
   chargedArrow: {fileID: 4847567384368089890, guid: 70e0bc24b89b00446b4ed33c89543422, type: 3}
@@ -70,38 +70,36 @@ MonoBehaviour:
   fallAttackHintList:
   - id: 1
     defaultName: ???
-    unlockedName: Arbres Protecteurs
+    unlockedName: Condition de transformation
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: "Tir charg\xE9e sur un des arbres ?"
-    unlockedText: "Arbres qui repoussent apr\xE8s un certain temps une fois d\xE9truit."
+    defaultText: ???
+    unlockedText: Ne pas recevoir un coup et ne pas attaquer
   - id: 2
     defaultName: ???
-    unlockedName: Bouclier Automnale
+    unlockedName: "Faiblesse n\xB01"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: "Attaque charg\xE9e sur l'ennemi malgr\xE9 sa protection ?"
-    unlockedText: "Bouclier qui prot\xE8ge de toutes les attaques"
+    defaultText: ???
+    unlockedText: "D\xE9truire tous les arbres"
   - id: 3
     defaultName: ???
-    unlockedName: Feuilles Boomerang
+    unlockedName: "Faiblesse n\xB02"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: "Attaque charg\xE9e sur une feuille g\xE9ante... \xE9viter de se
-      prendre des d\xE9g\xE2ts"
-    unlockedText: "Feuilles g\xE9antes qui font un aller-retour sur tout le terrain.
-      Lente \xE0 l'aller, rapide au retour."
+    defaultText: ???
+    unlockedText: "Privil\xE9gier les attaques \xE0 distances"
   - id: 4
     defaultName: ???
-    unlockedName: Rayon Automnal
+    unlockedName: "Faiblesse n\xB03"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: Tir sur le rayon de front ?
-    unlockedText: "Attaque charg\xE9e suivant la position du joueur."
+    defaultText: ???
+    unlockedText: En profiter avant que le bouclier ne se reforme.
   winterBossHintList:
   - id: 1
     defaultName: ???
@@ -110,7 +108,7 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "Attaquer de loin proche des rebords de l'ar\xE8ne"
+    unlockedText: Ne pas recevoir un coup et ne pas attaquer
   - id: 2
     defaultName: ???
     unlockedName: "Faiblesse n\xB01"
@@ -118,7 +116,7 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: Le boss est immobile alors pas la peine de se presser
+    unlockedText: "D\xE9truire tous les arbres"
   - id: 3
     defaultName: ???
     unlockedName: "Faiblesse n\xB02"
@@ -126,7 +124,7 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "Chaque attaque ont une dur\xE9e et fonctionnement diff\xE9rent"
+    unlockedText: "Privil\xE9gier les attaques \xE0 distances"
   - id: 4
     defaultName: ???
     unlockedName: "Faiblesse n\xB03"
@@ -134,33 +132,29 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "Profiter des ouvertures pour utiliser l'attaque au corps \xE0
-      corps"
+    unlockedText: En profiter avant que le bouclier ne se reforme.
   winterAttackHintList:
   - id: 1
     defaultName: ???
-    unlockedName: Enfer de glace
+    unlockedName: Condition de transformation
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: "Peut-\xEAtre que je pourrais me prendre l'attaque de front en fon\xE7ant
-      dessus ?"
-    unlockedText: "Attaques de projectiles en 2 \xE9tapes. D'abord, une vague de
-      projectiles recouvre une grande partie du terrain Ensuite, une autre vague
-      plus petite est lanc\xE9e dans notre direction"
+    defaultText: ???
+    unlockedText: Ne pas recevoir un coup et ne pas attaquer
   - id: 2
     defaultName: ???
-    unlockedName: Projectiles de glace
-    isTrigger: 1
-    didNornaGaveHint: 0
-    alreadySawHint: 0
-    defaultText: "Je pourrais charger sur 2 vagues en m\xEAme temps ?"
-    unlockedText: "Vagues de projectiles regroupant l'enti\xE8ret\xE9 du terrain."
-  - id: 3
-    defaultName: ???
-    unlockedName: Absorption de neige
+    unlockedName: "Faiblesse n\xB01"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: Je pourrais tirer sur ces ondes qui m'entoure ?
-    unlockedText: "Vagues d'avalanches qui s'approche de Gw\xE9nia en l'entourant."
+    defaultText: ???
+    unlockedText: "D\xE9truire tous les arbres"
+  - id: 3
+    defaultName: ???
+    unlockedName: "Faiblesse n\xB02"
+    isTrigger: 0
+    didNornaGaveHint: 0
+    alreadySawHint: 0
+    defaultText: ???
+    unlockedText: "Privil\xE9gier les attaques \xE0 distances"

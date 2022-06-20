@@ -485,6 +485,7 @@ GameObject:
   - component: {fileID: 20581238}
   - component: {fileID: 20581237}
   - component: {fileID: 20581236}
+  - component: {fileID: 20581246}
   m_Layer: 5
   m_Name: SayDialog
   m_TagString: Untagged
@@ -763,6 +764,66 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &20581246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20581235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1245c26fcfff3da45929e9da0c2815dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onInput:
+    m_PersistentCalls:
+      m_Calls: []
+  _onStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 130607132}
+        m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMFeedbacks, MoreMountains.Feedbacks
+        m_MethodName: PlayFeedbacks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  _onResume:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGlyph:
+    m_PersistentCalls:
+      m_Calls: []
+  _onAllWordsWritten:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 130607133}
+        m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMFeedbacks, MoreMountains.Feedbacks
+        m_MethodName: PlayFeedbacks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onVoiceOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &21762035
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,6 +3332,132 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123314096}
   m_CullTransparentMesh: 1
+--- !u!1001 &130607128
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5165025547235142386, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_Name
+      value: OnBossScream
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025547235142389, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: Feedbacks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025547235142390, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: wwiseEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 00851ea7fce23c94eb0c4a38e89d7f49, type: 2}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 352.24936
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 240.02924
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.124328
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659657, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165025548703659658, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+      propertyPath: m_Name
+      value: VFXVNSCENE (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5165025547235142391, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+    - {fileID: 5165025547235142384, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+--- !u!114 &130607129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5165025547235142389, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+  m_PrefabInstance: {fileID: 130607128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &130607130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5165025547741321854, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+  m_PrefabInstance: {fileID: 130607128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &130607131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5165025547606049617, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+  m_PrefabInstance: {fileID: 130607128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &130607132 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5165025547864171669, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+  m_PrefabInstance: {fileID: 130607128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &130607133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5165025547004590680, guid: a4e6463603833cc45a5d1cc335bac9d2, type: 3}
+  m_PrefabInstance: {fileID: 130607128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &131229195
 GameObject:
   m_ObjectHideFlags: 0
@@ -10542,6 +10729,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9dc1b2566e4c440aed9bb53e6b3ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onExitScene:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &435231906
 Transform:
   m_ObjectHideFlags: 0
@@ -12237,6 +12427,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476454003}
   m_CullTransparentMesh: 1
+--- !u!1 &488448148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488448150}
+  - component: {fileID: 488448149}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &488448149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488448148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e907012efc5aecd4daf5139924270736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: b26c97835d1f34a42b3d9724b8de3d87, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &488448150
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488448148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &489937977
 GameObject:
   m_ObjectHideFlags: 0
@@ -14431,6 +14678,8 @@ GameObject:
   - component: {fileID: 555239566}
   - component: {fileID: 555239565}
   - component: {fileID: 555239568}
+  - component: {fileID: 555239570}
+  - component: {fileID: 555239569}
   m_Layer: 0
   m_Name: MainFlowchart
   m_TagString: Untagged
@@ -14453,7 +14702,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -298.6883
-    y: 39.068676
+    y: 37.932312
     width: 125
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -14475,6 +14724,7 @@ MonoBehaviour:
   - {fileID: 555239514}
   - {fileID: 555238302}
   - {fileID: 555239563}
+  - {fileID: 555239570}
   - {fileID: 555237684}
   - {fileID: 555239513}
   - {fileID: 555239511}
@@ -14484,6 +14734,7 @@ MonoBehaviour:
   - {fileID: 555238290}
   - {fileID: 555238292}
   - {fileID: 555238300}
+  - {fileID: 555239569}
   - {fileID: 555238289}
   - {fileID: 555238297}
   - {fileID: 555238296}
@@ -14516,9 +14767,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 555237749}
+  - {fileID: 555237674}
   selectedCommands:
-  - {fileID: 555237783}
+  - {fileID: 555239570}
   variables:
   - {fileID: 555237686}
   - {fileID: 555237786}
@@ -63335,6 +63586,118 @@ MonoBehaviour:
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &555239569
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555237672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2081
+  indentLevel: 0
+  description: Boss scream sound
+  delay: 0
+  invokeType: 0
+  staticEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 130607129}
+        m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMFeedbacks, MoreMountains.Feedbacks
+        m_MethodName: PlayFeedbacks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  booleanParameter:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  booleanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  integerParameter:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  integerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  floatParameter:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  stringParameter:
+    stringRef: {fileID: 0}
+    stringVal: 
+  stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &555239570
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555237672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2080
+  indentLevel: 0
+  description: Clomp clomp sound
+  delay: 0
+  invokeType: 0
+  staticEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 130607130}
+        m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMFeedbacks, MoreMountains.Feedbacks
+        m_MethodName: PlayFeedbacks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  booleanParameter:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  booleanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  integerParameter:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  integerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  floatParameter:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  stringParameter:
+    stringRef: {fileID: 0}
+    stringVal: 
+  stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &584758872
 GameObject:
   m_ObjectHideFlags: 0
@@ -72815,7 +73178,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1054550518}
-  - component: {fileID: 1054550517}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -72823,31 +73185,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1054550517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054550516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e907012efc5aecd4daf5139924270736, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: b26c97835d1f34a42b3d9724b8de3d87, type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  engineLogging: 0
 --- !u!4 &1054550518
 Transform:
   m_ObjectHideFlags: 0
@@ -95782,7 +96119,19 @@ MonoBehaviour:
     Back: {fileID: 1791068237}
   OnFlip:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 130607131}
+        m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMFeedbacks, MoreMountains.Feedbacks
+        m_MethodName: PlayFeedbacks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   StartFlippingPaper: 0
   EndFlippingPaper: 20
 --- !u!114 &2137482442
