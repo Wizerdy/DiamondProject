@@ -14,6 +14,7 @@ public class LevelLoader : MonoBehaviour {
 
     public void Update() {
         _timeScale = Time.timeScale;
+        Debug.Log(Time.timeScale);
     }
 
     public IEnumerator LoasAsyncScene(string name, LoadSceneMode mode, bool autoTransition = true) {
@@ -54,6 +55,14 @@ public class LevelLoader : MonoBehaviour {
 
     void OnDisable() {
         SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    }
+
+    public void TimeScaleToOne() {
+        Time.timeScale = 1f;
+    }
+
+    public void ChangeTimeScale(float target) {
+        Time.timeScale = target;
     }
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode) {
