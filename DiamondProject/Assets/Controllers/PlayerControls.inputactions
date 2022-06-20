@@ -276,6 +276,45 @@
             ]
         },
         {
+            "name": "UI",
+            "id": "8a632b9f-9b3b-401b-a0c9-8e3404a4f00e",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "98aa4f36-bee9-4f0f-8670-89cb069ec120",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "304acb19-f706-4cd3-8004-52b0a0604c66",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1b30e4d-a00d-40d1-b552-20f120101dad",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "CheatCode",
             "id": "8004fd96-6426-448c-bafe-dfa96e4d1414",
             "actions": [
@@ -301,6 +340,51 @@
                     "name": "FallShape",
                     "type": "Button",
                     "id": "b28e67e2-21fd-46aa-995c-a595fbca1bf3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Suicide",
+                    "type": "Button",
+                    "id": "dcb7da2e-ab98-4303-b71a-924852640ee4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ZoomPlayer",
+                    "type": "Button",
+                    "id": "cfbde4c0-b377-43ed-87cd-4d8b84e0b128",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SeeWholeArena",
+                    "type": "Button",
+                    "id": "c1671125-f7a4-48c3-b6df-3b4a5f4fa3c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SlowMotion",
+                    "type": "Button",
+                    "id": "9e937406-97ea-49c3-b6c7-713419174110",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleUI",
+                    "type": "Button",
+                    "id": "3a9b21be-b181-4bfc-aa14-d9850073c9a2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -340,43 +424,59 @@
                     "action": "FallShape",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "8a632b9f-9b3b-401b-a0c9-8e3404a4f00e",
-            "actions": [
-                {
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "98aa4f36-bee9-4f0f-8670-89cb069ec120",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "304acb19-f706-4cd3-8004-52b0a0604c66",
-                    "path": "<Keyboard>/escape",
+                    "id": "2cb7387c-ce1b-4ed1-b877-eef4dfb4737f",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Pause",
+                    "action": "Suicide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "d1b30e4d-a00d-40d1-b552-20f120101dad",
-                    "path": "<Gamepad>/start",
+                    "id": "530d5995-c96f-42f1-b7a3-a3e809c8e8bf",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Pause",
+                    "groups": "",
+                    "action": "ZoomPlayer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c49b9830-fa00-4047-a407-4af4322afbb2",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SeeWholeArena",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d3520d4-5f33-49de-8eb2-4252e58974da",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SlowMotion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a8e8734-45e8-487a-80b8-824ea0db9b67",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

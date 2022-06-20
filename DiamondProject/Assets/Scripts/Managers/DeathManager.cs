@@ -6,6 +6,7 @@ using ToolsBoxEngine;
 public class DeathManager : MonoBehaviour {
     [SerializeField] int _extraLife = 0;
     [SerializeField] string _nextLevel = "ProtoFairy 1";
+    [SerializeField] float _nextLevelDelay = 5f;
     [SerializeField] LevelLoader _levelLoader = null;
     [SerializeField] Reference<PlayerController> _player = null;
 
@@ -25,7 +26,8 @@ public class DeathManager : MonoBehaviour {
         }
 
         if (_levelLoader != null) {
-            StartCoroutine(Tools.Delay(_levelLoader.LoadLevel, _nextLevel, 1.5f));
+            _levelLoader.LoadLevel(_nextLevel, false);
+            StartCoroutine(Tools.UnscaledDelay(_levelLoader.ChangeToLoadedScene, _nextLevelDelay));
         }
         //_levelLoader?.LoadLevel(_nextLevel);
     }

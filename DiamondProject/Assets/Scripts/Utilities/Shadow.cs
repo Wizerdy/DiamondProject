@@ -8,8 +8,9 @@ public class Shadow : MonoBehaviour {
     GameObject _shadow;
     SpriteRenderer _sr;
     SpriteRenderer _shadowSR;
-    [SerializeField] Color _shadowColor = new Color(0,0,0,0.5f);
+    [SerializeField] Color _shadowColor = new Color(0, 0, 0, 0.5f);
     [SerializeField] TransformReference _light;
+    [SerializeField] Material _material;
     [SerializeField] VisualEffect _effect;
     [SerializeField] float _height;
 
@@ -18,9 +19,13 @@ public class Shadow : MonoBehaviour {
         _shadow = new GameObject(gameObject.name + " Shadow");
         _shadow.transform.parent = transform;
         _shadow.transform.localEulerAngles = Vector3.zero;
+        _shadow.transform.localScale = Vector3.one;
         _shadowSR = _shadow.AddComponent<SpriteRenderer>();
         _shadowSR.sprite = _sr.sprite;
         _shadowSR.color = _shadowColor;
+        if (_material != null) {
+            _shadowSR.material = _material;
+        }
         _shadowSR.sortingOrder = _sr.sortingOrder - 1;
     }
 
@@ -29,6 +34,9 @@ public class Shadow : MonoBehaviour {
     }
 
     void UpdateShadow() {
+        if (_shadowSR.sprite != _sr.sprite) {
+            _shadowSR.sprite = _sr.sprite;
+        }
         _shadow.transform.position = (transform.position - _light.Instance.transform.position).normalized * _height + transform.position;
     }
 

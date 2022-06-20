@@ -53,6 +53,7 @@ MonoBehaviour:
   _destroyOnHit: 0
   _onlyDamageOnceEach: 0
   _damageType: Lightning
+  _root: {fileID: 0}
   _ignoreTag:
     tags: []
     state: 0
@@ -144,6 +145,7 @@ GameObject:
   - component: {fileID: 7605767465344021622}
   - component: {fileID: 8400502675104499924}
   - component: {fileID: 5769078878241831311}
+  - component: {fileID: 9335159673989528}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -206,7 +208,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 30000
   m_Sprite: {fileID: -2413806693520163455, guid: b24e02caa2587b44189e80da126a1a3d, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.21960784}
   m_FlipX: 0
@@ -257,6 +259,20 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &9335159673989528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676893778058857622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: 0
+  OffsetTransform: {fileID: 0}
 --- !u!1 &4760548992244557545
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +402,7 @@ VFXRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 30000
 --- !u!114 &8615573361541016002
 MonoBehaviour:
   m_ObjectHideFlags: 0

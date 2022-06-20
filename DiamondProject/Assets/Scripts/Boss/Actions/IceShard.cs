@@ -12,7 +12,7 @@ public class IceShard : MonoBehaviour
     [SerializeField] string targetTag = "Player";
     [SerializeField] float lifeSpan = 15f;
     [SerializeField] float maxSize = 3f;
-    [SerializeField] float growthSpeed = 1f;
+    [SerializeField] float growthTime = 1f;
     [SerializeField] DamageHealth _modDamage = null;
 
     [HideInInspector, SerializeField] UnityEvent<IceShard> _onShardSpawn;
@@ -31,6 +31,8 @@ public class IceShard : MonoBehaviour
     bool canMove = false;
     public ShardType shardType;
 
+    public bool Launched => canMove;
+
     public event UnityAction<IceShard> OnShardSpawn { add => _onShardSpawn.AddListener(value); remove => _onShardSpawn.RemoveListener(value); }
     public event UnityAction<GameObject> OnShardHit { add => _onShardHit.AddListener(value); remove => _onShardHit.RemoveListener(value); }
     public event UnityAction OnShardDestroy { add => _onShardDestroy.AddListener(value); remove => _onShardDestroy.RemoveListener(value); }
@@ -44,28 +46,37 @@ public class IceShard : MonoBehaviour
         isTargetingPlayer = _isTargetingPlayer;
         lifeSpan = lifetime;
         shardType = _shardType;
+        canMove = false;
+        _lifeTimer = lifeSpan;
     }
 
     private void Start() {
-        canMove = false;
         rb = GetComponent<Rigidbody2D>();
 
-        //transform.localScale = new Vector3(0,0,1);
-        //StartCoroutine(Growth());
         _onShardSpawn?.Invoke(this);
 
-        _lifeTimer = lifeSpan;
         size = new Vector3(maxSize, maxSize, 1);
 
         if (_modDamage != null) {
             _modDamage.Damage = shardDamage;
             _modDamage.OnCollide += _OnHit;
         }
+
+        StartCoroutine(Growth(growthTime));
     }
 
     private void FixedUpdate() {
-        if (canMove)
+        if (canMove) {
             rb.velocity = aimDir.normalized * shardSpeed;
+            _lifeTimer -= Time.deltaTime;
+            if (_lifeTimer <= 0) {
+                KillShard();
+            }
+        }
+    }
+
+    public void Launch() {
+        canMove = true;
     }
 
     private void Update() {
@@ -77,16 +88,21 @@ public class IceShard : MonoBehaviour
             aimDir = dir;
         }
 
-        transform.localScale = Vector3.Lerp(transform.localScale, size, growthSpeed * Time.deltaTime);
-        if (transform.localScale.x > maxSize - 0.25f) {
-            canMove = true;
+        //transform.localScale = Vector3.Lerp(transform.localScale, size, growthTime * Time.deltaTime);
+        //if (transform.localScale.x > maxSize - 0.25f) {
 
-            _lifeTimer -= Time.deltaTime;
-            if (_lifeTimer <= 0) {
-                KillShard();
-            }
+        //}
+    }
+
+    IEnumerator Growth(float time) {
+        if (time <= 0f) { transform.localScale = size; yield break; }
+        float timePassed = 0f;
+        transform.localScale = Vector3.zero;
+        while (timePassed < time) {
+            yield return null;
+            timePassed += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(Vector3.zero, size, timePassed / time);
         }
-
     }
 
     //private IEnumerator Growth() {

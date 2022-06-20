@@ -4,6 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "VNTrigger")]
 public class VNTrigger : ScriptableObject {
+    public bool ResetOnPlay = false;
     public bool KnowFirstHintBoss = false;
     public bool KnowSecondHintBoss = false;
     public bool KnowFirstHintCharacter = false;
@@ -18,7 +19,12 @@ public class VNTrigger : ScriptableObject {
         KnowFirstHintBoss = false;
         KnowSecondHintBoss = false;
         KnowFirstHintCharacter = false;
+        questionNumber = 0;
         knowWinterBossHint = false;
         knowFallBossHint = false;
+
+        for (int i = 0; i < alreadySawText.Count; i++) {
+            alreadySawText[i] = false;
+        }
     }
 }

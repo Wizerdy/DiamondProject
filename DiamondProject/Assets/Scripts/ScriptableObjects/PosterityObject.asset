@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
   resetOnStart: 1
-  deathCount: 31
-  bossDeathCount: 14
+  deathCount: 0
+  bossDeathCount: 0
   maxLifeModifier: 0
   extraLife: 0
   nearSight: 0
@@ -22,52 +22,51 @@ MonoBehaviour:
   dontSeeHealthBar: 0
   gotToAnotherBoss: 0
   numberOfTriggerActivate: 0
-  numberOfTimeDyingWithoutKillingForm: 0
-  killNeutralForm: 1
+  numberOfTimeDyingWithoutKillingForm: 2
+  killNeutralForm: 0
   killFallForm: 0
   killWinterForm: 0
   sawFallForm: 0
-  sawWinterForm: 1
-  firstTimeTalking: 0
+  sawWinterForm: 0
+  firstTimeTalking: 1
   nbTimeTalkedToNorna: 1
   nbCorpse: 1
   winterFormTriggerActivated: 0
-  arrow: {fileID: 4847567384368089890, guid: ee2776f49acba5649b20cbd2090e18ac, type: 3}
+  arrow: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
+  chargedArrow: {fileID: 4847567384368089890, guid: 70e0bc24b89b00446b4ed33c89543422, type: 3}
   fallBossHintList:
   - id: 1
-    defaultName: "D\xE9blocage forme 1"
-    unlockedName: Forme Automne
+    defaultName: ???
+    unlockedName: Condition de transformation
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: Attaquer sans se faire toucher(?)
-    unlockedText: "Attaquer de loin proche des rebords de l'ar\xE8ne"
+    defaultText: ???
+    unlockedText: Ne pas recevoir un coup et ne pas attaquer
   - id: 2
     defaultName: ???
-    unlockedName: Vaincre Forme Automne
+    unlockedName: "Faiblesse n\xB01"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "D\xE9truis les arbres pour d\xE9truire le bouclier. Une fois d\xE9truit,
-      on pourra l'attaquer. Attention, il reste extr\xEAmement mobile et difficile
-      \xE0 toucher."
+    unlockedText: "D\xE9truire tous les arbres"
   - id: 3
     defaultName: ???
-    unlockedName: LoremIpsum
+    unlockedName: "Faiblesse n\xB02"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: LoremIpsum
+    unlockedText: "Privil\xE9gier les attaques \xE0 distances"
   - id: 4
     defaultName: ???
-    unlockedName: LoremIpsum
+    unlockedName: "Faiblesse n\xB03"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: LoremIpsum
+    unlockedText: En profiter avant que le bouclier ne se reforme.
   fallAttackHintList:
   - id: 1
     defaultName: ???
@@ -105,39 +104,38 @@ MonoBehaviour:
     unlockedText: "Attaque charg\xE9e suivant la position du joueur."
   winterBossHintList:
   - id: 1
-    defaultName: "D\xE9blocage forme 1"
-    unlockedName: Forme Hiver
+    defaultName: ???
+    unlockedName: Condition de transformation
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: Attaquer sans se faire toucher(?)
-    unlockedText: Ne pas recevoir un coup et ne pas attaquer
+    defaultText: ???
+    unlockedText: "Attaquer de loin proche des rebords de l'ar\xE8ne"
   - id: 2
     defaultName: ???
-    unlockedName: Vaincre Forme Hiver
+    unlockedName: "Faiblesse n\xB01"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "Que tu devrais d'abord cerner le fonctionnement et le rythme des
-      attaques de cette forme. Concentre-toi sur l'esquive sans forc\xE9ment te h\xE2ter
-      mais essaye de cerner les moments o\xF9 attaquer. "
+    unlockedText: Le boss est immobile alors pas la peine de se presser
   - id: 3
     defaultName: ???
-    unlockedName: LoremIpsum
+    unlockedName: "Faiblesse n\xB02"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: LoremIpsum
+    unlockedText: "Chaque attaque ont une dur\xE9e et fonctionnement diff\xE9rent"
   - id: 4
     defaultName: ???
-    unlockedName: LoremIpsum
+    unlockedName: "Faiblesse n\xB03"
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: LoremIpsum
+    unlockedText: "Profiter des ouvertures pour utiliser l'attaque au corps \xE0
+      corps"
   winterAttackHintList:
   - id: 1
     defaultName: ???
@@ -153,7 +151,7 @@ MonoBehaviour:
   - id: 2
     defaultName: ???
     unlockedName: Projectiles de glace
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Je pourrais charger sur 2 vagues en m\xEAme temps ?"

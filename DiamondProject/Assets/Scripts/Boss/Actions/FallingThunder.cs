@@ -21,7 +21,7 @@ public class FallingThunder : MonoBehaviour {
         _shadow?.SetTime(delay);
         _shadow?.ScaleMe();
         _target = transform.position;
-        _damageHealth?.SetDamage(_damage);
+        _damageHealth?.SetDamage(damage);
         StartCoroutine(Tools.Delay(DoDamage, _damageTime, delay));
     }
 

@@ -35,7 +35,7 @@ public class PosterityVNValue : MonoBehaviour
         hint = posterityObj.winterAttackHintList[2];
         if (!hint.isTrigger) {
             if (obj.gameObject.GetComponent<IceWall>()) {
-                spriteFeedBack?.SetActive(true);
+                spriteFeedBack.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.winterAttackHintList[2] = hint;
                 return;
@@ -48,7 +48,6 @@ public class PosterityVNValue : MonoBehaviour
         hint = posterityObj.fallAttackHintList[3];
         if (!hint.isTrigger) {
             if (obj.GetComponent<ChargedBullet>()) {
-                spriteFeedBack?.SetActive(true);
                 hint.isTrigger = true;
                 posterityObj.fallAttackHintList[3] = hint;
                 return;

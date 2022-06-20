@@ -63,7 +63,7 @@ public class HealthOverShapes : MonoBehaviour {
 
     public void EnableBar(HUDHealth hud) {
         if (_saveOwner == hud) {
-            LoadSaveTo(hud);
+            //LoadSaveTo(hud);
         }
         hud.Active = true;
         hud.UpdateHUD(0);
@@ -84,28 +84,32 @@ public class HealthOverShapes : MonoBehaviour {
     }
 
     private void _OnExitShape(BossShape shape) {
-        switch (shape.Type) {
-            case Shape.NEUTRAL:
-                FreezeBar(_baseHealth);
-                break;
-            default:
-                _shapeHealth[shape.Type].Active = false;
-                _shapeHealth[shape.Type].gameObject.SetActive(false);
-                if (_save != null) { _save.currentHealth -= _healthLoseOnShapeChange; }
-                break;
-        }
+        //switch (shape.Type) {
+        //    case Shape.NEUTRAL:
+        //        FreezeBar(_baseHealth);
+        //        break;
+        //    default:
+        //        _shapeHealth[shape.Type].Active = false;
+        //        _shapeHealth[shape.Type].gameObject.SetActive(false);
+        //        //if (_save != null) { _save.currentHealth -= _healthLoseOnShapeChange; }
+        //        break;
+        //}
+        _shapeHealth[shape.Type].Active = false;
+        _shapeHealth[shape.Type].gameObject.SetActive(false);
     }
 
     private void _OnEnterShape(BossShape shape) {
-        switch (shape.Type) {
-            case Shape.NEUTRAL:
-                EnableBar(_baseHealth);
-                break;
-            default:
-                _shapeHealth[shape.Type].HealthReference.Percentage = 1f;
-                _shapeHealth[shape.Type].gameObject.SetActive(true);
-                EnableBar(_shapeHealth[shape.Type]);
-                break;
-        }
+        //switch (shape.Type) {
+        //    case Shape.NEUTRAL:
+        //        EnableBar(_baseHealth);
+        //        break;
+        //    default:
+        //        _shapeHealth[shape.Type].HealthReference.Percentage = 1f;
+        //        _shapeHealth[shape.Type].gameObject.SetActive(true);
+        //        EnableBar(_shapeHealth[shape.Type]);
+        //        break;
+        //}
+        _shapeHealth[shape.Type].gameObject.SetActive(true);
+        EnableBar(_shapeHealth[shape.Type]);
     }
 }

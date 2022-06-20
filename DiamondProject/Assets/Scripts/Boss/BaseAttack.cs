@@ -7,9 +7,9 @@ using ToolsBoxEngine;
 public abstract class BaseAttack : MonoBehaviour {
     [Header("Static")]
     [SerializeField] Reference<AttackSystem> attackSystem;
-    [SerializeField] protected BossReference _bossRef; // Fils de put
+    [SerializeField] protected BossReference _bossRef;
     [SerializeField] public string id = "";
-    [SerializeField] protected Reference<PlayerController> _playerRef; // Enculé
+    [SerializeField] protected TransformReference _playerPos;
 
     [Header("Values")]
     [SerializeField] protected float duration = 1;
@@ -19,7 +19,7 @@ public abstract class BaseAttack : MonoBehaviour {
     protected bool isPlaying = false;
     protected bool locked = false;
     [SerializeField] protected Vector3 BossPos { get => _bossRef?.Instance.transform.position ?? Vector3.zero; set => _bossRef.Instance.transform.position = value; }
-    [SerializeField] protected Vector3 PlayerPos { get => _playerRef?.Instance.transform.position ?? Vector3.zero; set => _playerRef.Instance.transform.position = value; }
+    [SerializeField] protected Vector3 PlayerPos { get => _playerPos.Instance.position; set => _playerPos.Instance.position = value; }
 
     [SerializeField] UnityEvent<BaseAttack> _onExecute;
     [SerializeField] UnityEvent<BaseAttack> _onCast;
@@ -29,7 +29,7 @@ public abstract class BaseAttack : MonoBehaviour {
     public event UnityAction<BaseAttack> OnCast { add => _onCast.AddListener(value); remove => _onCast.RemoveListener(value); }
     public event UnityAction<BaseAttack> OnEnd { add => _onEnd.AddListener(value); remove => _onEnd.RemoveListener(value); }
 
-    private void OnEnable() {
+    private void Start() {
         attackSystem?.Instance?.Register(this);
         Execute();
     }
@@ -44,6 +44,7 @@ public abstract class BaseAttack : MonoBehaviour {
 
         _onExecute?.Invoke(this);
 
+        StartCoroutine(ICast());
         StartCoroutine(Tools.Delay(() => { StartCoroutine(ILaunch()); _onCast?.Invoke(this); }, _castTime));
         //StartCoroutine(ILaunch());
     }
@@ -59,6 +60,7 @@ public abstract class BaseAttack : MonoBehaviour {
     }
 
     protected abstract IEnumerator IExecute();
+    protected virtual IEnumerator ICast() { yield break; }
 
     public virtual void End() {
         StopAllCoroutines();
