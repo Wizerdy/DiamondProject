@@ -24,7 +24,7 @@
 								<Property Name="Color" Type="int16" Value="27"/>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
-								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="30"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1562,7 +1562,7 @@
 								<Property Name="Color" Type="int16" Value="27"/>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
-								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="30"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1647,7 +1647,10 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Boss_Winter_SnowAbsorption_Cast" ID="{880B71E2-A17A-40DD-844B-2309052F64D3}" ShortID="260921293">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="30"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1712,7 +1715,7 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Color" Type="int16" Value="27"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
-								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="30"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
