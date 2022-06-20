@@ -83,19 +83,19 @@ public class PosterityObject : ScriptableObject {
         }
 
         for (int i = 0; i < fallAttackHintList.Count; i++) {
-            hint = fallBossHintList[i];
+            hint = fallAttackHintList[i];
             hint.isTrigger = false;
             fallAttackHintList[i] = hint;
         }
 
         for (int i = 0; i < winterBossHintList.Count; i++) {
-            hint = fallBossHintList[i];
+            hint = winterBossHintList[i];
             hint.isTrigger = false;
             winterBossHintList[i] = hint;
         }
 
         for (int i = 0; i < winterAttackHintList.Count; i++) {
-            hint = fallBossHintList[i];
+            hint = winterAttackHintList[i];
             hint.isTrigger = false;
             winterAttackHintList[i] = hint;
         }

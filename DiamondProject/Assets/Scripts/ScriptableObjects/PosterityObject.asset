@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e8850685be031428ff4e1e0077999e, type: 3}
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
-  resetOnStart: 1
+  resetOnStart: 0
   deathCount: 0
   bossDeathCount: 0
   maxLifeModifier: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   dontSeeHealthBar: 0
   gotToAnotherBoss: 0
   numberOfTriggerActivate: 0
-  numberOfTimeDyingWithoutKillingForm: 2
+  numberOfTimeDyingWithoutKillingForm: 0
   killNeutralForm: 0
   killFallForm: 0
   killWinterForm: 0
@@ -42,7 +42,8 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: Ne pas recevoir un coup et ne pas attaquer
+    unlockedText: "Touche Gw\xE9nia avec une fl\xE8che charg\xE9e apr\xE8s s'\xEAtre
+      pris la foudre."
   - id: 2
     defaultName: ???
     unlockedName: "Faiblesse n\xB01"
@@ -50,7 +51,7 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "D\xE9truire tous les arbres"
+    unlockedText: "D\xE9truis tous les arbres pour faire tomber le bouclier de Gw\xE9nia"
   - id: 3
     defaultName: ???
     unlockedName: "Faiblesse n\xB02"
@@ -110,7 +111,7 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "Attaquer de loin proche des rebords de l'ar\xE8ne"
+    unlockedText: Ne pas recevoir un coup et ne pas attaquer
   - id: 2
     defaultName: ???
     unlockedName: "Faiblesse n\xB01"
@@ -151,7 +152,7 @@ MonoBehaviour:
   - id: 2
     defaultName: ???
     unlockedName: Projectiles de glace
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Je pourrais charger sur 2 vagues en m\xEAme temps ?"
