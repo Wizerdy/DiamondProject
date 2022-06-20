@@ -28,4 +28,8 @@ public class ButtonsScript : MonoBehaviour {
     public void UnselectButton() {
         EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(null);
     }
+
+    public void OpenUrl(string url) {
+        Application.OpenURL(url);
+    }
 }
