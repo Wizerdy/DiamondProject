@@ -8,9 +8,9 @@ public class SettingsManager : MonoBehaviour {
     [SerializeField] SoundSlider _sfxSlider;
     [SerializeField] bool _mustclose;
     private void Start() {
-        _generalSlider.Start();
-        _musicSlider.Start();
-        _sfxSlider.Start();
+        _generalSlider.GetRTPCValueGeneralVolume();
+        _musicSlider.GetRTPCValueMusicVolume();
+        _sfxSlider.GetRTPCValueSFXVolume();
         if (_mustclose)
             gameObject.SetActive(false);
     }
