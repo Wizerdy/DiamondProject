@@ -82,5 +82,9 @@ namespace BookCurlPro
                 }
             }
         }
+
+        public void SetFlipTime(float flipTime) {
+            PageFlipTime = flipTime;
+        }
     }
 }

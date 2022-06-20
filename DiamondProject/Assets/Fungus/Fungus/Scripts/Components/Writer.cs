@@ -1002,7 +1002,9 @@ namespace Fungus
             textAdapter.SetTextAlpha(textAlpha);
         }
 
-
+        public void SetTextSpeed(float speed) {
+            writingSpeed = speed;
+        }
 
         #endregion
 

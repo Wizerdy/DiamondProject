@@ -30,6 +30,7 @@ public class PosterityObject : ScriptableObject {
     public int numberOfTriggerActivate = 0;
 
     [Header("For VN Scene")]
+    public float textSpeed = 400;
     public int numberOfTimeDyingWithoutKillingForm = 0;
     public bool killNeutralForm = false;
     public bool killFallForm = false;
@@ -57,6 +58,7 @@ public class PosterityObject : ScriptableObject {
 
     private Hint hint;
     public void ResetValues() {
+        textSpeed = 400;
         numberOfTimeDyingWithoutKillingForm = 0;
         killNeutralForm = false;
         killFallForm = false;
@@ -83,19 +85,19 @@ public class PosterityObject : ScriptableObject {
         }
 
         for (int i = 0; i < fallAttackHintList.Count; i++) {
-            hint = fallBossHintList[i];
+            hint = fallAttackHintList[i];
             hint.isTrigger = false;
             fallAttackHintList[i] = hint;
         }
 
         for (int i = 0; i < winterBossHintList.Count; i++) {
-            hint = fallBossHintList[i];
+            hint = winterBossHintList[i];
             hint.isTrigger = false;
             winterBossHintList[i] = hint;
         }
 
         for (int i = 0; i < winterAttackHintList.Count; i++) {
-            hint = fallBossHintList[i];
+            hint = winterAttackHintList[i];
             hint.isTrigger = false;
             winterAttackHintList[i] = hint;
         }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e8850685be031428ff4e1e0077999e, type: 3}
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
-  resetOnStart: 1
+  resetOnStart: 0
   deathCount: 0
   bossDeathCount: 0
   maxLifeModifier: 0
@@ -22,6 +22,7 @@ MonoBehaviour:
   dontSeeHealthBar: 0
   gotToAnotherBoss: 0
   numberOfTriggerActivate: 0
+  textSpeed: 500
   numberOfTimeDyingWithoutKillingForm: 0
   killNeutralForm: 0
   killFallForm: 0
@@ -29,20 +30,21 @@ MonoBehaviour:
   sawFallForm: 0
   sawWinterForm: 0
   firstTimeTalking: 1
-  nbTimeTalkedToNorna: 0
-  nbCorpse: 0
+  nbTimeTalkedToNorna: 1
+  nbCorpse: 1
   winterFormTriggerActivated: 0
   arrow: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
   chargedArrow: {fileID: 4847567384368089890, guid: 70e0bc24b89b00446b4ed33c89543422, type: 3}
   fallBossHintList:
   - id: 1
     defaultName: ???
-    unlockedName: Condition de transformation
+    unlockedName: Transformation
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: Ne pas recevoir un coup et ne pas attaquer
+    unlockedText: "Touche Gw\xE9nia avec une fl\xE8che charg\xE9e apr\xE8s s'\xEAtre
+      pris la foudre."
   - id: 2
     defaultName: ???
     unlockedName: "Faiblesse n\xB01"
@@ -50,7 +52,7 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "D\xE9truire tous les arbres"
+    unlockedText: "D\xE9truis tous les arbres pour faire tomber le bouclier de Gw\xE9nia"
   - id: 3
     defaultName: ???
     unlockedName: "Faiblesse n\xB02"
@@ -70,40 +72,42 @@ MonoBehaviour:
   fallAttackHintList:
   - id: 1
     defaultName: ???
-    unlockedName: Condition de transformation
+    unlockedName: Arbres Protecteurs
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Ne pas recevoir un coup et ne pas attaquer
+    defaultText: "Tir charg\xE9e sur un des arbres ?"
+    unlockedText: "Arbres qui repoussent apr\xE8s un certain temps une fois d\xE9truit."
   - id: 2
     defaultName: ???
-    unlockedName: "Faiblesse n\xB01"
+    unlockedName: Bouclier Automnale
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: "D\xE9truire tous les arbres"
+    defaultText: "Attaque charg\xE9e sur l'ennemi malgr\xE9 sa protection ?"
+    unlockedText: "Bouclier qui prot\xE8ge de toutes les attaques"
   - id: 3
     defaultName: ???
-    unlockedName: "Faiblesse n\xB02"
+    unlockedName: Feuilles Boomerang
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: "Privil\xE9gier les attaques \xE0 distances"
+    defaultText: "Attaque charg\xE9e sur une feuille g\xE9ante... \xE9viter de se
+      prendre des d\xE9g\xE2ts"
+    unlockedText: "Feuilles g\xE9antes qui font un aller-retour sur tout le terrain.
+      Lente \xE0 l'aller, rapide au retour."
   - id: 4
     defaultName: ???
-    unlockedName: "Faiblesse n\xB03"
+    unlockedName: Rayon Automnal
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: En profiter avant que le bouclier ne se reforme.
+    defaultText: Tir sur le rayon de front ?
+    unlockedText: "Attaque charg\xE9e suivant la position du joueur."
   winterBossHintList:
   - id: 1
     defaultName: ???
-    unlockedName: Condition de transformation
+    unlockedName: Transformation
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
@@ -116,7 +120,7 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "D\xE9truire tous les arbres"
+    unlockedText: Le boss est immobile alors pas la peine de se presser
   - id: 3
     defaultName: ???
     unlockedName: "Faiblesse n\xB02"
@@ -124,7 +128,7 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: "Privil\xE9gier les attaques \xE0 distances"
+    unlockedText: "Chaque attaque ont une dur\xE9e et fonctionnement diff\xE9rent"
   - id: 4
     defaultName: ???
     unlockedName: "Faiblesse n\xB03"
@@ -132,29 +136,33 @@ MonoBehaviour:
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
-    unlockedText: En profiter avant que le bouclier ne se reforme.
+    unlockedText: "Profiter des ouvertures pour utiliser l'attaque au corps \xE0
+      corps"
   winterAttackHintList:
   - id: 1
     defaultName: ???
-    unlockedName: Condition de transformation
+    unlockedName: Enfer de glace
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: Ne pas recevoir un coup et ne pas attaquer
+    defaultText: "Peut-\xEAtre que je pourrais me prendre l'attaque de front en fon\xE7ant
+      dessus ?"
+    unlockedText: "Attaques de projectiles en 2 \xE9tapes. D'abord, une vague de
+      projectiles recouvre une grande partie du terrain Ensuite, une autre vague
+      plus petite est lanc\xE9e dans notre direction"
   - id: 2
     defaultName: ???
-    unlockedName: "Faiblesse n\xB01"
+    unlockedName: Projectiles de glace
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: "D\xE9truire tous les arbres"
+    defaultText: "Je pourrais charger sur 2 vagues en m\xEAme temps ?"
+    unlockedText: "Vagues de projectiles regroupant l'enti\xE8ret\xE9 du terrain."
   - id: 3
     defaultName: ???
-    unlockedName: "Faiblesse n\xB02"
+    unlockedName: Absorption de neige
     isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: ???
-    unlockedText: "Privil\xE9gier les attaques \xE0 distances"
+    defaultText: Je pourrais tirer sur ces ondes qui m'entoure ?
+    unlockedText: "Vagues d'avalanches qui s'approche de Gw\xE9nia en l'entourant."

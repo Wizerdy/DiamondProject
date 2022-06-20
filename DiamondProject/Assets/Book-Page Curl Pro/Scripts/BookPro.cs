@@ -477,6 +477,24 @@ namespace BookCurlPro
             }
         }
 
+        public GameObject FindFirstButtonDiary() {
+            if (currentPaper - 1 >= 0) {
+                for (int i = 0; i < papers[currentPaper - 1].Back.transform.childCount; i++) {
+                    GameObject child = papers[currentPaper - 1].Back.transform.GetChild(i).gameObject;
+                    if (child.transform.childCount > 1) {
+                        for (int j = 0; j < child.transform.childCount; j++) {
+                            GameObject grandChild = child.transform.GetChild(i).gameObject;
+                            if (grandChild.GetComponent<Button>())
+                                return grandChild;
+                        }
+                    }
+                    if (child.GetComponent<Button>())
+                        return child;
+                }
+            }
+            return null;
+        }
+
         #region Page Curl Internal Calculations
         //for more info about this part please check this link : http://rbarraza.com/html5-canvas-pageflip/
 
