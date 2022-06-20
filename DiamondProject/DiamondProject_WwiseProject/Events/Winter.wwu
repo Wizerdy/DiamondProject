@@ -12,6 +12,7 @@
 						<Action Name="" ID="{33C7A69E-9667-4968-B051-C97A8EFE81BB}" ShortID="580938833">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
 								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -35,6 +36,7 @@
 						<Action Name="" ID="{21FDD7B1-38B8-4087-9158-C463DF7D6DED}" ShortID="252122229">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
 								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
@@ -67,6 +69,9 @@
 				<Event Name="Boss_Winter_IceSpikes_Cast" ID="{BFB63721-E1AF-4B0A-87F0-AED7F42CA935}">
 					<ChildrenList>
 						<Action Name="" ID="{15BA3991-0B81-4D51-85CD-09652638D8C6}" ShortID="477413190">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Boss_Winter_IceSpikes_Cast" ID="{4D829797-8B20-442C-B2DC-D03EDE30F0F2}" WorkUnitID="{B803E388-5F0F-4816-B66E-27C30DA27389}"/>
@@ -241,6 +246,9 @@
 				<Event Name="Boss_Winter_SnowAbsorption_Cast" ID="{4E7E6CD5-EA16-429E-923E-75EEA42F8165}">
 					<ChildrenList>
 						<Action Name="" ID="{50DD2B6F-7E21-4FC5-8CE5-F39DE0825DF1}" ShortID="538832202">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Boss_Winter_SnowAbsorption_Cast" ID="{880B71E2-A17A-40DD-844B-2309052F64D3}" WorkUnitID="{B803E388-5F0F-4816-B66E-27C30DA27389}"/>

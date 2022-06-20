@@ -136,12 +136,20 @@
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_Boss_Distance" ID="{04A2CC69-4D3C-4801-A003-2AE7DAFEE818}"/>
+							<Value>0.064</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_Boss_AttackType" ID="{B84294BE-B313-4927-AA79-859FA21CF798}"/>
 							<Value>6</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_BossForm" ID="{D9CE631C-1ECB-4961-8996-89215E54C8FB}"/>
 							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Boss_Position" ID="{EF5CA548-FC50-4A2F-B967-1650C38A9D94}"/>
+							<Value>-0.528</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_MusicVolume" ID="{E7DBE861-BE12-4A74-9ECB-778C9C290D09}"/>
@@ -157,7 +165,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="None" ID="{E41A927F-FA07-4820-804C-4BFFD4E1B196}"/>
+						<CurrentStateRef Name="Boss_Neutral" ID="{D2667E05-EC4C-4758-9E51-D69AA3C24658}"/>
 						<CurrentStateRef Name="None" ID="{8A344E71-5CAD-4EAD-885D-7295E2638619}"/>
 						<CurrentStateRef Name="None" ID="{7760B096-6CF4-4C28-81AB-7C165E71B6F1}"/>
 					</CurrentStateList>
@@ -165,7 +173,7 @@
 						<CurrentSwitchRef Name="Charging" ID="{9FCB8A33-95F1-4D77-96CB-07585D9D1FFF}"/>
 						<CurrentSwitchRef Name="Crossbow" ID="{42E621F9-0F64-4704-80F0-11ADD76663A0}"/>
 						<CurrentSwitchRef Name="Dirt" ID="{1C878391-3A0B-4ACA-B003-88784F2F9432}"/>
-						<CurrentSwitchRef Name="Winter" ID="{DAB86AC5-41EC-41E6-B8A6-65E8BB56192F}"/>
+						<CurrentSwitchRef Name="Neutral" ID="{7C092A90-46FD-4CEC-9026-CAB624431E18}"/>
 						<CurrentSwitchRef Name="ExploBush" ID="{69D77020-DB2B-4EF7-86ED-538E23287A58}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
