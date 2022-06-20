@@ -15,6 +15,7 @@ public class SoundSlider : MonoBehaviour {
     [SerializeField] TMP_Text _valueLabel;
     [SerializeField] TMP_Text _titleLabel;
     [SerializeField] UnityEvent<float> _onUpdate;
+        int _maybeUseful;
 
     float oldValue = 100f;
 
@@ -64,4 +65,26 @@ public class SoundSlider : MonoBehaviour {
     public void SetRTPCValueMusicVolume(float value) {
         AkSoundEngine.SetRTPCValue("RTPC_MusicVolume", value);
     }
+
+    public void GetRTPCValueGeneralVolume() {
+        float value;
+        AkSoundEngine.GetRTPCValue("RTPC_GeneralVolume", gameObject, 0, out value, ref _maybeUseful);
+        _slider.value = value;
+        UpdateSlider();
+    }
+
+    public void GetRTPCValueSFXVolume() {
+        float value;
+        AkSoundEngine.GetRTPCValue("RTPC_SFXVolume", gameObject, 0, out value, ref _maybeUseful);
+        _slider.value = value;
+        UpdateSlider();
+    }
+
+    public void GetRTPCValueMusicVolume() {
+        float value;
+        AkSoundEngine.GetRTPCValue("RTPC_MusicVolume", gameObject, 0, out value, ref _maybeUseful);
+        _slider.value = value;
+        UpdateSlider();
+    }
+
 }
