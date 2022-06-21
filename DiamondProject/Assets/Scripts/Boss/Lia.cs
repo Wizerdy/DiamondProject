@@ -59,9 +59,9 @@ public class Lia : MonoBehaviour {
         if (!_beatenShape.Contains(Shape.FALL) && fall.IsTrigger()) {
             NewForm(Shape.FALL);
         }
-        if (!_beatenShape.Contains(Shape.WINTER) && winter.IsTrigger()) {
-            NewForm(Shape.WINTER);
-        }
+        //if (!_beatenShape.Contains(Shape.WINTER) && winter.IsTrigger()) {
+        //    NewForm(Shape.WINTER);
+        //}
 
         if (_beatenShape.Contains(Shape.WINTER) && _beatenShape.Contains(Shape.FALL) && _health.CurrentHealth == 1 && _attacks.CanAct) {
             _attacks.CanAct = false;

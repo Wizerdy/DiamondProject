@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using ToolsBoxEngine;
+using System;
 
 public class EntityChargeAttack : MonoBehaviour {
     [Header("Static")]
@@ -131,19 +132,24 @@ public class EntityChargeAttack : MonoBehaviour {
         _attackHitbox.SetValues(_damageables, damage);
         while (timePassed < time) {
             yield return new WaitForEndOfFrame();
-            timePassed += Time.deltaTime;
-            Vector2 nextPos = Vector2.Lerp(position, target, timePassed / time);
-            RaycastHit2D hit = Physics2D.Linecast(_entity.Position2D(), nextPos);
-            if (hit.collider != null) {
-                IHealth hitHealth = hit.collider?.gameObject?.GetComponent<IHealth>();
-                if (hitHealth != null) {
-                    _attackHitbox.Hit(hit.collider);
+            try {
+                timePassed += Time.deltaTime;
+                Vector2 nextPos = Vector2.Lerp(position, target, timePassed / time);
+                RaycastHit2D hit = Physics2D.Linecast(_entity.Position2D(), nextPos);
+                if (hit.collider != null) {
+                    IHealth hitHealth = hit.collider?.gameObject?.GetComponent<IHealth>();
+                    if (hitHealth != null) {
+                        _attackHitbox.Hit(hit.collider);
+                    }
+                    if (_walls.Contains(hit.collider.gameObject.layer)) {
+                        nextPos = hit.point;
+                    }
                 }
-                if (_walls.Contains(hit.collider.gameObject.layer)) {
-                    nextPos = hit.point;
-                }
+                _entity.position = nextPos.To3D(_entity.position.z, Axis.Z);
+            } catch (Exception e) {
+                Debug.LogException(e);
+                break;
             }
-            _entity.position = nextPos.To3D(_entity.position.z, Axis.Z);
         }
 
         _isAttacking = false;
