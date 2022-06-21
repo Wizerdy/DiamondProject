@@ -50,6 +50,8 @@ public class HealthOverShapes : MonoBehaviour {
 
     void Start() {
         //_baseHealth.gameObject.SetActive(true);
+        UpdateDictionnary();
+
         foreach (KeyValuePair<Shape, HUDHealth> hud in _shapeHealth) {
             hud.Value.gameObject.SetActive(false);
             hud.Value.Attach();

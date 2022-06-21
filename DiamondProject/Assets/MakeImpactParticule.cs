@@ -34,7 +34,6 @@ public class MakeImpactParticule : MonoBehaviour {
             .SetList(_particlesHitsUsed)
             .SetPosition(collision.transform.root.transform.position)
             .SetRotation((collision.transform.root.transform.position - transform.root.transform.position).normalized);
-        Debug.Log((transform.root.transform.position - transform.position).normalized);
         wds.IveHit();
     }
 }

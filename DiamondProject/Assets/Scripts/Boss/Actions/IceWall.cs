@@ -12,6 +12,7 @@ public class IceWall : MonoBehaviour {
     [SerializeField] private float gapWidth = 40f;
     [SerializeField] private float speed = 5f;
     [SerializeField] private int damage = 10;
+    [SerializeField] GameObject _graphics;
     //[SerializeField] private Reference<Transform> player;
 
     [SerializeField] private EdgeCollider2D edgeCollider;
@@ -40,9 +41,11 @@ public class IceWall : MonoBehaviour {
         for (int i = 0; i < _points.Length; i++) {
             _points[i] = new Vector2();
         }
+
         CreateWalls();
         SetGraphics();
         SetEdgeCollider();
+        _graphics?.SetActive(true);
         edgeCollider.enabled = true;
     }
 

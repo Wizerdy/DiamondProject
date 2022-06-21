@@ -28,6 +28,5 @@ public class ChangeColorImpactColor : MonoBehaviour {
 
     void ChangeColor(Color color) {
         MakeImpactParticule._particleColor = color;
-        Debug.Log(MakeImpactParticule._particleColor);
     }
 }

@@ -56,7 +56,7 @@ public class HUDHealth : MonoBehaviour {
         if (_fillOnEnable) {
             StartCoroutine(ChangeHealthOverTime(_healthBar, 0f, 0f));
             float percentage = (float)_health.Instance.CurrentHealth / (float)_health.Instance.MaxHealth;
-            StartCoroutine(ChangeHealthOverTime(_healthBar, 1f, _fillTime));
+            StartCoroutine(ChangeHealthOverTime(_healthBar, percentage, _fillTime));
         }
     }
 

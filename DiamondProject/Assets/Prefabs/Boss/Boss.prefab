@@ -68,6 +68,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 5680249788595143012}
   _animator: {fileID: 3393462403668250656}
   _spine: {fileID: 4535153167675045433}
+  _targetMat: {fileID: 0}
   _onInvincibility:
     m_PersistentCalls:
       m_Calls: []
@@ -2412,6 +2413,7 @@ GameObject:
   - component: {fileID: 5680249788645268033}
   - component: {fileID: 8512631116883376194}
   - component: {fileID: 1630664842379352371}
+  - component: {fileID: 4186324264146356060}
   m_Layer: 0
   m_Name: ShapeSystem
   m_TagString: Boss
@@ -2590,6 +2592,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 5680249788645268036}
   target: {fileID: 11400000, guid: c9af7d84e00165c499c4c125a1f49581, type: 2}
+--- !u!114 &4186324264146356060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5680249788645268037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dbe68796c4d11429f563da333e7b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shapeSystem: {fileID: 5680249788645268036}
+  _neutral: {r: 0.9528302, g: 0.8387298, b: 0.022472408, a: 1}
+  _fall: {r: 0.9529412, g: 0.43529412, b: 0.16470589, a: 1}
+  _winter: {r: 0, g: 0.42745098, b: 0.83137256, a: 1}
 --- !u!1 &5680249789032344795
 GameObject:
   m_ObjectHideFlags: 0

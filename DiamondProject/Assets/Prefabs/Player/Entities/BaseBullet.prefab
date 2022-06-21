@@ -419,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1735998592836663502}
   _damageHealth: {fileID: 3284727387380998033}
-  _damage: 5
+  _damage: 10
   _damageables:
     tags:
     - Boss
@@ -428,7 +428,7 @@ MonoBehaviour:
   _range: 0
   _cooldown: 0.2
   _speed: 30
-  _overheat: 2
+  _overheat: 7
 --- !u!114 &3284727387380998033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,6 +461,8 @@ MonoBehaviour:
     - BossEntities
     - Structure
     - PlayerLegs
+    - Laser
+    - Enemy
     state: 2
   _destroyOnHit: 1
   _onlyDamageOnceEach: 0
