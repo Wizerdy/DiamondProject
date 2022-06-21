@@ -10,6 +10,7 @@ public class BoomerangLeaf : BaseAttack {
     [SerializeField] Vector3 _topLine;
     [SerializeField] int leafsNumber;
     [SerializeField] int leafsDamages;
+    [SerializeField] int leafsDamagesBack;
     [SerializeField] float spaceBetweenLeafs;
     [SerializeField] int ghostLeaf;
     [SerializeField] List<Boomerang> leafs;
@@ -42,7 +43,8 @@ public class BoomerangLeaf : BaseAttack {
                 SetDestination(_topLine).
                 SetFirstSpeed(_firstSpeed).
                 SetSecondSpeed(_secondspeed).
-                SetDamage(leafsDamages);
+                SetDamage(leafsDamages).
+                SetDamageBack(leafsDamagesBack);
             leafs.Add(newBoomerangLeaf);
             newBoomerangLeaf.OnDeath += RemoveLeafs;
         }

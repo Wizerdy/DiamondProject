@@ -7,6 +7,7 @@ public class Boomerang : MonoBehaviour {
     [SerializeField] float _firstSpeed;
     [SerializeField] float _secondSpeed;
     [SerializeField] int _damage;
+    [SerializeField] int _damageBack;
     [SerializeField] Vector3 _direction;
     [SerializeField] Vector3 _destination;
     [SerializeField] Vector3 _depart;
@@ -41,6 +42,11 @@ public class Boomerang : MonoBehaviour {
 
     public Boomerang SetDamage(int damage) {
         _damage = damage;
+        return this;
+    }
+
+    public Boomerang SetDamageBack(int damage) {
+        _damageBack = damage;
         return this;
     }
 
@@ -86,6 +92,7 @@ public class Boomerang : MonoBehaviour {
         _direction *= -1;
         rb.velocity = _direction * _secondSpeed;
         transform.localScale *= -1;
+        dh.Damage = _damageBack;
         _onComeback?.Invoke();
     }
 

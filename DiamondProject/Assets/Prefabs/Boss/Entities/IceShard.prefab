@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1953237197499011210}
   - component: {fileID: 7446119031948093875}
   - component: {fileID: 7057649436379901844}
+  - component: {fileID: 1362415602976247715}
   m_Layer: 0
   m_Name: Sprite1
   m_TagString: Untagged
@@ -121,8 +122,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shadowColor: {r: 0, g: 0, b: 0, a: 0.19607843}
   _light: {fileID: 11400000, guid: 3bb8f2ce7cd7bb44887aeb8fb5e80ab6, type: 2}
+  _material: {fileID: 0}
   _effect: {fileID: 0}
   _height: 1
+--- !u!114 &1362415602976247715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816721536623240579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa56c780a6b96484fb0e2d1b75e20eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7446119031948093875}
+  _trigger: IceFormationIndex
+  _bounds: {x: 0, y: 4}
 --- !u!1 &7308799076593519532
 GameObject:
   m_ObjectHideFlags: 0
