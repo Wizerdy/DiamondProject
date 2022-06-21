@@ -23,6 +23,7 @@ public class Lia : MonoBehaviour {
     [SerializeField] Trigger fall;
     [SerializeField] Trigger winter;
 
+    [SerializeField] UnityEvent _onRealDeath;
     [SerializeField, HideInInspector] UnityEvent _onCentering;
 
     int _neutralHealth = 1001;
@@ -108,5 +109,6 @@ public class Lia : MonoBehaviour {
 
     public void EndGame() {
         _deathFeedback?.PlayFeedbacks();
+        _onRealDeath?.Invoke();
     }
 }
