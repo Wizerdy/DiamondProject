@@ -131,9 +131,6 @@ public class PosterityVNValue : MonoBehaviour
     public void OnKillForm(BossShapeSystem shape) {
         posterityObj.numberOfTimeDyingWithoutKillingForm = 0;
         switch (shape.Shape.Type) {
-            case Shape.NEUTRAL:
-                posterityObj.killNeutralForm = true;
-                break;
             case Shape.SPRING:
                 break;
             case Shape.SUMMER:
@@ -147,6 +144,10 @@ public class PosterityVNValue : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void OnKillNeutral() {
+        posterityObj.killNeutralForm = true;
     }
 
     public GameObject GetArrow() {
