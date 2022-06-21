@@ -14,18 +14,22 @@ public class GetVNTrigger : MonoBehaviour
     public void LearnHint(hintType type, int index) {
         switch (type) {
             case hintType.FallBoss:
+                hint = posterity.fallBossHintList[index];
                 hint.isTrigger = true;
                 posterity.fallBossHintList[index] = hint;
                 break;
             case hintType.FallAttack:
+                hint = posterity.fallAttackHintList[index];
                 hint.isTrigger = true;
                 posterity.fallAttackHintList[index] = hint;
                 break;
             case hintType.WinterBoss:
+                hint = posterity.winterBossHintList[index];
                 hint.isTrigger = true;
                 posterity.winterBossHintList[index] = hint;
                 break;
             case hintType.WinterAttack:
+                hint = posterity.winterAttackHintList[index];
                 hint.isTrigger = true;
                 posterity.winterAttackHintList[index] = hint;
                 break;
