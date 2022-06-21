@@ -246,6 +246,7 @@ namespace AK
         static const AkUniqueID RTPC_CROSSBOWCHARGE = 1533370991U;
         static const AkUniqueID RTPC_GENERALVOLUME = 2888337175U;
         static const AkUniqueID RTPC_LEAFBOOMERANG_POSITION = 2664983669U;
+        static const AkUniqueID RTPC_METER_PUMPKID = 2645922045U;
         static const AkUniqueID RTPC_MUSICVOLUME = 2378823330U;
         static const AkUniqueID RTPC_PUMPKID_SPEED = 3854188899U;
         static const AkUniqueID RTPC_SFXVOLUME = 2644490154U;
@@ -273,6 +274,7 @@ namespace AK
         static const AkUniqueID MASTER_VOLUME = 4179668880U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;
+        static const AkUniqueID MUTED_BUS = 2212897001U;
         static const AkUniqueID NEUTRAL = 670611050U;
         static const AkUniqueID PUMPKID = 2863832581U;
         static const AkUniqueID SWORD = 2454616260U;
@@ -282,6 +284,11 @@ namespace AK
         static const AkUniqueID VOLUME_SFX = 3673881719U;
         static const AkUniqueID WINTER = 2965343494U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID METER_PUMPKID = 705732779U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

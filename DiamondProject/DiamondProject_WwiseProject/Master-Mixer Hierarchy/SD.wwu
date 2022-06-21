@@ -141,6 +141,37 @@
 											<ObjectLists/>
 										</Bus>
 										<Bus Name="Boss" ID="{B213E49A-10CA-4556-97E6-BA1563F56DDE}">
+											<PropertyList>
+												<Property Name="BusVolume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{2AD4D150-A743-4C9B-8D24-50F9FAE2A856}" ShortID="691071228">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_Meter_Pumpkid" ID="{D0BC8158-C271-4DC9-9918-57A35561962F}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{BD05F3AD-EB7C-4C4D-8240-8D8739D65B4A}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>-48</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																		<SegmentShape>Exp1</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-5</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
 											<ChildrenList>
 												<Bus Name="Neutral" ID="{F748177D-A73C-40F5-BA59-12A1EC427B67}">
 													<PropertyList>
@@ -189,6 +220,35 @@
 										</Bus>
 										<Bus Name="AMB" ID="{B9433B21-0D1B-42C6-9892-B23FDC8F2AEA}">
 											<PropertyList>
+												<Property Name="BusVolume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{42F543BB-0354-43AE-B4E0-807742A6DB2C}" ShortID="564177620">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_Meter_Pumpkid" ID="{D0BC8158-C271-4DC9-9918-57A35561962F}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{ACF2815F-0CC6-4798-AA92-F6686D9277FB}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>-48</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																		<SegmentShape>Exp1</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-6</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
 												<Property Name="Color" Type="int16" Value="15"/>
 												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
@@ -258,6 +318,33 @@
 													<ValueList>
 														<Value>-6</Value>
 													</ValueList>
+													<RTPCList>
+														<RTPC Name="" ID="{B0C25D49-8B1C-47A9-81E6-4BDCDA3F2437}" ShortID="874162626">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_Meter_Pumpkid" ID="{D0BC8158-C271-4DC9-9918-57A35561962F}" WorkUnitID="{479247C9-D230-40C0-A45C-F0F180BE319B}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{F5A9CA71-63BA-4C1C-814B-2BBBDEC1EA57}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>-48</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																		<SegmentShape>Exp1</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-4</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
 												</Property>
 												<Property Name="Color" Type="int16" Value="13"/>
 												<Property Name="OverrideColor" Type="bool" Value="True"/>
@@ -316,6 +403,28 @@
 									</ChildrenList>
 									<ObjectLists/>
 								</Bus>
+							</ChildrenList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="Muted_Bus" ID="{CCE848EF-D822-41E9-A9E5-73FB40CA1155}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-96</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Color" Type="int16" Value="11"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<AuxBus Name="Meter_Pumpkid" ID="{BD3203B4-CF45-41E3-A77D-7007239AE294}">
+									<ReferenceList>
+										<Reference Name="Effect0" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+											<ObjectRef Name="Meter_Pumpkid" ID="{757D9415-94F6-4919-A85D-ED3CEF14A203}" WorkUnitID="{C5AA2C89-C2E4-4A0A-96C1-F396229387D0}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</AuxBus>
 							</ChildrenList>
 							<ObjectLists/>
 						</Bus>

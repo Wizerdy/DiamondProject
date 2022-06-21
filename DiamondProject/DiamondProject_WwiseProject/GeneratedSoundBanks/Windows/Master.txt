@@ -162,6 +162,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2323919714	RTPC_SwordCharge			\SD\RTPC_SwordCharge	
 	2378823330	RTPC_MusicVolume			\SD\RTPC_MusicVolume	
 	2644490154	RTPC_SFXVolume			\SD\RTPC_SFXVolume	
+	2645922045	RTPC_Meter_Pumpkid			\SD\RTPC_Meter_Pumpkid	
 	2664983669	RTPC_LeafBoomerang_Position			\SD\RTPC_LeafBoomerang_Position	
 	2888337175	RTPC_GeneralVolume			\SD\RTPC_GeneralVolume	
 	3290513731	RTPC_Boss_AttackType			\SD\RTPC_Boss_AttackType	
@@ -178,6 +179,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	1551306167	UI			\SD\Master\Master_Volume\Volume_SFX\UI	
 	1560169506	Boss			\SD\Master\Master_Volume\Volume_SFX\Boss	
 	2082918604	UI_VisualNovel			\SD\Master\Master_Volume\Volume_SFX\UI\UI_VisualNovel	
+	2212897001	Muted_Bus			\SD\Master\Muted_Bus	
 	2454616260	Sword			\SD\Master\Master_Volume\Volume_SFX\Pumpkid\Sword	
 	2512384458	Fall			\SD\Master\Master_Volume\Volume_SFX\Boss\Fall	
 	2523406417	Crossbow			\SD\Master\Master_Volume\Volume_SFX\Pumpkid\Crossbow	
@@ -188,7 +190,11 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	4056684167	Master			\SD\Master	
 	4179668880	Master_Volume			\SD\Master\Master_Volume	
 
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	705732779	Meter_Pumpkid			\SD\Master\Muted_Bus\Meter_Pumpkid	
+
 Effect plug-ins	ID	Name	Type				Notes
+	705732779	Meter_Pumpkid	Wwise Meter			
 	1459522457	Brick_Wall_Minus_1dB_Peak_Fast_Release	Wwise Peak Limiter			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
@@ -202,7 +208,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	33126280	Boss_Neutral_RockSpikes_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_RockSpikes_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_RockSpikes\Boss_Neutral_RockSpikes_04		46876
 	34101360	Boss_Fall_LeafBeam_Start_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Fall_LeafBeam_Start_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Fall\Boss_Fall\Boss_Fall_LeafBeam_Start\Boss_Fall_LeafBeam_Start_02		60316
 	35171978	Pumpkid_Footsteps_Ice_09	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Footsteps_Ice_09_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\PumpKid_Fol\Pumpkid_Fol\Pumkid_Footsteps\Pumpkid_Footsteps_Ice\Pumpkid_Footsteps_Ice_09		6525
-	35589408	Pumpkid_Hit_Basic_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_02		3778
+	35589408	Pumpkid_Hit_Basic_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_02		3778
 	35611936	Pumpkid_Footsteps_Dirt_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Footsteps_Dirt_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\PumpKid_Fol\Pumpkid_Fol\Pumkid_Footsteps\Pumpkid_Footsteps_Dirt\Pumpkid_Footsteps_Dirt_06		3583
 	37202575	Boss_Winter_SnowAbsorption_End_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_SnowAbsorption_End_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_SnowAbsorption_End\Boss_Winter_SnowAbsorption_End_03		28793
 	37753733	UI_Menu_Button_Hover_08	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_Menu_Button_Hover_08_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_General\UI_Menu_Button_Hover\UI_Menu_Button_Hover_08		1810
@@ -256,7 +262,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	147152395	Boss_VO_Hit_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_Hit_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_VO_Hit\Boss_VO_Hit_02		29104
 	147419843	Boss_Neutral_Hit_ChargedCrossbow_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_Hit_ChargedCrossbow_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_ChargedCrossbow\Boss_Neutral_Hit_ChargedCrossbow_05		13172
 	150680571	UI_Transition_ToVisualNovel_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_Transition_ToVisualNovel_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_General\UI_Transition_ToVisualNovel\UI_Transition_ToVisualNovel_01		33213
-	151229973	Pumpkid_Hit_Basic_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_05		3521
+	151229973	Pumpkid_Hit_Basic_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_05		3521
 	154314080	Boss_Neutral_Hit_ChargedSword_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_Hit_ChargedSword_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Sword\Boss_Neutral_Hit_ChargedSword\Boss_Neutral_Hit_ChargedSword_02		7711
 	155483028	UI_Menu_Button_Hover_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_Menu_Button_Hover_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_General\UI_Menu_Button_Hover\UI_Menu_Button_Hover_03		1852
 	156707790	UI_VisualNovel_Norna_Eats_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_VisualNovel_Norna_Eats_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Norna_Eats\UI_VisualNovel_Norna_Eats_05		12526
@@ -348,7 +354,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	357014102	Boss_Neutral_BulletHell_Charge_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_BulletHell_Charge_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_BulletHell_Charge\Boss_Neutral_BulletHell_Charge_03		29888
 	358044945	Pumpkid_Sword_Slash_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Sword_Slash_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Slash\Pumpkid_Sword_NormalSlash\Pumpkid_Sword_Slash_02		5563
 	358078283	AMB_RFX_Thunder_Far_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\AMB_RFX_Thunder_Far_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\AMB\AMB\AMB_Season\AMB_RFX_Thunder_Far\AMB_RFX_Thunder_Far_02		108213
-	359942129	Pumpkid_Hit_Basic_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_03		4746
+	359942129	Pumpkid_Hit_Basic_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_03		4746
 	369451252	UI_VisualNovel_Pass_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_VisualNovel_Pass_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Pass\UI_VisualNovel_Pass_03		4045
 	371891848	UI_VisualNovel_Button_Hover_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_VisualNovel_Button_Hover_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Button_Hover\UI_VisualNovel_Button_Hover_04		2103
 	372095394	Pumpkid_Death	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Death_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Death\Pumpkid_Death		112473
@@ -585,11 +591,11 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	925627622	Boss_Winter_Hit_Sword_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_Hit_Sword_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Winter_Hit\Boss_Winter_Hit_Sword\Boss_Winter_Hit_Sword\Boss_Winter_Hit_Sword_04		10092
 	930782740	UI_VisualNovel_Book_TurnPage_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_VisualNovel_Book_TurnPage_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_TurnPage\UI_VisualNovel_Book_TurnPage_06		12367
 	932097254	Boss_VO_BulletHell_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_VO_BulletHell_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_BulletHell_Cast\Boss_VO_BulletHell_02		47508
-	933154456	Pumpkid_Hit_Basic_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_01		4110
+	933154456	Pumpkid_Hit_Basic_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_01		4110
 	936418326	UI_VisualNovel_Book_Close_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_VisualNovel_Book_Close_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_Close\UI_VisualNovel_Book_Close_02		7307
 	938586669	Boss_Neutral_Hit_Crossbow_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_Hit_Crossbow_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Neutral_Hit\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow\Boss_Neutral_Hit_Crossbow_06		9497
 	939725492	Pumpkid_Sword_Charging_Start_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Sword_Charging_Start_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Sword\Pumpkid_Sword\Pumpkid_Sword_Charging_Start\Pumpkid_Sword_Charging_Start_06		8861
-	941813945	Pumpkid_Hit_Basic_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_04		4248
+	941813945	Pumpkid_Hit_Basic_04	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_04_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_04		4248
 	943391169	UI_VisualNovel_Book_TurnPage_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\UI_VisualNovel_Book_TurnPage_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\UI\UI_VisualNovel\UI_VisualNovel_Book_TurnPage\UI_VisualNovel_Book_TurnPage_01		10735
 	944514198	Pumpkid_Land_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Land_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\PumpKid_Fol\Pumpkid_Fol\Pumpkid_Land\Pumpkid_Land_03		4177
 	946692638	Boss_Neutral_RockBeam_End_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Neutral_RockBeam_End_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Neutral\Boss_Neutral\Boss_Neutral_RockBeam_End\Boss_Neutral_RockBeam_End_01		29015
@@ -599,7 +605,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	952496903	Pumpkid_Crossbow_ChargedShot_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Crossbow_ChargedShot_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Crossbow\Crossbow\Pumpkid_Crossbow_Shot\Pumpkid_Crossbow_ChargedShot\Pumpkid_Crossbow_ChargedShot_03		21754
 	954208317	Boss_Winter_Hit_Crossbow_02	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_Hit_Crossbow_02_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Winter_Hit\Boss_Winter_Hit_Crossbow\Boss_Winter_Hit_Crossbow\Boss_Winter_Hit_Crossbow_02		12301
 	959265766	Boss_Fall_Hit_ChargedCrossbow_01	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Fall_Hit_ChargedCrossbow_01_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Common\Boss_Common\Boss_Hit\Boss_Fall_Hit\Boss_Fall_Hit_Crossbow\Boss_Fall_Hit_ChargedCrossbow\Boss_Fall_Hit_ChargedCrossbow_01		9743
-	961740614	Pumpkid_Hit_Basic_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_06		3710
+	961740614	Pumpkid_Hit_Basic_06	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Hit_Basic_06_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\Hit\Pumpkid_Hit_Basic\Pumpkid_Hit_Basic_06		3710
 	965414608	Boss_Winter_IceSpikes_03	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_IceSpikes_03_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceSpikes\Boss_Winter_IceSpikes_03		50552
 	975536030	Pumpkid_Footsteps_Dirt_11	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Pumpkid_Footsteps_Dirt_11_32513D82.wem		\Actor-Mixer Hierarchy\SD\Pumpkid\PumpKid_Fol\Pumpkid_Fol\Pumkid_Footsteps\Pumpkid_Footsteps_Dirt\Pumpkid_Footsteps_Dirt_11		3612
 	976167390	Boss_Winter_IceHell_Focus_Throw_05	G:\Git\DiamondProject\DiamondProject\DiamondProject_WwiseProject\.cache\Windows\SFX\Boss_Winter_IceHell_Focus_Throw_05_32513D82.wem		\Actor-Mixer Hierarchy\SD\Boss\Boss_Winter\Boss_Winter\Boss_Winter_IceHell_Focus_Throw\Boss_Winter_IceHell_Focus_Throw_05		21666
