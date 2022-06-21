@@ -31,8 +31,8 @@
 												<SegmentShape>Exp1</SegmentShape>
 											</Point>
 											<Point>
-												<XPos>-0</XPos>
-												<YPos>-0</YPos>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
 												<Flags>0</Flags>
 												<SegmentShape>Log1</SegmentShape>
 											</Point>
@@ -63,6 +63,11 @@
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="30"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1612,6 +1617,11 @@
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="30"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1700,6 +1710,11 @@
 								<Property Name="Color" Type="int16" Value="23"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="30"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1765,6 +1780,11 @@
 								<Property Name="Color" Type="int16" Value="27"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="30"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1903,7 +1923,7 @@
 													</Point>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>-0</YPos>
+														<YPos>0</YPos>
 														<Flags>0</Flags>
 														<SegmentShape>Log2</SegmentShape>
 													</Point>
