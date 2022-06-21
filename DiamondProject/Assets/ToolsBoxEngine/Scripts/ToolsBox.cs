@@ -195,6 +195,29 @@ namespace ToolsBoxEngine {
         }
     }
 
+    [Serializable]
+    public class BetterEvent<T> {
+        [SerializeField] UnityEvent<T> _event;
+
+        public event UnityAction<T> Event { add => _event.AddListener(value); remove => _event.RemoveListener(value); }
+
+        public void Invoke(T argument) {
+            try {
+                _event?.Invoke(argument);
+            } catch(Exception e) {
+                Debug.LogException(e);
+            }
+        }
+
+        public void AddListener(UnityAction<T> action) {
+            _event.AddListener(action);
+        }
+
+        public void RemoveListener(UnityAction<T> action) {
+            _event.RemoveListener(action);
+        }
+    }
+
     #endregion
 
     public static class Tools {

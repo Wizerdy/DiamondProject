@@ -14,6 +14,16 @@ public class CheatCode : MonoBehaviour {
     [SerializeField] MMFeedbacks _slowMotionFeedback;
     [SerializeField] MMFeedbacks _toggleUIFeedback;
 
+    [Header("States")]
+    [SerializeField] bool _killBoss = true;
+    [SerializeField] bool _winterShape = true;
+    [SerializeField] bool _fallShape = true;
+    [SerializeField] bool _suicide = true;
+    [SerializeField] bool _zoomPlayer = true;
+    [SerializeField] bool _dezoomArena = true;
+    [SerializeField] bool _slowMotion = true;
+    [SerializeField] bool _toggleUI = true;
+
     PlayerControls _playerControls;
 
     void Start() {
@@ -41,6 +51,7 @@ public class CheatCode : MonoBehaviour {
     }
 
     private void _KillBoss(InputAction.CallbackContext cc) {
+        if (!_killBoss) { return; }
         if (cc.ReadValue<float>() == 1f) {
             if (!_boss.IsValid()) { return; }
             for (int i = 0; i < 5; i++) {
@@ -51,6 +62,7 @@ public class CheatCode : MonoBehaviour {
     }
 
     private void _ChangeShape_Winter(InputAction.CallbackContext cc) {
+        if (!_winterShape) { return; }
         if (!_lia.IsValid()) { return; }
         if (cc.ReadValue<float>() == 1f) {
             _lia.Instance.NewForm(Shape.WINTER);
@@ -58,6 +70,7 @@ public class CheatCode : MonoBehaviour {
     }
 
     private void _ChangeShape_Fall(InputAction.CallbackContext cc) {
+        if (!_fallShape) { return; }
         if (!_lia.IsValid()) { return; }
         if (cc.ReadValue<float>() == 1f) {
             _lia.Instance.NewForm(Shape.FALL);
@@ -65,6 +78,7 @@ public class CheatCode : MonoBehaviour {
     }
 
     private void _Suicide(InputAction.CallbackContext cc) {
+        if (!_suicide) { return; }
         if (!_playerController.IsValid()) { return; }
         if (cc.ReadValue<float>() == 1f) {
             _playerController.Instance.Health.TakeDamage(9999, "");
@@ -72,24 +86,28 @@ public class CheatCode : MonoBehaviour {
     }
 
     private void _ZoomPlayer(InputAction.CallbackContext cc) {
+        if (!_zoomPlayer) { return; }
         if (cc.ReadValue<float>() == 1f) {
             _zoomPlayerFeedback?.PlayFeedbacks();
         }
     }
 
     private void _SeeWholeArena(InputAction.CallbackContext cc) {
+        if (!_dezoomArena) { return; }
         if (cc.ReadValue<float>() == 1f) {
             _seeWholeArenaFeedback?.PlayFeedbacks();
         }
     }
 
     private void _SlowMotion(InputAction.CallbackContext cc) {
+        if (!_slowMotion) { return; }
         if (cc.ReadValue<float>() == 1f) {
             _slowMotionFeedback?.PlayFeedbacks();
         }
     }
 
     private void _ToggleUI(InputAction.CallbackContext cc) {
+        if (!_toggleUI) { return; }
         if (cc.ReadValue<float>() == 1f) {
             _toggleUIFeedback?.PlayFeedbacks();
         }

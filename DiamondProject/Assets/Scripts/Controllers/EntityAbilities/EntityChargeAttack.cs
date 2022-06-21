@@ -128,6 +128,7 @@ public class EntityChargeAttack : MonoBehaviour {
         Vector2 position = _entity.Position2D();
         Vector2 target = direction * distance + position;
         float timePassed = 0f;
+        _attackHitbox.SetValues(_damageables, damage);
         while (timePassed < time) {
             yield return new WaitForEndOfFrame();
             timePassed += Time.deltaTime;
@@ -136,7 +137,6 @@ public class EntityChargeAttack : MonoBehaviour {
             if (hit.collider != null) {
                 IHealth hitHealth = hit.collider?.gameObject?.GetComponent<IHealth>();
                 if (hitHealth != null) {
-                    _attackHitbox.SetValues(_damageables, damage);
                     _attackHitbox.Hit(hit.collider);
                 }
                 if (_walls.Contains(hit.collider.gameObject.layer)) {
