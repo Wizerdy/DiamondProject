@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class D_PosterityUpdate : MonoBehaviour {
-    [SerializeField] Reference<Health> _playerHealth;
+    //[SerializeField] Reference<Health> _playerHealth;
+    [SerializeField] DeathManager _deathManager;
     [SerializeField] Reference<Health> _bossHealth;
     [SerializeField] PosterityObject _posterity;
 
     void Start() {
-        if (_playerHealth != null) { _playerHealth.Instance.OnDeath += PosterityDeathCount; }
+        if (_deathManager != null) { _deathManager.OnDeath += PosterityDeathCount; }
         if (_bossHealth != null) { _bossHealth.Instance.OnDeath += PosterityBossDeathCount; }
     }
 
     private void OnDestroy() {
-        if (_playerHealth != null) { _playerHealth.Instance.OnDeath -= PosterityDeathCount; }
+        if (_deathManager != null) { _deathManager.OnDeath -= PosterityDeathCount; }
         if (_bossHealth != null) { _bossHealth.Instance.OnDeath -= PosterityBossDeathCount; }
     }
 

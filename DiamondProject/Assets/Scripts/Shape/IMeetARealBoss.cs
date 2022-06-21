@@ -81,7 +81,7 @@ public class IMeetARealBoss : MonoBehaviour {
 
     public void SetSkin(Shape shape, int percentage = 100) {
         _currentShape = shape;
-        if (percentage % 25 != 0) { Debug.LogWarning("Wrong percentage - SetSkin : " + percentage); percentage = 100; }
+        if (percentage % 25 != 0 || percentage > 100 || percentage < 0) { Debug.LogWarning("Wrong percentage - SetSkin : " + percentage); percentage = 100; }
         string newSkin = "";
         switch (shape) {
             case Shape.NEUTRAL:

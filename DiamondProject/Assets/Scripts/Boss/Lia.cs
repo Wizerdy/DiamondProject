@@ -59,9 +59,9 @@ public class Lia : MonoBehaviour {
         if (!_beatenShape.Contains(Shape.FALL) && fall.IsTrigger()) {
             NewForm(Shape.FALL);
         }
-        //if (!_beatenShape.Contains(Shape.WINTER) && winter.IsTrigger()) {
-        //    NewForm(Shape.WINTER);
-        //}
+        if (!_beatenShape.Contains(Shape.WINTER) && winter.IsTrigger()) {
+            NewForm(Shape.WINTER);
+        }
 
         if (_beatenShape.Contains(Shape.WINTER) && _beatenShape.Contains(Shape.FALL) && _health.CurrentHealth == 1 && _attacks.CanAct) {
             _attacks.CanAct = false;
@@ -72,9 +72,7 @@ public class Lia : MonoBehaviour {
     public void NewForm(Shape shape, bool moveToCenter = true) {
         _attacks.StopBehaviour();
         _attacks.ClearAttacks();
-        if (_bossShapeSystem.Shape?.Type == Shape.NEUTRAL && shape != Shape.NEUTRAL) {
-            _neutralHealth -= 500;
-        }
+
         if (!moveToCenter) {
             ChangeForm(shape);
             return;
@@ -90,19 +88,22 @@ public class Lia : MonoBehaviour {
     }
 
     public void ChangeForm(Shape shape) {
+        if (_bossShapeSystem.Shape != null && _bossShapeSystem.Shape.Type != Shape.NEUTRAL) {
+            _beatenShape.Add(_bossShapeSystem.Shape.Type);
+        }
         if (shape == Shape.NEUTRAL) {
             _health.CurrentHealth = _neutralHealth;
         } else {
             _health.CurrentHealth = _health.MaxHealth;
         }
         _bossShapeSystem.ChangeShape(_shapeLibrary.GetBossShape(shape));
-        if (shape != Shape.NEUTRAL) {
-            _beatenShape.Add(shape);
-        }
     }
 
     public void ComputeDeath() {
+        //if (_beatenShape.Contains(_bossShapeSystem.Shape.Type)) { return; }
+        if (_morphing) { return; }
         if (_bossShapeSystem.Shape.Type != Shape.NEUTRAL) {
+            _neutralHealth -= 500;
             NewForm(Shape.NEUTRAL);
         } else {
             EndGame();
