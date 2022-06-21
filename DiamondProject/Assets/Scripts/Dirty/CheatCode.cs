@@ -9,6 +9,7 @@ public class CheatCode : MonoBehaviour {
     [SerializeField] HealthReference _boss;
     [SerializeField] LiaReference _lia;
     [SerializeField] PlayerControllerReference _playerController;
+    [SerializeField] DeathManager _deathManager;
     [SerializeField] MMFeedbacks _zoomPlayerFeedback;
     [SerializeField] MMFeedbacks _seeWholeArenaFeedback;
     [SerializeField] MMFeedbacks _slowMotionFeedback;
@@ -23,8 +24,10 @@ public class CheatCode : MonoBehaviour {
     [SerializeField] bool _dezoomArena = true;
     [SerializeField] bool _slowMotion = true;
     [SerializeField] bool _toggleUI = true;
+    [SerializeField] bool _invicibility = true;
 
     PlayerControls _playerControls;
+    bool _isInvincible = false;
 
     void Start() {
         PlayerControls _playerControls = new PlayerControls();
@@ -37,6 +40,7 @@ public class CheatCode : MonoBehaviour {
         _playerControls.CheatCode.SeeWholeArena.started += _SeeWholeArena;
         _playerControls.CheatCode.SlowMotion.started += _SlowMotion;
         _playerControls.CheatCode.ToggleUI.started += _ToggleUI;
+        _playerControls.CheatCode.AlexandreSama.started += _Invicibility;
     }
 
     private void OnDestroy() {
@@ -110,6 +114,14 @@ public class CheatCode : MonoBehaviour {
         if (!_toggleUI) { return; }
         if (cc.ReadValue<float>() == 1f) {
             _toggleUIFeedback?.PlayFeedbacks();
+        }
+    }
+
+    private void _Invicibility(InputAction.CallbackContext cc) {
+        if (!_invicibility) { return; }
+        if (cc.ReadValue<float>() == 1f) {
+            _isInvincible = !_isInvincible;
+            _deathManager.CanDie = !_deathManager.CanDie;
         }
     }
 }

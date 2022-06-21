@@ -411,6 +411,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AlexandreSama"",
+                    ""type"": ""Button"",
+                    ""id"": ""79a55a48-a3d4-42e6-b8dd-4ad032e40f8e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -501,6 +510,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""ToggleUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71f86951-b1b0-4cbb-8a07-96411b603892"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AlexandreSama"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -561,6 +581,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_CheatCode_SeeWholeArena = m_CheatCode.FindAction("SeeWholeArena", throwIfNotFound: true);
         m_CheatCode_SlowMotion = m_CheatCode.FindAction("SlowMotion", throwIfNotFound: true);
         m_CheatCode_ToggleUI = m_CheatCode.FindAction("ToggleUI", throwIfNotFound: true);
+        m_CheatCode_AlexandreSama = m_CheatCode.FindAction("AlexandreSama", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -792,6 +813,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_CheatCode_SeeWholeArena;
     private readonly InputAction m_CheatCode_SlowMotion;
     private readonly InputAction m_CheatCode_ToggleUI;
+    private readonly InputAction m_CheatCode_AlexandreSama;
     public struct CheatCodeActions
     {
         private @PlayerControls m_Wrapper;
@@ -804,6 +826,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @SeeWholeArena => m_Wrapper.m_CheatCode_SeeWholeArena;
         public InputAction @SlowMotion => m_Wrapper.m_CheatCode_SlowMotion;
         public InputAction @ToggleUI => m_Wrapper.m_CheatCode_ToggleUI;
+        public InputAction @AlexandreSama => m_Wrapper.m_CheatCode_AlexandreSama;
         public InputActionMap Get() { return m_Wrapper.m_CheatCode; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -837,6 +860,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @ToggleUI.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnToggleUI;
                 @ToggleUI.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnToggleUI;
                 @ToggleUI.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnToggleUI;
+                @AlexandreSama.started -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnAlexandreSama;
+                @AlexandreSama.performed -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnAlexandreSama;
+                @AlexandreSama.canceled -= m_Wrapper.m_CheatCodeActionsCallbackInterface.OnAlexandreSama;
             }
             m_Wrapper.m_CheatCodeActionsCallbackInterface = instance;
             if (instance != null)
@@ -865,6 +891,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @ToggleUI.started += instance.OnToggleUI;
                 @ToggleUI.performed += instance.OnToggleUI;
                 @ToggleUI.canceled += instance.OnToggleUI;
+                @AlexandreSama.started += instance.OnAlexandreSama;
+                @AlexandreSama.performed += instance.OnAlexandreSama;
+                @AlexandreSama.canceled += instance.OnAlexandreSama;
             }
         }
     }
@@ -917,5 +946,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnSeeWholeArena(InputAction.CallbackContext context);
         void OnSlowMotion(InputAction.CallbackContext context);
         void OnToggleUI(InputAction.CallbackContext context);
+        void OnAlexandreSama(InputAction.CallbackContext context);
     }
 }
