@@ -26,6 +26,8 @@ public class Lia : MonoBehaviour {
     [SerializeField] UnityEvent _onRealDeath;
     [SerializeField, HideInInspector] UnityEvent _onCentering;
 
+    public event UnityAction OnRealDeath { add => _onRealDeath?.AddListener(value); remove => _onRealDeath?.RemoveListener(value); }
+
     int _neutralHealth = 1001;
 
     List<Shape> _beatenShape = new List<Shape>();
