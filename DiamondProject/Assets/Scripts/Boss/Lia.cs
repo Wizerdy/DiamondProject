@@ -63,7 +63,7 @@ public class Lia : MonoBehaviour {
             NewForm(Shape.WINTER);
         }
 
-        if (_health.CurrentHealth == 1 && _attacks.CanAct) {
+        if (_beatenShape.Contains(Shape.WINTER) && _beatenShape.Contains(Shape.FALL) && _health.CurrentHealth == 1 && _attacks.CanAct) {
             _attacks.CanAct = false;
             _boss.SetAnimatorTrigger("KO");
         }
