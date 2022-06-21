@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e8850685be031428ff4e1e0077999e, type: 3}
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
-  resetOnStart: 1
+  resetOnStart: 0
   deathCount: 1
   bossDeathCount: 0
   maxLifeModifier: 0
@@ -29,25 +29,26 @@ MonoBehaviour:
   killWinterForm: 0
   sawFallForm: 0
   sawWinterForm: 0
-  firstTimeTalking: 1
-  nbTimeTalkedToNorna: 3
+  firstTimeTalking: 0
+  nbTimeTalkedToNorna: 4
   nbCorpse: 3
   winterFormTriggerActivated: 0
   arrow: {fileID: 4847567384368089890, guid: e1150982533dd954a99d7970e488119c, type: 3}
   chargedArrow: {fileID: 4847567384368089890, guid: 70e0bc24b89b00446b4ed33c89543422, type: 3}
   fallBossHintList:
-  - id: 0
-    defaultName: 
-    unlockedName: 
+  - id: 1
+    defaultName: ???
+    unlockedName: Transformation
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: 
-    unlockedText: 
+    defaultText: ???
+    unlockedText: "Touche Gw\xE9nia avec une fl\xE8che charg\xE9e apr\xE8s t'\xEAtre
+      pris la foudre."
   - id: 2
     defaultName: ???
     unlockedName: "Faiblesse n\xB01"
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -55,7 +56,7 @@ MonoBehaviour:
   - id: 3
     defaultName: ???
     unlockedName: "Faiblesse n\xB02"
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -63,7 +64,7 @@ MonoBehaviour:
   - id: 4
     defaultName: ???
     unlockedName: "Faiblesse n\xB03"
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -71,7 +72,7 @@ MonoBehaviour:
   fallAttackHintList:
   - id: 1
     defaultName: ???
-    unlockedName: Arbres Protecteurs
+    unlockedName: Gard'Arbres
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
@@ -79,7 +80,7 @@ MonoBehaviour:
     unlockedText: "Arbres qui repoussent apr\xE8s un certain temps une fois d\xE9truit."
   - id: 2
     defaultName: ???
-    unlockedName: Bouclier Automnale
+    unlockedName: Garde feuillue
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
@@ -87,7 +88,7 @@ MonoBehaviour:
     unlockedText: "Bouclier qui prot\xE8ge de toutes les attaques"
   - id: 3
     defaultName: ???
-    unlockedName: Feuilles Boomerang
+    unlockedName: Samare
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
@@ -104,18 +105,18 @@ MonoBehaviour:
     defaultText: Tir sur le rayon de front ?
     unlockedText: "Attaque charg\xE9e suivant la position du joueur."
   winterBossHintList:
-  - id: 0
-    defaultName: 
-    unlockedName: 
-    isTrigger: 1
+  - id: 1
+    defaultName: ???
+    unlockedName: Transformation
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
-    defaultText: 
-    unlockedText: 
+    defaultText: ???
+    unlockedText: Ne pas recevoir un coup et ne pas attaquer
   - id: 2
     defaultName: ???
     unlockedName: "Faiblesse n\xB01"
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -123,7 +124,7 @@ MonoBehaviour:
   - id: 3
     defaultName: ???
     unlockedName: "Faiblesse n\xB02"
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -131,7 +132,7 @@ MonoBehaviour:
   - id: 4
     defaultName: ???
     unlockedName: "Faiblesse n\xB03"
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -151,7 +152,7 @@ MonoBehaviour:
       plus petite est lanc\xE9e dans notre direction"
   - id: 2
     defaultName: ???
-    unlockedName: Projectiles de glace
+    unlockedName: Eclat de glace
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
@@ -159,7 +160,7 @@ MonoBehaviour:
     unlockedText: "Vagues de projectiles regroupant l'enti\xE8ret\xE9 du terrain."
   - id: 3
     defaultName: ???
-    unlockedName: Absorption de neige
+    unlockedName: Glaciation
     isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0

@@ -9,6 +9,8 @@ public class FloatingCharacter : MonoBehaviour
     [SerializeField] private AnimationCurve curve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
     [SerializeField] private float delay = 1f;
     [SerializeField] private Vector3 offSet = new Vector3(1, 1, 1);
+    [SerializeField] private Transform rightPos;
+    [SerializeField] private Transform middlePos;
 
     private Vector3 startPos;
     private Vector3 endPos;
@@ -20,6 +22,20 @@ public class FloatingCharacter : MonoBehaviour
         character = stage.CharactersOnStage[0];
         startPos = character.State.holder.transform.position;
         endPos = character.State.holder.transform.position + offSet;
+    }
+
+    public void GetRightPosition() {
+        if (character) {
+            startPos = rightPos.transform.position;
+            endPos = rightPos.transform.position + offSet;
+        }
+    }
+
+    public void GetMiddlePosition() {
+        if (character) {
+            startPos = middlePos.transform.position;
+            endPos = middlePos.transform.position + offSet;
+        }
     }
 
     // Update is called once per frame
