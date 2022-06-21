@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Spine.Unity;
 using UnityEngine;
+using UnityEngine.VFX;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using ToolsBoxEngine;
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] Animator _animator;
     [SerializeField] Reference<IMeetARealBoss> _boss;
     [SerializeField] GameObject _pauseUI;
+    [SerializeField] VisualEffect _healingPart;
     [SerializeField] UnityEvent<AttackType> _onAttack;
 
     [Header("Value")]
@@ -480,5 +482,10 @@ public class PlayerController : MonoBehaviour {
                 }
                 break;
         }
+    }
+
+    public void HealingParticule() {
+        _healingPart.gameObject.SetActive(true);
+        _healingPart.Play();
     }
 }

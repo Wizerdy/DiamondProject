@@ -102,6 +102,7 @@ public class Health : MonoBehaviour, IHealth {
     }
 
     public void TakeHeal(int amount) {
+        if (amount <= 0 || _currentHealth >= _maxHealth) { return; }
         _currentHealth += amount;
         _currentHealth = Mathf.Min(_maxHealth, _currentHealth);
         _onHeal?.Invoke(amount);

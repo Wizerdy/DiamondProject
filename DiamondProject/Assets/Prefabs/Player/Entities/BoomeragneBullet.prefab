@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 1735998592836663502}
   - component: {fileID: 6038740818519240514}
   - component: {fileID: -8854015507687747107}
+  - component: {fileID: 3997543179778366691}
   m_Layer: 9
   m_Name: BoomeragneBullet
   m_TagString: Bullet
@@ -418,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1735998592836663502}
   _damageHealth: {fileID: 3284727387380998033}
-  _damage: 5
+  _damage: 15
   _damageables:
     tags:
     - Boss
@@ -427,7 +428,7 @@ MonoBehaviour:
   _range: 180
   _cooldown: 0.2
   _speed: 25
-  _overheat: 3
+  _overheat: 10
 --- !u!114 &7479794409865448269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,9 +443,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1735998592836663502}
   _damageHealth: {fileID: 3284727387380998033}
-  _backTime: 0.5
+  _backTime: 0.7
   _backSpeed: 35
-  _backDamage: 10
+  _backDamage: 5
 --- !u!114 &3284727387380998033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +478,8 @@ MonoBehaviour:
     - BossEntities
     - Structure
     - PlayerLegs
+    - Laser
+    - Enemy
     state: 2
   _destroyOnHit: 0
   _onlyDamageOnceEach: 1
@@ -555,6 +558,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: 0
   OffsetTransform: {fileID: 0}
+--- !u!114 &3997543179778366691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847567384368089890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe94af05287522342be1231091a6eb63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageHealth: {fileID: 3284727387380998033}
+  _particlesHit: {fileID: 1667973517825778084, guid: 7de2f62fb0d46194a806f90c2fc8f345, type: 3}
+  _particlesHitDelay: 1
 --- !u!1 &5537545531246756685
 GameObject:
   m_ObjectHideFlags: 0

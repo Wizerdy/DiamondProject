@@ -26,13 +26,14 @@ public class LiaAttack : MonoBehaviour {
     [SerializeField] List<string> _fallAttacks = new List<string>();
     [SerializeField] List<string> _winterAttacks = new List<string>();
 
-    LIAState state = LIAState.ACTION; 
+    LIAState state = LIAState.ACTION;
     List<string> availableAttacks = new List<string>();
     Coroutine _currentBehaviour = null;
     BossShape _currentShape = null;
     float _timer = 2f;
     bool _stunt = false;
     string lastAttack = "";
+    string lastAttackTwo = "";
     //string lastAttackEnd;
 
     public bool CanAct { get => !_stunt && _acting; set => Acting(value); }
@@ -129,7 +130,10 @@ public class LiaAttack : MonoBehaviour {
                 while (!CanAct) { yield return null; }
             }
             availableAttacks.Remove("Movement");
-            lastAttack = Tools.Random(availableAttacks.ToArray());
+            do {
+                lastAttack = Tools.Random(availableAttacks.ToArray());
+            } while (lastAttack == lastAttackTwo);
+            lastAttackTwo = lastAttack;
             availableAttacks.Remove(Attack(lastAttack));
             availableAttacks.Add("Movement");
             while (!availableAttacks.Contains(lastAttack)) {
@@ -179,7 +183,7 @@ public class LiaAttack : MonoBehaviour {
             }
             while (!CanAct) { yield return null; }
             float random = Random.Range(0, 99);
-            if(random < 40) {
+            if (random < 40) {
                 lastAttack = "FallDash";
                 availableAttacks.Remove(Attack(lastAttack));
                 while (!availableAttacks.Contains(lastAttack)) {
@@ -197,7 +201,10 @@ public class LiaAttack : MonoBehaviour {
         yield return new WaitForSeconds(_waitTimeBeforeAction);
         while (true) {
             while (!CanAct) { yield return null; }
-            lastAttack = Tools.Random(availableAttacks.ToArray());
+            do {
+                lastAttack = Tools.Random(availableAttacks.ToArray());
+            } while (lastAttack == lastAttackTwo);
+            lastAttackTwo = lastAttack;
             availableAttacks.Remove(Attack(lastAttack));
             while (!availableAttacks.Contains(lastAttack)) {
                 yield return null;
@@ -211,18 +218,18 @@ public class LiaAttack : MonoBehaviour {
 
         switch (_currentShape.Type) {
             case Shape.NEUTRAL:
-            default:               
-                if (_neutralAttacks.Contains(attack.id)){
+            default:
+                if (_neutralAttacks.Contains(attack.id)) {
                     availableAttacks.Add(attack.id);
                 }
                 break;
             case Shape.FALL:
-                if (_fallAttacks.Contains(attack.id)){
+                if (_fallAttacks.Contains(attack.id)) {
                     availableAttacks.Add(attack.id);
                 }
                 break;
             case Shape.WINTER:
-                if (_winterAttacks.Contains(attack.id)){
+                if (_winterAttacks.Contains(attack.id)) {
                     availableAttacks.Add(attack.id);
                 }
                 break;

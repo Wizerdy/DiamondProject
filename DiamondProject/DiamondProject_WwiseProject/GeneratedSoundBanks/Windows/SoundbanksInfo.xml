@@ -28,13 +28,17 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="747797818">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1968686783">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+			</IncludedAuxBusses>
 			<GameParameters>
 				<GameParameter Id="2378823330" Name="RTPC_MusicVolume" ObjectPath="\Game Parameters\SD\RTPC_MusicVolume"/>
 				<GameParameter Id="2644490154" Name="RTPC_SFXVolume" ObjectPath="\Game Parameters\SD\RTPC_SFXVolume"/>
+				<GameParameter Id="2645922045" Name="RTPC_Meter_Pumpkid" ObjectPath="\Game Parameters\SD\RTPC_Meter_Pumpkid"/>
 				<GameParameter Id="2888337175" Name="RTPC_GeneralVolume" ObjectPath="\Game Parameters\SD\RTPC_GeneralVolume"/>
 			</GameParameters>
 			<StateGroups>
@@ -80,7 +84,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="4056684167" Language="SFX" Hash="2508390777">
+		<SoundBank Id="4056684167" Language="SFX" Hash="3699425137">
 			<ObjectPath>\SoundBanks\SD\Master</ObjectPath>
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
@@ -167,7 +171,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2378231684" Name="Boss_Fall_FallDash_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Cast" DurationType="OneShot" DurationMin="2.350875" DurationMax="2.350875">
+				<Event Id="2378231684" Name="Boss_Fall_FallDash_Cast" ObjectPath="\Events\SD\Boss\Fall\Boss_Fall_FallDash_Cast" DurationType="OneShot" DurationMin="1.850875" DurationMax="1.850875">
 					<IncludedMemoryFiles>
 						<File Id="525739532" Language="SFX">
 							<ShortName>Boss_VO_FallDash.wav</ShortName>
@@ -1696,6 +1700,9 @@
 							<Path>SFX\Pumpkid_Crossbow_Boomerang_Return_02_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="3836879481" Name="Pumpkid_Crossbow_Charge_End" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Charge_End" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="219435418" Name="Pumpkid_Crossbow_Charge_Start" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Charge_Start" DurationType="Infinite">
@@ -1729,6 +1736,9 @@
 							<Path>SFX\Pumpkid_Crossbow_Charging_Start_04_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="3990897451" Name="Pumpkid_Crossbow_Overcharge_End" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Overcharge_End" DurationType="OneShot" DurationMin="0.590991" DurationMax="0.703907">
 					<IncludedMemoryFiles>
@@ -1745,6 +1755,9 @@
 							<Path>SFX\Pumpkid_Crossbow_Overcharge_End_01_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="3561453072" Name="Pumpkid_Crossbow_Overcharge_Start" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Overcharge_Start" DurationType="OneShot" DurationMin="0.542782" DurationMax="0.629206">
 					<IncludedMemoryFiles>
@@ -1773,6 +1786,9 @@
 							<Path>SFX\Pumpkid_Crossbow_Overcharge_Start_01_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2202228643" Name="Pumpkid_Crossbow_Shot" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_Shot" DurationType="OneShot" DurationMin="0.294184" DurationMax="0.853367">
 					<IncludedMemoryFiles>
@@ -1858,6 +1874,9 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
+					<AuxBusSends>
+						<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2811780135" Name="Pumpkid_Crossbow_ThunderShot" ObjectPath="\Events\SD\Pumpkid\Crossbow\Pumpkid_Crossbow_ThunderShot" DurationType="OneShot" DurationMin="0.853145" DurationMax="1.015926">
 					<IncludedMemoryFiles>
@@ -1886,6 +1905,9 @@
 							<Path>SFX\Pumpkid_Crossbow_ThunderShot_05_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2921680214" Name="Pumpkid_Death" ObjectPath="\Events\SD\Pumpkid\Hit\Pumpkid_Death" DurationType="OneShot" DurationMin="4.370104" DurationMax="4.370104">
 					<IncludedMemoryFiles>
@@ -2093,7 +2115,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="906040055" Name="Pumpkid_Hit" ObjectPath="\Events\SD\Pumpkid\Hit\Pumpkid_Hit" DurationType="OneShot" DurationMin="0." DurationMax="0.292679">
+				<Event Id="906040055" Name="Pumpkid_Hit" ObjectPath="\Events\SD\Pumpkid\Hit\Pumpkid_Hit" DurationType="OneShot" DurationMin="0.19577" DurationMax="0.292679">
 					<IncludedMemoryFiles>
 						<File Id="35589408" Language="SFX">
 							<ShortName>Pumpkid_Hit_Basic_02.wav</ShortName>
@@ -2120,19 +2142,9 @@
 							<Path>SFX\Pumpkid_Hit_Basic_06_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<DefaultSwitchValue>{BB3C0031-A53B-49ED-87E8-8CDD4C447D53}</DefaultSwitchValue>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{BB3C0031-A53B-49ED-87E8-8CDD4C447D53}">
-							<Media>
-								<File Id="35589408"/>
-								<File Id="151229973"/>
-								<File Id="359942129"/>
-								<File Id="933154456"/>
-								<File Id="941813945"/>
-								<File Id="961740614"/>
-							</Media>
-						</SwitchContainer>
-					</SwitchContainers>
+					<AuxBusSends>
+						<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="3871438628" Name="Pumpkid_Jump" ObjectPath="\Events\SD\Pumpkid\Pumpkid_Foley\Pumpkid_Jump" DurationType="OneShot" DurationMin="0.456258" DurationMax="0.542805">
 					<IncludedMemoryFiles>
@@ -2222,6 +2234,9 @@
 							<Path>SFX\Pumpkid_Sword_Charging_LP_F2BF74AC.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="971183997" Name="Pumpkid_Sword_Slash" ObjectPath="\Events\SD\Pumpkid\Sword\Pumpkid_Sword_Slash" DurationType="OneShot" DurationMin="0.277486" DurationMax="1.057523">
 					<IncludedMemoryFiles>
@@ -2331,6 +2346,9 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
+					<AuxBusSends>
+						<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="3638260058" Name="ReturnToMainMenu" ObjectPath="\Events\SD\AMB\ReturnToMainMenu" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0.">
 					<ActionSetState>
@@ -2814,6 +2832,9 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<IncludedAuxBusses>
+				<AuxBus Id="705732779" Name="Meter_Pumpkid" ObjectPath="\Master-Mixer Hierarchy\SD\Master\Muted_Bus\Meter_Pumpkid"/>
+			</IncludedAuxBusses>
 			<ReferencedStreamedFiles>
 				<File Id="187233243"/>
 				<File Id="386125571"/>
@@ -4632,6 +4653,7 @@
 				<GameParameter Id="2323919714" Name="RTPC_SwordCharge" ObjectPath="\Game Parameters\SD\RTPC_SwordCharge"/>
 				<GameParameter Id="2378823330" Name="RTPC_MusicVolume" ObjectPath="\Game Parameters\SD\RTPC_MusicVolume"/>
 				<GameParameter Id="2644490154" Name="RTPC_SFXVolume" ObjectPath="\Game Parameters\SD\RTPC_SFXVolume"/>
+				<GameParameter Id="2645922045" Name="RTPC_Meter_Pumpkid" ObjectPath="\Game Parameters\SD\RTPC_Meter_Pumpkid"/>
 				<GameParameter Id="2664983669" Name="RTPC_LeafBoomerang_Position" ObjectPath="\Game Parameters\SD\RTPC_LeafBoomerang_Position"/>
 				<GameParameter Id="2888337175" Name="RTPC_GeneralVolume" ObjectPath="\Game Parameters\SD\RTPC_GeneralVolume"/>
 				<GameParameter Id="3290513731" Name="RTPC_Boss_AttackType" ObjectPath="\Game Parameters\SD\RTPC_Boss_AttackType"/>

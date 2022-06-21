@@ -10,9 +10,13 @@ public class IMeetARealBoss : MonoBehaviour {
     [SerializeField] SpriteRenderer _spriteRenderer;
     [SerializeField] Animator _animator;
     [SerializeField] SkeletonMecanim _spine;
+    [SerializeField] Material _targetMat;
 
     [SerializeField] UnityEvent<int> _onInvincibility;
     [SerializeField] UnityEvent _onDeath;
+
+    MaterialPropertyBlock _block;
+    MeshRenderer _meshRenderer;
 
     Shape _currentShape = Shape.NEUTRAL;
 
@@ -107,5 +111,27 @@ public class IMeetARealBoss : MonoBehaviour {
         if (_currentShape == Shape.NEUTRAL) { return; }
         if (percentage % 25 != 0 || percentage == 0) { return; }
         SetSkin(_currentShape, percentage);
+    }
+
+    public void ChangeMatStp() {
+        _meshRenderer = _spine.GetComponent<MeshRenderer>();
+
+        _block = new MaterialPropertyBlock();
+        _meshRenderer.SetPropertyBlock(_block);
+
+        StartCoroutine(FlashRoutine());
+    }
+
+    IEnumerator FlashRoutine() {
+        //int fillAlpha = Shader.PropertyToID("_FillAlpha");
+        int fillColor = Shader.PropertyToID("_Color");
+        Color white = Color.white;
+
+        for (int i = 0; i < 255; i++) {
+            white.a -= 1f;
+            _block.SetColor(fillColor, white);
+            _meshRenderer.SetPropertyBlock(_block);
+            yield return null;
+        }
     }
 }

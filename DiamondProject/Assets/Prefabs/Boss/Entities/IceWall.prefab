@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 4119513334794404853}
   - component: {fileID: 4119513334794404854}
   - component: {fileID: 4119513334794404855}
-  - component: {fileID: -152570804747052931}
-  - component: {fileID: 6068446348175890438}
+  - component: {fileID: 3663006340037620988}
   m_Layer: 0
   m_Name: IceWall
   m_TagString: Untagged
@@ -33,8 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8421353015583888131}
-  - {fileID: 5085523890379040291}
+  - {fileID: 4709552209355556815}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55,6 +53,7 @@ MonoBehaviour:
   gapWidth: 76.86
   speed: 5
   damage: 10
+  _graphics: {fileID: 4730427283799183956}
   edgeCollider: {fileID: 4119513334794404855}
   line: {fileID: 4119513334794404854}
   effects:
@@ -208,7 +207,7 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &-152570804747052931
+--- !u!114 &3663006340037620988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,31 +216,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 4119513334794404808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cb60c24b9be8ff4e8c25b34e74a002f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Offset: 0
-  OffsetTransform: {fileID: 0}
---- !u!114 &6068446348175890438
-MonoBehaviour:
+--- !u!1 &4730427283799183956
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4119513334794404808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9222dcf5398717b4799ee66d4609d22d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Offset: 0
-  OffsetTransform: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4709552209355556815}
+  m_Layer: 0
+  m_Name: Graphics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4709552209355556815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4730427283799183956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8421353015583888131}
+  - {fileID: 5085523890379040291}
+  m_Father: {fileID: 4119513334794404852}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5107593516224361704
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4119513334794404852}
+    m_TransformParent: {fileID: 4709552209355556815}
     m_Modifications:
     - target: {fileID: 32290685522756060, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -299,6 +315,10 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[3].m_Value.y
       value: -6.1
       objectReference: {fileID: 0}
+    - target: {fileID: 32290686068225982, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -321,15 +341,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -403,7 +423,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4119513334794404852}
+    m_TransformParent: {fileID: 4709552209355556815}
     m_Modifications:
     - target: {fileID: 32290685522756060, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -461,6 +481,10 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[3].m_Value.y
       value: -6.1
       objectReference: {fileID: 0}
+    - target: {fileID: 32290686068225982, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -483,15 +507,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 32290686483698379, guid: 4096778db556ad64faf6ec51dfdcad10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -58,6 +58,7 @@ Custom State	ID	Name	State Group	Owner		Notes
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2378823330	RTPC_MusicVolume			\SD\RTPC_MusicVolume	
 	2644490154	RTPC_SFXVolume			\SD\RTPC_SFXVolume	
+	2645922045	RTPC_Meter_Pumpkid			\SD\RTPC_Meter_Pumpkid	
 	2888337175	RTPC_GeneralVolume			\SD\RTPC_GeneralVolume	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
@@ -70,6 +71,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	1551306167	UI			\SD\Master\Master_Volume\Volume_SFX\UI	
 	1560169506	Boss			\SD\Master\Master_Volume\Volume_SFX\Boss	
 	2082918604	UI_VisualNovel			\SD\Master\Master_Volume\Volume_SFX\UI\UI_VisualNovel	
+	2212897001	Muted_Bus			\SD\Master\Muted_Bus	
 	2454616260	Sword			\SD\Master\Master_Volume\Volume_SFX\Pumpkid\Sword	
 	2512384458	Fall			\SD\Master\Master_Volume\Volume_SFX\Boss\Fall	
 	2523406417	Crossbow			\SD\Master\Master_Volume\Volume_SFX\Pumpkid\Crossbow	
@@ -81,7 +83,11 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	4056684167	Master			\SD\Master	
 	4179668880	Master_Volume			\SD\Master\Master_Volume	
 
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	705732779	Meter_Pumpkid			\SD\Master\Muted_Bus\Meter_Pumpkid	
+
 Effect plug-ins	ID	Name	Type				Notes
+	705732779	Meter_Pumpkid	Wwise Meter			
 	1459522457	Brick_Wall_Minus_1dB_Peak_Fast_Release	Wwise Peak Limiter			
 
 Audio Devices	ID	Name	Type				Notes

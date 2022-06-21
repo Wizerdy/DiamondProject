@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C5AA2C89-C2E4-4A0A-96C1-F396229387D0}" SchemaVersion="103">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{C5AA2C89-C2E4-4A0A-96C1-F396229387D0}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C5AA2C89-C2E4-4A0A-96C1-F396229387D0}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="Meter_Pumpkid" ID="{757D9415-94F6-4919-A85D-ED3CEF14A203}" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">					<PluginData>
+	<GameParameter Name="RTPC_Meter_Pumpkid" ID="{D0BC8158-C271-4DC9-9918-57A35561962F}"/>
+</PluginData>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>
