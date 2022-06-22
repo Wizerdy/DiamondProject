@@ -157,7 +157,7 @@ public class IceHell : BaseAttack {
     public override void End() {
         base.End();
         for (int i = 0; i < _shards.Count; i++) {
-            if (!_shards[i].Launched) {
+            if (!_shards[i]?.Launched ?? false) {
                 Destroy(_shards[i].gameObject);
             }
         }

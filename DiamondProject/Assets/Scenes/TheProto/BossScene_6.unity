@@ -2091,7 +2091,7 @@ MonoBehaviour:
     TargetBPM: 120
   DebugActive: 0
   LoadingSceneName: MMAdditiveLoadingScreen
-  DestinationSceneName: EndScene
+  DestinationSceneName: EndScene2
   LoadingMode: 0
   Priority: 4
   InterpolateProgress: 1
@@ -11354,7 +11354,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 17
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -11503,6 +11503,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.05
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 8e55e4948e8a78e41a3d81207a9bcb23, type: 2}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -13764,6 +13776,7 @@ GameObject:
   - component: {fileID: 1897836329}
   - component: {fileID: 1897836330}
   - component: {fileID: 1897836331}
+  - component: {fileID: 1897836332}
   m_Layer: 0
   m_Name: PosterityManager
   m_TagString: Untagged
@@ -13821,6 +13834,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posterityObj: {fileID: 11400000, guid: 8e55e4948e8a78e41a3d81207a9bcb23, type: 2}
   spriteFeedBack: {fileID: 1844977348}
+--- !u!114 &1897836332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897836328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab8fd7792cdc8a498ff7c055a8dd34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathManager: {fileID: 1627650771}
+  _bossHealth: {fileID: 11400000, guid: 116343d6813afc143820099c704afa3b, type: 2}
+  _posterity: {fileID: 11400000, guid: 8e55e4948e8a78e41a3d81207a9bcb23, type: 2}
 --- !u!1001 &1904486032
 PrefabInstance:
   m_ObjectHideFlags: 0

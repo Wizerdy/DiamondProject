@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PosterityObject
   m_EditorClassIdentifier: 
   resetOnStart: 1
-  deathCount: 1
-  bossDeathCount: 0
+  deathCount: 3
+  bossDeathCount: 3
   maxLifeModifier: 0
   extraLife: 0
   nearSight: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   killWinterForm: 1
   sawFallForm: 1
   sawWinterForm: 1
-  firstTimeTalking: 0
+  firstTimeTalking: 1
   nbTimeTalkedToNorna: 4
   nbCorpse: 3
   winterFormTriggerActivated: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   - id: 1
     defaultName: ???
     unlockedName: Transformation
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -73,7 +73,7 @@ MonoBehaviour:
   - id: 1
     defaultName: ???
     unlockedName: Gard'Arbres
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Tir charg\xE9e sur un des arbres ?"
@@ -89,7 +89,7 @@ MonoBehaviour:
   - id: 3
     defaultName: ???
     unlockedName: Samare
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Attaque charg\xE9e sur une feuille g\xE9ante... \xE9viter de se
@@ -99,7 +99,7 @@ MonoBehaviour:
   - id: 4
     defaultName: ???
     unlockedName: Rayon Automnal
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: Tir sur le rayon de front ?
@@ -108,7 +108,7 @@ MonoBehaviour:
   - id: 1
     defaultName: ???
     unlockedName: Transformation
-    isTrigger: 0
+    isTrigger: 1
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: ???
@@ -142,7 +142,7 @@ MonoBehaviour:
   - id: 1
     defaultName: ???
     unlockedName: Enfer de glace
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: "Peut-\xEAtre que je pourrais me prendre l'attaque de front en fon\xE7ant
@@ -162,7 +162,7 @@ MonoBehaviour:
   - id: 3
     defaultName: ???
     unlockedName: Glaciation
-    isTrigger: 1
+    isTrigger: 0
     didNornaGaveHint: 0
     alreadySawHint: 0
     defaultText: Je pourrais tirer sur ces ondes qui m'entoure ?
