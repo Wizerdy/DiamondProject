@@ -22,45 +22,69 @@ public class DiaryTitle : MonoBehaviour
     void Start()
     {
         if (!posterity.sawFallForm) {
-            firstPageTextFall.text = hidingText;
-            bossImageFall?.SetActive(false);
-            bossAttackImageFall?.SetActive(false);
+            if (firstPageTextFall)
+                firstPageTextFall.text = hidingText;
+            if (bossImageFall)
+                bossImageFall.SetActive(false);
+            if (bossAttackImageFall)
+                bossAttackImageFall.SetActive(false);
         } else {
-            firstPageTextFall.text = unlockedTextFall;
-            bossImageFall?.SetActive(true);
-            bossAttackImageFall?.SetActive(true);
+            if (firstPageTextFall)
+                firstPageTextFall.text = unlockedTextFall;
+            if (bossImageFall)
+                bossImageFall.SetActive(true);
+            if (bossAttackImageFall)
+                bossAttackImageFall.SetActive(true);
         }
 
         if (!posterity.sawWinterForm) {
-            firstPageTextWinter.text = hidingText;
-            bossImageWinter?.SetActive(false);
-            bossAttackImageWinter?.SetActive(false);
+            if (firstPageTextWinter)
+                firstPageTextWinter.text = hidingText;
+            if (bossImageWinter)
+                bossImageWinter.SetActive(false);
+            if (bossAttackImageWinter)
+                bossAttackImageWinter.SetActive(false);
         } else {
-            firstPageTextWinter.text = unlockedTextWinter;
-            bossImageWinter?.SetActive(true);
-            bossAttackImageWinter?.SetActive(true);
+            if (firstPageTextWinter)
+                firstPageTextWinter.text = unlockedTextWinter;
+            if (bossImageWinter)
+                bossImageWinter.SetActive(true);
+            if (bossAttackImageWinter)
+                bossAttackImageWinter.SetActive(true);
         }
     }
 
     private void OnEnable() {
         if (!posterity.sawFallForm) {
-            firstPageTextFall.text = hidingText;
-            bossImageFall?.SetActive(false);
-            bossAttackImageFall?.SetActive(false);
+            if (firstPageTextFall)
+                firstPageTextFall.text = hidingText;
+            if (bossImageFall)
+                bossImageFall.SetActive(false);
+            if (bossAttackImageFall)
+                bossAttackImageFall.SetActive(false);
         } else {
-            firstPageTextFall.text = unlockedTextFall;
-            bossImageFall?.SetActive(true);
-            bossAttackImageFall?.SetActive(true);
+            if (firstPageTextFall)
+                firstPageTextFall.text = unlockedTextFall;
+            if (bossImageFall)
+                bossImageFall.SetActive(true);
+            if (bossAttackImageFall)
+                bossAttackImageFall.SetActive(true);
         }
 
         if (!posterity.sawWinterForm) {
-            firstPageTextWinter.text = hidingText;
-            bossImageWinter?.SetActive(false);
-            bossAttackImageWinter?.SetActive(false);
+            if (firstPageTextWinter)
+                firstPageTextWinter.text = hidingText;
+            if (bossImageWinter)
+                bossImageWinter.SetActive(false);
+            if (bossAttackImageWinter)
+                bossAttackImageWinter.SetActive(false);
         } else {
-            firstPageTextWinter.text = unlockedTextWinter;
-            bossImageWinter?.SetActive(true);
-            bossAttackImageWinter?.SetActive(true);
+            if (firstPageTextWinter)
+                firstPageTextWinter.text = unlockedTextWinter;
+            if (bossImageWinter)
+                bossImageWinter.SetActive(true);
+            if (bossAttackImageWinter)
+                bossAttackImageWinter.SetActive(true);
         }
     }
 }
