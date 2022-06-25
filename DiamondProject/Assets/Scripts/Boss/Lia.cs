@@ -6,6 +6,7 @@ using MoreMountains.Feedbacks;
 using ToolsBoxEngine;
 
 public class Lia : MonoBehaviour {
+    [SerializeField] TransformReference _lookAtTarget;
     [SerializeField] Health _health;
     [SerializeField] IMeetARealBoss _boss;
     [SerializeField] BossShapeSystem _bossShapeSystem;
@@ -66,6 +67,10 @@ public class Lia : MonoBehaviour {
         if (_beatenShape.Contains(Shape.WINTER) && _beatenShape.Contains(Shape.FALL) && _health.CurrentHealth == 1 && _attacks.CanAct) {
             _attacks.CanAct = false;
             _boss.SetAnimatorTrigger("KO");
+        }
+
+        if (_lookAtTarget?.IsValid() ?? false) {
+            _boss.LookAt(_lookAtTarget.Instance.position - transform.position);
         }
     }
 

@@ -11,7 +11,7 @@ public class DeathManager : MonoBehaviour {
     [SerializeField] LevelLoader _levelLoader = null;
     [SerializeField] Reference<PlayerController> _player = null;
     [SerializeField] UnityEvent _onDeath;
-    bool _canDie = false;
+    bool _canDie = true;
 
     public event UnityAction OnDeath { add => _onDeath.AddListener(value); remove => _onDeath.RemoveListener(value); }
 

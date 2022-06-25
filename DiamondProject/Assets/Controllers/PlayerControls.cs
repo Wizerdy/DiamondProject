@@ -204,7 +204,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""87b793de-4171-4cfd-af3a-7249a36fca34"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -261,7 +261,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""id"": ""a380c8cf-5364-4284-8764-b644f3db8e79"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone(min=0.445,max=0.925)"",
                     ""groups"": ""Gamepad"",
                     ""action"": ""AttackDirection"",
                     ""isComposite"": false,

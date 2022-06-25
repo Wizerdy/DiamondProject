@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviour {
 
     EntityMovement.SpeedModifier _currentChargeSlow = null;
 
+    Vector2 _lastDirection = Vector2.up;
+
     // Clicks
     float _clickTimer = 0f;
     ClickType _clickType = ClickType.NONE;
@@ -59,9 +61,6 @@ public class PlayerController : MonoBehaviour {
     float _deltaHeat = 0f;
 
     InputAction _inMove;
-    InputAction _inMeleeAttack;
-    InputAction _inRangeAttack;
-    InputAction _inAttackDirection;
 
     #region Properties
 
@@ -104,21 +103,21 @@ public class PlayerController : MonoBehaviour {
 
         _controls = new PlayerControls();
         _controls.GamePlay.Enable();
-        _controls.GamePlay.Interact.started += _Interact;
-
-        _controls.Battle.Enable();
-        _controls.Battle.MeleeAttack.performed += _MeleeAttackPerformed;
-        _controls.Battle.MeleeAttack.canceled += _MeleeAttackCanceled;
-
-        _controls.Battle.RangedAttack.performed += _RangeAttackPerformed;
-        _controls.Battle.RangedAttack.canceled += _RangeAttackCanceled;
-
-        _controls.Battle.AttackDirection.performed += _SetMousePosition;
-
         _controls.Dialogue.Enable();
-
+        _controls.Battle.Enable();
         _controls.UI.Enable();
-        _controls.UI.Pause.performed += _TogglePause;
+
+        //_controls.GamePlay.Interact.started += _Interact;
+
+        //_controls.Battle.MeleeAttack.performed += _MeleeAttackPerformed;
+        //_controls.Battle.MeleeAttack.canceled += _MeleeAttackCanceled;
+
+        //_controls.Battle.RangedAttack.performed += _RangeAttackPerformed;
+        //_controls.Battle.RangedAttack.canceled += _RangeAttackCanceled;
+
+        //_controls.Battle.AttackDirection.performed += _SetMousePosition;
+
+        //_controls.UI.Pause.performed += _TogglePause;
 
         #endregion
 
@@ -149,8 +148,17 @@ public class PlayerController : MonoBehaviour {
 
         #endregion
 
-        //_inMove = _input.actions["Move"];
-        //_inAttackDirection = _input.actions["AttackDirection"];
+        _inMove = _input.actions["Move"];
+        _input.actions["AttackDirection"].performed += _SetMousePosition;
+        _input.actions["MeleeAttack"].performed += _MeleeAttackPerformed;
+        _input.actions["MeleeAttack"].canceled += _MeleeAttackCanceled;
+        _input.actions["RangedAttack"].performed += _RangeAttackPerformed;
+        _input.actions["RangedAttack"].canceled += _RangeAttackCanceled;
+        _input.actions["Pause"].performed += _TogglePause;
+
+        _input.actions.FindActionMap("Battle").Enable();
+        _input.actions.FindActionMap("UI").Enable();
+        _input.actions.FindActionMap("GamePlay").Enable();
     }
 
     private void Start() {
@@ -179,15 +187,20 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-        if (_controls.GamePlay.enabled) {
-            Move(_controls.GamePlay.Move.ReadValue<Vector2>());
+        //Debug.DrawLine(_camera.Instance.ScreenToWorldPoint(Vector3.zero), _camera.Instance.ScreenToWorldPoint(mousePosition), Color.red);
+        if (_controls.GamePlay.enabled && (_input?.actions.FindActionMap("GamePlay")?.enabled ?? true)) {
+            //Move(_controls.GamePlay.Move.ReadValue<Vector2>());
+            Move(_inMove.ReadValue<Vector2>());
         }
-        //Move(_inMove.ReadValue<Vector2>());
+
+        if ((_input?.actions.FindActionMap("GamePlay")?.enabled ?? true) && (_input?.currentControlScheme.Equals("Gamepad") ?? false)) {
+            _SetMousePosition(_lastDirection);
+        }
 
         //_SetMousePosition(_inAttackDirection.ReadValue<Vector2>());
-        //Debug.Log(_inAttackDirection.ReadValue<Vector2>());
+        //Debug.Log("d: " + _inAttackDirection.ReadValue<Vector2>());
 
-        if (_controls.Battle.enabled) {
+        if (_controls.Battle.enabled && (_input?.actions.FindActionMap("Battle")?.enabled ?? true)) {
             if (_clickType == ClickType.MELEE) {
                 _clickTimer += Time.deltaTime;
                 if (_clickTimer > _clickTime) {
@@ -402,24 +415,40 @@ public class PlayerController : MonoBehaviour {
     //}
 
     private void _SetMousePosition(Vector2 position) {
-        mousePosition = position;
+        if (_input.currentControlScheme == "Gamepad") {
+            mousePosition = _camera?.Instance?.WorldToScreenPoint(transform.Position2D() + position) ?? Vector2.up;
+        } else {
+            mousePosition = position;
+        }
         PlayerTurnover(LookDirection);
     }
 
     private void _SetMousePosition(InputAction.CallbackContext cc) {
-        _SetMousePosition(cc.ReadValue<Vector2>());
+        if (_input.currentControlScheme == "Gamepad") {
+            if (cc.ReadValue<Vector2>() != Vector2.zero) {
+                _lastDirection = cc.ReadValue<Vector2>().normalized;
+            }
+            _SetMousePosition(_lastDirection);
+        } else {
+            _SetMousePosition(cc.ReadValue<Vector2>());
+        }
     }
 
     private void PlayerTurnover(Vector2 direction) {
         //Debug.Log(_spine.skeleton.Skin);
         if (_spine == null || _spine.skeleton == null) { return; }
+        float targetScale = 1f;
+        string skin = "Front";
+        if (direction.x > 0) { targetScale = -1f; }
+        if (direction.y > 0) { skin = "Back"; }
 
-        if (direction.x > 0) { _spine.skeleton.ScaleX = -1f; }
-        else { _spine.skeleton.ScaleX = 1f; }
-        if (direction.y > 0) { _spine.skeleton.SetSkin("Back"); }
-        else { _spine.skeleton.SetSkin("Front"); }
-        _spine.Skeleton.SetSlotsToSetupPose();
-        _spine.LateUpdate();
+        if (targetScale != _spine.skeleton.ScaleX || skin != _spine.skeleton.Skin.Name) {
+            _spine.skeleton.SetSkin(skin);
+            _spine.skeleton.ScaleX = targetScale;
+
+            _spine.Skeleton.SetSlotsToSetupPose();
+            _spine.LateUpdate();
+        }
     }
 
     private void _DashingAnimator(Vector2 vector) {
@@ -463,22 +492,28 @@ public class PlayerController : MonoBehaviour {
             case InputType.MOVEMENT:
                 if (state) {
                     _controls.GamePlay.Enable();
+                    _input?.actions.FindActionMap("GamePlay")?.Enable();
                 } else {
                     _controls.GamePlay.Disable();
+                    _input?.actions.FindActionMap("GamePlay")?.Disable();
                 }
                 break;
             case InputType.COMBAT:
                 if (state) {
                     _controls.Battle.Enable();
+                    _input?.actions.FindActionMap("Battle")?.Enable();
                 } else {
                     _controls.Battle.Disable();
+                    _input?.actions.FindActionMap("Battle")?.Disable();
                 }
                 break;
             case InputType.UI:
                 if (state) {
                     _controls.UI.Enable();
+                    _input?.actions.FindActionMap("UI")?.Enable();
                 } else {
                     _controls.UI.Disable();
+                    _input?.actions.FindActionMap("UI")?.Disable();
                 }
                 break;
         }

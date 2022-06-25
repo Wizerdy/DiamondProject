@@ -49,7 +49,7 @@ public class LeafBeam : BaseAttack {
             //}
 
 
-            Debug.DrawRay(BossPos, currentAim - BossPos, Color.blue);
+            //Debug.DrawRay(BossPos, currentAim - BossPos, Color.blue);
 
             Vector2 direction = currentAim - currentBeam.transform.position;
             rendererBeam.transform.position = Vector3.Lerp(currentBeam.transform.position, currentAim, 0.5f);
@@ -69,7 +69,7 @@ public class LeafBeam : BaseAttack {
                 }
                 PosterityVNValue.instance.IfBeamHitArrow(hit.gameObject);
             }
-            Debug.DrawRay(currentBeam.transform.position, currentAim - currentBeam.transform.position, Color.red);
+            //Debug.DrawRay(currentBeam.transform.position, currentAim - currentBeam.transform.position, Color.red);
             attackTimer -= Time.deltaTime;
             yield return null;
         }

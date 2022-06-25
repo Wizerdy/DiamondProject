@@ -16,6 +16,7 @@ public class CheatCode : MonoBehaviour {
     [SerializeField] MMFeedbacks _toggleUIFeedback;
 
     [Header("States")]
+    [SerializeField] bool _active = false;
     [SerializeField] bool _killBoss = true;
     [SerializeField] bool _winterShape = true;
     [SerializeField] bool _fallShape = true;
@@ -30,6 +31,7 @@ public class CheatCode : MonoBehaviour {
     bool _isInvincible = false;
 
     void Start() {
+        if (!_active) { return; }
         PlayerControls _playerControls = new PlayerControls();
         _playerControls.CheatCode.Enable();
         _playerControls.CheatCode.Killboss.started += _KillBoss;

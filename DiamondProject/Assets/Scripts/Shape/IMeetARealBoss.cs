@@ -34,6 +34,16 @@ public class IMeetARealBoss : MonoBehaviour {
         _spriteRenderer.sprite = sprite;
     }
 
+    public void LookAt(Vector2 direction) {
+        float targetScale = 1f;
+        if (direction.x > 0) { targetScale = -1f; }
+        if (_spine.skeleton.ScaleX != targetScale) {
+            _spine.skeleton.ScaleX = targetScale;
+            _spine.Skeleton.SetSlotsToSetupPose();
+            _spine.LateUpdate();
+        }
+    }
+
     public void ColorSwap(Color red, Color green, Color blue) {
         Material mat = _spriteRenderer.material;
         mat.SetColor("_Red", red);

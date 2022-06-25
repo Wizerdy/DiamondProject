@@ -326,7 +326,7 @@ MonoBehaviour:
   _attackType: 0
   _condition: 0
   _resetOnError: 0
-  _timeBeforeReset: 15
+  _timeBeforeReset: 30
 --- !u!114 &7232478467426181594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   _childs: []
   _childGate: 0
   _health: {fileID: 11400000, guid: f5c65a46c95138e438c3a07d070145b2, type: 2}
-  _hitTime: 15
+  _hitTime: 30
   _triggerType: 0
 --- !u!114 &7493287481518169177
 MonoBehaviour:
@@ -359,7 +359,7 @@ MonoBehaviour:
   _childs: []
   _childGate: 0
   _shapeSystem: {fileID: 0}
-  _time: 35
+  _time: 60
   _condition: 1
   _resetOnNewShape: 1
 --- !u!114 &8101424016291808016
@@ -426,17 +426,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd30b50c0c0c9a84f976ae2211111ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lookAtTarget: {fileID: 0}
   _health: {fileID: 0}
   _boss: {fileID: 0}
   _bossShapeSystem: {fileID: 0}
   _shapeLibrary: {fileID: 0}
   _attacks: {fileID: 8301503317489124549}
+  _deathFeedback: {fileID: 0}
   _moveCenterTime: 2
   _initialShape: 0
   spring: {fileID: 8101424016153837571}
   summer: {fileID: 8101424015454722118}
   fall: {fileID: 6224799885455193861}
   winter: {fileID: 8101424016291808019}
+  _onRealDeath:
+    m_PersistentCalls:
+      m_Calls: []
   _onCentering:
     m_PersistentCalls:
       m_Calls: []
